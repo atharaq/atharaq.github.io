@@ -1,10 +1,3 @@
----
-title: "Discrete Mathematics Lesson 2"
-author: "Athar Abdul-Quader"
-date: "Fall 2020"
-lang: "en-US"
----
-
 # Discrete Mathematics Lesson 2
 
 # Counting, Arrangements and Functions
