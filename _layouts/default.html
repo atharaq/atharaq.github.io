@@ -1,19 +1,14 @@
-<!doctype html>
-<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
-<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on https://github.com/jonrohan -->
+<!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  
-  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-  <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
 {% seo %}
-
-      <style type="text/css">
+          <style type="text/css">
       @media (prefers-color-scheme: dark) {
          html { 
            filter: invert(100%);
@@ -46,51 +41,34 @@
     <script id="MathJax-script" async
             src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js">
     </script>
-</head>
+  </head>
 
-<body>
+  <body>
 
-  <div class="wrapper">
-    <header>
-      <h1 class="title">{{ site.title | default: site.github.repository_name }}</h1>
-    </header>
-    <div id="container">
-      <div id="main" role="main">
-        <article class="markdown-body">
-          {{ content }}
-        </article>
-      </div>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        {{ content }}
+      </section>
     </div>
-    <footer>
-      <div class="owner">
-      {% if site.github.is_project_page %}
-      <p><a href="{{ site.github.owner_url }}" class="avatar"><img src="{{ site.github.owner_gravatar_url }}" width="48" height="48"></a> <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a> maintains <a href="{{ site.github.repository_url }}">{{ site.title | default: site.github.repository_name }}</a></p>
-      {% endif %}
 
-       {% if site.github.is_user_page %}
-      <p><a href="{{ site.github.owner_url }}" class="avatar"><img src="{{ site.github.owner_gravatar_url }}" width="48" height="48"></a>View <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a> on <a href="https://www.github.com">GitHub</a></p>
-      {% endif %}
-       These notes are licensed under the Creative Commons <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">CC-BY-SA-4.0</a> license.
-      </div>
-      <div class="creds">
-        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
-      </div>
-    </footer>
-  </div>
-  <div class="current-section">
-    <a href="#top">Scroll to top</a>
-    <p class="name"></p>
-  </div>
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">These notes are licensed under the Creative Commons <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">CC-BY-SA-4.0</a> license.</p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
 
-  {% if site.google_analytics %}
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', '{{ site.google_analytics }}', 'auto');
-      ga('send', 'pageview');
-    </script>
-  {% endif %}
-</body>
+    {% if site.google_analytics %}
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', '{{ site.google_analytics }}', 'auto');
+        ga('send', 'pageview');
+      </script>
+    {% endif %}
+  </body>
 </html>
