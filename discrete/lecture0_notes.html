@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Athar Abdul-Quader" />
+  <title>Discrete Mathematics Lesson 0</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="http://spratt.github.io/Computer-Modern/cmserif.css" />
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <style type="text/css">
+  /*
+   * I add this to html files generated with pandoc.
+   */
+
+  @media (prefers-color-scheme: dark) {
+      html {
+        filter: invert(100%);
+      }
+  }
+
+  html {
+    font-size: 100%;
+    overflow-y: scroll;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+
+  body {
+    color: #444;
+    font-family: "Computer Modern serif", Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+    font-size: 12px;
+    line-height: 1.7;
+    padding: 1em;
+    margin: auto;
+    max-width: 42em;
+    background: #fefefe;
+  }
+
+  a {
+    color: #0645ad;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: #0b0080;
+  }
+
+  a:hover {
+    color: #06e;
+  }
+
+  a:active {
+    color: #faa700;
+  }
+
+  a:focus {
+    outline: thin dotted;
+  }
+
+  *::-moz-selection {
+    background: rgba(255, 255, 0, 0.3);
+    color: #000;
+  }
+
+  *::selection {
+    background: rgba(255, 255, 0, 0.3);
+    color: #000;
+  }
+
+  a::-moz-selection {
+    background: rgba(255, 255, 0, 0.3);
+    color: #0645ad;
+  }
+
+  a::selection {
+    background: rgba(255, 255, 0, 0.3);
+    color: #0645ad;
+  }
+
+  p {
+    margin: 1em 0;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #111;
+    line-height: 125%;
+    margin-top: 2em;
+    font-weight: normal;
+  }
+
+  h4, h5, h6 {
+    font-weight: bold;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+
+  h4 {
+    font-size: 1.2em;
+  }
+
+  h5 {
+    font-size: 1em;
+  }
+
+  h6 {
+    font-size: 0.9em;
+  }
+
+  blockquote {
+    color: #666666;
+    margin: 0;
+    padding-left: 3em;
+    border-left: 0.5em #EEE solid;
+  }
+
+  hr {
+    display: block;
+    height: 2px;
+    border: 0;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #eee;
+    margin: 1em 0;
+    padding: 0;
+  }
+
+  pre, code, kbd, samp {
+    color: #000;
+    font-family: monospace, monospace;
+    _font-family: 'courier new', monospace;
+    font-size: 0.98em;
+  }
+
+  pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  b, strong {
+    font-weight: bold;
+  }
+
+  dfn {
+    font-style: italic;
+  }
+
+  ins {
+    background: #ff9;
+    color: #000;
+    text-decoration: none;
+  }
+
+  mark {
+    background: #ff0;
+    color: #000;
+    font-style: italic;
+    font-weight: bold;
+  }
+
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+
+  sup {
+    top: -0.5em;
+  }
+
+  sub {
+    bottom: -0.25em;
+  }
+
+  ul, ol {
+    margin: 1em 0;
+    padding: 0 0 0 2em;
+  }
+
+  li p:last-child {
+    margin-bottom: 0;
+  }
+
+  ul ul, ol ol {
+    margin: .3em 0;
+  }
+
+  dl {
+    margin-bottom: 1em;
+  }
+
+  dt {
+    font-weight: bold;
+    margin-bottom: .8em;
+  }
+
+  dd {
+    margin: 0 0 .8em 2em;
+  }
+
+  dd:last-child {
+    margin-bottom: 0;
+  }
+
+  img {
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+    vertical-align: middle;
+  }
+
+  figure {
+    display: block;
+    text-align: center;
+    margin: 1em 0;
+  }
+
+  figure img {
+    border: none;
+    margin: 0 auto;
+  }
+
+  figcaption {
+    font-size: 0.8em;
+    font-style: italic;
+    margin: 0 0 .8em;
+  }
+
+  table {
+    margin-bottom: 2em;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+
+  table th {
+    padding: .2em 1em;
+    background-color: #eee;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+  }
+
+  table td {
+    padding: .2em 1em;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    vertical-align: top;
+  }
+
+  .author {
+    font-size: 1.2em;
+    text-align: center;
+  }
+
+  @media only screen and (min-width: 480px) {
+    body {
+      font-size: 14px;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    body {
+      font-size: 16px;
+    }
+  }
+  @media print {
+    * {
+      background: transparent !important;
+      color: black !important;
+      filter: none !important;
+      -ms-filter: none !important;
+    }
+
+    body {
+      font-size: 12pt;
+      max-width: 100%;
+    }
+
+    a, a:visited {
+      text-decoration: underline;
+    }
+
+    hr {
+      height: 1px;
+      border: 0;
+      border-bottom: 1px solid black;
+    }
+
+    a[href]:after {
+      content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+      content: " (" attr(title) ")";
+    }
+
+    .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+      content: "";
+    }
+
+    pre, blockquote {
+      border: 1px solid #999;
+      padding-right: 1em;
+      page-break-inside: avoid;
+    }
+
+    tr, img {
+      page-break-inside: avoid;
+    }
+
+    img {
+      max-width: 100% !important;
+    }
+
+    @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+  }
+
+    @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+  }
+
+    p, h2, h3 {
+      orphans: 3;
+      widows: 3;
+    }
+
+    h2, h3 {
+      page-break-after: avoid;
+    }
+  }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Discrete Mathematics Lesson 0</h1>
+<p class="author">Athar Abdul-Quader</p>
+<p class="date">Fall 2020</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#what-is-discrete-mathematics">What is “Discrete Mathematics”?</a>
+<ul>
+<li><a href="#who-is-this-course-for">Who is this course for?</a></li>
+</ul></li>
+<li><a href="#course-format-and-expectations">Course Format and Expectations</a></li>
+<li><a href="#workload">Workload</a></li>
+</ul></li>
+<li><a href="#mathematical-writing">Mathematical writing</a></li>
+<li><a href="#latex-markup">LaTeX Markup</a>
+<ul>
+<li><a href="#setting-up">Setting up</a></li>
+<li><a href="#basic-formatting">Basic Formatting</a></li>
+<li><a href="#formatting-math">Formatting Math</a></li>
+<li><a href="#further-reading">Further reading</a></li>
+</ul></li>
+<li><a href="#post-lesson-check-in-0-due-thursday-september-3">Post-Lesson Check-in 0: Due Thursday, September 3</a></li>
+</ul>
+</nav>
+<h1 id="introduction">Introduction</h1>
+<h2 id="what-is-discrete-mathematics">What is “Discrete Mathematics”?</h2>
+<p>The name “discrete mathematics” does not really seem to give a lot of information about the course. From the course description:</p>
+<blockquote>
+<p>Covers a variety of topics that provide a foundation for both higher mathematics and computer science. These topics may include logic and formal proofs, set theory, number theory, probability, mathematical induction, algorithms, recurrence relations, equivalence relations and partial orderings, and topics in graph theory (including isomorphism, traversability, planarity, and colorings).</p>
+</blockquote>
+<p>How do we get all of that from the word “discrete”? Essentially, the word “discrete” is meant in opposition to the word “continuous”: the set of real numbers forms a “continuum”, an infinite straight line with no holes. The study of “continuous” mathematics is more commonly referred to as calculus, where we study limits, continuity, derivatives, and integrals. These are fundamentally “continuous” notions: one needs the fundamental properties of the real number line to study calculus.</p>
+<p>In discrete mathematics, on the other hand, we mostly concern ourselves with those mathematical structures which do not rely on notions of limits / continuity. Many of the questions we ask are, therefore, questions that can be asked about any mathematical structure (not just questions that can be asked about functions of real numbers). The simplest examples are “counting” type questions: “how many objects of type A are there that also satisfy property X?”</p>
+<h3 id="who-is-this-course-for">Who is this course for?</h3>
+<p>This course is often required in most computer science departments. It is usually considered a prerequisite for higher level computer science courses, as it provides the mathematical background needed for courses like Data Structures, Computability, and Algorithms.</p>
+<p>That said: this is a <strong>mathematics</strong> course. In some mathematics departments, there is a “bridge” course which bridges the gap between calculus based courses and upper level, abstract mathematics courses. This course does not serve that explicit purpose, but much of the material found in those “bridge” coursese will be covered here (material on logic, set theory, cardinality, induction).</p>
+<h2 id="course-format-and-expectations">Course Format and Expectations</h2>
+<p>This course will be taught in a fully-online <strong>hybrid</strong> fashion. That means that most of the lectures (including this one) will be self-paced: you will do the assigned reading (usually my lecture notes, but sometimes from the textbook), solve some problems, complete a “post-lesson check-in”, and then start working on homework problems.</p>
+<p>“Self-paced” lessons might sometimes include “guided problem sets”. The purpose is of course for you to learn the material by figuring out certain things for yourselves. It may feel a bit uncomfortable: how will you know that you actually learned anything? If you need reassurance, I will of course be available: email me or stop by office hours (which will be available every week).</p>
+<p><strong>Important</strong>: self-paced does not mean “do whenever you want”. You should keep up with the material on a regular basis. Make sure to ask me questions, via email or during office hours, if you get stuck on an important concept during a lesson.</p>
+<p>We will meet synchronously roughly <strong>every two weeks</strong>. The exact meeting dates are noted in the syllabus. These synchronous meetings are going to be a mix of reviewing material and exploring new material. This will be a good opportunity for me to go over the concepts and problems that were most confusing from the previous set of self-paced lessons and/or problem sets, and get you started on the new topics. Please do make sure to <strong>come prepared</strong>: at each synchronous meeting, try to clear up all confusion about the previous set of lessons.</p>
+<p>You are strongly encouraged to form study groups. This course will be challenging at times, and it will be useful for you to check-in with each other and see if others are struggling on the same things.</p>
+<h2 id="workload">Workload</h2>
+<ul>
+<li>2 mid-semester exams (10% each)</li>
+<li>1 final exam (15%)</li>
+<li>“Post-lesson” check-ins (10%)
+<ul>
+<li>These are short assignments to make sure you are following along with the lessons.</li>
+</ul></li>
+<li>5-7 Problem Sets (roughly 2-3 weeks) (30%)</li>
+<li>5% Problem Presentation
+<ul>
+<li>After exam 1 or 2, you will record a short video explaining one of the more challenging problems on the exam. Optionally, you can present a new problem / concept that you are interested in on your own.</li>
+</ul></li>
+<li>20% Final Project
+<ul>
+<li>Possibly group project. You will research a topic not covered in our coursework, and present it in our final meeting of the course, as well as write a paper about it.</li>
+</ul></li>
+</ul>
+<h1 id="mathematical-writing">Mathematical writing</h1>
+<p>Before we even cover any actual topics in discrete mathematics, we need to cover a more fundamental topic: writing. We communicate mathematics by writing, and so it is important that we understand how to write well.</p>
+<p>What is the problem with the following “proof”?</p>
+<p><span class="math display">\[
+\begin{align}
+x^2 + (x - 1)^2 = 25 \\
+x^2 + x^2 - 2x + 1 = 25 \\
+2x^2 - 2x - 24 = 0 \\
+x^2 - x - 12 = 0 \\
+(x - 4)(x + 3) = 0 \\
+x = 4, -3 \\
+x &gt; 0 \implies x = 4
+\end{align}
+\]</span></p>
+<p>There are several issues:</p>
+<ol type="1">
+<li>What are we trying to prove?</li>
+<li>More importantly, how is one supposed to read this? Are these conditional (“if-then”) statements? Are they “and” statements? It’s not clear how each statement connects to the next.</li>
+</ol>
+<p>Now consider the following:</p>
+<p><strong>Problem</strong>: Find a point on the line <span class="math inline">\(y = x\)</span>, in the first quadrant, that lies exactly 5 units from the point <span class="math inline">\((0, 1)\)</span>.</p>
+<p><strong>Solution</strong>: The point <span class="math inline">\((4, 4)\)</span> lies 5 units from <span class="math inline">\((0, 1)\)</span>. To see this, note that the set of points that lie exactly <span class="math inline">\(5\)</span> units from <span class="math inline">\((0, 1)\)</span> are those that are on the circle <span class="math inline">\(x^2 + (y - 1)^2 = 25\)</span>. If <span class="math inline">\(y = x\)</span>, we get the equation <span class="math inline">\(x^2 + (x - 1)^2 = 25\)</span>. Some algebraic simplifications give <span class="math display">\[
+x^2 - x - 12 = 0.
+\]</span> Factoring, we get, <span class="math display">\[
+(x - 4)(x + 3) = 0,
+\]</span> and obtain two solutions: <span class="math inline">\(x = 4\)</span> and <span class="math inline">\(x = -3\)</span>. Since the problem asks for a point in the first quadrant, we have <span class="math inline">\((4, 4)\)</span> as the desired point on the line <span class="math inline">\(y = x\)</span>.</p>
+<p>The moral of the story is that mathematics is written in natural language. Get in the habit of writing your mathematical arguments <em>primarily</em> in English in this course. This example is loosely taken from <a href="https://math.hmc.edu/su/wp-content/uploads/sites/10/2019/11/good-math-writing.pdf">Francis Su, “Guidelines for Good Mathematical Writing”</a>.</p>
+<p><strong>Exercise</strong>: Re-write the following proof that….</p>
+<h1 id="latex-markup">LaTeX Markup</h1>
+<p>Have you ever wondered how mathematical articles are typed? We do not have symbols on the keyboard for things like exponents, so <span class="math inline">\(x^2\)</span> might not be so easy to write. <span class="math inline">\(\pi\)</span> will certainly not appear on your keyboard, either, and good luck finding the symbol for <span class="math inline">\(\int\)</span>.</p>
+<p>The answer is called <strong>LaTeX</strong>. LaTeX is a markup language used to typeset academic articles. Academic articles are <strong>not</strong> written in Microsoft Word or Google Docs: while you <em>can</em> get them to understand mathematical equations, it is not standard and somewhat clunky. LaTeX is <strong>the</strong> standard. These course notes are a minor exception: in addition to LaTeX for the mathematical symbols, I am also using Markdown (converted to HTML) and MathJax (a Javascript library that renders LaTeX on the web).</p>
+<h2 id="setting-up">Setting up</h2>
+<p>There are several ways to set up and install LaTeX. If you prefer not to install anything on your local computer, you can create a <strong>free</strong> account on <a href="https://www.overleaf.com">Overleaf.com</a>. This is the simplest way to get up and running.</p>
+<p>If you prefer to use LaTeX on your own computer, you will need two things:</p>
+<ol type="1">
+<li>A LaTeX <em>distribution</em>: either <a href="https://www.tug.org/mactex/">MacTex</a>, on Mac OS X, or <a href="https://miktex.org/about">MikTex</a> for Windows.</li>
+<li>A LaTeX <em>editor</em>: my preference is <a href="https://www.texstudio.org">texstudio</a>. MikTex and MacTex both come with LaTeX editors, and so you can use those if you like (MikTex comes with TeXworks, MacTex comes with TeXShop), though I prefer TeXstudio.</li>
+</ol>
+<p>Once you have written your document in LaTeX, saved as a .tex file, you will be able to compile it to a PDF.</p>
+<h2 id="basic-formatting">Basic Formatting</h2>
+<p>A simple LaTeX file may look something like:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">\documentclass</span>{<span class="ex">article</span>}</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co">% This is a comment</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="co">% This part of the file is called the preamble.</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="co">% Title / author / date can go here</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="co">% Can also include packages that we need to use to render the math correctly</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="fu">\title</span>{This is my title}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="fu">\author</span>{My Name}</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a><span class="co">% This is the main body of the document.</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a><span class="fu">\maketitle</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a>Paragraph 1.</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a>Paragraph 2.</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
+<p>It can be overwhelming to start a LaTeX document from scratch, so feel free to use the homework files I post to start. I include several packages, macros and definitions in my preamble.</p>
+<h2 id="formatting-math">Formatting Math</h2>
+<p>To format math in a LaTeX file, you use dollar signs ($) to start and end your mathematical notations. Technically this is referred to as “in-line” math mode: for example, to write the sentence “If <span class="math inline">\(a \neq 0\)</span>, then <span class="math inline">\(ax^2 + bx + c\)</span> is a quadratic polynomial”, you use the following LaTeX syntax:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>If <span class="ss">$a </span><span class="sc">\neq</span><span class="ss"> 0$</span>, then <span class="ss">$ax^2 + bx + c$</span> is a quadratic polynomial.</span></code></pre></div>
+<p>This is “in-line”, since the math is formatted in the middle of the sentence. There is also “displayed” math mode: you can use two dollar signs ($$) to start and end, and that will display the mathematical content on its own line.</p>
+<p>As you can see, there are certain commands we use to put in mathematical notation. For exponents / superscripts we use the carat (^), for “not equals” ($) we use “\neq”. There are many good guides to finding basic LaTeX commands for mathematical notation, you can find them in the <a href="#further-reading">further reading</a> section.</p>
+<h2 id="further-reading">Further reading</h2>
+<p>These first two are essential: you <strong>must</strong> check these out.</p>
+<ul>
+<li><a href="https://guides.nyu.edu/c.php?g=601858&amp;p=4168084">NYU: Guide to LaTeX</a>. This link is quite thorough and has many other links to other resources to help you get set up. The <a href="https://guides.nyu.edu/c.php?g=601858&amp;p=4168135">resources</a> section on the site has lots of good links to finding LaTeX commands and symbols.</li>
+<li><a href="https://www.cs.princeton.edu/courses/archive/spr10/cos433/Latex/latex-guide.pdf">David Xiao, “A Beginner’s Guide to LaTeX” (Princeton)</a> This is a short (6 page) description of the basics of LaTeX.</li>
+<li><a href="https://tobi.oetiker.ch/lshort/lshort.pdf">The Not So Short Introduction to LaTeX 2e</a> This 150+ page reference manual describes many of the core functionalities of LaTeX.</li>
+</ul>
+<h1 id="post-lesson-check-in-0-due-thursday-september-3">Post-Lesson Check-in 0: Due Thursday, September 3</h1>
+<ol start="0" type="1">
+<li>Get set up using LaTeX (either method).</li>
+<li>Download the check_in0.tex file on Moodle. Edit it, replace the sections for your name, year and major.</li>
+<li>In the rest of the document, re-write the following argument that if two non-vertical lines are parallel, then they have the same slope: <span class="math display">\[
+ \begin{align}
+ y_1 = m_1 x + b_1 \\
+ y_2 = m_2 x + b_2 \\
+ y_1 \neq y_2 \implies m_1x + b_1 \neq m_2x + b_2 \\
+ x = 1 \rightarrow m_1 + b_1 \neq m_2 + b_2 \\
+ x = 2 \rightarrow 2m_1 + b_1 \neq 2m_2 + b_2 \\
+ (2m_1 + b_1) - (m_1 + b_1) = m_1 \\
+ (2m_2 + b_2) - (m_2 + b_2) = m_2 \\
+ m_1 \neq m_2
+ \end{align}
+ \]</span></li>
+<li>Compile the document to a PDF and upload the PDF to Moodle.</li>
+</ol>
+</body>
+</html>

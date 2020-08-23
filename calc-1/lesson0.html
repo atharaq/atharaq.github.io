@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Athar Abdul-Quader">
+  <title>Calculus I Lesson 0</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="http://spratt.github.io/Computer-Modern/cmserif.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Calculus I Lesson 0</h1>
+  <p class="author">Athar Abdul-Quader</p>
+  <p class="date">Fall 2020</p>
+</section>
+
+<section>
+<section id="introduction" class="title-slide slide level1">
+<h1>Introduction</h1>
+<p>Welcome to Calculus I! Before we start let’s go through some administrative notes:</p>
+</section>
+<section id="hybrid-format" class="slide level2">
+<h2>Hybrid format</h2>
+<ul>
+<li>Meeting dates: on the syllabus</li>
+<li>Other lessons will be <em>asynchronous</em>: notes, videos, problems to go through on your own.</li>
+<li>If you get stuck / need help: get in touch with me ASAP!</li>
+<li>Do <strong>not</strong> wait until the next synchronous meeting. You can catch yourself up if you are a week or two behind, but it gets harder the further you fall behind.</li>
+</ul>
+</section>
+<section id="studying" class="slide level2">
+<h2>Studying</h2>
+<ul>
+<li>Traditional (4 credits): 4 hours in class, 8 hours out of class (individual studying)</li>
+<li>Hybrid course: still 12 hours per week
+<ul>
+<li>Some weeks: 2 hours in class, 10 hours out of class</li>
+<li>Other weeks: entirely out of class</li>
+</ul></li>
+<li>Lecture videos, reading notes, textbook all help, <strong>but most importantly</strong>: do lots of practice problems.</li>
+</ul>
+</section>
+<section id="office-hours" class="slide level2">
+<h2>Office hours</h2>
+<ul>
+<li>Mondays and Thursdays, 9:30 AM, <em>even when we don’t have a synchronous lesson that day</em></li>
+<li>Don’t feel like you’re on your own in this class.</li>
+<li>Be in touch with me often</li>
+</ul>
+</section>
+<section id="study-groups" class="slide level2">
+<h2>Study groups</h2>
+<ul>
+<li>Having a social structure around you helps you stay on task and stay motivated</li>
+<li>Form study groups with other students in the class
+<ul>
+<li>Quiz each other about lectures / notes</li>
+<li>Keep each other on track</li>
+<li>Share work on exercises</li>
+<li>Help each other with homework</li>
+</ul></li>
+<li>(Exams should be taken individually, of course!)</li>
+</ul>
+</section>
+<section id="meet-with-me" class="slide level2">
+<h2>Meet with me</h2>
+<p>I want to meet with everyone in small groups over the next week or two. You should have received an email with a link to a spreadsheet. Sign up for a time to meet with me. This will give us a chance to talk about your interest in mathematics, concerns about the course/format, and anything else on your mind. It’s important that we get a chance to get to know one another and for you to get to know your fellow students. As the semester goes on, I will reach out to try to set up more meetings where we can review material individually.</p>
+</section>
+<section id="grading" class="slide level2">
+<h2>Grading</h2>
+<p>The syllabus, posted on Moodle, lists out the grading scheme. Pay attention to this breakdown: there will be many different forms of assessing your work:</p>
+<ul>
+<li>Homework and quizzes (40%)</li>
+<li>Lesson “check-ins” (10%)</li>
+<li>Exams: 3 x 5%, plus final exam 10%</li>
+<li>Problem presentations (2 x 5%)</li>
+<li>Final paper (15%)</li>
+</ul>
+</section>
+<section id="tutoring" class="slide level2">
+<h2><!-- Learning Assistant and --> Tutoring</h2>
+<p>Please make use of these resources. The Einstein Corner is available virtually, and they have good, qualified tutors who have gone through the calculus courses.</p>
+<!-- We have an excellent Learning Assistant as well who will be hosting office hours and sometimes holding problem solving sessions. -->
+</section></section>
+<section id="warm-up" class="title-slide slide level1">
+<h1>Warm-up</h1>
+<p><a href="lesson0_warmup.html">Link to warm up activity</a></p>
+</section>
+
+<section>
+<section id="functions" class="title-slide slide level1">
+<h1>Functions</h1>
+<dl>
+<dt>Function</dt>
+<dd>A relationship between two variables, denoted <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, where different <span class="math inline">\(y\)</span>-values cannot be related to the same <span class="math inline">\(x\)</span>-value
+</dd>
+</dl>
+<p><span class="math display">\[f : X \to Y\]</span></p>
+<p>is read “f is a function with domain <span class="math inline">\(X\)</span> and codomain <span class="math inline">\(Y\)</span>”. In Calc 1 - 2: usually sets of <strong>real numbers</strong> (usually intervals).</p>
+</section>
+<section id="describing-functions" class="slide level2">
+<h2>Describing Functions</h2>
+<p>How do we describe functions? (At least 4 ways):</p>
+<div class="fragment">
+<ol type="1">
+<li>Algebraically: with an equation / algebraic expression</li>
+<li>Visually: with a graph</li>
+<li>Numerically: with a table</li>
+<li>Verbally: “the function which divides its input by 2 and then squares the result”</li>
+</ol>
+<p>Other ways?</p>
+</div>
+</section>
+<section id="side-note" class="slide level2">
+<h2>Side Note</h2>
+<p>Most functions <strong>cannot</strong> be described efficiently.</p>
+<iframe src="https://www.desmos.com/calculator/lcyzjynpms?embed" width="250px" height="250px" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+<div class="fragment">
+<p>…but it’s usually easier if we do have some formula.</p>
+<p>Q: What do scientists / engineers do with real data sets?</p>
+</div>
+</section></section>
+<section>
+<section id="classes-of-functions" class="title-slide slide level1">
+<h1>Classes of Functions</h1>
+<p>Exercise: Come up with examples of the following:</p>
+<ol type="1">
+<li>A function which is “bounded above” (its graph does not keep going “up” to positive <span class="math inline">\(\infty\)</span>)</li>
+<li>A function which is “bounded below” (its graph does not keep going “down” to negative <span class="math inline">\(\infty\)</span>)</li>
+<li>A function which is neither bounded above nor below</li>
+<li>A function with a “hole”</li>
+<li>A function with an “asymptote”</li>
+</ol>
+</section>
+<section id="bounded-above" class="slide level2">
+<h2>Bounded above</h2>
+<p><span class="math inline">\(y = 4 - x^2\)</span></p>
+<iframe src="https://www.desmos.com/calculator/b3fxpz8kaa?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+</section>
+<section id="bounded-below" class="slide level2">
+<h2>Bounded Below</h2>
+<p><span class="math inline">\(y = x^4\)</span></p>
+<iframe src="https://www.desmos.com/calculator/ryoe6wuzra?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+</section>
+<section id="neither" class="slide level2">
+<h2>Neither</h2>
+<p><span class="math inline">\(y = x^3 - x\)</span></p>
+<iframe src="https://www.desmos.com/calculator/om8utcfpfr?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+</section>
+<section id="hole" class="slide level2">
+<h2>“Hole”</h2>
+<p><span class="math inline">\(y = \frac{x^2-1}{x-1}\)</span></p>
+<iframe src="https://www.desmos.com/calculator/wsh1jiaz7n?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+</section>
+<section id="asymptote" class="slide level2">
+<h2>Asymptote</h2>
+<p><span class="math inline">\(y = \frac{x^2+1}{x-1}\)</span></p>
+<iframe src="https://www.desmos.com/calculator/edub0hl7zv?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+</section></section>
+<section>
+<section id="classes-of-functions-1" class="title-slide slide level1">
+<h1>Classes of Functions</h1>
+<p>The functions we have seen were all either <strong>polynomials</strong> or <strong>rational functions</strong>.</p>
+<ul>
+<li>Polynomials: sums of functions of the form <span class="math inline">\(a x^n\)</span> (<span class="math inline">\(a\)</span> is a constant real, <span class="math inline">\(n\)</span> a non-negative integer)</li>
+<li>Rational functions: quotients of polynomials</li>
+</ul>
+<p>They give us good examples of “well-behaved” functions (functions whose behavior follows certain rules).</p>
+</section>
+<section id="behavior-examples" class="slide level2">
+<h2>Behavior examples</h2>
+<ul>
+<li>if the <strong>degree</strong> of a polynomial is even, it will either be bounded above or below. (Determined by <em>leading coefficient</em>)</li>
+<li>if the degree of a polynomial is odd, it will be unbounded above and below</li>
+<li>a rational function has an asymptote if …</li>
+<li>a rational function has a hole if …</li>
+</ul>
+</section></section>
+<section id="other-behaviors" class="title-slide slide level1">
+<h1>Other Behaviors?</h1>
+<ul>
+<li><span class="math inline">\(y = \sin(x)\)</span></li>
+<li><span class="math inline">\(y = e^x\)</span></li>
+<li><span class="math inline">\(y = \arctan(x)\)</span></li>
+</ul>
+</section>
+
+<section id="homework" class="title-slide slide level1">
+<h1>Homework</h1>
+<ul>
+<li>DeltaMath: create your account, first homework is already posted</li>
+<li>Moodle: short responses + video</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
