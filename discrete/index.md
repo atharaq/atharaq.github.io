@@ -1,5 +1,5 @@
 ---
-title: MAT 3120: Discrete Mathematics
+site.title: MAT 3120: Discrete Mathematics
 ---
 
 Testing $\forall x \exists y \: (f(x) = y)$.
