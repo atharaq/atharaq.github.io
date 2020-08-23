@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: MAT 1500: Calculus I
 ---
 
