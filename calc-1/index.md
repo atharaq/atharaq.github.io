@@ -1,5 +1,5 @@
 ---
-site.title: MAT 1500: Calculus I
+page.title: MAT 1500: Calculus I
 ---
 
 * [Lesson 0: Intro to Course](lesson0.html)
