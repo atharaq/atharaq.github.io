@@ -30,9 +30,9 @@ Problem 2 is a generalization of Problem 1. Let's work through Problem 1, you sh
 
 >  Five schools are going to send their baseball teams to a tournament, in which each team must play each other team exactly once. How many games are required?
 
-(a) How many games does team 1 have to play in? Team 1 plays teams 2 - 5, so that is 4 games.
-(b) How many games, other than with team 1, does team 2 have to play in? Team 2 plays teams 3 - 5, so that's 3 games.
-(c) Let's make a table to see how many games team $i$ plays, besides the ones they played against teams $1$ through $i - 1$:
+* (a) How many games does team 1 have to play in? Team 1 plays teams 2 - 5, so that is 4 games.
+* (b) How many games, other than with team 1, does team 2 have to play in? Team 2 plays teams 3 - 5, so that's 3 games.
+* (c) Let's make a table to see how many games team $i$ plays, besides the ones they played against teams $1$ through $i - 1$:
 
 $$
 \begin{array}{c | c}
@@ -83,9 +83,9 @@ Work through these on your own. Check your answers below.
 <summary>Click to check your answers:
 </summary>
 
-3. $3 \times 5 = 15$
-4. There are $m \times n$ ordered pairs. This is exactly problem 3, where $M$ is the set of types of bread, and $N$ is the set of types of filling.
-5. 5 choices for drinks, 15 choices for sandwiches, and 4 choices for fruits makes $5 \times 15 \times 4 = 300$ choices.
+* (3) $3 \times 5 = 15$
+* (4) There are $m \times n$ ordered pairs. This is exactly problem 3, where $M$ is the set of types of bread, and $N$ is the set of types of filling.
+* (5) 5 choices for drinks, 15 choices for sandwiches, and 4 choices for fruits makes $5 \times 15 \times 4 = 300$ choices.
 </details>
 
 ## Problem 6
