@@ -1,4 +1,4 @@
-# atharaq.github.io
+# Professor Abdul-Quader's Lecture Notes
 
 Lecture Notes for Fall 2020 Courses:
 
