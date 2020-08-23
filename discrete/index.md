@@ -1,4 +1,5 @@
 ---
+layout: page
 title: MAT 3120: Discrete Mathematics
 lang: en-US
 ---

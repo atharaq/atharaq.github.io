@@ -1,4 +1,5 @@
 ---
+layout: page
 title: MAT 1500: Calculus I
 ---
 
