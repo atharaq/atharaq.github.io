@@ -1,4 +1,8 @@
-# MAT 3120: Discrete Mathematics
+---
+title: MAT 3120: Discrete Mathematics
+---
+
+Testing $\forall x \exists y \: (f(x) = y)$.
 
 * [Lesson 0: Mathematical Writing, LaTeX](lesson0.html)
 * [Lesson 1: Propositional Logic](lesson1.html)
