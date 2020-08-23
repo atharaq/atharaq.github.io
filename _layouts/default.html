@@ -20,9 +20,8 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <style type="text/css">
       @media (prefers-color-scheme: dark) {
-          html {
-            filter: invert(100%);
-          }
+         filter: invert(100%);
+         hue-rotate: 180deg;
       }
       .desmos-container {
         overflow: hidden;
