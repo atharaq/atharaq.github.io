@@ -145,7 +145,7 @@ Well, what could it mean? Write down some of your thoughts. As part of the lesso
 
 <div class="desmos-container"><iframe src="https://www.desmos.com/calculator/9gpc6fmosr?embed" style="border: 1px solid #ccc" frameborder=0></iframe></div>
 
-[View this graph on Desmos](https://www.desmos.com/calculator/9gpc6fmosr){target="\_blank"}.
+[View this graph on Desmos](https://www.desmos.com/calculator/9gpc6fmosr){:target="_blank"}.
 Zoom in and out, and pause the "$a$" slider on the left at various points to see how the graph changes. Remember: the slopes of these lines tell you the average speed of the ball between those two points in time ($t = 1$ and $t = a$). What happens as $a$ gets really, really close to $t = 1$?
 
 ## Unifying theme: Limits
