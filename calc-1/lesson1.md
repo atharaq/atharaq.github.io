@@ -18,6 +18,7 @@ Give examples of the following:
 <li>$g(x) = \dfrac{x+1}{x-1}$ has a horizontal asymptote: $y = 1$</li>
 <li>$h(x) = e^x$</li>
 <li>$k(x) = \sin(x)$</li>
+</ol>
 </details>
 
 # More types of Functions
@@ -130,6 +131,7 @@ $$\dfrac{\Delta y}{\Delta x} = \dfrac{f(b) - f(a)}{b - a}$$
 <li>$\dfrac{f(1)-f(0)}{1-0} = -5$ m / s.</li>
 <li>$\dfrac{f(3)-f(1)}{3-1} = -20$ m / s.</li>
 <li>$\dfrac{f(2)-f(1)}{2-1} = -15$ m / s.</li>
+</ol>
 </details>
 
 Note: why are these answers all negative?
