@@ -10,6 +10,6 @@
 
 # Global Average Temperatures
 
-![Graph of Changes in Surface Temperature](temperature_anomaly.png)\
+![Graph of Changes in Surface Temperature](temperature_anomaly.png)
 
 Go through the same questions 1 and 2 as above. What conclusions can be drawn from this graph?
