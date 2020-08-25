@@ -150,9 +150,9 @@ These first two are essential: you **must** check these out.
 
 # Post-Lesson Check-in 0: Due Thursday, September 3
 
-0. Get set up using LaTeX (either method).
-1. Download the check_in0.tex file on Moodle. Edit it, replace the sections for your name, year and major.
-2. In the rest of the document, re-write the following argument that if two non-vertical lines are parallel, then they have the same slope:
+1. Get set up using LaTeX (either method).
+2. Download the check_in0.tex file on Moodle. Edit it, replace the sections for your name, year and major.
+3. In the rest of the document, re-write the following argument that if two non-vertical lines are parallel, then they have the same slope:
 
     $$
     \begin{align}
@@ -166,4 +166,5 @@ These first two are essential: you **must** check these out.
     m_1 \neq m_2
     \end{align}
     $$
-3. Compile the document to a PDF and upload the PDF to Moodle.
+    
+4. Compile the document to a PDF and upload the PDF to Moodle.
