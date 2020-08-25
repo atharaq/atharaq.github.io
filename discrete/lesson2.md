@@ -84,10 +84,10 @@ Work through these on your own. Check your answers below.
 <summary>Click to check your answers:
 </summary>
 
-<ol>
-<li>(3) $3 \times 5 = 15$</li>
-<li>(4) There are $m \times n$ ordered pairs. This is exactly problem 3, where $M$ is the set of types of bread, and $N$ is the set of types of filling.</li>
-<li>(5) 5 choices for drinks, 15 choices for sandwiches, and 4 choices for fruits makes $5 \times 15 \times 4 = 300$ choices.</li>
+<ol start="3">
+<li>$3 \times 5 = 15$</li>
+<li>There are $m \times n$ ordered pairs. This is exactly problem 3, where $M$ is the set of types of bread, and $N$ is the set of types of filling.</li>
+<li>5 choices for drinks, 15 choices for sandwiches, and 4 choices for fruits makes $5 \times 15 \times 4 = 300$ choices.</li>
 </ol>
 </details>
 
