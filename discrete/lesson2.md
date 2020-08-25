@@ -47,6 +47,7 @@ i & \text{Games} \\
 $$
 
 So the answer to problem 1 is:
+
 $$ \sum_{i = 1}^4 (5 -i) = 4 + 3 + 2 + 1 = 10$$
 
 There is a trick to adding consecutive numbers in a row. ie, there is a trick for adding $1 + 2 + 3 + \ldots + (n - 1)$. Play around with this problem in the case that $n = 4, 5, 6, \ldots$ and see if you can find the pattern.
