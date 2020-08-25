@@ -70,18 +70,24 @@ Now consider the following:
 **Problem**: Find a point on the line $y = x$, in the first quadrant, that lies exactly 5 units from the point $(0, 1)$.
 
 **Solution**: The point $(4, 4)$ lies 5 units from $(0, 1)$. To see this, note that the set of points that lie exactly $5$ units from $(0, 1)$ are those that are on the circle $x^2 + (y - 1)^2 = 25$. If $y = x$, we get the equation $x^2 + (x - 1)^2 = 25$. Some algebraic simplifications give
+
 $$
 x^2 - x - 12 = 0.
 $$
+
 Factoring, we get,
+
 $$
 (x - 4)(x + 3) = 0,
 $$
+
 and obtain two solutions: $x = 4$ and $x = -3$. Since the problem asks for a point in the first quadrant, we have $(4, 4)$ as the desired point on the line $y = x$.
 
 The moral of the story is that mathematics is written in natural language. Get in the habit of writing your mathematical arguments *primarily* in English in this course. This example is loosely taken from [Francis Su, "Guidelines for Good Mathematical Writing"](https://math.hmc.edu/su/wp-content/uploads/sites/10/2019/11/good-math-writing.pdf).
 
-**Exercise**: Re-write the following proof that....
+**Exercise**: Re-write the following proof that if 6 is a factor of a number $n$, then $n$ is even.
+
+$$ n = 6k = (2 \times 3)k = 2 \times (3k) = 2x, x = 3k $$
 
 # LaTeX Markup
 
