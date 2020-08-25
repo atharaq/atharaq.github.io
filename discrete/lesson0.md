@@ -153,6 +153,7 @@ These first two are essential: you **must** check these out.
 0. Get set up using LaTeX (either method).
 1. Download the check_in0.tex file on Moodle. Edit it, replace the sections for your name, year and major.
 2. In the rest of the document, re-write the following argument that if two non-vertical lines are parallel, then they have the same slope:
+
     $$
     \begin{align}
     y_1 = m_1 x + b_1 \\
