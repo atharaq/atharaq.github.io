@@ -16,7 +16,7 @@ In discrete mathematics, on the other hand, we mostly concern ourselves with tho
 
 This course is often required in most computer science departments. It is usually considered a prerequisite for higher level computer science courses, as it provides the mathematical background needed for courses like Data Structures, Computability, and Algorithms.
 
-That said: this is a **mathematics** course. In some mathematics departments, there is a "bridge" course which bridges the gap between calculus based courses and upper level, abstract mathematics courses. This course does not serve that explicit purpose, but much of the material found in those "bridge" coursese will be covered here (material on logic, set theory, cardinality, induction).
+That said: this is a **mathematics** course. In some mathematics departments, there is a "bridge" course which bridges the gap between calculus based courses and upper level, abstract mathematics courses. This course does not serve that explicit purpose, but much of the material found in those "bridge" courses will be covered here (material on logic, set theory, cardinality, induction).
 
 ## Course Format and Expectations
 
@@ -24,7 +24,7 @@ This course will be taught in a fully-online **hybrid** fashion. That means that
 
 "Self-paced" lessons might sometimes include "guided problem sets". The purpose is of course for you to learn the material by figuring out certain things for yourselves. It may feel a bit uncomfortable: how will you know that you actually learned anything? If you need reassurance, I will of course be available: email me or stop by office hours (which will be available every week).
 
-**Important**: self-paced does not mean "do whenever you want". You should keep up with the material on a regular basis. Make sure to ask me questions, via email or during office hours, if you get stuck on an important concept during a lesson.
+**Important**: self-paced does not mean "due whenever you want". You should keep up with the material on a regular basis. Make sure to ask me questions, via email or during office hours, if you get stuck on an important concept during a lesson.
 
 We will meet synchronously roughly **every two weeks**. The exact meeting dates are noted in the syllabus. These synchronous meetings are going to be a mix of reviewing material and exploring new material. This will be a good opportunity for me to go over the concepts and problems that were most confusing from the previous set of self-paced lessons and/or problem sets, and get you started on the new topics. Please do make sure to **come prepared**: at each synchronous meeting, try to clear up all confusion about the previous set of lessons.
 
