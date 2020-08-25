@@ -141,6 +141,7 @@ For example, BACD is a permutation of the letters 'A', 'B', 'C' and 'D', while B
 If you have heard of factorials before, you likely have guessed that this concept would show up at some point in this lesson. The example at the beginning: "How many arrangements of the letters C A T are there?" highlighted this concept. There are three letters and $3! = 6$ arrangements of the letters.
 
 Usually, $n!$, read "n factorial" is defined recursively as follows:
+
 $$
 n! = \begin{cases}
 1 & \mbox{if } n = 0 \\
