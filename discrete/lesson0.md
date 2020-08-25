@@ -130,7 +130,7 @@ It can be overwhelming to start a LaTeX document from scratch, so feel free to u
 
 ## Formatting Math
 
-To format math in a LaTeX file, you use dollar signs (\$ and \$) to start and end your mathematical notations. Technically this is referred to as "in-line" math mode: for example, to write the sentence "If $a \neq 0$, then $ax^2 + bx + c$ is a quadratic polynomial", you use the following LaTeX syntax:
+To format math in a LaTeX file, you use dollar signs to start and end your mathematical notations. Technically this is referred to as "in-line" math mode: for example, to write the sentence "If $a \neq 0$, then $ax^2 + bx + c$ is a quadratic polynomial", you use the following LaTeX syntax:
 
 ~~~latex
 If $a \neq 0$, then $ax^2 + bx + c$ is a quadratic polynomial.
