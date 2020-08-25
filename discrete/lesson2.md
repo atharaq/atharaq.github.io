@@ -165,7 +165,7 @@ Much of the discussion about permutations and $k$-permutations can be discussed 
 
 This definition was given in [Problem 7](#problem-7-functions). In that problem, one was supposed to see that there is a correspondence between one to one functions and arrangements (or "$k$-permutations", as I defined them).
 
-**Question**: Suppose $f : \{ 1, 2, \ldots, k \} \to \{ 'A', 'B', 'C', 'D' \}$ is a one to one function. In what sense does $f$ correspond to a $k$-permutation of the letters 'A', 'B', 'C', and 'D'?
+**Question**: Suppose $f : \\{ 1, 2, \ldots, k \\} \to \\{ 'A', 'B', 'C', 'D' \\}$ is a one to one function. In what sense does $f$ correspond to a $k$-permutation of the letters 'A', 'B', 'C', and 'D'?
 
 There are several good arguments one could give for this question. My hint would be to think about how we write down an actual $k$-permutation. For example, if $k = 2$, we need to write down 2 different letters. We pick a letter from 'A', 'B', 'C', or 'D', and then we pick a different one. I think of it as literally writing down two blanks, and numbering the blanks as $1$ and $2$. Now think about what $f(1)$ and $f(2)$ are.
 
