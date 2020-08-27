@@ -1,6 +1,11 @@
 # Discrete Mathematics Lesson 0
 
+{:toc}
+
 # Introduction
+
+> To miss out on mathematics is to live without an opportunity to play with beautiful ideas and see the world in a new light. To grasp mathematical beauty is a unique and sublime experience that everyone should demand. All of us—no matter who you are or where you’re from—can cultivate mathematical affection.
+> - Francis Su, *Mathematics For Human Flourishing*
 
 ## What is "Discrete Mathematics"?
 
@@ -22,11 +27,11 @@ That said: this is a **mathematics** course. In some mathematics departments, th
 
 This course will be taught in a fully-online **hybrid** fashion. That means that most of the lectures (including this one) will be self-paced: you will do the assigned reading (usually my lecture notes, but sometimes from the textbook), solve some problems, complete a "post-lesson check-in", and then start working on homework problems.
 
-"Self-paced" lessons might sometimes include "guided problem sets". The purpose is of course for you to learn the material by figuring out certain things for yourselves. It may feel a bit uncomfortable: how will you know that you actually learned anything? If you need reassurance, I will of course be available: email me or stop by office hours (which will be available every week).
+"Self-paced" lessons might sometimes include "guided problem sets". The purpose is of course for you to learn the material by figuring out certain things for yourselves. It may feel a bit uncomfortable: how will you know that you actually learned anything? If you need reassurance, I will of course be available via office hours, or see my message below about Piazza.
 
-**Important**: self-paced does not mean "due whenever you want". You should keep up with the material on a regular basis. Make sure to ask me questions, via email or during office hours, if you get stuck on an important concept during a lesson.
+**Important**: self-paced does not mean "due whenever you want". You should keep up with the material on a regular basis. Make sure to ask me questions if you get stuck on an important concept during a lesson. On that note: we will be using the **Piazza** application as a forum for asking / answering questions this semester. This will allow us to benefit from the collective knowledge of the class. You are not required to use Piazza: you can ask me questions directly via email if you prefer, but you may find that some of your questions were already asked and answered on Piazza before asking me directly. You will find a link to Piazza on the course Moodle page.
 
-We will meet synchronously roughly **every two weeks**. The exact meeting dates are noted in the syllabus. These synchronous meetings are going to be a mix of reviewing material and exploring new material. This will be a good opportunity for me to go over the concepts and problems that were most confusing from the previous set of self-paced lessons and/or problem sets, and get you started on the new topics. Please do make sure to **come prepared**: at each synchronous meeting, try to clear up all confusion about the previous set of lessons.
+We will meet synchronously roughly **every two weeks**. The exact meeting dates are noted in the syllabus. These synchronous meetings are going to be a mix of reviewing material and exploring new material. This will be a good opportunity for me to go over the concepts and problems that were most confusing from the previous set of self-paced lessons and/or problem sets, and get you started on the new topics.
 
 You are strongly encouraged to form study groups. This course will be challenging at times, and it will be useful for you to check-in with each other and see if others are struggling on the same things.
 
