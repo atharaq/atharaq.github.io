@@ -3,6 +3,7 @@
 # Violent Crime and Incarceration
 
 ![Graph of Incarceration and Violent Crime Rates over Time](incarceration_and_violent_crime.svg)\
+Sources: FBI (UCR) and Bureau of Justice Statistics
 
 1. For each curve, identify the independent and dependent variables, and whether the curves are graphs of functions.
 2. For each curve, identify where the graphs are increasing and decreasing (roughly).
