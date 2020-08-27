@@ -1,5 +1,5 @@
 # Discrete Mathematics Lesson 0
-{:no_toc}
+{: .no_toc}
 
 1. Table of Contents
 {:toc}
