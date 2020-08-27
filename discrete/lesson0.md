@@ -10,6 +10,7 @@
 > - Francis Su, *Mathematics For Human Flourishing*
 
 ## What is "Discrete Mathematics"?
+{: .no_toc}
 
 The name "discrete mathematics" does not really seem to give a lot of information about the course. From the course description:
 
@@ -20,12 +21,14 @@ How do we get all of that from the word "discrete"? Essentially, the word "discr
 In discrete mathematics, on the other hand, we mostly concern ourselves with those mathematical structures which do not rely on notions of limits / continuity. Many of the questions we ask are, therefore, questions that can be asked about any mathematical structure (not just questions that can be asked about functions of real numbers). The simplest examples are "counting" type questions: "how many objects of type A are there that also satisfy property X?"
 
 ### Who is this course for?
+{: .no_toc}
 
 This course is often required in most computer science departments. It is usually considered a prerequisite for higher level computer science courses, as it provides the mathematical background needed for courses like Data Structures, Computability, and Algorithms.
 
 That said: this is a **mathematics** course. In some mathematics departments, there is a "bridge" course which bridges the gap between calculus based courses and upper level, abstract mathematics courses. This course does not serve that explicit purpose, but much of the material found in those "bridge" courses will be covered here (material on logic, set theory, cardinality, induction).
 
 ## Course Format and Expectations
+{: .no_toc}
 
 This course will be taught in a fully-online **hybrid** fashion. That means that most of the lectures (including this one) will be self-paced: you will do the assigned reading (usually my lecture notes, but sometimes from the textbook), solve some problems, complete a "post-lesson check-in", and then start working on homework problems.
 
@@ -38,6 +41,7 @@ We will meet synchronously roughly **every two weeks**. The exact meeting dates 
 You are strongly encouraged to form study groups. This course will be challenging at times, and it will be useful for you to check-in with each other and see if others are struggling on the same things.
 
 ## Workload
+{: .no_toc}
 
 * 2 mid-semester exams (10% each)
 * 1 final exam (15%)
@@ -103,6 +107,7 @@ Have you ever wondered how mathematical articles are typed? We do not have symbo
 The answer is called **LaTeX**. LaTeX is a markup language used to typeset academic articles. Academic articles are **not** written in Microsoft Word or Google Docs: while you *can* get them to understand mathematical equations, it is not standard and somewhat clunky. LaTeX is **the** standard. These course notes are a minor exception: in addition to LaTeX for the mathematical symbols, I am also using Markdown (converted to HTML) and MathJax (a Javascript library that renders LaTeX on the web).
 
 ## Setting up
+{: .no_toc}
 
 There are several ways to set up and install LaTeX. If you prefer not to install anything on your local computer, you can create a **free** account on [Overleaf.com](https://www.overleaf.com). This is the simplest way to get up and running.
 
@@ -114,6 +119,7 @@ If you prefer to use LaTeX on your own computer, you will need two things:
 Once you have written your document in LaTeX, saved as a .tex file, you will be able to compile it to a PDF.
 
 ## Basic Formatting
+{: .no_toc}
 
 A simple LaTeX file may look something like:
 
@@ -142,6 +148,7 @@ Paragraph 2.
 It can be overwhelming to start a LaTeX document from scratch, so feel free to use the homework files I post to start. I include several packages, macros and definitions in my preamble.
 
 ## Formatting Math
+{: .no_toc}
 
 To format math in a LaTeX file, you use dollar signs to start and end your mathematical notations. Technically this is referred to as "in-line" math mode: for example, to write the sentence "If $a \neq 0$, then $ax^2 + bx + c$ is a quadratic polynomial", you use the following LaTeX syntax:
 
@@ -154,6 +161,7 @@ This is "in-line", since the math is formatted in the middle of the sentence. Th
 As you can see, there are certain commands we use to put in mathematical notation. For exponents / superscripts we use the carat (^), for "not equals" ($\neq) we use "\\neq". There are many good guides to finding basic LaTeX commands for mathematical notation, you can find them in the [further reading](#further-reading) section.
 
 ## Further reading
+{: .no_toc}
 
 These first two are essential: you **must** check these out.
 
