@@ -1,5 +1,6 @@
 # Discrete Mathematics Lesson 0
 
+1. Table of Contents
 {:toc}
 
 # Introduction
