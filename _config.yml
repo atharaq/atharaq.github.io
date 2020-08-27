@@ -1,3 +1,4 @@
 theme: jekyll-theme-slate
 title: Professor Abdul-Quader's Course Notes
 markdown: kramdown
+toc_levels: 1
