@@ -7,7 +7,7 @@
 # Introduction
 
 > To miss out on mathematics is to live without an opportunity to play with beautiful ideas and see the world in a new light. To grasp mathematical beauty is a unique and sublime experience that everyone should demand. All of us—no matter who you are or where you’re from—can cultivate mathematical affection.
-> - Francis Su, *Mathematics For Human Flourishing*
+> &mdash; Francis Su, *Mathematics For Human Flourishing*
 
 ## What is "Discrete Mathematics"?
 {: .no_toc}
