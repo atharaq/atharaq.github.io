@@ -180,12 +180,21 @@ These first two are essential: you **must** check these out.
     \begin{align}
     y_1 = m_1 x + b_1 \\
     y_2 = m_2 x + b_2 \\
-    y_1 \neq y_2 \implies m_1x + b_1 \neq m_2x + b_2 \\
-    x = 1 \rightarrow m_1 + b_1 \neq m_2 + b_2 \\
-    x = 2 \rightarrow 2m_1 + b_1 \neq 2m_2 + b_2 \\
-    (2m_1 + b_1) - (m_1 + b_1) = m_1 \\
-    (2m_2 + b_2) - (m_2 + b_2) = m_2 \\
-    m_1 \neq m_2
+    m_1 = m_2 \implies m_1 x + b_1 = m_2 x + b_2 \\
+    m_1 x - m_2 x = b_2 - b_1 \\
+    x(m_1 - m_2) = b_2 - b_1 \\
+    x = \dfrac{b_2 - b_1}{m_1 - m_2} \\
+    y_1 = m_1\dfrac{b_2-b_1}{m_1-m2} + b_1 = m_1 \dfrac{b_2 - b_1}{m_1-m_2} + b_1 \dfrac{m_1-m_2}{m_1-m_2} \\
+    = \dfrac{m_1b_2 - m_1b_1 + m_1b_1 - m_2b_1}{m_2-m_1} \\
+    = \dfrac{m_1b_2 - m_2b_1}{m_1-m_2} \\ \\
+
+    y_2 = m_2\dfrac{b_2-b_1}{m_1-m_2} + b_2 = m_2\dfrac{b_2-b_1}{m_1-m_2} + b_2 \dfrac{m_1-m_2}{m_1-m_2} \\
+    = \dfrac{m_2b_2-m_2b_1}{m_1-m_2} + \dfrac{b_2m_1-b_2m_2}{m_1-m_2} \\
+    = \dfrac{m_1b_2 - m_2b_1}{m_1-m_2}
+
+    \\ \\
+    y_1 = y_2 \\
+    \text{Contradiction!}
     \end{align}
     $$
 
