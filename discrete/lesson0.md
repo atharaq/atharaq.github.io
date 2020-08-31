@@ -180,9 +180,7 @@ These first two are essential: you **must** check these out.
     \begin{align}
     y_1 = m_1 x + b_1 \\
     y_2 = m_2 x + b_2 \\
-    m_1 = m_2 \implies m_1 x + b_1 = m_2 x + b_2 \\
-    m_1 x - m_2 x = b_2 - b_1 \\
-    x(m_1 - m_2) = b_2 - b_1 \\
+    m_1 \neq m_2 \\
     x = \dfrac{b_2 - b_1}{m_1 - m_2} \\
     y_1 = m_1\dfrac{b_2-b_1}{m_1-m2} + b_1 = m_1 \dfrac{b_2 - b_1}{m_1-m_2} + b_1 \dfrac{m_1-m_2}{m_1-m_2} \\
     = \dfrac{m_1b_2 - m_1b_1 + m_1b_1 - m_2b_1}{m_2-m_1} \\
