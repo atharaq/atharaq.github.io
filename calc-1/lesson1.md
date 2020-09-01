@@ -169,3 +169,4 @@ Answer the following questions in complete sentences on Moodle.
 1. Give your best explanation of what "instantaneous velocity" means. Think about when you are driving in a car. How do you understand the speed of a car at an **exact** moment / snapshot in time?
 2. Give your best explanations of what secant and tangent lines represent on a graph. Use different examples than the "ball dropping" example we covered in this lesson. (You can use the graphs from the first lesson warm up if you'd like).
 3. Give your best explanation of what the slopes of secant and tangent lines represent. You may expand on your examples in the previous question.
+4. Now watch the [next Essence of Calculus](https://www.youtube.com/watch?v=9vKqVkMQHKk) video. How does your understanding of the previous questions change based on this video?
