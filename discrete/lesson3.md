@@ -1,4 +1,4 @@
-# Discrete Mathematics Lesson 2
+# Discrete Mathematics Lesson 3
 
 # Counting, Arrangements and Functions
 
