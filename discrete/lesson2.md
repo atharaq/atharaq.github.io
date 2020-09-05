@@ -68,30 +68,67 @@ One more topic in propositional logic: **satisfiability**. Let's say we have a f
 
 If p is T, q is F, and r is F, then the formula is evaluated as $[\text{T} \wedge (\text{F} \rightarrow \text{F})] \wedge [(\text{T} \vee \lnot \text{F}) \rightarrow \lnot \text{F}]$. This evaluates to $[\text{T} \wedge \text{T}] \wedge [\text{T} \rightarrow \text{T}]$, which is T. That means this formula is satisfiable.
 
-Checking whether a formula is satisfiable, in our class, amounts to making a truth table for that formula, and seeing if any row in that truth table results in a "T" in the column for this formula. For example, the following is a truth table for $(\lnot p \rightarrow q) \wedge (\lnot p \wedge \lnot q)$:
+Checking whether a formula is satisfiable, in our class, amounts to making a truth table for that formula, and seeing if any row in that truth table results in a "T" in the column for this formula. For example, the following is a truth table for $p \rightarrow \lnot p$:
 
 $$
-\begin{array}{c | c | c | c | c | c | c }
-p & q & \lnot p & \lnot q & \lnot p \rightarrow q & \lnot p \wedge \lnot q & \lnot (\lnot p \rightarrow q) \wedge (\lnot p \wedge \lnot q) \\
+\begin{array}{c | c | c | c | c }
+p & \lnot p & p \rightarrow \lnot p \\
 \hline
-\text{T} & \text{T} & \text{F} & \text{F} & \text{T} & \text{F} & \text{F}\\
-\text{T} & \text{F} & \text{F} & \text{T} & \text{T} & \text{F} & \text{F} \\
-\text{F} & \text{T} & \text{T} & \text{F} & \text{T} & \text{F} & \text{F}\\
-\text{F} & \text{F} & \text{T} & \text{T} & \text{F} & \text{T} & \text{F}\\
+\text{T} & \text{F} & \text{F} \\
+\text{F} & \text{T} & \text{T}
 \end{array}
 $$
 
-This formula is not satisfiable!
+This formula is satisfiable: it's true if $p$ is false.
 
 ## Knights and Knaves
 
-## P vs NP
+Logic puzzles are a fun application of satisfiability. "Knights and Knaves" puzzles were popularized by the late Raymond Smullyan. Here is an example:
+
+> You are on an island in which all residents are either knights or knaves. Knights always tell the truth, and knaves always lie, but they are indistinguishable otherwise. You meet two residents: A and B. A says, "B is a knave." B says, "Neither one of us is a knave." Can you determine A and B's types?
+
+Before reading the solution, try this out on your own. See if you can come up with a strategy!
+
+<details>
+<summary>Click for a solution.</summary>
+<p>Let p be the statement "A is a knight", and q the statement "B is a knight". Based on A's statement, if A is telling the truth, then q is false. In other words: $p \rightarrow \lnot q$. Moreover, if B is a knave, then A is telling the truth, so this is actually and if and only if: $p \leftrightarrow \lnot q$. Similarly, if $q$ is true, then $p \wedge q$ must be true, and vice versa: if both are knights, then B is telling the truth. Therefore $q$ is true.</p>
+<p>In other words, we <b>know</b> the following statements: $p \leftrightarrow \lnot q$ and $q \leftrightarrow (p \wedge q)$. Let's make a truth table for this:</p>
+
+$$
+\begin{array}{c | c | c | c | c }
+p & q & \lnot q & p \leftrightarrow \lnot q & q \leftrightarrow (p \wedge q) \\
+\hline
+\text{T} & \text{T} & \text{F} & \text{F} & \text{T} \\
+\text{T} & \text{F} & \text{T} & \text{T} & \text{T} \\
+\text{F} & \text{T} & \text{F} & \text{T} & \text{F} \\
+\text{F} & \text{F} & \text{T} & \text{F} & \text{T} \\
+\end{array}
+$$
+
+<p>We see that the only row with a satisfying assignment for both of these statements is when p is T and q is F. That is, if A is a kngiht and B is a knave.</p>
+</details>
+
+## Algorithms and P vs NP
+
+Imagine the following problem: write a computer program which takes in, as input, a logical formula, and determines if the formula is satisfiable (say, it outputs "YES" if the formula is satisfiable, and "NO" if not). How might you try to write the code for this problem?
+
+One could try to write, in code, the steps for making a truth table. This absolutely works, but the question is how many steps does that take. We will see, when we study counting principles, that this is not a very efficient algorithm: given a formula with $n$ variables, the number of rows in a truth table for that formula is **not** a polynomial function of $n$. That is, it's bigger than $n^2$, bigger than $n^3$, etc (for large values of $n$). Of course, this is doable for small $n$, like with 2 variables or 3 variables. But a formula with just 20 variables would take over a million rows!
+
+On the other hand, if you are given a formula, and a *particular* assignment for the variables, you can probably write a simple program that would determine if that assignment satisfies the formula. For example, if you are given the formula $p_1 \wedge p_2 \wedge p_3 \wedge p_4$ and the assignment: $p_1 = \text{T}$, $p_2 = \text{F}$, $p_3 = \text{T}$, $p_4 = \text{T}$, it is not hard to see that this is not a satisfying assignment. Moreover, the algorithm for checking this amounts to simply plugging in the variables and computing a small number of these logical operations.
+
+In other words: the *satisfiability problem* might not be easy to solve, but if you are given an assignment, you can easily check if that really does satisfy the formula. By "easy", here, I mean that the number of steps it takes to answer the question is small (technically: that there is some polynomial $f(n)$ such that if $n$ is the number of variables in the formula, then $f(n)$ is the maximum number of steps you would need to take to determine the answer).
+
+If you have taken CS2, you have learned about algorithms and running times. Complexity theorists classify problems in computer science into different "classes" based on their running times: two such classes are the classes P and NP. Roughly speaking: **P** contains the collection of problems for which there is an algorithm whose running time is a polynomial function, while **NP** contains those problems which can be verified with an algorithm whose running time is a polynomial function. We gave an argument above that the "satisfiability problem" is in the class NP. It's also not hard to show that any problem in the class P is also in the class NP (exercise: try to give an argument for this on your own).
+
+The million-dollar question: is the satisfiability problem in the class P? This problem is still not solved. There is currently no known algorithm that solves the satisfiability problem in polynomial time; moreover, there is no known *proof* that it *cannot* be solved in polynomial time!
+
+When I say this is the "million-dollar question", I mean this quite literally. This is the "P vs NP" question: is every problem that is easy to "verify", also easy to "solve"? Intuition tells us "No", but we do not have a real proof of that fact yet. In the 1970s, Stephen Cook and Leonid Levin independently showed that if the satisfiability problem has a polynomial time algorithm (ie, if it's in the class P), then **every** problem in the class NP is also in the class P. That is: if we can solve the satisfiability problem efficiently, then the classes P and NP are the same class.
+
+In 2000, the Clay Mathematics Institute named this "P vs NP" problem as one of its [Millenium Prize Problems](https://en.wikipedia.org/wiki/Millennium_Prize_Problems), announcing that anyone who discovers a solution to this problem will be awarded 1 million USD!
 
 # Intro to Counting / Arrangement Problems
-(10 mins)
 
 We will revisit logic as we go through the semester. But discrete mathematics, itself, really is about *counting*. In other words: "discrete" objects are those which can be enumerated (one after the other), while "continuous" objects are things like the real numbers $\mathbb{R}$.
-
 
 **Question:** In how many ways can we arrange the letters C A T?
 
@@ -142,7 +179,8 @@ There is a trick to adding consecutive numbers in a row. ie, there is a trick fo
 
 ### Alternate Solution
 {: .no_toc}
-Suppose team $i$ is playing in a game. They have $4$ possible opponents. And there are $5$ different values for $i$. So why isn't the answer simply $5 \times 4 = 20$? For a smaller example: if we had $3$ teams, each team would play in $2$ different gaems. So are there $6$ games?
+
+Suppose team $i$ is playing in a game. They have $4$ possible opponents. And there are $5$ different values for $i$. So why isn't the answer simply $5 \times 4 = 20$? For a smaller example: if we had $3$ teams, each team would play in $2$ different games. So are there $6$ games?
 
 Let's list out each of the two games that each team plays in:
 
