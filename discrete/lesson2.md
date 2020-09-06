@@ -117,7 +117,7 @@ $$
 
 ## Algorithms and P vs NP
 
-Computer science is the study of algorithms. If you have taken CS1 or CS2, you likely know, at least informally, what the term *algorithm* means (informally, a general "recipe" or list of instructions for solving a problem). But our discussion of satisfiability very much hinted at the fact that there is a general algorithm to solve any satisfiability question: make a truth table, and then check whether there is any row in which the formula evaluates to "T".
+Computer science is the study of algorithms. If you have taken CS1 (and definitely if you took CS2), you likely know, at least informally, what the term *algorithm* means (informally, a general "recipe" or list of instructions for solving a problem). Our discussion of satisfiability hinted at the fact that there is a general algorithm to solve any satisfiability question: make a truth table, and then check whether there is any row in which the formula evaluates to "T".
 
 In computer science, when we study a problem, there are two questions we can ask about that problem:
 
