@@ -62,6 +62,13 @@ We assume that this statement is false. In particular, we suppose lines $\ell_1$
 
 Consider the x-value $x = \dfrac{b_2 - b_1}{m_1 - m_2}$. Plugging this value in to both equations, and simplifying, results in the same y-value: $y = \dfrac{m_1 b_2 - m_2 b_1}{m_1 - m_2}$. This means that the two lines intersect at this point $(\dfrac{b_2-b_1}{m_1-m_2}, \dfrac{m_1 b_2 - m_2 b_1}{m_1-m_2})$. This is a contradiction, since we assumed our lines do not intersect. Therefore, our assumption (that the conditional statement is false) is not true: in other words, the "if-then" statement is not false, so it must be true.
 
+### Contrapositive
+{: .no_toc}
+
+Recall, from the previous "check-in", that the contrapositive of $p \rightarrow q$ is $\lnot q \rightarrow \lnot p$. You can verify (and, on your problem set, you **will** verify this) that every conditional statement is logically equivalent to its contrapositive. This means that if you can prove $\lnot q \rightarrow \lnot p$, you have proved $p \rightarrow q$.
+
+Proof by contradiction can often be thought of as looking at the *contrapositive* of the original statement. In other words, in the previous proof, we tried to show that "If two lines are parallel, then they have the same slope." What we provided, instead, was a direct proof that "If two lines have different slopes, then they are not parallel!"
+
 # Satisfiability
 
 One more topic in propositional logic: **satisfiability**. Let's say we have a formula in propositional logic: something like $[p \wedge (q \rightarrow r)] \wedge [(p \vee \lnot q) \rightarrow \lnot r]$. We say that this formula is **satisfiable** if we can assign truth values to all the variables (in this case, p, q, and r) such that the resulting formula is evaluated to true.
@@ -105,20 +112,32 @@ p & q & \lnot q & p \leftrightarrow \lnot q & q \leftrightarrow (p \wedge q) \\
 \end{array}
 $$
 
-<p>We see that the only row with a satisfying assignment for both of these statements is when p is T and q is F. That is, if A is a kngiht and B is a knave.</p>
+<p>We see that the only row with a satisfying assignment for both of these statements is when p is T and q is F. That is, if A is a knight and B is a knave.</p>
 </details>
 
 ## Algorithms and P vs NP
 
-Imagine the following problem: write a computer program which takes in, as input, a logical formula, and determines if the formula is satisfiable (say, it outputs "YES" if the formula is satisfiable, and "NO" if not). How might you try to write the code for this problem?
+Computer science is the study of algorithms. If you have taken CS1 or CS2, you likely know, at least informally, what the term *algorithm* means (informally, a general "recipe" or list of instructions for solving a problem). But our discussion of satisfiability very much hinted at the fact that there is a general algorithm to solve any satisfiability question: make a truth table, and then check whether there is any row in which the formula evaluates to "T".
 
-One could try to write, in code, the steps for making a truth table. This absolutely works, but the question is how many steps does that take. We will see, when we study counting principles, that this is not a very efficient algorithm: given a formula with $n$ variables, the number of rows in a truth table for that formula is **not** a polynomial function of $n$. That is, it's bigger than $n^2$, bigger than $n^3$, etc (for large values of $n$). Of course, this is doable for small $n$, like with 2 variables or 3 variables. But a formula with just 20 variables would take over a million rows!
+In computer science, when we study a problem, there are two questions we can ask about that problem:
+
+1. Is this problem solvable with an algorithm?
+2. Just how *efficient* an algorithm can we find?
+
+The first question is the domain of *computability theory*, while the second is the domain of *complexity theory*. Both are active areas of research in theoretical computer science. For the satisfiability question, we have already answered the first problem: there is an algorithm, and while the code to write the algorithm might be somewhat tricky, the general steps are not too hard to understand.
+
+To determine the efficiency of an algorithm, we first need to define the notion of the **running time**. The running time of an algorithm is a function $T(n)$ such that, for any input of size at most $n$, the algorithm takes at most $T(n)$ steps. We then can compare two different algorithms for solving the same problem by seeing which running time is smaller in the long run (ie, for large values of $n$).
+
+Let's think about the "truth table" algorithm. When we study counting principles, we will be able to determine exactly the number of rows in a truth table with $n$ variables. For now, I will just hint that the number of rows in a truth table with $n$ variables is **not** a polynomial function of $n$. That is, for large values of $n$, it's bigger than $n^2$, bigger than $n^3$, etc. Of course, it's possible to make truth tables for small values of $n$, like with 2 variables or 3 variables. But a formula with just 20 variables would take over a million rows, and with 100 variables it would be an astronomical amount of rows.
 
 On the other hand, if you are given a formula, and a *particular* assignment for the variables, you can probably write a simple program that would determine if that assignment satisfies the formula. For example, if you are given the formula $p_1 \wedge p_2 \wedge p_3 \wedge p_4$ and the assignment: $p_1 = \text{T}$, $p_2 = \text{F}$, $p_3 = \text{T}$, $p_4 = \text{T}$, it is not hard to see that this is not a satisfying assignment. Moreover, the algorithm for checking this amounts to simply plugging in the variables and computing a small number of these logical operations.
 
-In other words: the *satisfiability problem* might not be easy to solve, but if you are given an assignment, you can easily check if that really does satisfy the formula. By "easy", here, I mean that the number of steps it takes to answer the question is small (technically: that there is some polynomial $f(n)$ such that if $n$ is the number of variables in the formula, then $f(n)$ is the maximum number of steps you would need to take to determine the answer).
+In other words: the satisfiability problem might not be easy to solve, but if you are given an assignment, you can easily verify if that really does satisfy the formula. By "easy", here, I mean that the number of steps it takes to answer the question is small (technically, a polynomial function).
 
-If you have taken CS2, you have learned about algorithms and running times. Complexity theorists classify problems in computer science into different "classes" based on their running times: two such classes are the classes P and NP. Roughly speaking: **P** contains the collection of problems for which there is an algorithm whose running time is a polynomial function, while **NP** contains those problems which can be verified with an algorithm whose running time is a polynomial function. We gave an argument above that the "satisfiability problem" is in the class NP. It's also not hard to show that any problem in the class P is also in the class NP (exercise: try to give an argument for this on your own).
+### Easy to verify, hard to solve?
+{: .no_toc}
+
+This duality between problems being "easy to verify" but possibly "hard to solve" is a common theme in computer science. Complexity theorists classify problems in computer science into different "classes" based on their running times; two such classes are the classes P and NP. Roughly speaking: **P** contains the collection of problems for which there is an algorithm which **solves** the problem whose running time is a polynomial function, while **NP** contains those problems which can be **verified** with an algorithm whose running time is a polynomial function. We gave an argument above that the "satisfiability problem" is in the class NP. It's also not hard to show that any problem in the class P is also in the class NP (exercise: try to give an argument for this on your own).
 
 The million-dollar question: is the satisfiability problem in the class P? This problem is still not solved. There is currently no known algorithm that solves the satisfiability problem in polynomial time; moreover, there is no known *proof* that it *cannot* be solved in polynomial time!
 
