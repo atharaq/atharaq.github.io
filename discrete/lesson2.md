@@ -9,7 +9,6 @@
 How do we prove a conditional ("if-then") statement? I will cover two ways in this lesson. The first is "direct proof" and the second is "proof by contradiction".
 
 ## Direct Proofs
-(10 mins?)
 
 An "if-then" statement is true if, whenever the hypothesis ("if" part, also referred to as the *antecedent*) is true, then the conclusion ("then" part, also referred to as the *consequent*) must also be true. Let's go back to an example from [Lesson 0](lesson0.html#mathematical-writing): prove that if a number $n$ is a multiple of 6, then it must be even.
 
