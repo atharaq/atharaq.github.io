@@ -8,7 +8,7 @@ Before reading the rest of these notes, please go through this [interactive acti
 
 # Wrap up
 
-Let $f(x)$ be a function. Then $\lim_{x \rightarrow a} f(x)$ is read "the limit as x approaches a of $f(x)$". We've seen a few things already:
+Let $f(x)$ be a function. Then ${\displaystyle\lim_{x \rightarrow a}} f(x)$ is read "the limit as x approaches a of $f(x)$". We've seen a few things already:
 
 First of all: limits do not always exist! Some functions do not "approach" anything near a given point. This was fascinating to me as a student: I never knew that it was possible for something in mathematics to just "not exist".
 
