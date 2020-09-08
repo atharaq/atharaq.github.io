@@ -29,5 +29,5 @@ Before we close, let's go through some exercises involving *piecewise functions*
 
 For the following functions, find the left-hand, right-hand, and two-sided limits, if they exist:
 
-1. Find ${\displaystyle \lim_{x \rightarrow 0^+}} f(x)$, ${\displaystyle \lim_{x \rightarrow 0^-}} f(x)$, and ${\displaystyle \lim_{x \rightarrow 0}} f(x)$ for $$f(x) = \begin{cases} -x &\mbox{if } x < 0 \\ 2x &\mbox{if } x \geq 0 \end{cases}$$.
+1. Find ${\displaystyle \lim_{x \rightarrow 0^-}} f(x)$, ${\displaystyle \lim_{x \rightarrow 0^+}} f(x)$, and ${\displaystyle \lim_{x \rightarrow 0}} f(x)$ for $$f(x) = \begin{cases} -x &\mbox{if } x < 0 \\ 2x &\mbox{if } x \geq 0 \end{cases}$$.
 2. Find ${\displaystyle \lim_{x \rightarrow 1^-}} g(x)$, ${\displaystyle\lim_{x \rightarrow 1^+}} g(x)$, and ${\displaystyle\lim_{x \rightarrow 1}} g(x)$ for $$g(x) = \begin{cases} 0 &\mbox{if } x = 1 \\ 1 &\mbox{if } x \neq 1 \end{cases}$$.
