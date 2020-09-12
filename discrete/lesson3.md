@@ -10,7 +10,7 @@ Work through these on your own. Check your answers below.
 <summary>Click to check your answers:
 </summary>
 
-<ol starty="3">
+<ol start="3">
 <li> $3 \times 5 = 15$</li>
 <li>There are $m \times n$ ordered pairs. This is exactly problem 3, where $M$ is the set of types of bread, and $N$ is the set of types of filling.</li>
 <li>5 choices for drinks, 15 choices for sandwiches, and 4 choices for fruits makes $5 \times 15 \times 4 = 300$ choices.</li>
@@ -35,7 +35,7 @@ There are $12 \times 11 \times 10 = 1320$ available cones with three different f
 
 ## Problem 7: Functions
 
-<ol type="a">
+<ol style="list-style-type: lower-latin;" type="a">
 <li>There are two functions which map $1$ to $a$: $f(1) = a, f(2) = b$ and $g(1) = a, g(2) = a$. Then there are two more which map $1$ to $b$. Write those down. So there are $4$ functions total.</li>
 <li>Let's think about this like in Problem 6. Pretend the set $\{ a, b \}$ refers to two different choices of ice cream flavors, and $f(1), f(2)$, and $f(3)$ refer to the flavor choice picked for each scoop (top, middle, and bottom respectively). There are two choices for each scoop, so we have $2 \times 2 \times 2 = 8$ functions total. See if you can write these down! (**Note**: Does this remind you of anything? How many rows in a truth table are there for $n$ variables, if each variable can only be assigned T or F?)</li>
 <li>There are three choices for $f(a)$ and three for $f(b)$, so there are $9$ different functions total.</li>
