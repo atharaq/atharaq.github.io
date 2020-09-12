@@ -42,6 +42,7 @@ There are $12 \times 11 \times 10 = 1320$ available cones with three different f
 <li>We've done this.</li>
 <li>We've done this also! The "one to one" part is akin to saying, in problem 6, that we are not counting cones with two or more scoops of chocolate. Only cones with three different flavors are counted.</li>
 <li>Try to summarize how the "function" and set-theoretic vocabulary generalizes the two questions in Problem 6.</li>
+</ol>
 
 # Big Ideas
 
