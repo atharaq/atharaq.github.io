@@ -1,91 +1,20 @@
 # Discrete Mathematics Lesson 3
 
-# Counting, Arrangements and Functions
-
-We will revisit logic as we go through the semester. But discrete mathematics, itself, really is about *counting*. In other words: "discrete" objects are those which can be enumerated (one after the other), while "continuous" objects are things like the real numbers $\mathbb{R}$.
-
-
-**Question:** In how many ways can we arrange the letters C A T?
-
-* CAT
-* CTA
-* ACT
-* ATC
-* TAC
-* TCA
-
-I count 6 ways.
-
-**Question:** What is meant by an "arrangement" of the letters?
-
-We will come back to this. For the rest of this lesson, we will work through some of the problems in [Chapter 1, *Combinatorics Through Guided Discovery*](http://bogart.openmathbooks.org/ctgd/what-is.html).
-
-## Interlude: Read Chapter 1 and Section 1.1
-
-Before proceeding, please make sure to read those parts. Now move on to [Section 1.2, "Basic Counting Principles"](http://bogart.openmathbooks.org/ctgd/s1-2-basics.html).
-
-## Problems 1 - 2
-
-Problem 2 is a generalization of Problem 1. Let's work through Problem 1, you should work through Problem 2 on your own.
-
->  Five schools are going to send their baseball teams to a tournament, in which each team must play each other team exactly once. How many games are required?
-
-* (a) How many games does team 1 have to play in? Team 1 plays teams 2 - 5, so that is 4 games.
-* (b) How many games, other than with team 1, does team 2 have to play in? Team 2 plays teams 3 - 5, so that's 3 games.
-* (c) Let's make a table to see how many games team $i$ plays, besides the ones they played against teams $1$ through $i - 1$:
-
-$$
-\begin{array}{c | c}
-i & \text{Games} \\
-\hline
-1 & 4 \\
-2 & 3 \\
-3 & 2 \\
-4 & 1 \\
-5 & 0
-\end{array}
-$$
-
-So the answer to problem 1 is:
-$$ \sum_{i = 1}^4 (5 -i) = 4 + 3 + 2 + 1 = 10$$
-
-There is a trick to adding consecutive numbers in a row. ie, there is a trick for adding $1 + 2 + 3 + \ldots + (n - 1)$. Play around with this problem in the case that $n = 4, 5, 6, \ldots$ and see if you can find the pattern.
-
-### Alternate Solution
-
-Suppose team $i$ is playing in a game. They have $4$ possible opponents. And there are $5$ different values for $i$. So why isn't the answer simply $5 \times 4 = 20$? For a smaller example: if we had $3$ teams, each team would play in $2$ different gaems. So are there $6$ games?
-
-Let's list out each of the two games that each team plays in:
-
-Team 1's games:
-
-* Team 1 vs Team 2
-* Team 1 vs Team 3
-
-Team 2's games
-
-* **Team 2 vs Team 1**
-* Team 2 vs Team 3
-
-Team 3's games
-
-* **Team 3 vs Team 1**
-* **Team 3 vs Team 2**
-
-What do we notice here? I bolded games that were already accounted for. In particular, every game shows up *twice*! That makes sense: there are two teams playing in each game.
-
-In general, if there are $n$ teams, each playing $n - 1$ other teams, then there are **not** $n \times (n - 1)$ games, because again, each game would appear twice if we listed out all $n - 1$ games for each team. So what is the correct formula?
+We will continue to work through some of the problems in [Combinatorics Through Guided Discovery, 1.2](http://bogart.openmathbooks.org/ctgd/s1-2-basics.html).
 
 ## Problems 3 - 5
 
 Work through these on your own. Check your answers below.
+
 <details>
 <summary>Click to check your answers:
 </summary>
 
-* (3) $3 \times 5 = 15$
-* (4) There are $m \times n$ ordered pairs. This is exactly problem 3, where $M$ is the set of types of bread, and $N$ is the set of types of filling.
-* (5) 5 choices for drinks, 15 choices for sandwiches, and 4 choices for fruits makes $5 \times 15 \times 4 = 300$ choices.
+<ol starty="3">
+<li> $3 \times 5 = 15$</li>
+<li>There are $m \times n$ ordered pairs. This is exactly problem 3, where $M$ is the set of types of bread, and $N$ is the set of types of filling.</li>
+<li>5 choices for drinks, 15 choices for sandwiches, and 4 choices for fruits makes $5 \times 15 \times 4 = 300$ choices.</li>
+</ol>
 </details>
 
 ## Problem 6
