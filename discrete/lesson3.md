@@ -70,6 +70,7 @@ For example, BACD is a permutation of the letters 'A', 'B', 'C' and 'D', while B
 If you have heard of factorials before, you likely have guessed that this concept would show up at some point in this lesson. The example at the beginning: "How many arrangements of the letters C A T are there?" highlighted this concept. There are three letters and $3! = 6$ arrangements of the letters.
 
 Usually, $n!$, read "n factorial" is defined recursively as follows:
+
 $$
 n! = \begin{cases}
 1 & \mbox{if } n = 0 \\
@@ -83,7 +84,7 @@ Let's flip the script, however. Instead of defining factorials this way as some 
 
 **Definition**: For a natural number $n \geq 0$, the *factorial* of $n$, written $n!$, is equal to the number of arrangements of a collection of $n$ distinct objects.
 
-Later on we will prove that $n!$ is equal to the previously given recursive formula. (This is strange in the case of $n = 0$, as it's not clear what an arrangement of $0$ objects is, but we will have to define things precisely first to make sense of it.)
+Later on we will prove the *equivalence* of these definitions: that is, for any $n \geq 0$, the number of arrangements of a collection of $n$ distinct objects is equal to the previously given recursive formula. (This is strange in the case of $n = 0$, as it's not clear what an arrangement of 0 objects is, but we will have to define things precisely first to make sense of it.)
 
 ### Generalization: Functions
 
@@ -107,7 +108,7 @@ In a similar vein to the above: write down three blanks, and now think about the
 
 **Theorem**: Let $n > 0$ and $k$ be a positive integer less than $n$. Then the number of $k$-permutations of a collection of $n$ distinct objects is equal to
 $$
-\frac{n!}{(n-k)!}
+\dfrac{n!}{(n-k)!}
 $$
 
 **Exercise**: Show that your answers to the previous questions match up with this theorem.
@@ -135,3 +136,14 @@ In fact, every 2-permutation will be repeated exactly 6 times! Why is that? Beca
 So, out of those 120 permutations, we actually get 20 distinct 2-permutations, each of which repeats 6 times.
 
 This argument is quite subtle and so it is worth thinking about more carefully. But the argument given does generalize. If we list out all the permutations of the $n$ objects, and delete the last $(n - k)$ letters, each $k$-permutation will repeat exactly $(n - k)!$ times, because rearranging those last $n - k$ letters does not change the resulting $k$-permutation.
+
+# Formalizing Everything: Set Theory
+
+Next time we will start studying set theory. Set theory is a relatively recent branch of mathematics which came about as a result of a program to try to formalize all of mathematics. Many of the notions we have already seen can be formalized in the language of set theory.
+
+A set is just a collection of objects. These objects can be *anything*, including other sets. We will go over notation and basic set operations later, but for now I thought it'd be interesting to talk about how some of the questions we studied here can be thought of in terms of sets:
+
+* Given two sets $A$ and $B$, we can look at the set of ordered pairs of elements $(x, y)$, where $x$ is an object from the set $A$ and $y$ is from the set $B$. Problem 3 asks: if $A$ has 3 objects and $B$ has 5, what is the size of the set of ordered pairs of objects from these sets? Problem 4 asks a similar question.
+* A *function* $f: X \to Y$ can be thought of as a set of ordered pairs with a particular property: for each $x$ in the domain of the function ($X$), there is exactly one $y$ in the set $Y$ such that the ordered pair $(x, y)$ is in (the graph of) the function. Problem 6 asked two types of questions about functions:
+  * How many functions are there whose domain is the set containing the numbers 1, 2 and 3, and whose outputs are in the set of 12 different flavors?
+  * How many of the above functions are *one-to-one* functions? (Definition was in 7(e)).
