@@ -52,7 +52,7 @@ Let's think about this for a smaller number of flavors first, and then you can t
 
 Now recognize that many of those choices are redundant: how many of those 60 listings of 3 flavors contain chocolate, vanilla, and strawberry? Another way of asking this question is: in how many ways can I list out chocolate, vanilla, and strawberry in some order? Out of these 3 flavors, I have 3 choices for the first, 2 for the second, and 1 for the third, and so there are 6 ways to list out 3 flavors.
 
-For any group of 3 flavors, there are 6 arrangements of those 3 flavors. So that means, out of those 60 ways of listing out 3 flavors, each group of 3 ends up getting repeated 6 times. That tells us that there are 10 (60 / 6) unique groups of 3 that we can make out of 5 flavors.
+For any group of 3 flavors, there are 6 arrangements of those 3 flavors. So that means, out of those 60 ways of listing out 3 flavors, each group of 3 ends up getting repeated 6 times. That tells us that there are 10 (or $\dfrac{60}{6}$) unique groups of 3 that we can make out of 5 flavors.
 
 Now do the same logic for this problem with 12 flavors and see if you can determine the correct number of groups of 3 flavors out of a possible 12.
 
