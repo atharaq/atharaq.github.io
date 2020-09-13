@@ -44,6 +44,24 @@ There are $12 \times 11 \times 10 = 1320$ available cones with three different f
 <li>Try to summarize how the "function" and set-theoretic vocabulary generalizes the two questions in Problem 6.</li>
 </ol>
 
+## Problem 8(a)
+
+(Ignore part (b) for now.) This is similar to the second part of question 6, but not quite the same: in that question, ordering an ice cream with chocolate-vanilla-strawberry scoops was different from an ice cream with strawberry-vanilla-chocolate. In this problem, buying a pint of chocolate, a pint of vanilla, and a pint of strawberry is the same as buying those three flavors in any order.
+
+Let's think about this for a smaller number of flavors first, and then you can try out the larger case on your own. Let's say we have 5 flavors to choose from, and we want to buy 3 different pints of ice cream. The first thing we can do is ask, similar to question 6, if we did care about the order in which we bought the flavors, how many ways can we list out those three flavors? There are 5 choices for the first flavor, 4 choices for the second, and 3 for the third, so there are 60 ways to list out 3 flavors.
+
+Now recognize that many of those choices are redundant: how many of those 60 listings of 3 flavors contain chocolate, vanilla, and strawberry? Another way of asking this question is: in how many ways can I list out chocolate, vanilla, and strawberry in some order? Out of these 3 flavors, I have 3 choices for the first, 2 for the second, and 1 for the third, and so there are 6 ways to list out 3 flavors.
+
+For any group of 3 flavors, there are 6 arrangements of those 3 flavors. So that means, out of those 60 ways of listing out 3 flavors, each group of 3 ends up getting repeated 6 times. That tells us that there are 10 (60 / 6) unique groups of 3 that we can make out of 5 flavors.
+
+Now do the same logic for this problem with 12 flavors and see if you can determine the correct number of groups of 3 flavors out of a possible 12.
+
+<details>
+<summary>Check your answer:</summary>
+
+There are $\dfrac{12 \times 11 \times 10}{3 \times 2 \times 1} = 144$ ways we can choose 3 pints of different flavors out of the 12 flavors.
+</details>
+
 # Big Ideas
 
 The problems we worked through help motivate a number of the counting concepts / rules we will deal with. The first is the **multiplicative property**: if we make two choices, with $m$ possible first choices, and, for each way of making that first choice, there are $n$ possible second choices, then there are $mn$ way in which we can make the two choices.
@@ -53,7 +71,7 @@ Examples:
 * Problem 3: There are 3 choices for the kind of bread, and 5 choices for the kind of filling.
 * Problem 5: This is a generalization of the multiplicative property, where we make three choices instead of two. But the principle is the same.
 
-**Exercise**: How many arrangments of the letters "ABCD" are there?
+**Exercise**: How many arrangements of the letters "ABCD" are there?
 <details>
     <summary>Hint: (click)</summary>
     An arrangement consists of choosing a first letter, then choosing a second one (that is different from the first), a third letter (different from the first two), and finally a fourth letter (different from the first three).
@@ -137,6 +155,18 @@ So, out of those 120 permutations, we actually get 20 distinct 2-permutations, e
 
 This argument is quite subtle and so it is worth thinking about more carefully. But the argument given does generalize. If we list out all the permutations of the $n$ objects, and delete the last $(n - k)$ letters, each $k$-permutation will repeat exactly $(n - k)!$ times, because rearranging those last $n - k$ letters does not change the resulting $k$-permutation.
 
+## Combinations
+
+In [Problem 8(a)](#problem-8(a)), we counted the number of groups of 3 different flavors we can make out of 12 flavors in total. Let's rephrase how we studied this problem. We first found the number of $3$-permutations we could make from a collection of 12 distinct objects, and then we saw that each group of 3 flavors that we listed out was repeated several times: in fact, it was repeated $3!$ times, since there are $3!$ arrangements of three flavors.
+
+So we can generalize this. If we have a set of $n$ objects and we want to count the ways we can make a group of $k$ of them, we first can count the number of $k$-permutations of those $n$ objects using the formula we found before. Then we divide that by the number of arrangements of $k$ objects; that is, we divide it by $k!$. We will refer to the number of groups of $k$ that we can make out of $n$ objects as $\binom{n}{k}$, which we read as "$n$ choose $k$". The argument we have just given gives us a formula for this:
+
+$$
+\binom{n}{k} = \dfrac{n!}{k!(n-k)!}
+$$
+
+$\binom{n}{k}$ is sometimes referred to as the "binomial coefficient" because these show up as coefficients when you look at $(x + y)^n$. Recall that $x + y$ is a **binomial**, a sum of two terms in an algebraic expression.
+
 # Formalizing Everything: Set Theory
 
 Next time we will start studying set theory. Set theory is a relatively recent branch of mathematics which came about as a result of a program to try to formalize all of mathematics. Many of the notions we have already seen can be formalized in the language of set theory.
@@ -144,6 +174,17 @@ Next time we will start studying set theory. Set theory is a relatively recent b
 A set is just a collection of objects. These objects can be *anything*, including other sets. We will go over notation and basic set operations later, but for now I thought it'd be interesting to talk about how some of the questions we studied here can be thought of in terms of sets:
 
 * Given two sets $A$ and $B$, we can look at the set of ordered pairs of elements $(x, y)$, where $x$ is an object from the set $A$ and $y$ is from the set $B$. Problem 3 asks: if $A$ has 3 objects and $B$ has 5, what is the size of the set of ordered pairs of objects from these sets? Problem 4 asks a similar question.
-* A *function* $f: X \to Y$ can be thought of as a set of ordered pairs with a particular property: for each $x$ in the domain of the function ($X$), there is exactly one $y$ in the set $Y$ such that the ordered pair $(x, y)$ is in (the graph of) the function. Problem 6 asked two types of questions about functions:
+* A *function* $f: X \to Y$ can be thought of as a set of ordered pairs with a particular property: for each $x$ in the domain of the function ($X$), there is exactly one $y$ in the codomain ($Y$) such that the ordered pair $(x, y)$ is in (the graph of) the function. Problem 6 asked two types of questions about functions:
   * How many functions are there whose domain is the set containing the numbers 1, 2 and 3, and whose outputs are in the set of 12 different flavors?
   * How many of the above functions are *one-to-one* functions? (Definition was in 7(e)).
+
+If we think of a function as a special kind of set, this previous question is actually asking about sets of sets: how large is the set of functions which have a certain property?
+
+Next time we will start studying questions about sets:
+
+* How do we describe sets (notation)?
+* What operations can we do on sets? (We will learn about unions, intersections, cartesian products, power sets)
+* What are some sets that are commonly used? ($\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$, $\mathbb{C}$, ...)
+* How do we compare the sizes of infinite sets? (Wait, what does this even mean?)
+
+There are lots of questions that we likely will not touch on that would make great opportunities for students who are interested in learning more about set theory to study on their own. For example, we will not talk about the difference between "naive" and "axiomatic" set theory, nor will we study how to formalize everything, including the notion of numbers themselves, in the language of set theory.
