@@ -157,7 +157,7 @@ This argument is quite subtle and so it is worth thinking about more carefully. 
 
 ## Combinations
 
-In [Problem 8(a)](#problem-8(a)), we counted the number of groups of 3 different flavors we can make out of 12 flavors in total. Let's rephrase how we studied this problem. We first found the number of $3$-permutations we could make from a collection of 12 distinct objects, and then we saw that each group of 3 flavors that we listed out was repeated several times: in fact, it was repeated $3!$ times, since there are $3!$ arrangements of three flavors.
+In [Problem 8(a)](#problem-8a), we counted the number of groups of 3 different flavors we can make out of 12 flavors in total. Let's rephrase how we studied this problem. We first found the number of $3$-permutations we could make from a collection of 12 distinct objects, and then we saw that each group of 3 flavors that we listed out was repeated several times: in fact, it was repeated $3!$ times, since there are $3!$ arrangements of three flavors.
 
 So we can generalize this. If we have a set of $n$ objects and we want to count the ways we can make a group of $k$ of them, we first can count the number of $k$-permutations of those $n$ objects using the formula we found before. Then we divide that by the number of arrangements of $k$ objects; that is, we divide it by $k!$. We will refer to the number of groups of $k$ that we can make out of $n$ objects as $\binom{n}{k}$, which we read as "$n$ choose $k$". The argument we have just given gives us a formula for this:
 
