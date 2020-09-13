@@ -64,7 +64,7 @@ There are $\dfrac{12 \times 11 \times 10}{3 \times 2 \times 1} = 144$ ways we ca
 
 # Big Ideas
 
-The problems we worked through help motivate a number of the counting concepts / rules we will deal with. The first is the **multiplicative property**: if we make two choices, with $m$ possible first choices, and, for each way of making that first choice, there are $n$ possible second choices, then there are $mn$ way in which we can make the two choices.
+The problems we worked through help motivate a number of the counting concepts / rules we will deal with. The first is the **multiplicative property**: if we make two choices, with $m$ possible first choices, and, for each way of making that first choice, there are $n$ possible second choices, then there are $mn$ ways in which we can make the two choices.
 
 Examples:
 
