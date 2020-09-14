@@ -52,7 +52,7 @@ Let's think about this for a smaller number of flavors first, and then you can t
 
 Now recognize that many of those choices are redundant: how many of those 60 listings of 3 flavors contain chocolate, vanilla, and strawberry? Another way of asking this question is: in how many ways can I list out chocolate, vanilla, and strawberry in some order? Out of these 3 flavors, I have 3 choices for the first, 2 for the second, and 1 for the third, and so there are 6 ways to list out 3 flavors.
 
-For any group of 3 flavors, there are 6 arrangements of those 3 flavors. So that means, out of those 60 ways of listing out 3 flavors, each group of 3 ends up getting repeated 6 times. That tells us that there are 10 (60 / 6) unique groups of 3 that we can make out of 5 flavors.
+For any group of 3 flavors, there are 6 arrangements of those 3 flavors. So that means, out of those 60 ways of listing out 3 flavors, each group of 3 ends up getting repeated 6 times. That tells us that there are 10 (or $\dfrac{60}{6}$) unique groups of 3 that we can make out of 5 flavors.
 
 Now do the same logic for this problem with 12 flavors and see if you can determine the correct number of groups of 3 flavors out of a possible 12.
 
@@ -64,7 +64,7 @@ There are $\dfrac{12 \times 11 \times 10}{3 \times 2 \times 1} = 144$ ways we ca
 
 # Big Ideas
 
-The problems we worked through help motivate a number of the counting concepts / rules we will deal with. The first is the **multiplicative property**: if we make two choices, with $m$ possible first choices, and, for each way of making that first choice, there are $n$ possible second choices, then there are $mn$ way in which we can make the two choices.
+The problems we worked through help motivate a number of the counting concepts / rules we will deal with. The first is the **multiplicative property**: if we make two choices, with $m$ possible first choices, and, for each way of making that first choice, there are $n$ possible second choices, then there are $mn$ ways in which we can make the two choices.
 
 Examples:
 
@@ -85,7 +85,7 @@ For example, BACD is a permutation of the letters 'A', 'B', 'C' and 'D', while B
 
 ## Factorials
 
-If you have heard of factorials before, you likely have guessed that this concept would show up at some point in this lesson. The example at the beginning: "How many arrangements of the letters C A T are there?" highlighted this concept. There are three letters and $3! = 6$ arrangements of the letters.
+If you have heard of factorials before, you likely have guessed that this concept would show up at some point in this lesson. The example last time: "How many arrangements of the letters C A T are there?" highlighted this concept. There are three letters and $3! = 6$ arrangements of the letters.
 
 Usually, $n!$, read "n factorial" is defined recursively as follows:
 
