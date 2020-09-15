@@ -8,7 +8,9 @@ This section is meant to be read alongside [Example 2.7](https://openstax.org/bo
 
 The textbook then goes through another line of reasoning to show that we can pick specific points where we can calculate the $y$-values directly. Let's look at the unit circle:
 
-![Unit circle, labeled in degrees, radians, and the (x,y) coordinates](https://upload.wikimedia.org/wikipedia/commons/4/4c/Unit_circle_angles_color.svg)
+![Unit circle, labeled in degrees, radians, and the (x,y) coordinates](https://upload.wikimedia.org/wikipedia/commons/4/4c/Unit_circle_angles_color.svg "Unit circle, labeled in degrees, radians, and the (x,y) coordinates")
+
+There are many points labeled here, but let's only focus on the top and bottom points, located at $(0, 1)$ and $(0, -1)$. The top point can be reached by an angle of $\frac{\pi}{2}$ radians and the bottom by an angle of $\frac{3\pi}{2}$ radians. But remember that $\sin$ is a **periodic** function: that means there are many angles we can use to reach the same point. The angle $\frac{5\pi}{2}$ will also reach the top point, because it's $\frac{\pi}{2} + 2\pi$, that is, it's the angle we get to by going around the circle first by 90 degrees and then by 360 more degrees.
 
 # Limits of $e^{\frac{1}{x}}$ (10)
 
