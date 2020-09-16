@@ -88,6 +88,18 @@ This is all we need to use the Squeeze Theorem, since, as $\theta \rightarrow 0$
 
 # Continuity
 
+What does it mean for a function to be continuous at a point $x = a$? You may have heard the intuitive notion that "we can draw the graph of the function without picking up our pen." This brings up the idea that there are no sudden "jumps" at that point. In mathematics, though, we do not rely just on intuition: we use that intuition as motivation for definitions. So how can we make the definition of continuitiy more precise? If we want to be able to draw the graph without picking up our pen, that means that as we get close to the $x$-value $x = a$, the graph gets closer to the $y$-value $y = f(a)$. That is:
+
+**Definition**: $f$ is **continuous** at $x = a$ if the following condditions hold:
+
+1. $a$ is in the domain of $f$,
+2. ${\displaystyle \lim_{x \rightarrow a}} f(x)$ exists, and
+3. ${\displaystyle \lim_{x \rightarrow a}} f(x) = f(a)$
+
+A function $f(x)$ is called **continuous** if, for each point $a$ in the domain of $f$, $f$ is continuous at $x = a$. Continuous functions behave better than just arbitrary functions: if we know a function is continuous, we know that, at every point in its domain, limits always exist, and they are always equal to the value of the function itself. That is: we can use "direct substitution" to compute limits!
+
+All the usual examples of functions that we've worked with are continuous at each point in their domains: polynomials, rational functions (when their denominators are not 0), algebraic functions (when they are defined) trig functions, exponential functions, and logarithms are all continuous. 
+
 ## Example
 
 **Problem**: Determine if the following function is continuous at the points $x = -1, 0, 1$:
@@ -100,5 +112,10 @@ Try to solve this on your own before reading on. First let's look at $x = -1$. F
 Now let's look at $x = 0$. $0$ is in the domain of $f$ again, as $f(0) = 2$. As $x \rightarrow 0^-1$, we check the part of $f(x)$ defined on $x \leq 0$: so $f(x) = 2 - x \rightarrow 2$. As $x \rightarrow 0^+$, we use $f(x) = x^2$, so $f(x) \rightarrow 0$. Since the one-sided limits are not equal, the limit does not exist, and so $f(x)$ is **not continuous** at $x = 0$.
 
 Lastly, let's look at $x = 1$. Again $1$ is in the domain of $f(x)$, and $f(1) = 1^2$, which is $1$. As $x \rightarrow 1^-$, which function should we use? We use $f(x) = x^2$ in this case, since, as we let $x$ get close to $1$ from the left, eventually $x$ will be larger than 0. So $f(x) \rightarrow 1$ as $x \rightarrow 1^-$. Similarly, as $x \rightarrow 1^+$, we will get $f(x) \rightarrow 1$. So both One-sided limits exist and are equal to $f(1)$, and so $f(x)$ **is continuous** at $x = 1$.
+
+**Exercise**: Determine if the following functions are continuous at the given points:
+
+1. $f(x) = \begin{cases} x^2 & \mbox{if } -1 \leq x < 1 \\ 1 & \mbox{if } x \geq 1 \end{cases}$ at $x = 0, 1$
+2. $g(x) = \begin{cases} |x| & \mbox{if } -1 \leq x < 0 \\ \cos(x) & \mbox{if} x \geq 0\end{cases}$ at $x = 0, 1$
 
 # Intermediate Value Theorem
