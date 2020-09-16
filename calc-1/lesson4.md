@@ -57,9 +57,9 @@ Moreover, notice that as $x \rightarrow 0$, the two dotted lines converge. That 
 
 Let's go through an example of using the squeeze theorem. We saw, earlier, that as $x \rightarrow 0$, the function $f(x) = \sin(\frac{1}{x})$ does not approach any particular limit. What happens to the function $g(x) = x\sin(\frac{1}{x})$ as $x \rightarrow 0$? It would seem to be hopeless to find a limit, right?
 
-In fact, we can use the Squeeze Theorem here. It turns out that the only thing that matters about $\sin(\frac{1}{x})$ in this function is that it never gets better than $+1$ or smaller than $-1$. That means that $x\sin(\frac{1}{x})$ is never larger than $|x|$, and is never smaller than $-|x|$ (the absolute values come into play if $x$ is negative, and $\sin(\frac{1}{x}) = -1$).
+In fact, we can use the Squeeze Theorem here. It turns out that the only thing that matters about $\sin(\frac{1}{x})$ in this function is that it never gets better than $+1$ or smaller than $-1$. That means that $x\sin(\frac{1}{x})$ is never larger than $\|x\|$, and is never smaller than $-\|x\|$ (the absolute values come into play if $x$ is negative, and $\sin(\frac{1}{x}) = -1$).
 
-That is, we have the inequality: $-|x| \leq x\sin(\frac{1}{x}) \leq |x|$ for all $x$. Further, we know that the graphs of $y = -|x|$ and $y = |x|$ converge as $x \rightarrow 0$: that is, ${\displaystyle\lim_{x\rightarrow 0}} -|x| = {\displaystyle\lim_{x\rightarrow 0}} |x| = 0$. So by the Squeeze Theorem, ${\displaystyle\lim_{x\rightarrow 0}} \; x\sin(\frac{1}{x}) = 0$ also!
+That is, we have the inequality: $-\|x\| \leq x\sin(\frac{1}{x}) \leq \|x\|$ for all $x$. Further, we know that the graphs of $y = -\|x\|$ and $y = \|x\|$ converge as $x \rightarrow 0$: that is, ${\displaystyle\lim_{x\rightarrow 0}} -\|x\| = {\displaystyle\lim_{x\rightarrow 0}} \|x\| = 0$. So by the Squeeze Theorem, ${\displaystyle\lim_{x\rightarrow 0}} \; x\sin(\frac{1}{x}) = 0$ also!
 
 The Squeeze Theorem can be hard to apply, but it's worth knowing as it provides another tool to use to find limits if nothing else works. In the homework, you will be asked to find the limit of the following function as $x \rightarrow 0$:
 
