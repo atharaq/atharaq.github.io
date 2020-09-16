@@ -122,4 +122,41 @@ Lastly, let's look at $x = 1$. Again $1$ is in the domain of $f(x)$, and $f(1) =
 
 ## Definition Quirk
 
+Is the function $f(x) = \frac{1}{x}$ continuous? Let's look at its graph again:
+
+<div class="desmos-container"><iframe src="https://www.desmos.com/calculator/snw7fiuq7h?embed" style="border: 1px solid #ccc" frameborder=0></iframe></div>
+
+Clearly, it looks like there is a jump at $x = 0$. So it's not continuous, right?
+
+Let's stop for a second and remember what our definition was. $f(x)$ is continous at $x = a$ if $a$ is in the domain of $f$, and the limit as we approach $a$ exists and is equal to $f(a)$. This is the definition of "continuity at a point". What was the definition of "continuous function"? A function is called a continuous function if it is continuous *at every point in its domain*.
+
+$0$ is not in the domain of $f(x)$. So it's certainly not continuous at that point: but $f(x)$ *is* continuous at every point that is in its domain! In other words: at all the points that we can actually talk about, $f(x)$ is continuous. So $f(x)$ is called a continuous function.
+
+Now this is of course strange: shouldn't we "fix" this definition? We can try to, but there are issues with any other definition we could come up with. This is quite a subtle issue. For example: perhaps we want to say, then, that a function is continuous if it is continuous at every real number. But then what do we make of the function $g(x) = \sqrt{1 - x^2}$?
+
+<div class="desmos-container"><iframe src="https://www.desmos.com/calculator/62ibcc1faz?embed" style="border: 1px solid #ccc" frameborder=0></iframe></div>
+
+This function is continuous at every point from $x = -1$ to $x = 1$, and is not defined anywhere else. Should we exclude that from being continuous?
+
+Over the years, mathematicians have settled on this definition as a result of studying, carefully, what makes functions like $\frac{1}{x}$ different from functions like $\sqrt{1 - x^2}$. It turns out that both have the same "continuity" properties everywhere they are defined: if you want to zoom in on one, individual point, you could that *part* of the graph without picking up your pen. The issue is with the **domains**: we rarely think about the domains of the function, but it turns out that to say "you can draw the graph of $f(x)$ without picking up your pen", you are **not** just talking about continuity. You are also saying that your domain is connected (it doesn't have a hole in it): a property that has nothing to do with functions.
+
+This is a subtle point, and I don't necessarily expect you to think deeply about all of this, but just note that continuity of a function does **not** actually mean that you can draw the graph of the function without picking up your pen. It just means the definition we gave: that at each point in the domain, limits exist and are equal to the value of the function.
+
 # Intermediate Value Theorem
+
+Before we state the most important result about continuous functions, let's first mention a couple pieces of notation. Recall **interval notation**: the open interval $(a, b)$ refers to the set of all $x$ values such that $a < x < b$. The closed interval $[a, b]$ refers to all $x$ such that $a \leq x \leq b$. For a function $f(x)$, if we say $f$ is continuous on $(a, b)$, it means that $f$ is defined on the interval $(a, b)$, not necessarily at the endpoints, and that $f$ is continuous at each point inside. If we say $f$ is continuous on a closed interval $[a, b]$, that means the following:
+
+* $f$ is continuous on $(a, b)$
+* $a$ and $b$ are in the domain of $f$
+* ${\displaystyle \lim_{x \rightarrow a^+}}f(x) = f(a)$, and
+* ${\displaystyle \lim_{x \rightarrow b^-}}f(x) = f(b)$
+
+For example, the function $f(x) = \frac{1}{x}$ is continuous on $(0, 1)$, but not on $[0, 1]$ since $f(0)$ does not exist. On the other hand, the function $g(x) = \sqrt{1 - x^2}$ is continuous on $[-1, 1]$.
+
+Now let's get to the **Intermediate Value Theorem**. This theorem says that if $f(x)$ is continuous on a closed interval $[a, b]$, and $y$ is **any** $y$-value between $f(a)$ and $f(b)$, then there is some $x$-value, let's call it $c$, in between $a$ and $b$ such that $f(c) = y$. The graph below shows an animation of this phenomenon:
+
+<div class="desmos-container"><iframe src="https://www.desmos.com/calculator/smkkcei4ac?embed" style="border: 1px solid #ccc" frameborder=0></iframe></div>
+
+Most often, we use the Intermediate Value Theorem to show that a function must have a root, even if we don't know how to calculate it explicitly. For example: does the equation $\cos(x) = x$ have a solution?
+
+Let's look at the function $g(x) = \cos(x) - x$. Does this function ever equal 0? We can plug in a couple of values of $x$ and see what happens. $g(0) = 1 - 0 = 1$, which is positive. $g(\pi) = -1 - \pi$, which is negative. So, by the IVT, there **must** be some $x$ between $0$ and $\pi$ such that $g(x) = 0$!
