@@ -117,7 +117,7 @@ Lastly, let's look at $x = 1$. Again $1$ is in the domain of $f(x)$, and $f(1) =
 
 1. $$f(x) = \begin{cases} x^2 & \mbox{if } -1 \leq x < 1 \\ 
 1 & \mbox{if } x \geq 1 \end{cases}$$ at $x = 0, 1$
-2. $$g(x) = \begin{cases} \|x\| & \mbox{if } -1 \leq x < 0 
+2. $$g(x) = \begin{cases} |x| & \mbox{if } -1 \leq x < 0 
 \\ \cos(x) & \mbox{if} x \geq 0\end{cases}$$ at $x = 0, 1$
 
 ## Definition Quirk
