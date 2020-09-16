@@ -29,7 +29,7 @@ Let's go through a similar example from a different perspective. I want to study
 Notice that as $x \rightarrow 0^-$, $g(x) \rightarrow -\infty$, and as $x \rightarrow 0^+$, $g(x) \rightarrow +\infty$. Now this tells us that ${\displaystyle \lim_{x \rightarrow 0}} g(x)$ does not exist, but it does not necessarily tell us what happens to $e^{\frac{1}{x}}$ as $x \rightarrow 0$. To understand what happens here:
 
 * since, as $x \rightarrow 0^-$, $\frac{1}{x} \rightarrow -\infty$, we should check what happens to $e^x$ as $x \rightarrow -\infty$.
-* since, as $x \rightarrow 0^+$, $\frac{1}{x} \rightarrow +\infty$< we should check what happens to $e^x$ as $x \rightarrow +\infty$.
+* since, as $x \rightarrow 0^+$, $\frac{1}{x} \rightarrow +\infty$, we should check what happens to $e^x$ as $x \rightarrow +\infty$.
 
 So let's examine the graph of $f(x) = e^x$:
 
@@ -60,6 +60,8 @@ Let's go through an example of using the squeeze theorem. We saw, earlier, that 
 In fact, we can use the Squeeze Theorem here. It turns out that the only thing that matters about $\sin(\frac{1}{x})$ in this function is that it never gets better than $+1$ or smaller than $-1$. That means that $x\sin(\frac{1}{x})$ is never larger than $\|x\|$, and is never smaller than $-\|x\|$ (the absolute values come into play if $x$ is negative, and $\sin(\frac{1}{x}) = -1$).
 
 That is, we have the inequality: $-\|x\| \leq x\sin(\frac{1}{x}) \leq \|x\|$ for all $x$. Further, we know that the graphs of $y = -\|x\|$ and $y = \|x\|$ converge as $x \rightarrow 0$: that is, ${\displaystyle\lim_{x\rightarrow 0}} -\|x\| = {\displaystyle\lim_{x\rightarrow 0}} \|x\| = 0$. So by the Squeeze Theorem, ${\displaystyle\lim_{x\rightarrow 0}} \; x\sin(\frac{1}{x}) = 0$ also!
+
+<div class="desmos-container"><iframe src="https://www.desmos.com/calculator/gqgxslsvlu?embed" style="border: 1px solid #ccc" frameborder=0></iframe></div>
 
 The Squeeze Theorem can be hard to apply, but it's worth knowing as it provides another tool to use to find limits if nothing else works. In the homework, you will be asked to find the limit of the following function as $x \rightarrow 0$:
 
@@ -98,7 +100,7 @@ What does it mean for a function to be continuous at a point $x = a$? You may ha
 
 A function $f(x)$ is called **continuous** if, for each point $a$ in the domain of $f$, $f$ is continuous at $x = a$. Continuous functions behave better than just arbitrary functions: if we know a function is continuous, we know that, at every point in its domain, limits always exist, and they are always equal to the value of the function itself. That is: we can use "direct substitution" to compute limits!
 
-All the usual examples of functions that we've worked with are continuous at each point in their domains: polynomials, rational functions (when their denominators are not 0), algebraic functions (when they are defined) trig functions, exponential functions, and logarithms are all continuous. 
+All the usual examples of functions that we've worked with are continuous at each point in their domains: polynomials, rational functions (when their denominators are not 0), algebraic functions (when they are defined) trig functions, exponential functions, and logarithms are all continuous.
 
 ## Example
 
@@ -115,9 +117,9 @@ Lastly, let's look at $x = 1$. Again $1$ is in the domain of $f(x)$, and $f(1) =
 
 **Exercise**: Determine if the following functions are continuous at the given points:
 
-1. $$f(x) = \begin{cases} x^2 & \mbox{if } -1 \leq x < 1 \\ 
+1. $$f(x) = \begin{cases} x^2 & \mbox{if } -1 \leq x < 1 \\
 1 & \mbox{if } x \geq 1 \end{cases}$$ at $x = 0, 1$
-2. $$g(x) = \begin{cases} |x| & \mbox{if } -1 \leq x < 0 
+2. $$g(x) = \begin{cases} |x| & \mbox{if } -1 \leq x < 0
 \\ \cos(x) & \mbox{if} x \geq 0\end{cases}$$ at $x = 0, 1$
 
 ## Definition Quirk
