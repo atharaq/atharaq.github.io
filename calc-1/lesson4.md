@@ -88,4 +88,17 @@ This is all we need to use the Squeeze Theorem, since, as $\theta \rightarrow 0$
 
 # Continuity
 
+## Example
+
+**Problem**: Determine if the following function is continuous at the points $x = -1, 0, 1$:
+
+$$f(x) = \begin{cases}2-x & \mbox{if } x \leq 0 \\
+x^2 & \mbox{if } x > 0 \end{cases}$$
+
+Try to solve this on your own before reading on. First let's look at $x = -1$. First, $-1$ is in the domain of $f$: $f(-1) = 3$, since $-1 < 0$. Next, let's check if the one-sided limits exist. As $x \rightarrow -1^-$, $f(x) = 2 - x$, and so $f(x) \rightarrow 3$. SImilarly, as $x \rightarrow -1^+$, we still only need to look at the part of $f(x)$ where $f(x) = 2 - x$. Why is this? Think about what the values of $x$ are as we let $x$ approach $-1$ from the right: eventually, we must start looking at numbers less than $0$. So in this case, $f(x) \rightarrow 3$ also. Since the two one-sided limits exist and are both equal to $f(-1)$, we see that $f(x)$ **is continuous** at $x = -1$.
+
+Now let's look at $x = 0$. $0$ is in the domain of $f$ again, as $f(0) = 2$. As $x \rightarrow 0^-1$, we check the part of $f(x)$ defined on $x \leq 0$: so $f(x) = 2 - x \rightarrow 2$. As $x \rightarrow 0^+$, we use $f(x) = x^2$, so $f(x) \rightarrow 0$. Since the one-sided limits are not equal, the limit does not exist, and so $f(x)$ is **not continuous** at $x = 0$.
+
+Lastly, let's look at $x = 1$. Again $1$ is in the domain of $f(x)$, and $f(1) = 1^2$, which is $1$. As $x \rightarrow 1^-$, which function should we use? We use $f(x) = x^2$ in this case, since, as we let $x$ get close to $1$ from the left, eventually $x$ will be larger than 0. So $f(x) \rightarrow 1$ as $x \rightarrow 1^-$. Similarly, as $x \rightarrow 1^+$, we will get $f(x) \rightarrow 1$. So both One-sided limits exist and are equal to $f(1)$, and so $f(x)$ **is continuous** at $x = 1$.
+
 # Intermediate Value Theorem
