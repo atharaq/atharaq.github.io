@@ -122,6 +122,14 @@ Lastly, let's look at $x = 1$. Again $1$ is in the domain of $f(x)$, and $f(1) =
 2. $$g(x) = \begin{cases} |x| & \mbox{if } -1 \leq x < 0
 \\ \cos(x) & \mbox{if} x \geq 0\end{cases}$$ at $x = 0, 1$
 
+<details>
+<summary>Check your answers</summary>
+<ol>
+<li>Continuous at $x = 0$ and at $x = 1$.</li>
+<li>Not continuous at $x = 0$: ${\displaystyle\lim_{x\rightarrow 0^-}}g(x) = 0$, but ${\displaystyle\lim_{x\rightarrow 0^+}}g(x) = 1$. Continuous at $x = 1$ since $\cos(x)$ is continuous.</li>
+</ol>
+</details>
+
 ## Definition Quirk
 
 Is the function $f(x) = \frac{1}{x}$ continuous? Let's look at its graph again:
