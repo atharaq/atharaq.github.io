@@ -1,6 +1,6 @@
 <!-- 9/21 -->
 
-# Calculus I Lesosn 5: Intro to Derivatives
+# Calculus I Lesson 5: Intro to Derivatives
 
 # Quiz
 
