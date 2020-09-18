@@ -13,7 +13,7 @@ Last time we learned the Intermediate Value Theorem. Let's use this theorem to e
 
 By the Intermediate Value Theorem, there is some $c$ between 3 and 4 such that $2^c = 10$. So it's not exactly clear yet, but maybe we can do a little better?
 
-What is $2^{3.5}?$ How do we evaluate decimals in exponents? We write it as a fraction: $3.5 = \frac{7}{2}$, and use the rules for fractions in exponents: $2^{\frac{7}{2}} = \sqrt{2^7}$. $2^7$ is 128, so this is $\sqrt{128}$, which is bigger than 10. So now we know that, by the Intermediate Value Theorem, again, the $c$ that we're looking for is between 3 and 3.5. We could keep going, and check $3^{3.25}$ and figure out if either $3 < c < 3.25$ or $3.25 < c < 3.5$, and continue to look for a better and better approximation of $\log_2(10)$.
+What is $2^{3.5}?$ How do we evaluate decimals in exponents? We write it as a fraction: $3.5 = \frac{7}{2}$, and use the rules for fractions in exponents: $2^{\frac{7}{2}} = \sqrt{2^7}$. $2^7$ is 128, so this is $\sqrt{128}$, which is bigger than 10. So now we know that, by the Intermediate Value Theorem, again, the $c$ that we're looking for is between 3 and 3.5. We could keep going, and check $2^{3.25}$ and figure out if either $3 < c < 3.25$ or $3.25 < c < 3.5$, and continue to look for a better and better approximation of $\log_2(10)$.
 
 # Derivatives Intro
 
