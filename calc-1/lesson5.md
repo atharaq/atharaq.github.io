@@ -206,6 +206,7 @@ Recall that $(x^2)^\prime = 2x$, and for any linear function, $(mx + b)^\prime =
 <li>Again take the derivative of each term: $(2x^2)^\prime$ is $4x$, $(3x)^\prime$ is $3$, and $(1)^\prime$ is 0, so the derivative of $4x + 3$.</li>
 <li>$h^\prime(x) = 2x - 2$</li>
 </ol>
+</details>
 
 # Homework Due Friday, 9/25
 
