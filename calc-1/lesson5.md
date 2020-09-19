@@ -87,7 +87,10 @@ $$f^\prime(x) = \lim_{h \rightarrow 0} \frac{f(x+h)-f(x)}{h}$$
 
 Let's use this to determine the value of the derivative of the function $f(x) = x^2$, at *any* given point $x$. First let's compute $\frac{f(x+h)-f(x)}{h}$. Since $(x+h)^2$ is $(x+h)(x+h) = x^2 + 2xh + h^2$, we get:
 
-$$\frac{f(x+h)-f(x)}{h} = \frac{x^2 + 2xh + h^2 - x^2}{h} = \frac{2xh+h^2}{h}$$
+$$\begin{align*}
+\frac{f(x+h)-f(x)}{h} &= \frac{x^2 + 2xh + h^2 - x^2}{h} 
+\\ &= \frac{2xh+h^2}{h}
+\end{align*}$$
 
 For all $h \neq 0$, we can use some algebra to simplify this fraction. We get $\dfrac{2xh+h^2}{h} = \dfrac{h(2x+h)}{h}$, which is $2x + h$. So, as $h \rightarrow 0$, the limit is $2x$.
 
