@@ -88,7 +88,7 @@ $$f^\prime(x) = \lim_{h \rightarrow 0} \frac{f(x+h)-f(x)}{h}$$
 Let's use this to determine the value of the derivative of the function $f(x) = x^2$, at *any* given point $x$. First let's compute $\frac{f(x+h)-f(x)}{h}$. Since $(x+h)^2$ is $(x+h)(x+h) = x^2 + 2xh + h^2$, we get:
 
 $$\begin{align*}
-\frac{f(x+h)-f(x)}{h} &= \frac{x^2 + 2xh + h^2 - x^2}{h} 
+\frac{f(x+h)-f(x)}{h} &= \frac{x^2 + 2xh + h^2 - x^2}{h}
 \\ &= \frac{2xh+h^2}{h}
 \end{align*}$$
 
@@ -133,9 +133,9 @@ Since this is a piecewise function, you will need to look at the right hand and 
 
 <details>
   <summary>Solution:</summary>
-  
+
 <p>$f^\prime(0)$ <strong>does not exist</strong>! Remember that limits do not always exist. Let's compute the following limits: ${\displaystyle\lim_{x\rightarrow 0^-} \frac{f(x) - f(0)}{x - 0}$ and ${\displaystyle\lim_{x\rightarrow 0^+} \frac{f(x) - f(0)}{x - 0}$.</p>
-  
+
 <p>As $x \rightarrow 0^-$, $f(x) = -x$. So we are looking at the limit of $\frac{-x}{x}$, which is $-1$.</p>
 <p>As $x \rightarrow 0^+$, $f(x) = x$. So we are looking at the limit of $\frac{x}{x}$, which is 1.</p>
 <p>Since the two one-sided limits are different, the (two-sided) limit does not exist (DNE)!</p>
@@ -183,8 +183,34 @@ Determine the derivative of $f(x) = 5x^2$.
 
 ## Sum Rule
 
-Now let's suppose that $f(x)$ and $g(x)$ are two functions that are both differentiable at $x = a$. What would the derivative of the function $h(x) = f(x) + g(x)$ be at $x = a$?
+Now let's suppose that $f(x)$ and $g(x)$ are two functions that are both differentiable at $x = a$. What would the derivative of the function $h(x) = f(x) + g(x)$ be at $x = a$? It's again what we might expect: $h^\prime(a) = f^\prime(a) + g^\prime(a)$. Let's see how this works.
+
+Again, we need to compute ${\displaystyle \lim_{x\rightarrow a}}\frac{h(x)-h(a)}{x - a}$. The numerator is $(f(x)+g(x)) - (f(a) + g(a))$. Group the $f$'s together and the $g$'s together, and the numerator is $(f(x) - f(a)) + (g(x) - g(a))$. So we need to compute the limit ${\displaystyle \lim_{x\rightarrow a}}\frac{(f(x) - f(a)) + (g(x) - g(a))}{x - a}$. By separating this into two fractions, we get:
+
+$$\lim_{x\rightarrow a} \frac{f(x) - f(a)}{x - a} + \frac{g(x) - g(a)}{x - a}$$
+
+which is just $f^\prime(a) + g^\prime(a)$.
 
 ## Exercises
 
+Recall that $(x^2)^\prime = 2x$, and for any linear function, $(mx + b)^\prime = m$. Find the derivatives of the following functions:
+
+1. $f(x) = 3x^2 + 5x$
+2. $g(x) = 2x^2 + 3x + 1$
+3. $h(x) = x^2 - 2x + 1$
+
+<details>
+<summary>Check your answers</summary>
+<ol>
+<li>$f^\prime(x) = 6x + 5$. Take the derivative of each term, so $(3x^2)^\prime$ is $6x$, and $(5x)^\prime$ is $5$.</li>
+<li>Again take the derivative of each term: $(2x^2)^\prime$ is $4x$, $(3x)^\prime$ is $3$, and $(1)^\prime$ is 0, so the derivative of $4x + 3$.</li>
+<li>$h^\prime(x) = 2x - 2$</li>
+</ol>
+
 # Homework Due Friday, 9/25
+
+As before, upload a single PDF (using a scanner or scanner app) of your written work to the Moodle assignment page for this homework.
+
+* Section 2.4 \#134, 146, 150, 152, 162
+* Section 3.1 \#26, 51
+* Section 3.2 \#58, 66, 94
