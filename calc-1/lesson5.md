@@ -104,7 +104,23 @@ Take a look at this example, from the YouTube Channel PatrickJMT. This shows a m
 
 # Derivative of a Line
 
+Recall that the graph of a function of the form $f(x) = mx + b$, where $m$ and $b$ are some fixed constants, is a straight line. THe line has slope $m$ and $y$-intercept $b$. What would the derivative of a line be?
+
+Note that between any two points on a line, the "average rate of change" between them is just the slope. That is, rates of change on a line are always equal to $m$! So intuitively, as the two points get closer together, the average rate of change is still $m$, so the derivative should be $m$ as well. This is true! Let's prove it.
+
+Suppose $f(x) = mx + b$. We can use either definition of the derivative to show that, at any point $x = a$, the derivative $f^\prime(a) = m$. Let's use the first definition. We need to compute ${\displaystyle\lim_{x\rightarrow a}}\frac{f(x)-f(a)}{x - a}$. Notice that $f(x) - f(a)$ is $(mx + b) - (ma + b)$. This is just $mx - ma$, or $m(x - a)$. So:
+
+$$\begin{align}\lim_{x\rightarrow a} \frac{f(x)-f(a)}{x-a} &= \lim_{x\rightarrow a} \frac{m(x-a)}{x - a} = m$$
+
+So $f^\prime(a) = m$, at every point on the graph. **The derivative of a line is the slope of that line!**
+
 ## Derivative of a Constant Function
+
+Similarly, we can use the definition of the derivative to find the derivative of a constant function. If $f(x) = k$ is a constant, then $f(x+h) = k$ also. So $\dfrac{f(x+h)-f(x)}{h} = \dfrac{k - k}{h} = \dfrac{0}{h}$. That means that $f^\prime(x) = 0$. This argument is covered in the following KhanAcademy video:
+
+<div class="desmos-container">
+<iframe src="https://www.youtube.com/embed/OsPNBYmqxLo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ## Exercise
 
