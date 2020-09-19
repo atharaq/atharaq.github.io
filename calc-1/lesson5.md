@@ -110,7 +110,7 @@ Note that between any two points on a line, the "average rate of change" between
 
 Suppose $f(x) = mx + b$. We can use either definition of the derivative to show that, at any point $x = a$, the derivative $f^\prime(a) = m$. Let's use the first definition. We need to compute ${\displaystyle\lim_{x\rightarrow a}}\frac{f(x)-f(a)}{x - a}$. Notice that $f(x) - f(a)$ is $(mx + b) - (ma + b)$. This is just $mx - ma$, or $m(x - a)$. So:
 
-$$\begin{align}\lim_{x\rightarrow a} \frac{f(x)-f(a)}{x-a} &= \lim_{x\rightarrow a} \frac{m(x-a)}{x - a} = m$$
+$$\lim_{x\rightarrow a} \frac{f(x)-f(a)}{x-a} = \lim_{x\rightarrow a} \frac{m(x-a)}{x - a} = m$$
 
 So $f^\prime(a) = m$, at every point on the graph. **The derivative of a line is the slope of that line!**
 
