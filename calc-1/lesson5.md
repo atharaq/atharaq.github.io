@@ -93,6 +93,12 @@ For all $h \neq 0$, we can use some algebra to simplify this fraction. We get $\
 
 That is, the derivative of $f(x) = x^2$ is $f^\prime(x) = 2x$.
 
+Take a look at this example, from the YouTube Channel PatrickJMT. This shows a more complicated example of using algebra to compute a complicated limit.
+
+<div class="desmos-container">
+<iframe src="https://www.youtube.com/embed/vzDYOHETFlo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 # Derivative of a Line
 
 ## Derivative of a Constant Function
