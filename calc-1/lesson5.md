@@ -89,7 +89,7 @@ Let's use this to determine the value of the derivative of the function $f(x) = 
 
 $$\frac{f(x+h)-f(x)}{h} = \frac{x^2 + 2xh + h^2 - x^2}{h} = \frac{2xh+h^2}{h}$$
 
-For all $h \neq 0$, we can use some algebra to simplify this fraction. We get $\dfrac{2xh+h^2}{h} = \dfrac{h(2x+h)}{h}$, which is $\dfrac{2x + h}$. So, as $h \rightarrow 0$, the limit is $2x$.
+For all $h \neq 0$, we can use some algebra to simplify this fraction. We get $\dfrac{2xh+h^2}{h} = \dfrac{h(2x+h)}{h}$, which is $2x + h$. So, as $h \rightarrow 0$, the limit is $2x$.
 
 That is, the derivative of $f(x) = x^2$ is $f^\prime(x) = 2x$.
 
