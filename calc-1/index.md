@@ -8,3 +8,4 @@ layout: default
 * [Lesson 1: Review of functions and the main ideas of calculus](lesson1.html)
 * [Lesson 2: Introduction to Limits](lesson2.html)
 * [Lesson 3: Limits, Continued](lesson3.html)
+* [Lesson 4: Squeeze Theorem and Continuity](lesson4.html)
