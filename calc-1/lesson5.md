@@ -75,6 +75,24 @@ $$\frac{x^2-9}{x-3} = \frac{(x+3)(x-3)}{x-3} = x+3$$
 
 ## Another derivative formula
 
+Another way to think about secant lines is, instead of thinking about two points, think about one point and a distance.
+
+That is, let's say we want to find a good approximation of the tangent line at a point $x = a$. We look at the point at $(a, f(a))$. Then, instead of picking another $x$-value $b$, we pick a small *increment*, let's call it $h$. Now let's look at the point where $x = a + h$. That is, we draw the secant line from $(a, f(a))$, to $(a+h, f(a+h))$. This is what is happening in the graph below:
+
+<div class="desmos-container"><iframe src="https://www.desmos.com/calculator/m6omcjykuo?embed" style="border: 1px solid #ccc" frameborder=0></iframe></div>
+
+The slope of the secant line is $\frac{f(a+h)-f(a)}{(a+h)-a} = \frac{f(a+h)-f(a)}{h}$. As $h \rightarrow 0$, the secant line again approaches a tangent line. So again, we can come up with the formula for the derivative:
+
+$$f^\prime(x) = \lim_{h \rightarrow 0} \frac{f(x+h)-f(x)}{h}$$
+
+Let's use this to determine the value of the derivative of the function $f(x) = x^2$, at *any* given point $x$. First let's compute $\frac{f(x+h)-f(x)}{h}$. Since $(x+h)^2$ is $(x+h)(x+h) = x^2 + 2xh + h^2$, we get:
+
+$$\frac{f(x+h)-f(x)}{h} = \frac{x^2 + 2xh + h^2 - x^2}{h} = \frac{2xh+h^2}{h}$$
+
+For all $h \neq 0$, we can use some algebra to simplify this fraction. We get $\dfrac{2xh+h^2}{h} = \dfrac{h(2x+h)}{h}$, which is $\dfrac{2x + h}$. So, as $h \rightarrow 0$, the limit is $2x$.
+
+That is, the derivative of $f(x) = x^2$ is $f^\prime(x) = 2x$.
+
 # Derivative of a Line
 
 ## Derivative of a Constant Function
