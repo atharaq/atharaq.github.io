@@ -178,7 +178,7 @@ Determine the derivative of $f(x) = 5x^2$.
 
 <details>
   <summary>Check your answer</summary>
-  <p>Since the derivative of $x^2$ is $2x$, the derivative of $5x^2$ is $5 \times 2x$, which is $10x$.
+  <p>Since the derivative of $x^2$ is $2x$, the derivative of $5x^2$ is $5 \times 2x$, which is $10x$.</p>
 </details>
 
 ## Sum Rule
