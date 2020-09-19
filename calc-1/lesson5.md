@@ -122,10 +122,69 @@ Similarly, we can use the definition of the derivative to find the derivative of
 <iframe src="https://www.youtube.com/embed/OsPNBYmqxLo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
+# Exercise
+
+Find the derivative of $f(x) = \|x\|$ at $x = 0$. Hint: the absolute value function can be defined as a piecewise function:
+
+$$f(x)=\begin{cases}-x &\mbox{if } x < 0
+\\ x &\mbox{if } x \geq 0 \end{cases}$$
+
+Since this is a piecewise function, you will need to look at the right hand and left hand limits of $\frac{f(x)-f(0)}{x-0}$.
+
+<details>
+  <summary>Solution:</summary>
+  
+<p>  $f^\prime(0)$ **does not exist**! Remember that limits do not always exist. Let's compute the following limits: ${\displaystyle\lim_{x\rightarrow 0^-} \frac{f(x) - f(0)}{x - 0}$ and ${\displaystyle\lim_{x\rightarrow 0^+} \frac{f(x) - f(0)}{x - 0}$.</p>
+  
+<p>As $x \rightarrow 0^-$, $f(x) = -x$. So we are looking at the limit of $\frac{-x}{x}$, which is $-1$.</p>
+<p>As $x \rightarrow 0^+$, $f(x) = x$. So we are looking at the limit of $\frac{x}{x}$, which is 1.</p>
+<p>Since the two one-sided limits are different, the (two-sided) limit does not exist (DNE)!</p>
+</details>
+
+## Differentiability
+
+We've seen that not every function has a derivative at every point. Given a function $f(x)$, we say $f(x)$ is **differentiable** at $x = a$ if the derivative $f^\prime(a)$ exists. That is, if ${\displaystyle\lim_{x\rightarrow a}}\frac{f(x)-f(a)}{x-a}$ exists. Alternatively, we could have used the other definition of a derivative &mdash; they are equivalent definitions.
+
+$f(x)$ is called a **differentiable function** if it is differentiable at every point at which it is defined. That is, if it is differentiable at each point in its domain.
+
+# Constant Multiple and Sum Rules
+
+As we've seen, the definition of the derivative is somewhat cumbersome to use. Instead of using this definition forever, we will first try to prove some rules about the derivative. We would then be able to use what we've already computed, plus these rules, to figure out other examples.
+
+You can watch the following Khan Academy video, where he goes through the two rules we will study today: the constant multiple rule and the sum rule.
+
+<div class="desmos-container">
+<iframe src="https://www.youtube.com/embed/uCLZyTliZj0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+Let's work a bit *abstractly*. That is, we will use properties of functions, rather than concrete examples of functions.
+
+Our first rule will be the **constant multiple rule**. Let's say that we have a function $f(x)$ that we know has a derivative at $x = a$. Let's say that $f^\prime(a) = c$. If $g(x)$ is equal to some constant multiple of $f(x)$, say $g(x) = k f(x)$, then we want a rule that will tell us $g^\prime(a)$ in terms of $f^\prime(a)$. Let's compute $g^\prime(a)$:
+
+$$\begin{align}
+\lim_{x\rightarrow a} \frac{g(x)-g(a)}{x-a} &= \lim_{x\rightarrow a} \frac{kf(x) - kf(a)}{x - a} \\
+&= \lim_{x\rightarrow a} k \frac{f(x) - f(a)}{x - a} \\
+&= k \lim_{x \rightarrow a} \frac{f(x) - f(a)}{x - a} \\
+&= k f^\prime(a)
+\end{align}$$
+
+This means that $g^\prime(a)$ exists, and is equal to $k$ times $f^\prime(a)$. This is the **constant multiple rule**: if $f(x)$ is differentiable, then for any constant $k$, $kf(x)$ is differentiable, and $(kf(x))^\prime = kf^\prime(x)$.
+
+For example, we have seen that if $f(x) = x^2$, then for each $x$ value, the derivative exists, and $f^\prime(x) = 2x$. What should that mean for a function like $g(x) = 3x^2$? In this case, $g(x) = 3f(x)$, so by the constant multiple rule, $g^\prime(x) = 3f^\prime(x)$. So that means $g^\prime(x) = 3 \times 2x = 6x$.
+
 ## Exercise
 
-# Constant Multiple Rule
+Determine the derivative of $f(x) = 5x^2$.
 
-## Exercise
+<details>
+  <summary>Check your answer</summary>
+  <p>Since the derivative of $x^2$ is $2x$, the derivative of $5x^2$ is $5 \times 2x$, which is $10x$.
+</details>
+
+## Sum Rule
+
+Now let's suppose that $f(x)$ and $g(x)$ are two functions that are both differentiable at $x = a$. What would the derivative of the function $h(x) = f(x) + g(x)$ be at $x = a$?
+
+## Exercises
 
 # Homework Due Friday, 9/25
