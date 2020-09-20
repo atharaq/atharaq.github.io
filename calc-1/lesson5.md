@@ -1,8 +1,13 @@
-<!-- 9/21 -->
-
 # Calculus I Lesson 5: Intro to Derivatives
+{:.no_toc}
 
 # Quiz
+{:.no_toc}
+
+Before starting today's lesson, make sure to go through the quiz on Moodle.
+
+1. Table of Contents
+{:toc}
 
 # IVT Exercise
 
@@ -215,3 +220,5 @@ As before, upload a single PDF (using a scanner or scanner app) of your written 
 * Section 2.4 \#134, 146, 150, 152, 162
 * Section 3.1 \#26, 51
 * Section 3.2 \#58, 66, 94
+
+Please also note that there is a homework on DeltaMath due **Thursday, 9/24** at 11:59 PM.
