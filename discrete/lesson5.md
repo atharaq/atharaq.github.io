@@ -184,4 +184,31 @@ More generally: what did we do here? What's the relationship between $f$ and $g$
 
 ## Natural Numbers and Integers
 
+Before we saw that $\|\mathbb{N}\| = \|2\mathbb{N}\|$. Here we will see that $\|\mathbb{N}\| = \|\mathbb{Z}\|$. Recall that $\mathbb{Z}$ is the set of all integers, and so it contains $\mathbb{Z}$ as well as $-1, -2, -3, \ldots$ So again we will see an example of an infinite set that contains a "smaller" infinite set, but the two can be matched up in a one to one correspondence.
+
+The idea here is that we can "re-order" the integers starting at 0 and going outward. That is, we can write the integers down in the order $0, -1, 1, -2, 2, \ldots$, alternating between negatives and positives. We have not written down, explicitly, the bijection, but we could write one down as a piecewise function:
+
+$$
+h(n) = \begin{cases} \frac{n}{2} & \mbox{if } n \mbox{ is even}\\
+-\frac{n+1}{2} &\mbox{if } n \mbox{ is odd}\end{cases}
+$$
+
+Let $O$ be the set of odd numbers. Notice that $f(2\mathbb{N})$, the image of the set of even numbers, is $\mathbb{N}$, for the same reason that the function $g: 2\mathbb{N} \to \mathbb{N}$ in the previous section was a bijeciton. Also notice that $f(O)$ is the set of all negative integers: $f(1) = -1$, $f(3) = -2$, $f(5) = -3$, etc. This is not a proof, but a formal proof could be given later on.
+
 ## Transitivity
+
+So far we have seen that $\|\mathbb{N}\| = \|2\mathbb{N}\|$ and that $\|\mathbb{N}\| = \|\mathbb{Z}\|$. We might expect, then that $\|2\mathbb{N}\| = \|\mathbb{Z}\|$. We would be correct!
+
+In general, cardinality is **transitive**: if we have three sets $A, B, C$ and $\|A\| = \|B\|$ and $\|B\| = \|C\|$, then $\|A\| = \|C\|$. How might we prove this? We need to show: if we have a bijection $f: A \to B$ and a bijection $g : B \to C$, that we can find a bijection $h : A \to C$. Again, I will ask you to prove this in general, but let's look at a specific example here.
+
+We want to map the numbers $0, 2, 4, 6, 8, \ldots$ to the numbers $0, -1, 1, -2, 2, \ldots$ How might we do this? well, we know that if we start with an even number, we can divide it by 2 and get a natural number. And we know that if we start with a natural number, we have some rule (above) that gives us an integer.
+
+So let's combine these two! Let's describe (in words) a function $F : 2\mathbb{N} \to \mathbb{Z}$ informally. $F$ works by first taking an even number $n$ and dividing it by 2. Then, using the rule above, if $\dfrac{n}{2}$ is even, it divides that by 2 again. If not, it adds 1 to that, divides it by 2 again, and then negates it. This is the number that $F(n)$ would output.
+
+Let's check a few examples:
+
+* $\frac{0}{2}$ is $0$, which is even, so $F(0) = 0$.
+* $\frac{2}{2}$ is $1$, which is odd. So then $F(2)$ will be $-\frac{1 + 1}{2}$, which is $1$
+* $\frac{4}{2}$ is $2$, which is even. $F(4)$ will divide that by 2 again, so $F(4) + 1$.
+
+We are not proving it here, but $F$ is, in fact, a bijection. Proving that it is a bijection would basically involve the same steps as proving the more general statement, so we will skip this for now.
