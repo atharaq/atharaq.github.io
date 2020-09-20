@@ -2,7 +2,7 @@
 {:.no_toc}
 
 1. Table of Contents
-{toc}
+{:toc}
 
 # Ordered Pairs and Tuples
 
