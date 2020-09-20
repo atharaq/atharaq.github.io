@@ -6,11 +6,11 @@
 
 # Ordered Pairs and Tuples
 
-The two sets $\{ 0, 1, \}$ and $\{ 1, 0 \}$ are considered equal, because sets are determined entirely by the elements, and not their orders. So we need a new kind of object that does destinguish between orders: this is the notion of the ordered pair, or, more generally, an ordered $n$-tuple. There is a set-theoretic definition of ordered pair, but it's not super important: all that matters is that $(0, 1) \neq (1, 0)$ as ordered pairs. Our notation here is important: the parentheses represent ordered pairs, while the curly braces represent sets. More generally, we can think about ordered triples, like $(0, 1, 0)$, or ordered $n$-tuples, like $(a_1, a_2, \ldots, a_n)$.
+The two sets $\\{ 0, 1, \\}$ and $\\{ 1, 0 \\}$ are considered equal, because sets are determined entirely by the elements, and not their orders. So we need a new kind of object that does destinguish between orders: this is the notion of the ordered pair, or, more generally, an ordered $n$-tuple. There is a set-theoretic definition of ordered pair, but it's not super important: all that matters is that $(0, 1) \neq (1, 0)$ as ordered pairs. Our notation here is important: the parentheses represent ordered pairs, while the curly braces represent sets. More generally, we can think about ordered triples, like $(0, 1, 0)$, or ordered $n$-tuples, like $(a_1, a_2, \ldots, a_n)$.
 
 Give two sets $A$ and $B$, the **Cartesian product** $A \times B$ is the set of all ordered pairs of the form $(a, b)$, where $a \in A$ and $b \in B$. For example, if $A$ and $B$ are both the set of real numbers $\mathbb{R}$, the set $\mathbb{R} \times \mathbb{R}$ is the normal Cartesian plane. In general, we refer to $A \times A$ as $A^2$.
 
-Lastly, one more definition which we will refer to again later: a relation $R$ between sets $A$ and $B$ is any subset of $A \times B$. For example, if $A$ and $B$ are both the set of integers $\mathbb{Z}$, one relation we might consider is the set $\{ (x, y) : x \leq y \}$. This is the "order"-relation on $\mathbb{Z}$.
+Lastly, one more definition which we will refer to again later: a relation $R$ between sets $A$ and $B$ is any subset of $A \times B$. For example, if $A$ and $B$ are both the set of integers $\mathbb{Z}$, one relation we might consider is the set $\\{ (x, y) : x \leq y \\}$. This is the "order"-relation on $\mathbb{Z}$.
 
 # Functions
 
@@ -31,18 +31,18 @@ Normally, we write $f(a) = b$ instead of $(a, b) \in f$: that is, we use functio
 * The domain and codomain are part of the *definition* of the function itself. For example, I cannot say $f(x) = x$ is a function. I need to say what the domain and codomain of $f$ is.
   * The function $f: \mathbb{N} \to \mathbb{N}$ given by $f(n) = n$ is a **different function** from $g : \mathbb{N} \to \mathbb{Z}$ given by $g(n) = n$.
 * if $a \in A$, we refer to $f(a)$ as the **image** of the point $a$.
-* if $X \subseteq A$, the set $f(X) = \{ f(a) : a \in X \}$ is referred to as the **image** of the set $X$.
+* if $X \subseteq A$, the set $f(X) = \\{ f(a) : a \in X \\}$ is referred to as the **image** of the set $X$.
 * $f(A)$ is called the image of $f$
 
 ## Examples
 
 Our definition of a function is a set of ordered pairs with a particular property. So let's look at some examples of sets of ordered pairs:
 
-* As a subset of $\{ 0, 1 \} \times \{ a, b, c \}$: $\{ (0, a), (0, b), (1, c) \}$ is **not** a function because there is no single output for $0$.
-* As a subset of $\{ 0, 1 \} \times \{ a, b, c \}$: $\{ (0, a) \}$ is **not** a function because there is no output for $1$
-* As a subset of $\{ 0 \} \times \{ a, b, c \}$: $\{ (0, a) \}$ **is** a function!. This is the function $f : \{ 0 \} \to \{ a, b, c \}$ given by $f(0) = a$.
+* As a subset of $\\{ 0, 1 \\} \times \\{ a, b, c \\}$: $\\{ (0, a), (0, b), (1, c) \\}$ is **not** a function because there is no single output for $0$.
+* As a subset of $\\{ 0, 1 \\} \times \\{ a, b, c \\}$: $\\{ (0, a) \\}$ is **not** a function because there is no output for $1$
+* As a subset of $\\{ 0 \\} \times \\{ a, b, c \\}$: $\\{ (0, a) \\}$ **is** a function!. This is the function $f : \\{ 0 \\} \to \\{ a, b, c \\}$ given by $f(0) = a$.
 
-How many functions are there from $\{ 0 \} \to \{ a, b, c \}$? How many from $\{ 0, 1 \}$ to $\{a, b, c\}$?
+How many functions are there from $\\{ 0 \\} \to \\{ a, b, c \\}$? How many from $\\{ 0, 1 \\}$ to $\\{a, b, c\\}$?
 
 ## Injections: One to One
 
@@ -68,7 +68,7 @@ Similarly, to show that a function is not onto, you show a counterexample: a sin
 
 A function that is both one to one and onto is called a **bijection**. A bijection is sometimes called a **one to one correspondence**. Let's look at some examples:
 
-Let $A$ be the set of all strings ("words") of length 3 that can be made with the letters $\{ a, b \}$, and $B$ the set of all strings of length 3 that can be made with the numbers $\{ 0, 1 \}$. These sets can be put into a one to one by turning a's into 0s, and b's into 1s:
+Let $A$ be the set of all strings ("words") of length 3 that can be made with the letters $\\{ a, b \\}$, and $B$ the set of all strings of length 3 that can be made with the numbers $\\{ 0, 1 \\}$. These sets can be put into a one to one by turning a's into 0s, and b's into 1s:
 
 $$
 \begin{align}
@@ -83,7 +83,7 @@ bbb \mapsto 111
 \end{align}
 $$
 
-One way to think about a bijection between two sets is to see if there is a way of "labeling" objects from one set using objects from another set. As an example, let's think of the set of those strings of length 3 that can be made with the numbers 0 and 1. Later on we will learn about binary numbers: every natural number can be represented in binary (instead of the usual decimal system). We only need three binary digits (also called **bits**) to represents the numbers $0$ through $7$. So we have a bijection, by labeling each binary string by the number that it represents: $g : \{ 0, 1, 2, 3, 4, 5, 6, 7 \} \to B$ would be given by:
+One way to think about a bijection between two sets is to see if there is a way of "labeling" objects from one set using objects from another set. As an example, let's think of the set of those strings of length 3 that can be made with the numbers 0 and 1. Later on we will learn about binary numbers: every natural number can be represented in binary (instead of the usual decimal system). We only need three binary digits (also called **bits**) to represents the numbers $0$ through $7$. So we have a bijection, by labeling each binary string by the number that it represents: $g : \\{ 0, 1, 2, 3, 4, 5, 6, 7 \\} \to B$ would be given by:
 
 $$
 \begin{align}
@@ -106,10 +106,10 @@ ThereThere is an interesting bijection between power sets
 
 ## Non-examples
 
-There is no bijection from the set $\{ 0, 1 \}$ to the set $\{ a, b, c \}$. Why not? Let's look at all possible functions:
+There is no bijection from the set $\\{ 0, 1 \\}$ to the set $\\{ a, b, c \\}$. Why not? Let's look at all possible functions:
 
-* There are three functions from $\{ 0, 1 \}$ to $\{ a, b, c \}$ which map $0$ to $a$. One of these maps $1$ to $a$, one maps $1$ to $b$, and one maps $1$ to $c$. In the first two cases, $c$ is not in the image, and in the last case, $b$ is not in the image.
-* Similarly, there are three functions from $\{0, 1 \}$ to $\{a, b, c \}$ which map $0$ to $b$, and three which map $0$ to $c$. Each one of these will leave *something* out of the iamge.
+* There are three functions from $\\{ 0, 1 \\}$ to $\\{ a, b, c \\}$ which map $0$ to $a$. One of these maps $1$ to $a$, one maps $1$ to $b$, and one maps $1$ to $c$. In the first two cases, $c$ is not in the image, and in the last case, $b$ is not in the image.
+* Similarly, there are three functions from $\\{0, 1 \\}$ to $\\{a, b, c \\}$ which map $0$ to $b$, and three which map $0$ to $c$. Each one of these will leave *something* out of the iamge.
 
 So when is there a bijection between two sets? It's a fairly simple characterization: the two sets need to have the same size!
 
@@ -121,7 +121,7 @@ This is an "if and only if" statement, which means we have to prove two implicat
 
 I will leave the first implication to you on the next problem set. What do you need to prove here? You assume that $f : A \to B$ is a bijection, which means it's one to one and onto. You then need to show that $A$ and $B$ have the same number of elements. So start by assuming that $A$ has $n$ distinct elements, and let $a_1, \ldots, a_n$ enumerate those elements (so they are all different). You must conclude that $B$ also has exactly $n$ elements, somehow.
 
-For now, though, let's prove the second implication: that if two sets have the same number of elements, then there is a bijection between them. Let's suppose that $A$ and $B$ both have size $n$, for some $n \geq 0$. We can enumerate the elements of $A$ as $\{ a_1, a_2, \ldots, a_n \}$, and the elements of $B$ as $\{ b_1, b_2, \ldots, b_n \}$. Then the function $f : A \to B$ which is defined by $a_i \mapsto b_i$ is a bijection!
+For now, though, let's prove the second implication: that if two sets have the same number of elements, then there is a bijection between them. Let's suppose that $A$ and $B$ both have size $n$, for some $n \geq 0$. We can enumerate the elements of $A$ as $\\{ a_1, a_2, \ldots, a_n \\}$, and the elements of $B$ as $\\{ b_1, b_2, \ldots, b_n \\}$. Then the function $f : A \to B$ which is defined by $a_i \mapsto b_i$ is a bijection!
 
 This is fairly simple to see, but there are actually three things to show here:
 
@@ -135,13 +135,13 @@ Our theorem above provides motivation for our following definition.
 
 **Definition**: Let $A$ and $B$ be (possibly infinite) sets. Then $\|A\| = \|B\|$, read "the **cardinality** of $A$ is equal to the cardinality of $B$", if there is a bijection $f : A \to B$.
 
-The word "cardinality" is now going to be used to generalize the meaning of "size" to infinite sets. This was Cantor's main observation: that really when we "count" finite sets, we are putting that set in bijection with with a set of the form $\{1, 2, \ldots, n \}$. Indeed: when we say that a set has $n$ elements, we list out those $n$ elements as $a_1, a_2, \ldots, a_n$. This is a bijection: $i \mapsto a_i$! Take any finite set you can think of. For example, take the set of capital letters of the English alphabet. Putting them in alphabetical order puts them in bijection with the set of integers from 1 to 26 (inclusive): $1 \mapsto `A'$, $2 \mapsto `B'$, etc.
+The word "cardinality" is now going to be used to generalize the meaning of "size" to infinite sets. This was Cantor's main observation: that really when we "count" finite sets, we are putting that set in bijection with with a set of the form $\\{1, 2, \ldots, n \\}$. Indeed: when we say that a set has $n$ elements, we list out those $n$ elements as $a_1, a_2, \ldots, a_n$. This is a bijection: $i \mapsto a_i$! Take any finite set you can think of. For example, take the set of capital letters of the English alphabet. Putting them in alphabetical order puts them in bijection with the set of integers from 1 to 26 (inclusive): $1 \mapsto `A'$, $2 \mapsto `B'$, etc.
 
 What Cantor did, then, was to take this observation, and turn it into a definition. How do we make sense of two infinite sets being the same size? If we can "count" one using the other set as our "labels".
 
 ## Natural Numbers and Evens
 
-Let $2\mathbb{N} = \{ x : $ there is $n \in \mathbb{N}$ such that $x = 2n \}$ denote the set of even natural numbers. This is the set of numbers that can be formed by multiplying a natural number by 2.
+Let $2\mathbb{N} = \\{ x : $ there is $n \in \mathbb{N}$ such that $x = 2n \\}$ denote the set of even natural numbers. This is the set of numbers that can be formed by multiplying a natural number by 2.
 
 Let $f : \mathbb{N} \to 2\mathbb{N}$ be given by $f(n) = 2n$. This is a bijection! That means that $\|\mathbb{N}\| = \|2\mathbb{N}\|$. This is strange, since $\mathbb{N}$ is clearly "bigger" than $2\mathbb{N}$: $2\mathbb{N} \subseteq \mathbb{N}$, and then there are all the odd numbers like $1, 3, \ldots$. So $\mathbb{N} \setminus 2\mathbb{N}$ is also infinite. But this is the paradoxical nature of infinity. Infinite sets can be put into bijection with seemingly smaller sets.
 
