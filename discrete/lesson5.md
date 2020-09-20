@@ -111,13 +111,13 @@ This is quite an informal description of a function, but we can write it down ex
 $$
 \begin{align}
 000 &\mapsto \emptyset\\
-001 &\mapsto \\{ c \\}\\
-010 &\mapsto \\{ b \\}\\
-011 &\mapsto \\{b, c \\}\\
-100 &\mapsto \\{a \\}\\
-101 &\mapsto \\{a, c \\}\\
-110 &\mapsto \\{a, b \\}\\
-111 &\mapsto \\{a, b, c \\}
+001 &\mapsto \{ c \}\\
+010 &\mapsto \{ b \}\\
+011 &\mapsto \{b, c \}\\
+100 &\mapsto \{a \}\\
+101 &\mapsto \{a, c \}\\
+110 &\mapsto \{a, b \}\\
+111 &\mapsto \{a, b, c \}
 \end{align}
 $$
 
