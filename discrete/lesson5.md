@@ -68,7 +68,7 @@ Similarly, to show that a function is not onto, you show a counterexample: a sin
 
 A function that is both one to one and onto is called a **bijection**. A bijection is sometimes called a **one to one correspondence**. Let's look at some examples:
 
-Let $A$ be the set of all strings ("words") of length 3 that can be made with the letters $\\{ a, b \\}$, and $B$ the set of all strings of length 3 that can be made with the numbers $\\{ 0, 1 \\}$. These sets can be put into a one to one by turning a's into 0s, and b's into 1s:
+Let $A$ be the set of all strings ("words") of length 3 that can be made with the letters $\\{ a, b \\}$, and $B$ the set of all strings of length 3 that can be made with the numbers $\\{ 0, 1 \\}$. I will refer to $B$ as the set of all "**binary strings of length 3**". These sets can be put into a one to one correspondence by turning a's into 0s, and b's into 1s:
 
 $$
 \begin{align}
@@ -83,7 +83,7 @@ bbb \mapsto 111
 \end{align}
 $$
 
-One way to think about a bijection between two sets is to see if there is a way of "labeling" objects from one set using objects from another set. As an example, let's think of the set of those strings of length 3 that can be made with the numbers 0 and 1. Later on we will learn about binary numbers: every natural number can be represented in binary (instead of the usual decimal system). We only need three binary digits (also called **bits**) to represents the numbers $0$ through $7$. So we have a bijection, by labeling each binary string by the number that it represents: $g : \\{ 0, 1, 2, 3, 4, 5, 6, 7 \\} \to B$ would be given by:
+Another way to think about a bijection between two sets is to see if there is a way of "labeling" objects from one set using objects from another set. As an example, let's think of the set of those strings of length 3 that can be made with the numbers 0 and 1. Later on we will learn about binary numbers: every natural number can be represented in binary (instead of the usual decimal system). We only need three binary digits (also called **bits**) to represents the numbers $0$ through $7$. So we have a bijection, by labeling each binary string by the number that it represents: $g : \\{ 0, 1, 2, 3, 4, 5, 6, 7 \\} \to B$ would be given by:
 
 $$
 \begin{align}
@@ -102,7 +102,28 @@ We will study how to convert from a number to its binary representation later th
 
 ## Example: Power Sets / Binary Strings
 
-ThereThere is an interesting bijection between power sets
+There is an interesting bijection between power sets and binary strings. Let's stick with sets of 3 objects and strings of length 3. Let's look at the set $A = \\{ a, b, c \\}$. In a sense, we can think of binary strings of length 3 as describing subsets of $A$. Let's think of it this way: a single 0 or 1 in a particular position will represent the answer to a "yes" or "no" question (with 1 representing "yes", 0 representing "no"). So: what, exactly is the question? That is, what are the 3 yes/no questions we need to ask in order to describe a subset of $A$?
+
+We need to know 3 bits of information to describe a subset $X \subseteq A$: is $a \in X$? Is $b \in X$? And, is $c \in X$? So, for example, the string $011$ might represent the set $\{ b, c \}$, since the $0$ represents a "no" for the first question, the $1$ represents a "yes" to the second question, and the last $1$ represents a "yes" to the third question.
+
+This is quite an informal description of a function, but we can write it down explicitly since there are only $8$ possible binary strings of length 3:
+
+$$
+\begin{align}
+000 &\mapsto \emptyset\\
+001 &\mapsto \\{ c \\}\\
+010 &\mapsto \\{ b \\}\\
+011 &\mapsto \\{b, c \\}\\
+100 &\mapsto \\{a \\}\\
+101 &\mapsto \\{a, c \\}\\
+110 &\mapsto \\{a, b \\}\\
+111 &\mapsto \\{a, b, c \\}
+\end{align}
+$$
+
+Here I am using the fact that we enumerated all 8 binary strings of length three previously. Why is this a bijection? We need to show that this function is one to one and onto. First: it's one to one, because when we look at the outputs, they are all different!
+
+So why is it "onto"? Take a set $X \subseteq A$. We know that, since it's a subset of $A$, we can ask if $a \in X$, $b \in X$, and if $c \in X$. Each of these questions would give us a yes/no, or a 1/0 response. Put those together and we get the corresponding binary string. That is, we can invert this function!
 
 ## Non-examples
 
@@ -164,5 +185,3 @@ More generally: what did we do here? What's the relationship between $f$ and $g$
 ## Natural Numbers and Integers
 
 ## Transitivity
-
-## Natural Numbers and Positive Rationals
