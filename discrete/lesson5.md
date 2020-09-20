@@ -6,7 +6,7 @@
 
 # Ordered Pairs and Tuples
 
-The two sets $\\{ 0, 1, \\}$ and $\\{ 1, 0 \\}$ are considered equal, because sets are determined entirely by the elements, and not their orders. So we need a new kind of object that does destinguish between orders: this is the notion of the ordered pair, or, more generally, an ordered $n$-tuple. There is a set-theoretic definition of ordered pair, but it's not super important: all that matters is that $(0, 1) \neq (1, 0)$ as ordered pairs. Our notation here is important: the parentheses represent ordered pairs, while the curly braces represent sets. More generally, we can think about ordered triples, like $(0, 1, 0)$, or ordered $n$-tuples, like $(a_1, a_2, \ldots, a_n)$.
+The two sets $\\{ 0, 1 \\}$ and $\\{ 1, 0 \\}$ are considered equal, because sets are determined entirely by the elements, and not their orders. So we need a new kind of object that does destinguish between orders: this is the notion of the ordered pair, or, more generally, an ordered $n$-tuple. There is a set-theoretic definition of ordered pair, but it's not super important: all that matters is that $(0, 1) \neq (1, 0)$ as ordered pairs. Our notation here is important: the parentheses represent ordered pairs, while the curly braces represent sets. More generally, we can think about ordered triples, like $(0, 1, 0)$, or ordered $n$-tuples, like $(a_1, a_2, \ldots, a_n)$.
 
 Give two sets $A$ and $B$, the **Cartesian product** $A \times B$ is the set of all ordered pairs of the form $(a, b)$, where $a \in A$ and $b \in B$. For example, if $A$ and $B$ are both the set of real numbers $\mathbb{R}$, the set $\mathbb{R} \times \mathbb{R}$ is the normal Cartesian plane. In general, we refer to $A \times A$ as $A^2$.
 
