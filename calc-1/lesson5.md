@@ -41,7 +41,7 @@ It's important to understand that the concept of a derivative occurs in many con
 Suppose we are manufacturing some product, and we model the cost $c$ as a function of the quantity $x$ of the product that we produce. That is, there is some function $c(x)$ that represents the total cost it takes to produce $x$ amount of our product. The derivative here represents the *marginal cost*: the amount of money it would cost to produce just a little bit more. The video does a good job explaining why we might care about the marginal cost, or marginal profit, or marginal revenue.
 
 <div class="youtube-container">
-<iframe width="560" height="315" width="560" height="315" src="https://www.youtube.com/embed/Wkjz1LlX1CQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/Wkjz1LlX1CQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 ## Secant Lines $\rightarrow$ Tanagent Lines
@@ -104,7 +104,7 @@ That is, the derivative of $f(x) = x^2$ is $f^\prime(x) = 2x$.
 Take a look at this example, from the YouTube Channel PatrickJMT. This shows a more complicated example of using algebra to compute a complicated limit.
 
 <div class="youtube-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vzDYOHETFlo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/vzDYOHETFlo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 # Derivative of a Line
@@ -124,7 +124,7 @@ So $f^\prime(a) = m$, at every point on the graph. **The derivative of a line is
 Similarly, we can use the definition of the derivative to find the derivative of a constant function. If $f(x) = k$ is a constant, then $f(x+h) = k$ also. So $\dfrac{f(x+h)-f(x)}{h} = \dfrac{k - k}{h} = \dfrac{0}{h}$. That means that $f^\prime(x) = 0$. This argument is covered in the following KhanAcademy video:
 
 <div class="youtube-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OsPNBYmqxLo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/OsPNBYmqxLo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 # Exercise
@@ -159,7 +159,7 @@ As we've seen, the definition of the derivative is somewhat cumbersome to use. I
 You can watch the following Khan Academy video, where he goes through the two rules we will study today: the constant multiple rule and the sum rule.
 
 <div class="youtube-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/uCLZyTliZj0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/uCLZyTliZj0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 Let's work a bit *abstractly*. That is, we will use properties of functions, rather than concrete examples of functions.
