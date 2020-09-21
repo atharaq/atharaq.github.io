@@ -1,4 +1,4 @@
-# Discrete Mathematics Lesson 5: Set Theory
+# Discrete Mathematics Lesson 5: Set Theory / Functions
 {:.no_toc}
 
 1. Table of Contents
