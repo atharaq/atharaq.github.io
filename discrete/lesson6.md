@@ -1,11 +1,6 @@
 # Discrete Mathematics Lesson 6: Cardinality
 {:.no_toc}
 
-1. Countable Infinity, Symmetry (10)
-2. Integers, Transitivity (15)
-3. Rationals. (15)
-5. real numbers (10)
-
 1. Table of Contents
 {:toc}
 
@@ -29,7 +24,7 @@ More generally: what did we do here? What's the relationship between $f$ and $g$
 
 ## Natural Numbers and Integers
 
-Recall that $\mathbb{Z}$ is the set of all integers, and so it contains $\mathbb{N}$ as well as $-1, -2, -3, \ldots We will show that $|\mathbb{N}| = |\mathbb{Z}|$. So again we will see an example of an infinite set that contains a "smaller" infinite set, but the two can be matched up in a one to one correspondence.
+Recall that $\mathbb{Z}$ is the set of all integers, and so it contains $\mathbb{N}$ as well as $-1, -2, -3, \ldots We will show that $\|\mathbb{N}\| = \|\mathbb{Z}\|$. So again we will see an example of an infinite set that contains a "smaller" infinite set, but the two can be matched up in a one to one correspondence.
 
 The idea here is that we can "re-order" the integers starting at 0 and going outward. That is, we can write the integers down in the order $0, -1, 1, -2, 2, \ldots$, alternating between negatives and positives. We have not written down, explicitly, the bijection, but we could write one down as a piecewise function:
 
@@ -67,7 +62,7 @@ Our proof that the integers are countably infinite boils down to this fact: we c
 
 The caveat here that each integers shows up at a finite position is important. The listing $0, 1, 2, 3, \ldots, -1, -2, -3, -4, \ldots$ is not a valid "infinite sequence" in this sense. At which position does $-2$ show up?
 
-Now let's consider the rational numbers $\mathbb{Q} = \\{ \frac{m}{n} : m, n \in \mathbb{Q}, n \neq 0 \}\$. Are the rational numbers also countably infinite? Is there a way to list out all rational numbers in an infinite sequence? It's not entirely obvious: if we start by listing out all the integers, we will miss out on numbers likes $\frac{1}{2}, \frac{3}{2}$, etc. If we start by listing out all the numbers whose denominator is $2$, we will miss out on $\frac{1}{3}$.
+Now let's consider the rational numbers $\mathbb{Q} = \\{ \frac{m}{n} : m, n \in \mathbb{Q}, n \neq 0 \\}$. Are the rational numbers also countably infinite? Is there a way to list out all rational numbers in an infinite sequence? It's not entirely obvious: if we start by listing out all the integers, we will miss out on numbers likes $\frac{1}{2}, \frac{3}{2}$, etc. If we start by listing out all the numbers whose denominator is $2$, we will miss out on $\frac{1}{3}$.
 
 It's not clear at all how we might do this! One would be forgiven for believing there is no way to list out all rational numbers in an infinite sequence. But there is a way!
 
@@ -97,8 +92,30 @@ At this point, you would be forgiven for thinking, as many mathematicians in his
 
 Of course, I already hinted that there are **uncountable** infinite sets! In fact, there are many, but the most natural uncountably infinite set is the set of real numbers, $\mathbb{R}$.
 
-How might we prove that this set is not countable? We would need to show that there is **no** bijection $f : \mathbb{N} \to \mathbb{R}$. This is much stronger than saying "I've looked at a bunch of possible functions and none of them were bijections." This is saying: "I can prove that, for every single function $f : \mathbb{N} \to \mathbb{R}$, something goes wrong."
+How might we prove that this set is not countable? Before we try to write a real proof, we can check that we don't know of any bijection between $\mathbb{N}$ and $\mathbb{R}$. For example, the function $f : \mathbb{N} \to \mathbb{R}$ given by $f(n) = \sqrt{n}$ is not a bijection: $\pi$ is not in the image of $f$.
 
-That is, if I looked at a few functions, and showed that they weren't bijections, that's not enough. Perhaps we just weren't clever enough in coming up with the rule, like what happened with $\mathbb{Q}$.
+But we need something stronger than just "Every function I've looked at is not a bijection." We need to show that there is **no** bijection $f : \mathbb{N} \to \mathbb{R}$. This is saying: "I can prove that, for every single function $f : \mathbb{N} \to \mathbb{R}$, something goes wrong."
+
+That is, if I looked at a few functions, and showed that they weren't bijections, that's not enough. Maybe the square root example we thought of just wasn't clever enough. Perhaps we just weren't clever enough in coming up with the rule, like what happened with $\mathbb{Q}$? If we really want to prove that there is no bijection, we have to give an argument that works for every function $f : \mathbb{N} \to \mathbb{R}$.
+
+That is, given a function $f : \mathbb{N} \to \mathbb{R}$, we have to show that $f$ is not a bijection. In fact, what we will show is that $f$ is not a surjection: it's not onto. We will argue in a very general way, so that this argument can be applied to every function from $\mathbb{N}$ to $\mathbb{R}$, thereby showing there is no surjection from $\mathbb{N}$ to $\mathbb{R}$.
+
+The idea will be to find a real number $r$ which is different from $f(0)$, different from $f(1)$, different from $f(2)$, etc. This was **Cantor's Diagonal Argument**: if you list out the numbers $f(0), f(1)$ etc in a vertical table, you can find a real number that's not on that list by picking a number whose $n$-th digit is different from that of $f(n)$. To make this rule concrete, let's say that our number $r$ is defined by the following rule: if the $n$-th digit of $f(n)$ is equal to $1$, then the $n$-th digit of $r$ will be 2. Otherwise, the $n$-th digit of $r$ will be 1.
+
+What does that mean? Let's look at an example:
+
+$$
+\begin{align}
+f(0) &= 0.131569108 \ldots \\
+f(1) &= 2.718281828 \ldots \\
+f(2) &= 3.141592653 \ldots \\
+f(3) &= 1.414213562 \ldots
+\vdots
+\end{align}
+$$
+
+To find a number that's not on this list, we first look at $f(0)$. Since $f(0) = 0.131569108\ldots$, we will pick a number that starts with $1$, instead of
+
+
 
 ## Infinite Binary Sequences
