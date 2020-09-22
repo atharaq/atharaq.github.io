@@ -70,9 +70,9 @@ For now, we will only list out the positive rational numbers. The first step is 
 
 $$
 \begin{align}
-\frac{1}{1} & \frac{1}{2} & \frac{1}{3} & \frac{1}{4} & \ldots \\
-\frac{2}{1} & \frac{2}{2} & \frac{2}{3} & \frac{2}{4} & \ldots \\
-\frac{3}{1} & \frac{3}{2} & \frac{3}{3} & \frac{3}{4} & \ldots \\
+\frac{1}{1} ,& \frac{1}{2} ,& \frac{1}{3} ,& \frac{1}{4} ,& \ldots \\
+\frac{2}{1} ,& \frac{2}{2} ,& \frac{2}{3} ,& \frac{2}{4} ,& \ldots \\
+\frac{3}{1} ,& \frac{3}{2} ,& \frac{3}{3} ,& \frac{3}{4} ,& \ldots \\
 \vdots
 \end{align}
 $$
@@ -111,7 +111,7 @@ f(0) &= 0.131569108 \ldots \\
 f(1) &= 2.718281828 \ldots \\
 f(2) &= 3.141592653 \ldots \\
 f(3) &= 1.414213562 \ldots \\
-f(4) &= 2.618128176 \ldots
+f(4) &= 2.618128176 \ldots \\
 \vdots
 \end{align}
 $$
@@ -124,7 +124,7 @@ f(0) &= \mathbf{0}.131569108 \ldots \\
 f(1) &= 2.\mathbf{7}18281828 \ldots \\
 f(2) &= 3.1\mathbf{4}1592653 \ldots \\
 f(3) &= 1.74\mathbf{1}213562 \ldots \\
-f(4) &= 2.618\mathbf{1}28176 \ldots
+f(4) &= 2.618\mathbf{1}28176 \ldots \\
 \vdots
 \end{align}
 $$
