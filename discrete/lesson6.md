@@ -1,6 +1,11 @@
 # Discrete Mathematics Lesson 6: Cardinality
 {:.no_toc}
 
+1. Countable Infinity, Symmetry (10)
+2. Integers, Transitivity (15)
+3. Rationals. (15)
+5. real numbers (10)
+
 1. Table of Contents
 {:toc}
 
@@ -90,10 +95,10 @@ This spiraling is visualized in the following image: start at 1/1 on the top lef
 
 At this point, you would be forgiven for thinking, as many mathematicians in history did, that all infinite sets have the same size, and that formalizing this notion using bijections and cardinality is just proving what we already know.
 
-Of course, I already hinted that there are **uncountable** infinite sets!
+Of course, I already hinted that there are **uncountable** infinite sets! In fact, there are many, but the most natural uncountably infinite set is the set of real numbers, $\mathbb{R}$.
 
-**Theorem** (Cantor): The set $\mathbb{R}$ of real numbers is uncountable.
+How might we prove that this set is not countable? We would need to show that there is **no** bijection $f : \mathbb{N} \to \mathbb{R}$. This is much stronger than saying "I've looked at a bunch of possible functions and none of them were bijections." This is saying: "I can prove that, for every single function $f : \mathbb{N} \to \mathbb{R}$, something goes wrong."
 
-
+That is, if I looked at a few functions, and showed that they weren't bijections, that's not enough. Perhaps we just weren't clever enough in coming up with the rule, like what happened with $\mathbb{Q}$.
 
 ## Infinite Binary Sequences
