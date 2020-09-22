@@ -101,22 +101,34 @@ That is, if I looked at a few functions, and showed that they weren't bijections
 
 That is, given a function $f : \mathbb{N} \to \mathbb{R}$, we have to show that $f$ is not a bijection. In fact, what we will show is that $f$ is not a surjection: it's not onto. We will argue in a very general way, so that this argument can be applied to every function from $\mathbb{N}$ to $\mathbb{R}$, thereby showing there is no surjection from $\mathbb{N}$ to $\mathbb{R}$.
 
-The idea will be to find a real number $r$ which is different from $f(0)$, different from $f(1)$, different from $f(2)$, etc. This was **Cantor's Diagonal Argument**: if you list out the numbers $f(0), f(1)$ etc in a vertical table, you can find a real number that's not on that list by picking a number whose $n$-th digit is different from that of $f(n)$. To make this rule concrete, let's say that our number $r$ is defined by the following rule: if the $n$-th digit of $f(n)$ is equal to $1$, then the $n$-th digit of $r$ will be 2. Otherwise, the $n$-th digit of $r$ will be 1.
+The idea will be to find a real number $r$ which is different from $f(0)$, different from $f(1)$, different from $f(2)$, etc. This was **Cantor's Diagonal Argument**: if you list out the numbers $f(0), f(1)$ etc in a vertical table, you can find a real number that's not on that list by picking a number whose $n$-th digit after the decimal place is different from that of $f(n)$. To make this rule concrete, let's say that our number $r$ is defined by the following rule: if the $n$-th digit of $f(n)$ is equal to $1$, then the $n$-th digit of $r$ will be 2. Otherwise, the $n$-th digit of $r$ will be 1.
 
-What does that mean? Let's look at an example:
+What does that mean? Let's look at an example. Suppose $f$ is given by the following table:
 
 $$
 \begin{align}
 f(0) &= 0.131569108 \ldots \\
 f(1) &= 2.718281828 \ldots \\
 f(2) &= 3.141592653 \ldots \\
-f(3) &= 1.414213562 \ldots
+f(3) &= 1.414213562 \ldots \\
+f(4) &= 2.618128176 \ldots
 \vdots
 \end{align}
 $$
 
-To find a number that's not on this list, we first look at $f(0)$. Since $f(0) = 0.131569108\ldots$, we will pick a number that starts with $1$, instead of
+Let's look at the diagonal digits here:
 
+$$
+\begin{align}
+f(0) &= \mathbf{0}.131569108 \ldots \\
+f(1) &= 2.\mathbf{7}18281828 \ldots \\
+f(2) &= 3.1\mathbf{4}1592653 \ldots \\
+f(3) &= 1.74\mathbf{1}213562 \ldots \\
+f(4) &= 2.618\mathbf{1}28176 \ldots
+\vdots
+\end{align}
+$$
 
+If we apply the diagonal argument, we end up with a number $r$ that starts off as $1.112\ldots$. We know that this number we end up with cannot be on this list! That's because the number won't be equal to $f(n)$ for any $n$: at the $n$-th place after the decimal, $f(n)$ and $r$ are different!
 
 ## Infinite Binary Sequences
