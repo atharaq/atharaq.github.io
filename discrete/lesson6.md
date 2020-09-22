@@ -70,11 +70,11 @@ For now, we will only list out the positive rational numbers. The first step is 
 
 $$
 \begin{array}{cccc}
-\frac{1}{1} & \frac{1}{2} & \frac{1}{3} & \frac{1}{4} & \ldots \\
-\frac{2}{1} & \frac{2}{2} & \frac{2}{3} & \frac{2}{4} & \ldots \\
-\frac{3}{1} & \frac{3}{2} & \frac{3}{3} & \frac{3}{4} & \ldots \\
-\end{array}
+\frac{1}{1} & \frac{1}{2} & \frac{1}{3} & \frac{1}{4} \ldots \\
+\frac{2}{1} & \frac{2}{2} & \frac{2}{3} & \frac{2}{4} \ldots \\
+\frac{3}{1} & \frac{3}{2} & \frac{3}{3} & \frac{3}{4} \ldots \\
 \vdots
+\end{array}
 $$
 
 Then start at the top left and "spiral around", ignoring fractions which can be reduced. So we end up with the listing: $1, 2, \dfrac{1}{2}, \dfrac{1}{3}, 3, 4, \dfrac{3}{2}, \dfrac{2}{3}, \dfrac{1}{4}, \ldots$
