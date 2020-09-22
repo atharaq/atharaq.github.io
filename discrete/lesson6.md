@@ -72,7 +72,7 @@ $$
 \begin{array}{cccc}
 \frac{1}{1} & \frac{1}{2} & \frac{1}{3} & \frac{1}{4} & \ldots \\
 \frac{2}{1} & \frac{2}{2} & \frac{2}{3} & \frac{2}{4} & \ldots \\
-\frac{3}{1} & \frac{3}{2} & \frac{3}{3} & \frac{3}{4} & \ldots
+\frac{3}{1} & \frac{3}{2} & \frac{3}{3} & \frac{3}{4} & \ldots \\
 \end{array}
 \vdots
 $$
@@ -129,6 +129,16 @@ f(4) &= 2.618\mathbf{1}28176 \ldots \\
 \end{align}
 $$
 
-If we apply the diagonal argument, we end up with a number $r$ that starts off as $1.112\ldots$. We know that this number we end up with cannot be on this list! That's because the number won't be equal to $f(n)$ for any $n$: at the $n$-th place after the decimal, $f(n)$ and $r$ are different!
+If we apply the diagonal argument, we end up with a number $r$ that starts off as $1.1122\ldots$. We know that this number we end up with cannot be on this list! That's because the number won't be equal to $f(n)$ for any $n$: at the $n$-th place after the decimal, $f(n)$ and $r$ are different!
+
+This is a subtle argument: for each $f$, there is a *different* $r$ that we can find that is not in the image of $f$.
 
 ## Infinite Binary Sequences
+
+A very similar argument can be given to show that the set of all infinite binary sequences is uncountable. Let's first define what infinite binary sequences are:
+
+**Definition**: An infinite binary sequence is a function $s : \mathbb{N} \to \\{ 0, 1 \\}$.
+
+This might be a strange definition of a sequence, but recall, before, that functions whose domain is $\mathbb{N}$ really can be thought of as infinite sequences: the first element of the sequence is $f(0)$, the next element is $f(1)$, then comes $f(2),$ etc.
+
+Let $B = \\{ s : s$ is an infinite binary sequence $\\}$. How might you show that $B$ is uncountable using a "Diagonal" argument? You would again try to make an argument that shows that no $f : \mathbb{N} \to B$ is a surjection. So you would look at $f(0)$, $f(1)$, $f(2)$, etc. Each $f(n)$ is an infinite binary sequence. And you would try to construct a new infinite binary sequence that's different from each $f(n)$ in some way. Can you think of how to do this?
