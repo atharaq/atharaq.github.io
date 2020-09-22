@@ -69,12 +69,12 @@ It's not clear at all how we might do this! One would be forgiven for believing 
 For now, we will only list out the positive rational numbers. The first step is to write out all possible rational numbers in an infinite 2-dimensional array. The number on the $m$-th row and $n$-th column will be $\frac{m}{n}$:
 
 $$
-\begin{align}
-\frac{1}{1} ,& \frac{1}{2} ,& \frac{1}{3} ,& \frac{1}{4} ,& \ldots \\
-\frac{2}{1} ,& \frac{2}{2} ,& \frac{2}{3} ,& \frac{2}{4} ,& \ldots \\
-\frac{3}{1} ,& \frac{3}{2} ,& \frac{3}{3} ,& \frac{3}{4} ,& \ldots \\
+\begin{array}{cccc}
+\frac{1}{1} & \frac{1}{2} & \frac{1}{3} & \frac{1}{4} & \ldots \\
+\frac{2}{1} & \frac{2}{2} & \frac{2}{3} & \frac{2}{4} & \ldots \\
+\frac{3}{1} & \frac{3}{2} & \frac{3}{3} & \frac{3}{4} & \ldots
+\end{array}
 \vdots
-\end{align}
 $$
 
 Then start at the top left and "spiral around", ignoring fractions which can be reduced. So we end up with the listing: $1, 2, \dfrac{1}{2}, \dfrac{1}{3}, 3, 4, \dfrac{3}{2}, \dfrac{2}{3}, \dfrac{1}{4}, \ldots$
