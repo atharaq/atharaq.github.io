@@ -24,7 +24,7 @@ More generally: what did we do here? What's the relationship between $f$ and $g$
 
 ## Natural Numbers and Integers
 
-Recall that $\mathbb{Z}$ is the set of all integers, and so it contains $\mathbb{N}$ as well as $-1, -2, -3, \ldots We will show that $\|\mathbb{N}\| = \|\mathbb{Z}\|$. So again we will see an example of an infinite set that contains a "smaller" infinite set, but the two can be matched up in a one to one correspondence.
+Recall that $\mathbb{Z}$ is the set of all integers, and so it contains $\mathbb{N}$ as well as $-1, -2, -3, \ldots$ We will show that $\|\mathbb{N}\| = \|\mathbb{Z}\|$. So again we will see an example of an infinite set that contains a "smaller" infinite set, but the two can be matched up in a one to one correspondence.
 
 The idea here is that we can "re-order" the integers starting at 0 and going outward. That is, we can write the integers down in the order $0, -1, 1, -2, 2, \ldots$, alternating between negatives and positives. We have not written down, explicitly, the bijection, but we could write one down as a piecewise function:
 
