@@ -69,10 +69,12 @@ It's not clear at all how we might do this! One would be forgiven for believing 
 For now, we will only list out the positive rational numbers. The first step is to write out all possible rational numbers in an infinite 2-dimensional array. The number on the $m$-th row and $n$-th column will be $\frac{m}{n}$:
 
 $$
-\begin{array}{cccc}
-\frac{1}{1} & \frac{1}{2} & \frac{1}{3} & \frac{1}{4} \ldots \\
-\frac{2}{1} & \frac{2}{2} & \frac{2}{3} & \frac{2}{4} \ldots \\
-\frac{3}{1} & \frac{3}{2} & \frac{3}{3} & \frac{3}{4} \ldots \\
+\begin{array}{ccccc}
+\frac{1}{1} & \frac{1}{2} & \frac{1}{3} & \frac{1}{4} & \frac{1}{5} \ldots \\
+\frac{2}{1} & \frac{2}{2} & \frac{2}{3} & \frac{2}{4} & \frac{2}{5} \ldots \\
+\frac{3}{1} & \frac{3}{2} & \frac{3}{3} & \frac{3}{4} & \frac{3}{5} \ldots \\
+\frac{4}{1} & \frac{4}{2} & \frac{4}{3} & \frac{4}{4} & \frac{4}{5} \ldots \\
+\frac{5}{1} & \frac{5}{2} & \frac{5}{3} & \frac{5}{4} & \frac{5}{5} \ldots \\
 \vdots
 \end{array}
 $$
