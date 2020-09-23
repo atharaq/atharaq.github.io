@@ -85,8 +85,22 @@ Use the power rules and product rules, together, to find the derivatives of the 
 
 This part of the lesson will be an interactive Desmos activity. [Complete this activity here.](https://student.desmos.com/join/7qd2dh) Please, again, enter in your full name here. **I will be checking this for completion as part of your "Check-in" grade.**
 
-# Tangent Lines
+# Sketching Graphs of Derivatives
+
+View this part on YouTube from the patrickJMT channel:
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/QoTGPUArfTI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+Please look at problems 64 - 67 in [Section 3.2 of the textbook](https://openstax.org/books/calculus-volume-1@12.1/pages/3-2-the-derivative-as-a-function) to review this part.
 
 # Position, Velocity, Acceleration
 
-## Exercises
+View this part on YouTube (also from patrickJMT):
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/QoTGPUArfTI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+Please look at problems 151-155 in [Section 3.4 of the textbook](https://openstax.org/books/calculus-volume-1/pages/3-4-derivatives-as-rates-of-change) to review this part.
