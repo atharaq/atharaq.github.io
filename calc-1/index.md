@@ -9,3 +9,5 @@ layout: default
 * [Lesson 2: Introduction to Limits](lesson2.html)
 * [Lesson 3: Limits, Continued](lesson3.html)
 * [Lesson 4: Squeeze Theorem and Continuity](lesson4.html)
+* [Lesson 5: Intro to Derivatives](lesson5.html)
+* [Lesson 6: Derivative Properties / Rules](lesson6.html)
