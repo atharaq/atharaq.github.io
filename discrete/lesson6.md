@@ -6,7 +6,7 @@
 
 # Countably Infinite
 
-In today's lesson, we will study this question closely about when there is a bijection between two infinite sets. We will first look at $\mathbb{N}$. Sets that can be put in bijection with $\mathbb{N}$ are called **countably infinite**. Sets that are either finite or countably infinite are called **countable**. Often times the word **countable** is used to mean countably infinite, but this should be clear from the context (if a set is countably and clearly not finite, it's countably infinite).
+In today's lesson, we will study this question closely about when there is a bijection between two infinite sets. We will first look at $\mathbb{N}$. Sets that can be put in bijection with $\mathbb{N}$ are called **countably infinite**. Sets that are either finite or countably infinite are called **countable**. Often times the word **countable** is used to mean countably infinite, but this should be clear from the context (if a set is countably and clearly not finite, it's countably infinite). The cardinality of $\mathbb{N}$ is denoted $\aleph_0$, read "aleph null" or "aleph naught". $\aleph_0$ is referred to as the "smallest infinite cardinality".
 
 Last time, we saw that $2\mathbb{N}$, the set of even numbers, is countably infinite. We saw that $f : \mathbb{N} \to 2\mathbb{N}$ given by $f(n) = 2n$ is a bijection.
 
@@ -131,7 +131,7 @@ $$
 
 If we apply the diagonal argument, we end up with a number $r$ that starts off as $1.1122\ldots$. We know that this number we end up with cannot be on this list! That's because the number won't be equal to $f(n)$ for any $n$: at the $n$-th place after the decimal, $f(n)$ and $r$ are different!
 
-This is a subtle argument: for each $f$, there is a *different* $r$ that we can find that is not in the image of $f$.
+This is a subtle argument: for each $f$, there is a *different* $r$ that we can find that is not in the image of $f$. So there is no way for a function $f : \mathbb{N} \to \mathbb{R}$ to be a surjection. In terms of cardinality, this means $\|\mathbb{R}\| \neq \aleph_0$. 
 
 ## Infinite Binary Sequences
 
