@@ -52,7 +52,7 @@ Hopefully the exercises in the previous part helped you figure out the power rul
 
 **Power rule** (part 1): Let $n > 0$ be a positive integer. Then the derivative of $x^n$ is $nx^{n-1}$.
 
-This rule will actually generalize to other powers of $x$: like $x^{\frac{1}{2}$, or $x^\pi$, but we won't study those just yet.
+This rule will actually generalize to other powers of $x$: like $x^{\frac{1}{2}}$, or $x^\pi$, but we won't study those just yet.
 
 Combining the power rule with the other rules we learned so far helps us compute derivatives of all polynomials. For example, let $f(x) = 2x^3 - 4x^2 + 3x - 1$. To find the derivative, we find the derivative of each individual term, and add/subtract them (using the sum rule). So we need to find the derivatives of the following:
 
