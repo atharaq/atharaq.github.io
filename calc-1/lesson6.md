@@ -100,7 +100,7 @@ Please look at problems 64 - 67 in [Section 3.2 of the textbook](https://opensta
 View this part on YouTube (also from patrickJMT):
 
 <div class="youtube-container">
-<iframe src="https://www.youtube.com/embed/QoTGPUArfTI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/pFeuGMMiZWw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 Please look at problems 151-155 in [Section 3.4 of the textbook](https://openstax.org/books/calculus-volume-1/pages/3-4-derivatives-as-rates-of-change) to review this part.
