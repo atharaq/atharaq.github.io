@@ -22,7 +22,7 @@ Why is this a bijection? First, it's one to one. If $\dfrac{x}{2} = \dfrac{y}{2}
 
 More generally: what did we do here? What's the relationship between $f$ and $g$?
 
-## Natural Numbers and Integers
+## Integers
 
 Recall that $\mathbb{Z}$ is the set of all integers, and so it contains $\mathbb{N}$ as well as $-1, -2, -3, \ldots$ We will show that $\|\mathbb{N}\| = \|\mathbb{Z}\|$. So again we will see an example of an infinite set that contains a "smaller" infinite set, but the two can be matched up in a one to one correspondence.
 
@@ -131,7 +131,7 @@ $$
 
 If we apply the diagonal argument, we end up with a number $r$ that starts off as $1.1122\ldots$. We know that this number we end up with cannot be on this list! That's because the number won't be equal to $f(n)$ for any $n$: at the $n$-th place after the decimal, $f(n)$ and $r$ are different!
 
-This is a subtle argument: for each $f$, there is a *different* $r$ that we can find that is not in the image of $f$. So there is no way for a function $f : \mathbb{N} \to \mathbb{R}$ to be a surjection. In terms of cardinality, this means $\|\mathbb{R}\| \neq \aleph_0$. 
+This is a subtle argument: for each $f$, there is a *different* $r$ that we can find that is not in the image of $f$. So there is no way for a function $f : \mathbb{N} \to \mathbb{R}$ to be a surjection. In terms of cardinality, this means $\|\mathbb{R}\| \neq \aleph_0$.
 
 ## Infinite Binary Sequences
 
