@@ -6,6 +6,12 @@
 
 # Countably Infinite
 
+Follow along this part with the video:
+
+<div class = "youtube-container">
+<iframe src="https://www.youtube.com/embed/5qmheK92va0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 In today's lesson, we will study this question closely about when there is a bijection between two infinite sets. We will first look at $\mathbb{N}$. Sets that can be put in bijection with $\mathbb{N}$ are called **countably infinite**. Sets that are either finite or countably infinite are called **countable**. Often times the word **countable** is used to mean countably infinite, but this should be clear from the context (if a set is countably and clearly not finite, it's countably infinite). The cardinality of $\mathbb{N}$ is denoted $\aleph_0$, read "aleph null" or "aleph naught". $\aleph_0$ is referred to as the "smallest infinite cardinality".
 
 Last time, we saw that $2\mathbb{N}$, the set of even numbers, is countably infinite. We saw that $f : \mathbb{N} \to 2\mathbb{N}$ given by $f(n) = 2n$ is a bijection.
@@ -23,6 +29,10 @@ Why is this a bijection? First, it's one to one. If $\dfrac{x}{2} = \dfrac{y}{2}
 More generally: what did we do here? What's the relationship between $f$ and $g$?
 
 ## Integers
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/DVUhh76DRIs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Recall that $\mathbb{Z}$ is the set of all integers, and so it contains $\mathbb{N}$ as well as $-1, -2, -3, \ldots$ We will show that $\|\mathbb{N}\| = \|\mathbb{Z}\|$. So again we will see an example of an infinite set that contains a "smaller" infinite set, but the two can be matched up in a one to one correspondence.
 
@@ -58,6 +68,10 @@ We are not proving it here, but $F$ is, in fact, a bijection. Proving that it is
 
 ## Positive Rationals
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/Pf7pzeVP-eY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 Our proof that the integers are countably infinite boils down to this fact: we can list all integers in an *infinite sequence*, such that each integer shows up at some *finite* position (and shows up exactly once). We list the integers as $0, -1, 1, -2, 2, -3, 3, -4, 4, \ldots$ The rule we gave above turns this from an "infinite sequence" into an explicit function $h : \mathbb{N} \to \mathbb{Z}$, but the actual rule is not so important as the fact that there is a way to list these numbers out.
 
 The caveat here that each integers shows up at a finite position is important. The listing $0, 1, 2, 3, \ldots, -1, -2, -3, -4, \ldots$ is not a valid "infinite sequence" in this sense. At which position does $-2$ show up?
@@ -90,6 +104,10 @@ This spiraling is visualized in the following image: start at 1/1 on the top lef
 **Question**: How might you use this idea to similarly show that the set of all ordered pairs of integers is countable?
 
 # Real Numbers
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/yrGTN5x4i7w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 At this point, you would be forgiven for thinking, as many mathematicians in history did, that all infinite sets have the same size, and that formalizing this notion using bijections and cardinality is just proving what we already know.
 
