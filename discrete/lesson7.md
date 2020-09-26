@@ -166,7 +166,7 @@ The answer to both of these is **true**: $0 < 1$, so letting $x = 0$ shows that 
 
 This means that the negation of $\exists x (x < 1)$ is **not** the same as $\exists x \\: \lnot (x < 1)$. In general, the negation of a statement should be true whenever the original statement is false, and vice versa.
 
-In English, the negation of $\exists x (x < 1)$ would be "It is not true that there is an $x$ such that $x < 1$." So how would we show this? We'd have to argue why, for all $x$, it's not the case that $x < 1$. In other words: the negation of $\exists x (x < 1)$ is $\forall x \\: \lnot (x < 1)$.
+In English, the negation of $\exists x (x < 1)$ would be "It is not true that there is an $x$ such that $x < 1$." Put more simply: "There is no $x$ such that $x < 1$." So how would we show this? We'd have to argue why, for all $x$, it's not the case that $x < 1$. In other words: the negation of $\exists x (x < 1)$ is $\forall x \\: \lnot (x < 1)$.
 
 In general:
 
