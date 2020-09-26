@@ -250,13 +250,13 @@ $$
 
 This is quite a mouthful, so let's break it up.
 
-$$\forall x \in A \exists y \in B \\: F(x, y)$$
+$$\forall x \in A \exists y \in B \: F(x, y)$$
 
 says "Every $x \in A$ has at least one $y \in B$ such that $F(x, y)$ is true." If this statement is not true, then there is *some* $x \in A$ with *no* $y \in B$ that it's associated with. In other words, the "function" we're trying to look at would not be defined for some $x \in A$.
 
 $$
 \begin{align}
-&\forall x \in A \forall y \in B \forall z \in B \\: (F(x, y) \wedge F(x, z)) \\
+&\forall x \in A \forall y \in B \forall z \in B \: (F(x, y) \wedge F(x, z)) \\
 &\rightarrow y = z
 \end{align}
 $$
