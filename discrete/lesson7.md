@@ -306,7 +306,7 @@ The situation reverses if we want to disprove a statement:
 
 ## Example: Even and Odd
 
-**Definition**: Let $n \in \mathbb{Z}$. We say $n$ is **even** if there is $k \in \mathbb{Z}$ such that $n = 2k$. We say $n$ is **odd** if there is k \in \mathbb{Z}$ such that $n = 2k + 1$.
+**Definition**: Let $n \in \mathbb{Z}$. We say $n$ is **even** if there is $k \in \mathbb{Z}$ such that $n = 2k$. We say $n$ is **odd** if there is $k \in \mathbb{Z}$ such that $n = 2k + 1$.
 
 How might we prove the following statements:
 
