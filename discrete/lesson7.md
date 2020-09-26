@@ -252,7 +252,11 @@ This is quite a mouthful, so let's break it up.
 
 $$\forall x \in A \exists y \in B \: F(x, y)$$
 
-says "Every $x \in A$ has at least one $y \in B$ such that $F(x, y)$ is true." If this statement is not true, then there is *some* $x \in A$ with *no* $y \in B$ that it's associated with. In other words, the "function" we're trying to look at would not be defined for some $x \in A$.
+says "Every $x \in A$ has at least one $y \in B$ such that $F(x, y)$ is true." In other words, this part of the statement is ensuring that the function we're trying to define, is defined for every single element of the domain.
+
+If this statement were not true, then there would be *some* $x \in A$ that is not associated with *any* $y \in B$. In other words, the "function" we're trying to look at would not be defined for some $x \in A$.
+
+Now let's look at the second part of that statement:
 
 $$
 \begin{align}
@@ -261,9 +265,13 @@ $$
 \end{align}
 $$
 
-"For every $x \in A$, whenever $y \in B$ and $z \in B$ are such that $F(x, y)$ and $F(x, z)$, then $y = z$.
+This says: "For every $x \in A$, whenever $y \in B$ and $z \in B$ are such that $F(x, y)$ and $F(x, z)$, then $y = z$." In other words, this says that the "vertical line test" passes for each $x \in A$.
 
-What would it mean for this last statement to not be true? There would need to be some $x \in A$, such that there are $y \in B$ and $z \in B$ such that $$\lnot [(F(x, y) \wedge F(x, z)) \rightarrow y = z]$$ Remember that $p \rightarrow q$ is false if $p$ is true and $q$ is false. In this case, that would mean: there are $y$ and $z$ such that $F(x, y)$ and $F(x, z)$, and also $y \neq z$.
+What would it mean for this last statement to not be true? Negating quantifiers, we would get that there would need to be some $x \in A$, such that there are $y \in B$ and $z \in B$ such that
+
+$$\lnot [(F(x, y) \wedge F(x, z)) \rightarrow y = z]$$
+
+Remember that $p \rightarrow q$ is false if $p$ is true and $q$ is false. In this case, that would mean: there are $y$ and $z$ such that $F(x, y)$ and $F(x, z)$, and also $y \neq z$. That is: the vertical line test does not pass, as the graph of the function would pass through the points $(x, y)$ and $(x, z)$.
 
 **Exercises**: Let $A$ and $B$ be sets and $f : A \to B$ a function.
 
