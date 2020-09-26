@@ -145,13 +145,13 @@ Then $x \in E$ if the statement "$\exists n \\: (x = 2n)$" is a true statement a
 **Exercises**
 
 1. Recall that $\mathbb{Q}$ is defined as the set of those numbers which can be written as fractions $\dfrac{m}{n}$, for integers $m$ and $n$, where $n \neq 0$. Give a precise definition using quantifiers of the statement $x \in \mathbb{Q}$. What is the universe for our quantifiers?
-2. Let $S$ be the set of perfect squares. Give a precise definition of the statement $x \in S$ (in the universe )
+2. Let $S$ be the set of perfect squares. Give a precise definition of the statement $x \in S$ (in the universe $\mathbb{N}$)
 
 <details>
 <summary>Check your answers</summary>
 <ol>
 <li>$x \in \mathbb{Q}$ can be stated as: $\exists m \exists n (n \neq 0 \wedge x = \frac{m}{n})$. The universe we are using for our quantifiers is $\mathbb{Z}$.</li>
-<li>$x \in S$ if "$\exists n \: x = n^2$" is true in the universe $\mathbb{N}$ (or $\mathbb{Z}$)</li>
+<li>$x \in S$ if "$\exists n \: x = n^2$" is true in the universe $\mathbb{N}$</li>
 </ol>
 </details>
 
