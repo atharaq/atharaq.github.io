@@ -312,6 +312,8 @@ The situation reverses if we want to disprove a statement:
 * Disproving $\forall x \\: \phi(x)$: find a *counterexample*. That is, find a specific example of an $x$ such that $\lnot \phi(x)$ is true. For example: if $A = \\{ 1, 2, 3 \\}$ and $B = \\{ 1, 2 \\}$, the statement $\forall x (x \in A \rightarrow x \in B)$ is not true, since $x = 3$ is a counterexample. $3 \in A \rightarrow 3 \in B$ is not a true statement.
 * Disproving $\exists x \\: \phi(x)$: Pick an arbitrary $x$ and show that $\lnot \phi(x)$ must be true. (That is: prove $\forall x \lnot \phi(x)$)
 
+For example, how would one prove that $\sqrt{2}$ is irrational? Recall that $x \in \mathbb{Q}$ means $\exists m \in \mathbb{Z} \exists n \in \mathbb{Z} (n \neq 0 \wedge x = \dfrac{m}{n})$. So to show $\sqrt{2} \not \in \mathbb{Q}$, we would let $m$ and $n$ be arbitrary integers, with $n \neq 0$, and prove that $\sqrt{2} \neq \dfrac{m}{n}$.
+
 ## Example: Even and Odd
 
 **Definition**: Let $n \in \mathbb{Z}$. We say $n$ is **even** if there is $k \in \mathbb{Z}$ such that $n = 2k$. We say $n$ is **odd** if there is $k \in \mathbb{Z}$ such that $n = 2k + 1$.
