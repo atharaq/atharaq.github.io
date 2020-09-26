@@ -35,7 +35,7 @@ Our examples do not need to be mathematical necessarily. We could have a predica
 
 Consider the predicate $P(x)$ representing the assertion $x \geq 0$. This statement is true for every single natural number. In predicate logic, we can state this using the **universal quantifier**, $\forall$. This is read as "for all".
 
-$$\forall x \\: P(x)$$
+$$\forall x \: P(x)$$
 
 This is read as "For all $x$, $P(x)$ is true." What do we mean by "for **all** $x$"? We mean that $P(x)$ is a true statement whenever we replace $x$ by any possible object *from our universe*. In particular, the statement $\forall x \\: (x \geq 0)$ is true if our universe is $\mathbb{N}$, but false if our universe is $\mathbb{Z}$.
 
@@ -83,7 +83,7 @@ Similarly, the statement $\exists x \\: x^2 + 1 = 0$ is false if our universe is
 Quick exercise:
 
 1. Suppose our universe is $\mathbb{N}$. Is $x \geq 0$ true or false?
-2. Suppose our universe is $\mathbb{N}$. Is $ \forall x \\: x \geq 0$ true or false?
+2. Suppose our universe is $\mathbb{N}$. Is $\forall x \\: x \geq 0$ true or false?
 
 <details>
     <summary>Spoilers:</summary>
