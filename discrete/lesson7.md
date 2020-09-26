@@ -238,7 +238,14 @@ $$
 
 ## Function Examples
 
-Sometimes we want our quantifiers to range over possibly different universes. We might write this as $\forall x \in A \exists y \in B \ldots$. This way, we only look at $A$ for the first quantifier and $B$ for the second quantifier. This helps us define functions. The predicate $F(x, y)$ represents a function from $A$ to $B$ if the following statement is true: $$[\forall x \in A \exists y \in B \\: F(x, y)] \wedge [\forall x \in A \forall y \in B \forall z \in B \\: (F(x, y) \wedge F(x, z)) \rightarrow y = z]$$
+Sometimes we want our quantifiers to range over possibly different universes. We might write this as $\forall x \in A \exists y \in B \ldots$. This way, we only look at $A$ for the first quantifier and $B$ for the second quantifier. This helps us define functions. The predicate $F(x, y)$ represents a function from $A$ to $B$ if the following statement is true:
+
+$$
+\begin{align}
+&[\forall x \in A \exists y \in B \: F(x, y)] \wedge \\
+&[\forall x \in A \forall y \in B \forall z \in B \: (F(x, y) \wedge F(x, z)) \rightarrow y = z]
+\end{align}
+$$
 
 This is quite a mouthful, so let's break it up.
 
@@ -258,9 +265,9 @@ What would it mean for this last statement to not be true? There would need to b
 <summary>Solutions:</summary>
 <ol>
   <li>$f$ is one to one if, whenever $x \neq y \in A$, then $f(x) \neq f(y)$. So: $\forall x \in A \forall y \in A \: (x \neq y \rightarrow f(x) \neq f(y))$</li>
-  <li>$\lnot \forall x \in A \forall y \in A \: (x \neq y \rightarrow f(x) \neq f(y))$. This is equivalent to: $$\exists x \in A \exists y \in A \: \lnot (x \neq y \rightarrow f(x) \neq f(y))$$ We can further re-write this as: $$\exists x \in A \exists y \in A \: x \neq y \wedge f(x) = f(y)$$ which says "There are two elements of $A$ which are mapped to the same output."</li>
+  <li>$\lnot \forall x \in A \forall y \in A \: (x \neq y \rightarrow f(x) \neq f(y))$. This is equivalent to: $$\exists x \in A \exists y \in A \: \lnot (x \neq y \rightarrow f(x) \neq f(y))$$ We can further re-write this as: $$\exists x \in A \exists y \in A \: (x \neq y \wedge f(x) = f(y))$$ which says "There are two elements of $A$ which are different, and are mapped to the same output."</li>
   <li>$f$ is onto if, whenever $y \in B$, there is $x \in A$ such that $f(x) = y$. So: $\forall y \in B \exists x \in A \: (f(x) = y)$</li>
-  <li>$\lnot (\forall y \in B \exists x \in A \: f(x) = y))$. This is equivalent to: $$\exists y \in B \forall x \in A \: \lnot (f(x) = y)$$ or, more naturally, just turn that last $\lnot (f(x) = y)$ into $f(x) \neq y$: $$\exists y \in B \forall x \in A \: f(x) \neq y$$</li>
+  <li>$\lnot (\forall y \in B \exists x \in A \: f(x) = y))$. This is equivalent to: $$\exists y \in B \forall x \in A \: \lnot (f(x) = y)$$ or, more naturally, just turn that last $\lnot (f(x) = y)$ into $f(x) \neq y$: $$\exists y \in B \forall x \in A \: f(x) \neq y$$ We can read this as "There is a $y \in B$ such that no $x \in A$ is mapped to it."</li>
 </ol>
 </details>
 
