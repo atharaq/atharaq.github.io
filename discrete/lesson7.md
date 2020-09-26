@@ -39,7 +39,7 @@ $$\forall x \: P(x)$$
 
 This is read as "For all $x$, $P(x)$ is true." What do we mean by "for **all** $x$"? We mean that $P(x)$ is a true statement whenever we replace $x$ by any possible object *from our universe*. In particular, the statement $\forall x \\: (x \geq 0)$ is true if our universe is $\mathbb{N}$, but false if our universe is $\mathbb{Z}$.
 
-**Exercise**: Consider the statement "$\forall x$ if $x > 1$ then $x \geq 2$." Is this statement true or false in the following universes:
+**Exercise**: Consider the statement "$\forall x \\: (x > 1 \rightarrow x \geq 2)$." Is this statement true or false in the following universes:
 
 * $\mathbb{R}$
 * $\mathbb{N}$
@@ -48,7 +48,6 @@ This is read as "For all $x$, $P(x)$ is true." What do we mean by "for **all** $
 
 <details>
     <summary>Check your answers:</summary>
-
     <ul>
         <li>False: $x = 1.5$ is a counterexample.</li>
         <li>True. If $x = 0$ or $x = 1$ the antecedent is false, and therefore the if-then statement is true. Otherwise both the antecedent and consequents are true, and therefore the whole statement is true.</li>
