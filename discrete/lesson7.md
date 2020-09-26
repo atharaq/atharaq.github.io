@@ -221,14 +221,13 @@ This is literally read as "It is not the case that there is an $x$ such that for
 <ol>
 <li>$\exists k \: n = mk$ says that $n$ is divisible by $m$, or $m$ is a factor of $n$</li>
 <li>$n$ is a prime number if $n > 1$ and, whenever $m$ is a factor of $n$, then $m$ is either $1$ or $n$. So: $n > 1 \wedge \forall m [\exists k \: (n = mk)] \rightarrow (m = 1 \vee m = n)$</li>
-<li>"There is no largest prime" would be "There is no $n$ that satisfies the formula above, such that for any other $x$ satisfying that same formula, $n \geq m$." So:
+<li>"There is no largest prime" would be "There is no $n$ that satisfies the formula above, such that for any other $x$ satisfying that same formula, $n \geq x$." So:
 
 $$
 \begin{align}
-\lnot \exists n \: &[n > 1 \wedge \forall m [\exists k \: (n = mk)]
+\lnot \exists n [n > 1 &\wedge \forall m [\exists k \: (n = mk)]
 \\  &\rightarrow (m = 1 \vee m = n)]
-\\
-\forall x \: &[x > 1 \wedge \forall m [\exists k \: (x = mk)
+\\ \forall x \: [x > 1 &\wedge \forall m [\exists k \: (x = mk)
 \\ &\rightarrow (m = 1 \vee m = x)]]
 \\ \rightarrow n \geq x
 \end{align}
