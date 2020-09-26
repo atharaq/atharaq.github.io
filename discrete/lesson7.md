@@ -243,7 +243,8 @@ Sometimes we want our quantifiers to range over possibly different universes. We
 $$
 \begin{align}
 &[\forall x \in A \exists y \in B \: F(x, y)] \wedge \\
-&[\forall x \in A \forall y \in B \forall z \in B \: (F(x, y) \wedge F(x, z)) \rightarrow y = z]
+&[\forall x \in A \forall y \in B \forall z \in B (F(x, y) \wedge F(x, z)) \\
+&\rightarrow y = z]
 \end{align}
 $$
 
