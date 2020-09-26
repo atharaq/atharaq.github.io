@@ -189,6 +189,15 @@ Write the negations of the following formulas, moving the $\lnot$ sign as far in
 2. $\exists n \\: x = 2n + 1$
 3. $\forall x (x \geq 0)$
 
+<details>
+<summary>Check your answers:</summary>
+<ol>
+<li>$\forall n \: x \neq 2n$</li>
+<li>$\forall n \: x \neq 2n + 1</li>
+<li>$\exists x \: \lnot (x \geq 0)$.</li>
+</ol>
+</details>
+
 # Nested Quantifiers
 
 Many statements require more than one quantifier to fully express. Consider the statement "Every person has a parent." Let $P(x, y)$ represent the predicate that person $x$ is a parent of person $y$. The statement "Every person has a parent" is written as "$\forall y \exists x P(x, y)$" (where our universe is the set of all people who have ever existed).
