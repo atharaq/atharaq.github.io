@@ -256,7 +256,9 @@ says "Every $x \in A$ has at least one $y \in B$ such that $F(x, y)$ is true." I
 $$
 \begin{align}
 &\forall x \in A \forall y \in B \forall z \in B \\: (F(x, y) \wedge F(x, z)) \\
-&\rightarrow y = z$$ 
+&\rightarrow y = z
+\end{align}
+$$ 
 
 "For every $x \in A$, whenever $y \in B$ and $z \in B$ are such that $F(x, y)$ and $F(x, z)$, then $y = z$.
 
