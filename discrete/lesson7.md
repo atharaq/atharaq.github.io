@@ -230,7 +230,7 @@ $$
 \\
 \forall x \: &[x > 1 \wedge \forall m [\exists k \: (x = mk)
 \\ &\rightarrow (m = 1 \vee m = x)]]
-\\ & \rightarrow n \geq x
+\\ \rightarrow n \geq x
 \end{align}
 $$
 </li>
