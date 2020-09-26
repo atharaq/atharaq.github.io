@@ -35,9 +35,9 @@ Our examples do not need to be mathematical necessarily. We could have a predica
 
 Consider the predicate $P(x)$ representing the assertion $x \geq 0$. This statement is true for every single natural number. In predicate logic, we can state this using the **universal quantifier**, $\forall$. This is read as "for all".
 
-$$\forall x \: P(x)$$
+$$\forall x \\: P(x)$$
 
-This is read as "For all $x$, $P(x)$ is true." What do we mean by "for **all** $x$"? We mean that $P(x)$ is a true statement whenever we replace $x$ by any possible object *from our universe*. In particular, the statement $\forall x \: (x \geq 0)$ is true if our universe is $\mathbb{N}$, but false if our universe is $\mathbb{Z}$.
+This is read as "For all $x$, $P(x)$ is true." What do we mean by "for **all** $x$"? We mean that $P(x)$ is a true statement whenever we replace $x$ by any possible object *from our universe*. In particular, the statement $\forall x \\: (x \geq 0)$ is true if our universe is $\mathbb{N}$, but false if our universe is $\mathbb{Z}$.
 
 **Exercise**: Consider the statement "$\forall x$ if $x > 1$ then $x \geq 2$." Is this statement true or false in the following universes:
 
@@ -61,11 +61,11 @@ This is read as "For all $x$, $P(x)$ is true." What do we mean by "for **all** $
 
 Often in mathematics, we want to state that a particular problem has a solution. For example, the polynomial $x^2 + 2x + 1$ has a root at $x = -1$. We might also want to say that another polynomial doesn't have a solution: e, $x^2 + 1$ has no roots in $\mathbb{R}$. We can formalize this using the **existential quantifier**, $\exists$. This is read as "there exists".
 
-For example: $\exists x \: x^2 + 2x + 1 = 0$. We read this is "There is (at least one) $x$ such that $x^2 + 2x + 1 = 0$." This statement is true if our universe is $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$, or $\mathbb{C}$. But it's not true if our universe is $\mathbb{N}$! (Can you prove that?)
+For example: $\exists x \\: x^2 + 2x + 1 = 0$. We read this is "There is (at least one) $x$ such that $x^2 + 2x + 1 = 0$." This statement is true if our universe is $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$, or $\mathbb{C}$. But it's not true if our universe is $\mathbb{N}$! (Can you prove that?)
 
-Similarly, the statement $\exists x \: x^2 + 1 = 0$ is false if our universe is $\mathbb{R}$ (or any subset of $\mathbb{R}$, including $\mathbb{Q}$ or $\mathbb{Z}$), but true in the universe $\mathbb{C}$. We will talk about negations of quantified statements later, but the statement $\lnot \exists x \: x^2 + 1 = 0$ would, by the laws of classical logic, therefore be true in $\mathbb{R}$ and false in $\mathbb{C}$.
+Similarly, the statement $\exists x \\: x^2 + 1 = 0$ is false if our universe is $\mathbb{R}$ (or any subset of $\mathbb{R}$, including $\mathbb{Q}$ or $\mathbb{Z}$), but true in the universe $\mathbb{C}$. We will talk about negations of quantified statements later, but the statement $\lnot \exists x \\: x^2 + 1 = 0$ would, by the laws of classical logic, therefore be true in $\mathbb{R}$ and false in $\mathbb{C}$.
 
-**Exercise**: Let $D(f, g)$ be the predicate: "The derivative of $f$ is equal to $g$." Consider the statement $\exists f \: D(f, f)$. Determine if this statement is true or false in the following universes:
+**Exercise**: Let $D(f, g)$ be the predicate: "The derivative of $f$ is equal to $g$." Consider the statement $\exists f \\: D(f, f)$. Determine if this statement is true or false in the following universes:
 
 * $U_1 = \\{ p(x) : p : \mathbb{R} \to \mathbb{R} $ is a non-constant polynomial function $\\}$.
 * $U_2 = \\{ f(x) : f : \mathbb{R} \to \mathbb{R}$ is a differentiable function $\\}$.
@@ -83,7 +83,7 @@ Similarly, the statement $\exists x \: x^2 + 1 = 0$ is false if our universe is 
 Quick exercise:
 
 1. Suppose our universe is $\mathbb{N}$. Is $x \geq 0$ true or false?
-2. Suppose our universe is $\mathbb{N}$. Is $ \forall x \: x \geq 0$ true or false?
+2. Suppose our universe is $\mathbb{N}$. Is $ \forall x \\: x \geq 0$ true or false?
 
 <details>
     <summary>Spoilers:</summary>
@@ -102,7 +102,7 @@ Moral of the story: statements have truth values. In general, a formula might no
 
 Or you could *quantify* over the variables, and determine the truth of the quantified statement:
 
-* in $\mathbb{Z}$, the statement $\forall x \: x \geq 0$ is false, and the statement $\exists x \: x \geq 0$ is true
+* in $\mathbb{Z}$, the statement $\forall x \\: x \geq 0$ is false, and the statement $\exists x \\: x \geq 0$ is true
 
 **Exercises**:
 
@@ -110,8 +110,8 @@ Or you could *quantify* over the variables, and determine the truth of the quant
 2. In the formula $x < 1$, the variable $x$ is free. In $\mathbb{N}$, determine the following:
   * Find an assignment for $x$ that makes the formula true.
   * Find an assignment for $x$ that makes the formula false.
-  * Is $\exists x \: (x < 1)$ true or false in $\mathbb{N}$?
-  * Is $\exists x \: \lnot (x < 1)$ true or false in $\mathbb{N}$?
+  * Is $\exists x \\: (x < 1)$ true or false in $\mathbb{N}$?
+  * Is $\exists x \\: \lnot (x < 1)$ true or false in $\mathbb{N}$?
 
 <details>
     <summary>Solutions:</summary>
@@ -141,7 +141,7 @@ Often times, sets are defined in English sentences that can be formalized using 
 
 $$E = \\{ x : x = 2n$, for some $n \in \mathbb{N} \\}$$
 
-Then $x \in E$ if the statement "$\exists n \: (x = 2n)$" is a true statement about $x$ in the universe $\mathbb{N}$.
+Then $x \in E$ if the statement "$\exists n \\: (x = 2n)$" is a true statement about $x$ in the universe $\mathbb{N}$.
 
 **Exercises**
 
@@ -152,7 +152,7 @@ Then $x \in E$ if the statement "$\exists n \: (x = 2n)$" is a true statement ab
 <summary>Check your answers</summary>
 <ol>
 <li>$x \in \mathbb{Q}$ can be stated as: $\exists m \exists n (n \neq 0 \wedge x = \frac{m}{n})$. The universe we are using for our quantifiers is $\mathbb{Z}$.</li>
-<li>$x \in S$ if "$\exists n \: x = n^2$" is ture in the universe $\mathbb{N}$ (or $\mathbb{Z}$)</li>
+<li>$x \in S$ if "$\exists n \: x = n^2$" is true in the universe $\mathbb{N}$ (or $\mathbb{Z}$)</li>
 </ol>
 </details>
 
@@ -161,13 +161,13 @@ Then $x \in E$ if the statement "$\exists n \: (x = 2n)$" is a true statement ab
 Earlier we asked:
 
 * Is $\exists x (x < 1)$ true or false in $\mathbb{N}$?
-* Is $\exists x \: \lnot (x < 1)$ true or false in $\mathbb{N}$?
+* Is $\exists x \\: \lnot (x < 1)$ true or false in $\mathbb{N}$?
 
 The answer to both of these is **true**: $0 < 1$, so letting $x = 0$ shows that the first statement is true. $\lnot (1 < 1)$, so letting $x = 1$ shows that the second is also true.
 
-This means that the negation of $\exists x (x < 1)$ is **not** the same as $\exists x \: \lnot (x < 1)$. In general, the negation of a statement should be true whenever the original statement is false, and vice versa.
+This means that the negation of $\exists x (x < 1)$ is **not** the same as $\exists x \\: \lnot (x < 1)$. In general, the negation of a statement should be true whenever the original statement is false, and vice versa.
 
-In English, the negation of $\exists x (x < 1)$ would be "It is not true that there is an $x$ such that $x < 1$." So how would we show this? We'd have to argue why, for all $x$, it's not the case that $x < 1$. In other words: the negation of $\exists x (x < 1)$ is $\forall x \: \lnot (x < 1)$.
+In English, the negation of $\exists x (x < 1)$ would be "It is not true that there is an $x$ such that $x < 1$." So how would we show this? We'd have to argue why, for all $x$, it's not the case that $x < 1$. In other words: the negation of $\exists x (x < 1)$ is $\forall x \\: \lnot (x < 1)$.
 
 In general:
 
@@ -186,8 +186,8 @@ But since at least one of those is true, the statement $\exists x \lnot P(x)$ is
 
 Write the negations of the following formulas, moving the $\lnot$ sign as far in as possible:
 
-1. $\exists n \: x = 2n$
-2. $\exists n \: x = 2n + 1$
+1. $\exists n \\: x = 2n$
+2. $\exists n \\: x = 2n + 1$
 3. $\forall x (x \geq 0)$
 
 # Nested Quantifiers
@@ -212,7 +212,7 @@ This is literally read as "It is not the case that there is an $x$ such that for
 
 **Exercises**:
 
-1. Consider the formula $\exists k \: n = mk$. What does this represent about $m$ and $n$?
+1. Consider the formula $\exists k \\: n = mk$. What does this represent about $m$ and $n$?
 2. Write the formula "$n$ is a prime number" using quantifiers. Recall: a prime number is a number greater than $1$ which has no factors other than $1$ or itself.
 3. Write the statement "There is no largest prime number." This one is quite complicated! But it can be done.
 
@@ -235,12 +235,12 @@ $$
 
 ## Function Examples
 
-Sometimes we want our quantifiers to range over possibly different universes. We might write this as $\forall x \in A \exists y \in B \ldots$. This way, we only look at $A$ for the first quantifier and $B$ for the second quantifier. This helps us define functions. The predicate $F(x, y)$ represents a function from $A$ to $B$ if the following statement is true: $$[\forall x \in A \exists y \in B \: F(x, y)] \wedge [\forall x \in A \forall y \in B \forall z \in B \: (F(x, y) \wedge F(x, z)) \rightarrow y = z]$$
+Sometimes we want our quantifiers to range over possibly different universes. We might write this as $\forall x \in A \exists y \in B \ldots$. This way, we only look at $A$ for the first quantifier and $B$ for the second quantifier. This helps us define functions. The predicate $F(x, y)$ represents a function from $A$ to $B$ if the following statement is true: $$[\forall x \in A \exists y \in B \\: F(x, y)] \wedge [\forall x \in A \forall y \in B \forall z \in B \\: (F(x, y) \wedge F(x, z)) \rightarrow y = z]$$
 
 This is quite a mouthful, so let's break it up.
 
-* $\forall x \in A \exists y \in B \: F(x, y)$ says "Every $x \in A$ has at least one $y \in B$ such that $F(x, y)$ is true." If this statement is not true, then there is *some* $x \in A$ with *no* $y \in B$ that it's associated with. In other words, the "function" we're trying to look at would not be defined for some $x \in A$.
-* $\forall x \in A \forall y \in B \forall z \in B \: (F(x, y) \wedge F(x, z) \rightarrow y = z)$: "For every $x \in A$, whenever $y \in B$ and $z \in B$ are such that $F(x, y)$ and $F(x, z)$, then $y = z$.
+* $\forall x \in A \exists y \in B \\: F(x, y)$ says "Every $x \in A$ has at least one $y \in B$ such that $F(x, y)$ is true." If this statement is not true, then there is *some* $x \in A$ with *no* $y \in B$ that it's associated with. In other words, the "function" we're trying to look at would not be defined for some $x \in A$.
+* $\forall x \in A \forall y \in B \forall z \in B \\: (F(x, y) \wedge F(x, z) \rightarrow y = z)$: "For every $x \in A$, whenever $y \in B$ and $z \in B$ are such that $F(x, y)$ and $F(x, z)$, then $y = z$.
 
 What would it mean for this last statement to not be true? There would need to be some $x \in A$, such that there are $y \in B$ and $z \in B$ such that $$\lnot [(F(x, y) \wedge F(x, z)) \rightarrow y = z]$$ Remember that $p \rightarrow q$ is false if $p$ is true and $q$ is false. In this case, that would mean: there are $y$ and $z$ such that $F(x, y)$ and $F(x, z)$, and also $y \neq z$.
 
@@ -252,7 +252,7 @@ What would it mean for this last statement to not be true? There would need to b
 4. Write the statement that $f$ is **not** onto. Move the $\lnot$ in as far as possible.
 
 <details>
-<summary></summary>
+<summary>Solutions:</summary>
 <ol>
   <li>$f$ is one to one if, whenever $x \neq y \in A$, then $f(x) \neq f(y)$. So: $\forall x \in A \forall y \in A \: (x \neq y \rightarrow f(x) \neq f(y))$</li>
   <li>$\lnot \forall x \in A \forall y \in A \: (x \neq y \rightarrow f(x) \neq f(y))$. This is equivalent to: $$\exists x \in A \exists y \in A \: \lnot (x \neq y \rightarrow f(x) \neq f(y))$$ We can further re-write this as: $$\exists x \in A \exists y \in A \: x \neq y \wedge f(x) = f(y)$$ which says "There are two elements of $A$ which are mapped to the same output."</li>
@@ -272,8 +272,8 @@ If the statement we're trying to prove starts with:
 
 The situation reverses if we want to disprove a statement:
 
-* Disproving $\forall x \: \phi(x)$: find a *counterexample*. That is, find a specific example of an $x$ such that $\lnot \phi(x)$ is true. For example: if $A = \\{ 1, 2, 3 \\}$ and $B = \\{ 1, 2 \\}$, the statement $\forall x (x \in A \rightarrow x \in B)$ is not true, since $x = 3$ is a counterexample. $3 \in A \rightarrow 3 \in B$ is not a true statement.
-* Disproving $\exists x \: \phi(x)$: Pick an arbitrary $x$ and show that $\lnot \phi(x)$ must be true. (That is: prove $\forall x \lnot \phi(x)$)
+* Disproving $\forall x \\: \phi(x)$: find a *counterexample*. That is, find a specific example of an $x$ such that $\lnot \phi(x)$ is true. For example: if $A = \\{ 1, 2, 3 \\}$ and $B = \\{ 1, 2 \\}$, the statement $\forall x (x \in A \rightarrow x \in B)$ is not true, since $x = 3$ is a counterexample. $3 \in A \rightarrow 3 \in B$ is not a true statement.
+* Disproving $\exists x \\: \phi(x)$: Pick an arbitrary $x$ and show that $\lnot \phi(x)$ must be true. (That is: prove $\forall x \lnot \phi(x)$)
 
 ## Example: Even and Odd
 
