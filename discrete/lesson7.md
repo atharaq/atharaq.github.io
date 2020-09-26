@@ -224,9 +224,12 @@ This is literally read as "It is not the case that there is an $x$ such that for
 <li>"There is no largest prime" would be "There is no $n$ that satisfies the formula above, such that for any other $x$ satisfying that same formula, $n \geq m$." So:
 
 $$
-\begin{align}\lnot \exists n \: &[n > 1 \wedge \forall m [\exists k \: (n = mk)] \rightarrow (m = 1 \vee m = n)]
+\begin{align}
+&\lnot \exists n \: &[n > 1 \wedge \\
+&&\forall m [\exists k \: (n = mk)] \rightarrow (m = 1 \vee m = n)]
 \\
-\forall x \: &[x > 1 \wedge \forall m [\exists k \: (x = mk) \rightarrow (m = 1 \vee m = x)]] \rightarrow n \geq x
+&\forall x \: &[x > 1 \wedge \\
+&&\forall m [\exists k \: (x = mk) \rightarrow (m = 1 \vee m = x)]] \rightarrow n \geq x
 \end{align}
 $$
 </li>
