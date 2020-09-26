@@ -250,8 +250,15 @@ $$
 
 This is quite a mouthful, so let's break it up.
 
-* $\forall x \in A \exists y \in B \\: F(x, y)$ says "Every $x \in A$ has at least one $y \in B$ such that $F(x, y)$ is true." If this statement is not true, then there is *some* $x \in A$ with *no* $y \in B$ that it's associated with. In other words, the "function" we're trying to look at would not be defined for some $x \in A$.
-* $\forall x \in A \forall y \in B \forall z \in B \\: (F(x, y) \wedge F(x, z) \rightarrow y = z)$: "For every $x \in A$, whenever $y \in B$ and $z \in B$ are such that $F(x, y)$ and $F(x, z)$, then $y = z$.
+$$\forall x \in A \exists y \in B \\: F(x, y)$$
+
+says "Every $x \in A$ has at least one $y \in B$ such that $F(x, y)$ is true." If this statement is not true, then there is *some* $x \in A$ with *no* $y \in B$ that it's associated with. In other words, the "function" we're trying to look at would not be defined for some $x \in A$.
+$$
+\begin{align}
+&\forall x \in A \forall y \in B \forall z \in B \\: (F(x, y) \wedge F(x, z)) \\
+&\rightarrow y = z$$ 
+
+"For every $x \in A$, whenever $y \in B$ and $z \in B$ are such that $F(x, y)$ and $F(x, z)$, then $y = z$.
 
 What would it mean for this last statement to not be true? There would need to be some $x \in A$, such that there are $y \in B$ and $z \in B$ such that $$\lnot [(F(x, y) \wedge F(x, z)) \rightarrow y = z]$$ Remember that $p \rightarrow q$ is false if $p$ is true and $q$ is false. In this case, that would mean: there are $y$ and $z$ such that $F(x, y)$ and $F(x, z)$, and also $y \neq z$.
 
