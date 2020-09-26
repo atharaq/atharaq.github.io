@@ -225,11 +225,11 @@ This is literally read as "It is not the case that there is an $x$ such that for
 
 $$
 \begin{align}
-\lnot \exists n \: &[n > 1 \wedge \forall m \\
-&[\exists k \: (n = mk)] \rightarrow (m = 1 \vee m = n)]
+\lnot \exists n \: &[n > 1 \wedge \forall m [\exists k \: (n = mk)]
+\\  &\rightarrow (m = 1 \vee m = n)]
 \\
-\forall x \: &[x > 1 \wedge \forall m
-\\ &[\exists k \: (x = mk) \rightarrow (m = 1 \vee m = x)]]
+\forall x \: &[x > 1 \wedge \forall m [\exists k \: (x = mk)
+\\ &\rightarrow (m = 1 \vee m = x)]]
 \\ & \rightarrow n \geq x
 \end{align}
 $$
