@@ -138,7 +138,7 @@ Let $A$ be any set. Re-write the following statements using predicate logic:
 
 Often times, sets are defined in English sentences that can be formalized using quantifiers. For example, "an even number is a multiple of $2$". More precisely, "$x$ is even if there is $n$ such that $x = 2n$". In set theoretic notation:
 
-$$E = \\{ x : x = 2n \mbox{, for some } n \in \mathbb{N} \\}$$
+$$E = \{ x : x = 2n \mbox{, for some } n \in \mathbb{N} \}$$
 
 Then $x \in E$ if the statement "$\exists n \\: (x = 2n)$" is a true statement about $x$ in the universe $\mathbb{N}$.
 
