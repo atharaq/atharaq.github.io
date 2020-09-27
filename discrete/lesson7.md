@@ -6,7 +6,7 @@
 
 Today we are revisiting logic. Many of the dieas we started talking about recently, involving set theory, will be important today as we discuss an extension of the classical, propositional logic that we first started.
 
-# Related Propositions (5 min intro)
+# Related Propositions
 
 When we discussed propositional logic, I justified the truth table for $p \rightarrow q$ by saying "If $x > 5$ then $x > 3$" should be true for every single number $x$. But for each $x$, we get a different proposition:
 
@@ -17,7 +17,7 @@ When we discussed propositional logic, I justified the truth table for $p \right
 
 And so on. The problem is that it's not possible, in propositional logic, to talk about a whole set of propositions at once. Every proposition, in propositional logic, is considered independently of the others. But it seems like there should be a way to write down a *formula*, and study all the propositions we get by substituting into that formula. In other words, we need a stronger logic that lets us study some kinds of formulas, or templates for propositions. The logic we will use is called **predicate logic**, or **first-order logic**.
 
-# Predicates and Quantifiers (10 mins)
+# Predicates and Quantifiers
 
 A **predicate** represents an assertion that can be made about one or more mathematical objects. For example, the predicate $P(x)$ could represent the assertion $x > 5$. $x$ is called a **variable** for the predicate. Another predicate, with two variables, $Q(x, y)$, could represent the assertion $x > y$. The number of variables that appear in a predicate is referred to as the **arity** of the predicate. A predicate whose arity is 1 is referred to as a **unary** predicate, a predicate whose arity is 2 is referred to as a **binary** predicate, and more generally a predicate of arity $n$ is referred to as an $n$-ary predicate.
 
@@ -119,7 +119,7 @@ Or you could *quantify* over the variables, and determine the truth of the quant
     </ol>
 </details>
 
-## Set Theory Examples (5 mins)
+## Set Theory Examples
 
 Recall that $A \subseteq B$ means "Every element of $A$ is an element of $B$". We can write this using quantifiers: $\forall x (x \in A \rightarrow x \in B)$. Literally this is read "For any element $x$, if $x$ is in $A$, then $x$ is in B."
 
