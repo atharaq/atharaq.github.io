@@ -4,14 +4,6 @@
 1. Table of Contents
 {:toc}
 
-5 videos:
-1. Related Propositions
-2. Predicates/Quantifiers/Free and Bound
-3. Set Theory Examples and Exercises
-4. Negations and Nested Quantifiers
-5. Proof Strategies Intro
-6. Proof Strategy: Even and Odd.
-
 Today we are revisiting logic. Many of the dieas we started talking about recently, involving set theory, will be important today as we discuss an extension of the classical, propositional logic that we first started.
 
 # Related Propositions (5 min intro)
@@ -234,7 +226,7 @@ This is literally read as "It is not the case that there is an $x$ such that for
 $$
 \begin{align}
 \lnot \exists n [n > 1 &\wedge \forall m [\exists k \: (n = mk)]
-\\  &\rightarrow (m = 1 \vee m = n)]
+\\  &\rightarrow (m = 1 \vee m = n)] \wedge
 \\ \forall x \: [x > 1 &\wedge \forall m [\exists k \: (x = mk)
 \\ &\rightarrow (m = 1 \vee m = x)]]
 \\ \rightarrow n \geq x
