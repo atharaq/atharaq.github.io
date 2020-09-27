@@ -341,9 +341,3 @@ How might we prove that "No integer is both even and odd"? We could do a proof b
 **Exercise**: Prove that, for any $n \in \mathbb{Z}$, if $n^2$ is even, then $n$ is even.
 
 Hint: Let $n$ be an arbitrary integer. It may be easier to prove the contrapositive for $n$. But be precise about the contrapositive, and use the statements we have just proved.
-
-<details>
-    <summary>Proof</summary>
-
-<p>Let $n \in \mathbb{Z}$ be an arbitrary integer. We want to show that if $n^2$ is even, then $n$ is even. The contrapositive of this statement is: if $n$ is not even, then $n^2$ is not even. So let's assume that $n$ is not even. Since every number is either even or odd, $n$ must be odd, so there is $k \in \mathbb{Z}$ such that $n = 2k + 1$. Therefore $n^2$ is $(2k+1)^2$, which is $4k^2 + 4k + 1$. Let $m = 2k^2 + 2k$, and so $4k^2 + 4k + 1 = 2m + 1$. Therefore $n^2 = 2m + 1$, and so $n^2$ is odd. Since no number is both even and odd, this means $n^2$ is not even, which completes our proof.</p>
-</details>
