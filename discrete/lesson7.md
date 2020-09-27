@@ -290,7 +290,7 @@ Remember that $p \rightarrow q$ is false if $p$ is true and $q$ is false. In thi
 </ol>
 </details>
 
-# Proof Strategies With Quantifiers (2 videos, 25 mins total)
+# Proof Strategies With Quantifiers
 
 Often times, when we try to prove a mathematical statement, we can try to write it, formally, using predicate logic. The form of the statement will tell us how we might try to prove it.
 
