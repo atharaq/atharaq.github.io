@@ -193,7 +193,7 @@ Write the negations of the following formulas, moving the $\lnot$ sign as far in
 <summary>Check your answers:</summary>
 <ol>
 <li>$\forall n \: x \neq 2n$</li>
-<li>$\forall n \: x \neq 2n + 1</li>
+<li>$\forall n \: x \neq 2n + 1$</li>
 <li>$\exists x \: \lnot (x \geq 0)$.</li>
 </ol>
 </details>
