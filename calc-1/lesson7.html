@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Athar Abdul-Quader">
+  <title>Calculus I Lesson 7</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Calculus I Lesson 7</h1>
+  <p class="author">Athar Abdul-Quader</p>
+  <p class="date">Fall 2020</p>
+</section>
+
+<section id="register-to-vote" class="title-slide slide level1">
+<h1>Register to Vote</h1>
+<ul>
+<li>NY residents: <a href="https://voterlookup.elections.ny.gov">Check if you are registered to vote here</a></li>
+<li>Deadline to register to vote: October 9</li>
+<li>Not registered? <a href="https://voterreg.dmv.ny.gov/MotorVoter/">Register to vote online here</a></li>
+<li>Deadline to request an absentee ballot: October 27</li>
+<li>Early Voting (in person): October 24 - November 1</li>
+</ul>
+</section>
+
+<section id="take-home-exam" class="title-slide slide level1">
+<h1>Take Home Exam</h1>
+<ul>
+<li>Today: Review</li>
+<li>Take Home Exam: given Thursday (10 / 1)
+<ul>
+<li>Due Monday (10 / 5) 11:59 PM</li>
+</ul></li>
+<li>No Thursday lesson</li>
+<li>No Monday lesson</li>
+<li>Office hours or in-class appointment Thursday for extra review</li>
+</ul>
+</section>
+
+<section id="warm-up" class="title-slide slide level1">
+<h1>Warm Up</h1>
+<p>Sketch the graph of the derivative of the following:</p>
+<iframe width="500px" height="350px" src="https://www.desmos.com/calculator/vcnjgkewrm?embed" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+</section>
+
+<section>
+<section id="higher-order-derivatives" class="title-slide slide level1">
+<h1>Higher Order Derivatives</h1>
+<p>Given a function <span class="math inline">\(f\)</span>:</p>
+<ul>
+<li><span class="math inline">\(f^\prime\)</span>: first derivative of <span class="math inline">\(f\)</span> with respect to <span class="math inline">\(x\)</span>
+<ul>
+<li>represents “How fast <span class="math inline">\(f\)</span> is changing at each <span class="math inline">\(x\)</span>”</li>
+<li>positive / negative / 0?</li>
+</ul></li>
+</ul>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<ul>
+<li><span class="math inline">\(f^{\prime\prime}\)</span>?: <strong>second</strong> derivative
+<ul>
+<li>How fast is <span class="math inline">\(f^\prime\)</span> changing?</li>
+<li>How fast is <span class="math inline">\(f\)</span> <strong>accelerating</strong>?</li>
+</ul></li>
+<li><span class="math inline">\(f^{\prime\prime\prime}\)</span>?</li>
+<li><span class="math inline">\(f^{(n)}\)</span> (<span class="math inline">\(n\)</span>-th derivative)?</li>
+</ul>
+</section>
+<section id="physics-example" class="slide level2">
+<h2>Physics Example</h2>
+<ul>
+<li>Ball thrown straight in the air. <span class="math inline">\(t\)</span> = seconds, <span class="math inline">\(h\)</span> = meters</li>
+<li><span class="math inline">\(h(t) = -5t^2 + 20t + 2\)</span> meters, <span class="math inline">\(t\)</span> seconds after it is thrown</li>
+<li><span class="math inline">\(h^\prime(t)\)</span>?</li>
+<li><span class="math inline">\(h^{\prime\prime}(t)\)</span>?</li>
+</ul>
+<p>What do these each represent?</p>
+</section>
+<section id="crime-example" class="slide level2">
+<h2>Crime Example</h2>
+<p><img src="https://cdn.factcheck.org/UploadedFiles/violent-crime-rate.jpg" alt="Property Crime Rates Over Time" width="500px" height="500px"/></p>
+</section>
+<section id="covid-19" class="slide level2">
+<h2>COVID-19</h2>
+<ul>
+<li><a href="https://www.statista.com/statistics/1109721/new-york-state-covid-cumulative-cases-us/">Covid Graph 1: Total Cases in NY over Time</a></li>
+<li><a href="https://www.nytimes.com/interactive/2020/us/new-york-coronavirus-cases.html">Covid Graph 2: New Cases in NY over Time</a></li>
+</ul>
+<p>What does the derivative of graph 1 represent? What about graph 2?</p>
+</section></section>
+<section>
+<section id="differentiability-and-continuity" class="title-slide slide level1">
+<h1>Differentiability and Continuity</h1>
+<p><a href="https://student.desmos.com">Review Desmos activity</a></p>
+</section>
+<section id="differentiability-implies-continuity" class="slide level2">
+<h2>Differentiability implies continuity</h2>
+<p><strong>Theorem</strong>: Suppose <span class="math inline">\(f(x)\)</span> is differentiable at <span class="math inline">\(x = a\)</span>. Then <span class="math inline">\(f(x)\)</span> is continuous at <span class="math inline">\(x = a\)</span>.</p>
+<p>Proof: The limit as <span class="math inline">\(x \rightarrow a\)</span> of <span class="math inline">\(\dfrac{f(x)-f(a)}{x - a}\)</span> must exist. Suppose it’s equal to <span class="math inline">\(L\)</span>. Then, as <span class="math inline">\(x \rightarrow a\)</span>, <span class="math inline">\(f(x) - f(a) \rightarrow (x - a)L\)</span>, which approaches <span class="math inline">\(0\)</span>. That means, as <span class="math inline">\(x \rightarrow a\)</span>, <span class="math inline">\(f(x) \rightarrow f(a)\)</span>.</p>
+</section>
+<section id="differentiable-continuous-both-neither" class="slide level2">
+<h2>Differentiable, Continuous, both, neither</h2>
+<p><span class="math display">\[
+f(x) = \begin{cases}x^2 - 1 &amp;\mbox{if } x &lt; 1 \\
+x - 1 &amp;\mbox{if } x \geq 1 \end{cases}
+\]</span></p>
+<p>Is <span class="math inline">\(f(x)\)</span> differentiable, continuous, both, or neither at the following points:</p>
+<ul>
+<li><span class="math inline">\(x = 0\)</span></li>
+<li><span class="math inline">\(x = 1\)</span></li>
+<li><span class="math inline">\(x = 2\)</span></li>
+</ul>
+</section>
+<section id="x-0" class="slide level2">
+<h2>x = 0</h2>
+<p><span class="math inline">\(x^2 - 1\)</span> is differentiable at <span class="math inline">\(x = 0\)</span>. Therefore it is also continuous.</p>
+<p>Answer: <strong>Both</strong></p>
+</section>
+<section id="x-1" class="slide level2">
+<h2>x = 1</h2>
+<p>Need to check left and right hand limits of</p>
+<p><span class="math display">\[
+\lim_{x \rightarrow 1} \frac{f(x) - f(1)}{x - 1}
+\]</span></p>
+<p>From the left: <span class="math inline">\(\dfrac{(x^2 - 1) - 0}{x - 1} \rightarrow x + 1 \rightarrow 2\)</span>.</p>
+<p>From the right: <span class="math inline">\(\dfrac{x -1 - 0}{x - 1} \rightarrow 1\)</span>. Not differentiable</p>
+</section>
+<section id="x-1-1" class="slide level2">
+<h2>x = 1</h2>
+<p>Now we check if <span class="math inline">\(f(x)\)</span> is continuous at <span class="math inline">\(x = 1\)</span>:</p>
+<ul>
+<li><span class="math inline">\(f(1) = 0\)</span></li>
+<li><span class="math inline">\({\displaystyle\lim_{x\rightarrow 1^-}} f(x) = {\displaystyle\lim_{x \rightarrow 1^-}} x^2 - 1 = 0\)</span></li>
+<li><span class="math inline">\({\displaystyle \lim_{x\rightarrow 1^+}} f(x) = {\displaystyle \lim_{x \rightarrow 1^+}} x - 1 = 0\)</span>.</li>
+</ul>
+<p>So <span class="math inline">\(f\)</span> is <strong>continuous</strong> at <span class="math inline">\(x = 1\)</span>.</p>
+</section>
+<section id="x-2" class="slide level2">
+<h2>x = 2</h2>
+<p><span class="math inline">\(x - 1\)</span> is differentiable, its derivative is <span class="math inline">\(1\)</span> near <span class="math inline">\(x = 2\)</span>. Differentiable functions are continuous, so <strong>both</strong>.</p>
+</section>
+<section id="graph" class="slide level2">
+<h2>Graph</h2>
+<iframe src="https://www.desmos.com/calculator/ark01rjrv4?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+</section></section>
+<section>
+<section id="tangent-lines" class="title-slide slide level1">
+<h1>Tangent Lines</h1>
+<p>Derivative: slope of tangent line.</p>
+<p><strong>Problem</strong>: Find the equation of the line tangent to <span class="math inline">\(y = x^3 - 2x\)</span> at <span class="math inline">\(x = 1\)</span>.</p>
+<p>Recall: point-slope form: <span class="math inline">\(y - y_0 = m(x - x_0)\)</span></p>
+<ul>
+<li>Point: <span class="math inline">\((x_0, y_0)\)</span> is <span class="math inline">\((x, f(x))\)</span></li>
+<li>Slope: <span class="math inline">\(m = f^\prime(x)\)</span></li>
+</ul>
+</section>
+<section id="solution" class="slide level2">
+<h2>Solution</h2>
+<ul>
+<li>Point: <span class="math inline">\(y = 1^3 - 2(1) = -1\)</span>, so the point is <span class="math inline">\((1, -1)\)</span>.</li>
+<li>Slope: <span class="math inline">\(y^\prime = 3x^2 - 2\)</span>. At <span class="math inline">\(x = 1\)</span>: <span class="math inline">\(3(1) - 2 = 1\)</span>.</li>
+</ul>
+<p>Equation: <span class="math inline">\(y + 1 = 1(x - 1)\)</span>, or <span class="math inline">\(y + 1 = x - 1\)</span>. Or <span class="math inline">\(y = x- 2\)</span></p>
+</section>
+<section id="graph-1" class="slide level2">
+<h2>Graph</h2>
+<iframe width="500px" height="350px" src="https://www.desmos.com/calculator/cjl3dkoqtl?embed" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+</section>
+<section id="meaning-of-tangent-line" class="slide level2">
+<h2>Meaning of “Tangent Line”</h2>
+<ul>
+<li>Best “Linear approximation” of <span class="math inline">\(f(x)\)</span> at <span class="math inline">\(x = a\)</span></li>
+<li>Zoom in close to <span class="math inline">\(x = a\)</span></li>
+<li>Closer we get, the more accurate the tangent line appears</li>
+</ul>
+</section></section>
+<section>
+<section id="review" class="title-slide slide level1">
+<h1>Review</h1>
+<ul>
+<li>Limits
+<ul>
+<li>Direct Substitution</li>
+<li>Algebraic manipulation</li>
+<li>Squeeze Theorem</li>
+</ul></li>
+<li>Continuity
+<ul>
+<li>Continuity at a point</li>
+<li>Make a function continuous</li>
+</ul></li>
+</ul>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<ul>
+<li>Derivatives
+<ul>
+<li>Computing using limit definition</li>
+<li>Differentiability and continuity</li>
+<li>Product rule and power rule</li>
+<li>Higher order derivatives / meaning</li>
+<li>Equations of Tangent Lines</li>
+<li>Sketch graph of derivative</li>
+</ul></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
