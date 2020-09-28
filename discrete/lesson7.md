@@ -6,6 +6,10 @@
 
 Today we are revisiting logic. Many of the ideas we started talking about recently, involving set theory, will be important today as we discuss an extension of the classical, propositional logic that we first started.
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/apCx8uWIecw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 # Related Propositions
 
 When we discussed propositional logic, I justified the truth table for $p \rightarrow q$ by saying "If $x > 5$ then $x > 3$" should be true for every single number $x$. But for each $x$, we get a different proposition:
@@ -70,6 +74,10 @@ Similarly, the statement $\exists x \\: x^2 + 1 = 0$ is false if our universe is
 </details>
 
 ## Free and Bound Variables
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/gfMXuc5dBHo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Quick exercise:
 
@@ -149,6 +157,10 @@ Then $x \in E$ if the statement "$\exists n \\: (x = 2n)$" is a true statement a
 
 # Negations (15 mins)
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/EWlVIPjAY68" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 Earlier we asked:
 
 * Is $\exists x (x < 1)$ true or false in $\mathbb{N}$?
@@ -209,6 +221,10 @@ How might we represent "There is no largest integer" in the universe $\mathbb{Z}
 $$\lnot \exists x \forall y (x \geq y)$$
 
 This is literally read as "It is not the case that there is an $x$ such that for every $y$, $x \geq y$." Recall: "There is no" is represented either as "$\lnot \exists$", or, equivalently, as $\forall \lnot$. So we could, equivalently, write this as $$\forall x \lnot [\forall y (x \geq y)]$$ Again, we can push the $\lnot$ quantifier one more step in: $$\forall x \exists y \lnot (x \geq y)$$ We might read this as "Every $x$ is smaller than some $y$." Intuitively, this should make sense as to why that says the same thing as "There is no largest integer $x$."
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/9pETUHquqXc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 **Exercises**:
 
@@ -291,6 +307,10 @@ Remember that $p \rightarrow q$ is false if $p$ is true and $q$ is false. In thi
 </details>
 
 # Proof Strategies With Quantifiers
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/9YlbHqwX5Ek" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Often times, when we try to prove a mathematical statement, we can try to write it, formally, using predicate logic. The form of the statement will tell us how we might try to prove it.
 
