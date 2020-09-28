@@ -4,7 +4,7 @@
 1. Table of Contents
 {:toc}
 
-Today we are revisiting logic. Many of the dieas we started talking about recently, involving set theory, will be important today as we discuss an extension of the classical, propositional logic that we first started.
+Today we are revisiting logic. Many of the ideas we started talking about recently, involving set theory, will be important today as we discuss an extension of the classical, propositional logic that we first started.
 
 # Related Propositions
 
