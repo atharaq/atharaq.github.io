@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2020-10-01">
+  <title>Discrete Math Lesson 8</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Discrete Math Lesson 8</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">1 October 2020</p>
+</section>
+
+<section id="register-to-vote" class="title-slide slide level1">
+<h1>Register to Vote</h1>
+<ul>
+<li>NY residents: <a href="https://voterlookup.elections.ny.gov">Check if you are registered to vote here</a></li>
+<li>Deadline to register to vote: October 9</li>
+<li>Not registered? <a href="https://voterreg.dmv.ny.gov/MotorVoter/">Register to vote online here</a></li>
+<li>Deadline to request an absentee ballot: October 27</li>
+<li>Early Voting (in person): October 24 - November 1</li>
+</ul>
+</section>
+
+<section id="take-home-exam" class="title-slide slide level1">
+<h1>Take Home Exam</h1>
+<ul>
+<li>Today: Review</li>
+<li>Take Home Exam: given Monday (10 / 5)
+<ul>
+<li>Due Thursday (10 / 8) 11:59 PM</li>
+</ul></li>
+<li>No Monday lesson</li>
+<li>Office hours or in-class appointment Monday for extra review</li>
+</ul>
+</section>
+
+<section id="warm-up" class="title-slide slide level1">
+<h1>Warm Up</h1>
+<p>Suppose <span class="math inline">\(L(x, y, t)\)</span> means “Person x loves Person y at Time t.”</p>
+<ul>
+<li>Write “Everybody loves somebody sometime” in predicate logic</li>
+<li>Translate <span class="math inline">\(\exists x \forall y \forall t (L(x, y, t))\)</span> to English</li>
+<li>Translate <span class="math inline">\(\exists y \forall x \exists t (L(x, y, t))\)</span> to English</li>
+<li>Translate <span class="math inline">\(\exists t \forall x \forall y (L(x, y, t))\)</span> to English</li>
+</ul>
+</section>
+
+<section>
+<section id="problem-set-2" class="title-slide slide level1">
+<h1>Problem Set 2</h1>
+
+</section>
+<section id="uncountability" class="slide level2">
+<h2>Uncountability</h2>
+<ul>
+<li>“Infinite binary sequence”? Ex: <span class="math inline">\((0, 1, 1, 0, 1, 0, \ldots)\)</span></li>
+<li>A sequence: for each <span class="math inline">\(n\)</span>, there is a 0 or 1 at position <span class="math inline">\(n\)</span>.</li>
+<li>Usually defined as a function <span class="math inline">\(s : \mathbb{N} \to \{ 0, 1 \}\)</span>, so <span class="math inline">\(s(0)\)</span> is the first bit, <span class="math inline">\(s(1)\)</span> is the second, etc</li>
+</ul>
+<p>How would we show that the set of all binary sequences is uncountable? Diagonalization!</p>
+</section>
+<section id="uncountability-1" class="slide level2">
+<h2>Uncountability</h2>
+<p>Let <span class="math inline">\(f : \mathbb{N} \to B\)</span> be a function. We will show it’s not a <em>surjection</em>:</p>
+<p>Example:</p>
+<ul>
+<li><span class="math inline">\(f(0) = (\mathbf{0}, 0, 0, 0, \ldots)\)</span></li>
+<li><span class="math inline">\(f(1) = (0, \mathbf{1}, 0, 1, \ldots)\)</span></li>
+<li><span class="math inline">\(f(2) = (0, 1, \mathbf{1}, 1, \ldots)\)</span></li>
+<li><span class="math inline">\(f(3) = (0, 1, 1, \mathbf{0}, \ldots)\)</span></li>
+</ul>
+<p>Can we find an infinite sequence <span class="math inline">\(s\)</span> which is different from each of these?</p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p>Different from <span class="math inline">\(f(0)\)</span> at bit 0, from <span class="math inline">\(f(1)\)</span> at bit 1, from <span class="math inline">\(f(2)\)</span> at bit 2, etc?</p>
+<ul>
+<li><span class="math inline">\(s : \mathbb{N} \to \{ 0, 1 \}\)</span> with the property that:</li>
+<li><span class="math inline">\(s(0)\)</span> is different from <span class="math inline">\(f(0)\)</span>’s bit 0:
+<ul>
+<li>if <span class="math inline">\(f(0)\)</span>’s bit 0 = 0, then <span class="math inline">\(s(0) = 1\)</span></li>
+<li>otherwise, <span class="math inline">\(s(0) = 0\)</span></li>
+</ul></li>
+<li><span class="math inline">\(s(n)\)</span> is different from <span class="math inline">\(f(n)\)</span>’s bit <span class="math inline">\(n\)</span>:
+<ul>
+<li>if <span class="math inline">\(f(n)\)</span>’s bit <span class="math inline">\(n\)</span> = 0, then <span class="math inline">\(s(n) = 1\)</span>.</li>
+<li>otherwise?</li>
+</ul></li>
+</ul>
+</section>
+<section id="symmetry" class="slide level2">
+<h2>Symmetry</h2>
+<p>Suppose <span class="math inline">\(f : A \to B\)</span> is a bijection. Can you find a bijection <span class="math inline">\(g : B \to A\)</span>?</p>
+<div class="fragment">
+<p><strong>Inverse</strong> function!</p>
+<ul>
+<li>Prove that <span class="math inline">\(f\)</span> has an inverse: that is, prove that there is a function <span class="math inline">\(g : B \to A\)</span> such that <span class="math inline">\((g \circ f)(x) = x\)</span></li>
+<li>Prove that that <span class="math inline">\(g\)</span> is a bijection.</li>
+</ul>
+</div>
+</section>
+<section id="transitivity" class="slide level2">
+<h2>Transitivity</h2>
+<p>Suppose <span class="math inline">\(f : A \to B\)</span> is a bijection and <span class="math inline">\(g : B \to C\)</span> is a bijection. Can you find a bijection <span class="math inline">\(h : A \to C\)</span>?</p>
+<div class="fragment">
+<p><strong>Composition</strong> of functions!</p>
+<ul>
+<li>Define <span class="math inline">\((g \circ f) : A \to C\)</span>.</li>
+<li>Show that <span class="math inline">\((g \circ f)\)</span> is a bijection.</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="check-in-6" class="title-slide slide level1">
+<h1>Check in 6</h1>
+
+</section>
+<section id="mathbbn-to-mathbbn-setminus-0" class="slide level2">
+<h2><span class="math inline">\(\mathbb{N} \to \mathbb{N} \setminus \{ 0 \}\)</span></h2>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(\mathbb{N}\)</span></th>
+<th><span class="math inline">\(\mathbb{N} \setminus \{ 0 \}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>Can you find an explicit bijection?</p>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p><span class="math inline">\(f : \mathbb{N} \to \mathbb{N} \setminus \{ 0 \}\)</span> given by <span class="math inline">\(f(n) = n + 1\)</span> is a bijection.</p>
+<ul>
+<li>Show that it’s one to one</li>
+<li>Show that it’s onto</li>
+</ul>
+</section>
+<section id="mathbbz-to-mathbbq" class="slide level2">
+<h2><span class="math inline">\(\mathbb{Z} \to \mathbb{Q}\)</span></h2>
+<p>We have <span class="math inline">\(f : \mathbb{N} \setminus \{ 0 \} \to \mathbb{Q}\)</span>:</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(\mathbb{N} \setminus \{ 0 \}\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(\mathbb{Q}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td style="text-align: right;"><span class="math inline">\(\frac{1}{2}\)</span></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td style="text-align: right;">3</td>
+</tr>
+</tbody>
+</table>
+<p>Add in: 0, negative integers on left; 0, negative rationals on the right.</p>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<p><span class="math inline">\(h : \mathbb{Z} \to \mathbb{Q}\)</span> defined by</p>
+<p><span class="math display">\[h(n) = \begin{cases}
+f(n) &amp;\mbox{if } n &gt; 0 \\
+0 &amp;\mbox{if } n = 0 \\
+-f(-n) &amp;\mbox{if } n &lt; 0
+\end{cases}\]</span></p>
+</section>
+<section id="mathbbq-is-countable" class="slide level2">
+<h2><span class="math inline">\(\mathbb{Q}\)</span> is countable</h2>
+<p>Since</p>
+<ul>
+<li>there is a bijection <span class="math inline">\(f : \mathbb{N} \to \mathbb{Z}\)</span>, and</li>
+<li>there is a bijection <span class="math inline">\(g : \mathbb{Z} \to \mathbb{Q}\)</span>,</li>
+</ul>
+<div class="fragment">
+<p>By transitivity, <span class="math inline">\((g \circ f) : \mathbb{N} \to \mathbb{Q}\)</span> is a bijection. So <span class="math inline">\(\mathbb{Q}\)</span> is countable.</p>
+</div>
+</section>
+<section id="no-bijection-mathbbq-to-mathbbr" class="slide level2">
+<h2>No bijection <span class="math inline">\(\mathbb{Q} \to \mathbb{R}\)</span></h2>
+<p>Proof by contradiction.</p>
+<ul>
+<li>Suppose <span class="math inline">\(g : \mathbb{Q} \to \mathbb{R}\)</span> is a bijection.</li>
+<li>We <strong>know</strong> there is <span class="math inline">\(f : \mathbb{N} \to \mathbb{Q}\)</span> that’s a bijection.</li>
+</ul>
+<div class="fragment">
+<p>By transitivity, there is a bijection <span class="math inline">\(h : \mathbb{N} \to \mathbb{R}\)</span>. This contradicts the proof that no function from <span class="math inline">\(\mathbb{N} \to \mathbb{R}\)</span> is a bijection.</p>
+</div>
+</section></section>
+<section id="topics" class="title-slide slide level1">
+<h1>Topics</h1>
+<ul>
+<li>Predicate Logic</li>
+<li>Functions: injections, surjections, bijections</li>
+<li>Set Theory</li>
+<li>Counting</li>
+<li>Propositional Logic
+<ul>
+<li>Truth Tables</li>
+<li>Satisfiability</li>
+</ul></li>
+</ul>
+</section>
+
+<section>
+<section id="predicate-logic" class="title-slide slide level1">
+<h1>Predicate Logic</h1>
+<ul>
+<li>Quantifiers: <span class="math inline">\(\forall\)</span> and <span class="math inline">\(\exists\)</span></li>
+<li>Predicates: <span class="math inline">\(P(x, y, z, \ldots)\)</span> represents some assertion about <span class="math inline">\(x, y, z, \ldots\)</span>.
+<ul>
+<li><em>Mathematical</em> assertions like “<span class="math inline">\(x + y = z\)</span>” or “<span class="math inline">\(x\)</span> is prime” or <span class="math inline">\(x &lt; y\)</span>.</li>
+<li>English assertions like “Person x loves person y at time z”</li>
+</ul></li>
+</ul>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<ul>
+<li><span class="math inline">\(\forall x\)</span>: “For every <span class="math inline">\(x\)</span> in our universe…”
+<ul>
+<li>Prove <span class="math inline">\(\forall x P(x)\)</span>: Let <span class="math inline">\(x\)</span> be an <strong>arbitrary</strong> member of the universe. Then (argue why <span class="math inline">\(P(x)\)</span> must be true).</li>
+<li>Disprove <span class="math inline">\(\forall x P(x)\)</span>: find one <em>counterexample</em>: one <span class="math inline">\(x\)</span> in the unvierse with the property that <span class="math inline">\(P(x)\)</span> is false.</li>
+</ul></li>
+</ul>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<ul>
+<li><span class="math inline">\(\exists x\)</span>: “There exists (at least one) <span class="math inline">\(x\)</span> in the universe…”
+<ul>
+<li>Prove <span class="math inline">\(\exists x P(x)\)</span>: find a specific example of <span class="math inline">\(x\)</span> in the universe where <span class="math inline">\(P(x)\)</span> is true.</li>
+<li>Disprove: Let <span class="math inline">\(x\)</span> be an arbitrary member of the unvierse. Show that <span class="math inline">\(P(x)\)</span> is false.</li>
+</ul></li>
+</ul>
+</section>
+<section id="examples" class="slide level2">
+<h2>Examples</h2>
+<p>Write the statement that between any two numbers, there is another number.</p>
+<div class="fragment">
+<p><span class="math inline">\(\forall x \forall y (x &lt; y \rightarrow \exists z (x &lt; z \wedge z &lt; y))\)</span></p>
+<p>Find a universe in which this is true, and a universe in which this is false.</p>
+</div>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p>Write a statement, using only integers, that <span class="math inline">\(\sqrt{2}\)</span> is irrational</p>
+<div class="fragment">
+<p><span class="math inline">\(\forall m \in \mathbb{Z} \forall n \in \mathbb{Z} (n \neq 0 \rightarrow m^2 \neq 2n^2)\)</span></p>
+</div>
+</section></section>
+<section>
+<section id="injections-surjections-bijections" class="title-slide slide level1">
+<h1>Injections / Surjections / Bijections</h1>
+
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<p>Write the statement that <span class="math inline">\(f : A \to B\)</span> is one to one:</p>
+<div class="fragment">
+<p><span class="math inline">\(\forall x \in A \forall y \in A (x \neq y \rightarrow f(x) \neq f(y))\)</span></p>
+</div>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<p>Show that <span class="math inline">\(f : \mathbb{N} \setminus \{ 0 \} \to \mathbb{N}\)</span> given by <span class="math inline">\(f(n) = \dfrac{n^2 - n}{2}\)</span> is one to one. Proof idea?</p>
+<div class="fragment">
+<p>Let <span class="math inline">\(x, y \in \mathbb{N} \setminus \{ 0 \}\)</span>. Prove the contrapositive about <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>:</p>
+<p><span class="math display">\[\mbox{If } \dfrac{x^2 - x}{2} = \dfrac{y^2-y}{2} \mbox{, then } x = y\]</span></p>
+<p>How? Algebra.</p>
+</div>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<p>Show that <span class="math inline">\(g : \mathbb{N} \setminus \{ 0 \} \times \mathbb{N} \setminus \{ 0 \} \to \mathbb{N}\)</span> given by <span class="math inline">\(g(a, b) = a^b - b^a\)</span> is <strong>not</strong> one to one.</p>
+<div class="fragment">
+<p>Notice <span class="math inline">\(g(1, 1) = 1 - 1 = 0\)</span>, and <span class="math inline">\(g(2, 2) = 4 - 4 = 0\)</span>.</p>
+</div>
+</section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<p>Write the statement that <span class="math inline">\(f : A \to B\)</span> is onto.</p>
+<div class="fragment">
+<p><span class="math inline">\(\forall y \in B \exists x \in A (f(x) = y)\)</span></p>
+</div>
+</section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+<p>Show that <span class="math inline">\(g : \mathbb{N} \setminus \{ 0 \} \times \mathbb{N} \setminus \{ 0 \} \to \mathbb{N}\)</span> given by <span class="math inline">\(g(a, b) = a^b - b^a\)</span> is onto.</p>
+<div class="fragment">
+<p>Let <span class="math inline">\(y \in \mathbb{N}\)</span>. Find <span class="math inline">\(a, b\)</span> such that <span class="math inline">\(a^b - b^a = y\)</span>. Easiest way: choose <span class="math inline">\(b = 1\)</span>!</p>
+<p><span class="math inline">\((y+1)^1 - 1^{y+1} = y\)</span>.</p>
+<p>Again notice: we only need <strong>one</strong> example for each <span class="math inline">\(y\)</span>. There may be plenty.</p>
+</div>
+</section>
+<section id="section-10" class="slide level2">
+<h2></h2>
+<p>Show that <span class="math inline">\(f : \mathbb{N} \setminus \{ 0 \} \to \mathbb{N}\)</span> given by <span class="math inline">\(f(n) = \dfrac{n^2 - n}{2}\)</span> is <strong>not</strong> onto.</p>
+<div class="fragment">
+<p>Compute some values: <span class="math inline">\(f(1) = 0, f(2) = 1, f(3) = 3, f(4) = 6\)</span>, etc. Seems like <span class="math inline">\(y = 2\)</span> is missed?</p>
+<p>Is there a solution to: <span class="math inline">\(\dfrac{n^2 - n}{2} = 2\)</span>?</p>
+</div>
+</section>
+<section id="section-11" class="slide level2">
+<h2></h2>
+<p>If <span class="math inline">\(\dfrac{n^2 -n}{2} = 2\)</span>, then <span class="math inline">\(n^2 - n = 4\)</span>. Solving this using algebra and the quadratic formula gives us <span class="math display">\[n = \dfrac{1 \pm \sqrt{17}}{2}\]</span> which is not a natural number.</p>
+</section>
+<section id="section-12" class="slide level2">
+<h2></h2>
+<p>Write the statement that <span class="math inline">\(f : A \to B\)</span> is a bijection.</p>
+<div class="fragment">
+<p><span class="math inline">\(\forall y \in B [\exists x \in A (f(x) = y) \wedge \forall z ( f(z) = y \rightarrow x = z)]\)</span></p>
+<p>“Every <span class="math inline">\(y \in B\)</span> has one and only one <span class="math inline">\(x \in A\)</span> mapping to it.”</p>
+<p>Or: write down both statements that f is one to one, and that f is onto, and put an <span class="math inline">\(\wedge\)</span> symbol between them.</p>
+</div>
+</section>
+<section id="section-13" class="slide level2">
+<h2></h2>
+<p>Show that <span class="math inline">\(f : \mathbb{Q} \to \mathbb{Q}\)</span> given by <span class="math inline">\(f(x) = 2x - 1\)</span> is a bijection.</p>
+<ul>
+<li>Let <span class="math inline">\(y \in \mathbb{Q}\)</span>. Then <span class="math inline">\(x = \dfrac{y + 1}{2} \in \mathbb{Q}\)</span> is such that <span class="math inline">\(f(x) = y\)</span>. (<strong>onto</strong>)</li>
+<li>If <span class="math inline">\(\dfrac{x+1}{2} = \dfrac{y+1}{2}\)</span>, then <span class="math inline">\(x = y\)</span>. (<strong>one to one</strong>)</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
