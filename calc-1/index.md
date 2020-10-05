@@ -11,3 +11,4 @@ layout: default
 * [Lesson 4: Squeeze Theorem and Continuity](lesson4.html)
 * [Lesson 5: Intro to Derivatives](lesson5.html)
 * [Lesson 6: Derivative Properties / Rules](lesson6.html)
+* [Lesson 7: Review](lesson7.html)

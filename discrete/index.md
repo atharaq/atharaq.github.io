@@ -13,3 +13,5 @@ lang: en-US
 * [Lesson 4: Intro to Set Theory](lesson4.html)
 * [Lesson 5: Set Theory / Functions](lesson5.html)
 * [Lesson 6: Cardinality](lesson6.html)
+* [Lesson 7: Predicate Logic](lesson7.html)
+* [Lesson 8: Review](lesson8.html)
