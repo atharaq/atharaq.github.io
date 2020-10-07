@@ -59,6 +59,10 @@ Now take a look at the following video:
 
 Watch this video where I go over the quotient rule:
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/MIRiVw-3VZk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 To recap: if we have two functions $f(x)$ and $g(x)$, and we know that they are both differentiable (at some point $x = a$)j, we can figure out the derivative of $h(x) = \dfrac{f(x)}{g(x)}$, assuming that $g(x) \neq 0$ at that point. The **quotient rule** is:
 
 $$(\dfrac{f(x)}{g(x)})^\prime = \dfrac{f^\prime(x) g(x) - g^\prime(x) f(x)}{(g(x))^2}$$
@@ -84,3 +88,8 @@ $$y^\prime = \dfrac{f^\prime(x)}{g(x)} - \dfrac{g^\prime(x) f(x)}{(g(x))^2}$$
 And now get a common denominator to finish the problem:
 
 $$y^\prime = \dfrac{f^\prime(x) g(x) - g^\prime(x) f(x)}{(g(x))^2}$$
+
+**Exercises**:
+
+1. Find the derivative of $\tan(x) = \dfrac{\sin(x)}{\cos(x)}$.
+2. Find the derivative of $\sec(x) = \dfrac{1]{\cos(x)}}$.
