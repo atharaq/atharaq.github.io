@@ -54,3 +54,33 @@ Now take a look at the following video:
 <div class="youtube-container">
 <iframe src="https://www.youtube.com/embed/v3CnJ2O7hVA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+
+# Quotient Rule
+
+Watch this video where I go over the quotient rule:
+
+To recap: if we have two functions $f(x)$ and $g(x)$, and we know that they are both differentiable (at some point $x = a$)j, we can figure out the derivative of $h(x) = \dfrac{f(x)}{g(x)}$, assuming that $g(x) \neq 0$ at that point. The **quotient rule** is:
+
+$$(\dfrac{f(x)}{g(x)})^\prime = \dfrac{f^\prime(x) g(x) - g^\prime(x) f(x)}{(g(x))^2}$$
+
+As an aside: the method we used to figure this out is called **implicit differentiation**. We will be revisiting this method often: if we have an equation with $x$ and $y$ in it, and we don't quite know the derivative of $y$ by itself, we sometimes can differentiate *implicitly*. This means that we leave a placeholder, $y^\prime$, for the derivative.
+
+In this example, if $y = \dfrac{f(x)}{g(x)}$, we don't know $y^\prime$. But, if we multiply both sides by $g(x)$, we know that $(y\cdot g(x))^\prime = f^\prime(x)$. Then we can use the product rule on the left hand side:
+
+$$y^\prime g(x) + g^\prime(x) y = f^\prime(x)$$
+
+We want to get $y^\prime$ by itself. So subtract $g^\prime(x) y$:
+
+$$y^\prime g(x) = f^\prime(x) - g^\prime(x)y$$
+
+Now divide both sides by $g(x)$:
+
+$$y^\prime = \dfrac{f^\prime(x)}{g(x)} - \dfrac{g^\prime(x) y}{g(x)}$$
+
+Replace $y$ by $\dfrac{f(x)}{g(x)}$:
+
+$$y^\prime = \dfrac{f^\prime(x)}{g(x)} - \dfrac{g^\prime(x) f(x)}{(g(x))^2}$$
+
+And now get a common denominator to finish the problem:
+
+$$y^\prime = \dfrac{f^\prime(x) g(x) - g^\prime(x) f(x)}{(g(x))^2}$$
