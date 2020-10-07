@@ -92,4 +92,4 @@ $$y^\prime = \dfrac{f^\prime(x) g(x) - g^\prime(x) f(x)}{(g(x))^2}$$
 **Exercises**:
 
 1. Find the derivative of $\tan(x) = \dfrac{\sin(x)}{\cos(x)}$.
-2. Find the derivative of $\sec(x) = \dfrac{1]{\cos(x)}}$.
+2. Find the derivative of $\sec(x) = \dfrac{1}{\cos(x)}$.
