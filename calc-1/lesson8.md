@@ -50,3 +50,7 @@ etc.
 4. Have you seen any other patterns like this before?
 
 Now take a look at the following video:
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/v3CnJ2O7hVA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
