@@ -59,12 +59,12 @@ The thinking behind this is similar to the thinking you might find when studying
 
 Notice the following:
 
-* $|\emptyset| = 0$. $\mathcal{P}(\emptyset) = \\{ \emptyset \\}$, which has size 1.
+* $\|\emptyset\| = 0$. $\mathcal{P}(\emptyset) = \\{ \emptyset \\}$, which has size 1.
 * Let $X = \\{ 1 \\}$. Then $\mathcal{P}(X) = \\{ \emptyset, \\{ 1 \\} \\}$, size 2.
 * Let $X = \\{1, 2 \\}$. Then $\mathcal{P}(X) = \\{ \emptyset, \\{1 \\}, \\{2 \\}, \\{1, 2 \\} \\}$, which has size 4.
 * Let $X = \\{1, 2, 3 \\}$. Then $\mathcal{P}(X) = \\{ \emptyset, \\{1 \\}, \\{2 \\}, \\{3 \\}, \\{1, 2 \\}, \\{1, 3 \\}, \\{2, 3 \\}, \\{1, 2, 3 \\}\\}$, which has size 8.
 
-In general: it seems like the pattern is that adding one element to a set doubles the size of the power set. The power sets all have sizes that are increasing powers of 2: if $|X| = n$, then $\mathcal{P}(X) = 2^n$.
+In general: it seems like the pattern is that adding one element to a set doubles the size of the power set. The power sets all have sizes that are increasing powers of 2: if $\|X\| = n$, then $\|\mathcal{P}(X)\| = 2^n$.
 
 How might we prove this? Let $P(n)$ represent the assertion "Every set of size $n$ has $2^n$ subsets." We can prove the base case:
 
