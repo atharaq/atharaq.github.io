@@ -82,7 +82,7 @@ In fact, for any set $X$, if $a \in X$, there is a *bijection* between the subse
 * $\\{ 2 \\} mapsto \\{ 2, 4 \\}$
 * etc.
 
-Why is this a bijection? What is the domain and codomain of the function? The domain is the set $\\{ A \subseteq X : 4 \not \in A \\}$ and the codomain is $\\{ A \subseteq X : 4 \in A \\}$. First let's show it's one to one. Let $A \subseteq \\{ 1, 2, 3 \\}$ and $B \subseteq \\{1, 2, 3 \\}. Assume that $A \cup \\{ 4 \\} = B \cup \\{ 4 \\}$. Then every element of $A$ is an element of $B \cup \\{ 4 \\}$. But if $a \in A$, then $a \neq 4$, and so $a \in B$. Similarly, every element of $B$ can be shown to be an element of $A$.
+Why is this a bijection? What is the domain and codomain of the function? The domain is the set $\\{ A \subseteq X : 4 \not \in A \\}$ and the codomain is $\\{ A \subseteq X : 4 \in A \\}$. First let's show it's one to one. Let $A \subseteq \\{ 1, 2, 3 \\}$ and $B \subseteq \\{1, 2, 3 \\}$. Assume that $A \cup \\{ 4 \\} = B \cup \\{ 4 \\}$. Then every element of $A$ is an element of $B \cup \\{ 4 \\}$. But if $a \in A$, then $a \neq 4$, and so $a \in B$. Similarly, every element of $B$ can be shown to be an element of $A$.
 
 Now let's show that it's onto: let $A \subseteq \\{ 1, 2, 3, 4 \\}$ and suppose $4 \in A$. We want to find a subset $B$ of $\\{ 1, 2, 3 \\}$ such that $B \cup \\{ 4 \\} = A$. This is easy: just remove $4$ from $A$. That is, let $B = A \setminus \\{ 4 \\}$.
 
