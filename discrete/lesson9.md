@@ -103,11 +103,7 @@ Can you generalize this argument? Let $X$ be any set of size $n$. Let $a \in X$.
 
 # Strong induction
 
-There is another form of induction known as "strong induction": suppose $P(x)$ is a predicate such that $P(0)$ is true and, for each natural number $n$, if for all $k < n$, $P(k)$ is true, then $P(n)$ is also true. Then we can conclude that $\forall x P(x)$ is true. That is:
-
-$$
-[P(0) \wedge (\forall n [\forall k < n (P(k))] \rightarrow P(n))] \rightarrow \forall x (P(x))
-$$
+There is another form of induction known as "strong induction": suppose $P(x)$ is a predicate such that $P(0)$ is true and, for each natural number $n$, if for all $k < n$, $P(k)$ is true, then $P(n)$ is also true. Then we can conclude that $\forall x P(x)$ is true.
 
 So the strategy here is similar: prove the base case. Then let $n$ be an arbitrary integer and assume that $\forall k < n (P(k))$ is true. Use that to try to prove $P(n)$. Then you can conclude that $\forall x (P(x))$ is true.
 
