@@ -55,7 +55,7 @@ The last equality is achieved by factoring $(x+1)$.
 
 ## Strategy
 
-The hardest part of a proof by induction is often the inductive step (not always! but often). One needs to think about how to show that if $P(x)$ is true, then $P(x+1)$ must be true, no matter what $x$ is. Recall the proof strategy for universal statements: let $x$ be an *arbitrary* element of the univers (in this case, $\mathbb{N}$). Then we have an if-then statement, so we assume that the antecedent is true and need to show the consequent.
+The hardest part of a proof by induction is often the inductive step (not always! but often). One needs to think about how to show that if $P(x)$ is true, then $P(x+1)$ must be true, no matter what $x$ is. Recall the proof strategy for universal statements: let $x$ be an *arbitrary* element of the universe (in this case, $\mathbb{N}$). Then we have an if-then statement, so we assume that the antecedent is true and need to show the consequent.
 
 How do we prove that, if $x$ is an arbitrary integer such that $P(x)$ is true, then $P(x+1)$ must be true also? The idea is to find some way of transforming something we know about $x$ to something we know about $x + 1$. In the above example, we needed to figure out a formula for $\sum\limits_{i=0}^{x+1} i$, supposing that we knew one for $\sum\limits_{i=0}^{x} i$. This is the general pattern: suppose you know something about a number $n$, use that to prove something about the number $n + 1$.
 
