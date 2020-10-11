@@ -176,7 +176,7 @@ We did not need to use induction to prove that these definitions are equivalent.
 
 $$(x + y)^n = \sum_{k=0}^n \binom{n}{k} x^{n-k} y^k$$
 
-Before proving this, think about how you might want to prove this by induction. First you can let $n = 0$, and realize that $(x + y)^0$ is just $1$. On the other side, what do you get?
+Think about what a proof by induction for this would look like. First you can let $n = 0$, and realize that $(x + y)^0$ is just $1$. On the other side, what do you get?
 
 Then for the inductive step, you let $n$ be an arbitrary natural number and assume that $(x + y)^n = \sum\limits_{k=0}^n \binom{n}{k} x^{n-k} y^k$. Then consider $(x + y)^{n+1}$. Think of this as $(x + y)(x + y)^n$. Now re-write this as $x(x + y)^n + y(x + y)^n$ using the distributive property, and then use the inductive hypothesis. Can you finish the proof?
 
