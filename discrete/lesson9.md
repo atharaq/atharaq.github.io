@@ -149,10 +149,10 @@ $$
 We can prove that this definition is equivalent to the definition $\binom{n}{k} = \dfrac{n!}{k!(n-k)!}$ for all $n$ and $k \leq n$:
 
 * If $k = 0$ or $k = n$, just plug in and verify that both definitions give you $\binom{n}{k} = 1$.
-* If $1 \leq k \leq n - 1$, then we need to show that $\dfrac{(n-1)!}{(k-1)!(n-k)!} + \dfrac{(n-1)!}{k!(n-1-k)!} = \dfrac{n!}{k!(n-k)!}. We can show this using some algebra. First, get a common denominator on the left hand side:
+* If $1 \leq k \leq n - 1$, then we need to show that $\dfrac{(n-1)!}{(k-1)!(n-k)!} + \dfrac{(n-1)!}{k!(n-1-k)!} = \dfrac{n!}{k!(n-k)!}$. We can show this using some algebra. First, get a common denominator on the left hand side:
 
 $$
-\frac{n-1}!{(k-1)!(n-k)!}\frac{k}{k} + \frac{n-k}{n-k}\dfrac{(n-1)!}{k!(n-1-k)!} = \frac{k (n-1)! + (n-k) (n-1)!}{k!(n-k)!} $$
+\frac{(n-1)!}{(k-1)!(n-k)!}\frac{k}{k} + \frac{n-k}{n-k}\dfrac{(n-1)!}{k!(n-1-k)!} = \frac{k (n-1)! + (n-k) (n-1)!}{k!(n-k)!} $$
 
 Now notice that $k(n-1)! + (n-k)(n-1)! = n(n-1)!$, which is just $n!$. So we simplify and get $\dfrac{n!}{(n-k)!}$ on both sides.
 
