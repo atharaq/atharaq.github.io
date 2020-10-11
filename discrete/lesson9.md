@@ -19,6 +19,12 @@ This is the idea behind **proof by induction**. There are two parts to a proof b
 * Base case: show that $P(0)$ is true.
 * Inductive step: show that the statement $\forall x (P(x) \rightarrow P(x+1))$ is true.
 
+The idea of proof by induction is often visualized using the example of dominos:
+
+![Domino Effect](https://upload.wikimedia.org/wikipedia/commons/9/92/Dominoeffect.png "Domino Effect")\
+
+If you hit the first domino, and you know that whenever a domino is hit, then it will hit the next domino, then all the dominos will eventually get hit.
+
 Let's look at a couple of examples:
 
 ## Sum of first $n$ integers
