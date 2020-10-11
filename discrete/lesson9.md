@@ -21,7 +21,7 @@ This is the idea behind **proof by induction**. There are two parts to a proof b
 
 The idea of proof by induction is often visualized using the example of dominos:
 
-![Domino Effect](https://upload.wikimedia.org/wikipedia/commons/9/92/Dominoeffect.png "Domino Effect")\
+<img alt="Domino Effect" title="Domino Effect" src="https://upload.wikimedia.org/wikipedia/commons/9/92/Dominoeffect.png" class="noreverse" />
 
 If you hit the first domino, and you know that whenever a domino is hit, then it will hit the next domino, then all the dominos will eventually get hit.
 
