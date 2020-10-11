@@ -6,6 +6,10 @@
 
 # Induction
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/8G1elZRVFxQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 The Principle of Mathematical Induction is an important property of $\mathbb{N}$. Let $P(x)$ be any predicate. Then the following statement **must** be true, regardless of what $P(x)$ actually means!
 
 $$
@@ -54,6 +58,10 @@ $$\dfrac{x(x+1)}{2} + \dfrac{2(x+1)}{2} = \dfrac{(x+1)(x + 2)}{2}$$
 The last equality is achieved by factoring $(x+1)$.
 
 ## Strategy
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/a8RMlGzUFsw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The hardest part of a proof by induction is often the inductive step (not always! but often). One needs to think about how to show that if $P(x)$ is true, then $P(x+1)$ must be true, no matter what $x$ is. Recall the proof strategy for universal statements: let $x$ be an *arbitrary* element of the universe (in this case, $\mathbb{N}$). Then we have an if-then statement, so we assume that the antecedent is true and need to show the consequent.
 
@@ -128,6 +136,10 @@ Where does this argument go wrong? See if you can spot the subtle flaw in the ar
 There are lots of good exercises on proof by induction available in *Discrete: An Open Introduction*. Click here for the [exercises from Section 2.5](http://discrete.openmathbooks.org/dmoi3/sec_seq-induction.html#YsG) on induction. I encourage you to go through as much of these as you can on your own, in addition to the check-in.
 
 # Recursive Definitions
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/5_vcqZHPr2Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Often times, induction is used to prove properties about **recursively defined functions**. A simple example of a recursively defined function is factorial:
 
