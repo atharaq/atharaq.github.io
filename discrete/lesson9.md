@@ -45,7 +45,7 @@ But let's try to prove this same property using induction.
 
 $P(x+1)$ is the statement that $\sum\limits_{i=0}^{x+1} i = \dfrac{(x+1)(x+2)}{2}$. Notice that $\sum\limits_{i=0}^{x+1} i = \sum\limits_{i=0}^x i + (x + 1)$. Since $P(x)$ is true by our assumption, we know that $\sum\limits_{i=0}^x i = \dfrac{x(x+1)}{2}$. Therefore:
 
-$$\sum\limits_{i=0}^{x+1} i = \dfrac{x(x+1}{2} + x + 1$$
+$$\sum\limits_{i=0}^{x+1} i = \dfrac{x(x+1)}{2} + x + 1$$
 
 Using algebra:
 
