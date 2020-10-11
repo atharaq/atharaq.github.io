@@ -89,3 +89,85 @@ Now let's show that it's onto: let $A \subseteq \\{ 1, 2, 3, 4 \\}$ and suppose 
 What have we shown? Since there are 8 subsets of $X$ which do not contain $4$, there are also 8 subsets of $X$ which do, and therefore there are 16 subsets of $X$ total (since every subset of $X$ either does, or does not, contain the number $4$).
 
 Can you generalize this argument? Let $X$ be any set of size $n$. Let $a \in X$. Find a bijection between those subsets of $X$ which do not contain $a$, and those which do. Then, use the inductive assumption to show that there are $2^n$ subsets of $X$ which do not contain $a$, and $2^n$ which do. Therefore there are $2^n + 2^n = 2^{n+1}$ subsets of $X$ total.
+
+# Strong induction
+
+There is another form of induction known as "strong induction": suppose $P(x)$ is a predicate such that $P(0)$ is true and, for each natural number $n$, if for all $k < n$, $P(k)$ is true, then $P(n)$ is also true. Then we can conclude that $\forall x P(x)$ is true. That is:
+
+$$
+[P(0) \wedge (\forall n [\forall k < n (P(k))] \rightarrow P(n))] \rightarrow \forall x (P(x))
+$$
+
+So the strategy here is similar: prove the base case. Then let $n$ be an arbitrary integer and assume that $\forall k < n (P(k))$ is true. Use that to try to prove $P(n)$. Then you can conclude that $\forall x (P(x))$ is true.
+
+Take a look at [Example 2.5.5 from *Discrete: An Open Introduction*](http://discrete.openmathbooks.org/dmoi3/sec_seq-induction.html#Rgt). In this example you prove that every natural number greater than $1$ can is either a prime or can be written as a product of primes.
+
+# Incorrect Proofs By Induction
+
+Consider the following argument that all horses are the same color. Let $P(x)$ be the statement that, in any group of size $x$, all the horses in that group are the same color. Notice that $P(0)$ is trivially true (as is $P(1)$).
+
+Let $n$ be any given natural number and assume that $P(n)$ is true: that is, in any group of $n$ horses, all the horses in that group are the same color. We want to show $P(n+1)$, so suppose we have a set $X$ consisting of $n + 1$ horses. Exclude the first horse, and we have a set of $n$ horses. Those are all the same color by the inductive hypothesis. Exclude the last horse, and we again have a set of $n$ horses, which are all the same color by the inductive hypothesis. Considering each case, we conclude that the first horse is the same color as the rest of the group, which is the same color as the last horse.
+
+Where does this argument go wrong? See if you can spot the subtle flaw in the argument. [This argument has its own Wikipedia page](https://en.wikipedia.org/wiki/All_horses_are_the_same_color) which goes through, with visual explanations, what goes wrong here.
+
+# Exercises
+
+There are lots of good exercises on proof by induction available in *Discrete: An Open Introduction*. Click here for the [exercises from Section 2.5](http://discrete.openmathbooks.org/dmoi3/sec_seq-induction.html#YsG) on induction. I encourage you to go through as much of these as you can on your own, in addition to the check-in.
+
+# Recursive Definitions
+
+Often times, induction is used to prove properties about **recursively defined functions**. A simple example of a recursively defined function is factorial:
+
+$$
+n! = \begin{cases} 1 &\mbox{if } n = 0\\
+n \times (n-1)! &\mbox{if } n > 0\end{cases}
+$$
+
+A recursively defined function has to have a base case (sometimes, more than one base case is given). Above, the base case is when $n = 0$. Then a recursive definition has a part where, in order to compute the value of the function for some $n$, you need to know the values of the function for smaller inputs. (This is exactly the same as the concept of recursion from computer science.)
+
+The binomial coefficients we have seen also can be defined recursively using Pascal's triangle. Recall Pascal's triangle is the pattern formed by starting with 1's on the end, and then adding two consecutive numbers from the row above:
+
+$$
+\begin{array}{cccccc}
+1 & & & & & \\
+1 & 1 & & & & \\
+1 & 2 & 1 & & & \\
+1 & 3 & 3 & 1 & & \\
+1 & 4 & 6 & 4 & 1 & \\
+1 & 5 & 10 & 10 & 5 & 1
+\end{array}
+$$
+
+This definition is given by:
+
+$$
+\binom{n}{k} = \begin{cases} 1 &\mbox{if } k = 0 \mbox{ or } k = n \\
+\binom{n-1}{k-1}+\binom{n-1}{k} &\mbox{if } 1 \leq k \leq n - 1
+\end{cases}
+$$
+
+We can prove that this definition is equivalent to the definition $\binom{n}{k} = \dfrac{n!}{k!(n-k)!}$ for all $n$ and $k \leq n$:
+
+* If $k = 0$ or $k = n$, just plug in and verify that both definitions give you $\binom{n}{k} = 1$.
+* If $1 \leq k \leq n - 1$, then we need to show that $\dfrac{(n-1)!}{(k-1)!(n-k)!} + \dfrac{(n-1)!}{k!(n-1-k)!} = \dfrac{n!}{k!(n-k)!}. We can show this using some algebra. First, get a common denominator on the left hand side:
+
+$$
+\frac{n-1}!{(k-1)!(n-k)!}\frac{k}{k} + \frac{n-k}{n-k}\dfrac{(n-1)!}{k!(n-1-k)!} = \frac{k (n-1)! + (n-k) (n-1)!}{k!(n-k)!} $$
+
+Now notice that $k(n-1)! + (n-k)(n-1)! = n(n-1)!$, which is just $n!$. So we simplify and get $\dfrac{n!}{(n-k)!}$ on both sides.
+
+We did not need to use induction to prove that these definitions are equivalent. But the recursive definition may be more helpful when we want to prove other results by induction. Think about how you might prove the binomial theorem:
+
+**Theorem**: (Binomial Theorem). Let $x, y$ be variables and $n \geq 0$. Then:
+
+$$(x + y)^n = \sum_{k=0}^n \binom{n}{k} x^{n-k} y^k$$
+
+Before proving this, think about how you might want to prove this by induction. First you can let $n = 0$, and realize that $(x + y)^0$ is just $1$. On the other side, what do you get?
+
+Then for the inductive step, you let $n$ be an arbitrary natural number and assume that $(x + y)^n = \sum\limits_{k=0}^n \binom{n}{k} x^{n-k} y^k$. Then consider $(x + y)^{n+1}$. Think of this as $(x + y)(x + y)^n$. Now re-write this as $x(x + y)^n + y(x + y)^n$ using the distributive property, and then use the inductive hypothesis. Can you finish the proof?
+
+**Corollary**: Let $n \geq 0$. Then $$\sum_{k=0}^n \binom{n}{k} = 2^n$$.
+
+Proof hint: Plug in $x = 1$ and $y = 1$ to the Binomial Theorem. What do you get?
+
+**Question**: Can you give a set-theoretic proof of the above identity? Where are the formulas $\binom{n}{k}$ and $2^n$ used in set theory?
