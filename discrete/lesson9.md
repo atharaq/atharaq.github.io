@@ -62,7 +62,8 @@ Notice the following:
 * $\|\emptyset\| = 0$. $\mathcal{P}(\emptyset) = \\{ \emptyset \\}$, which has size 1.
 * Let $X = \\{ 1 \\}$. Then $\mathcal{P}(X) = \\{ \emptyset, \\{ 1 \\} \\}$, size 2.
 * Let $X = \\{1, 2 \\}$. Then $\mathcal{P}(X) = \\{ \emptyset, \\{1 \\}, \\{2 \\}, \\{1, 2 \\} \\}$, which has size 4.
-* Let $X = \\{1, 2, 3 \\}$. Then
+* Let $X = \\{1, 2, 3 \\}$. Then:
+
 $$
 \begin{align}
 \mathcal{P}(X) = \{ \emptyset, \\
@@ -70,7 +71,9 @@ $$
   \{1, 2 \}, \{1, 3 \}, \{2, 3 \}, \\
   \{1, 2, 3 \} \}
 \end{align}
-$$ which has size 8.
+$$
+
+which has size 8.
 
 In general: it seems like the pattern is that adding one element to a set doubles the size of the power set. The power sets all have sizes that are increasing powers of 2: if $\|X\| = n$, then $\|\mathcal{P}(X)\| = 2^n$.
 
