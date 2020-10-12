@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Athar Abdul-Quader">
+  <title>Calculus I Lesson 9</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Calculus I Lesson 9</h1>
+  <p class="author">Athar Abdul-Quader</p>
+  <p class="date">Fall 2020</p>
+</section>
+
+<section id="reminders" class="title-slide slide level1">
+<h1>Reminders</h1>
+<ul>
+<li>“Artificial Intelligence and Medicine”: Oge Marques, Florida Atlantic University
+<ul>
+<li><strong>Tomorrow</strong> at 4:30</li>
+<li><a href="https://purchase.zoom.us/meeting/register/tJAtc-mqrD0jHNEalGqB88z3NMgIr3lX3Kfm">Sign up here</a></li>
+</ul></li>
+<li>“CS Careers in the Gaming Industry”; Chin Xiang Chong, Respawn
+<ul>
+<li>Next <strong>Wednesday</strong> at 2 PM</li>
+<li><a href="https://purchase.zoom.us/meeting/register/tJwrd-CsqzorHNZgAMuOvJwoyBvwI_Gwvo89">Sign up here</a></li>
+</ul></li>
+</ul>
+</section>
+
+<section>
+<section id="exam-1" class="title-slide slide level1">
+<h1>Exam 1</h1>
+
+</section>
+<section id="continuity-at-a-point" class="slide level2">
+<h2>Continuity at a point</h2>
+<p><span class="math inline">\(f(x)\)</span> is continuous at <span class="math inline">\(x = a\)</span> if:</p>
+<p><span class="math display">\[\lim_{x \rightarrow a^-} f(x) = \lim_{x \rightarrow a^+} f(x) = f(a)\]</span></p>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p><span class="math display">\[f(x) = \begin{cases} 2x &amp;\mbox{if } x \leq 4 \\ x^2 - 2x + 7 &amp;\mbox{if } x &gt; 4\end{cases}\]</span></p>
+<p>As <span class="math inline">\(x \rightarrow -2\)</span>, eventually <span class="math inline">\(x &lt; 4\)</span> and so <span class="math inline">\(f(x) = 2x\)</span>. Since <span class="math inline">\(2x\)</span> is continous (everywhere), <span class="math inline">\(f(x)\)</span> is continuous at <span class="math inline">\(x = -2\)</span>.</p>
+</section>
+<section id="differentiability-at-a-point" class="slide level2">
+<h2>Differentiability at a point</h2>
+<p><span class="math inline">\(f(x)\)</span> is differentiable at <span class="math inline">\(x = a\)</span> if:</p>
+<p><span class="math display">\[\lim_{x \rightarrow a^-} \frac{f(x) - f(a)}{x - a} = \lim_{x \rightarrow a^+} \frac{f(x) - f(a)}{x - a}\]</span></p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><span class="math display">\[f(x) = \begin{cases}0 &amp;\mbox{if } x &lt; 0 \\
+x^2 &amp;\mbox{if } 0 \leq x \leq 1 \\
+x &amp;\mbox{if } 1 &lt; x &lt; 2 \\
+2x - 1 &amp;\mbox{if } x \geq 2\end{cases}\]</span></p>
+</section>
+<section id="x-0" class="slide level2">
+<h2>x = 0</h2>
+<p><span class="math display">\[\lim_{x \rightarrow 0^-} \frac{f(x) - f(0)}{x - 0} = \lim_{x \rightarrow 0^-}\frac{0 - 0}{x} = 0\]</span></p>
+<p><span class="math display">\[\lim_{x\rightarrow 0^+} \frac{f(x) - f(0)}{x - 0} = \lim_{x\rightarrow 0^+} \frac{x^2 - 0}{x - 0} = \lim_{x \rightarrow 0^+} x = 0\]</span></p>
+<p>The two sides are the same, so <span class="math inline">\(f(x)\)</span> is differentiable at <span class="math inline">\(x = 0\)</span>.</p>
+</section>
+<section id="note-on-continuity-differentiability" class="slide level2">
+<h2>Note on continuity / differentiability</h2>
+<ul>
+<li>Question 9: is <span class="math inline">\(f(x)\)</span> continuous, differentiable, both, or neither?</li>
+<li>Continuous, but not differentiable?</li>
+<li>Differentiable, but not continuous? (Not possible!)</li>
+<li>Both?</li>
+<li>Neither?</li>
+</ul>
+</section></section>
+<section>
+<section id="final-paper" class="title-slide slide level1">
+<h1>Final Paper</h1>
+<ul>
+<li>5 - 10 page paper</li>
+<li>Two prompts, but you can write about other things</li>
+<li>Roughly: “Calculus in the news / sciences” / “History of calculus”</li>
+</ul>
+</section>
+<section id="calculus-in-the-news" class="slide level2">
+<h2>Calculus in the news</h2>
+<blockquote>
+<p>“In the fall of 1972 President Nixon announced that the rate of increase of inflation was decreasing. This was the first time a sitting president used the third derivative to advance his case for reelection.”</p>
+</blockquote>
+<p>Hugo Rossi, <em>Notices of the American Mathematical Society (October 1996)</em></p>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<blockquote>
+<p>“The rate of increase is slowing. But the number of cases are still going up.”</p>
+</blockquote>
+<p><a href="https://www.cnbc.com/2020/03/27/new-york-gov-andrew-cuomo-extends-school-closures-as-coronavirus-cases-rise.html">Governor Cuomo (March 27, 2020)</a></p>
+<p>Both of these quotes are discussing how a quantity is changing over time: that is, they are all echoing the concept of the derivative. In fact: both refer to <em>higher order</em> derivatives.</p>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<p>Find an article / news clip / podcast / etc in which two quantitative variables are related.</p>
+<ul>
+<li>Describe this relationship mathematically:
+<ul>
+<li>which variable is being described as “dependent” upon the other variable?</li>
+<li>How does the dependent variable change with respect to the independent one?</li>
+<li>Formalize this relationship in the form of derivatives (possibly including higher-order derivatives)</li>
+</ul></li>
+<li>Look for data that supports or refutes the claim.</li>
+</ul>
+</section>
+<section id="history" class="slide level2">
+<h2>History</h2>
+<ul>
+<li>Calculus was “invented” by Newton and Leibniz?</li>
+<li>Many other contributors: before and after!</li>
+</ul>
+<p>Find out as much as you can about any mathematician who contributed to the development of calculus and describe their contributions as deeply as you can. This paper can be either more <em>historical</em>, or <em>mathematical</em>.</p>
+</section>
+<section id="mathematical" class="slide level2">
+<h2>Mathematical?</h2>
+<ul>
+<li>Functions that are differentiable, but don’t have a second derivative</li>
+<li>Functions that are continuous, but not differentiable</li>
+<li>Functions which are continuous, but nowhere differentiable</li>
+<li>Treatment / rejection / acceptance of “infinitesimals”</li>
+</ul>
+</section>
+<section id="historical" class="slide level2">
+<h2>Historical?</h2>
+<ul>
+<li>Historical context: (mathematical training, mathematics known at the time, etc)</li>
+<li>Background: why were these mathematicians interested in these problems?</li>
+</ul>
+<p>Either way:</p>
+<ul>
+<li>Touch on both mathematics and history. Emphasize either.</li>
+</ul>
+</section>
+<section id="mathematicians-of-interest" class="slide level2">
+<h2>Mathematicians of interest?</h2>
+<ul>
+<li>Hasan ibn al-Haytham (“Alhazen”), 900s-1000s</li>
+<li>Sofya Kovalevskaya, 1800s</li>
+<li>Augustin-Louis Cauchy, Bernard Bolzano, and/or Karl Weierstrass 1700s-1800s</li>
+<li>Abraham Robinson, 1960s</li>
+</ul>
+<p>Many others. Do some initial research on history of calculus and see what piques your interest!</p>
+</section>
+<section id="topic-statement" class="slide level2">
+<h2>Topic Statement</h2>
+<p><strong>Due October 19</strong>. Pick a <strong>specific</strong> topic you’d like to study. Narrow it down as much as you can, and give a short summary of what you’ll study.</p>
+<ul>
+<li>Not just “Calculus in the news”, but “I’ll be studying trends in polling averages for the 2020 presidential election.”</li>
+<li>Not just “History”, but: “I will be studying the contributions of Maria Gaetana Agnessi to the development of calculus.”</li>
+</ul>
+</section></section>
+<section>
+<section id="problem-presentations" class="title-slide slide level1">
+<h1>Problem Presentations</h1>
+<ul>
+<li>2 Problem Presentations</li>
+<li>Describe a <strong>challenging</strong> problem:
+<ul>
+<li>Homework?</li>
+<li>Textbook, not assigned?</li>
+<li>Exam</li>
+<li>Anywhere else?</li>
+</ul></li>
+</ul>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<ul>
+<li>First one: due <strong>November 2</strong> (3 weeks)</li>
+<li>We will be using <strong>VoiceThread</strong></li>
+<li>Create slides (PPT, Google Slides, etc)</li>
+<li>Describe the problem and outline the solution</li>
+<li>Upload slides to VoiceThread: “Add Media”</li>
+<li>“Comment” on each slide: “audio only” is fine.
+<ul>
+<li>Talk through the details of the solution..</li>
+</ul></li>
+<li>Keep it short: 5 minutes or so.</li>
+</ul>
+</section></section>
+<section>
+<section id="recap" class="title-slide slide level1">
+<h1>Recap:</h1>
+<p>Recall: the <strong>quotient rule</strong></p>
+<p><span class="math display">\[ (\frac{f(x)}{g(x)})^\prime = \frac{f^\prime(x)g(x) - g^\prime(x)f(x)}{(g(x))^2}\]</span></p>
+<p>and the trig derivatives:</p>
+<ul>
+<li><span class="math inline">\((\sin(x))^\prime = \cos(x)\)</span></li>
+<li><span class="math inline">\((\cos(x))^\prime = -\sin(x)\)</span></li>
+</ul>
+</section>
+<section id="trig" class="slide level2">
+<h2>Trig</h2>
+<p><span class="math inline">\(f(x) = \cos(x)\)</span>. <span class="math inline">\(f^\prime(0) = 0\)</span>? Why?</p>
+<p><img data-src="https://www.mathsisfun.com/geometry/images/unit-circle.svg" title="Unit Circle" alt="Unit Circle" /><br />
+</p>
+</section>
+<section id="derivative-of-tanx" class="slide level2">
+<h2>Derivative of <span class="math inline">\(\tan(x)\)</span></h2>
+<p>Using <span class="math inline">\(\tan(x) = \dfrac{\sin(x)}{\cos(x)}\)</span> and the quotient rule:</p>
+<p><span class="math display">\[
+\dfrac{\cos(x)\cos(x) - (-\sin(x))\sin(x)}{(\cos(x))^2}
+\]</span></p>
+<p>The numerator is <span class="math inline">\((\cos(x))^2 + (\sin(x))^2 = 1\)</span>. So:</p>
+<p><span class="math display">\[ (\tan(x))^\prime = \frac{1}{(\cos(x))^2} = (\sec(x))^2 \]</span></p>
+</section>
+<section id="derivative-of-secx" class="slide level2">
+<h2>Derivative of <span class="math inline">\(\sec(x)\)</span></h2>
+<p><span class="math inline">\(\sec(x) = \dfrac{1}{\cos(x)}\)</span>. So again use the quotient rule:</p>
+<p><span class="math display">\[
+\dfrac{0 - (-\sin(x))}{(\cos(x))^2}
+\]</span></p>
+<p>We can write this as <span class="math inline">\(\dfrac{1}{\cos(x)} \dfrac{\sin(x)}{\cos(x)} = \sec(x)\tan(x)\)</span>.</p>
+</section></section>
+<section>
+<section id="chain-rule" class="title-slide slide level1">
+<h1>Chain Rule</h1>
+<p>Recall <strong>function composition</strong>:</p>
+<ul>
+<li><span class="math inline">\((f \circ g)(x)\)</span> means <span class="math inline">\(f(g(x))\)</span></li>
+</ul>
+<p><strong>Theorem: The Chain Rule</strong>. Suppose <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are differentiable. Then <span class="math inline">\((f \circ g)^\prime(x) = f^\prime(g(x)) g^\prime(x)\)</span>.</p>
+<ul>
+<li>“Derivative of the outside function, plugging in the inside, times the derivative of what’s inside”</li>
+</ul>
+</section>
+<section id="example-1" class="slide level2">
+<h2>Example</h2>
+<p>Let <span class="math inline">\(f(x) = \sin(x^2)\)</span>. Then <span class="math inline">\(f^\prime(x)\)</span> = ?</p>
+<div class="fragment">
+<ul>
+<li>Derivative of <span class="math inline">\(\sin(x) = \cos(x)\)</span></li>
+<li>Plug in <span class="math inline">\(x^2\)</span>: <span class="math inline">\(\cos(x^2)\)</span></li>
+<li>Multiply by the derivative of <span class="math inline">\(x^2\)</span>: <span class="math inline">\(2x\)</span></li>
+</ul>
+</div>
+<div class="fragment">
+<p>So: <span class="math inline">\((\sin(x^2))^\prime = 2x \cos(x^2)\)</span></p>
+</div>
+</section>
+<section id="exercises" class="slide level2">
+<h2>Exercises</h2>
+<p>Find the derivatives of the following:</p>
+<ol type="1">
+<li><span class="math inline">\(f(x) = \sin(2x)\)</span></li>
+<li><span class="math inline">\(g(x) = (\sin(x))^2\)</span></li>
+<li><span class="math inline">\(h(x) = (\cos(x))^2\)</span></li>
+</ol>
+</section>
+<section id="solutions" class="slide level2">
+<h2>Solutions</h2>
+<p><span class="math inline">\((\sin(2x))^\prime = 2\cos(2x)\)</span></p>
+<div class="fragment">
+<p><span class="math inline">\((\sin(x))^2 = 2\sin(x)\cos(x)\)</span></p>
+</div>
+<div class="fragment">
+<p><span class="math inline">\((\cos(x))^2 = -2\sin(x)\cos(x)\)</span></p>
+</div>
+</section></section>
+<section id="homework-reminders" class="title-slide slide level1">
+<h1>Homework Reminders</h1>
+<ul>
+<li>Check In for lesson 8 due <strong>tonight</strong></li>
+<li>DeltaMath Homework 7: Product and Quotient Rules due <strong>tonight</strong></li>
+<li>DeltaMath Homework 8: Trig Derivatives and Chain Rule due <strong>Thursday</strong> night.</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

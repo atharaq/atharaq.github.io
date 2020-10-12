@@ -12,3 +12,5 @@ layout: default
 * [Lesson 5: Intro to Derivatives](lesson5.html)
 * [Lesson 6: Derivative Properties / Rules](lesson6.html)
 * [Lesson 7: Review](lesson7.html)
+* [Lesson 8: Quotient Rule and Trig Derivatives](lesson8.html)
+* [Lesson 9: Recap / Upcoming Assignments / Chain Rule](lesson9.html)
