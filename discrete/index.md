@@ -15,3 +15,4 @@ lang: en-US
 * [Lesson 6: Cardinality](lesson6.html)
 * [Lesson 7: Predicate Logic](lesson7.html)
 * [Lesson 8: Review](lesson8.html)
+* [Lesson 9: Induction](lesson9.html)
