@@ -1,4 +1,4 @@
-# Calculus I Lesson 10: Exponential Functions
+# Calculus I Lesson 10: Implicit Differentiation
 {:.no_toc}
 
 Table of Contents
