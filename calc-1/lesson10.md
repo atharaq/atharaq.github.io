@@ -1,5 +1,5 @@
 # Calculus I Lesson 10: Implicit Differentiation
-{:.no_toc}
+{: .no_toc}
 
 1. Table of Contents
 {:toc}
@@ -101,6 +101,35 @@ Before we answer this, it's worth mentioning: do we really know what the **basic
 
 ## Addition? Multiplication?
 
+We usually think of addition as repeated counting: $5 + 7 = 12$, because if we had $5$ apples on one side and $7$ apples on another, then we have $12$ apples total. But of course, there is no notion of $\sqrt{2}$ apples. What does $2 + \sqrt{2}$ mean? It's really about **measurement**, rather than counting: "slide the number line over by a length of $\sqrt{2}$."
+
+Similarly, multiplication is usually thought of as repeated addition. $2 \times 3$ means $2$ groups of $3$. What does $\pi \times 3$ mean? $\pi$ groups of $3? Again, we need to re-think this notion slightly: instead of making groups, we **re-scale**: multiplying by $\pi$ means we stretch out the number line until the tick marks are spaced apart by a length of $\pi$.
+
+In a sense our operations are **transformations** of the number line by sliding (addition) or stretching/shrinking (multiplication).
+
+Incidentally, this helps us understand multiplying negatives: multiplying by a negative involves both the re-scaling as well as reflecting the whole line about the center.
+
 ## Exponents!
 
+So what does this mean for exponents? The whole point is that we need to re-interpret exponentiation. Really, the **only** way to make sense of exponential functions is to use calculus: $2^\pi$ is defined as whatever value makes the function $2^x$ continuous as $x \rightarrow \pi$. In other words: we know what $2^3$ is, we know how to calculate $2^{3.1}$, and $2^{3.14}$, and $2^{3.141}$, and all of these numbers approach some limit as $x \rightarrow \pi$. $2^\pi$ is defined to be this limit.
+
 ## Growth
+
+Exponential functions are used to model **continuous growth**. Let's go through a classical investment example.
+
+**Example**: An investment earns 10\% annually. We initially invest 1000 dollars. How much do we have after $t$ years?
+
+Let $A(t)$ be the function that represents the amount of money invested after $t$ years.
+
+* $A(0) = 1000$
+* $A(1) = 1100$ (10\% more than 1000: add 100)
+* $A(2) + 1210$ (10\% more than 1100: add 110)
+* $A(3) + 1331$ (10\% more than 1210: add 121)
+
+This function is given, algebraically, by $A(t) = 1000 \cdot (1.1)^t$.
+
+Notice that the amount the investment grows by is directly proportional to the amount invested. If we have 1,000,000 dollars invested, we will earn 100,000. If we have 1,000,000,000 invested, we will earn 100,000,000!
+
+This is worth re-iterating: the key fact about exponential functions is that their **growth is proportional to their value**. We will see that this fact is reflected in their derivatives: $y^\prime$ is proportional to $y$, no matter where we look on the graph.
+
+Next time we will study derivatives of exponential functions and their inverses, logarithmic functions. Please review [Section 1.5 on exponential and logarithmic functions](https://openstax.org/books/calculus-volume-1/pages/1-5-exponential-and-logarithmic-functions) as well as [Section 3.9 on the derivatives of exponential and logarithmic functions](https://openstax.org/books/calculus-volume-1/pages/3-9-derivatives-of-exponential-and-logarithmic-functions).
