@@ -87,8 +87,20 @@ Now we have an **explicit** derivative of $\arctan(x)$!
 
 # Review of Exponential Functions
 
+An exponential function is a function of the form $y = b^x$, where $b$ is some constant. We exclude $b \leq 0$, since, for negative numbers, $b^{\frac{1}{2}}$ is not defined, for example.
+
+Before we study the derivatives of these kinds of functions, I'd like to review these functions a bit. First of all, what do exponents even mean?
+
 ## Exponents?
 
+If that sounded like a rhetorical question, it wasn't. We know what *some* exponents mean. For example, $2^3$ means $2 \times 2 \times 2$. We also know that $2^0$ is 1, and $2^{-4}$ means $\dfrac{1}{2 \times 2 \times 2 \times 2}$. So we can make sense of integer exponents.
+
+We can also make sense of exponents that are fractions: $2^{\frac{3}{4}}$ means $\sqrt[4]{2^3}$. But what does $2^\pi$ mean?
+
+Before we answer this, it's worth mentioning: do we really know what the **basic operations** (addition, subtraction, multiplication, division) really mean for irrational numbers like $\pi$?
+
 ## Addition? Multiplication?
+
+## Exponents!
 
 ## Growth
