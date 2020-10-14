@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Athar Abdul-Quader">
+  <meta name="dcterms.date" content="2020-10-15">
+  <title>Discrete Math Lesson 10</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Discrete Math Lesson 10</h1>
+  <p class="author">Athar Abdul-Quader</p>
+  <p class="date">15 October 2020</p>
+</section>
+
+<section id="reminder" class="title-slide slide level1">
+<h1>Reminder</h1>
+<ul>
+<li>Check in 9 due <strong>tomorrow</strong></li>
+<li>“CS Careers in the Gaming Industry” Next Wednesday, 10/21 at 2 PM.
+<ul>
+<li>Chin Xiang Chong, Respawn Entertainment</li>
+<li><a href="https://purchase.zoom.us/meeting/register/tJwrd-CsqzorHNZgAMuOvJwoyBvwI_Gwvo89">Sign up here</a></li>
+</ul></li>
+</ul>
+</section>
+
+<section>
+<section id="exam-questions" class="title-slide slide level1">
+<h1>Exam Questions</h1>
+
+</section>
+<section id="every" class="slide level2">
+<h2>“Every” …</h2>
+<ul>
+<li>“Every function <span class="math inline">\(f : A \to B\)</span> is one to one.”</li>
+<li>This is a <strong>universal</strong> statement:
+<ul>
+<li>to prove it: let <span class="math inline">\(f : A \to B\)</span> be a function. Show <span class="math inline">\(f\)</span> <strong>must</strong> be one to one.</li>
+<li>to <em>disprove</em> it: <em>find</em> a function <span class="math inline">\(f : A \to B\)</span> that is <strong>not</strong> one to one.</li>
+</ul></li>
+</ul>
+</section>
+<section id="relations-functions" class="slide level2">
+<h2>Relations / Functions</h2>
+<p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be sets and <span class="math inline">\(R \subseteq A \times B\)</span>. If, whenever <span class="math inline">\(x \in A\)</span>, there is <strong>exactly</strong> one <span class="math inline">\(y \in B\)</span> such that <span class="math inline">\((x, y) \in R\)</span>, then <span class="math inline">\(R\)</span> defines the graph of a one to one function. That is, there is <span class="math inline">\(f : A \to B\)</span> such that <span class="math inline">\(R = \{ (x, f(x)) : x \in A \}\)</span> and <span class="math inline">\(f\)</span> is one to one.</p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p>Counterexample: <span class="math inline">\(A = \{ 0, 1 \}\)</span>, <span class="math inline">\(B = \{ a \}\)</span>, and <span class="math inline">\(R = \{ (0, a), (1, a) \}\)</span>.</p>
+<ul>
+<li>For each <span class="math inline">\(x \in A\)</span>:
+<ul>
+<li><span class="math inline">\(x = 0\)</span>: how many <span class="math inline">\(y \in B\)</span> are there such that <span class="math inline">\((x, y) \in R\)</span>?</li>
+<li><span class="math inline">\(x = 1\)</span>: how many <span class="math inline">\(y \in B\)</span> are there such that <span class="math inline">\((x, y) \in R\)</span>?</li>
+<li>“Whenever <span class="math inline">\(x \in A\)</span>, there is <strong>exactly</strong> one <span class="math inline">\(y \in B\)</span>”?</li>
+</ul></li>
+<li>Is this function one to one?
+<ul>
+<li><span class="math inline">\(x \neq y \rightarrow f(x) \neq f(y)\)</span>?</li>
+</ul></li>
+</ul>
+</section>
+<section id="nesting-quantifiers" class="slide level2">
+<h2>Nesting Quantifiers</h2>
+<ul>
+<li><span class="math inline">\(\forall y \in B \exists x \in A (f(x) = y)\)</span></li>
+</ul>
+<p>Consider <span class="math inline">\(A = \{ 0, 1 \}\)</span>, <span class="math inline">\(B = \{ a, b \}\)</span>. <span class="math inline">\(f(0) = a, f(1) = b\)</span>.</p>
+<ul>
+<li>As a question: for all <span class="math inline">\(y \in B\)</span>, is there <span class="math inline">\(x \in A\)</span> such that <span class="math inline">\(f(x) = y\)</span>?
+<ul>
+<li>If so: if I give you <span class="math inline">\(y\)</span>, can you tell me <span class="math inline">\(x\)</span>?</li>
+<li><span class="math inline">\(y = a\)</span>? What’s <span class="math inline">\(x\)</span>?</li>
+<li><span class="math inline">\(y = b\)</span>? What’s <span class="math inline">\(x\)</span>?</li>
+<li>True or False?</li>
+</ul></li>
+</ul>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<ul>
+<li><span class="math inline">\(\exists x \in A \forall y \in B (f(x) = y)\)</span></li>
+</ul>
+<p>As before: <span class="math inline">\(A = \{ 0, 1 \}\)</span>, <span class="math inline">\(B = \{ a, b \}\)</span>. <span class="math inline">\(f(0) = a, f(1) = b\)</span>.</p>
+<ul>
+<li>Is there <span class="math inline">\(x \in A\)</span> such that, for all <span class="math inline">\(y \in B\)</span>, <span class="math inline">\(f(x) = y\)</span>?
+<ul>
+<li>If so: which <span class="math inline">\(x\)</span>?</li>
+<li>Is it <span class="math inline">\(x = 0\)</span>?</li>
+<li>Is it <span class="math inline">\(x = 1\)</span>?</li>
+<li>True or false?</li>
+</ul></li>
+</ul>
+</section>
+<section id="knights-knaves-2c" class="slide level2">
+<h2>Knights / Knaves (2(c))</h2>
+<ul>
+<li>A: “If you asked B, they’d say C is a knight”
+<ul>
+<li>A is a knight if and only if “(B is a knight and C is a knight) or (B is a knave and C is a knave.)”</li>
+</ul></li>
+<li>B: A is a knave
+<ul>
+<li>B is a knight if and only if “A is a knave”</li>
+</ul></li>
+<li>C: A and I are the same type
+<ul>
+<li>C is a knight if and only if “(A is a knight and C is a knight) or”(A is a knave and C is a knave)."</li>
+</ul></li>
+</ul>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<ul>
+<li>Case 1: A is a knight.
+<ul>
+<li>B and C are both knights, or both knaves.</li>
+<li>If B is a knight, then A is a knave. Contradiction.</li>
+<li>B is a knave, C is a knave? Consistent</li>
+</ul></li>
+<li>Case 2: A is a knave.
+<ul>
+<li>B is a knight and C is a knave? (C: “A and I are the same type” is true.)</li>
+<li>B is a knave and C is a knight? (C: “A and I are the same type” is false.)</li>
+<li>Impossible.</li>
+</ul></li>
+</ul>
+<p><strong>A is a knight, B is a knave, C is a knave</strong>.</p>
+</section>
+<section id="she-say-do-you-love-me-3b" class="slide level2">
+<h2>“She say ‘Do you love me’…” (3(b))</h2>
+<blockquote>
+<p>I tell her “Only partly”<br />
+I only love my bed and my momma<br />
+I’m sorry</p>
+</blockquote>
+<p>(Drake, “God’s Plan”)</p>
+<ul>
+<li>Among all possible objects of <span class="math inline">\(x\)</span>’s affection, the only ones he loves are his bed and his momma</li>
+<li>For all <span class="math inline">\(y\)</span>, <strong>if</strong> <span class="math inline">\(x\)</span> loves <span class="math inline">\(y\)</span>…</li>
+</ul>
+</section>
+<section id="nesting-predicates" class="slide level2">
+<h2>Nesting Predicates?</h2>
+<ul>
+<li><span class="math inline">\(L(x, y)\)</span> means “<span class="math inline">\(x\)</span> loves <span class="math inline">\(y\)</span>”</li>
+<li><span class="math inline">\(M(x, y)\)</span> means “<span class="math inline">\(x\)</span> is the mother of <span class="math inline">\(y\)</span>”</li>
+<li><span class="math inline">\(L(x, M(x, y))\)</span> means …?</li>
+</ul>
+<div class="fragment">
+<p>“<span class="math inline">\(x\)</span> loves”<span class="math inline">\(x\)</span> is the mother of <span class="math inline">\(y\)</span>""? Not grammatical!</p>
+</div>
+</section>
+<section id="dont-nest-predicates" class="slide level2">
+<h2>Don’t Nest Predicates</h2>
+<ul>
+<li>Inside a predicate: plug in <em>objects</em> (or <em>variables</em>)</li>
+<li>Predicates: represents a <em>statement</em></li>
+<li>Moral of the story: don’t plug in a statement into a predicate. Combine using <span class="math inline">\(\wedge, \vee, \rightarrow\)</span>, etc.</li>
+</ul>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<ul>
+<li><span class="math inline">\(x\)</span> loves his mother: “There is a person who is <span class="math inline">\(x\)</span>’s mother <strong>and</strong> <span class="math inline">\(x\)</span> loves this person.”</li>
+<li><span class="math inline">\(x\)</span> <strong>only</strong> loves his mother: <span class="math inline">\(x\)</span> loves his mother (above) <strong>and</strong> for every <span class="math inline">\(y\)</span>, if <span class="math inline">\(x\)</span> loves <span class="math inline">\(y\)</span>, then <span class="math inline">\(y\)</span> is <span class="math inline">\(x\)</span>’s mother.</li>
+<li><span class="math inline">\(x\)</span> <strong>only</strong> loves his bed and his momma: <span class="math inline">\(x\)</span> loves his mother <strong>and</strong> <span class="math inline">\(x\)</span> loves his bed <strong>and</strong> for every <span class="math inline">\(y\)</span>, if <span class="math inline">\(x\)</span> loves <span class="math inline">\(y\)</span>, then either <span class="math inline">\(y\)</span> is …</li>
+</ul>
+</section>
+<section id="nesting-quantifiers-again-3c" class="slide level2">
+<h2>Nesting Quantifiers again (3(c))</h2>
+<ul>
+<li>Read statements left-to-right.</li>
+<li>Starts with <span class="math inline">\(\forall x \ldots\)</span>: let <span class="math inline">\(x\)</span> be an arbitrary member of the universe. Prove that … is true. (Or: find an example of <span class="math inline">\(x\)</span> where “…” is false).</li>
+<li>Starts with <span class="math inline">\(\exists x \ldots\)</span>: find an example of <span class="math inline">\(x\)</span> where “…” is true. Or: let <span class="math inline">\(x\)</span> be an arbitrary member. Show “…” is false.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>In <span class="math inline">\(\mathbb{N}\)</span>: <span class="math inline">\(\forall x \exists y (x &lt; y)\)</span>. If true: let <span class="math inline">\(x \in \mathbb{N}\)</span>…</li>
+<li>In <span class="math inline">\(\mathbb{Z}\)</span>: <span class="math inline">\(\exists x \forall y (x \leq y)\)</span>. If true: tell me, specifically
+<ul>
+<li>In <span class="math inline">\(\mathbb{N}\)</span>, same statement?</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="y-setminus-y-setminus-x-x-4d" class="slide level2">
+<h2><span class="math inline">\(Y \setminus (Y \setminus X) = X\)</span> (4(d))</h2>
+<ul>
+<li>Set equality: <span class="math inline">\(A = B\)</span> means “Every <span class="math inline">\(x \in A\)</span> is in <span class="math inline">\(B\)</span>, and every <span class="math inline">\(x \in B\)</span> is in <span class="math inline">\(A\)</span>.”</li>
+<li>Let <span class="math inline">\(x \in Y \setminus (Y \setminus X)\)</span>. Then … (definition of <span class="math inline">\(x \in Y \setminus (Y \setminus X)\)</span>?)</li>
+<li>Let <span class="math inline">\(x \in X\)</span>. Then…</li>
+</ul>
+</section></section>
+<section>
+<section id="curve" class="title-slide slide level1">
+<h1>“Curve”:</h1>
+<ul>
+<li>95+: A+</li>
+<li>85+: A</li>
+<li>75+: B+</li>
+<li>70+: B</li>
+<li>60+: C</li>
+</ul>
+</section>
+<section id="problem-sets" class="slide level2">
+<h2>Problem Sets</h2>
+<ul>
+<li>Close to 4/4: A</li>
+<li>Close to 3/4: B</li>
+<li>Close to 2/4: C</li>
+<li>1 / 4: D</li>
+<li>Not doing anything: F</li>
+</ul>
+</section>
+<section id="extra-credit" class="slide level2">
+<h2>Extra Credit</h2>
+<ul>
+<li><strong>Only</strong> if your grade is below a 70.</li>
+<li>Meet with me (either small groups / office hours)</li>
+<li>Correct everything you got wrong:
+<ul>
+<li>Half a point for each correction</li>
+<li>No points for bonus now.</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="problem-presentation" class="title-slide slide level1">
+<h1>Problem Presentation</h1>
+<ul>
+<li>Describe a <strong>challenging</strong> problem:
+<ul>
+<li>Problem Set</li>
+<li>Exam</li>
+<li>Anywhere else? (Keep eyes peeled)</li>
+<li>Nov 6 / Nov 13 / Nov 20</li>
+<li>Sign up on spreadsheet (will be emailed)</li>
+</ul></li>
+</ul>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<ul>
+<li>We will be using <strong>VoiceThread</strong></li>
+<li>Create slides (PPT, Google Slides, etc)
+<ul>
+<li>LaTeX? Beamer (if you’re interested)</li>
+</ul></li>
+<li>Describe the problem and outline the solution</li>
+<li>Upload slides to VoiceThread: “Add Media”</li>
+<li>“Comment” on each slide: “audio only” is fine.
+<ul>
+<li>Talk through the details of the solution.</li>
+</ul></li>
+<li>Keep it <strong>short</strong>: 5 minutes or so.</li>
+<li>Grading rubric will be posted (5% of grade)</li>
+</ul>
+</section></section>
+<section>
+<section id="counting-puzzle" class="title-slide slide level1">
+<h1>Counting Puzzle</h1>
+<p>Suppose there are 5 people who want to sit at a <strong>round table</strong>. In how many ways can we arrange 5 people around the table?</p>
+<div class="fragment">
+<p>Wait…what is an “arrangement” around a round table?</p>
+</div>
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<div style="width:75%; height:75%; overflow: hidden">
+<p><img alt="Round Table" src="table.jpeg" title="Round Table" /></p>
+</div>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<ul>
+<li>120 arrangements of 5 people.</li>
+<li>Cyclic arrangements? Depends on how you count:
+<ul>
+<li>60? (if we care about <em>orientation</em>: clockwise / counterclockwise are different?)</li>
+<li>30 (if all we care about is “who is sitting next to whom”)</li>
+</ul></li>
+</ul>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<p>Other “counting” problems:</p>
+<ul>
+<li>Married couples must sit together</li>
+<li>Persons x and y don’t like each other</li>
+<li>etc.</li>
+</ul>
+<div class="fragment">
+<p>(FYI: Wedding planning is hard)</p>
+<p>Problem presentation? Final paper / presentation?</p>
+</div>
+</section></section>
+<section>
+<section id="induction" class="title-slide slide level1">
+<h1>Induction</h1>
+<p>Universe: <span class="math inline">\(\mathbb{N}\)</span>. <span class="math inline">\(P(n)\)</span> any predicate:</p>
+<p><span class="math display">\[ [P(0) \wedge \forall n (P(n) \rightarrow P(n+1))] \rightarrow \forall n P(n) \]</span></p>
+<div class="fragment">
+<p><strong>Strategy</strong>: Break “larger” problem into “smaller” problems for which we know the solution (inductively).</p>
+</div>
+</section>
+<section id="ex-powers-of-2" class="slide level2">
+<h2>Ex: Powers of 2</h2>
+<ul>
+<li>1 = 1</li>
+<li>1 + 2 = 3</li>
+<li>1 + 2 + 4 = 7</li>
+<li>1 + 2 + 4 + 8 = 15</li>
+<li>1 + 2 + 4 + 8 + 16 = 31</li>
+</ul>
+</section>
+<section id="hmmm" class="slide level2">
+<h2>Hmmm</h2>
+<ul>
+<li>1 = 2 - 1</li>
+<li>3 = 4 - 1</li>
+<li>7 = 8 - 1</li>
+<li>15 = 16 - 1</li>
+<li>31 = 32 - 1</li>
+</ul>
+<div class="fragment">
+<p>Notice: add next power of 2 to both sides?</p>
+</div>
+</section>
+<section id="aha" class="slide level2">
+<h2>Aha!</h2>
+<p><strong>Conjecture</strong>: The sum of the powers of <span class="math inline">\(2\)</span> from <span class="math inline">\(2^0\)</span> to <span class="math inline">\(2^{n}\)</span> is <span class="math inline">\(2^{n+1} - 1\)</span>.</p>
+<p>Can we prove this by induction?</p>
+<p><span class="math display">\[P(n): \sum_{i=0}^{n} 2^i = 2^{n+1} - 1\]</span></p>
+<p><strong>Base case</strong>: <span class="math inline">\(P(0): 2^0 = 2^1 - 1\)</span> is true.</p>
+</section>
+<section id="inductive-step" class="slide level2">
+<h2>Inductive Step</h2>
+<p>Let <span class="math inline">\(n \in \mathbb{N}\)</span> (arbitrary natural number). Suppose <span class="math inline">\(P(n)\)</span> is true. This means:</p>
+<p><span class="math display">\[\sum_{i = 0}^n 2^i = 2^{n+1} - 1\]</span></p>
+<p>We want to show that <span class="math inline">\(P(n+1)\)</span> is also true.</p>
+</section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<p>How can we use what we know about <span class="math inline">\(\sum\limits_{i=0}^n 2^i\)</span> to help us figure out <span class="math inline">\(\sum\limits_{i=0}^{n+1} 2^i\)</span>?</p>
+<div class="fragment">
+<p><span class="math display">\[\sum_{i=0}^{n+1} 2^i = \sum_{i=0}^n 2^i + 2^{n+1}\]</span></p>
+<p>By assumption, <span class="math inline">\(\sum\limits_{i=0}^n 2^i = 2^{n+1} - 1\)</span>. But <span class="math inline">\(2 \times 2^{n+1}\)</span> is <span class="math inline">\(2^{n+2}\)</span>. So…</p>
+</div>
+</section></section>
+<section>
+<section id="modular-arithmetic" class="title-slide slide level1">
+<h1>Modular Arithmetic</h1>
+<p><strong>Definition</strong>: Let <span class="math inline">\(n, m \in \mathbb{Z}\)</span>. We say <span class="math inline">\(n\)</span> <strong>divides</strong> <span class="math inline">\(m\)</span> if there is <span class="math inline">\(k \in \mathbb{Z}\)</span> such that <span class="math inline">\(nk = m\)</span>.</p>
+<p>Idea: <span class="math inline">\(m / n\)</span> is an integer.</p>
+<p><strong>Definition</strong>: Let <span class="math inline">\(n \in \mathbb{N}\)</span>, <span class="math inline">\(n &gt; 1\)</span>. For <span class="math inline">\(x, y \in \mathbb{Z}\)</span>, we say <span class="math inline">\(x \equiv y\)</span> (<strong>mod</strong> <span class="math inline">\(n\)</span>) if <span class="math inline">\(n\)</span> divides <span class="math inline">\(x - y\)</span>.</p>
+</section>
+<section id="division-and-remainder" class="slide level2">
+<h2>Division and Remainder</h2>
+<p><strong>Theorem</strong>: Let <span class="math inline">\(n \in \mathbb{Z}\)</span> and <span class="math inline">\(k &gt; 0\)</span>. There are <strong>unique</strong> <span class="math inline">\(q, r \in \mathbb{Z}\)</span> such that <span class="math inline">\(n = qk + r\)</span> <strong>and</strong> <span class="math inline">\(0 \leq r &lt; k\)</span>.</p>
+<p>Proof? (Actually non-trivial, but we will omit it.)</p>
+<div class="fragment">
+<p>Maybe a problem presentation?</p>
+</div>
+</section>
+<section id="symmetry" class="slide level2">
+<h2>Symmetry</h2>
+<p><strong>Theorem</strong>: Let <span class="math inline">\(n \in \mathbb{N}\)</span>, <span class="math inline">\(n &gt; 0\)</span>, and <span class="math inline">\(x, y \in \mathbb{Z}\)</span>. If <span class="math inline">\(x \equiv y\)</span> (<strong>mod</strong> <span class="math inline">\(n\)</span>), then <span class="math inline">\(y \equiv x\)</span> (<strong>mod</strong> <span class="math inline">\(n\)</span>).</p>
+<p>What needs to be proved here? What do we assume?</p>
+<div class="fragment">
+<ul>
+<li>Definition: <span class="math inline">\(x \equiv y\)</span> (<strong>mod</strong> <span class="math inline">\(n\)</span>) means: <span class="math inline">\(n\)</span> divides <span class="math inline">\(x - y\)</span>.</li>
+<li>We need to show: <span class="math inline">\(n\)</span> divides <span class="math inline">\(y - x\)</span>. How?</li>
+</ul>
+</div>
+</section>
+<section id="reflexivity" class="slide level2">
+<h2>Reflexivity</h2>
+<p><strong>Theorem</strong>: Let <span class="math inline">\(n \in \mathbb{N}\)</span>, <span class="math inline">\(n &gt; 0\)</span>, and <span class="math inline">\(x \in \mathbb{Z}\)</span>. Then <span class="math inline">\(x \equiv x\)</span> (<strong>mod</strong> <span class="math inline">\(n\)</span>).</p>
+<p>Again: what needs to be proved here? What do we assume?</p>
+<div class="fragment">
+<ul>
+<li>Let <span class="math inline">\(x \in \mathbb{Z}\)</span>. Show: <span class="math inline">\(n\)</span> divides <span class="math inline">\(x - x\)</span>.</li>
+</ul>
+</div>
+</section>
+<section id="transitivity" class="slide level2">
+<h2>Transitivity</h2>
+<p><strong>Theorem</strong>: Let <span class="math inline">\(n \in \mathbb{N}\)</span>, <span class="math inline">\(n &gt; 0\)</span>, and <span class="math inline">\(x, y, z \in \mathbb{Z}\)</span>. If <span class="math inline">\(x \equiv y\)</span> (<strong>mod</strong> <span class="math inline">\(n\)</span>) and <span class="math inline">\(y \equiv z\)</span> (<strong>mod</strong> <span class="math inline">\(n\)</span>), then <span class="math inline">\(x \equiv z\)</span> (<strong>mod</strong> <span class="math inline">\(n\)</span>).</p>
+<p><strong>Proof</strong> (idea): Let <span class="math inline">\(n \in \mathbb{N}\)</span>, <span class="math inline">\(n &gt; 0\)</span>, and <span class="math inline">\(x, y, z \in \mathbb{Z}\)</span>. Suppose <span class="math inline">\(n\)</span> divides <span class="math inline">\(x - y\)</span> and <span class="math inline">\(n\)</span> divides <span class="math inline">\(y - z\)</span>. Then…?</p>
+<p>(Show <span class="math inline">\(n\)</span> divides <span class="math inline">\(x - z\)</span>. How? Write down, explicitly, the definitions of “<span class="math inline">\(n\)</span> divides <span class="math inline">\(x - y\)</span>” and “<span class="math inline">\(n\)</span> divides <span class="math inline">\(y - z\)</span>”. Then manipulate things to show that the definition of <span class="math inline">\(n\)</span> divides <span class="math inline">\(x - z\)</span> is also satisfied.)</p>
+</section></section>
+<section id="problem-set-3" class="title-slide slide level1">
+<h1>Problem Set 3</h1>
+<p>Due <strong>Friday, October 23</strong>.</p>
+<ul>
+<li>Look it over this weekend and get started.</li>
+<li>Office hours / appointment on Monday (class time).</li>
+<li>Small groups on Thursday (class time)</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
