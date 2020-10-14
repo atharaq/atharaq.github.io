@@ -123,8 +123,8 @@ Let $A(t)$ be the function that represents the amount of money invested after $t
 
 * $A(0) = 1000$
 * $A(1) = 1100$ (10% more than 1000: add 100)
-* $A(2) + 1210$ (10% more than 1100: add 110)
-* $A(3) + 1331$ (10% more than 1210: add 121)
+* $A(2) = 1210$ (10% more than 1100: add 110)
+* $A(3) = 1331$ (10% more than 1210: add 121)
 
 This function is given, algebraically, by $A(t) = 1000 \cdot (1.1)^t$.
 
