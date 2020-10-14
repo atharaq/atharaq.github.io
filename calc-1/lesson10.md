@@ -72,7 +72,7 @@ We will often use this method to help us find the derivative of **inverse** func
 
 Here is an example of finding the derivative of an inverse function. $y = \arctan(x)$ means $x = \tan(y)$. Taking the derivative, implicitly, we get that $1 = (\sec(y))^2 y^\prime$. Since $\sec(y)$ means $\dfrac{1}{\cos(y)}$, we can multiply both sides by $(\cos(y))^2$ and get $y^\prime = (\cos(y))^2$. This is where things get tricky. How do we plug back in $y = \arctan(x)$ into $(\cos(y))^2$ and simplify? Let's look at a triangle:
 
-![x = tan(theta) picture](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Trigonometric_functions_and_inverse2.svg/296px-Trigonometric_functions_and_inverse2.svg.png "x = tan(theta)") \
+![x = tan(theta) picture](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Trigonometric_functions_and_inverse2.svg/296px-Trigonometric_functions_and_inverse2.svg.png "x = tan(theta)")\ 
 
 Let's think about the relationship between the trig functions, inverse trig functions, and angles:
 
