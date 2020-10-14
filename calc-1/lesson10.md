@@ -1,8 +1,8 @@
 # Calculus I Lesson 10: Implicit Differentiation
 {:.no_toc}
 
-Table of Contents
-1. {:toc}
+1. Table of Contents
+{:toc}
 
 # Review of Chain Rule
 
