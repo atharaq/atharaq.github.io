@@ -56,7 +56,7 @@ Take a look at this video from Khan Academy and look at how to find the derivati
 
 Take a look at the exercises 300-309 from [Section 3.8](https://openstax.org/books/calculus-volume-1/pages/3-8-implicit-differentiation).
 
-## Derivative of $y = \dfrac{1}{x}$
+## Derivative of $y = \frac{1}{x}$
 
 Earlier we used implicit differentiation to find equations of tangent lines to the graph of $xy = 1$. But we can use the same technique to find the (explicit) derivative of $y = \dfrac{1}{x}$. First, multiply by $x$ on both sides and then use implicit differentiation as before: $xy = 1$ means that $y + y^\prime x = 0$. Now solve for $y^\prime$, as we did before: $y^\prime = -\dfrac{y}{x}$.
 
