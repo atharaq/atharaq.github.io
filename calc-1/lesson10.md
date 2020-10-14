@@ -83,12 +83,12 @@ So if $y = \arctan(x)$, $y$ is the angle that we need to get $\tan(y) = x$ as ou
 
 $$y^\prime = (\cos(y))^2 = \left(\frac{1}{\sqrt{x^2+1}}\right)^2 = \frac{1}{x^2 + 1}$$
 
-Now we have an **explicit** derivative of $\tan(x)$!
+Now we have an **explicit** derivative of $\arctan(x)$!
 
 # Review of Exponential Functions
 
 ## Exponents?
 
-## What does
+## Addition? Multiplication?
 
 ## Growth
