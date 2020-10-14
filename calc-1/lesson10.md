@@ -2,7 +2,7 @@
 {:.no_toc}
 
 Table of Contents
-1. {:.toc}
+1. {:toc}
 
 # Review of Chain Rule
 
