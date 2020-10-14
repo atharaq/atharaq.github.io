@@ -1,8 +1,8 @@
 # Calculus I Lesson 10: Exponential Functions
 {:.no_toc}
 
-1. Table of Contents
-{:.toc}
+Table of Contents
+1. {:.toc}
 
 # Review of Chain Rule
 
@@ -54,7 +54,7 @@ Take a look at this video from Khan Academy and look at how to find the derivati
 
 ## Exercises
 
-Take a look at the exercises from
+Take a look at the exercises 300-309 from [Section 3.8](https://openstax.org/books/calculus-volume-1/pages/3-8-implicit-differentiation).
 
 ## Derivative of $y = \dfrac{1}{x}$
 
