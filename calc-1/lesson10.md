@@ -117,7 +117,7 @@ So what does this mean for exponents? The whole point is that we need to re-inte
 
 Exponential functions are used to model **continuous growth**. Let's go through a classical investment example.
 
-**Example**: An investment earns 10% annually. We initially invest \\$1000. How much do we have after $t$ years?
+**Example**: An investment earns 10% annually. We initially invest 1000 dollars. How much do we have after $t$ years?
 
 Let $A(t)$ be the function that represents the amount of money invested after $t$ years.
 
