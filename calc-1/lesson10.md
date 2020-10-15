@@ -6,6 +6,10 @@
 
 # Review of Chain Rule
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/7EaZXBPNj_w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 Recall the chain rule: if $h(x) = f(g(x))$, then $h^\prime(x) = f^\prime(g(x)) g^\prime(x)$.
 
 Sometimes, this rule is thought of as a "substitution" rule. Let $y = f(g(x))$ and $u = g(x)$. Then we can think of $y$ as a function of $u$, as $y = f(u)$, or we can think of $y$ as a function of $x$, as $f(g(x)$. The chain rule relates the derivative of $y$ with respect to $u$, and the derivative of $y$ with respect to $x$:
@@ -70,6 +74,10 @@ We will often use this method to help us find the derivative of **inverse** func
 
 ## Derivative of arctan
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/5I_z6oYNrBA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 Here is an example of finding the derivative of an inverse function. $y = \arctan(x)$ means $x = \tan(y)$. Taking the derivative, implicitly, we get that $1 = (\sec(y))^2 y^\prime$. Since $\sec(y)$ means $\dfrac{1}{\cos(y)}$, we can multiply both sides by $(\cos(y))^2$ and get $y^\prime = (\cos(y))^2$. This is where things get tricky. How do we plug back in $y = \arctan(x)$ into $(\cos(y))^2$ and simplify? Let's look at a triangle:
 
 ![x = tan(theta) picture](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Trigonometric_functions_and_inverse2.svg/296px-Trigonometric_functions_and_inverse2.svg.png "x = tan(theta)")
@@ -90,6 +98,10 @@ Now we have an **explicit** derivative of $\arctan(x)$!
 An exponential function is a function of the form $y = b^x$, where $b$ is some constant. We exclude $b \leq 0$, since, for negative numbers, $b^{\frac{1}{2}}$ is not defined, for example.
 
 Before we study the derivatives of these kinds of functions, I'd like to review these functions a bit. First of all, what do exponents even mean?
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/T988wK9rQQg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ## Exponents?
 
