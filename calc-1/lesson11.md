@@ -7,6 +7,8 @@
 # Quiz
 {:.no_toc}
 
+Before starting, be sure to check Moodle for **Quiz 2**.
+
 # Exponential Functions
 
 Recall that an exponential function is a function of the form $f(x) = b^x$, where $b$ is a constant, positive real number. The most important fact about exponential functions that we need for this section is the rule for addition inside exponents: for any exponential function $b^x$, and any real numbers $x$ and $y$:
