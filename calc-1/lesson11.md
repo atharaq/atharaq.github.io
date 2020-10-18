@@ -21,7 +21,7 @@ $$\frac{b^{x+h}-b^x}{h} = \frac{b^xb^h - b^x}{h} = b^x \frac{b^h - 1}{h}$$
 
 Notice that $b^x$ does not depend on $h$ at all, and so the limit as $h \rightarrow 0$ of the above expression will be $b^x \cdot \lim\limits_{h\rightarrow 0} \dfrac{b^h - 1}{h}$.
 
-This expression on the right, $\dfrac{b^h - 1}{h}$, looks challenging to compute. For example, it's not obvious what this would be if $b = 2$. Let's compute $\dfrac{2^h - 1}{h}$ for small values of $h$:
+This expression on the right, $\dfrac{b^h - 1}{h}$, looks challenging to compute. For example, it's not obvious what this would be if $b = 2$. Let's compute $\dfrac{2^h - 1}{h}$ for small, *positive* values of $h$:
 
 $$
 \begin{array}{c|c}
@@ -30,8 +30,20 @@ h & \dfrac{2^h - 1}{h} \\
 .1 & .7177 \\
 .01 & .6956 \\
 .001 & .6934 \\
--.001 & .6929 \\
 .0001 & .6932
+\end{array}
+$$
+
+Now let's compute this same expression for small, *negative* values of $h$:
+
+$$
+\begin{array}{c|c}
+h & \dfrac{2^h - 1}{h} \\
+\hline
+-.1 & .6697 \\
+-.01 & .6908 \\
+-.001 & .6929 \\
+-.0001 & .6931
 \end{array}
 $$
 
