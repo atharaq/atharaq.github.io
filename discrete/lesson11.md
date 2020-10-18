@@ -78,11 +78,11 @@ In this example: the light will be **on**, since 37 is an odd number! It's on af
 
 All of these examples illustrate the same concept of a cyclical version of addition. This concept is formalized as the study of **modular arithmetic**. Let's make some definitions
 
-**Definition**: Let $n, m \in \mathbb{Z}$. We say $m$ **divides** $n$ if there is an integer $k$ such that $n = mk$. We write this as $m \divides n$.
+**Definition**: Let $n, m \in \mathbb{Z}$. We say $m$ **divides** $n$ if there is an integer $k$ such that $n = mk$. We write this as $m \mid n$.
 
 **Definition**: Let $n \in \mathbb{N}$, $n > 0$, and $x, y \in \mathbb{Z}$. Then $x \equiv y$ (mod $n$) if $n$ divides $x - y$. We say "$x$ is congruent to $y$ modulo $n$".
 
-Some examples: 
+Some examples:
 
 * $365 \equiv 1$ (mod 7), because $365 - 1 = 7 \times 52$.
 * $37 \equiv 1$ (mod 2), because $37 - 1 = 2 \times 18$.
@@ -121,7 +121,7 @@ This are reflected in these statements:
 
 * $0 + 0 \equiv 0$ (mod 2)
 * $0 + 1 \equiv 1$ (mod 2)
-* $1 + 1 \equiv 0$ (mod 2). 
+* $1 + 1 \equiv 0$ (mod 2).
 
 This last one is because $2 \equiv 0$ (mod 2). So, for example, if my son (I mean, the hypothetical toddler in an earlier section) were to flick a light switch 25 times, forget about it for a little while, and then flick it again 59 times, the switch would return to its initial state.
 
@@ -139,7 +139,7 @@ Suppose $a \equiv x$ (mod $n$) and $b \equiv y$ (mod $n$). Then there are intege
 
 Notice that $(a + b) - (x + y)$ could be re-written as $(a - x) + (b - y)$. Using our assumptions, this is equal to $kn + mn = (k + m)n$. That is, $n$ divides $(a - x) + (b - y)$. Since this is the same value as $(a + b) - (x + y)$, then $a + b \equiv x + y$ (mod $n$).
 
-**Example**: Let's look at addition modulo 3 now. 
+**Example**: Let's look at addition modulo 3 now.
 
 Without proving it, I will just state that modulo 3, all numbers are congruent to exactly one of 0, 1, or 2. That is: if $x$ is a multiple of $3$, then $x \equiv 0$ (mod 3). So for example, $0, 3, 6, 9, \ldots$ are all congruent to 0 modulo 3.
 
@@ -169,7 +169,7 @@ That is: **div** gives you the quotient, when you divide, and **mod** gives you 
 
 In the Java, C, and C++ programming languages, for example, these correspond to the / and % operators for the **int** data type.
 
-**Examples**: 
+**Examples**:
 
 1. For $n = 20$ and $d = 7$: 20 **div** 7 = 2, and 20 **mod** 7 = 6, because $20 = 7 \times 2 + 6$.
 2. For $n = -1$ and $d = 3$: -1 **div** 3 = -1 and -1 **mod** 3 = 2, because $-1 = 3 \times -1 + 2$.
@@ -185,7 +185,7 @@ In the Java, C, and C++ programming languages, for example, these correspond to 
     <ol>
         <li>Since $28 = 6 \times 4 + 4$, 28 <strong>div</strong> 6 = 4 and 28 <strong>mod</strong> 6 = 4.</li>
         <li>Since $-7 = 4 \times (-2) + 1$, -7 <strong>div</strong> 4 = -2 and -7 <strong>mod</strong> 4 = 1.</li>
-        <li>Since $-1 = 5 \times (-1) + 4$, -1 <strong>div</strong> 5 = -1 and -1 <strong>mod</strong> 5 = 4.</li> 
+        <li>Since $-1 = 5 \times (-1) + 4$, -1 <strong>div</strong> 5 = -1 and -1 <strong>mod</strong> 5 = 4.</li>
     </ol>
 </details>
 
@@ -227,7 +227,7 @@ Congruence classes are a generalization of the ideas of "even" and "odd" numbers
 
 For example, if $n = 4$, there are 4 classes: those numbers which are divisible by 4, those which are congruent to 1 modulo 4, those which are congruent to 2 modulo 4, and those which are congruent to 3 modulo 4. We refer to 0, 1, 2, and 3 as **representatives** of their congruence classes. That is, 3 is the representative of the class containing 3, 7, 11, 15, etc (as well as -1, -5, -9, etc). Each congruence class is infinite.
 
-Notice that congruences are symmetric and transitive. That is: $7 \equiv 3$ (mod 4), since $4$ divides $7 - 3$, but also $3 \equiv 7$ (mod 4), becuase $4$ also divides $3 - 7$. Moreover, congruences **must** be symmetric and transitive if they are to have the properties I mentioned earlier: any two numbers in a congruence class are congruent to each other, and every number congruent to any of those is in that same class. 
+Notice that congruences are symmetric and transitive. That is: $7 \equiv 3$ (mod 4), since $4$ divides $7 - 3$, but also $3 \equiv 7$ (mod 4), becuase $4$ also divides $3 - 7$. Moreover, congruences **must** be symmetric and transitive if they are to have the properties I mentioned earlier: any two numbers in a congruence class are congruent to each other, and every number congruent to any of those is in that same class.
 
 That is, if $x \equiv y$ (mod $n$) and $y \equiv z$ (mod $n$), then $x$, $y$, and $z$ should be in the same class. But then that would mean that they should all be congruent to each other (no matter which one you look at first)!
 
