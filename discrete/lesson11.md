@@ -261,13 +261,13 @@ $$
 
 Do you see the cyclic nature of this table?
 
-**Exercise**: Fill in the following table for addition modulo 5:
+**Exercise**: Fill in the following table for addition modulo 5. I handled the 0 row / column for you:
 
 $$
 \begin{array}{c|c|c|c|c|c}
 + & 0 & 1 & 2 & 3 & 4\\
 \hline
-0 & 0 & - & - & - & - \\
+0 & 0 & 1 & 2 & 3 & 4 \\
 1 & 1 & - & - & - & - \\
 2 & 2 & - & - & - & - \\
 3 & 3 & - & - & - & - \\
