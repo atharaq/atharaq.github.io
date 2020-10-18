@@ -24,8 +24,9 @@ Notice that $b^x$ does not depend on $h$ at all, and so the limit as $h \rightar
 This expression on the right, $\dfrac{b^h - 1}{h}$, looks challenging to compute. For example, it's not obvious what this would be if $b = 2$. Let's compute $\dfrac{2^h - 1}{h}$ for small values of $h$:
 
 $$
-\begin{array}{cc}
+\begin{array}{c|c}
 h & \dfrac{2^h - 1}{h} \\
+\hline
 .1 & .7177 \\
 .01 & .6956 \\
 .001 & .6934 \\
