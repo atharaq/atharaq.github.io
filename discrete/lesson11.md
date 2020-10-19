@@ -95,7 +95,11 @@ Some examples:
 
 ## Congruence Modulo 2
 
-Before we study the general theory, let's look at the example of $n = 2$ which should be familiar.
+Before we study the general theory, let's look at the example of $n = 2$ which should be familiar. Follow along the video here:
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/8aaAkjfudPQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 **Claim**: For any two integers $x$ and $y$, then $x \equiv y$ (mod 2) if and only if both are even or both are odd.
 
@@ -128,6 +132,12 @@ This last one is because $2 \equiv 0$ (mod 2). So, for example, if my son (I mea
 But this pattern is an interesting example of a more general result: if $a \equiv x$ (mod $n$) and $b \equiv y$ (mod $n$), then $a + b \equiv x + y$ (mod $n$). That is, in this example, when we add two odd numbers, we ended up with an even number (congruent to 0). We could have used the fact that all odd numbers are congruent to $1$ modulo 2, and then just add 1 + 1.
 
 ## Modular Addition
+
+Follow along the video:
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/XaeSPa11nvs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Let's prove the theorem we mentioned in the previous section here.
 
@@ -213,6 +223,10 @@ In general, to add numbers $x + y$ (mod $n$), we can first look at $x$ **mod** $
 </details>
 
 # Congruence Classes
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/UvQQGK3uzjU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Notice for modulo 2, every integer is either congruent to 0 or 1, and no integer is congruent to both of those. In other words, the set of all integers congruent to 0, and the set of all integers congruent to 1, are **disjoint**: that is, they do not intersect. Also, all integers are in one or the other of those sets.
 
