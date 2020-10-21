@@ -14,3 +14,5 @@ layout: default
 * [Lesson 7: Review](lesson7.html)
 * [Lesson 8: Quotient Rule and Trig Derivatives](lesson8.html)
 * [Lesson 9: Recap / Upcoming Assignments / Chain Rule](lesson9.html)
+* [Lesson 10: Implicit Differentiation](lesson10.html)
+* [Lesson 11: Derivatives of Exponential and Logarithmic Functions](lesson11.html)

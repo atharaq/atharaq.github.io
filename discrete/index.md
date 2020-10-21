@@ -17,3 +17,4 @@ lang: en-US
 * [Lesson 8: Review](lesson8.html)
 * [Lesson 9: Induction](lesson9.html)
 * [Lesson 10: Exam Review and Induction](lesson10.html)
+* [Lesson 11: Some Number Theory](lesson11.html)
