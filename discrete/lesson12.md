@@ -1,4 +1,4 @@
-# Discrete Mathematics Lesson 12: Modular Multiplication, Exponentiation, and Intro to Binary
+# Discrete Mathematics Lesson 12: Modular Multiplication, and Intro to Binary
 {:.no_toc}
 
 1. Table of Contents
