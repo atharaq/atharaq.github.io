@@ -139,22 +139,22 @@ It turns out that there is a very simple algorithm to convert numbers between bi
 For example:
 
 * $11101011_2$: in hex, we look at each group of 4 bits individually:
-  * $1110_2 = 14_{10}$, which is E in hex.
-  * $1011_2 = 11_{10}$, which is B in hex.
-  * So $11101011_2$ = $EB_{16}$
+  * $ 1110\_2 = 14\_{10}$, which is E in hex.
+  * $ 1011\_2 = 11\_{10}$, which is B in hex.
+  * So $ 11101011\_2$ = $ EB\_{16}$
   * $EB_{16}$ represents $14 \times 16 + 11 = 235_{10}$.
 * What about in octal? Add 0s on the left to look at three bits at a time. So instead of $11101011_2$, we write it as $011101011_2$:
   * $011_2 = 3$
   * $101_2 = 5$
   * $011_2 = 3$
   * So $11101011_2 = 353_8$.
-  * $353_8 = 3 \times 64 + 5 \times 8 + 3 = 235_{10}$
+  * $ 353\_8 = 3 \times 64 + 5 \times 8 + 3 = 235\_{10}$
 
 Now let's convert from hex to binary:
 
-* $AF_{16}$: convert each hex digit into 4 bits individuall:
-  * $A$ represents ten, which is 1010_2$
-  * $F$ represents fifteen which is $1111_2$
+* $AF_{16}$: convert each hex digit into 4 bits individually:
+  * $A$ represents ten, which is $ 1010\_2$
+  * $F$ represents fifteen which is $ 1111\_2$
   * So $AF_{16} = 10101111_2$
 
 In general, converting between hex and binary requires you to know the conversion table just for each individual hex digit:
