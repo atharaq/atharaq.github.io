@@ -8,13 +8,13 @@
 
 Recall that in the *binary* numeral system, we represent numbers as strings of 0s and 1s. Each symbol is called a *bit*, or binary digit. The rightmost bit represents the "ones" place ($2^0$). Going to the left, the next place is the "twos" place ($2^1$), then the "fours" ($2^2$), then the "eights" ($2^3$), etc.
 
-To distinguish between numbers written in binary and in other systems like decimal, we use the subscript 2 to denote binary, and 10 to denote decimal. For example: $100_2 = 4_{10}$.
+To distinguish between numbers written in binary and in other systems like decimal, we use the subscript 2 to denote binary, and 10 to denote decimal. For example: ${100_2} = {4_{10}}$.
 
 **More Examples**:
 
-1. The number \\(1001_2\\) represents the number $8 + 1$, or \\(9_{10}\\).
-2. The number \\(1101_2\\) represents the number $8 + 4 + 1$, or \\(13_{10}\\).
-3. The number \\(1110_2\\) represents $8 + 4 + 2$, or \\(14_{10}\\).
+1. The number ${1001_2}$ represents the number $8 + 1$, or ${9_{10}}$.
+2. The number ${1101_2}$ represents the number $8 + 4 + 1$, or ${13_{10}}$.
+3. The number ${1110_2}$ represents $8 + 4 + 2$, or ${14_{10}}$.
 
 ## Algorithm: Converting from Binary
 
