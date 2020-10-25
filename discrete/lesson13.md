@@ -221,12 +221,13 @@ Adding numbers in binary is similar to our traditional algorithm for adding deci
 **Example**: Add $1011_2 + 1010_2$:
 
 $$
-\begin{align}
-&1011 \\
-+&1010\\
-= \\
-10101
-\end{align}
+\begin{array}{ccccc}
+1 & & 1 & & \\
+&1 & 0 & 1 & 1 \\
++&1 & 0 & 1 & 0\\
+\hline \\
+1 & 0 & 1 & 0 & 1
+\end{array}
 $$
 
 <img src="adding.png" class="noreverse" title="adding in binary" alt="adding in binary" />
