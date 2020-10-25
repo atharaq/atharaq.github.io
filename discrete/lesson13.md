@@ -12,7 +12,7 @@ To distinguish between numbers written in binary and in other systems like decim
 
 **More Examples**:
 
-1. The number \\\\(1001\_2\\\\) represents the number $8 + 1$, or ${9_{10}}$.
+1. The number \\( 1001\_2 \\) represents the number $8 + 1$, or ${9_{10}}$.
 2. The number $1101\_2$ represents the number $8 + 4 + 1$, or ${13_{10}}$.
 3. The number ${1110_2}$ represents $8 + 4 + 2$, or ${14_{10}}$.
 
