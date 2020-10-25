@@ -8,13 +8,13 @@
 
 Recall that in the *binary* numeral system, we represent numbers as strings of 0s and 1s. Each symbol is called a *bit*, or binary digit. The rightmost bit represents the "ones" place ($2^0$). Going to the left, the next place is the "twos" place ($2^1$), then the "fours" ($2^2$), then the "eights" ($2^3$), etc.
 
-To distinguish between numbers written in binary and in other systems like decimal, we use the subscript 2 to denote binary, and 10 to denote decimal. For example: ${100_2} = {4_{10}}$.
+To distinguish between numbers written in binary and in other systems like decimal, we use the subscript 2 to denote binary, and 10 to denote decimal. For example: $100\_2 = 4\_{10}$.
 
 **More Examples**:
 
 1. The number \\( 1001\_2 \\) represents the number $8 + 1$, or $ 9\_{10} $.
 2. The number $1101\_2$ represents the number $8 + 4 + 1$, or ${13_{10}}$.
-3. The number ${1110_2}$ represents $8 + 4 + 2$, or ${14_{10}}$.
+3. The number $1110\_2$ represents $8 + 4 + 2$, or ${14_{10}}$.
 
 ## Algorithm: Converting from Binary
 
@@ -52,7 +52,7 @@ Converting *to* binary is a little more challenging. Before we do this, let's re
 
 Binary is similar: if we know how to write a number in binary, then if we divide that number by two, we just cut off the last bit. If we multiply that number by two, we just tack on a zero at the end. And lastly, a number is a multiple of two if and only if its last bit is a zero.
 
-We can use these facts and work backwards to figure out the binary representation of a number. First I'll start with a number in binary: $1011_2$. This is equal to $11_{10}$. It's odd, since the last bit is 1. Divide it by 2: $1011_2 / 2 = 101_2$ (or $5_{10}$). This is odd, its last bit is 1. Divide it by 2: $101_2 / 2 = 10_2$ (or $2_{10}$). This is even, its last bit is 0. Divide it by 2: $10_2 / 2 = 1_2$ (or just $1$). Now we're done.
+We can use these facts and work backwards to figure out the binary representation of a number. First I'll start with a number in binary: $ 1011\_2 $. This is equal to $ 11\_{10} $. It's odd, since the last bit is 1. Divide it by 2: $ 1011\_2 / 2 = 101\_2 $ (or $ 5\_{10} $). This is odd, its last bit is 1. Divide it by 2: $ 101\_2 / 2 = 10\_2$ (or $ 2\_{10} $). This is even, its last bit is 0. Divide it by 2: $ 10\_2 / 2 = 1\_2$ (or just $1$). Now we're done.
 
 Notice that every time we divide the number by 2, the binary representation changes by just cutting off the last bit. We can use this to help us figure out the binary representation in the first place: repeatedly divide the number by 2 and write down the remainders. Let's look at the number $12_{10}$:
 
