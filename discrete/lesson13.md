@@ -286,7 +286,7 @@ The standard metric prefixes:
 * 1 **kilobyte** (KB) = 1000 bytes
 * 1 **megabyte** (MB) = 1000000 bytes
 * 1 **gigabyte** (GB) = $10^9$ bytes (1 billion bytes)
-* 1 **terabyte** (TB) = $10^12$ bytes
+* 1 **terabyte** (TB) = $10^{12}$ bytes
 
 Historically, data was kept in powers of 2 amounts, which causes some confusion: sometimes "1 KB" means 1024 bytes ($2^{10}$), not 1000 bytes. The SI system now uses the prefixes "kibi" (KiB), "mebi" (MiB), "gibi" (GiB), and "tebi" (TiB) to refer to $2^{10}$, $2^{20}$, $2^{30}$ and $2^{40}$, respectively. Notice that $2^{10} \approx 1000$, $2^{20} \approx 1,000,000$, and $2^{30} \approx 1,000,000,000$.
 
