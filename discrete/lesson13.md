@@ -194,9 +194,9 @@ It's worth investigating: why is it that every integer has a unique binary repre
 **Theorem**: Let $b > 1$ be an integer. Every natural number $x$ has a unique "base-$b$" representation: that is, there is some $n$ and $a_0, \ldots, a_n$ such that:
 
 * $x = \sum\limits_{i = 0}^n a_i b^i$
-* For each $i$, $0 \leq a_i < b$, and
-* $a_n \neq 0$
-* These $a_i$ are unique: if $x = \sum\limits_{i=0}^m c_i b^i$ for some integers $c_i$, with $0 \leq c_i < b$ and $c_m \neq 0$, then $m = n$ and each $c_i = a_i$.
+* For each $i$, $0 \leq a_i < b$,
+* $a_n \neq 0$, and
+* these $a_i$ are unique: if $x = \sum\limits_{i=0}^m c_i b^i$ for some integers $c_i$, with $0 \leq c_i < b$ and $c_m \neq 0$, then $m = n$ and each $c_i = a_i$.
 
 **Proof**:
 
