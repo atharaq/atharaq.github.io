@@ -220,6 +220,15 @@ Adding numbers in binary is similar to our traditional algorithm for adding deci
 
 **Example**: Add $1011_2 + 1010_2$:
 
+$$
+\begin{align}
+&1011 \\
++&1010\\
+= \\
+10101
+\end{align}
+$$
+
 <img src="adding.png" class="noreverse" title="adding in binary" alt="adding in binary" />
 
 **Exercise**:
