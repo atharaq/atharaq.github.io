@@ -12,15 +12,15 @@ To distinguish between numbers written in binary and in other systems like decim
 
 **More Examples**:
 
-1. The number $1001_2$ represents the number $8 + 1$, or $9_{10}$.
-2. The number $1101_2$ represents the number $8 + 4 + 1$, or $13_{10}$.
-3. The number $1110_2$ represents $8 + 4 + 2$, or $14_{10}$.
+1. The number \\(1001_2\\) represents the number $8 + 1$, or \\(9_{10}\\).
+2. The number \\(1101_2\\) represents the number $8 + 4 + 1$, or \\(13_{10}\\).
+3. The number \\(1110_2\\) represents $8 + 4 + 2$, or \\(14_{10}\\).
 
 ## Algorithm: Converting from Binary
 
 Above I describe the method for converting numbers from binary to decimal: count the number of bits, and, going left to right, label the bits as representing the place values (using increasing powers of 2). Then add up the powers of 2 that have a "1" in their column.
 
-![Converting from binary](binary_convert.png "Converting from binary")
+<img src="binary_convert.png" alt="Converting from binary" title="Converting from binary" class="noreverse" />
 
 There is another, somewhat clever algorithm that goes from "left to right":
 
@@ -220,7 +220,7 @@ Adding numbers in binary is similar to our traditional algorithm for adding deci
 
 **Example**: Add $1011_2 + 1010_2$:
 
-![adding in binary](adding.png "adding in binary")
+<img src="adding.png" class="noreverse" title="adding in binary" alt="adding in binary" />
 
 **Exercise**:
 
@@ -252,7 +252,7 @@ Let's multiply $1011 \times 1010$:
 * $1011 \times 2^3 = 1011000$
 * Add $10110 + 1011000 = 1101110$
 
-![Multiplying in binary](multiplying.jpeg "Multiplying in binary")
+<img src="multiplying.jpeg" alt="Multiplying in binary" title="Multiplying in binary" class="noreverse" />
 
 # Representing Data
 
