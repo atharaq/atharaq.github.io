@@ -212,7 +212,7 @@ So: since $q$ has a unique base-$b$ representation, that means $a_1, \ldots, a_n
 
 # Binary Arithmetic
 
-As we've mentioned, numbers are represented in computers in binary, using two states of electricity ("on" or "off", or "high" or "low" voltage) to represent 0s and 1s. But how do computers actually *compute* anything? We won't get into digital logic in this class, but it's worth studying the algorithms for adding and multiplying numbers in binary.
+As we've mentioned, numbers are represented in computers in binary, using two states of electricity ("on" or "off", or "high" or "low" voltage) to represent 0s and 1s. But how do computers actually *compute* anything? We won't get into digital logic in this class, but the addition and multiplication algorithms are quite simple, so this will give you some foundation were you to be interested in studying that topic on your own.
 
 ## Addition
 
