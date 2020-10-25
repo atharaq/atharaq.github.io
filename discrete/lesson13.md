@@ -116,10 +116,10 @@ Very similarly to base 2 (binary) and base 10 (decimal), we can represent number
 
 Similar to converting numbers from binary to decimal, we can convert from hexadecimal or octal to decimal just using the place value algorithm:
 
-* $271_8$ is $2 \times 64 + 7 \times 8 + 1 = 185_{10}$
-* $A3_{16}$ is $10 \times 16 + 3 = 163_{10}$.
-* $1A1_{16}$  is $1 \times 256 + 10 \times 16 + 1 = 417_{10}$
-* $6000_8$ is $6 \times 8^3 = 3072_{10}$.
+* $ 271\_8 $ is $2 \times 64 + 7 \times 8 + 1 = 185_{10}$
+* $ A3\_{16} $ is $10 \times 16 + 3 = 163_{10}$.
+* $ 1A1\_{16} $  is $1 \times 256 + 10 \times 16 + 1 = 417_{10}$
+* $ 6000\_8 $ is $6 \times 8^3 = 3072_{10}$.
 
 **Exercise**: Convert the following numbers to decimal:
 
