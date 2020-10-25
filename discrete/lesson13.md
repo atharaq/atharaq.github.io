@@ -106,7 +106,7 @@ That means we need 1's in the $2^6$, $2^5$ and $2^0$ columns: $105_{10} = 110000
 
 # Octal and Hexadecimal
 
-Very similarly to base 2 (binary) and base 10 (decimal), we can represent numbers in **octal** (base 8) and hexadecimal (base 16). In general, for a base $b$, we have powers of $b$ as the "place values", and we need $b$ symbols to represent numbers from 0 to $b - 1$:
+Very similarly to base 2 (binary) and base 10 (decimal), we can represent numbers in **octal** (base 8) and **hexadecimal** (base 16). In general, for a base $b$, we have powers of $b$ as the "place values", and we need $b$ symbols to represent numbers from 0 to $b - 1$:
 
 * Octal uses powers of 8 as its place values, and the symbols 0 through 7 as its "octal digits".
 * Hexadecimal uses powers of 16 as its place values, and the symbols 0 through 9, A, B, C, D, E, and F as its "hex" digits.
