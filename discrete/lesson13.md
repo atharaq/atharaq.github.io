@@ -6,6 +6,10 @@
 
 # Binary Representations
 
+<div class="youtube-container">
+  <iframe src="https://www.youtube.com/embed/ZmFoo7LOmqk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 Recall that in the *binary* numeral system, we represent numbers as strings of 0s and 1s. Each symbol is called a *bit*, or binary digit. The rightmost bit represents the "ones" place ($2^0$). Going to the left, the next place is the "twos" place ($2^1$), then the "fours" ($2^2$), then the "eights" ($2^3$), etc.
 
 To distinguish between numbers written in binary and in other systems like decimal, we use the subscript 2 to denote binary, and 10 to denote decimal. For example: $ 100\_2 = 4\_{10}$.
@@ -106,6 +110,10 @@ That means we need 1's in the $2^6$, $2^5$ and $2^0$ columns: $105_{10} = 110000
 
 # Octal and Hexadecimal
 
+<div class="youtube-container">
+  <iframe src="https://www.youtube.com/embed/3n5BiO5ZR5A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 Very similarly to base 2 (binary) and base 10 (decimal), we can represent numbers in **octal** (base 8) and **hexadecimal** (base 16). In general, for a base $b$, we have powers of $b$ as the "place values", and we need $b$ symbols to represent numbers from 0 to $b - 1$:
 
 * Octal uses powers of 8 as its place values, and the symbols 0 through 7 as its "octal digits".
@@ -189,6 +197,10 @@ Similarly, you can convert from octal to binary using the convesion table for th
 
 ## Number Theory
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/8EHSK4Ln4fU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 It's worth investigating: why is it that every integer has a unique binary representation? Or a unique decimal representation? Or octal / hexadecimal / etc?
 
 **Theorem**: Let $b > 1$ be an integer. Every natural number $x$ has a unique "base-$b$" representation: that is, there is some $n$ and $a_0, \ldots, a_n$ such that:
@@ -211,6 +223,10 @@ Notice that $q < x$, since $b > 1$ and $x - a_0 = qb$. Therefore, by strong indu
 So: since $q$ has a unique base-$b$ representation, that means $a_1, \ldots, a_n$ are determined uniquely, and $a_0$ is determined uniquely by the division theorem, so those $a_0, a_1, \ldots, a_n$ are the only numbers satisfying $x = a_0 + a_1 b + \ldots + a_n b^n$ with $0 \leq a_i < b$ and $a_n \neq 0$.
 
 # Binary Arithmetic
+
+<div class="youtube-container">
+  <iframe src="https://www.youtube.com/embed/1Q7CeEgzRXw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 As we've mentioned, numbers are represented in computers in binary, using two states of electricity ("on" or "off", or "high" or "low" voltage) to represent 0s and 1s. But how do computers actually *compute* anything? We won't get into digital logic in this class, but the addition and multiplication algorithms are quite simple, so this will give you some foundation were you to be interested in studying that topic on your own.
 
@@ -265,6 +281,10 @@ Let's multiply $1011 \times 1010$:
 <img src="multiplying.jpeg" alt="Multiplying in binary" title="Multiplying in binary" class="noreverse" />
 
 # Representing Data
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/BS_doxSPfsQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 All data is represented in a computer using binary numbers. This includes integers, decimals, images, colors, text, etc. We will not get into how all of these are represented using binary, but I do want to talk a bit about storage and how many objects can be represented in different amounts of storage.
 
