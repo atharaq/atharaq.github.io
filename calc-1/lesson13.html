@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Athar Abdul-Quader">
+  <title>Calculus I Lesson 13</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Calculus I Lesson 13</h1>
+  <p class="author">Athar Abdul-Quader</p>
+  <p class="date">Fall 2020</p>
+</section>
+
+<section id="events-recap-podcast" class="title-slide slide level1">
+<h1>Events Recap / Podcast</h1>
+<ul>
+<li>AI and Medicine</li>
+<li>Careers in the Gaming Industry</li>
+</ul>
+<p>Podcast announcement: <a href="https://www.artistsandhackers.org/">“Artists and Hackers”</a> (from Professor Lee Tusman)</p>
+</section>
+
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Topic Statement: revise / resubmit if needed</li>
+<li>DeltaMath Homework 10: due <strong>tonight</strong></li>
+<li>Homework 5: due on Moodle on <strong>Friday</strong>, October 30</li>
+<li>Initial Notes / Outline: Due <strong>Monday</strong>, November 2</li>
+<li>Problem Presentation 1: Due <strong>Monday</strong>, November 2</li>
+<li><strong>Exam 2</strong>: Monday, November 2, due <strong>Thursday</strong>, Friday 6.</li>
+</ul>
+</section>
+
+<section id="overdue-missing" class="title-slide slide level1">
+<h1>Overdue / Missing</h1>
+<ul>
+<li>Lesson Check-Ins on Moodle
+<ul>
+<li>Lesson 8 (two weeks ago)</li>
+<li>Lesson 11 (due this past Saturday)</li>
+</ul></li>
+<li>Homework 4 (due this past Friday)</li>
+<li>DeltaMath:
+<ul>
+<li>HW 9 Due last Monday</li>
+</ul></li>
+</ul>
+</section>
+
+<section>
+<section id="related-rates" class="title-slide slide level1">
+<h1>Related Rates</h1>
+<p>Strategy:</p>
+<ul>
+<li>Draw a figure, declare variables</li>
+<li>Relate the variables with an equation</li>
+<li>Differentiate both sides of the equation (use chain rule)</li>
+<li>Substitute and solve</li>
+</ul>
+</section>
+<section id="ladder-sliding" class="slide level2">
+<h2>Ladder sliding</h2>
+<p>A 10-ft ladder is leaning against a wall. If the top of the ladder slides down the wall at a rate of 2 ft/sec, how fast is the bottom moving along the ground when the bottom of the ladder is 5 ft from the wall?</p>
+</section>
+<section id="figure" class="slide level2">
+<h2>Figure</h2>
+<p><img src="https://openstax.org/resources/5985bce6625143cae885714f862041da23457e09" data-media-type="image/jpeg" alt="A right triangle is formed by a ladder leaning up against a brick wall. The ladder forms the hypotenuse and is 10 ft long." /></p>
+</section>
+<section id="solution" class="slide level2">
+<h2>Solution</h2>
+<ul>
+<li><span class="math inline">\(x\)</span> = horizontal distance from the bottom of the ladder to the wall</li>
+<li><span class="math inline">\(y\)</span> = distance from the top of the ladder to the floor</li>
+<li><span class="math inline">\(x^2 + y^2 = 100\)</span>.</li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[
+\begin{align}
+2xx^\prime + 2yy^\prime = 0 \\
+2(5)x^\prime + 2(\sqrt{75})(-2) = 0\\
+x^\prime = 2\sqrt{3} \mbox{ ft / sec}
+\end{align}
+\]</span></p>
+</div>
+</section>
+<section id="cone-shaped-funnel" class="slide level2">
+<h2>Cone-shaped Funnel</h2>
+<p>Water is draining from the bottom of a cone-shaped funnel at the rate of 0.05 <span class="math inline">\(\mathrm{ft}^3 / \mathrm{sec}\)</span>. The height of the funnel is 2 ft and the radius at the top of the funnel is 1ft. At what rate is the height of the water in the funnel changing when the height of the water is <span class="math inline">\(\frac{1}{2}\)</span> ft?</p>
+</section>
+<section id="figure-1" class="slide level2">
+<h2>Figure</h2>
+<p><img src="https://openstax.org/resources/3cc93b86da3e1bb1b4269fb6c1adac832bad6253" data-media-type="image/jpeg" alt="A funnel is shown with height 2 and radius 1 at its top. The funnel has water to height h, at which point the radius is r." /></p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<ul>
+<li><span class="math inline">\(r\)</span> = radius at the surface level</li>
+<li><span class="math inline">\(h\)</span> = height at the surface level</li>
+<li><span class="math inline">\(h = 2r\)</span>, or <span class="math inline">\(r = \frac{h}{2}\)</span></li>
+<li><span class="math inline">\(V = \frac{1}{3} \pi r^2 h\)</span>, or <span class="math inline">\(V = \frac{1}{12} \pi h^3\)</span></li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[
+\begin{align}
+V^\prime = (\frac{1}{12} \pi) \cdot 3h^2 h^\prime \\
+-0.05 = \frac{\pi}{4} (\frac{1}{2})^2 h^\prime \\
+-0.05 = \frac{\pi}{16} h^\prime \\
+h^\prime = \frac{(-0.05) \times 16}{\pi} \approx -0.255 \mbox{ ft / sec}
+\end{align}
+\]</span></p>
+</div>
+</section>
+<section id="follow-up" class="slide level2">
+<h2>Follow up</h2>
+<p>What about when the funnel is full (<span class="math inline">\(h = 2\)</span>)?</p>
+<div class="fragment">
+<p><span class="math display">\[
+\begin{align}
+V^\prime = (\frac{1}{12} \pi) \cdot 3h^2 h^\prime \\
+-0.05 = \frac{\pi}{4} (2^2) h^\prime \\
+-0.05 = \pi h^\prime \\
+h^\prime = \frac{-0.05}{\pi} \approx -0.016 \mbox{ ft / sec}
+\end{align}
+\]</span></p>
+<p>Slower when full? Makes sense?</p>
+</div>
+</section></section>
+<section>
+<section id="optimization-maxima-minima" class="title-slide slide level1">
+<h1>Optimization: Maxima / Minima</h1>
+<p>Continuity is powerful:</p>
+<ul>
+<li>Transforms properties of “domains” <span class="math inline">\(\to\)</span> properties of “ranges”</li>
+<li>Connected domains <span class="math inline">\(\to\)</span> connected ranges</li>
+<li>Closed and bounded domains <span class="math inline">\(\to\)</span> closed and bounded ranges</li>
+</ul>
+</section>
+<section id="extreme-value-theorem" class="slide level2">
+<h2>Extreme Value Theorem</h2>
+<p><strong>Theorem</strong>: If <span class="math inline">\(f\)</span> is a continuous function on a closed interval <span class="math inline">\([a, b]\)</span>, then it has a <strong>maximum</strong> and a <strong>minimum</strong> in <span class="math inline">\([a, b]\)</span>.</p>
+</section>
+<section id="counterexample" class="slide level2">
+<h2>Counterexample?</h2>
+<p><span class="math inline">\(f(x) = \tan(x)\)</span> on <span class="math inline">\((-\pi/2, \pi/2)\)</span>:</p>
+<iframe src="https://www.desmos.com/calculator/rm8aijaqie?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+</section>
+<section id="finding-maxima-minima" class="slide level2">
+<h2>Finding maxima/ minima</h2>
+<p>Finding maxima / minima is easiest when <span class="math inline">\(f\)</span> is differentiable. Suppose <span class="math inline">\(f(x)\)</span> is differentiable on <span class="math inline">\((a, b)\)</span> and continuous on <span class="math inline">\([a, b]\)</span>. Then there are 3 options for where maxima / minima can be:</p>
+<ol type="1">
+<li><span class="math inline">\(x = a\)</span> or <span class="math inline">\(x = b\)</span> (endpoints)</li>
+<li>When <span class="math inline">\(f^\prime(x) = 0\)</span></li>
+<li>When <span class="math inline">\(f^\prime(x)\)</span> DNE</li>
+</ol>
+<p>Points satisfying (2) or (3) are called <strong>critical points</strong> of <span class="math inline">\(f\)</span>.</p>
+</section>
+<section id="critical-points" class="slide level2">
+<h2>Critical Points</h2>
+<p><img src="https://openstax.org/resources/e585f057904f6a4921f41459177c281a6e560558" data-media-type="image/jpeg" alt="The function f(x) is shown, which curves upward from quadrant III, slows down in quadrant II, achieves a local maximum on the y-axis, decreases to achieve a local minimum in quadrant I at x = 1, increases to a local maximum at x = 2 that is greater than the other local maximum, and then decreases rapidly through quadrant IV." ></p>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p>Find the minimum value of <span class="math inline">\(f(x) = x^3 - x^2\)</span> on the interval <span class="math inline">\([-2, 2]\)</span>:</p>
+<div class="fragment">
+<p><span class="math display">\[
+\begin{align}
+f^\prime(x) = 3x^2 - 2x = 0 \\
+x(3x - 2) = 0 \\
+x = 0 \mbox{ or } x = 2/3
+\end{align}
+\]</span></p>
+<p>Points to check: <span class="math inline">\(x = -2, 0, 2/3, 2\)</span></p>
+</div>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<ul>
+<li><span class="math inline">\(f(-2) = -12\)</span></li>
+<li><span class="math inline">\(f(0) = 0\)</span></li>
+<li><span class="math inline">\(f(2/3) = -4/27\)</span></li>
+<li><span class="math inline">\(f(2) = 4\)</span></li>
+</ul>
+<p>The minimum value occurs at <span class="math inline">\(x = -2\)</span>. The minimum value of the function is -12.</p>
+</section>
+<section id="graph" class="slide level2">
+<h2>Graph</h2>
+<iframe src="https://www.desmos.com/calculator/qzajtckogc?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+</section>
+<section id="local-minima-maxima" class="slide level2">
+<h2>Local Minima / Maxima</h2>
+<ul>
+<li><span class="math inline">\(x = 0\)</span> is a <strong>local maximum</strong> of <span class="math inline">\(f(x)\)</span></li>
+<li><span class="math inline">\(x = 2/3\)</span> is a <strong>local minimum</strong> of <span class="math inline">\(f(x)\)</span></li>
+</ul>
+<p>How can you tell when a point is a local min or local max?</p>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<p><img src="https://openstax.org/resources/a60e8cf30409df9c4c687f5fcde44a2584ce2864" data-media-type="image/jpeg" alt="This figure has five parts a, b, c, d, and e. In figure a, a parabola is shown facing down in quadrant I; there is a horizontal tangent line at the local maximum marked f’(c) = 0. In figure b, there is a function drawn with an asymptote at c, meaning that the function increases toward infinity on both sides of c; it is noted that f’(c) is undefined. In figure c, a version of the absolute value graph is shown that has been shifted so that its minimum is in quadrant I with x = c. It is noted that f’(c) is undefined. In figure d, a version of the function f(x) = x3 is shown that has been shifted so that its inflection point is in quadrant I with x = c. Its inflection point at (c, f(c)) has a horizontal line through it, and it is noted that f’(c) = 0. In figure e, a version of the function f(x) = x1/3 is shown that has been shifted so that its inflection point is in quadrant I with x = c. Its inflection point at (c, f(c)) has a vertical line through it, and it is noted that f’(c) is undefined." id="10"></p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
