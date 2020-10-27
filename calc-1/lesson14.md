@@ -19,7 +19,7 @@ Last time we saw:
 
 **Practice**: Take a look at problems 90-95, 100-103, and 118-123 from [Section 4.3](https://openstax.org/books/calculus-volume-1/pages/4-3-maxima-and-minima) of the textbook.
 
-# Linear Approximations (15 minutes)
+# Linear Approximations
 
 An important reason to study derivatives is that they give us nice *approximations* to functions. We have previously seen that the tangent line to the graph of a function stays really close to the function itself.  Take a look at this graph of $y = e^x$ and the tangent line at $x = 0$, $y = x + 1$:
 
@@ -47,7 +47,7 @@ $$y = f(a) + f^\prime(a) (x - a)$$
 
 Of course, checking our answer with a calculator gives us a better approximation than the linear approximation we get. How do you think calculators approximate these transcendental functions that are hard to compute? They use other kinds of approximations. In Calculus 2, we will study Taylor Series, which gives us a way to determine higher-order approximations (like quadratic approximations, cubic approximations, etc).
 
-# The Mean Value Theorem and its applications (10 minutes)
+# The Mean Value Theorem and its applications
 
 The next major application of derivatives involves the shape of graphs. We have studied this already, but not really from a rigorous perspective. That is, intuitively we know that if $f^\prime(a) > 0$, then $f(x)$ is increasing at (or near) that point. But *how* do we know this? Can we justify this with a rigorous proof?
 
@@ -63,7 +63,11 @@ We will not prove this theorem, but if you are interested, you can look at the p
 
 The mean value theorem says that there is a point $c$ where the tangent line is parallel to the secant line between $(a, f(a))$ and $(b, f(b))$. As an example, imagine that you are on a road trip. Let's say that you were driving for 2 hours before stopping, and in those 2 hours, you drove 80 miles. That means, on average, you drove 40mph. The Mean Value Theorem says that there **must** be a time during that drive  where your speedometer showed **exactly** 40mph!
 
-## Increasing / Decreasing / Constant (15)
+**Exercise**: You pass a speed camera at 10:00 AM going 50 mph. At 10:30 AM you pass another speed camera located 35 miles apart, again going 50 mph. If the speed limit is 60 mph, were you ever speeding?
+
+Take a look at exercises 190-191 in [Section 4.4 of the textbook](https://openstax.org/books/calculus-volume-1/pages/4-4-the-mean-value-theorem).
+
+## Increasing / Decreasing / Constant
 
 The main application of the mean value theorem is to provide rigorous proofs of some of the intuitive notions we have about the shape of the graph of a function. Intuitively, if $f^\prime(x)$ is positive on an interval, then $f(x)$ should be increasing on that interval. How do we actually prove this? In other words, $f^\prime(x) > 0$ means that for each $x$, $$\lim_{h \rightarrow 0} \frac{f(x+h)-f(x)}{h} > 0$$ How do we then conclude that whenever $a < b$, then $f(a) < f(b)$?
 
@@ -73,6 +77,31 @@ We do so using the mean value theorem!
 
 **Proof**: Suppose $x_0 < x_1$ are in the interval $[a, b]$. Then by the mean value theorem, there is a point $c$ between $x_0$ and $x_1$ such that $$f^\prime(c) = \frac{f(x_1) - f(x_0)}{x_1 - x_0}$$. Since $f^\prime(c) > 0$ and $x_1 - x_0 > 0$, this means that $f(x_1) - f(x_0) > 0$. In other words, $f(x_1) > f(x_0)$ whenever $x_1 > x_0$ in the interval $[a, b]$.
 
+Similarly, we can prove that if $f^\prime(x) < 0$ on an interval, then $f$ is decreasing over that interval, and if $f^\prime(x) = 0$ on an interval, then $f$ is constant on that interval. These proofs are found in [Section 4.4 of the textbook](https://openstax.org/books/calculus-volume-1/pages/4-4-the-mean-value-theorem).
+
+This last result gives us an important property of derivatives: if two functions have the same derivative, they might not be the same function, but they must differ by a constant. For example, the function $f(x) = x^2$ and the function $g(x) = x^2 + 2$ have the same derivative, $2x$, but are not the same function.
+
+In other words, two functions whose derivatives are the same would have to look "parallel" to each other:
+
+<div class="desmos-container">
+<iframe src="https://www.desmos.com/calculator/r3jaeptvlq?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
+</div>
+
+Notice that at every point, the tangent lines have the same slope, and the distance between the graphs doesn't change.
+
+**Theorem**: Suppose $f^\prime(x) = g^\prime(x)$ for all x in $(a, b)$. Then $f(x) - g(x)$ is a constant.
+
+**Proof**: Let $h(x) = f(x) - g(x)$. Then $h^\prime(x) = f^\prime(x) - g^\prime(x)$. Since, for every $x$ in $(a, b)$, $f^\prime(x) = g^\prime(x)$, then $h^\prime(x) = 0$ on this interval. [Theorem 4.6](https://openstax.org/books/calculus-volume-1/pages/4-4-the-mean-value-theorem#fs-id116504264570) from the textbook implies then that $h(x)$ is a constant function on the interval $(a, b)$. Therefore $f(x) - g(x)$ is a constant.
+
+**Example**: Consider the functions $f(x) = (\sec(x))^2$ and $g(x) = (\tan(x))^2$. Their derivatives are $f^\prime(x) = 2\sec(x)\sec(x)\tan(x)$, which simplifies to $2(\sec(x))^2\tan(x)$, and $g^\prime(x) = 2\tan(x)(\sec(x))^2$. Notice that $f^\prime(x) = g^\prime(x)$ for every $x$. But $f(0) = 1$ and $g(0) = 0$, so these are **not** the same function. But in general, $f(x) = g(x) + 1$:
+
+<div class="desmos-container">
+<iframe src="https://www.desmos.com/calculator/lsmqvxgjps?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
+</div>
+
+## First Derivative Test
+
+...
 
 ## Concavity
 
