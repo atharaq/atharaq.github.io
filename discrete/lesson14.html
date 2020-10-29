@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Athar Abdul-Quader">
+  <meta name="dcterms.date" content="2020-10-29">
+  <title>Discrete Math Lesson 14</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Discrete Math Lesson 14</h1>
+  <p class="author">Athar Abdul-Quader</p>
+  <p class="date">29 October 2020</p>
+</section>
+
+<section>
+<section id="welcome" class="title-slide slide level1">
+<h1>Welcome</h1>
+<figure>
+<img data-src="https://pbs.twimg.com/media/ElGY02FU0AEIsXy?format=png&amp;name=small" alt="" /><figcaption>Trick OR Treat</figcaption>
+</figure>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<figure>
+<img data-src="https://pbs.twimg.com/media/ElGY017VMAAaqXd?format=png&amp;name=small" alt="" /><figcaption>Trick AND Treat</figcaption>
+</figure>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p>Credit: <span class="citation" data-cites="38mo1">@38mo1</span> on twitter: <a href="https://twitter.com/38mo1/status/1320004943542009857">See more</a></p>
+<div class="fragment">
+<p>Happy Halloween! …be safe, please!</p>
+</div>
+</section></section>
+<section id="events-recap-podcast" class="title-slide slide level1">
+<h1>Events Recap / Podcast</h1>
+<ul>
+<li>AI and Medicine</li>
+<li>Careers in the Gaming Industry</li>
+</ul>
+<p>Podcast announcement: <a href="https://www.artistsandhackers.org/">“Artists and Hackers”</a> (from Professor Lee Tusman)</p>
+</section>
+
+<section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Problem Set 4: due <strong>tomorrow</strong></li>
+<li>Problem Presentations:
+<ul>
+<li>November 6, 13, 20</li>
+</ul></li>
+<li>Exam 2: given <strong>November 5</strong>, due <strong>November 12</strong></li>
+<li>Final Project:
+<ul>
+<li>Start thinking about topics you’re interested in, tangentially related to the course</li>
+<li>Non-classical logics, set theory paradoxes, discrete probability, satisfiability / NP-completeness, first order satisfiability / incompleteness, etc</li>
+</ul></li>
+</ul>
+</section>
+<section id="group-watch-lectures" class="slide level2">
+<h2>Group Watch Lectures</h2>
+<ul>
+<li>Allison and Josh are organizing times to watch lecture videos together synchronously.</li>
+<li><a href="https://forms.gle/cPLt1cmZqXCzzcw26">Sign up here</a></li>
+<li>Also go through the lecture notes and exercises with each other!</li>
+<li>Pick each other’s brains on these topics.</li>
+<li><a href="https://discord.gg/NekWKgc">Discord group</a></li>
+</ul>
+</section></section>
+<section>
+<section id="problem-set-3-induction" class="title-slide slide level1">
+<h1>Problem Set 3 / Induction</h1>
+
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<ul>
+<li>“Inductive assumption” or “Inductive hypothesis”</li>
+<li><span class="math inline">\(P(n)\)</span> is whatever you want to prove.
+<ul>
+<li>Ex: “There are <span class="math inline">\(n!\)</span> bijections between two sets of size <span class="math inline">\(n\)</span>”</li>
+<li>“The sum <span class="math inline">\(\sum\limits_{k=0}^n \binom{n}{k} = 2^n\)</span>.”</li>
+<li>“There are <span class="math inline">\(2^n\)</span> assignments of truth values to <span class="math inline">\(n\)</span> variables.”</li>
+</ul></li>
+</ul>
+</section>
+<section id="n-bijections" class="slide level2">
+<h2><span class="math inline">\(n!\)</span> bijections</h2>
+<p>Base case: <span class="math inline">\(n = 0\)</span>. There is one bijection <span class="math inline">\(f : \emptyset \to \emptyset\)</span>.</p>
+<ul>
+<li>What does <span class="math inline">\(f : \emptyset \to \emptyset\)</span> mean?
+<ul>
+<li><span class="math inline">\(f\)</span> is a set of ordered pairs <span class="math inline">\((x, y)\)</span> such that <span class="math inline">\(x \in \emptyset\)</span>, <span class="math inline">\(y \in \emptyset\)</span></li>
+<li>For every <span class="math inline">\(x \in \emptyset\)</span>, there is exactly one <span class="math inline">\(y \in \emptyset\)</span> such that <span class="math inline">\((x, y) \in f\)</span></li>
+<li>For every <span class="math inline">\(y \in \emptyset\)</span>, there is exactly one <span class="math inline">\(x \in \emptyset\)</span> such that <span class="math inline">\((x, y) \in f\)</span>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<ul>
+<li><span class="math inline">\(f = \emptyset\)</span> satisfies all of those.</li>
+<li>There is exactly one <em>function</em> <span class="math inline">\(f : \emptyset \to \emptyset\)</span>
+<ul>
+<li>That is <span class="math inline">\(f = \emptyset\)</span></li>
+<li>f is also a bijection (vacuously true)</li>
+</ul></li>
+</ul>
+</section>
+<section id="inductive-step" class="slide level2">
+<h2>Inductive step</h2>
+<p>Let <span class="math inline">\(n \in \mathbb{N}\)</span> and assume that for any two sets <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> of size <span class="math inline">\(n\)</span>, there are <span class="math inline">\(n!\)</span> bijections between them. Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have size <span class="math inline">\(n + 1\)</span>. Fix <span class="math inline">\(a \in A\)</span>. For each <span class="math inline">\(b \in B\)</span>, how many bijections are there <span class="math inline">\(f : A \to B\)</span> such that <span class="math inline">\(f(a) = b\)</span>?</p>
+<ul>
+<li>Every bijection <span class="math inline">\(f : A \setminus \{ a \} \to B \setminus \{ b \}\)</span> extends uniquely to a bijection <span class="math inline">\(\hat{f} : A \to B\)</span> such that <span class="math inline">\(f(a) = B\)</span>. (Why?)</li>
+<li>There are <span class="math inline">\(n!\)</span> bijections <span class="math inline">\(f : A \setminus \{ a \} \to B \setminus \{ b \}\)</span> by induction.</li>
+</ul>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<ul>
+<li>There are <span class="math inline">\(n + 1\)</span> different <span class="math inline">\(b \in B\)</span>. For each one, there are <span class="math inline">\(n!\)</span> bijections from <span class="math inline">\(A \to B\)</span> mapping <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span>.</li>
+<li>Therefore there are <span class="math inline">\((n+1) \times n!\)</span> bijections from <span class="math inline">\(A\)</span> to <span class="math inline">\(B\)</span>.</li>
+<li><span class="math inline">\((n+1) \times n! = (n+1)!\)</span>, so there are <span class="math inline">\((n+1)!\)</span> bijections between two sets of size <span class="math inline">\(n+1\)</span>.</li>
+</ul>
+</section></section>
+<section>
+<section id="problem-set-4-modular-arithmetic" class="title-slide slide level1">
+<h1>Problem Set 4 / Modular Arithmetic</h1>
+
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<p>If <span class="math inline">\(x \mid y\)</span> and <span class="math inline">\(y \mid z\)</span>, then <span class="math inline">\(x \mid z\)</span>?</p>
+<ul>
+<li><span class="math inline">\(x \mid y\)</span> means there is <span class="math inline">\(k\)</span> such that <span class="math inline">\(y = xk\)</span>.</li>
+<li><span class="math inline">\(y \mid z\)</span> means there is <span class="math inline">\(m\)</span> such that <span class="math inline">\(z = my\)</span>.</li>
+<li>Could this be false? Counterexample: x = ?, y = ?, z = ?</li>
+<li>Must it be true? Proof?</li>
+</ul>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<p>If <span class="math inline">\(x \mid y\)</span>, does <span class="math inline">\(y \mid x\)</span>?</p>
+<ul>
+<li><span class="math inline">\(x \mid y\)</span> means there is <span class="math inline">\(k\)</span> such that <span class="math inline">\(y = xk\)</span>.</li>
+<li>Can we find <span class="math inline">\(m\)</span> so that <span class="math inline">\(x = my\)</span>?</li>
+<li><span class="math inline">\(y = (my)k\)</span>?</li>
+<li>Could this be false? Counterexample: x = ?, y = ?</li>
+<li>Must it be true? Proof?</li>
+</ul>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<p>If <span class="math inline">\(x \neq y\)</span>, and <span class="math inline">\(x \mid y\)</span>, then <span class="math inline">\(\lnot (y \mid x)\)</span>?</p>
+<ul>
+<li>
+<span class="math inline">\(x \mid y\)</span> means there is <span class="math inline">\(k\)</span> such that <span class="math inline">\(y = xk\)</span>.
+</li>
+<li>
+Can we conclude that there is <strong>no</strong> <span class="math inline">\(m\)</span> such that <span class="math inline">\(x = my\)</span>?
+</li>
+<div class="fragment">
+<li>
+Hint: <span class="math inline">\(x, y, k\)</span> are <strong>integers</strong>. Meaning…?
+</li>
+<li>
+Could this be false? ie, <span class="math inline">\(x \mid y\)</span> and <span class="math inline">\(y \mid x\)</span>, but <span class="math inline">\(x \neq y\)</span>?
+</li>
+<ul>
+<li>
+Counterexample: x =?, y = ?
+</li>
+</ul>
+<li>
+Must it be true? Proof?
+</li>
+</ul>
+</section>
+<section id="other-questions" class="slide level2">
+<h2>Other questions?</h2>
+</section></section>
+<section>
+<section id="binary-octal-hexadecimal" class="title-slide slide level1">
+<h1>Binary / Octal / Hexadecimal</h1>
+<ul>
+<li>Binary: base 2 (symbols: 0 and 1)</li>
+<li>Octal: base 8 (symbols: 0 - 7)</li>
+<li>Hexadecimal: base 16 (symbols: 0 - 9, A - F)</li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<ul>
+<li><span class="math inline">\(125_{10} = 1 \times 10^2 + 2 \times 10 + 5\)</span></li>
+<li><span class="math inline">\(7D_{16} = 7 \times 16 + 13\)</span> ( = 125)</li>
+<li><span class="math inline">\(1111101_2 = 1 \times 2^6 + 1 \times 2^5 + 1 \times 2^4 + 1 \times 2^3 + 1 \times 2^2 + 1\)</span> (= 125)</li>
+<li><span class="math inline">\(175_8 = 1 \times 64 + 7 \times 8 + 5\)</span> (= 125)</li>
+</ul>
+</section>
+<section id="notation-c-java" class="slide level2">
+<h2>Notation (C++ / Java)</h2>
+<p>Instead of subscripts, prefixes are used in some programming languages. For Java, C++, and probably others:</p>
+<ul>
+<li>0b10 represents the <strong>binary number</strong> 10 (ie the number two)</li>
+<li>0x10 represents the <strong>hexadecimal number</strong> 10 (ie sixteen)</li>
+<li>0d10 represents the <strong>decimal number</strong> 10 (ten)</li>
+<li>010 represents the <strong>octal number</strong> 10 (eight)</li>
+</ul>
+</section>
+<section id="sizes" class="slide level2">
+<h2>Sizes</h2>
+<ul>
+<li><span class="math inline">\(n\)</span> bits: numbers <span class="math inline">\(0\)</span> through <span class="math inline">\(2^n - 1\)</span></li>
+<li><span class="math inline">\(n\)</span> digits: numbers <span class="math inline">\(0\)</span> through <span class="math inline">\(10^n\)</span> - 1, etc</li>
+<li>How many bits to represent the number <span class="math inline">\(n\)</span>?
+<ul>
+<li><span class="math inline">\(\lfloor \log_2(n) \rfloor + 1\)</span></li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="growth-of-functions-big-oh" class="title-slide slide level1">
+<h1>Growth of Functions / Big Oh</h1>
+
+</section>
+<section id="unix-time" class="slide level2">
+<h2>UNIX Time</h2>
+<ul>
+<li>UNIX systems originally store time as a <strong>signed 32-bit integer</strong>
+<ul>
+<li>Seconds after the “epoch” January 1 1970 (00:00:00 UTC)</li>
+<li>Signed 32 bits: 1 bit for <span class="math inline">\(\pm\)</span>, 31 bits for data</li>
+<li>Maximum value: <span class="math inline">\(2^{31} - 1\)</span> = 2,147,483,647.</li>
+<li>2,147,483,647 seconds <span class="math inline">\(\approx\)</span> 68 years.</li>
+<li>Integer overflow on January 19, 2038 at 03:14:07</li>
+</ul></li>
+<li>Solution? Use more bits (not always a solution, but ok)</li>
+</ul>
+</section>
+<section id="bit-time" class="slide level2">
+<h2>64-bit time</h2>
+<ul>
+<li>
+<strong>signed 64-bit integers</strong>: maximum value <span class="math inline">\(2^{63} - 1 \approx 9 \times 10^{18}\)</span>.
+</li>
+<li>
+Or <span class="math inline">\(\approx\)</span> 290 billion years.
+</li>
+<li class="fragment">
+Age of the universe <span class="math inline">\(\approx\)</span> 14 billion years
+</li>
+<li class="fragment">
+Solar system dies in <span class="math inline">\(\approx\)</span> 7-8 billion years.
+</li>
+</ul>
+</section>
+<section id="growth" class="slide level2">
+<h2>Growth</h2>
+<ul>
+<li>Exponential functions grow “ridiculously fast”</li>
+<li>Doubling the number of bits squares the magnitude of the numbers we can represent</li>
+<li>Make it precise: exponential functions grow faster than polynomials?</li>
+<li>Make it precise: logarithmic functions grow slower than linear functions?</li>
+</ul>
+</section>
+<section id="big-oh" class="slide level2">
+<h2>Big Oh</h2>
+<p><strong>Definition</strong>: Let <span class="math inline">\(f : \mathbb{N} \to \mathbb{R}\)</span> and <span class="math inline">\(g : \mathbb{N} \to \mathbb{R}\)</span>. We say <span class="math inline">\(f \in O(g)\)</span>, or, abusing notation, <span class="math inline">\(f(x) = O(g(x))\)</span>, if there is <span class="math inline">\(N \in \mathbb{N}\)</span> and a positive real number <span class="math inline">\(k\)</span> such that for all <span class="math inline">\(n \geq N\)</span>, <span class="math display">\[|f(n)| \leq k \cdot |g(n)|\]</span></p>
+</section>
+<section id="examples" class="slide level2">
+<h2>Examples</h2>
+<p><span class="math inline">\(f(n) = n^3\)</span>, <span class="math inline">\(g(n) = 2^n\)</span>. Claim: <span class="math inline">\(n^3 = O(2^n)\)</span>.</p>
+<ul>
+<li><span class="math inline">\(f(0) = 0, g(0) = 1\)</span></li>
+<li><span class="math inline">\(f(1) = 1, g(1) = 2\)</span></li>
+<li><span class="math inline">\(f(2) = 8, g(2) = 4\)</span></li>
+<li><span class="math inline">\(f(3) = 27, g(3) = 8\)</span></li>
+<li><span class="math inline">\(\vdots\)</span></li>
+<li><span class="math inline">\(f(10) = 1000, g(10) = 1024\)</span>. Aha!</li>
+</ul>
+<p><span class="math inline">\(\forall n \geq 10 (n^3 \leq 2^n)\)</span> Proof?</p>
+</section>
+<section id="some-calculus" class="slide level2">
+<h2>Some Calculus</h2>
+<p>Really what we want to show is: <span class="math inline">\(\lim\limits_{n \rightarrow \infty} \frac{n^3}{2^n} = 0\)</span></p>
+<div class="fragment">
+<p>l’Hopital’s rule:</p>
+<p><span class="math display">\[
+\begin{align}
+\lim_{n \rightarrow \infty} \frac{n^3}{2^n} &amp;= \lim_{n \rightarrow \infty} \frac{3n^2}{\ln(2) 2^n} \\
+&amp;= \lim_{n \rightarrow \infty} \frac{6n}{\ln(2)\ln(2) 2^n} = \lim_{n \rightarrow \infty} \frac{6}{\ln(2)\ln(2)\ln(2) 2^n}\\
+&amp;= 0
+\end{align}
+\]</span></p>
+</div>
+</section>
+<section id="exercises" class="slide level2">
+<h2>Exercises</h2>
+<ul>
+<li>Show that <span class="math inline">\(\log_2(n) = O(n)\)</span>.</li>
+<li>Show that <span class="math inline">\(n \neq O(\log_2(n))\)</span>.</li>
+<li>Show that <span class="math inline">\(\log_b(n) = \ln(n)\)</span> for any <span class="math inline">\(b &gt; 1\)</span>.</li>
+</ul>
+</section>
+<section id="connection-between-limits-and-big-oh" class="slide level2">
+<h2>Connection between limits and Big Oh?</h2>
+<p><strong>Theorem</strong>: If <span class="math inline">\(\lim\limits_{n \rightarrow \infty} |\frac{f(n)}{g(n)}| = L &lt; \infty\)</span>, then <span class="math inline">\(f(n) = O(g(n))\)</span>.</p>
+<p>What does this limit mean?</p>
+<p><span class="math display">\[\forall \varepsilon &gt; 0 \exists N \forall n \geq N  ( L - \varepsilon &lt; |\dfrac{f(n)}{g(n)}| &lt; L + \varepsilon)\]</span></p>
+</section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<ul>
+<li>Let <span class="math inline">\(\varepsilon = 1\)</span>.</li>
+<li>Then <span class="math inline">\(\exists N \forall n \geq N |f(n)| \leq (L + 1)g(n)\)</span>.</li>
+<li>So <span class="math inline">\(f(n) = O(g(n))\)</span> by definition (<span class="math inline">\(k = L + 1\)</span>).</li>
+</ul>
+</section>
+<section id="converse" class="slide level2">
+<h2>Converse?</h2>
+<ul>
+<li>
+If <span class="math inline">\(f(n) = O(g(n))\)</span>, must <span class="math inline">\(\lim\limits_{n\rightarrow \infty} \frac{f(n)}{g(n)}\)</span> exist?
+</li>
+<div class="fragment">
+<li>
+<span class="math inline">\(f(n) = \sin(n)\)</span>
+</li>
+<li>
+<span class="math inline">\(g(n) = 1\)</span>
+</li>
+</div>
+</ul>
+<div class="fragment">
+<p>Actual converse uses “lim sup”, not limits.</p>
+</div>
+</section>
+<section id="general-big-oh-facts-prove-these" class="slide level2">
+<h2>General Big Oh facts (Prove these)</h2>
+<ul>
+<li><span class="math inline">\(n^k = O(n^m)\)</span> whenever <span class="math inline">\(k \leq m\)</span></li>
+<li><span class="math inline">\(\log(n) = O(n^k)\)</span> for any <strong>positive real number</strong> <span class="math inline">\(k\)</span></li>
+<li><span class="math inline">\(a_0 + a_1 n + \ldots + a_k n^k = O(n^k)\)</span>.
+<ul>
+<li>Hint: <span class="math inline">\(a_0 + a_1 n + \ldots + a_k n^k \leq |a_0| n^k + |a_1| n^k + \ldots + |a_k| n^k\)</span> for all <span class="math inline">\(n \geq 0\)</span>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+<ul>
+<li><span class="math inline">\(n^k = O(2^n)\)</span> (for any positive real <span class="math inline">\(k\)</span>)</li>
+<li><span class="math inline">\(2^n = O(n!)\)</span></li>
+<li><span class="math inline">\(n! = O(n^n)\)</span></li>
+<li>There are intermediates: e.g. <span class="math inline">\(n\log(n) = O(n^2)\)</span></li>
+</ul>
+</section>
+<section id="big-omega-and-big-theta" class="slide level2">
+<h2>“Big Omega” and “Big Theta”</h2>
+<ul>
+<li><span class="math inline">\(f = \Omega(g)\)</span> if there are <span class="math inline">\(N \in \mathbb{N}\)</span> and a positive real <span class="math inline">\(k\)</span> such that for all <span class="math inline">\(n \geq N\)</span>, <span class="math inline">\(f(n) \geq k|g(n)|\)</span>.</li>
+<li><span class="math inline">\(f = \Theta(g)\)</span> if <span class="math inline">\(f = O(g)\)</span> and <span class="math inline">\(f = \Omega(g)\)</span></li>
+</ul>
+<p><span class="math inline">\(f = \Omega(g)\)</span> if and only if <span class="math inline">\(g = O(f)\)</span>. So roughly: <span class="math inline">\(f = \Theta(g)\)</span> means $f = O(g) and <span class="math inline">\(g = O(f)\)</span>.</p>
+<p><strong>Example</strong>: <span class="math inline">\(f(n) = 2n^2 - 3n + 1\)</span>, <span class="math inline">\(g(n) = n^2\)</span>. <span class="math inline">\(f = \Theta(g)\)</span>. Why?</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
