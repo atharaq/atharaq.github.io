@@ -6,6 +6,10 @@
 
 # Review of Maxima / Minima
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/hOBeg2kUMcE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 Last time we studied maxima and minima. Let $[a, b]$ be an interval. The function $f(x)$ has an **absolute maximum** over $[a, b]$ at a point $c$ if for every $x$ in that interval (ie, $a \leq x \leq b$), $f(c) \geq f(x)$. Similarly, $f(x)$ has an **absolute minimum** over $[a, b]$ at $c$ if for every $x$ in the interval, $f(c) \leq f(x)$.
 
 We also studied "local" maxima and minima: a function $f(x)$ has a **local maximum** at a point $c$ if there is an interval $(a, b)$ around $c$ such that $f(x) \leq f(c)$ for all $a < x < b$. We can similarly define **local minimum**. Take a look at the following figure [from the textbook, section 4.3](https://openstax.org/books/calculus-volume-1/pages/4-3-maxima-and-minima):
@@ -29,6 +33,10 @@ Later we will see how we can use the first and second derivatives to determine w
 
 # Linear Approximations
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/_7E0vxTVfOs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 An important reason to study derivatives is that they give us nice *approximations* to functions. We have previously seen that the tangent line to the graph of a function stays really close to the function itself.  Take a look at this graph of $y = e^x$ and the tangent line at $x = 0$, $y = x + 1$:
 
 <div class="desmos-container">
@@ -50,12 +58,16 @@ $$y = f(a) + f^\prime(a) (x - a)$$
 <p>The slope of $f^\prime(0)$. So take the derivative: $f^\prime(x) = 3\cdot(2e^{2x}) = 6e^{2x}$. Then $f^\prime(0) = 6e^{0} = 6$.</p>
 <p>Putting everything together, we get $y = 3 + 6(x - 0)$, or $y = 6x + 3$.</p>
 <p>At $x = 0.1$, this gives us a $y$-value of $y = 6(0.1) + 3$, or $y = 3.6$</p>
-<p>Checking this with a calculator, $f(0.1) \approx 3.66$, so the approximation was off by 0.04.</p>
+<p>Checking this with a calculator, $f(0.1) \approx 3.66$, so the approximation was off by 0.06.</p>
 </details>
 
 Of course, checking our answer with a calculator gives us a better approximation than the linear approximation we get. How do you think calculators approximate these transcendental functions that are hard to compute? They use other kinds of approximations. In Calculus 2, we will study Taylor Series, which gives us a way to determine higher-order approximations (like quadratic approximations, cubic approximations, etc).
 
 # The Mean Value Theorem and its applications
+
+<div class="youtube-container">
+  <iframe src="https://www.youtube.com/embed/DqbyCwErsMY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The next major application of derivatives involves the shape of graphs. We have studied this already, but not really from a rigorous perspective. That is, intuitively we know that if $f^\prime(a) > 0$, then $f(x)$ is increasing at (or near) that point. But *how* do we know this? Can we justify this with a rigorous proof?
 
@@ -108,6 +120,10 @@ Notice that at every point, the tangent lines have the same slope, and the dista
 </div>
 
 ## First Derivative Test
+
+<div class="youtube-container">
+  <iframe src="https://www.youtube.com/embed/AgYmWg8xRvE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Recall that if $f(x)$ has a local extremum (minimum or maximum) at a point $x = a$, then either $f^\prime(a) = 0$ or $f^\prime(a)$ does not exist. That is, $x = a$ must be a **critical point** of the function. But before, we saw that not every critical point of a function is a local extremum: for example, $f(x) = x^3$ does not have a minimum or maximum at $x = 0$.
 
@@ -174,6 +190,10 @@ Graph:
 </div>
 
 ## Concavity
+
+<div class="youtube-container">
+  <iframe src="https://www.youtube.com/embed/6lb9Z9vWYZE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Another important feature of the shape of the graph of a function is the **concavity** of the function. The textbook describes concavity as referring to whether a function "curves upward" or "curves downward". Personally, I have trouble figuring out what "curving upward" or "curving downward" means just by looking at a graph. However, I'd like to point out the following graph:
 
