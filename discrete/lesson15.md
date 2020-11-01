@@ -16,15 +16,19 @@ $$\exists N \in \mathbb{N} \exists k \in \mathbb{R} \forall n \in \mathbb{N} (n 
 
 First, notice that if $an + b \geq 0$, then, letting $n = 0$, we conclude that $b \geq 0$. Further, if $a < 0$, then letting $n > -\dfrac{b}{a}$ would imply that $an + b < 0$, which contradicts our assumption. Therefore $a \geq 0$ as well.
 
-Next, since $n \geq 0$, $b \leq bn$. Therefore $an + b \leq an + bn$, for every $n \in \mathbb{N}$. Let $k = a + b$, and so $an + b \leq kn$, for every $n \in \mathbb{N}$.
+Next, if $n \geq 1$, $b \leq bn$. Therefore $an + b \leq an + bn$, for every $n \in \mathbb{N}$ such that $n \geq 1$. Let $k = a + b$, and so $an + b \leq kn$, for every $n \in \mathbb{N}$.
 
 Before we finish the proof, let's first show that for all $n \in \mathbb{N}$, $n \leq n^2$. An important property of the ordering ($<$ and $>$) of real numbers is that for all $a, b, c$, if $c > 0$ and $a < b$, then $ac < bc$. If $n = 0$ or $n = 1$, we see that $n = n^2$. If $n > 1$, letting $a = 1, b = n$ and $c = n$ from the ordering property above shows that $n < n^2$.
 
-Now continue the proof we started above. Since $n \leq n^2$ for every $n \in \mathbb{N}$ and $k \geq 0$, we have $kn \leq kn^2$, and therefore $an + b \leq kn \leq kn^2$ for every $n \in \mathbb{N}$. Therefore, $N = 0$ and the $k$ we found above work to show that $an + b \leq k n^2$ for all $n \geq N$.
+Now continue the proof we started above. Since $n \leq n^2$ for every $n \in \mathbb{N}$ and $k \geq 0$, we have $kn \leq kn^2$, and therefore $an + b \leq kn \leq kn^2$ for every $n \geq 1$. Therefore, $N = 1$ and the $k$ we found above work to show that $an + b \leq k n^2$ for all $n \geq N$.
 
-Now we show that $n^2$ is **not** $O(n)$. Recall how to negate quantifiers: we want to show that the following statement is false: $$\exists N \in \mathbb{N} \exists k \in \mathbb{R} \forall n \in \mathbb{N} (n \geq N \rightarrow n^2 \leq kn)$$
+Now we show that $n^2$ is **not** $O(n)$. Recall how to negate quantifiers: we want to show that the following statement is false:
 
-That means that we want to show its negation is true. Negating quantifiers and conditionals is tricky, but we should end up with the following statement that we want to prove: $$\forall N \in \mathbb{N} \forall k \in \mathbb{R} \exists n \in \mathbb{N} (n \geq N \wedge n^2 > kn)$$
+$$\exists N \in \mathbb{N} \exists k \in \mathbb{R} \forall n \in \mathbb{N} (n \geq N \rightarrow n^2 \leq kn)$$
+
+That means that we want to show its negation is true. Negating quantifiers and conditionals is tricky, but we should end up with the following statement that we want to prove:
+
+$$\forall N \in \mathbb{N} \forall k \in \mathbb{R} \exists n \in \mathbb{N} (n \geq N \wedge n^2 > kn)$$
 
 So let $N \in \mathbb{N}$ and $k \in \mathbb{R}$ be given. We want to find $n \in \mathbb{N}$ that is greater than $N$ such that $n^2 > kn$. If $k \leq 0$, we are done: any $n > N$ would work, since $n^2 > 0$ for all $n > 0$. So assume $k > 0$. If $n > k$, then $n^2 > kn$. So let $n$ be any natural number greater than the maximum of $k$ and $N$.
 
