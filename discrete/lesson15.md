@@ -89,7 +89,15 @@ A **sequence** is some ordered list: usually an ordered list of numbers. A seque
 
 **Definition**: A **sequence** is a function with domain $\mathbb{N}$ or $\{ 0, 1, \ldots, n \}$ for some $n \in \mathbb{N}$.
 
-We will follow [notation used in the textbook](http://discrete.openmathbooks.org/dmoi3/sec_seq_intro.html): $a_0, a_1, a_2, \ldots$ will denote the first few terms of a sequence, while $(a_n)_{n \in \mathbb{N}}$ denotes the entire sequence (described at once).
+We will follow [notation used in the textbook](http://discrete.openmathbooks.org/dmoi3/sec_seq_intro.html): $a_0, a_1, a_2, \ldots$ will denote the first few terms of a sequence, while $(a_n)_{n \in \mathbb{N}}$ denotes the entire sequence (described at once). Please review the textbook sections on sequences: the relevant ones for us are [section 2.1](http://discrete.openmathbooks.org/dmoi3/sec_seq_intro.html), linked before, and [section 2.4 on recurrence relations](http://discrete.openmathbooks.org/dmoi3/sec_recurrence.html). The subscripts are referred to as *indices*.
+
+Before moving on, take some time to go through [Example 2.1.1](http://discrete.openmathbooks.org/dmoi3/sec_seq_intro.html#Kex) from the textbook to get familiar with some sequences.
+
+**Definition**: A **closed formula** for a sequence $(a_n)_{n \in \mathbb{N}}$ is a formula that depends on $n$ only (and not on previous terms).
+
+**Definition**: A **recurrence relation** is an equation relating a term in a sequence to previous terms in that sequence. A **recursive definition** for a sequence consists of a recurrence relation and an initial condition.
+
+In computer science, particularly when we study recursive algorithms, running times of algorithms can often be expressed using recurrence relations with initial conditions. Solving recurrence relations can be a challenge and so we will briefly look at some strategies here. This is a topic that might deserve more study if you are interested in studying analysis of algorithms.
 
 ## Telescoping
 
