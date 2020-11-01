@@ -10,15 +10,17 @@ Recall: for functions $f : \mathbb{N} \to \mathbb{R}$ and $g : \mathbb{N} \to \m
 
 $$\exists N \in \mathbb{N} \exists k \in \mathbb{R} \forall n \in \mathbb{N} (n \geq N \rightarrow f(n) \leq k \cdot |g(n)|)$$
 
-**Example**: Let $f(n) = an + b$, for some constants $a, b \in \mathbb{R}$. We show that $f(n)$ is $O(n^2)$, and $n^2$ is **not** $O(n)$:
+**Example**: Let $f(n) = an + b$, for some constants $a, b \in \mathbb{R}$. Assume that $f(n) \geq 0$ for all $n \in \mathbb{N}$ (we can prove the statement more generally, but the assumption helps simplify the proof so we don't have to worry about absolute values). We show that $f(n)$ is $O(n^2)$, and $n^2$ is **not** $O(n)$:
 
 **Proof**:
 
-Since $n \geq 0$, we know that, for every $n \in \mathbb{N}$, $an + b \leq \|a\|n + \|b\|n = (\|a\| + \|b\|)n$. Let $k = \|a\| + \|b\|$.
+First, notice that if $an + b \geq 0$, then, letting $n = 0$, we conclude that $b \geq 0$. Further, if $a < 0$, then letting $n > -\dfrac{b}{a}$ would imply that $an + b < 0$, which contradicts our assumption. Therefore $a \geq 0$ as well.
+
+Next, since $n \geq 0$, $b \leq bn$. Therefore $an + b \leq an + bn$, for every $n \in \mathbb{N}$. Let $k = a + b$, and so $an + b \leq kn$, for every $n \in \mathbb{N}$.
 
 Before we finish the proof, let's first show that for all $n \in \mathbb{N}$, $n \leq n^2$. An important property of the ordering ($<$ and $>$) of real numbers is that for all $a, b, c$, if $c > 0$ and $a < b$, then $ac < bc$. If $n = 0$ or $n = 1$, we see that $n = n^2$. If $n > 1$, letting $a = 1, b = n$ and $c = n$ from the ordering property above shows that $n < n^2$.
 
-Now continue the proof we started above. Since $n \leq n^2$ for every $n \in \mathbb{N}$ and $k \geq 0$, we have $kn \leq kn^2$, and therefore $an + b \leq kn \leq kn^2$ for every $n$ \in \mathbb{N}$. Therefore, $N = 0$ and the $k$ we found above work to show that $an + b \leq k n^2$ for all $n \geq N$.
+Now continue the proof we started above. Since $n \leq n^2$ for every $n \in \mathbb{N}$ and $k \geq 0$, we have $kn \leq kn^2$, and therefore $an + b \leq kn \leq kn^2$ for every $n \in \mathbb{N}$. Therefore, $N = 0$ and the $k$ we found above work to show that $an + b \leq k n^2$ for all $n \geq N$.
 
 Now we show that $n^2$ is **not** $O(n)$. Recall how to negate quantifiers: we want to show that the following statement is false: $$\exists N \in \mathbb{N} \exists k \in \mathbb{R} \forall n \in \mathbb{N} (n \geq N \rightarrow n^2 \leq kn)$$
 
