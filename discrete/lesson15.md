@@ -146,8 +146,8 @@ Adding these together and telescoping we get $a_n - a_0 = 2 + 4 + \ldots + 2^n$.
 
 <details>
 <summary>Check your answer:</summary>
-<p>First let's plug in and
-<p>The first few examples we get are $a_1 - a_0 = 1$, $a_2 - a_1 = 3$, $a_3 - a_2 = 5$, etc. So $a_n - a_{0}$ is the sum $1 + 3 + \ldots + (2n - 1)$.</p>
+<p>Let's check the first few terms of the sequence: $a_0 = 1$, $a_1 = 2$, $a_2 = 5$, $a_3 = 10$, etc.</p>
+<p>The first few consecutive differences we get are $a_1 - a_0 = 1$, $a_2 - a_1 = 3$, $a_3 - a_2 = 5$, etc. So $a_n - a_{0}$ is the sum $1 + 3 + \ldots + (2n - 1)$.</p>
 <p>In Problem Set 4, we saw that $1 + 3 + \ldots + (2n - 1) + (2n + 1) = (n+1)^2$. This is one fewer term in the sum, and so the sum would be $n^2$.</p>
 <p>Therefore, $a_n - a_0 = n^2$, and since $a_0 = 1$, $a_n = n^2 + 1$.
 </details>
