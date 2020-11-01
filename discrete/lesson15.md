@@ -194,7 +194,7 @@ Therefore our solution is $a_n = -\frac{1}{\sqrt{5}} \cdot r_1^n + \frac{1}{\sqr
 
 <details>
 <summary>Check your answer (full solution not provided)</summary>
-<p>$a_n = \frac{2}{3} \cdot 2^n + -\frac{2}{3} \cdot (-1)^n$</p>
+<p>$a_n = \frac{2}{3} \cdot 2^n + (-\frac{2}{3}) \cdot (-1)^n$</p>
 <p>Before moving on from this problem, notice: every element of this sequence is an integer. Why is that?</p>
 <p>Do a little bit of algebra and you get $a_n = \frac{2}{3}(2^n - (-1)^n)$. Saying that, for every $n$, this is always an integer, is saying that if $n$ is even, then $2^n - 1 \equiv 0$ (mod 3), and if $n$ is odd, then $2^n + 1 \equiv 0$ (mod 3). Can you prove this?</p>
 </details>
