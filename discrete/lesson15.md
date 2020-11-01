@@ -8,9 +8,9 @@
 
 Recall: for functions $f : \mathbb{N} \to \mathbb{R}$ and $g : \mathbb{N} \to \mathbb{R}$, we say $f = O(f)$ ($f$ is "Big Oh" of $g$) if there is $N \in \mathbb{N}$ and $k \in \mathbb{R}$ such that for all $n \geq N$, $f(n) \leq k \cdot \|g(n)\|$. In symbols:
 
-$$\exists N \in \mathbb{N} \exists k \in \mathbb{R} \forall n \in \mathbb{N} (n \geq N \rightarrow f(n) \leq k \cdot \|g(n)\|)$$
+$$\exists N \in \mathbb{N} \exists k \in \mathbb{R} \forall n \in \mathbb{N} (n \geq N \rightarrow f(n) \leq k \cdot |g(n)|)$$
 
-**Example**: We show that any degree 1 polynomial $f(n) = an + b$, for constants $a, b \in \mathbb{R}$ is $O(n^2)$, and $n^2$ is **not** $O(n)$:
+**Example**: Let $f(n) = an + b$, for some constants $a, b \in \mathbb{R}$. We show that $f(n)$ is $O(n^2)$, and $n^2$ is **not** $O(n)$:
 
 **Proof**:
 
@@ -53,8 +53,8 @@ Hint: Use l'Hopital's rule to find the limit as $n \rightarrow \infty$ of $\dfra
     <p>By l'Hopital's rule,
         $$
         \begin{align}
-        \lim_{n\rightarrow \infty} \frac{\ln{n}}{\sqrt(n)} &= \lim_{n \rightarrow \infty} \frac{n^{-1}}{.5n^{-.5}} \\
-        &= \lim_{n\rightarrow \infty} \frac{1}{2\sqrt{n}} \\
+        \lim_{n\rightarrow \infty} \frac{\ln{n}}{\sqrt{n}} &= \lim_{n \rightarrow \infty} \frac{n^{-1}}{.5n^{-.5}} \\
+        &= \lim_{n\rightarrow \infty} \frac{2}{\sqrt{n}} \\
         &= 0
         \end{align}
         $$ By the theorem, this implies that $\ln(n)$ is $O(\sqrt{n})$. Since we already know that $\log_2(n)$ is $O(\ln(n))$ and that Big Oh is transitive, this implies $\log_2(n)$ is $O(\sqrt{n})$ also.
