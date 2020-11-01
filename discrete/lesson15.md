@@ -181,14 +181,12 @@ In our case, that means we have $r_1 = \dfrac{1 - \sqrt{5}}{2}$ and $r_2 = \dfra
 $$
 \begin{align}
 a \cdot \frac{1-\sqrt{5}}{2} + b \cdot \frac{1+\sqrt{5}}{2} &= 1 \\
-a \cdot \frac{1 - sqrt{5}}{2} - a \cdot \frac{1 + \sqrt{5}}{2} &= 1 \\
-a \cdot (-\sqrt{5}) &= 1 \\
-a &= -\frac{1}{\sqrt{5}} \\
-b &= \frac{1}{\sqrt{5}}
+a \cdot \frac{1 - \sqrt{5}}{2} - a \cdot \frac{1 + \sqrt{5}}{2} &= 1 \\
+a \cdot (-\sqrt{5}) &= 1
 \end{align}
 $$
 
-Therefore our solution is $a_n = -\frac{1}{\sqrt{5}} \cdot r_1^n + \frac{1}{\sqrt{5}} r_2^n$, where $r_1$ and $r_2$ are the two solutions to the characteristic equation above.
+So $a = -\frac{1}{\sqrt{5}}$ and $b = \frac{1}{\sqrt{5}}$. Therefore our solution is $a_n = -\frac{1}{\sqrt{5}} \cdot r_1^n + \frac{1}{\sqrt{5}} r_2^n$, where $r_1$ and $r_2$ are the two solutions to the characteristic equation above.
 
 **Exercise**: Use the characteristic root method to find a closed formula for the recurrence relation $a_n = a_{n-1} + 2a_{n-2}$, with initial conditions $a_0 = 0$ and $a_1 = 2$.
 
