@@ -77,9 +77,7 @@ Let $f(n) = an + b$ and $g(n) = cn + d$, for $a, b, c, d \in \mathbb{R}$ (some c
 
 We find $N_1, N_2, k_1, k_2 \in \mathbb{R}$ such that for all $n \geq N_1$, $an + b \leq k_1 n$ and for all $n \geq N_2$, $n \leq k_2 (an + b)$.
 
-First notice that if $an + b \geq 0$ for all $n \in \mathbb{N}$, then $a, b \geq 0$. This is obvious for $b$, since plugging in $n = 0$ would show that $b \geq 0$. If $a < 0$ then letting $n > -\dfrac{b}{a}$ would give $an + b < 0$, which contradicts our assumption. So we can assume that $a, b \geq 0$.
-
-Next, since $b < bn$ for all $n > 1$, $an + b \leq an + bn$ for all $n > 1$. Therefore $an + b \leq (a + b)n$ for all $n > 1$. Let $k_1 = a + b$ and $N_1 = 2$, and conclude that for all $n \geq N_1$, $an + b \leq k_1 n$.
+As we saw before, if $an + b \geq 0$ for all $n \in \mathbb{N}$, then $a, b \geq 0$. Now, since $b < bn$ for all $n > 1$, $an + b \leq an + bn$ for all $n > 1$. Therefore $an + b \leq (a + b)n$ for all $n > 1$. Let $k_1 = a + b$ and $N_1 = 2$, and conclude that for all $n \geq N_1$, $an + b \leq k_1 n$.
 
 For the other direction, let $k_2$ be such that $k_2a \geq 1$. Because $a \geq 0$, we must have that $k_2 \geq 0$. Therefore $k_2 (an + b) \geq n + k_2 b \geq n$ for all $n \in \mathbb{N}$, since $k_2 \geq 0$ and $b \geq 0$. Let $N_2 = 0$ and conclude that for all $n \geq N_2$, $n \leq k_2(an + b)$.
 
@@ -145,11 +143,11 @@ Adding these together and telescoping we get $a_n - a_0 = 2 + 4 + \ldots + 2^n$.
 **Exercise**: Solve the recurrence relation $a_n = a_{n-1} + (2n - 1)$, with $a_0 = 1$.
 
 <details>
-<summary>Check your answer:</summary>
-<p>Let's check the first few terms of the sequence: $a_0 = 1$, $a_1 = 2$, $a_2 = 5$, $a_3 = 10$, etc.</p>
-<p>The first few consecutive differences we get are $a_1 - a_0 = 1$, $a_2 - a_1 = 3$, $a_3 - a_2 = 5$, etc. So $a_n - a_{0}$ is the sum $1 + 3 + \ldots + (2n - 1)$.</p>
-<p>In Problem Set 4, we saw that $1 + 3 + \ldots + (2n - 1) + (2n + 1) = (n+1)^2$. This is one fewer term in the sum, and so the sum would be $n^2$.</p>
-<p>Therefore, $a_n - a_0 = n^2$, and since $a_0 = 1$, $a_n = n^2 + 1$.
+    <summary>Check your answer:</summary>
+    <p>Let's check the first few terms of the sequence: $a_0 = 1$, $a_1 = 2$, $a_2 = 5$, $a_3 = 10$, etc.</p>
+    <p>The first few consecutive differences we get are $a_1 - a_0 = 1$, $a_2 - a_1 = 3$, $a_3 - a_2 = 5$, etc. So $a_n - a_{0}$ is the sum $1 + 3 + \ldots + (2n - 1)$.</p>
+    <p>In Problem Set 4, we saw that $1 + 3 + \ldots + (2n - 1) + (2n + 1) = (n+1)^2$. This is one fewer term in the sum, and so the sum would be $n^2$.</p>
+    <p>Therefore, $a_n - a_0 = n^2$, and since $a_0 = 1$, $a_n = n^2 + 1$.</p>
 </details>
 
 ## Characteristic Root
@@ -181,14 +179,12 @@ In our case, that means we have $r_1 = \dfrac{1 - \sqrt{5}}{2}$ and $r_2 = \dfra
 $$
 \begin{align}
 a \cdot \frac{1-\sqrt{5}}{2} + b \cdot \frac{1+\sqrt{5}}{2} &= 1 \\
-a \cdot \frac{1 - sqrt{5}}{2} - a \cdot \frac{1 + \sqrt{5}}{2} &= 1 \\
-a \cdot (-\sqrt{5}) &= 1 \\
-a &= -\frac{1}{\sqrt{5}} \\
-b &= \frac{1}{\sqrt{5}}
+a \cdot \frac{1 - \sqrt{5}}{2} - a \cdot \frac{1 + \sqrt{5}}{2} &= 1 \\
+a \cdot (-\sqrt{5}) &= 1
 \end{align}
 $$
 
-Therefore our solution is $a_n = -\frac{1}{\sqrt{5}} \cdot r_1^n + \frac{1}{\sqrt{5}} r_2^n$, where $r_1$ and $r_2$ are the two solutions to the characteristic equation above.
+So $a = -\frac{1}{\sqrt{5}}$ and $b = \frac{1}{\sqrt{5}}$. Therefore our solution is $a_n = -\frac{1}{\sqrt{5}} \cdot r_1^n + \frac{1}{\sqrt{5}} r_2^n$, where $r_1$ and $r_2$ are the two solutions to the characteristic equation above.
 
 **Exercise**: Use the characteristic root method to find a closed formula for the recurrence relation $a_n = a_{n-1} + 2a_{n-2}$, with initial conditions $a_0 = 0$ and $a_1 = 2$.
 
