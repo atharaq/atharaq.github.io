@@ -20,3 +20,5 @@ lang: en-US
 * [Lesson 11: Some Number Theory](lesson11.html)
 * [Lesson 12: Modular Multiplication and Intro to Binary](lesson12.html)
 * [Lesson 13: Binary, Octal, and Hexadecimal](lesson13.html)
+* [Lesson 14: Big Oh](lesson14.html)
+* [Lesson 15: Recurrence Relations](lesson15.html)
