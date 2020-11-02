@@ -77,9 +77,7 @@ Let $f(n) = an + b$ and $g(n) = cn + d$, for $a, b, c, d \in \mathbb{R}$ (some c
 
 We find $N_1, N_2, k_1, k_2 \in \mathbb{R}$ such that for all $n \geq N_1$, $an + b \leq k_1 n$ and for all $n \geq N_2$, $n \leq k_2 (an + b)$.
 
-First notice that if $an + b \geq 0$ for all $n \in \mathbb{N}$, then $a, b \geq 0$. This is obvious for $b$, since plugging in $n = 0$ would show that $b \geq 0$. If $a < 0$ then letting $n > -\dfrac{b}{a}$ would give $an + b < 0$, which contradicts our assumption. So we can assume that $a, b \geq 0$.
-
-Next, since $b < bn$ for all $n > 1$, $an + b \leq an + bn$ for all $n > 1$. Therefore $an + b \leq (a + b)n$ for all $n > 1$. Let $k_1 = a + b$ and $N_1 = 2$, and conclude that for all $n \geq N_1$, $an + b \leq k_1 n$.
+As we saw before, if $an + b \geq 0$ for all $n \in \mathbb{N}$, then $a, b \geq 0$. Now, since $b < bn$ for all $n > 1$, $an + b \leq an + bn$ for all $n > 1$. Therefore $an + b \leq (a + b)n$ for all $n > 1$. Let $k_1 = a + b$ and $N_1 = 2$, and conclude that for all $n \geq N_1$, $an + b \leq k_1 n$.
 
 For the other direction, let $k_2$ be such that $k_2a \geq 1$. Because $a \geq 0$, we must have that $k_2 \geq 0$. Therefore $k_2 (an + b) \geq n + k_2 b \geq n$ for all $n \in \mathbb{N}$, since $k_2 \geq 0$ and $b \geq 0$. Let $N_2 = 0$ and conclude that for all $n \geq N_2$, $n \leq k_2(an + b)$.
 
