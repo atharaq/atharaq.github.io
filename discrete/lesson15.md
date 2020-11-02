@@ -6,6 +6,10 @@
 
 # Big Oh / Big Theta
 
+<div class="youtube-container">
+  <iframe src="https://www.youtube.com/embed/hm3zxd8s254" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 Recall: for functions $f : \mathbb{N} \to \mathbb{R}$ and $g : \mathbb{N} \to \mathbb{R}$, we say $f = O(f)$ ($f$ is "Big Oh" of $g$) if there is $N \in \mathbb{N}$ and $k \in \mathbb{R}$ such that for all $n \geq N$, $f(n) \leq k \cdot \|g(n)\|$. In symbols:
 
 $$\exists N \in \mathbb{N} \exists k \in \mathbb{R} \forall n \in \mathbb{N} (n \geq N \rightarrow f(n) \leq k \cdot |g(n)|)$$
@@ -71,6 +75,10 @@ In general, since for all base $b$, $\log_b(n)$ are all equivalent according to 
 
 ## Degree one functions
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/lHWfvw91t08" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 Let $f(n) = an + b$ and $g(n) = cn + d$, for $a, b, c, d \in \mathbb{R}$ (some constants), with $a, c \neq 0$. Assume that $f(n) \geq 0$ and $g(n) \geq 0$ for all $n \in \mathbb{N}$ (this makes the proof simpler, so that we can ignore absolute values). Show that $f(n)$ is $\Theta(g(n))$.
 
 **Proof**: We actually just show that for any $a, b \in \mathbb{R}$, if $an + b \geq 0$ for all $n \in \mathbb{N}$, then $an + b$ is $\Theta(n)$. Think about why this suffices to prove the statement above.
@@ -84,6 +92,10 @@ For the other direction, let $k_2$ be such that $k_2a \geq 1$. Because $a \geq 0
 **In general**: any two polynomials $f(n)$ and $g(n)$ are equivalent according to Big Oh / Big Theta (ie, $f = O(g)$ and $g = O(f)$) if they have the same degree. Coefficients do not affect Big Oh at all, and neither do lower-degree terms. $n$ and $10000n$ are in the same "Big Oh" class.
 
 # Recurrence Relations
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/QJkaFC16mUQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 A **sequence** is some ordered list: usually an ordered list of numbers. A sequence can be finite or infinite, though often we will focus on infinite sequences. Technically, a sequence is a certain kind of function, as per the following definition:
 
@@ -119,6 +131,10 @@ Now plug in $a_n = 2^n + 1$ to our recurrence relation. We get: $2^n + 1 = 2 \ti
 
 ## Telescoping
 
+<div class="youtube-container">
+  <iframe src="https://www.youtube.com/embed/6S3siXmw3Vk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 Sometimes adding terms together helps us find a closed form. Adding the terms of a sequence produces a **series**. A **telescoping series** is a series where most terms cancel out. For example, if our recursive definition of a sequence is given by $a_n = a_{n-1} + 1$ with $a_0 = 10$, we can rearrange this to see that $a_n - a_{n-1} = 1$. That means:
 
 * $a_1 - a_0 = 1$
@@ -153,6 +169,10 @@ Adding these together and telescoping we get $a_n - a_0 = 2 + 4 + \ldots + 2^n$.
 </details>
 
 ## Characteristic Root
+
+<div class="youtube-container">
+  <iframe src="https://www.youtube.com/embed/UVKQ78FuEuc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 There is a powerful, algebraic method we can use to solve certain types of recurrence relations: *linear homogeneous recurrence relations with constant coefficients*.
 
