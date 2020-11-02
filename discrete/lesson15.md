@@ -87,7 +87,7 @@ For the other direction, let $k_2$ be such that $k_2a \geq 1$. Because $a \geq 0
 
 A **sequence** is some ordered list: usually an ordered list of numbers. A sequence can be finite or infinite, though often we will focus on infinite sequences. Technically, a sequence is a certain kind of function, as per the following definition:
 
-**Definition**: A **sequence** is a function with domain $\mathbb{N}$ or $\{ 0, 1, \ldots, n \}$ for some $n \in \mathbb{N}$.
+**Definition**: A **sequence** is a function with domain $\mathbb{N}$ or $\\{ 0, 1, \ldots, n \\}$ for some $n \in \mathbb{N}$.
 
 We will follow [notation used in the textbook](http://discrete.openmathbooks.org/dmoi3/sec_seq_intro.html): $a_0, a_1, a_2, \ldots$ will denote the first few terms of a sequence, while $(a_n)_{n \in \mathbb{N}}$ denotes the entire sequence (described at once). Please review the textbook sections on sequences: the relevant ones for us are [section 2.1](http://discrete.openmathbooks.org/dmoi3/sec_seq_intro.html), linked before, and [section 2.4 on recurrence relations](http://discrete.openmathbooks.org/dmoi3/sec_recurrence.html). The subscripts are referred to as *indices*.
 
