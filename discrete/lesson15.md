@@ -81,6 +81,8 @@ As we saw before, if $an + b \geq 0$ for all $n \in \mathbb{N}$, then $a, b \geq
 
 For the other direction, let $k_2$ be such that $k_2a \geq 1$. Because $a \geq 0$, we must have that $k_2 \geq 0$. Therefore $k_2 (an + b) \geq n + k_2 b \geq n$ for all $n \in \mathbb{N}$, since $k_2 \geq 0$ and $b \geq 0$. Let $N_2 = 0$ and conclude that for all $n \geq N_2$, $n \leq k_2(an + b)$.
 
+**In general**: any two polynomials $f(n)$ and $g(n)$ are equivalent according to Big Oh / Big Theta (ie, $f = O(g)$ and $g = O(f)$) if they have the same degree. Coefficients do not affect Big Oh at all, and neither do lower-degree terms. $n$ and $10000n$ are in the same "Big Oh" class.
+
 # Recurrence Relations
 
 A **sequence** is some ordered list: usually an ordered list of numbers. A sequence can be finite or infinite, though often we will focus on infinite sequences. Technically, a sequence is a certain kind of function, as per the following definition:
@@ -143,11 +145,11 @@ Adding these together and telescoping we get $a_n - a_0 = 2 + 4 + \ldots + 2^n$.
 **Exercise**: Solve the recurrence relation $a_n = a_{n-1} + (2n - 1)$, with $a_0 = 1$.
 
 <details>
-    <summary>Check your answer:</summary>
-    <p>Let's check the first few terms of the sequence: $a_0 = 1$, $a_1 = 2$, $a_2 = 5$, $a_3 = 10$, etc.</p>
-    <p>The first few consecutive differences we get are $a_1 - a_0 = 1$, $a_2 - a_1 = 3$, $a_3 - a_2 = 5$, etc. So $a_n - a_{0}$ is the sum $1 + 3 + \ldots + (2n - 1)$.</p>
-    <p>In Problem Set 4, we saw that $1 + 3 + \ldots + (2n - 1) + (2n + 1) = (n+1)^2$. This is one fewer term in the sum, and so the sum would be $n^2$.</p>
-    <p>Therefore, $a_n - a_0 = n^2$, and since $a_0 = 1$, $a_n = n^2 + 1$.</p>
+<summary>Check your answer:</summary>
+<p>Let's check the first few terms of the sequence: $a_0 = 1$, $a_1 = 2$, $a_2 = 5$, $a_3 = 10$, etc.</p>
+<p>The first few consecutive differences we get are $a_1 - a_0 = 1$, $a_2 - a_1 = 3$, $a_3 - a_2 = 5$, etc. So $a_n - a_{0}$ is the sum $1 + 3 + \ldots + (2n - 1)$.</p>
+<p>In Problem Set 4, we saw that $1 + 3 + \ldots + (2n - 1) + (2n + 1) = (n+1)^2$. This is one fewer term in the sum, and so the sum would be $n^2$.</p>
+<p>Therefore, $a_n - a_0 = n^2$, and since $a_0 = 1$, $a_n = n^2 + 1$.</p>
 </details>
 
 ## Characteristic Root
