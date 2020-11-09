@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Athar Abdul-Quader">
+  <title>Calculus I Lesson 15</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Calculus I Lesson 15</h1>
+  <p class="author">Athar Abdul-Quader</p>
+  <p class="date">Fall 2020</p>
+</section>
+
+<section id="section" class="title-slide slide level1">
+<h1></h1>
+<center>
+<blockquote class="twitter-tweet" data-dnt="true" data-theme="dark">
+<p lang="en" dir="ltr">
+Nevada slow-vote count vids are my new jam…<a href="https://t.co/HjrrUkxUHK">pic.twitter.com/HjrrUkxUHK</a>
+</p>
+— Rex Chapman🏇🏼 (<span class="citation" data-cites="RexChapman">@RexChapman</span>) <a href="https://twitter.com/RexChapman/status/1324539056160722948?ref_src=twsrc%5Etfw">November 6, 2020</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</center>
+</section>
+
+<section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Rough Draft (Monday, <strong>November 23</strong>) (two weeks)</li>
+<li>Exam 3: given 11/23, due <strong>11/30</strong> (three weeks)</li>
+<li>Problem Presentation 2: <strong>Monday, December 7</strong></li>
+<li>Final Paper: <strong>Monday, December 14</strong></li>
+<li>As always: if you need help, flexibility with deadlines, heads up about what’s upcoming, etc, just ask!</li>
+</ul>
+</section>
+<section id="advising-registration-spring-2021" class="slide level2">
+<h2>Advising / Registration Spring 2021</h2>
+<ul>
+<li>Calculus 2</li>
+<li>Computer Science I</li>
+<li>Computer Science II</li>
+<li>Data Structures</li>
+<li>Creating User Interfaces</li>
+<li>Drawing, Moving, and Seeing with Code (NME)</li>
+</ul>
+</section></section>
+<section id="exam-recap" class="title-slide slide level1">
+<h1>Exam Recap</h1>
+<ul>
+<li>Cannot do specific problems right now.</li>
+<li>But happy to go over concepts / processes.</li>
+<li>So… questions?</li>
+</ul>
+</section>
+
+<section>
+<section id="applied-optimization" class="title-slide slide level1">
+<h1>Applied Optimization</h1>
+
+</section>
+<section id="running-and-swimming" class="slide level2">
+<h2>Running and Swimming</h2>
+<p>An island is 2mi due north of its closest point along a straight shoreline. A visitor is staying at a cabin on the shore that is 6mi west of that point. The visitor is planning to go from the cabin to the island. Suppose the visitor runs at a rate of 8mph and swims at a rate of 3mph. How far should the visitor run before swimming to minimize the time it takes to reach the island?</p>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p><img data-src="https://openstax.org/resources/d894012fd6e414e50b061ed4910e7470b7ce8065" alt="Running and Swimming Picture" /><br />
+</p>
+</section>
+<section id="first-attempt" class="slide level2">
+<h2>First Attempt</h2>
+<p>One idea: Swim straight there?</p>
+<ul>
+<li>Triangle: <span class="math inline">\(a^2 + b^2 = c^2\)</span></li>
+<li><span class="math inline">\(2^2 + 6^2 = c^2\)</span></li>
+<li><span class="math inline">\(c = \sqrt{40}\)</span></li>
+<li>Time: <span class="math inline">\(\dfrac{\sqrt{40}}{3}\)</span> hours, or about 2 hours and 6 minutes.</li>
+</ul>
+</section>
+<section id="second-attempt" class="slide level2">
+<h2>Second attempt</h2>
+<p>Another idea: run 6 miles east, swim 2 miles north.</p>
+<ul>
+<li>Running: <span class="math inline">\(6 \mbox{ miles} \times \dfrac{1 \mbox{ hour}}{8 \mbox{ miles}} = \frac{3}{4}\)</span> hours, or 45 minutes.</li>
+<li>Swimming: <span class="math inline">\(2 \mbox{ miles} \times \dfrac{1 \mbox{ hour}}{3 \mbox{ miles}} = \frac{2}{3}\)</span> hours, or 40 minutes</li>
+<li>Total: 1 hour 25 minutes</li>
+</ul>
+<p>Better than swimming straight there. But is that the <strong>best</strong> option?</p>
+</section>
+<section id="solution-absolute-minimum" class="slide level2">
+<h2>Solution: Absolute Minimum</h2>
+<ul>
+<li>Run <span class="math inline">\(x\)</span> miles, swim <span class="math inline">\(y\)</span> miles.</li>
+<li>Time: <span class="math inline">\(\frac{x}{8} + \frac{y}{3}\)</span>.</li>
+<li>What is <span class="math inline">\(y\)</span> in terms of <span class="math inline">\(x\)</span>?</li>
+</ul>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<p><img data-src="https://openstax.org/resources/d894012fd6e414e50b061ed4910e7470b7ce8065" alt="Running and Swimming Picture" /><br />
+</p>
+<ul>
+<li>Swap <span class="math inline">\(x\)</span> and <span class="math inline">\((6-x)\)</span>, makes the calculation easier.</li>
+<li>Run <span class="math inline">\(6 - x\)</span> miles, swim <span class="math inline">\(y\)</span> miles.</li>
+<li><span class="math inline">\(\frac{6-x}{8} + \frac{y}{3}\)</span></li>
+</ul>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<ul>
+<li><span class="math inline">\(y^2 = 2^2 + x^2\)</span>, so <span class="math inline">\(y = \sqrt{x^2 + 4}\)</span>.</li>
+<li><span class="math inline">\(T(x) = \dfrac{6-x}{8} + \dfrac{\sqrt{x^2+4}}{3}\)</span>, over interval <span class="math inline">\([0, 6]\)</span>.</li>
+<li>Minimize: set <span class="math inline">\(T^\prime(x) = 0\)</span></li>
+<li><span class="math inline">\(T^\prime(x) = -\dfrac{1}{8} + \dfrac{x}{3\sqrt{x^2+4}}\)</span></li>
+</ul>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<ul>
+<li><span class="math inline">\(\dfrac{x}{3\sqrt{x^2+4}} = \dfrac{1}{8}\)</span></li>
+<li><span class="math inline">\(\dfrac{x^2}{9(x^2+4)} = \dfrac{1}{64}\)</span></li>
+<li><span class="math inline">\(64x^2 = 9x^2 + 36\)</span>, or <span class="math inline">\(55x^2 = 36\)</span></li>
+<li><span class="math inline">\(x = \pm \sqrt{\frac{36}{55}}\)</span></li>
+</ul>
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<ul>
+<li>Negatives don’t make sense</li>
+<li><span class="math inline">\(T(\sqrt{\frac{36}{55}}) \approx 1.368\)</span> hours.</li>
+<li>Or about 1 hour and 22 minutes.</li>
+<li>Shorter than the endpoints! (already checked)</li>
+</ul>
+</section>
+<section id="general-strategy" class="slide level2">
+<h2>General Strategy</h2>
+<p>Problems like these are called <strong>optimization</strong> problems.</p>
+<ul>
+<li>Optimize: maximize or minimize some function</li>
+<li>Draw a picture</li>
+<li>Set up a function</li>
+<li>Maximize / minimize (set derivative equal to 0)</li>
+<li>If needed, check endpoints</li>
+</ul>
+</section>
+<section id="rectangular-fencing" class="slide level2">
+<h2>Rectangular Fencing</h2>
+<p>You have 900 ft of fencing with which you wish to make a rectangular pen for your 30-50 (feral?) hogs. Find the dimensions of the pen which maximizes the area.</p>
+</section>
+<section id="draw-a-picture" class="slide level2">
+<h2>Draw a Picture</h2>
+</section>
+<section id="set-up-the-problem" class="slide level2">
+<h2>Set up the problem</h2>
+<ul>
+<li><span class="math inline">\(2(w + l) = 900\)</span>, or <span class="math inline">\(w + l = 450\)</span>.</li>
+<li><span class="math inline">\(A = w \times l = w(450 - w)\)</span>.</li>
+<li><span class="math inline">\(A(w) = w(450-w)\)</span>, or <span class="math inline">\(A(w) = 450w - w^2\)</span>.</li>
+<li>Maximize: <span class="math inline">\(A^\prime(w) = 450 - 2w\)</span>.</li>
+<li><span class="math inline">\(450 - 2w = 0\)</span>, or <span class="math inline">\(w = 225\)</span>.</li>
+</ul>
+</section>
+<section id="check-endpoints" class="slide level2">
+<h2>Check endpoints</h2>
+<ul>
+<li>Endpoints? <span class="math inline">\(0 \leq w \leq 450\)</span>: <span class="math inline">\(A(0) = 0\)</span>, <span class="math inline">\(A(450) = 0\)</span>,</li>
+<li><span class="math inline">\(A(225) = 225\times225 = 50625\)</span> square ft.</li>
+</ul>
+<p>Largest rectangle, given a fixed perimeter, is a square: 225 x 225.</p>
+<p>Make a general conjecture and prove it?</p>
+</section></section>
+<section>
+<section id="honeycomb-problem" class="title-slide slide level1">
+<h1>“Honeycomb Problem”</h1>
+<p>Why do bees make honeycombs using hexagons?</p>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Hexagons.svg/200px-Hexagons.svg.png" alt="Hexagon Tiling" /><br />
+</p>
+</section>
+<section id="optimization-problem" class="slide level2">
+<h2>Optimization Problem</h2>
+<ul>
+<li>Find the smallest amount beeswax needed to create the largest honeycomb cells.</li>
+<li><strong>Honeycomb Conjecture</strong>: a hexagonal grid is the most efficient way to divide a plane into equal areas, with minimal perimeter</li>
+<li>First Conjectured in antiquity (36 BC?)</li>
+<li>Proven in 1999! Thomas Hales (University of Pittsburgh)</li>
+</ul>
+</section>
+<section id="circles" class="slide level2">
+<h2>Circles?</h2>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Circles_packed_in_square_15.svg/200px-Circles_packed_in_square_15.svg.png" alt="Circle Tiling" /><br />
+</p>
+<p>Lots of wasted space.</p>
+</section>
+<section id="squares" class="slide level2">
+<h2>Squares?</h2>
+<p>Two other ways to <strong>tile the plane</strong> using regular polygons: squares and triangles.</p>
+<p><img data-src="https://i.stack.imgur.com/p3wFT.png" alt="Square Tiling" /><br />
+</p>
+<p>But the hexagonal one uses less perimeter for the same areas.</p>
+</section>
+<section id="other-ways" class="slide level2">
+<h2>Other ways?</h2>
+<p>General result: even if you consider irregular shapes (with curves, irregular polygons), the most efficient way to divide the plane into equal areas, using the least perimeter, involves using hexagons.</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
