@@ -132,8 +132,8 @@ Determine the following limits using l'Hôpital's rule:
 
 There are several other indeterminate forms that l'Hôpital's rule may apply to:
 
-* If $\lim\limits_{x \rightarrow a} f(x) = 0$ and $\lim\limits_{x \rightarrow a} g(x) = 0$, then $$\lim\limits_{x \rightarrow a} \frac{f(x)}{g(x)}$ is indeterminate. (0 / 0)
-* If $\lim\limits_{x \rightarrow a} f(x) = 0$ and $$\lim\limits_{x \rightarrow a} g(x) = \infty$, then $$\lim\limits_{x \rightarrow a} f(x)g(x)$ is indeterminate. ($0 \cdot \infty$)
+* If $\lim\limits_{x \rightarrow a} f(x) = 0$ and $\lim\limits_{x \rightarrow a} g(x) = 0$, then $\lim\limits_{x \rightarrow a} \frac{f(x)}{g(x)}$ is indeterminate. (0 / 0)
+* If $\lim\limits_{x \rightarrow a} f(x) = 0$ and $\lim\limits_{x \rightarrow a} g(x) = \infty$, then $\lim\limits_{x \rightarrow a} f(x)g(x)$ is indeterminate. ($0 \cdot \infty$)
 * Other indeterminate forms:
     * $\infty - \infty$
     * $\infty^0$
