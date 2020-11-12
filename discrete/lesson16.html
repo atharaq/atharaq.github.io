@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Athar Abdul-Quader">
+  <meta name="dcterms.date" content="2020-11-12">
+  <title>Discrete Math Lesson 16</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Discrete Math Lesson 16</h1>
+  <p class="author">Athar Abdul-Quader</p>
+  <p class="date">12 November 2020</p>
+</section>
+
+<section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Exam 2 due <strong>tonight</strong></li>
+<li>Problem Presentations (11/13, 11/20)
+<ul>
+<li>Missing?</li>
+</ul></li>
+<li>Problem Set 5: given 11/19, due 12/1 (Tuesday)</li>
+<li>Problem Set 6: given 12/4, due 12/11
+<ul>
+<li>Lowest grade dropped</li>
+</ul></li>
+<li>Final Project (Presentation + Paper / Group)
+<ul>
+<li>Dropping? WF? etc: talk to me!</li>
+</ul></li>
+<li>Final Exam: given 12/10, due 12/17</li>
+</ul>
+</section>
+<section id="advising-registration-spring-2021" class="slide level2">
+<h2>Advising / Registration Spring 2021</h2>
+<ul>
+<li>Calculus 1/2</li>
+<li>Computer Science I / II</li>
+<li>Data Structures</li>
+<li>Creating User Interfaces</li>
+<li>Drawing, Moving, and Seeing with Code (NME)</li>
+</ul>
+<p>Spring semester starts <strong>February 1</strong>. No spring break.</p>
+</section></section>
+<section>
+<section id="relations" class="title-slide slide level1">
+<h1>Relations</h1>
+<p><strong>Definition</strong>: Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be sets. A <strong>binary relation</strong> <span class="math inline">\(R\)</span> from <span class="math inline">\(X\)</span> to <span class="math inline">\(Y\)</span> is a subset of <span class="math inline">\(X \times Y\)</span>, that is, a set of ordered pairs <span class="math inline">\((x, y)\)</span> where <span class="math inline">\(x \in X\)</span> and <span class="math inline">\(y \in Y\)</span>.</p>
+<ul>
+<li><span class="math inline">\(X\)</span> is the <strong>domain</strong> of <span class="math inline">\(R\)</span>, <span class="math inline">\(Y\)</span> is the <strong>codomain</strong></li>
+<li>If <span class="math inline">\(X = Y\)</span>, we say <span class="math inline">\(R\)</span> is a “relation on <span class="math inline">\(X\)</span>”</li>
+<li>Can think of it as a formula <span class="math inline">\(R(x, y)\)</span></li>
+<li>Write <span class="math inline">\(x \mathrel{R} y\)</span> for <span class="math inline">\((x, y) \in R\)</span> or <span class="math inline">\(R(x, y)\)</span></li>
+</ul>
+</section>
+<section id="ordering" class="slide level2">
+<h2>Ordering</h2>
+<p>Classical example: <span class="math inline">\(x, y \in \mathbb{Z}\)</span>, <span class="math inline">\(R\)</span> is <span class="math inline">\(&lt;\)</span>:</p>
+<ul>
+<li><span class="math inline">\(0 &lt; 1\)</span>
+<ul>
+<li>“How are the numbers 0 and 1 related? 0 is less than 1”</li>
+</ul></li>
+<li>Adds <em>structure</em> to <span class="math inline">\(\mathbb{Z}\)</span>:</li>
+<li>Sets have no structure: just elements
+<ul>
+<li>Relations add structure: how are elements related to each other?</li>
+</ul></li>
+</ul>
+</section>
+<section id="set-vs-relation" class="slide level2">
+<h2>Set vs Relation</h2>
+<p><img width="70%" alt="Integers as a set and as a relation" title="Integers as a set and as a relation" src="set_vs_reln.jpeg" /></p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><img alt="Two element relations" title="Two element relations" src="two_elem_reln.jpeg" /></p>
+</section>
+<section id="rock-paper-scissors" class="slide level2">
+<h2>Rock, Paper, Scissors</h2>
+<p>Let <span class="math inline">\(X = \{\)</span> rock, paper, scissors <span class="math inline">\(\}\)</span>. Let <span class="math inline">\(x \mathrel{R} y\)</span> mean “<span class="math inline">\(x\)</span> beats <span class="math inline">\(y\)</span> in a game of rock/paper/scissors”. Describe <span class="math inline">\(R\)</span> completely:</p>
+<div class="fragment">
+<ul>
+<li>rock beats scissors</li>
+<li>scissors beats paper</li>
+<li>paper beats rock</li>
+</ul>
+</div>
+</section>
+<section id="properties-of-relations" class="slide level2">
+<h2>Properties of Relations</h2>
+<ul>
+<li>Reflexive: <span class="math inline">\(\forall x (x \mathrel{R} x)\)</span></li>
+<li>Symmetric: <span class="math inline">\(\forall x \forall y (x \mathrel{R} y \rightarrow y \mathrel{R} x)\)</span></li>
+<li>Transitive: <span class="math inline">\(\forall x \forall y \forall z (x \mathrel{R} y \wedge y \mathrel{R} z \rightarrow x \mathrel{R} z)\)</span></li>
+<li>Anti-symmetric: <span class="math inline">\(\forall x \forall y (x \mathrel{R} y \wedge y \mathrel{R} x \rightarrow x = y)\)</span></li>
+<li>Asymmetric: <span class="math inline">\(\forall x \forall y (x \mathrel{R} y \rightarrow \lnot (y \mathrel{R} x))\)</span></li>
+</ul>
+</section>
+<section id="examples-reflexive" class="slide level2">
+<h2>Examples: Reflexive</h2>
+<p>Let <span class="math inline">\(X\)</span> be the set of all people. Are the following relations reflexive: <span class="math inline">\(\forall x (x \mathrel{R} x)\)</span>?</p>
+<ul>
+<li>“<span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are siblings.”</li>
+<li>“<span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> share a parent.”</li>
+<li>“<span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are the same age.”</li>
+<li>“<span class="math inline">\(x\)</span> is older than <span class="math inline">\(y\)</span>.”</li>
+<li>“<span class="math inline">\(x\)</span> is no younger than <span class="math inline">\(y\)</span>”</li>
+</ul>
+</section>
+<section id="examples-symmetric" class="slide level2">
+<h2>Examples: Symmetric</h2>
+<p>Let <span class="math inline">\(X\)</span> be the set of all people. Are the following relations symmetric: <span class="math inline">\(\forall x \forall y (x \mathrel{R} y \rightarrow y \mathrel{R} x)\)</span>?</p>
+<ul>
+<li>“<span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are siblings.”</li>
+<li>“<span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> share a parent.”</li>
+<li>“<span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are the same age.”</li>
+<li>“<span class="math inline">\(x\)</span> is older than <span class="math inline">\(y\)</span>.”</li>
+<li>“<span class="math inline">\(x\)</span> is no younger than <span class="math inline">\(y\)</span>”</li>
+</ul>
+</section>
+<section id="examples-transitive" class="slide level2">
+<h2>Examples: Transitive</h2>
+<p>Are the following relations transitive: <span class="math inline">\(\forall x \forall y \forall z (x \mathrel{R} y \wedge y \mathrel{R} z \rightarrow x \mathrel{R} z)\)</span>?</p>
+<ul>
+<li><span class="math inline">\(X = \mathbb{Z}\)</span>, <span class="math inline">\(R\)</span> is: <span class="math inline">\(x \leq y\)</span>.</li>
+<li><span class="math inline">\(X = \mathbb{Z}\)</span>, <span class="math inline">\(R\)</span> is: <span class="math inline">\(x \mid y\)</span></li>
+<li><span class="math inline">\(X = \{\)</span> rock, paper, scissors <span class="math inline">\(\}\)</span>, <span class="math inline">\(R\)</span> is “<span class="math inline">\(x\)</span> beats <span class="math inline">\(y\)</span>”.</li>
+<li><span class="math inline">\(X\)</span> is the collection of all finite subsets of <span class="math inline">\(\mathbb{N}\)</span>, <span class="math inline">\(R\)</span> is “<span class="math inline">\(|x| = |y|\)</span>”.</li>
+</ul>
+</section></section>
+<section>
+<section id="equivalence-relations" class="title-slide slide level1">
+<h1>Equivalence Relations</h1>
+<p>Let <span class="math inline">\(X\)</span> be a set. A relation <span class="math inline">\(\sim\)</span> on <span class="math inline">\(X\)</span> is called an <strong>equivalence relation</strong> if it is reflexive, symmetric, and transitive.</p>
+</section>
+<section id="definition" class="slide level2">
+<h2>Definition</h2>
+<p>That is, <span class="math inline">\(\sim\)</span> is an equivalence relation on <span class="math inline">\(X\)</span> if:</p>
+<ul>
+<li>For all <span class="math inline">\(x \in X\)</span>: <span class="math inline">\(x \sim x\)</span>.</li>
+<li>For all <span class="math inline">\(x, y \in X\)</span>, if <span class="math inline">\(x \sim y\)</span>, then <span class="math inline">\(y \sim x\)</span>.</li>
+<li>For all <span class="math inline">\(x, y, z \in X\)</span>, if <span class="math inline">\(x \sim y\)</span> and <span class="math inline">\(y \sim z\)</span> then <span class="math inline">\(x \sim z\)</span>.</li>
+</ul>
+<div class="fragment">
+<p>Generalizes:</p>
+<ul>
+<li><span class="math inline">\(x = y\)</span></li>
+<li><span class="math inline">\(x \equiv y\)</span> (mod <span class="math inline">\(n\)</span>) (Exam 2 Q2)</li>
+<li><span class="math inline">\(|A| = |B|\)</span></li>
+<li>Any notion of “sameness” (congruent shapes, similar triangles, etc)</li>
+</ul>
+</div>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p><img alt="Congruence Modulo 3 Equivalence Relation" title="Congruence Modulo 3 Equivalence Relation" src="cong_mod_3.jpeg" /></p>
+</section>
+<section id="equivalence-classes" class="slide level2">
+<h2>Equivalence Classes</h2>
+<ul>
+<li>Generalizing the notion of “congruence classes”.</li>
+<li>Let <span class="math inline">\(X\)</span> be a set, <span class="math inline">\(\sim\)</span> an equivalence relation.</li>
+<li>Let <span class="math inline">\(x \in X\)</span>. Then <span class="math inline">\([x]_{\sim} = \{ y \in X : x \sim y \}\)</span> is the <strong>equivalence class of <span class="math inline">\(x\)</span></strong>.</li>
+<li>The <strong>quotient</strong> of <span class="math inline">\(X\)</span> by <span class="math inline">\({\sim}\)</span> is the set <span class="math inline">\(X / {\sim} = \{ [x]_{\sim} : x \in X \}\)</span>.</li>
+<li><span class="math inline">\(x\)</span> is called a <strong>representative</strong> of its equivalence class <span class="math inline">\([x]_{\sim}\)</span>.
+<ul>
+<li>One equivalence class can have many representatives.</li>
+</ul></li>
+</ul>
+</section>
+<section id="examples" class="slide level2">
+<h2>Examples</h2>
+<ul>
+<li><span class="math inline">\(X = \mathbb{Z}\)</span>, <span class="math inline">\(\sim\)</span> is <span class="math inline">\(\equiv\)</span> (mod 2).
+<ul>
+<li>Equivalence classes: evens and odds. <span class="math inline">\(X / {\sim} = \{ E, O \}\)</span>.</li>
+</ul></li>
+<li><span class="math inline">\(X = \mathbb{Z}\)</span>, <span class="math inline">\(\sim\)</span> is <span class="math inline">\(\equiv\)</span> (mod 10).
+<ul>
+<li>Equivalence classes?</li>
+<li><span class="math inline">\(x \equiv 0\)</span> (mod 10) if its last digit is a 0.</li>
+<li><span class="math inline">\(x \equiv 1\)</span> (mod 10) if its last digit is a 1.</li>
+<li>etc.</li>
+<li><span class="math inline">\(X / {\sim} = \{ [0]_{\sim}, [1]_{\sim}, \ldots, [9]_{\sim} \}\)</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="squares" class="slide level2">
+<h2>Squares</h2>
+<p>Let <span class="math inline">\(X = \mathbb{Z}\)</span>, and <span class="math inline">\(x \sim y\)</span> if <span class="math inline">\(x^2 = y^2\)</span>. <strong>Claim</strong>: <span class="math inline">\(\sim\)</span> is an equivalence relation.</p>
+<ul>
+<li>Sketch a proof.</li>
+<li>What is the equivalence class of <span class="math inline">\(0\)</span>? What is the equivalence class of <span class="math inline">\(1\)</span>?</li>
+<li>How many equivalence classes are there?</li>
+<li>Find a good set of representatives.</li>
+</ul>
+</section>
+<section id="sine" class="slide level2">
+<h2>Sine</h2>
+<p>Let <span class="math inline">\(X = \mathbb{R}\)</span>, and <span class="math inline">\(x \sim y\)</span> if <span class="math inline">\(\sin(x) = \sin(y)\)</span>. <strong>Claim</strong>: <span class="math inline">\(\sim\)</span> is an equivalence relation.</p>
+<ul>
+<li>Sketch a proof.</li>
+<li>What is the equivalence class of <span class="math inline">\(0\)</span>? What is the equivalence class of <span class="math inline">\(\pi/2\)</span>?</li>
+<li>Find a good set of representatives.</li>
+</ul>
+</section>
+<section id="squares-check" class="slide level2">
+<h2>Squares / Check</h2>
+<ul>
+<li>Proof: Each follows from reflexivity, symmetry, and transitivity of =</li>
+<li><span class="math inline">\([0]_{\sim} = \{ 0 \}, [1]_{\sim} = \{1, -1 \}\)</span></li>
+<li>One equivalence class for each non-negative number!</li>
+<li>Can represent using the elements of <span class="math inline">\(\mathbb{N}\)</span>!</li>
+</ul>
+</section>
+<section id="sine-check" class="slide level2">
+<h2>Sine / Check</h2>
+<ul>
+<li>Proof: Again follows from reflexivity / symmetry / transitivity of =</li>
+<li><span class="math inline">\([0]_{\sim} = \{0, \pi, 2\pi, -\pi, -2\pi, \ldots \} = \{ k\pi : k \in \mathbb{Z} \}\)</span>.</li>
+<li><span class="math inline">\([\pi/2]_{\sim} = \{ \pi/2 + 2\pi\cdot k : k \in \mathbb{Z} \}\)</span>.</li>
+</ul>
+<p>Representatives?</p>
+<iframe src="https://www.desmos.com/calculator/nu2npsc6le?embed" width="400px" height="250px" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+</section>
+<section id="partitions" class="slide level2">
+<h2>Partitions</h2>
+<p><img width="50%" alt="Equivlanece classes form a partition" title="Equivalence classes form a partition" src="equiv_classes.jpeg" /></p>
+</section>
+<section id="partitions-1" class="slide level2">
+<h2>Partitions</h2>
+<ul>
+<li><strong>Claim</strong>: If <span class="math inline">\([x]_{\sim} \cap [y]_{\sim} \neq \emptyset\)</span>, then <span class="math inline">\([x]_{\sim} = [y]_{\sim}\)</span>.</li>
+<li>Proof? Problem set.</li>
+<li><strong>Definition</strong>: Given a set <span class="math inline">\(X\)</span>, a <strong>partition</strong> of <span class="math inline">\(X\)</span> is a of sets <span class="math inline">\(\{ X_i : i \in I \}\)</span> is</li>
+</ul>
+</section></section>
+<section>
+<section id="big-theta" class="title-slide slide level1">
+<h1>Big Theta</h1>
+<p>Recall: <span class="math inline">\(f(n) = \Theta(g(n))\)</span> if <span class="math inline">\(f(n) = O(g(n))\)</span> and <span class="math inline">\(g(n) = O(f(n))\)</span>.</p>
+<ul>
+<li><span class="math inline">\(f(n) = \Theta(f(n))\)</span>:
+<ul>
+<li>Just show <span class="math inline">\(f = O(f)\)</span></li>
+<li>Let <span class="math inline">\(N = 0, k = 1\)</span>, then <span class="math inline">\(\forall n \geq N (f(n) \leq k \cdot f(n))\)</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="big-theta-symmetric" class="slide level2">
+<h2>Big Theta: Symmetric</h2>
+<ul>
+<li>If <span class="math inline">\(f(n) = \Theta(g(n))\)</span>, then <span class="math inline">\(g(n) = \Theta(f(n))\)</span>?
+<ul>
+<li><span class="math inline">\(f = O(g)\)</span> and <span class="math inline">\(g = O(f)\)</span>, so …</li>
+<li>Not much to show here! Just given by definition.</li>
+</ul></li>
+</ul>
+</section>
+<section id="big-theta-transitive" class="slide level2">
+<h2>Big Theta: Transitive</h2>
+<p>If <span class="math inline">\(f(n) = \Theta(g(n))\)</span> and <span class="math inline">\(g(n) = \Theta(h(n))\)</span>, then <span class="math inline">\(f(n) = \Theta(h(n))\)</span>?</p>
+<ul>
+<li>Show Big Oh is transitive first.</li>
+<li>There are <span class="math inline">\(N_1\)</span>, <span class="math inline">\(k_1\)</span> such that <span class="math inline">\(f(n) \leq k_1 |g(n)|\)</span> for all <span class="math inline">\(n \geq N_1\)</span></li>
+<li>There are <span class="math inline">\(N_2\)</span>, <span class="math inline">\(k_2\)</span> such that <span class="math inline">\(g(n) \leq k_2 |h(n)|\)</span> for all <span class="math inline">\(n \geq N_2\)</span></li>
+<li>Let <span class="math inline">\(N\)</span> be the larger of <span class="math inline">\(N_1, N_2\)</span>. Then:
+<ul>
+<li><span class="math inline">\(f(n) \leq k_1 g(n) \leq k_1 (k_2 |h(n)|)\)</span> for all <span class="math inline">\(n \geq N\)</span></li>
+<li>Let <span class="math inline">\(k = k_1 k_2\)</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="big-theta-transitive-1" class="slide level2">
+<h2>Big Theta: Transitive:</h2>
+<ul>
+<li>If <span class="math inline">\(f = \Theta(g), g = \Theta(h)\)</span>:</li>
+<li>Then <span class="math inline">\(f = O(g), g = O(h)\)</span>, so by transitivity of O, <span class="math inline">\(f = O(h)\)</span>.</li>
+<li><span class="math inline">\(h = O(g), g = O(f)\)</span>, so again by transitivity of O, <span class="math inline">\(h = O(f)\)</span>.</li>
+<li>Done!</li>
+</ul>
+</section></section>
+<section>
+<section id="partial-orders" class="title-slide slide level1">
+<h1>Partial Orders</h1>
+<p>Let <span class="math inline">\(X\)</span> be a set, <span class="math inline">\(\sqsubseteq\)</span> a relation on <span class="math inline">\(X\)</span>. Then <span class="math inline">\(\sqsubseteq\)</span> is a <strong>partial order</strong> if it is reflexive, transitive, and anti-symmetric.</p>
+</section>
+<section id="review-of-definition" class="slide level2">
+<h2>Review of Definition</h2>
+<p>That is, <span class="math inline">\(\sqsubseteq\)</span> is a partial order if:</p>
+<ul>
+<li><span class="math inline">\(\forall x (x \sqsubseteq x)\)</span></li>
+<li><span class="math inline">\(\forall x \forall y \forall z (x \sqsubseteq y \wedge y \sqsubseteq z \rightarrow x \sqsubseteq z)\)</span></li>
+<li><span class="math inline">\(\forall x \forall y (x \sqsubseteq y \wedge y \sqsubseteq x \rightarrow x = y)\)</span></li>
+</ul>
+</section>
+<section id="divisibility-maybe" class="slide level2">
+<h2>Divisibility (Maybe?)</h2>
+<ul>
+<li>If <span class="math inline">\(X = \mathbb{Z}\)</span>, the relation <span class="math inline">\(\mid\)</span> is <strong>not</strong> a partial order (why not?). But…</li>
+<li>If <span class="math inline">\(X = \mathbb{N}\)</span>, the relation <span class="math inline">\(\mid\)</span> <strong>is</strong> a partial order (why?)</li>
+</ul>
+<p>Generalizes:</p>
+<ul>
+<li><span class="math inline">\(\leq\)</span></li>
+<li><span class="math inline">\(\mid\)</span> for <span class="math inline">\(\mathbb{N}\)</span></li>
+<li><span class="math inline">\(\subseteq\)</span> for sets</li>
+<li>Any notion of comparisons (but not Big Oh! Why not?)</li>
+</ul>
+</section>
+<section id="subsets" class="slide level2">
+<h2>Subsets</h2>
+</section></section>
+<section id="exam-questions-15-minutes-max" class="title-slide slide level1">
+<h1>Exam Questions (15 minutes max!)</h1>
+
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
