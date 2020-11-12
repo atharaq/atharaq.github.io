@@ -10,7 +10,7 @@
   <iframe src="https://www.youtube.com/embed/hm3zxd8s254" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-Recall: for functions $f : \mathbb{N} \to \mathbb{R}$ and $g : \mathbb{N} \to \mathbb{R}$, we say $f = O(f)$ ($f$ is "Big Oh" of $g$) if there is $N \in \mathbb{N}$ and $k \in \mathbb{R}$ such that for all $n \geq N$, $f(n) \leq k \cdot \|g(n)\|$. In symbols:
+Recall: for functions $f : \mathbb{N} \to \mathbb{R}$ and $g : \mathbb{N} \to \mathbb{R}$, we say $f = O(g)$ ($f$ is "Big Oh" of $g$) if there is $N \in \mathbb{N}$ and $k \in \mathbb{R}$ such that for all $n \geq N$, $f(n) \leq k \cdot \|g(n)\|$. In symbols:
 
 $$\exists N \in \mathbb{N} \exists k \in \mathbb{R} \forall n \in \mathbb{N} (n \geq N \rightarrow f(n) \leq k \cdot |g(n)|)$$
 
