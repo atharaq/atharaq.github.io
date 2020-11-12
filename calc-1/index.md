@@ -19,3 +19,5 @@ layout: default
 * Lesson 12 is on Moodle. (Related Rates)
 * [Lesson 13: Related Rates and Optimization](lesson13.html)
 * [Lesson 14: Linear Approximations, Mean Value Theorem, and the shape of graphs](lesson14.html)
+* [Lesson 15: Applied Optimization Problems](lesson15.html)
+* [Lesson 16: Limits at Infinity and l'Hopital's rule](lesson16.html)
