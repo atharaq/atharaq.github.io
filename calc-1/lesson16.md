@@ -148,7 +148,8 @@ Here it is good to know that l'Hôpital's rule can be used in the case of one-si
 
 $$
 \begin{align}
-\lim_{x \rightarrow 0^+} x \ln(x) &= \lim_{x \rightarrow 0^+} \frac{1 / x}{-1 / x^2} \\
+\lim_{x \rightarrow 0^+} x \ln(x) = &= \lim_{x \rightarrow 0^+} \frac{\ln(x)}{1 / x} \\
+&= \lim_{x \rightarrow 0^+} \frac{1 / x}{-1 / x^2} \\
 &= \lim_{x \rightarrow 0^+} \frac{-x^2}{x} \\
 &= \lim_{x \rightarrow 0^+} -x = 0
 \end{align}
