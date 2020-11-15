@@ -27,40 +27,6 @@ Recall the following definitions. Given a set $X$ and an equivalence relation $\
 1. For each $x \in X$, the set $[x]_{\sim} = \\{ y \in X : x \sim y \\}$ is the equivalence class of $x$. $x$ is called a **representative** of its class.
 2. The set $X / {\sim} = \\{ [x]_{\sim} : x \in X \\}$ is called the **quotient** of $X$ by the relation $\sim$.
 
-## Example: Positive, Negative, Zero
-
-I mentioned this equivalence relation earlier in this lesson: for $x, y \in \mathbb{R}$, let $x \sim y$ iff $x$ and $y$ are both positive, both negative, or both equal to 0. It's not hard to see that this is an equivalence relation (give a short argument for this for the check-in). Let's look at the equivalence classes:
-
-* The only number $x$ such that $x \sim 0$ is $0$ itself. So $[0] = \\{ 0 \\}$, 0 is in its own equivalence class.
-* For any positive number $x > 0$, the class $[x] = \\{ y : y > 0 \\}$. That is, $[1] = [2] = [\pi]$, etc.
-* For any negative number $x < 0$, the class $[x] = \\{ y : y < 0 \\}$. So $[-1] = [-2] = [-\pi]$, etc.
-* The quotient $\mathbb{R} / \sim = \\{ [1], [-1], [0] \\}$, representing the three possibilities of numbers being positive, negative, or 0.
-
-## Example: Difference is an integer
-
-Let $X = \mathbb{Q}$, and define $x \sim y$ iff $x - y \in \mathbb{Z}$.
-
-**Claim**: $\sim$ is an equivalence relation.
-
-**Proof**: Since, for each $x \in \mathbb{Q}$, $x - x = 0$, and $0 \in \mathbb{Z}$, the relation is reflexive. If $x - y \in \mathbb{Z}$, then $y - x = -(x - y) \in \mathbb{Z}$, so it's symmetric. And if $x - y \in \mathbb{Z}$ and $y - z \in \mathbb{Z}$, then $x - z = (x - y) + (y - z) \in \mathbb{Z}$, and the sum of two integers is an integer. Therefore it is transitive.
-
-What do the equivalence classes look like? This is quite challenging to describe in full detail, so let's first start with a couple of warm ups.
-
-**Exercise**: Describe the equivalence classes of 0, 4/3, and -28/11 as fully as possible.
-
-<details>
-    <summary>Check your answer.</summary>
-    <p>The equivalence class of 0 is the set of all integers. That is: if $x \in \mathbb{Z}$, then of course $x - 0 \in \mathbb{Z}$, so $x \sim 0$. And if $x \sim 0$, then $x - 0 \in \mathbb{Z}$, so again, that means $x \in \mathbb{Z}$. That means that under this equivalence relation, all integers are considered equivalent.</p>
-    <p>For 4/3, notice that it is equivalent to 7/3, 10/3, 1/3, -2/3, -5/3, etc. In fact, there is a simple way to describe this set using modular arithmetic: $[4/3] = \\{ \frac{a}{3} : a \equiv 4$ (mod 3) $\\}$. Can you prove this?</p>
-    <p>Similarly, for -28/11, we can notice that it is equivalent to -17/11, -6/11, 5/11, 16/11, etc. Again, this is the set of all numbers of the form $\frac{a}{11}$ such that $a \equiv -28$ (mod 11).</p>
-</details>
-
-Using this same method, we can show that any fraction $\frac{a}{b}$ is equivalent, according to $\sim$, to a fraction of the form $\frac{r}{b}$ where $0 \leq r \lt b$. That is, every $x \in \mathbb{Q}$ is equivalent to some rational number in the interval $[0, 1)$. Moreover, two different rational numbers in that interval must not be equivalent to each other! (Can you see why? Can you give a proof / justification of this fact?) So the set $[0, 1) \cap \mathbb{Q}$ can be our set of representatives.
-
-Indeed, one way to visualize this equivalence relation is that it "collapses" $\mathbb{Q}$ into the interval $[0, 1)$. We think of $\mathbb{Q}$ as then being these infintely many copies of this same interval copied and pasted one after the other.
-
-This is an example of a construction done often in higher mathematics: take a larger space, find an equivalence relation on it, and look at the quotient space that you end up getting. The equivalence relation ends up "collapsing" all the objects that are equivalent to each other into a single point.
-
 ## Exercise
 
 Which of the following are equivalence relations? For those that are, describe the equivalence classes as best as you can.
@@ -82,38 +48,9 @@ Which of the following are equivalence relations? For those that are, describe t
     </ol>
 </details>
 
-## Example: $\sin(x)$
-
-Let $X = \mathbb{R}$. Consider the relation $x \sim y$ iff $\sin(x) = \sin(y)$.
-
-**Claim**: $\sim$ is an equivalence relation.
-
-**Proof**:
-
-1. Let x \in \mathbb{R}$. Then $\sin(x) = \sin(x)$ is true since equality is reflexive.
-2. Let $x, y \in \mathbb{R}$ and suppose $\sin(x) = \sin(y)$. Then $\sin(y) = \sin(x)$ since equality is symmetric.
-3. Let $x, y, z \in \mathbb{R}$. Suppose $\sin(x) = \sin(y)$ and $\sin(y) = \sin(z)$. Then $\sin(x) = \sin(z)$ since equality is transitive.
-
-Each of these follows from the more fundamental fact about equality, and had nothign to do with $\sin$ itself!
-
-What are the equivalence classes here? Notice that the image of the function $y = \sin(x)$ is the interval $[-1, 1]$.
-
-<div class="desmos-container">
-<iframe src="https://www.desmos.com/calculator/yirmqqcews?embed" style="border: 1px solid #ccc" frameborder=0></iframe>    
-</div>
-
-There is an equivalence class which corresponds to each possible output of $\sin(x)$. One possible set of representatives would be the interval $[-\pi/2, \pi/2]$. As we can see from this graph above, $\sin(x)$, when restricted to the interval $[-\pi/2, \pi/2]$ is a one to one function whose image is $[-1, 1]$. That means that different values in $[-\pi/2, \pi/2]$ are in different equivalence classes.
-
-**Exercise**: For this relation, describe, as best as you can, the following equivalence classes:
-
-1. $[0]$
-2. $[\pi]$
-3. $[\pi/3]$
-4. $[3\pi/2]$
-
 ## Images of functions
 
-Based on our discussion last time about squares, and this time about the sine function, there is a more general result here:
+On the check-in, you will show that on $\mathbb{R}$, the relation defined by $x \sim y$ iff $\sin(x) = \sin(y)$ is an equivalence relation. Similarly, last time we saw that the relation $x \sim y$ iff $x^2 = y^2$ is an equivalence relation. There is a more general result here:
 
 **Theorem**: Let $f : X \to Y$ be *any function*. Then the relation $\sim$ on $X$ defined by $x \sim y$ iff $f(x) = f(y)$ is an equivalence relation.
 
@@ -127,7 +64,6 @@ sgn(x) = \begin{cases}
 1 & \mbox{ if } x > 0
 \end{cases}
 $$
-
 This gives us the [positive / negative / zero example](#example-positive-negative-zero).
 2. Let $n > 1$ be a natural number, and $f : \mathbb{N} \to \mathbb{N}$ given by $f(x) = x$ **mod** $n$. This gives us the equivalence relation of congruence modulo $n$. (Can you prove this? That is: show that $x \equiv y$ (mod $n$) if and only if $x$ **mod** $n$ = $y$ **mod** $n$)
 3. Let $f : \mathbb{Q} \to \mathbb{Q}$ be defined by $f(\frac{a}{b}) = \frac{a \mathbf{ mod } b}{b}$, where $\frac{a}{b}$ is a fraction written in simplest form. This gives us the equivalence relation from [Exercise 2](#exercise): $x \sim y$ if $x - y \in \mathbb{Z}$.
