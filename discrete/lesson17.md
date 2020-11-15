@@ -210,10 +210,6 @@ Similarly, what is the equivalence class of $(1, 2)$? $(1, 2) \sim (c, d)$ if an
 
 So in other words, for any ordered pair $(a, b) \in X$, the equivalence class $[(a, b)]$ represents the fraction $\frac{a}{b}$, and so **any fraction** $\frac{c}{d}$ that is equal to $\frac{a}{b}$ (as fractions), is equivalent to $(a, b)$ according to $\sim$.
 
-**Exercise**:
-
-1.
-
 ## Some Philosophy
 
 # Partial Orders
