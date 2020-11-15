@@ -62,7 +62,7 @@ sgn(x) = \begin{cases}
 -1 & \mbox{ if } x < 0 \\
 0 & \mbox{ if } x = 0 \\
 1 & \mbox{ if } x > 0
-\end{cases}
+\end{cases} \\
 $$
 This gives us the [positive / negative / zero example](#example-positive-negative-zero).
 2. Let $n > 1$ be a natural number, and $f : \mathbb{N} \to \mathbb{N}$ given by $f(x) = x$ **mod** $n$. This gives us the equivalence relation of congruence modulo $n$. (Can you prove this? That is: show that $x \equiv y$ (mod $n$) if and only if $x$ **mod** $n$ = $y$ **mod** $n$)
