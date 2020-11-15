@@ -41,7 +41,8 @@ Which of the following are equivalence relations? For those that are, describe t
     <ol>
         <li>This is <strong>not transitive</strong>. Notice that $-1(0) \geq 0$, and $0(1) \geq 0$, but $(-1)(1) \lt 0$, so $x = -1$, $y = 0$, and $z = 1$ gives our counterexample.</li>
         <li><p>This <strong>is</strong> an equivalence relation. For any $x \in \mathbb{N}$, either $x \leq 100$ or $x > 100$, and so either way $x \sim x$> If $x \sim y$, then either both are less than 100, or both are greater than 100, and so changing the order of $x$ and $y$ will not change anything here. If $x \sim y$ and $y \sim z$, then check if $x \leq 100$. If so, then $y \leq 100$ and therefore $z \leq 100$, and so $x \sim z$. If $x > 100$, then $y > 100$ and therefore $z > 100$, and so $x \sim z$ as well. Therefore $\sim$ is transitive.</p>
-            <p>There are exactly two equivalence classes here: all numbers from $0, \ldots, 100$ are in one class, and all numbers from $101$ and on are in a second class.</p>
+        <p>There are exactly two equivalence classes here: all numbers from $0, \ldots, 100$ are in one class, and all numbers from $101$ and on are in a second class.</p>
+        <p>Notice that this one has a kind of "sameness" property: $x$ and $y$ are considered "the same" if they are both "small" or both "large" (where we set $100$ as our cutoff point for thinking of numbers as small or large).</p>
         </li>
         <li>This is <strong>not symmetric</strong>, since $3 - 2 \in \mathbb{N}$ but $2 - 3$ is not.</li>
         <li>This is <strong>not reflexive</strong>: $\frac{1}{2} \cdot \frac{1}{2} \not \in \mathbb{Z}$.</li>
@@ -56,7 +57,7 @@ On the check-in, you will show that on $\mathbb{R}$, the relation defined by $x 
 
 This is not hard to prove, and so you will do so on a problem set. For now, I wanted to look at some examples that we've either seen already:
 
-1. $sgn : \mathbb{R} \to \\{ -1, 0, 1 \\}$, the "signum" function, defined by
+1. This example gives us one of the equivalence relations on the check-in (you can take a quick look at it if you'd like). $sgn : \mathbb{R} \to \\{ -1, 0, 1 \\}$, the "signum" function, defined by
 $$
 sgn(x) = \begin{cases}
 -1 & \mbox{ if } x < 0 \\
@@ -64,9 +65,7 @@ sgn(x) = \begin{cases}
 1 & \mbox{ if } x > 0
 \end{cases} \\
 $$
-This gives us the [positive / negative / zero example](#example-positive-negative-zero).
 2. Let $n > 1$ be a natural number, and $f : \mathbb{N} \to \mathbb{N}$ given by $f(x) = x$ **mod** $n$. This gives us the equivalence relation of congruence modulo $n$. (Can you prove this? That is: show that $x \equiv y$ (mod $n$) if and only if $x$ **mod** $n$ = $y$ **mod** $n$)
-3. Let $f : \mathbb{Q} \to \mathbb{Q}$ be defined by $f(\frac{a}{b}) = \frac{a \mathbf{ mod } b}{b}$, where $\frac{a}{b}$ is a fraction written in simplest form. This gives us the equivalence relation from [Exercise 2](#exercise): $x \sim y$ if $x - y \in \mathbb{Z}$.
 
 **Exercise**
 
@@ -147,6 +146,22 @@ Similarly, what is the equivalence class of $(1, 2)$? $(1, 2) \sim (c, d)$ if an
 So in other words, for any ordered pair $(a, b) \in X$, the equivalence class $[(a, b)]$ represents the fraction $\frac{a}{b}$, and so **any fraction** $\frac{c}{d}$ that is equal to $\frac{a}{b}$ (as fractions), is equivalent to $(a, b)$ according to $\sim$.
 
 ## Some Philosophy
+
+In studying philosophy of mathematics, we encounter the question: what really **are** the mathematical structures that we use all the time? What are natural numbers, integers, rational numbers, and real numbers?
+
+One way to answer this question is to keep reducing the more complex objects to simpler objects. That is: if it's too much of a commitment to believe that complex numbers exist, we can define complex numbers as ordered pairs of real numbers $(a, b)$, so that each complex number $a + bi$ is represented as $(a, b)$.
+
+Similarly, to justify, philosophically, that real numbers exist, one can construct real numbers from rational numbers. I won't go into that here, as this construction is much more involved, but one of these constructions also involves equivalence relations. (The construction using equivalence relations is due to Augustin Cauchy, and the other one uses subsets of $\mathbb{Q}$, due to Richard Dedekind.)
+
+And as we've seen, we can construct the rational numbers as a quotient of a particular equivalence relation on ordered pairs of integers. This is not how we learned about rational numbers, but it does correspond to what we know about "equivalent fractions."
+
+This means that, philosophically, if we believe in the existence of integers, we can then use those integers to construct rational numbers, and then real numbers, and then complex numbers. Moreover, integers, themselves, can be constructed as equivalence classes of ordered pairs of natural numbers!
+
+For ordered pairs of natural numbers $(a, b)$ and $(c, d)$, define $(a, b) \sim (c, d)$ iff $a + d = b + c$. We define it this way, instead of the more natural $a - b = c - d$ to avoid the circularity of defining $a - b$ for all natural numbers. That is, we need integers to define subtraction (otherwise, what is 1 - 2?), but we are using this equivalence relation to define integers. That technical point aside, notice: $(0, 1) \sim (1, 2) \sim (2, 3)$, etc: this equivalence class would represent the number $-1$. Similarly, $(1, 0) \sim (2, 1) \sim (3, 2)$, etc: this equivalence class represents the number $1$. Every equivalence class represents a unique integer, and so, in a sense, we can think of $\mathbb{Z}$ as the quotient of this equivalence relation on the set $\mathbb{N}^2$.
+
+So all of this brings us down to $\mathbb{N}$. How do we philosophically justify the existence of natural numbers? Are there "simpler" objects that we can use to construct natural numbers out of? The answer is yes: we can define the natural numbers set-theoretically, starting with $\emptyset$ to represent 0, and building from there. I won't go into it, but this is a [construction due to Von Neumann](https://en.wikipedia.org/wiki/Set-theoretic_definition_of_natural_numbers#Definition_as_von_Neumann_ordinals).
+
+What do we do then? How do we justify that those basic sets, like $\emptyset$ exist? It is at this point that one needs to resort to axioms asserting their existence. That is: at some point, we need to make an ontological commitment (believe that some object exists). Philosophically, it's preferable to commit to the simplest things possible, and then from there we can build up the more complex, ordinary mathematical structures like $\mathbb{N}, \mathbb{Z}, \mathbb{Q}, $\mathbb{R}$ along with functions and other operations.
 
 # Partial Orders
 
