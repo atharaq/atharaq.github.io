@@ -20,11 +20,15 @@ This generalizes the notion of "equals". Of course, equality really is an equiva
 
 Equivalence relations are often a way to express the notion that two objects can be seen as the same in some sense. As mentioned last time, this includes the notions of cardinality, congruent shapes, similar triangles, congruence mod n, etc.
 
-Some other ideas of equivalence relations:
+Some other examples. of equivalence relations:
 
 * Let $X$ be the set of words in the English language and, for words $w_1, w_2 \in X$, define $w_1 \sim_E w_2$ iff $w_1$ and $w_2$ start with the same letter.
     * For example, "cat" $\sim_E$ "call", but $\lnot$ "cat" $\sim_E$ "dog".
 * On the set of real numbers $\mathbb{R}$, let $x \sim y$ iff $x$ and $y$ are both positive, both negative, or both equal to 0.
+    * You will show that this is an equivalence relation on the check-in.
+    * You'll need to show: $x \sim x$ (this should be obvious: $x$ has the same +/- sign as $x$)
+    * If $x \sim y$, then $y \sim x$: if $x$ and $y$ have the same +/- sign (or are both 0), then $y$ and $x$ have the same +/- sign (or are both 0).
+    * And similarly transitivity: if $x \sim y$ and $y \sim z$, you'll show why we can conclude that $x \sim z$.
 
 Recall the following definitions. Given a set $X$ and an equivalence relation $\sim$ on $X$:
 
@@ -44,7 +48,7 @@ Which of the following are equivalence relations? For those that are, describe t
     <summary>Check your answers</summary>
     <ol>
         <li>This is <strong>not transitive</strong>. Notice that $-1(0) \geq 0$, and $0(1) \geq 0$, but $(-1)(1) \lt 0$, so $x = -1$, $y = 0$, and $z = 1$ gives our counterexample.</li>
-        <li><p>This <strong>is</strong> an equivalence relation. For any $x \in \mathbb{N}$, either $x \leq 100$ or $x > 100$, and so either way $x \sim x$> If $x \sim y$, then either both are less than 100, or both are greater than 100, and so changing the order of $x$ and $y$ will not change anything here. If $x \sim y$ and $y \sim z$, then check if $x \leq 100$. If so, then $y \leq 100$ and therefore $z \leq 100$, and so $x \sim z$. If $x > 100$, then $y > 100$ and therefore $z > 100$, and so $x \sim z$ as well. Therefore $\sim$ is transitive.</p>
+        <li><p>This <strong>is</strong> an equivalence relation. For any $x \in \mathbb{N}$, either $x \leq 100$ or $x > 100$, and so either way $x \sim x$. If $x \sim y$, then either both are less than 100, or both are greater than 100, and so changing the order of $x$ and $y$ will not change that fact. If $x \sim y$ and $y \sim z$, then check if $x \leq 100$. If so, then $y \leq 100$ and therefore $z \leq 100$, and so $x \sim z$. If $x > 100$, then $y > 100$ and therefore $z > 100$, and so $x \sim z$ as well. Therefore $\sim$ is transitive.</p>
         <p>There are exactly two equivalence classes here: all numbers from $0, \ldots, 100$ are in one class, and all numbers from $101$ and on are in a second class.</p>
         <p>Notice that this one has a kind of "sameness" property: $x$ and $y$ are considered "the same" if they are both "small" or both "large" (where we set $100$ as our cutoff point for thinking of numbers as small or large).</p>
         </li>
