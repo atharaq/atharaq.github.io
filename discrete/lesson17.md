@@ -94,15 +94,15 @@ Let's look at a couple of finite examples.
 
 Claim: this is an equivalence relation. Justify this to yourself: I've shown that it's reflexive, and now you should show that it's symmetric and transitive. That is: take a relation $x \sim y$ described above, and check and make sure that $y \sim x$. Similarly, take any two relations $x \sim y$ and $y \sim z$ above (here it's okay if two of $x, y$ or $z$ are the same element) and check that $x \sim z$.
 
-**Insert picture**
+![Equivalence relation partitions the set into disjoint classes](partition.jpeg)
 
 The picture of this relation looks like $a$ and $b$ are together, and $c$ and $d$ are together. In other words: the equivalence relation somehow *separated* $a, b$ from $c, d$. We have two equivalence classes, and they are disjoint from each other.
 
 **Example 2**: Start with the same relations above, and add in $a \sim d$ and $d \sim a$. This is no longer an equivalence relation! (What goes wrong now?) We can still look at the picture of this relation:
 
-**Insert picture**
+![Not an equivalence relation, so it's not a partition](not_partition.jpeg)
 
-Here now, $a$ is connected to $b$ and $d$, and $d$ is connected to $a$ and $c$, but $a$ and $c$ are not directly connected to one another, nor are $b$ and $d$. This relation doesn't neatly put each element into one, specific class. Is $d$ in $a$'s class or in $c$'s?
+Here now, $a$ is connected to $b$ and $d$, and $d$ is connected to $a$ and $c$, but $a$ and $c$ are not directly connected to one another, nor are $b$ and $d$. This relation doesn't neatly put each element into one, specific class. Is $d$ in $a$'s class or in $c$'s? The classes overlap!
 
 **Exercise**: Let $X = \\{a, b, c, d \\}$. Here we will look at the "reverse" problem: I will tell you what equivalence classes I want, and you will give me an equivalence relation. Describe an equivalence relation so that $[a] = \\{ a, c \\}$, $[b] = \\{ b \\}$. What must $[d]$ be in this case?
 
