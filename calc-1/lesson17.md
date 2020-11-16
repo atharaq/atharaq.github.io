@@ -74,7 +74,7 @@ If we remember our trig derivatives, antiderivatives are not much harder:
 
 Recall that we had a cyclical picture of the derivatives of $\sin(x)$, $\cos(x)$, $-\sin(x)$ and $-\cos(x)$. This is the same pattern for antiderivatives, but in reverse!
 
-![Cycle of trig derivatives](trig_derivs_cycle.jpeg)
+<img title="Cycle of trig derivatives" alt="Cycle of trig derivatives" src="trig_derivs_cycle.jpeg" class="noreverse" />
 
 ## $e^x$ and $\ln(x)$
 
