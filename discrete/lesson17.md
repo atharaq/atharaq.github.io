@@ -6,6 +6,10 @@
 
 # Equivalence Relations
 
+<div class="youtube-container">
+  <iframe src="https://www.youtube.com/embed/EfF9TK03uHk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 Recall that a relation $\sim$ on a set $X$ is called an **equivalence relation** if it satisfies the following properties:
 
 1. $\forall x (x \sim x)$
@@ -51,6 +55,10 @@ Which of the following are equivalence relations? For those that are, describe t
 
 ## Images of functions
 
+<div class="youtube-container">
+  <iframe src="https://www.youtube.com/embed/VS5XZji3x8Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 On the check-in, you will show that on $\mathbb{R}$, the relation defined by $x \sim y$ iff $\sin(x) = \sin(y)$ is an equivalence relation. Similarly, last time we saw that the relation $x \sim y$ iff $x^2 = y^2$ is an equivalence relation. There is a more general result here:
 
 **Theorem**: Let $f : X \to Y$ be *any function*. Then the relation $\sim$ on $X$ defined by $x \sim y$ iff $f(x) = f(y)$ is an equivalence relation.
@@ -82,6 +90,10 @@ Determine the elements of the following equivalence classes:
 How many equivalence classes are there? How large is each class?
 
 ## Partitions
+
+<div class="youtube-container">
+  <iframe src="https://www.youtube.com/embed/prEQFD50bHE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Let's look at a couple of finite examples.
 
@@ -130,6 +142,10 @@ More generally: given a partition of a set $X$, we can define $x \sim y$ to mean
 An equivalence relation on a set $X$ partitions the elements into different classes. Pick one element from each class, and now you have a set of representatives; in other words, you have a quotient set. That is: the *quotient set* is what you get when you "collapse" all points in each class into one, single point.
 
 # $\mathbb{Q}$
+
+<div class="youtube-container">
+  <iframe src="https://www.youtube.com/embed/fXFP_ZFAFWk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 In this section I want to argue that we have learned a bit about equivalence relations all the way back in elementary school.
 
