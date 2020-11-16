@@ -125,8 +125,6 @@ Moreover, if we start with a partition of a set, we can recover an equivalence r
 
 More generally: given a partition of a set $X$, we can define $x \sim y$ to mean "$x$ and $y$ are in the same set in the partition." This is an equivalence relation: reflexivity and symmetry are obvious by definition, and if $x \sim y$ and $y \sim z$, then $x$, $y$, and $z$ are all in the same part of the partition.
 
-**Exercise**:
-
 ## Putting it all together
 
 An equivalence relation on a set $X$ partitions the elements into different classes. Pick one element from each class, and now you have a set of representatives; in other words, you have a quotient set. That is: the *quotient set* is what you get when you "collapse" all points in each class into one, single point.
