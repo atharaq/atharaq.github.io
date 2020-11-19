@@ -83,7 +83,7 @@ In this visualization, we would tell if $a \sqsubseteq b$ by checking if there i
 
 This has the following Hasse diagram:
 
-**insert picture**
+<img class="noreverse" src="hasse_diagram1.jpeg" alt="Hasse diagram showing a and b below c, and c below d" title="Hasse diagram showing a and b below c, and c below d" />
 
 **Exercise**: Let $X = \\{ a, b, c, d, e \\}$, with the following relations:
 
@@ -94,7 +94,7 @@ This has the following Hasse diagram:
 
 <details>
     <summary>Check your answer</summary>
-    <img class="noreverse" src="" title="Hasse diagram for exercise" alt="Hasse diagram for exercise" />
+    <img class="noreverse" src="hasse_diagram_exercise.jpeg" title="Hasse diagram showing a and b below c, and c below d and e" alt="Hasse diagram showing a and b below c, and c below d and e" />
 </details>
 
 ## Subsets
@@ -111,7 +111,7 @@ Let $U$ be any set and $X = \mathcal{P}(U)$. Then the relation $A \subseteq B$ i
 
 Let's look at the particular example of $X = \mathcal{P}(\\{0, 1 \\})$.
 
-**Insert Picture**
+<img class="noreverse" src="hasse_diagram_powerset.jpeg" alt="Hasse diagram depicting the power set of 0,1" title="Hasse diagram depicting the power set of 0,1" />
 
 Notice the following:
 
@@ -203,7 +203,7 @@ Another special kind of partial order is called a **tree**. We will be exploring
 
 Consider the following set of binary sequences of length at most 2: the empty sequence (represented by $\varepsilon$), 0, 1, 00, 01, 10, 11. For two sequences $a$ and $b$, we say $a \sqsubseteq b$ if $b$ is an extension of $a$ to the right. For example, $01$ and $00$ are both extensions of $0$. We get the following Hasse diagram:
 
-**insert picture**
+<img class="noreverse" src="binary_tree.jpeg" alt="Hasse diagram depicting a tree with root at the bottom, branching out to 0 and 1, each branching out to 00, 01, and then 10, 11 respectively" title="Hasse diagram depicting a tree with root at the bottom, branching out to 0 and 1, each branching out to 00, 01, and then 10, 11 respectively" />
 
 Notice that there is a minimum element here: $\varepsilon$. This is called the **root** of the tree. There is no maximum, but there are several maximal elements: $00, 01, 10, 11$. These are sometimes referred to as **leaves** of the tree.
 
@@ -216,7 +216,7 @@ So what makes this a tree? In addition to being a partial order, this tree has t
 
 Often, trees in computer science are pictured upside down, so that the root is on top, and the leaves on the bottom.
 
-**insert picture**
+<img src="cs_tree.jpeg" alt="Binary tree depicted with the root at the top and the leaves at the bottom" title="Binary tree depicted with the root at the top and the leaves at the bottom" class="noreverse" />
 
 **Exercise**: Let $T = \\{ 0, a, b, ab, aba, ba, baa \\}$ with the relations as follows:
 
