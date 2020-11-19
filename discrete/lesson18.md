@@ -215,7 +215,7 @@ Show that $T$ is a tree.
 <details>
     <summary>Check your answer</summary>
     <p>Reflexivity and transitivity are given to you. Antisymmetry is also clear since there are no loops.</p>
-    <p>So all we really need to check is that the two sets $B_1 = \\{ x : x \sqsubseteq aba \\}$ and $B_2 = \\{ x : x \sqsubseteq baa \\}$ are linearly ordered.</p>
-    <p>$B_1 = \\{ 0, a, ab, aba \\}$ and is ordered $0 \sqsubseteq a \sqsubseteq ab \sqsubseteq aba$, which is a linear order.</p>
-    <p>$B_2 = \\{ 0, b, ba, baa \\}$ and is ordered $0 \sqsubseteq b \sqsubseteq ba \sqsubseteq baa$, which is also a linear order.</p>
+    <p>So all we really need to check is that the two sets $B_1 = \{ x : x \sqsubseteq aba \}$ and $B_2 = \{ x : x \sqsubseteq baa \}$ are linearly ordered.</p>
+    <p>$B_1 = \{ 0, a, ab, aba \}$ and is ordered $0 \sqsubseteq a \sqsubseteq ab \sqsubseteq aba$, which is a linear order.</p>
+    <p>$B_2 = \{ 0, b, ba, baa \}$ and is ordered $0 \sqsubseteq b \sqsubseteq ba \sqsubseteq baa$, which is also a linear order.</p>
 </details>
