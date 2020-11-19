@@ -1,4 +1,4 @@
-# Discrete Mathematics Lesson 17: Equivalence Relations and Partial Orders
+# Discrete Mathematics Lesson 17: Equivalence Relations
 {:.no_toc}
 
 1. Table of Contents
