@@ -6,6 +6,10 @@
 
 # Areas under curves
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/rW1nFs0wA7c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 We are now ready to start discussing areas under curves. Let's warm up with a couple of simple examples.
 
 **Example**: Suppose we are driving on the highway on cruise control at a constant speed of 55mph. If we drive for 2 hours, we have traveled a 110 miles: $55$ miles / hour $\times$ 2 hours = 110 miles.
@@ -16,7 +20,7 @@ In other words, we have this graph:
     <iframe src="https://www.desmos.com/calculator/jzrphpas1v?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
 </div>
 
-So it's easy to find the distance traveled from our speed if the speed is constant: it's just the area of a rectangle. But what if our speed is not constant? 
+So it's easy to find the distance traveled from our speed if the speed is constant: it's just the area of a rectangle. But what if our speed is not constant?
 
 **Example**: A particle is initially stopped. At some time $t = 0$, the particle beings to move at a rate of $2t$ meters per second (that is, the particle speeds up over time). How far has it moved after 3 seconds?
 
@@ -55,10 +59,26 @@ Adding these up, we end up with an area of about .219.
 
 ## Sigma Notation
 
+<div class="youtube-container">
+  <iframe src="https://www.youtube.com/embed/hWOZKaBxCOw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 Before we continue with the strategy of getting better and better approximations, we should review "$\Sigma$ notation".
 
+$$ \sum_{i=0}^5 (i)$$
+
+means the sum of the terms $0 + 1 + 2 + 3 + 4 + 5$. The $i$ is called the index variable, 0 is the lower bound, and $5$ is the upper bound. We will be using this to express long sums (or sums in terms of a variable $n$ that is not known).
+
 ## Left and Right endpoint approximations
+
+Before we found an approximation of the area under $y = x^2$ using 4 rectangles. As we use more and more rectangles, our approximation will get better and better. To approximate this area using $n$ rectangles, we divide the interval $[0, 1]$ into points $x_0 = 0, x_1, x_2, \ldots, x_n = 1$, equally spaced apart. Since the length of the interval is 1, and we want $n$ rectangles, we need the distance between two points to be $\frac{1}{n}$ in this case. Let's call that $\Delta x$.
+
+So our approximation here would be $f(x_0)\Delta x + f(x_1)\Delta x + \ldots + f(x_{n-1})\Delta x$. Notice in our approximation for $n = 4$ above, we didn't look at the $f(1)$ to compute the area.
+
+This can be written more succinctly as $\sum\limits_{i=0}^{n-1} f(x_i) \Delta x$.
 
 ## Riemann Sums
 
 # Desmos Activity
+
+For the rest of this lesson, please take a look at [this Desmos activity](https://student.desmos.com/join/t7jpxw). **You may need a calculator for this.** As usual, this will be used as your "check-in" grade for participation purposes. Please complete it by Monday's class!
