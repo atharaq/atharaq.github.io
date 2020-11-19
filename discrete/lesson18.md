@@ -1,4 +1,8 @@
 # Discrete Mathematics Lesson 18: Partial Orders
+{:.no_toc}
+
+1. Table of Contents
+{:toc}
 
 # Partial Orders
 
