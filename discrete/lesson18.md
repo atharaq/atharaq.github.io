@@ -6,6 +6,10 @@
 
 # Partial Orders
 
+<div class="youtube-container">
+  <iframe src="https://www.youtube.com/embed/P1dp9E10j_k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 Recall some important properties of relations:
 
 * R is **reflexive** if $\forall x (x \mathrel{R} x)$
@@ -95,6 +99,10 @@ This has the following Hasse diagram:
 
 ## Subsets
 
+<div class="youtube-container">
+  <iframe src="https://www.youtube.com/embed/2SJALkNCCAc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 Let $U$ be any set and $X = \mathcal{P}(U)$. Then the relation $A \subseteq B$ is a partial order on $X$:
 
 * For every $A \in X$, $A \subseteq A$, since every element of $A$ is of course an element of $A$ (so $\subseteq$ is reflexive).
@@ -143,6 +151,10 @@ Is there a maximum element among these students? Is there a minimum element? Wha
 
 # Linear Orders
 
+<div class="youtube-container">
+  <iframe src="https://www.youtube.com/embed/VeZR__Vy4m8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 As we have seen, there is an important property of "regular" inequalities (for numbers) that is not true about some of these partial orders: for inequalities, all numbers are **comparable** with each other. That is, given $x, y \in \mathbb{R}$, either $x \leq y$ or $y \leq x$ (or both).
 
 A partial order which has this property is called a **total** order, or a **linear** order.
@@ -182,6 +194,10 @@ The issue isn't so much about the ordering, itself, but more about how the order
 A basic property of inequalities with real numbers we use often is that we can "multiply both sides" of an inequality by a positive number. That is, if $0 \leq x$, then for any $a \leq b$, $ax \leq bx$. This property does **not** translate to this ordering of the complex numbers. In particular: $0 \leq i$, but $0 \cdot i \not \leq i \cdot i$, since $i \cdot i = -1$!
 
 # Trees
+
+<div class="youtube-container">
+  <iframe src="https://www.youtube.com/embed/tcG9iEMe_j0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Another special kind of partial order is called a **tree**. We will be exploring trees some more at the very end of the semester, but first let's look at an example.
 
