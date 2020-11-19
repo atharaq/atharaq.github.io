@@ -75,7 +75,13 @@ Before we found an approximation of the area under $y = x^2$ using 4 rectangles.
 
 So our approximation here would be $f(x_0)\Delta x + f(x_1)\Delta x + \ldots + f(x_{n-1})\Delta x$. Notice in our approximation for $n = 4$ above, we didn't look at the $f(1)$ to compute the area.
 
-This can be written more succinctly as $\sum\limits_{i=0}^{n-1} f(x_i) \Delta x$.
+This can be written more succinctly as $\sum\limits_{i=0}^{n-1} f(x_i) \Delta x$. This is the **left-endpoint approximation**. We could also use the right endpoints of each interval:
+
+<div class="desmos-container">
+<iframe src="https://www.desmos.com/calculator/apqvyp0lql?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
+</div>
+
+The **right-endpoint approximation** is given by $\sum\limits_{i=1}^{n} f(x_i) \Delta x$.
 
 ## Riemann Sums
 
