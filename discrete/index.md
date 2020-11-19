@@ -22,3 +22,6 @@ lang: en-US
 * [Lesson 13: Binary, Octal, and Hexadecimal](lesson13.html)
 * [Lesson 14: Big Oh](lesson14.html)
 * [Lesson 15: Recurrence Relations](lesson15.html)
+* [Lesson 16: Intro to Relations](lesson16.html)
+* [Lesson 17: Equivalence Relations](lesson17.html)
+* [Lesson 18: Partial Orders](lesson18.html)

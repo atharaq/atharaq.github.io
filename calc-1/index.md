@@ -21,3 +21,5 @@ layout: default
 * [Lesson 14: Linear Approximations, Mean Value Theorem, and the shape of graphs](lesson14.html)
 * [Lesson 15: Applied Optimization Problems](lesson15.html)
 * [Lesson 16: Limits at Infinity and l'Hopital's rule](lesson16.html)
+* [Lesson 17: Antiderivatives](lesson17.html)
+* [Lesson 18: Areas, Approximations and Riemann Sums](lesson18.html)
