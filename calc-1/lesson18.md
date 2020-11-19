@@ -71,11 +71,9 @@ means the sum of the terms $0 + 1 + 2 + 3 + 4 + 5$. The $i$ is called the index 
 
 ## Left and Right endpoint approximations
 
-Before we found an approximation of the area under $y = x^2$ using 4 rectangles. As we use more and more rectangles, our approximation will get better and better. To approximate this area using $n$ rectangles, we divide the interval $[0, 1]$ into points $x_0 = 0, x_1, x_2, \ldots, x_n = 1$, equally spaced apart. Since the length of the interval is 1, and we want $n$ rectangles, we need the distance between two points to be $\frac{1}{n}$ in this case. Let's call that $\Delta x$.
+Before we found an approximation of the area under $y = x^2$ using 4 rectangles. As we use more and more rectangles, our approximation will get better and better. To approximate this area using $n$ rectangles, we divide the interval $[0, 1]$ into points $x_0 = 0, x_1, x_2, \ldots, x_n = 1$, equally spaced apart. Since the length of the interval is 1, and we want $n$ rectangles, we need the distance between two points to be $\frac{1}{n}$ in this case. Let's call that $\Delta x$. We end up with $n$ sub-intervals: $[x_0, x_1], [x_1, x_2], \ldots, [x_{n-1}, x_n]$.
 
-So our approximation here would be $f(x_0)\Delta x + f(x_1)\Delta x + \ldots + f(x_{n-1})\Delta x$. Notice in our approximation for $n = 4$ above, we didn't look at the $f(1)$ to compute the area.
-
-This can be written more succinctly as $\sum\limits_{i=0}^{n-1} f(x_i) \Delta x$. This is the **left-endpoint approximation**. We could also use the right endpoints of each interval:
+Our approximation here would be $f(x_0)\Delta x + f(x_1)\Delta x + \ldots + f(x_{n-1})\Delta x$. This can be written more succinctly as $\sum\limits_{i=0}^{n-1} f(x_i) \Delta x$. This is the **left-endpoint approximation**, because we used the left-endpoints of each of those intervals. We could also use the right endpoints of each interval:
 
 <div class="desmos-container">
 <iframe src="https://www.desmos.com/calculator/apqvyp0lql?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
@@ -84,6 +82,24 @@ This can be written more succinctly as $\sum\limits_{i=0}^{n-1} f(x_i) \Delta x$
 The **right-endpoint approximation** is given by $\sum\limits_{i=1}^{n} f(x_i) \Delta x$.
 
 ## Riemann Sums
+
+It turns out that there isn't anything special about using left endpoints or right endpoints: what matters most is that the sub-intervals get smaller and smaller. As we let $n$ get larger, so we break our interval up into smaller sub-intervals, if the function is continuous then all the points on the graph in those sub-intervals will be pretty close to each other. For example, for our function $f(x) = x^2$ over the interval $[0, 1]$, if $n = 100$, we would be looking at the intervals $[0, .01], [.01, .02], [.02, .03]$, etc. If we look at the corresponding y-values, the difference between taking left endpoints and right endpoints in most of these is quite small:
+
+* $f(0) = 0, f(.01) = .0001$
+* $f(.01) = .0001, f(.02) = .0004$
+* $f(.02) = .0004$, f(.03) = .0009$
+
+$x^2$ and $(x+.01)^2$ are going to be really close, no matter what $x$ is. So rather than worrying about the specific point in each interval that we look at, what matters most is that we let $n$ get larger (use more intervals) and get better approximations. This is the idea behind a **Riemann sum**.
+
+Let $f(x)$ be a function and $[a, b]$ an interval. (Usually we assume $f(x)$ is continuous over $[a, b]$). For $n$ a large positive integer, we split $[a, b]$ into $n$ intervals: $x_0 = a$, $x_1, x_2, \ldots, x_{n-1}, x_n$, with the difference between the x coordinates, $\Delta x$ defined as $\dfrac{b - a}{n}$. Then we have $n$ intervals: $[x_0, x_1], [x_1, x_2], \ldots, [x_{n-1}, x_n]$, each of length $\Delta x$. For each interval, let $x_i^{*}$ be *any* point in $[x_{i-1}, x_i]$. Then the area under $f(x)$ is approximated by the **Riemann sum**:
+
+$$\sum_{i=1}^n f(x_i^*) \Delta x$$
+
+As $n \rightarrow \infty$, this converges toward the actual area under the curve. That's the definition of the **definite integral** (coming up next class).
+
+$$\int_a^b f(x) dx = \lim_{n \rightarrow \infty} \sum_{i=1}^n f(x_i^*) \Delta x$$
+
+We will see, next class, how we might actually compute this area. This is usually done using the Fundamental Theorem of Calculus, which relates the notions of areas under curves and antiderivatives.
 
 # Desmos Activity
 
