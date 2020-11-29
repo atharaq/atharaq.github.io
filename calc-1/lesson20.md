@@ -17,14 +17,14 @@ We will be this often to figure out areas under curves in applications problems.
 # Application 1: Work
 
 <div class="youtube-container">
-
+<iframe src="https://www.youtube.com/embed/Iy8Xy6Pw1AI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 
 # Application 2: Velocity
 
 <div class="youtube-container">
-
+<iframe src="https://www.youtube.com/embed/vQGoPOdEexg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 
@@ -34,7 +34,7 @@ We will be this often to figure out areas under curves in applications problems.
 # Integration by Substitution
 
 <div class="youtube-container">
-
+<iframe src="https://www.youtube.com/embed/HjUA-6K82s4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 As we have seen, to evaluate definite integrals, it is important to be able to find antiderivatives. This is sometimes not quite easy, and so we need to learn some techniques to help us find antiderivatives. Some of these techniques are based on rules for derivatives. In this course, we will learn one of these techniques: integration by substituion. We can learn more techniques in Calculus 2.
