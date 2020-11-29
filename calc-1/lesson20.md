@@ -10,7 +10,7 @@ $$
 \int_a^b f(x) dx = F(b) - F(a)
 $$
 
-For example, the area under $y = x^2$ from $x = 1$ to $x = 2$ is $\int\limits_1^2 x^2 dx = \frac{x^3}{3} \right\|_1^2$, which is $\frac{8}{3} - \frac{1}{3}$, or $\frac{7}{3}$.
+For example, the area under $y = x^2$ from $x = 1$ to $x = 2$ is $\int\limits_1^2 x^2 dx = \left.\frac{x^3}{3} \right\|_1^2$, which is $\frac{8}{3} - \frac{1}{3}$, or $\frac{7}{3}$.
 
 We will be this often to figure out areas under curves in applications problems.
 
@@ -71,7 +71,7 @@ A bad example would be $\int \frac{x^2 + 1}{2x} dx$. Here we cannot let $u = x^2
     <summary>Check your answers</summary>
     <ol>
         <li>Let $u = \cos(x)$, and then $du = -\sin(x) dx$. Pull out the negative and we are integrating $-\int \frac{du}{u}$, which is $-\ln(\cos(x)) + C$. One of the rules for logarithms tells us that $-\ln(\cos(x)) = \ln(\sec(x))$, and so the final answer is usually written as $\ln(\sec(x)) + C$.</li>
-        <li>Let $u = x^2$. Then $du = 2x dx$, or $\frac{du}{2} = x dx$. Since we are integrating $e^{x^2} \cdot (x dx)$, when we make our substitution we get $\int \frac{e^u}{2} du$, which is $\frac{1}{2}e^u + C$. Substituting back, our final answer is $\frac{1}{2} e^{x^2} + C$.
+        <li>Let $u = x^2$. Then $du = 2x dx$, or $\frac{du}{2} = x dx$. Since we are integrating $e^{x^2} \cdot (x dx)$, when we make our substitution we get $\int \frac{e^u}{2} du$, which is $\frac{1}{2}e^u + C$. Substituting back, our final answer is $\frac{1}{2} e^{x^2} + C$.</li>
     </ol>
 </details>
 
