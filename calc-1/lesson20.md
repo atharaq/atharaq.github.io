@@ -10,7 +10,7 @@ $$
 \int_a^b f(x) dx = F(b) - F(a)
 $$
 
-For example, the area under $y = x^2$ from $x = 1$ to $x = 2$ is $\int\limits_1^2 x^2 dx = \frac{x^3}{3} \right|_1^2$, which is $\frac{8}{3} - \frac{1}{3}$, or $\frac{7}{3}$.
+For example, the area under $y = x^2$ from $x = 1$ to $x = 2$ is $\int\limits_1^2 x^2 dx = \frac{x^3}{3} \right\|_1^2$, which is $\frac{8}{3} - \frac{1}{3}$, or $\frac{7}{3}$.
 
 We will be this often to figure out areas under curves in applications problems.
 
@@ -32,6 +32,10 @@ We will be this often to figure out areas under curves in applications problems.
 ## Integrals and Multiplication
 
 # Integration by Substitution
+
+<div class="youtube-container">
+
+</div>
 
 As we have seen, to evaluate definite integrals, it is important to be able to find antiderivatives. This is sometimes not quite easy, and so we need to learn some techniques to help us find antiderivatives. Some of these techniques are based on rules for derivatives. In this course, we will learn one of these techniques: integration by substituion. We can learn more techniques in Calculus 2.
 
