@@ -20,6 +20,9 @@ We will be this often to figure out areas under curves in applications problems.
 <iframe src="https://www.youtube.com/embed/Iy8Xy6Pw1AI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
+The first application I go through is work done when a force is applied to some object. This is an application from physics: if you apply a *constant* force $F$ to an object to push it a distance $d$, the "work done" to move that object is given by $W = Fd$. This measures how much energy is needed to push that object.
+
+Follow along the example from [Paul's Online Math Notes](https://tutorial.math.lamar.edu/classes/calci/Work.aspx#IntApps_Work_Ex1), an excellent resource for this course. This website goes through many other challenging problems on this application, which involves some knowledge of physics. For those of you without much knowledge of physics, you should be able to follow along this first example at least.
 
 # Application 2: Velocity
 
@@ -27,9 +30,64 @@ We will be this often to figure out areas under curves in applications problems.
 <iframe src="https://www.youtube.com/embed/vQGoPOdEexg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
+**Example**: A particle is moving horizontally at a velocity (speed), in meters per second, given by the following function:
 
+$$
+v(t) = \begin{cases} 2t - t^2 &\mbox{if } 0 \leq t < 1 \\
+1 &\mbox{if } 1 \leq t < 3 \\
+4 - t &\mbox{if } 3 \leq t \leq 4 \end{cases}
+$$
 
-## Integrals and Multiplication
+Compute $\int\limits_0^4 v(t) dt$ and determine what this means, physically. As a hint: break up the integral into $\int\limits_0^1 v(t) dt + \int\limits_1^3 v(t) dt + \int\limits_3^4 v(t) dt$. (See the video above for a graph of the function).
+
+<details>
+    <summary>Answers hidden:</summary>
+    <p>We will compute each integral separately.</p>
+    <p>$$
+        \begin{align}
+        \int_0^1 v(t) dt &= \int_0^1 2t - t^2 dt \\
+        &= \left.t^2 - \frac{t^3}{3}\right|_0^1 \\
+        &= \frac{2}{3}
+    \end{align}
+    $$</p>
+    <p>
+    $$
+    \begin{align}
+        \int_1^3 v(t) dt &= \int_0^1 1 dt \\
+        &= \left.t \right|_1^3 \\
+        &= 2
+    \end{align}
+    $$
+    </p>
+    <p>
+    $$
+    \begin{align}
+        \int_3^4 v(t) dt &= \int_3^4 4 - t dt \\
+        &= \left.4t - \frac{t^2}{2} \right|_3^4 \\
+        &= \frac{1}{2}
+    \end{align}
+    $$
+    </p>
+    <p>Adding these values together we get $\frac{19}{6}$, or about 3.17.</p>
+    <p>The area under this curve represents the idea of adding up these infinitesimally small changes in distance. If we add up a bunch of small changes together, we get the total change. That is: the particle traveled a distance of about 3.17 meters in 4 minutes.</p>
+</details>
+
+## Integration vs Multiplication
+
+If you have been paying close attention, you may have noticed a pattern:
+
+* Work done by a constant force over a distance: $F \times d$.
+* Work done by a non-variable force over a distance: $\int_a^b F(x) dx$.
+* Distance traveled by an object moving at constant velocity: $v \times t$.
+* Distance traveled by an object moving at a non-constant velocity: $\int_a^b v(t) dt$.
+
+This pattern actually hints at something deeper: many formulas (from physics or from geometry, or possibly other places as well) that use multiplication really assume that the quantities being multiplied are *constant*. But if one quantity can change with respect to another, then multiplication becomes an integral!
+
+This is exactly the difference between the area of a rectangle, and the area under a curve.
+
+<img class="noreverse" src="areas.png" alt="Area of a rectangle vs area under a curve" />
+
+This idea that integration is really a kind of generalization of multiplication is explored in depth in [this article from BetterExplained.com](https://betterexplained.com/articles/a-calculus-analogy-integrals-as-multiplication/). Please take the time to read it, as it will give you a really great insight into this phenomenon.
 
 # Integration by Substitution
 
@@ -75,4 +133,4 @@ A bad example would be $\int \frac{x^2 + 1}{2x} dx$. Here we cannot let $u = x^2
     </ol>
 </details>
 
-Next time, we will look at using substitution with definite integrals.
+Next time, we will look at using substitution with definite integrals. For now, there is a check-in on Moodle and a DeltaMath homework due next Monday. If you never completed the Desmos activity from last week, please go back and do that, and let me know, so I can update your check-in grade for that as well!
