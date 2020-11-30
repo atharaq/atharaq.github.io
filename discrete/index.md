@@ -25,3 +25,5 @@ lang: en-US
 * [Lesson 16: Intro to Relations](lesson16.html)
 * [Lesson 17: Equivalence Relations](lesson17.html)
 * [Lesson 18: Partial Orders](lesson18.html)
+* [Lesson 19: Intro to Graph Theory](lesson19.html)
+* [Lesson 20: Graph Representations and Isomorphisms](lesson20.html)

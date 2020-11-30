@@ -23,3 +23,5 @@ layout: default
 * [Lesson 16: Limits at Infinity and l'Hopital's rule](lesson16.html)
 * [Lesson 17: Antiderivatives](lesson17.html)
 * [Lesson 18: Areas, Approximations and Riemann Sums](lesson18.html)
+* [Lesson 19: Definite Integrals and the Fundamental Theorem of Calculus](lesson19.html)
+* [Lesson 20: Integration by Substitution](lesson20.html)
