@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Athar Abdul-Quader">
+  <meta name="dcterms.date" content="2020-11-30">
+  <title>Discrete Math Lesson 20</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Discrete Math Lesson 20</h1>
+  <p class="author">Athar Abdul-Quader</p>
+  <p class="date">30 November 2020</p>
+</section>
+
+<section>
+<section id="problem-set-5" class="title-slide slide level1">
+<h1>Problem Set 5</h1>
+
+</section>
+<section id="q5c" class="slide level2">
+<h2>Q5(c)</h2>
+<p>Let <span class="math inline">\(A, B, C \in X\)</span> such that <span class="math inline">\(A \subseteq B\)</span> and <span class="math inline">\(B \subseteq C\)</span>. Show that <span class="math inline">\(A \subseteq C\)</span>. <strong>Q</strong>: How do you start this proof?</p>
+<div class="fragment">
+<p>Let <span class="math inline">\(x \in A\)</span>. Then, since <span class="math inline">\(A \subseteq B\)</span>…</p>
+</div>
+</section>
+<section id="q5d" class="slide level2">
+<h2>Q5(d)</h2>
+<p>Let <span class="math inline">\(|U| \geq 2\)</span>. Show that <span class="math inline">\(\mathcal{P}(U)\)</span> is not a tree.</p>
+<p>Idea:</p>
+<ul>
+<li>find a set in <span class="math inline">\(\mathcal{P}(U)\)</span> with two subsets that are not comparable.</li>
+<li><span class="math inline">\(|U| \geq 2\)</span> means…</li>
+</ul>
+</section></section>
+<section>
+<section id="graph-theory" class="title-slide slide level1">
+<h1>Graph Theory</h1>
+
+</section>
+<section id="definitions" class="slide level2">
+<h2>Definitions</h2>
+<ul>
+<li>A graph is a pair <span class="math inline">\((V, E)\)</span>.</li>
+<li>Elements of <span class="math inline">\(V\)</span> are <strong>vertices</strong> (or nodes)</li>
+<li>Elements of <span class="math inline">\(E\)</span> are <strong>edges</strong>.
+<ul>
+<li>Directed / undirected.</li>
+</ul></li>
+</ul>
+</section>
+<section id="edit-distance" class="slide level2">
+<h2>Edit Distance</h2>
+<ul>
+<li><strong>Edit distance</strong> between two words</li>
+<li>Allowable operations:
+<ul>
+<li>Insert a letter</li>
+<li>Delete a letter</li>
+<li>Replace one letter with another</li>
+</ul></li>
+<li>Q: given words <span class="math inline">\(w_1\)</span> and <span class="math inline">\(w_2\)</span>, how “far” apart are the letters?</li>
+</ul>
+</section>
+<section id="edit-distance-1" class="slide level2">
+<h2>Edit Distance</h2>
+<ul>
+<li>Vertices: words (arbitrary strings of letters)</li>
+<li>Edges: if two words are one operation apart.
+<ul>
+<li>“cat” and “can”.</li>
+<li>“met” and “meet”</li>
+</ul></li>
+<li>Now turned this into a “shortest path” problem.</li>
+</ul>
+</section></section>
+<section>
+<section id="representations" class="title-slide slide level1">
+<h1>Representations</h1>
+<p>Many ways to represent graphs:</p>
+<ul>
+<li>Incidence matrix</li>
+<li>Adjacency list</li>
+<li>Adjacency matrix</li>
+</ul>
+</section>
+<section id="incidence" class="slide level2">
+<h2>Incidence</h2>
+<ul>
+<li>A vertex <span class="math inline">\(v\)</span> is <strong>incident</strong> to edge <span class="math inline">\(e\)</span> if <span class="math inline">\(v\)</span> is an endpoint of <span class="math inline">\(e\)</span>.</li>
+<li>Incidence matrix:
+<ul>
+<li>1 row for each vertex</li>
+<li>1 column for each edge</li>
+<li>entry <span class="math inline">\((i, j)\)</span> is 1 if <span class="math inline">\(v_i\)</span> is incident to <span class="math inline">\(e_j\)</span>.</li>
+<li>if <span class="math inline">\(e_j\)</span> is a self-loop at <span class="math inline">\(v_i\)</span>, then put a 2 instead.</li>
+<li>0 otherwise</li>
+<li>Each column has at most 2 1’s.</li>
+</ul></li>
+<li>Many wasted 0s.</li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="star_graph.png" alt="Star Graph" /><br />
+</p>
+</div><div class="column" style="width:60%;">
+<p><span class="math display">\[
+\begin{array}{c|c|c|c}
+&amp; e_1 &amp; e_2 &amp; e_3 \\
+v_1 &amp; 1 &amp; 0 &amp; 0 \\
+v_2 &amp; 1 &amp; 1 &amp; 1 \\
+v_3 &amp; 0 &amp; 1 &amp; 0 \\
+v_4 &amp; 0 &amp; 0 &amp; 1
+\end{array}
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="sum-of-degrees" class="slide level2">
+<h2>Sum of Degrees</h2>
+<p><strong>Theorem</strong>: The sum of the degrees of a graph equals <span class="math inline">\(2|E|\)</span>.</p>
+<p><strong>Proof</strong>:</p>
+<ul>
+<li>Represent the graph using an incidence matrix.</li>
+<li><span class="math inline">\(deg(v_i) = \sum\limits_{j=1}^n a_{i,j}\)</span> (row sum)</li>
+<li>Sum of degrees?</li>
+<li>column sum = <span class="math inline">\(2|E|\)</span></li>
+<li>row sum = column sum</li>
+</ul>
+</section>
+<section id="adjacency-list" class="slide level2">
+<h2>Adjacency List</h2>
+<ul>
+<li><span class="math inline">\(v\)</span> is <strong>adjacent</strong> to <span class="math inline">\(w\)</span> if they share an edge.</li>
+<li>Adjacency list for <span class="math inline">\(v\)</span>: list of vertices adjacent to <span class="math inline">\(v\)</span></li>
+<li>Adjacency list representation of <span class="math inline">\(G\)</span>: table of all adjacency lists</li>
+</ul>
+</section>
+<section id="example-1" class="slide level2">
+<h2>Example</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="star_graph.png" alt="Star Graph" /><br />
+</p>
+</div><div class="column" style="width:60%;">
+<p>Adjacency List:</p>
+<ul>
+<li><span class="math inline">\(v_1\)</span>: <span class="math inline">\(v_2\)</span></li>
+<li><span class="math inline">\(v_2\)</span>: <span class="math inline">\(v_1, v_3, v_4\)</span></li>
+<li><span class="math inline">\(v_3\)</span>: <span class="math inline">\(v_2\)</span></li>
+<li><span class="math inline">\(v_4\)</span>: <span class="math inline">\(v_3\)</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="adjacency-matrix" class="slide level2">
+<h2>Adjacency Matrix</h2>
+<ul>
+<li>Rows / columns are vertices</li>
+<li>Entry <span class="math inline">\((i, j)\)</span> has a 1 iff edge between <span class="math inline">\(v_i, v_j\)</span>.</li>
+</ul>
+<p>Example:</p>
+<p><span class="math display">\[
+\begin{array}{c|c|c|c|c}
+&amp; v_1 &amp; v_2 &amp; v_3 &amp; v_4 \\
+v_1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+v_2 &amp; 1 &amp; 0 &amp; 1 &amp; 1 \\
+v_3 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+v_4 &amp; 0 &amp; 1 &amp; 0 &amp; 0
+\end{array}
+\]</span></p>
+</section></section>
+<section>
+<section id="isomorphism" class="title-slide slide level1">
+<h1>Isomorphism</h1>
+<p>In what ways are the following graphs similar? In what ways are they different?</p>
+<p><img data-src="isomorphic_star.png" alt="Three drawings of the same graph" /><br />
+</p>
+</section>
+<section id="definition" class="slide level2">
+<h2>Definition</h2>
+<p>Let <span class="math inline">\(G = (V_G, E_G)\)</span> and <span class="math inline">\(H = (V_H, E_H)\)</span> be two undirected graphs. Then <span class="math inline">\(G\)</span> and <span class="math inline">\(H\)</span> are <strong>isomorphic</strong> if there is <span class="math inline">\(f : V_G \to V_H\)</span> such that for all <span class="math inline">\(u, v \in V_G\)</span>, the number of edges between <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> is the same as the number of edges between <span class="math inline">\(f(u)\)</span> and <span class="math inline">\(f(v)\)</span>.</p>
+<p><span class="math inline">\(f\)</span> is called an <strong>isomorphism</strong> from <span class="math inline">\(G\)</span> to <span class="math inline">\(H\)</span>.</p>
+<ul>
+<li>“iso”: same</li>
+<li>“morph”: form</li>
+</ul>
+</section>
+<section id="simple-graphs" class="slide level2">
+<h2>Simple graphs</h2>
+<p>Two <strong>simple</strong> undirected graphs <span class="math inline">\(G\)</span> and <span class="math inline">\(H\)</span> are isomorphic if there is a bijection <span class="math inline">\(f : V_G \to V_H\)</span> such that <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> are adjacent (in <span class="math inline">\(G\)</span>) if and only if <span class="math inline">\(f(u)\)</span> and <span class="math inline">\(f(v)\)</span> are adjacent (in <span class="math inline">\(H\)</span>).</p>
+<p><img data-src="isomorphic_graph2.png" alt="Simple isomorphism" /><br />
+</p>
+</section>
+<section id="example-2" class="slide level2">
+<h2>Example</h2>
+<p><img data-src="ex1.png" alt="K3,3 and ML3" /><br />
+</p>
+<p>Are these graphs isomorphic?</p>
+</section>
+<section id="example-3" class="slide level2">
+<h2>Example</h2>
+<p><img data-src="ex2.png" alt="K3,3 and CL3" /><br />
+</p>
+<p>Are these graphs isomorphic?</p>
+</section>
+<section id="example-4" class="slide level2">
+<h2>Example</h2>
+<p><img data-src="ex3.png" alt="Two similar graphs" /><br />
+</p>
+<p>Are these graphs isomorphic?</p>
+</section>
+<section id="example-5" class="slide level2">
+<h2>Example</h2>
+<p><img data-src="ex4.png" alt="Hard to tell" /><br />
+</p>
+</section>
+<section id="structure" class="slide level2">
+<h2>Structure</h2>
+<p>Look for <strong>isomorphism invariants</strong>:</p>
+<ul>
+<li>Number of vertices / edges</li>
+<li>Degree sequence</li>
+<li>Cycles of length <span class="math inline">\(n\)</span></li>
+<li>Connectivity (more later)</li>
+<li>Colorability</li>
+<li>Complement graph</li>
+</ul>
+<p>Isomorphic graphs have the same properties. But none of these <em>imply</em> isomorphism!</p>
+</section>
+<section id="concept" class="slide level2">
+<h2>Concept</h2>
+<ul>
+<li>Isomorphic graphs are <strong>the same</strong> graph, structurally.</li>
+<li>Different representations of the same thing.</li>
+<li>Different names for vertices</li>
+<li>Different order of vertices.</li>
+<li>But they represent the same, underlying concept.</li>
+</ul>
+</section>
+<section id="automorphisms" class="slide level2">
+<h2>Automorphisms</h2>
+<ul>
+<li>Let <span class="math inline">\(G = (V, E)\)</span>. An <strong>automorphism</strong> of <span class="math inline">\(G\)</span> is an isomorphism from <span class="math inline">\(G\)</span> to itself.</li>
+<li>Every graph has at least one: the identity.
+<ul>
+<li><span class="math inline">\(id : V \to V\)</span> given by <span class="math inline">\(id(v) = v\)</span>.</li>
+</ul></li>
+<li>A kind of “symmetry”.</li>
+</ul>
+</section>
+<section id="symmetries-of-s_3" class="slide level2">
+<h2>Symmetries of S_3</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="symmetries.jpeg" alt="Symmetries of S3" /><br />
+</p>
+</div><div class="column" style="width:60%;">
+<p>Symmetries of <span class="math inline">\(S_3\)</span>, the “star graph”:</p>
+<ul>
+<li>3 rotations (including identity), 3 reflections</li>
+<li>Or: <span class="math inline">\(3! = 6\)</span> permutations of 3 objects
+<ul>
+<li>Keep the center fixed, and permute the other 3.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="rigid" class="slide level2">
+<h2>Rigid</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="asymmetric.png" alt="Asymmetric graph" /><br />
+</p>
+</div><div class="column" style="width:60%;">
+<p>How many automorphisms?</p>
+<ul>
+<li>Must not move vertex 0 (Why not?).</li>
+<li>Must not move vertex 1 (Why not?).</li>
+<li>Vertices 2 and 3?</li>
+</ul>
+</div>
+</div>
+</section></section>
+<section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Connectivity</li>
+<li>Planarity</li>
+<li>Coloring</li>
+<li>Trees</li>
+</ul>
+</section>
+<section id="deadlines" class="slide level2">
+<h2>Deadlines</h2>
+<ul>
+<li>Problem Set 5: due tomorrow</li>
+<li>Problem Set 6: given Thursday, due next Friday (12/11)</li>
+<li>Final Project:
+<ul>
+<li>Pick a topic by Friday (12/4)</li>
+<li>Presentation 12/ 0 (Zoom or asynchronous)</li>
+<li>Paper due 12/18</li>
+</ul></li>
+<li>Final Exam: given 12/10, due 12/17
+<ul>
+<li>Possible extra help during finals week.</li>
+</ul></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
