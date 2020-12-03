@@ -149,7 +149,7 @@ No matter how we draw this graph, we have a 4 cycle 0-1-2-3, and so let's draw t
 
 Then vertex 4 is either on the inside or outside of the cycle. It actually makes no difference, the argument will work either way, so let's draw it on the inside.
 
-<img class="noreverse" src="k33_cycle_v4" alt="added vertex 4" />
+<img class="noreverse" src="k33_cycle_v4.jpeg" alt="added vertex 4" />
 
 Notice we now have three regions that we could possibly put vertex 5 in. I've labeled these A, B, and C. Consider each of the cases:
 
