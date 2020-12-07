@@ -27,3 +27,5 @@ lang: en-US
 * [Lesson 18: Partial Orders](lesson18.html)
 * [Lesson 19: Intro to Graph Theory](lesson19.html)
 * [Lesson 20: Graph Representations and Isomorphisms](lesson20.html)
+* [Lesson 21: Connectivity and Planarity](lesson21.html)
+* [Lesson 22: Coloring and Trees](lesson22.html)
