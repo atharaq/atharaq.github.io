@@ -119,7 +119,7 @@ This is a fascinating problem in the history of graph theory. Francis Guthrie, i
 
 It turns out that this is equivalent to a graph theory question: given a map, we can turn it into a graph by making a vertex for each region, and edges between vertices if the corresponding regions share a border on the map.
 
-![Maps to Graphs](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Four_Colour_Planar_Graph.svg/320px-Four_Colour_Planar_Graph.svg.png)
+![Maps to Graphs](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Four_Colour_Planar_Graph.svg/400px-Four_Colour_Planar_Graph.svg.png)
 
 So the conjecture can be stated in two ways:
 
