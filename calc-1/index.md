@@ -26,3 +26,4 @@ layout: default
 * [Lesson 19: Definite Integrals and the Fundamental Theorem of Calculus](lesson19.html)
 * [Lesson 20: Integration by Substitution](lesson20.html)
 * [Lesson 21: Substitution with Definite Integrals](lesson21.html)
+* [Lesson 22: Review](lesson22.html)
