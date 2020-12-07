@@ -39,6 +39,7 @@ We can break this down further.
 * Given a differentiable function, determine its maxima, minima, points of inflection, intervals where it is increasing, decreasing, concave up / down
 * Use the Mean Value Theorem to prove facts about derivatives
 * Optimization Problems (find the maximum area given a perimeter, find the shortest path in a run/swim problem, etc)
+* Putting derivatives (and second derivatives) in context: analyzing graphs of real-world data (ie incarceration rates / climate change / other current events data).
 
 # Integration
 
