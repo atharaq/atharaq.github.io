@@ -1,6 +1,6 @@
 ---
 layout: page
-title: MAT 3120: Discrete Mathematics
+title: MAT 1540: Computer Scinece II
 lang: en-US
 ---
 
