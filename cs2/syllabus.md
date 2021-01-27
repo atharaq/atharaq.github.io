@@ -102,7 +102,7 @@ I understand that this is a challenging and stressful time. Please check the [Co
 
 Synchronous meetings are noted below
 
-| Week | Topics | Readings |
+| Week | Topics | Readings / Projects |
 | ---- | ------ | -------- |
 | 1 (2/1) | Introduction and Basic Data Types | Chapters 1 - 2 |
 | 2 (2/8) | Input / Output, Control Flow | Chapters 3, 5-6 |
@@ -116,7 +116,7 @@ Synchronous meetings are noted below
 | 10 (4/5) | Exam 2 Review | Exam 2 take home (Project 3 assigned) |
 | 11 (4/12) | Algorithms, pseudocode, searching algorithms | Supplements |
 | 12 (4/19) | Searching and Sorting Algorithms | (Project 3 due)
-| 13 (4/26) | Intro to Data Structures | (Project 4 assigned |
+| 13 (4/26) | Intro to Data Structures | (Project 4 assigned) |
 | 14 (no class) | Review | 
 | 15 (5/10) | Review | Project 4 due |
 
