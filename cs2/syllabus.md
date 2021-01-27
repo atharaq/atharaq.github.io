@@ -22,7 +22,7 @@ Due to the nature of this semester, please note that the syllabus is subject to 
 
 ## Course Description
 
-**Prerequisite**: Computer Science I
+**Prerequisite**: Computer Science I  
 This course provides a continuation of Computer Science I. The course emphasizes programming as a basis for the study of computers. While programming is the main focus, the course will afford us the opportunity to introduce other concepts central to the field including data representation, object-oriented design, algorithms, recursion, Boolean logic and some data structures. We will be studying the Java programming language.
 
 ## Learning Outcomes
