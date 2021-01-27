@@ -20,7 +20,7 @@ Due to the nature of this semester, please note that the syllabus is subject to 
 
 ## Course Description
 
-**Prerequisite**: Computer Science II
+**Prerequisite**: Computer Science II  
 Covers standard data structures (e.g., lists, stacks, heaps) and object¬-oriented algorithms important to software development. Tradeoffs between time and space are examined. Includes programming as well as theoretical assignments. Examples are often taken from technical interview-style questions.
 
 ## Learning Outcomes
