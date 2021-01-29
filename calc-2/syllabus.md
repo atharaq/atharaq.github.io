@@ -39,13 +39,28 @@ Upon completion of this course, students should be able to...
 
 [*Calculus Volume 2* by Edwin Herman and Gilbert Strang](https://openstax.org/details/books/calculus-volume-2)
 
-## MyOpenMath 
+## Required Software
 
-....
+For written homework assignments, students will need to use either a scanner app or a scanner to create a single PDF of all of their work and upload the work to Moodle. There are several good scanner apps available for Android and iOS devices:
+Scannable (iOS)
+Genius Scan (Android / iOS)
+CamScanner (Android / iOS)
 
-## Discord Server
+## Zoom
 
-...
+We will be using Zoom for our synchronous lessons, as well as office hours and meetings. You may need to download it the first time we use it.
+
+## MyOpenMath Online Homework
+
+We will be using the [MyOpenMath](https://www.myopenmath.com) website for online homework. Please register ASAP using the Course ID and Enrollment Key provided on **Moodle**. Make sure to use your name and Purchase College email address.
+
+### Discord Server
+
+In some of my other courses, students found that using a DIscord server to chat remotely about homework assignments and lectures was very helpful. I encourage you all to join our Discord server this year. Orion and I will monitor the chat from time to time to help answer questions, but you all should join so you can work with each other!
+
+## Calculator Policy
+
+A graphing calculator is required for this course. You are welcome to use online calculators like [Desmos](https://www.desmos.com). If you would like an actual calculator, I recommend getting a TI-83+ or TI-84+. Unless otherwise specified, calculators are allowed for all assignments, including exams and quizzes.
 
 ## Attendance
 
