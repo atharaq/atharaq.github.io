@@ -22,17 +22,22 @@ Due to the nature of this semester, please note that the syllabus is subject to 
 
 ## Course Description
 
-...
+**Prerequisite: Calculus I**  
+A continuation of MAT 1500. Topics include differentiation and integration of logarithmic, exponential, and inverse trigonometric functions; techniques of integration; arc length; infinite series; and improper integrals. Applications include work, growth, and decay problems and volumes of solids of revolution.
 
 ## Learning Outcomes
 
 Upon completion of this course, students should be able to...
 
-...
+* Interpret the definite integral as the area under the curve and be able to solve applications problems involving integration
+* Understand techniques of integration including substitution, integration by parts, partial fractions, and trigonometric substitution
+* Model 2-dimensional motion using parametric equations and polar coordinates
+* Understand convergence of sequences and series
+* Use Taylor series to approximate transcendental functions by polynomials
 
 ## Required Textbook
 
-...
+[*Calculus Volume 2* by Edwin Herman and Gilbert Strang](https://openstax.org/details/books/calculus-volume-2)
 
 ## MyOpenMath 
 
@@ -48,11 +53,15 @@ Attendance at all classes is required. You are allowed **three** absences. After
 
 ## Grading Policy
 
-...
+* 30% Written Homeworks (8-10 assignments), quizzes, and class participation
+* 20% Online homework
+* 20% Problem Presentations (4-6 **short** explanations of a homework / exam / other challenging problem)
+* 15% Mid-semester exams (3 exams during the semester, all open-book / notes / untimed)
+* 15% Final Exam (open-book / notes / untimed)
 
 ## Late Homework Policy
 
-...
+Being absent the day that homework is assigned, or the day that it is due, is not an excuse for being late with your homework. If you miss a class, you are expected to email any work that is due that day. I reserve the right to not accept homework assignments late, or to penalize such submissions. In the past, I have given a 50% penalty for late homework assignments.
 
 ## Collaboration Policy
 
@@ -76,19 +85,19 @@ Synchronous meetings are noted below
 
 | Week | Topics | Readings |
 | ---- | ------ | -------- |
-| 1 (2/4) | ... | ... |
-| 2 (2/11) | ... | ... |
-| 3 (2/18) | .. | .. |
-| 4 (2/25) | .. | .. |
-| 5 (3/4) | .. | .. |
-| 6 (3/11) | .. | .. |
-| 7 (3/18) | .. | .. |
-| 8 (3/25) | .. | .. |
-| 9 (4/1) | .. | .. |
-| 10 (4/8) | .. | .. |
-| 11 (4/15) | .. | .. |
-| 12 (4/22) | .. | .. |
-| 13 (4/29) | .. | .. |
+| 1 (2/4) | Review of real numbers, functions, inverses, definite integrals and the fundamental theorem of calculus | 1.1 - 1.5 |
+| 2 (2/11) | Substitution, Exponential/Logarithmic functions, inverse trigonometric functions | 1.5 - 1.7 |
+| 3 (2/18) | Inverse Trig functions, Integration by Parts, Trig Integrals, Trig Substitution (if time)  | 3.1 - 3.3 |
+| 4 (2/25) | Partial Fractions, Applications | 3.4, 2.6-2.7 |
+| 5 (3/4) | Review / Exam 1, Improper integrals| Exam 1, 3.7  |
+| 6 (3/11) | Areas between curves, Volumes | 2.1 - 2.2 |
+| 7 (3/18) | Volumes, Arc Length | 2.2 - 2.4 |
+| 8 (3/25) | Differential Equations | 4.1 - 4.5 |
+| 9 (4/1) | Parametric Equations | 7.1 - 7.2 |
+| 10 (4/8) | Exam 2; Intro to polar | Exam 2; 7.3 |
+| 11 (4/15) | Polar coordinates; Intro to sequences / series | 7.3 - 7.4, 5.1 - 5.2|
+| 12 (4/22) | Tests for convergence / divergence: Divergence, Integral, Comparison, Alternating Series, Ratio Tests | 5.3 - 5.6 |
+| 13 (4/29) | Power Series / Taylor Series | 6.1 - 6.4 |
 | 14 (5/6) | Review | |
 
 This is very much subject to change, particularly due to the hybrid nature of our class. Much of the content will be taught via asynchronously, so please be sure to come to each synchronous meeting prepared.
