@@ -76,6 +76,7 @@ Attendance at all classes is required. You are allowed **three** absences. After
 ## Grading Policy
 
 * 30% Written Homeworks (8-10 assignments), quizzes, and class participation
+   * **Note**: This includes *completion of asynchronous activities*!
 * 20% Online homework
 * 20% Problem Presentations (4-6 **short** explanations of a homework / exam / other challenging problem)
 * 15% Mid-semester exams (3 exams during the semester, all open-book / notes / untimed)
