@@ -29,10 +29,17 @@ A continuation of MAT 1500. Topics include differentiation and integration of lo
 
 Upon completion of this course, students should be able to...
 
-* Interpret the definite integral as the area under the curve and be able to solve applications problems involving integration
-* Understand techniques of integration including substitution, integration by parts, partial fractions, and trigonometric substitution
+* Use basic derivative facts to compute antiderivatives and definite integrals
+* Evaluate various integration techniques and apply them to definite and indefinite integrals
+* Solve problems in a range of applications using integration, including:
+  * Acceleration problems
+  * Finding centroids of regions
+  * Areas between curves
+  * Volumes of solids of revolution
+  * Arc Lengths of curves defined by functions
 * Model 2-dimensional motion using parametric equations and polar coordinates
-* Understand convergence of sequences and series
+* Calculate areas and arc lengths of curves given by parametric equations
+* Use convergence tests to determine if an infinite series sums to a finite quantity
 * Use Taylor series to approximate transcendental functions by polynomials
 
 ## Required Textbook
@@ -42,9 +49,9 @@ Upon completion of this course, students should be able to...
 ## Required Software
 
 For written homework assignments, students will need to use either a scanner app or a scanner to create a single PDF of all of their work and upload the work to Moodle. There are several good scanner apps available for Android and iOS devices:
-Scannable (iOS)
-Genius Scan (Android / iOS)
-CamScanner (Android / iOS)
+* Scannable (iOS)
+* Genius Scan (Android / iOS)
+* CamScanner (Android / iOS)
 
 ## Zoom
 
