@@ -30,7 +30,7 @@ A continuation of MAT 1500. Topics include differentiation and integration of lo
 Upon completion of this course, students should be able to...
 
 * Use basic derivative facts to compute antiderivatives and definite integrals
-* Evaluate various integration techniques and apply them to definite and indefinite integrals
+* Comptue definite and indefinite integrals by choosing appropriate integration techniques
 * Solve problems in a range of applications using integration, including:
   * Acceleration problems
   * Finding centroids of regions
