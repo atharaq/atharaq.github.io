@@ -116,11 +116,11 @@ Synchronous meetings are noted below
 | 6 (3/11) | Areas between curves, Volumes | 2.1 - 2.2 |
 | 7 (3/18) | Volumes, Arc Length | 2.2 - 2.4 |
 | 8 (3/25) | Differential Equations | 4.1 - 4.5 |
-| 9 (4/1) | Parametric Equations | 7.1 - 7.2 |
-| 10 (4/8) | Exam 2; Intro to polar | Exam 2; 7.3 |
+| 9 (4/1) | Exam 2; Parametric Equations | Exam 2; 7.1 |
+| 10 (4/8) | Parametric Equations and polar coordinates | 7.1 - 7.4 |
 | 11 (4/15) | Polar coordinates; Intro to sequences / series | 7.3 - 7.4, 5.1 - 5.2|
 | 12 (4/22) | Tests for convergence / divergence: Divergence, Integral, Comparison, Alternating Series, Ratio Tests | 5.3 - 5.6 |
-| 13 (4/29) | Power Series / Taylor Series / Exam 3 | 6.1 - 6.4 |
+| 13 (4/29) | Power Series / Taylor Series / Exam 3 | Exam 3; 6.1 - 6.4 |
 | 14 (5/6) | Review | |
 
 This is very much subject to change, particularly due to the hybrid nature of our class. Much of the content will be taught via asynchronously, so please be sure to come to each synchronous meeting prepared.
