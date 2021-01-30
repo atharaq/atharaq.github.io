@@ -53,11 +53,11 @@ For written homework assignments, students will need to use either a scanner app
 * Genius Scan (Android / iOS)
 * CamScanner (Android / iOS)
 
-## Zoom
+### Zoom
 
 We will be using Zoom for our synchronous lessons, as well as office hours and meetings. You may need to download it the first time we use it.
 
-## MyOpenMath Online Homework
+### MyOpenMath Online Homework
 
 We will be using the [MyOpenMath](https://www.myopenmath.com) website for online homework. Please register ASAP using the Course ID and Enrollment Key provided on **Moodle**. Make sure to use your name and Purchase College email address.
 
