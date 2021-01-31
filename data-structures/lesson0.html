@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-02-01">
+  <title>Data Structures</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">1 February 2021</p>
+</section>
+
+<section>
+<section id="welcome" class="title-slide slide level1">
+<h1>Welcome!</h1>
+<ul>
+<li>Call me “Athar” or “Professor Abdul-Quader”</li>
+<li>He / him</li>
+<li>CS + math undergrad, math PhD</li>
+<li>Software experience</li>
+<li>You? Name / year at Purchase / CS + math interests / why are you taking this course?</li>
+</ul>
+</section>
+<section id="course-expectations" class="slide level2">
+<h2>Course Expectations</h2>
+<ul>
+<li>“Online combined” format.</li>
+<li>Asynchronous “lectures” (usually posted Thursdays)
+<ul>
+<li>Readings, videos, etc.</li>
+</ul></li>
+<li>Synchronous “problem sessions” (Mondays, 2:30)
+<ul>
+<li>Come to class prepared: work on as much as you can before class.</li>
+<li>Stuck on something? Don’t understand?</li>
+<li>Flip side: share what you know!</li>
+</ul></li>
+<li>Get help: Discord, office hours, synchronous meetings, email.</li>
+</ul>
+</section>
+<section id="textbook-software" class="slide level2">
+<h2>Textbook / Software</h2>
+<ul>
+<li><a href="https://people.cs.vt.edu/shaffer/Book/JAVA3elatest.pdf">Shaffer, Data Structures and Algorithm Analysis</a> (2013)</li>
+<li><a href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/">OpenDSA CS3</a></li>
+<li>Recommended, not required: <a href="https://smile.amazon.com/dp/0132576279/ref=cm_sw_r_tw_dp_CH9668B62WMQ0XCZ552P">Weiss, Data Structures and Algorithm Analysis in Java</a></li>
+<li>Install Java: <a href="https://www.oracle.com/java/technologies/javase-downloads.html">Oracle JDK</a></li>
+<li>Install IntelliJ: <a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a> Ultimate Edition
+<ul>
+<li><a href="https://www.jetbrains.com/shop/eform/students">Apply for a free license</a> using your purchase.edu email</li>
+</ul></li>
+<li>Sign up for <a href="https://codingrooms.com/">CodingRooms</a>
+<ul>
+<li>Join link / join code on Moodle + later today.</li>
+</ul></li>
+</ul>
+</section>
+<section id="grading" class="slide level2">
+<h2>Grading</h2>
+<ul>
+<li>30% Programming Projects (3 x 10%)</li>
+<li>20% Homework assignments (4-5)</li>
+<li>10% quizzes, class exercises, class participation</li>
+<li>20% Presentations (4-5 throughout the semester)</li>
+<li>20% Final Project (likely in groups or pairs)</li>
+</ul>
+</section></section>
+<section>
+<section id="big-oh-activity" class="title-slide slide level1">
+<h1>Big Oh Activity</h1>
+<p><a href="https://student.desmos.com/join/hwndfv">Desmos Big Oh Activity</a></p>
+</section>
+<section id="some-big-oh-relationships" class="slide level2">
+<h2>Some Big Oh Relationships</h2>
+<ul>
+<li><span class="math inline">\(n = O(n^2)\)</span></li>
+<li><span class="math inline">\(n^2 = O(n^3)\)</span></li>
+<li><span class="math inline">\(\log_2(n) = O(\log_3(n)) = O(\ln(n))\)</span>: “logarithmic time”</li>
+<li><span class="math inline">\(n^k = O(2^n)\)</span> for any constant <span class="math inline">\(k\)</span></li>
+<li>Algorithms that run in <span class="math inline">\(O(n)\)</span> steps: “linear time”</li>
+<li><span class="math inline">\(O(n^2)\)</span>: “quadratic”</li>
+<li><span class="math inline">\(O(n^k)\)</span>: “polynomial”</li>
+<li><span class="math inline">\(O(2^n)\)</span>: “exponential”</li>
+<li><span class="math inline">\(O(1)\)</span>: “constant”</li>
+</ul>
+</section>
+<section id="big-oh-cheat-sheet" class="slide level2">
+<h2>Big Oh Cheat Sheet</h2>
+<pre ><code class="java">for (int i = 0; i &lt; n; i++) {
+  for (int j = 0; j &lt; n; j++) {
+    // O(1) stuff happening here
+    ...
+  }
+}</code></pre>
+<ul>
+<li>The above snippet runs in <span class="math inline">\(O(n^2)\)</span> time.</li>
+<li>What would something that runs in <span class="math inline">\(O(n)\)</span> look like?</li>
+<li><span class="math inline">\(O(\log(n))\)</span>?</li>
+</ul>
+</section></section>
+<section>
+<section id="data-structures" class="title-slide slide level1">
+<h1>Data Structures</h1>
+<ul>
+<li>What are data structures?</li>
+<li>This course is often titled “Data Structures and Algorithms”. Why?</li>
+<li>Why are data structures emphasized on technical interviews?</li>
+</ul>
+</section>
+<section id="data-structures-1" class="slide level2">
+<h2>Data Structures</h2>
+<ul>
+<li>A <strong>data structure</strong> is a way of organizing data in memory.</li>
+<li>Often: problems can be simplified by using the right data structure.</li>
+<li>Ex: arrays. Built in to the Java language.</li>
+<li>Ex: ArrayList. Defined int he standard library.</li>
+</ul>
+<pre ><code class="java">int[] arrayofInts = new int[10];
+ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();</code></pre>
+<ul>
+<li>Both: <strong>random-access</strong> list of data (in this case, integers).</li>
+<li>What is different about these two data structures?</li>
+</ul>
+</section></section>
+<section id="review-java-oop" class="title-slide slide level1">
+<h1>Review: Java / OOP</h1>
+<ul>
+<li>
+Java code is organized into <span class="fragment"><strong>classes</strong>.</span>
+</li>
+<li class="fragment">
+A class represents a data type. An instance of a class is called an <span class="fragment"><strong>object</strong>.</span>
+</li>
+<li class="fragment">
+A class describes the <strong>state</strong> (using instance variables) and <strong>behavior</strong> (instance methods) of a data type.
+</li>
+<li class="fragment">
+Classes can extend other classes (<strong>inheritance</strong>), or simply use other classes (<strong>composition</strong>).
+</li>
+<li class="fragment">
+Code goes into the methods of your class. This describes how objects of that type interact with other objects in the program.
+</li>
+</ul>
+</section>
+
+<section>
+<section id="exercise-if-time" class="title-slide slide level1">
+<h1>Exercise (if time)</h1>
+<p><strong>Problem</strong>: Given a set of (orderable) data, find the <span class="math inline">\(i\)</span>-th smallest element of the set. For example: if i = 0, then you must find the smallest element. If i = 1, find the second smallest. Your solution should be general and work for all valid i.</p>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<ul>
+<li>Join <a href="https://app.codingrooms.com/management/courses/join-by-code/8rcqYwPG">CodingRooms</a>: create a free student account</li>
+<li>Join our <a href="https://app.codingrooms.com/c-join/c/D1n32BW8Gch8">live class</a>.</li>
+<li>Breakout rooms (pairs)</li>
+<li>Implement a data structure which solves the selection problem.
+<ul>
+<li>Use the main method provided.</li>
+<li>Implement the “add” method (first attempt) and a stub for the “select” method for now.</li>
+<li>Implement “printList”.</li>
+<li>Hint: <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/ArrayList.html">ArrayList</a> is your friend.</li>
+</ul></li>
+</ul>
+</section>
+<section id="running-times" class="slide level2">
+<h2>Running times?</h2>
+<p>Determine the running time of your “add” and “select” methods. Let’s discuss our solutions as a class and see what running times we can get.</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
