@@ -58,11 +58,13 @@ All programming assignments will be completed in Java. You will need:
 
 ## CodingRooms
 
-Join link...
+We will be using [CodingRooms](https://codingrooms.com/) for sharing live code / in class exercises and perhaps some homework assignments. Sign up information is available on Moodle.
 
 ## Discord Server
 
-Last year, students found that using a DIscord server to chat remotely about projects and the coursework was very helpful. I encourage you all to join our Discord server this year. Solomon and I will monitor the chat from time to time to help answer questions, but you all should join so you can work with each other!
+Last year, students found that using a Discord server to chat remotely about projects and the coursework was very helpful. I encourage you all to join our Discord server this year. Solomon and I will monitor the chat from time to time to help answer questions, but you all should join so you can work with each other!
+
+The link to the Discord server will be available on Moodle.
 
 ## Attendance
 
@@ -117,7 +119,7 @@ Synchronous meetings are noted below
 | 11 (4/12) | Algorithms, pseudocode, searching algorithms | Supplements |
 | 12 (4/19) | Searching and Sorting Algorithms | (Project 3 due)
 | 13 (4/26) | Intro to Data Structures | (Project 4 assigned) |
-| 14 (no class) | Review | 
+| 14 (no class) | Review |
 | 15 (5/10) | Review | Project 4 due |
 
 This is very much subject to change, particularly due to the hybrid nature of our class. Much of the content will be taught via asynchronously, so please be sure to come to each synchronous meeting prepared.
