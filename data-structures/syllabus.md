@@ -52,11 +52,13 @@ All programming assignments will be completed in Java. You will need:
 
 ## CodingRooms
 
-Join link...
+We will be using [CodingRooms](https://codingrooms.com/) for sharing live code / in class exercises. Sign up information is available on Moodle.
 
 ## Discord Server
 
 I encourage you all to join our Discord server this year. I will monitor the chat from time to time to help answer questions, but you all should join so you can work with each other!
+
+Sign up information will be available on Moodle.
 
 ## Attendance
 
@@ -107,7 +109,7 @@ Synchronous meetings are noted below.
 | 11 (4/12) | Concurrency / Concurrent Data Structures | Supplements |
 | 12 (4/19) | Dynamic Programming | Chapter 16 |
 | 13 (4/26) | Project Work |  |
-| 14 (no class) | | 
+| 14 (no class) | |
 | 15 (5/10) | Project Presentations | |
 
 This is very much subject to change, particularly due to the hybrid nature of our class. Much of the content will be delivered asynchronously via notes and lectures, while we can spend time in class examining code. Please be sure to come to each synchronous meeting prepared.
