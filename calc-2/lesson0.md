@@ -45,7 +45,7 @@ If you need a refresher on any of the information above, there are many resource
 
 Your first assignment is due on Moodle **before class on Thursday**:
 
-1. We saw, in class, that there are sequences of rational numbers whose limit is not rational. Is there a sequence of integers whose limit is not an integer? Explain why or why not.
+1. We saw, in the Desmos activity, that there are sequences of rational numbers whose limit is not rational. Is there a sequence of integers whose limit is not an integer? Explain why or why not.
 2. Give an explanation, in English, of the meaning of a derivative of a function. (You may use graphs or pictures to supplement your explanation. Feel free to use [Desmos](https://www.desmos.com/) to make graphs if you need them.)
 3. Give an explanation, in English, of the meaning of the definite integral of a function. (You may use graphs or pictures to supplement your explanation.)
 4. Suppose f(x) is an odd function: that means, for every x, $f(-x) = -f(x)$. (For example, look at the [graph](https://www.desmos.com/calculator/cnledtgpoq) of $f(x) = \sin(x)$). Explain why, for any real number a, $\int\limits_{-a}^a f(x) dx = 0$. Again, you may use pictures/graphs to supplement your explanation.
