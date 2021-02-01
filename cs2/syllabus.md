@@ -7,7 +7,7 @@ Spring 2021
 
 **Instructor**: Professor Abdul-Quader (or just "Athar")  
 **Email**: athar.abdulquader AT purchase DOT edu  
-**Office Hours** via Zoom (link on Moodle): Thursdays TBA  
+**Office Hours** via Zoom (link on Moodle): Tuesdays 12 - 1:30, Fridays 10:30 - 12
 **Learning Assistant**: Solomon Falls (solomon.falls AT purchase DOT edu)  
 Solomon will post his office hours on Moodle  
 **Course Format**: Online combined (synchronous and asynchronous)  
@@ -30,7 +30,7 @@ This course provides a continuation of Computer Science I. The course emphasizes
 Upon completion of this course, students should be able to...
 
 * Understand basic features Java syntax and object-oriented programming including:
-  * variables 
+  * variables
   * conditionals
   * loops
   * Strings and arrays
@@ -40,7 +40,7 @@ Upon completion of this course, students should be able to...
   * inheritence
   * encapsulation
 * Design complex programs using some of the basic Java syntax to solve problems algorithmically
-* Read code snippets and determine what problem they are solving, as well as how the code solves said problem 
+* Read code snippets and determine what problem they are solving, as well as how the code solves said problem
 * Use modular design and object-oriented concepts to create clean solutions to large problems
 * Design algorithmic solutions to problems and analyze their efficiency
 
