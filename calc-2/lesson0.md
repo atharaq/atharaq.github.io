@@ -10,7 +10,7 @@
   <iframe src="https://www.youtube.com/embed/xUEItYzpAEQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-Welcome to Calculus 2! Please watch my welcome video above, where I go over the course expectations, grading rubric, and other "first day" housekeeping information.
+Welcome to Calculus 2! Please watch my welcome video above, where I go over the course expectations, grading rubric, and other "first day" housekeeping information. [You can find my slides here.](lec0.html)
 
 # Desmos Activity
 
