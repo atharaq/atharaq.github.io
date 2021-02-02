@@ -7,7 +7,7 @@ Spring 2021
 
 **Instructor**: Professor Abdul-Quader (or just "Athar")  
 **Email**: athar.abdulquader AT purchase DOT edu  
-**Office Hours** via Zoom (link on Moodle): Tuesdays 12 - 1:30, Fridays 10:30 - 12  
+**Office Hours** via Zoom (link on Moodle): Tuesdays 12 - 1:30, Fridays 10 - 11:30  
 **Learning Assistant**: Orion Watler (orion.watler AT purchase DOT edu)  
 Orion will post his office hours on Moodle  
 **Course Format**: Online combined (synchronous and asynchronous)  
