@@ -93,6 +93,7 @@ Give up?
 ```java
 public static <T> boolean contains(T[] array, T value)
 ```
+
 </details>
 
 The T needs to be declared somewhere. The Java specification demands that the type parameters be declared *before* the return type of the method. This is referred to as a **generic method**.
