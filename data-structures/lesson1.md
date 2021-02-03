@@ -194,7 +194,7 @@ Does this compile? Does this run?
 
 Generics were introduced as a way to fix this problem: now run-time errors become compile-time errors. That is: the Java language designers wanted to limit the ability for errors to be missed by the compiler, but then crash your program. Instead, just don't let the program even compile.
 
-In Java, though, the fix was a bit of a half-measure. When you compile a class like **MyList<T>**, it creates just a single **raw type**, rather than one for each possible type parameter T. That is: it just becomes **MyList** (the compiler replaces the parameter T by its “bound”, Object in this case). This process is referred to as **type erasure**.
+In Java, though, the fix was a bit of a half-measure. When you compile a class like **MyList\<T>**, it creates just a single **raw type**, rather than one for each possible type parameter T. That is: it just becomes **MyList** (the compiler replaces the parameter T by its “bound”, Object in this case). This process is referred to as **type erasure**.
 
 After the class is compiled to bytecode, the "JVM"-version of the class is the raw type (with no generics). This means:
 
