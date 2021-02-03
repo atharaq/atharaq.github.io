@@ -201,9 +201,9 @@ After the class is compiled to bytecode, the "JVM"-version of the class is the r
 * Primitive types cannot be used as type parameters, since **int** does not inherit from **Object**, for example.
 * Casts can cause problems:
 ```java
-ReadWriteCell<String> rws = new ReadWriteCell<>(); rws.write("Hello");
-ReadWriteCell<Integer> rwi = (ReadWriteCell<Integer>)
-rws; // this works!
+ReadWriteCell<String> rws = new ReadWriteCell<>(); 
+rws.write("Hello");
+ReadWriteCell<Integer> rwi = (ReadWriteCell<Integer>) rws; // this works!
 int x = rwi.read(); // this is bad
 ```
 * You cannot instantiate a generic type! That is, you cannot do something like
