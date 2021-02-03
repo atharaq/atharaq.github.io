@@ -88,14 +88,12 @@ On your own (whether in a CodingRooms workspace or in IntelliJ on your own compu
 Give up?
 
 <details>
-  <summary markdown="span">
+  <summary>
     Spoilers
   </summary>
 
-```java
-public static <T> boolean contains(T[] array, T value)
-```
-
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="kt">boolean</span> <span class="nf">contains</span><span class="o">(</span><span class="no">T</span><span class="o">[]</span> <span class="n">array</span><span class="o">,</span> <span class="no">T</span> <span class="n">value</span><span class="o">)</span>
+</code></pre></div>    </div>
 </details>
 
 The T needs to be declared somewhere. The Java specification demands that the type parameters be declared *before* the return type of the method. This is referred to as a **generic method**.
