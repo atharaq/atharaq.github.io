@@ -88,7 +88,9 @@ On your own (whether in a CodingRooms workspace or in IntelliJ on your own compu
 Give up?
 
 <details>
-<summary>Spoilers</summary>
+  <summary markdown="span">
+    Spoilers
+  </summary>
 
 ```java
 public static <T> boolean contains(T[] array, T value)
