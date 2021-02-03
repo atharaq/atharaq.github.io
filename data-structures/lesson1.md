@@ -127,7 +127,7 @@ public void printFruit(Collection<? extends Fruit> c) {
 
 **Exercise**: Go back to CodingRooms and update the SelectionList to work for a generic type.
 
-How do we compare generic objects, without knowing that they are integers? Use the [Comparable<T>](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Comparable.html#compareTo(T)) type! Recall: that if a class implements Comparable, then it must implement the **compareTo** method, with the contract that:
+How do we compare generic objects, without knowing that they are integers? Use the [Comparable](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Comparable.html) type! Recall: that if a class implements Comparable, then it must implement the **compareTo** method, with the contract that:
 
 * x.compareTo(y) < 0 means, roughly, that "x < y"
 * x.compareTo(y) == 0 means, roughly, that "x == y"
@@ -162,7 +162,7 @@ rectList.add(new Rectangle(1, 1));
 rectList.printList();
 ```
 
-If you uncomment these lines, the program will no longer compile. Why is that? **Rectangle** implements **Comparable<Shape>**. But the type parameter in SelectionList is expecting a class, T, which implements (or extends) **Comparable<T>**. That is: Shape extends Comparable<Shape>, so this is fine, but Rectangle does not. So we need to allow for things to be compared to types which are possibly "superclasses":
+If you uncomment these lines, the program will no longer compile. Why is that? **Rectangle** implements **Comparable\<Shape>**. But the type parameter in SelectionList is expecting a class, T, which implements (or extends) **Comparable\<T>**. That is: Shape extends Comparable\<Shape>, so this is fine, but Rectangle does not extend Comparable\<Rectangle>. So we need to allow for things to be compared to types which are possibly "superclasses":
 
 ```java
 
