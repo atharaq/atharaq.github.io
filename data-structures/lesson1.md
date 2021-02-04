@@ -100,7 +100,7 @@ The T needs to be declared somewhere. The Java specification demands that the ty
 
 # Wildcards
 
-Generics are not **covariant**. For example, suppose **Apple** is a class which extends from **Fruit**. We might hope that **Collection<Apple>** can be used whenever **Collection<Fruit>** is asked for, but unfortunately this is not how generics are implemented in Java.
+Generics are not **covariant**. For example, suppose **Apple** is a class which extends from **Fruit**. We might hope that **Collection\<Apple>** can be used whenever **Collection\<Fruit>** is asked for, but unfortunately this is not how generics are implemented in Java.
 
 ```java
 // cannot call printFruit() and pass a Collection<Apple>!
@@ -201,7 +201,7 @@ After the class is compiled to bytecode, the "JVM"-version of the class is the r
 * Primitive types cannot be used as type parameters, since **int** does not inherit from **Object**, for example.
 * Casts can cause problems:
 ```java
-ReadWriteCell<String> rws = new ReadWriteCell<>(); 
+ReadWriteCell<String> rws = new ReadWriteCell<>();
 rws.write("Hello");
 ReadWriteCell<Integer> rwi = (ReadWriteCell<Integer>) rws; // this works!
 int x = rwi.read(); // this is bad
