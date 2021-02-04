@@ -4,9 +4,17 @@
 1. Table of Contents
 {:toc}
 
-<div class="youtube-container">
+# Overview Videos
+{:.no_toc}
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/g3Jx1kIo-H0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/wCugzvxeDK4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 
 For the rest of this week, you will *review* chapter 1 from the textbook, work through chapter 2, and *preview* chapter 3. For the most part, early in the semester we will stick closely to the textbook. There are exercises on CodingRooms to work through as we go through the book, I am describing them here.
 
