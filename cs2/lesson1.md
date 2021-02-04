@@ -79,7 +79,7 @@ System.out.println(b);
 
 Work on exercises 2 and 3 from [Chapter 2](https://books.trinket.io/thinkjava2/chapter2.html#sec32). Please submit exercise 2 in the appropriate CodingRooms assignment space. Try to finish this before our next class on Monday!
 
-Exercise 3 does not need to be submitted, but please work on that as well. You can do this in IntelliJ on your computer or in the CodingRooms assignment space.
+Exercise 3 does not need to be submitted, but please work on that as well. You can do this in IntelliJ on your computer or in a CodingRooms workspace.
 
 ## Exercise (discuss next time)
 
