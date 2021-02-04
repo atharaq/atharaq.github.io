@@ -22,7 +22,7 @@ At this point, you should be able to run a simple program. I'd like to you submi
 
 In addition, make sure you are doing all of the exercises at the end of chapter 1. In particular, **Exercise 3** is a good way to see what symbols / words / etc are important and what is not, at least to the Java compiler. Spend some time on that: you can play around with it during the coding exercise on CodingRooms, but please make sure you submit **working** code that just outputs your name after you are done with all of that.
 
-## Chapter 2: Variables and Operators
+# Chapter 2: Variables and Operators
 
 Please read [Chapter 2: Variables and Operators](https://books.trinket.io/thinkjava2/chapter2.html). Some highlights:
 
