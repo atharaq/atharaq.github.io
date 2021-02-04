@@ -153,7 +153,13 @@ shapeList.printList();
 
 Here we create a list of "Shape" objects. Shape is an interface defined later in the code, while Rectangle and Triangle are classes which implement that interface. Shapes can be compared with each other using their areas.
 
-However, it turns out that this is not the appropriate fix. To see this, look at lines 23-26:
+However, it turns out that this is not the appropriate fix. Take a look at this video:
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/2IzQ7Hvz0aA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+On CodingRooms, uncomment lines 23-26:
 
 ```java
 SelectionList<Rectangle> rectList = new SelectionList<>();
@@ -162,7 +168,7 @@ rectList.add(new Rectangle(1, 1));
 rectList.printList();
 ```
 
-If you uncomment these lines, the program will no longer compile. Why is that? **Rectangle** implements **Comparable\<Shape>**. But the type parameter in SelectionList is expecting a class, T, which implements (or extends) **Comparable\<T>**. That is: Shape extends Comparable\<Shape>, so this is fine, but Rectangle does not extend Comparable\<Rectangle>. So we need to allow for things to be compared to types which are possibly "superclasses":
+When you uncomment these lines, the program will no longer compile. Why is that? **Rectangle** implements **Comparable\<Shape>**. But the type parameter in SelectionList is expecting a class, T, which implements (or extends) **Comparable\<T>**. That is: Shape extends Comparable\<Shape>, so this is fine, but Rectangle does not extend Comparable\<Rectangle>. So we need to allow for things to be compared to types which are possibly "superclasses":
 
 ```java
 
