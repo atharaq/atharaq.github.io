@@ -117,7 +117,7 @@ What do we do with integrals of exponential functions whose bases are constants 
 
 Recall that $\ln(x)$ is the inverse of $e^x$. That means: if $y = \ln(x)$, then $e^y = x$. In other words, $e^{\ln(x)} = x$. So, for example, $e^{\ln(2)} = 2$. We can use this to re-write the function $2^x$:
 
-Since $2 = $e^{\ln(2)}$, then $2^x = e^{{\ln(2)}^x}$. Using exponent rules, we get $2^x = e^{\ln(2) \cdot x}$. Therefore:
+Since $2 = e^{\ln(2)}$, then $2^x = {e^{\ln(2)}}^x$. Using exponent rules, we get $2^x = e^{\ln(2) \cdot x}$. Therefore:
 
 $$\int 2^x dx = \int e^{\ln(2) \cdot x} dx = \frac{1}{\ln(2)} e^{\ln(2) \cdot x} + C= \frac{2^x}{\ln(2)} + C$$
 
