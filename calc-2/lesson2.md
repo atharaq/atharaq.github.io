@@ -145,7 +145,7 @@ $$\int_1^a \frac{1}{x} dx = \ln\|a\| - \ln(1) = \ln(a)$$
 
 since $\ln(1) = 0$.
 
-Often times, then, we will use the fact that $\int \frac{1}{u} du = \ln\|u\| + C$ to try to simplify integrals using substitution. For example, suppose we want to compute $\int \tan(x) dx$. Re-write $\tan(x)$: $\int \frac{\sin(x)}{\cos(x)} dx$. Now let $u = \cos(x), du = -\sin(x) dx$, and the integral becomes $\int -\frac{1}{u} du$, which is $-\ln\|u\| + C$. Substitute back: $-\ln\|\cos(x)| + C$, or just $\ln\|\sec(x)\| + C$ using rules for logarithms.
+Often times, then, we will use the fact that $\int \frac{1}{u} du = \ln\|u\| + C$ to try to simplify integrals using substitution. For example, suppose we want to compute $\int \tan(x) dx$. Re-write $\tan(x)$: $\int \frac{\sin(x)}{\cos(x)} dx$. Now let $u = \cos(x), du = -\sin(x) dx$, and the integral becomes $\int -\frac{1}{u} du$, which is $-\ln\|u\| + C$. Substitute back: $-\ln\|\cos(x)\| + C$, or just $\ln\|\sec(x)\| + C$ using rules for logarithms.
 
 **Exercises**: Compute the following:
 
