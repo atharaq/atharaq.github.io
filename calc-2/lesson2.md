@@ -43,7 +43,7 @@ We can review some of these in office hours and/or on Thursday.
 ## Definite Integrals with Substitution
 
 <div class="youtube-container">
-
+<iframe src="https://www.youtube.com/embed/OEggTQyQZao" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 In class, we went through one way of using substitution with definite integrals. Let's go through another method now.
@@ -86,7 +86,7 @@ Now try 2-3 problems for each of the following sets of questions from [Section 1
 # Exponential Functions
 
 <div class="youtube-container">
-
+<iframe src="https://www.youtube.com/embed/bFZqQ3oqgoE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 Recall that $\frac{d}{dx} e^x = e^x$. This means that $\int e^x dx = e^x + C$. We have done a few problems involving exponential functions already, let's try a couple more:
@@ -109,7 +109,7 @@ Interesting note: the function $f(x) = e^{-x^2}$ does not have an elementary ant
 Moreover, this is not just an academic concern! The function $f(x) = \frac{e^{-\frac{1}{2}x^2}}{\sqrt{2\pi}}$ is known in statistics as the "Gaussian curve" or the "normal distribution". Areas between points on this curve correspond to probabilities that events occur within a certain number of standard deviations of the mean of a normal distribution. If you haven't studied statistics, we won't be studying it here, but I just wanted to point out that this curve is extremely important in understanding distributions of data.
 
 <div class="desmos-container">
-<iframe src="https://www.desmos.com/calculator/ly3qfxulzr?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder=0></iframe>
+<iframe src="https://www.desmos.com/calculator/dlswvridnz?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder=0></iframe>
 </div>
 
 ## Bases other than $e$
@@ -134,14 +134,14 @@ Do you see the general pattern?
 ## Logarithms
 
 <div class="youtube-container">
-
+<iframe src="https://www.youtube.com/embed/VLBmboGRazQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </div>
 
 Logarithms are the inverse of exponential functions. $\ln(x)$ is the inverse of $e^x$, $\log_2(x)$ is the inverse of $2^x$, etc. We will mostly only deal with $\ln(x)$ in this course. [Review my notes on derivatives of logarithms here](https://atharaq.github.io/calc-1/lesson11.html#logarithmic-functions).
 
 Since $\frac{d}{dx} \ln\|x\| = \frac{1}{x}$, then $\int \frac{1}{x} dx = \ln\|x\| + C$. Moreover, for $a > 0$:
 
-$$\int_1^a \frac{1}{x} dx = \ln\|a\| - \ln(1) = \ln(a)$$
+$$\int_1^a \frac{1}{x} dx = \ln|a| - \ln(1) = \ln(a)$$
 
 since $\ln(1) = 0$.
 
