@@ -134,7 +134,7 @@ Do you see the general pattern?
 ## Logarithms
 
 <div class="youtube-container">
-<iframe src="https://www.youtube.com/embed/VLBmboGRazQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+<iframe src="https://www.youtube.com/embed/VLBmboGRazQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 Logarithms are the inverse of exponential functions. $\ln(x)$ is the inverse of $e^x$, $\log_2(x)$ is the inverse of $2^x$, etc. We will mostly only deal with $\ln(x)$ in this course. [Review my notes on derivatives of logarithms here](https://atharaq.github.io/calc-1/lesson11.html#logarithmic-functions).
