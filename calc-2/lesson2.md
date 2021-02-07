@@ -129,3 +129,119 @@ $$\int 2^x dx = \int e^{\ln(2) \cdot x} dx = \frac{1}{\ln(2)} e^{\ln(2) \cdot x}
 3. $\int 3^x dx$
 
 Do you see the general pattern?
+
+
+## Logarithms
+
+<div class="youtube-container">
+
+</div>
+
+Logarithms are the inverse of exponential functions. $\ln(x)$ is the inverse of $e^x$, $\log_2(x)$ is the inverse of $2^x$, etc. We will mostly only deal with $\ln(x)$ in this course. [Review my notes on derivatives of logarithms here](https://atharaq.github.io/calc-1/lesson11.html#logarithmic-functions).
+
+Since $\frac{d}{dx} \ln\|x\| = \frac{1}{x}$, then $\int \frac{1}{x} dx = \ln\|x\| + C$. Moreover, for $a > 0$:
+
+$$\int_1^a \frac{1}{x} dx = \ln\|a\| - \ln(1) = \ln(a)$$
+
+since $\ln(1) = 0$.
+
+Often times, then, we will use the fact that $\int \frac{1}{u} du = \ln\|u\| + C$ to try to simplify integrals using substitution. For example, suppose we want to compute $\int \tan(x) dx$. Re-write $\tan(x)$: $\int \frac{\sin(x)}{\cos(x)} dx$. Now let $u = \cos(x), du = -\sin(x) dx$, and the integral becomes $\int -\frac{1}{u} du$, which is $-\ln\|u\| + C$. Substitute back: $-\ln\|\cos(x)| + C$, or just $\ln\|\sec(x)\| + C$ using rules for logarithms.
+
+**Exercises**: Compute the following:
+
+1. $\int\limits_0^1 \frac{2}{x+1} dx$
+2. $\int \cot(x) dx$. Recall that $\cot(x) = \frac{\cos(x)}{\sin(x)}$
+3. $\int \frac{x}{x^2+1} dx$
+
+<details>
+<summary>Check your answers</summary>
+<ol>
+<li>$2 \ln(2)$</li>
+<li>$\ln\|\sin(x)\| + C$</li>
+<li>$\frac{1}{2}\ln(x^2+1) + C$. Note that absolute values are not needed here as $x^2 + 1$ is always positive.</li>
+</ol>
+</details>
+
+# Preview
+
+## Trig Functions
+
+Recall the derivatives of trig functions:
+
+* $\frac{d}{dx} \sin(x) = \cos(x)$
+* $\frac{d}{dx} \cos(x) = -\sin(x)$
+* $\frac{d}{dx} \tan(x) = (\sec(x))^2$
+* $\frac{d}{dx} \sec(x) = \sec(x)\tan(x)$
+
+These can all be found in [Appendix B](https://openstax.org/books/calculus-volume-2/pages/b-table-of-derivatives) of our textbook.
+
+For antiderivatives, we can reverse these:
+
+* $\int \cos(x) dx = \sin(x) + C$
+* $\int \sin(x) dx = -\cos(x) + C$
+
+We should at least know those two. Many others can be found by knowing those two and using substitution and/or other integration techniques that we will study later this semester.
+
+## Inverse Trigonometric Functions
+
+Knowing the derivatives of inverse trig functions can help us know certain antiderivatives. This is tricky: the derivatives of inverse trig functions look *nothing* like inverse trig functions!
+
+Tricky does not mean "impossible", however. We can find them using implicit differentiation. Let's do one example: the derivative of $\arctan(x)$.
+
+$y = \arctan(x)$ means $\tan(y) = x$ and $-\pi/2 < y < \pi/2$. (This is literally the **definition** of $\arctan(x)$: it's the inverse of $y = \tan(x)$, which means we switch x and y, but we need to restrict the range since $\tan(x)$ is periodic.)
+
+So to find $y^\prime$, we can use implicit differentiation on $\tan(y) = x$. That is: take the derivative of both sides and use the chain rule:
+
+$$
+\begin{align}
+(\tan(y))^\prime = x^\prime \\
+(\sec(y))^2 y^\prime = 1 \\
+y^\prime = (\cos(y))^2
+\end{align}
+$$
+
+Now, to get things back in terms of $x$, we draw a picture:
+
+![x = tan(theta) picture](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Trigonometric_functions_and_inverse2.svg/296px-Trigonometric_functions_and_inverse2.svg.png "x = tan(theta)")
+
+Since $\tan(y) = x$, $y$ is the angle $\theta$ in that picture, and so $\cos(y)$ is $\frac{1}{\sqrt{1+x^2}}$. Therefore $(\cos(y))^2 = \frac{1}{1 + x^2}$.
+
+All of this means that $\frac{d}{dx} \arctan(x) = \frac{1}{1 + x^2}$. Therefore, $\int \frac{1}{1+x^2} dx = \arctan(x) + C$.
+
+What about $\int \frac{1}{9 + x^2}dx$? In this case, we need to factor out $\frac{1}{9}$:
+
+$$
+\begin{align}
+\frac{1}{9}\int \frac{1}{1 + \frac{x^2}{9}} dx$ \\
+= \frac{1}{9} \int \frac{1}{1 + (\frac{x}{3})^2} dx
+\end{align}
+$$
+
+Let $u = \frac{x}{3}$, so $du = \frac{1}{3} dx$, or $dx = 3 du$, and continue:
+
+$$
+\begin{align}
+\frac{1}{9} \int \frac{3}{1 + u^2} du \\
+= \frac{1}{3} \int \frac{1}{1 + u^2} du \\
+= \frac{1}{3} \arctan(u) + C \\
+= \frac{1}{3} \arctan(\frac{x}{3}) + C
+\end{align}
+$$
+
+In general: $\int \frac{1}{a^2 + u^2} du = \frac{1}{a} \arctan(\frac{u}{a}) + C$, for any constant real number $a$.
+
+The other inverse trig functions are listed in [Section 1.7](https://openstax.org/books/calculus-volume-2/pages/1-7-integrals-resulting-in-inverse-trigonometric-functions) of the textbook. I point these out not so that you necessarily memorize these formulas or even know how to come up with them  yourselves, just so that you know that if an integral has a particular form and substitution does not work, you can double check to see if it maches one of these forms.
+
+# Homework
+
+## Written (Moodle)
+
+Due **Friday, 2/12** at 11:59 PM on Moodle:
+
+Section 1.5 #254, 272
+
+Section 1.6 #324, 334, 356
+
+## Online (MyOpenMath)
+
+There is also a homework on MyOpenMath due **Tuesday, 2/16** at 11:59 PM. Get started on the ones you can do now. Some of these problems we can go over on Thursday and/or in office hours (Friday and next Tuesday)
