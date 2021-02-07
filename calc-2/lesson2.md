@@ -157,7 +157,7 @@ Often times, then, we will use the fact that $\int \frac{1}{u} du = \ln\|u\| + C
 <summary>Check your answers</summary>
 <ol>
 <li>$2 \ln(2)$</li>
-<li>$\ln\|\sin(x)\| + C$</li>
+<li>$\ln|\sin(x)| + C$</li>
 <li>$\frac{1}{2}\ln(x^2+1) + C$. Note that absolute values are not needed here as $x^2 + 1$ is always positive.</li>
 </ol>
 </details>
