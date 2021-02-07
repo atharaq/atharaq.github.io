@@ -82,3 +82,49 @@ Now try 2-3 problems for each of the following sets of questions from [Section 1
 
 * 292-297
 * 306-312
+
+# Exponential Functions
+
+<div class="youtube-container">
+
+</div>
+
+Recall that $\frac{d}{dx} e^x = e^x$. This means that $\int e^x dx = e^x + C$. We have done a few problems involving exponential functions already, let's try a couple more:
+
+**Exercises**:
+
+1. $\int\limits_0^{\ln(2)} e^{-x} dx$
+2. $\int x e^{-x^2} dx$
+
+<details>
+<summary>Check your answers</summary>
+<ol>
+<li>An antiderivative of $e^{-x}$ is $-e^{-x}$, and so plugging in, we get $-e^{-\ln(2)} = -\frac{1}{2}$, and $-e^{-0} = -1$, and so our answer is $-\frac{1}{2} - (-1) = \frac{1}{2}$.</li>
+<li> Let $u = -x^2$, and so $du = -2x dx$. Or: $-\frac{1}{2} du = x dx$. The integral simplifes to $-\frac{1}{2} \int e^u du = -\frac{1}{2} e^u + C$. Substitute back: $-\frac{1}{2} e^{-x^2} + c$.</li>
+</details>
+
+Interesting note: the function $f(x) = e^{-x^2}$ does not have an elementary antiderivative. In other words, $\int e^{-x^2}dx$ is not possible to compute, while $\int x e^{-x^2} dx$ is solvable using a simple substitution. Changing a function very slightly can cause a problem to go from being easy (or at least doable) to impossible!
+
+Moreover, this is not just an academic concern! The function $f(x) = \frac{e^{-\frac{1}{2}x^2}}{\sqrt{2\pi}}$ is known in statistics as the "Gaussian curve" or the "normal distribution". Areas between points on this curve correspond to probabilities that events occur within a certain number of standard deviations of the mean of a normal distribution. If you haven't studied statistics, we won't be studying it here, but I just wanted to point out that this curve is extremely important in understanding distributions of data.
+
+<div class="desmos-container">
+<iframe src="https://www.desmos.com/calculator/ly3qfxulzr?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder=0></iframe>
+</div>
+
+## Bases other than $e$
+
+What do we do with integrals of exponential functions whose bases are constants other than $e$? We use $e$ and $\ln$ to re-write those functions.
+
+Recall that $\ln(x)$ is the inverse of $e^x$. That means: if $y = \ln(x)$, then $e^y = x$. In other words, $e^{\ln(x)} = x$. So, for example, $e^{\ln(2)} = 2$. We can use this to re-write the function $2^x$:
+
+Since $2 = $e^{\ln(2)}$, then $2^x = e^{{\ln(2)}^x}$. Using exponent rules, we get $2^x = e^{\ln(2) \cdot x}$. Therefore:
+
+$$\int 2^x dx = \int e^{\ln(2) \cdot x} dx = \frac{1}{\ln(2)} e^{\ln(2) \cdot x} + C= \frac{2^x}{\ln(2)} + C$$
+
+**Exercise**: Use the same logic to find the following antiderivatives:
+
+1. $\int 10^x dx$
+2. $\int (\frac{1}{2})^x dx$
+3. $\int 3^x dx$
+
+Do you see the general pattern?
