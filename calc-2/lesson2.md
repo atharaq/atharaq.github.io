@@ -4,6 +4,10 @@
 1. Table of Contents
 {:toc}
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/NhQuokL4cc8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 # Review
 
 ## Meaning of the definite integral
@@ -43,7 +47,7 @@ We can review some of these in office hours and/or on Thursday.
 ## Definite Integrals with Substitution
 
 <div class="youtube-container">
-<iframe src="https://www.youtube.com/embed/OEggTQyQZao" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/obyI7MCch6s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 In class, we went through one way of using substitution with definite integrals. Let's go through another method now.
