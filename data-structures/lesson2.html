@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-02-08">
+  <title>Data Structures</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">8 February 2021</p>
+</section>
+
+<section>
+<section id="review" class="title-slide slide level1">
+<h1>Review</h1>
+
+</section>
+<section id="junit-unit-testing" class="slide level2">
+<h2>JUnit / Unit Testing</h2>
+<ul>
+<li>CodingRooms has an autograding feature</li>
+<li>It uses <strong>JUnit</strong>, a framework for unit testing</li>
+<li>Unit testing: automated tests that check one small feature of your code</li>
+</ul>
+</section>
+<section id="test-driven-development" class="slide level2">
+<h2>Test-driven Development:</h2>
+<ul>
+<li>Write <em>failing</em> unit tests <strong>first</strong></li>
+<li>Then write code that fixes it</li>
+<li>Benefits?</li>
+</ul>
+</section>
+<section id="exercise-questions" class="slide level2">
+<h2>Exercise Questions?</h2>
+</section>
+<section id="generics-questions" class="slide level2">
+<h2>Generics questions</h2>
+<ul>
+<li>Type erasure?</li>
+<li>Type bounds / Wildcards?</li>
+</ul>
+</section></section>
+<section>
+<section id="lists" class="title-slide slide level1">
+<h1>Lists</h1>
+<ul>
+<li><strong>List</strong>: ordered sequence of data: <span class="math inline">\(x_0, x_1, \ldots, x_{n-1}\)</span></li>
+<li>Size of list: <span class="math inline">\(n\)</span></li>
+<li>First element: <span class="math inline">\(x_0\)</span>, last element: <span class="math inline">\(x_{n-1}\)</span></li>
+<li><span class="math inline">\(x_{i+1}\)</span> is the <em>successor</em> of <span class="math inline">\(x_i\)</span>, <span class="math inline">\(x_i\)</span> is the <em>predecessor</em> of <span class="math inline">\(x_{i+1}\)</span></li>
+<li>Index / position of <span class="math inline">\(x_i\)</span> is <span class="math inline">\(i\)</span></li>
+</ul>
+</section>
+<section id="list-operations" class="slide level2">
+<h2>List Operations?</h2>
+<p>What operations should a list have?</p>
+<div class="fragment">
+<ul>
+<li>add to the list (at the end)</li>
+<li>get the element at position <span class="math inline">\(i\)</span></li>
+<li>remove a value from the list</li>
+<li>insert an element at position <span class="math inline">\(i\)</span></li>
+<li>return the size of the list</li>
+</ul>
+</div>
+</section>
+<section id="simple-list" class="slide level2">
+<h2>Simple List</h2>
+<p>Skeleton code of simple array-backed list structure on CodingRooms now. Finish implementing this, and then determine the running times of the following operations (based on your implementation):</p>
+<ul>
+<li>add</li>
+<li>get</li>
+<li>remove</li>
+<li>insert</li>
+</ul>
+</section>
+<section id="iterators" class="slide level2">
+<h2>Iterators</h2>
+<p>for-each loops: List<T> implements <strong>Iterable<T></strong>.</p>
+<pre ><code class="java">List&lt;String&gt; myList;
+for (String word : myList) {
+  // ...
+}</code></pre>
+<p>is really:</p>
+<pre ><code class="java">List&lt;String&gt; myList;
+Iterator&lt;String&gt; iter = myList.iterator();
+while (iter.hasNext()) {
+  String word = iter.next();
+  // ...
+}</code></pre>
+</section>
+<section id="iterator-interface" class="slide level2">
+<h2>Iterator interface</h2>
+<p>Iterator<T> interface has:</p>
+<ul>
+<li>T next() returns the next value in the list</li>
+<li>boolean hasNext() returns true if we can call “next”</li>
+<li>remove() removes the last element returned by this iterator</li>
+</ul>
+<p>What happens if the list is modified while iterating through it?</p>
+<pre ><code class="java">List&lt;String&gt; l = new ArrayList&lt;&gt;();
+l.add("a");
+for (String w : l) {
+  l.add("hi");
+}</code></pre>
+</section>
+<section id="problem" class="slide level2">
+<h2>Problem</h2>
+<pre ><code class="java">public class SLIterator&lt;T&gt; implements Iterator&lt;T&gt; {
+   private SimpleList&lt;T&gt; list;
+   private int pos = 0;
+   public SLIterator(SimpleList&lt;t&gt; l) {
+     list = l;
+   }
+
+  public boolean hasNext() {
+    return pos &lt; list.size();
+  }
+  public T next() {
+    return list.array[pos++];
+  }
+}</code></pre>
+<p>Problem?</p>
+</section>
+<section id="inner-classes" class="slide level2">
+<h2>Inner Classes</h2>
+<ul>
+<li>Iterator needs to access <strong>private</strong> variables of main class</li>
+<li>Solution: make Iterator an <strong>inner class</strong>
+<ul>
+<li>Technically many kinds of inner classes</li>
+<li>Usually static inner classes</li>
+<li>But this time: non-static (only time in my life)</li>
+<li>Effective Java item 24: Favor static member classes over non-static</li>
+<li>Inner classes can access private members (because they’re inside the scope)</li>
+</ul></li>
+</ul>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Quick exercise: make SimpleList implement Iterable<T></p>
+<p>Update your main method to add in the following code:</p>
+<pre ><code class="java">for (String word : list) {
+    System.out.println(word);
+}</code></pre>
+<p>Does it work?</p>
+</section></section>
+<section>
+<section id="linkedlist" class="title-slide slide level1">
+<h1>LinkedList</h1>
+<figure>
+<img data-src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Singly-linked-list.svg" title="Singly Linked List diagram, Wikimedia Commons" alt="" /><figcaption>Singly Linked List diagram, Wikimedia Commons</figcaption>
+</figure>
+<ul>
+<li>Another implementation of List ADT</li>
+<li>Node class has a data field and a pointer to the next node</li>
+<li><strong>Doubly linked list</strong>: each Node has a pointer to the previous node as well</li>
+</ul>
+</section>
+<section id="linkedlist-code" class="slide level2">
+<h2>LinkedList code</h2>
+<p>Code on CodingRooms. Running times:</p>
+<ul>
+<li>add</li>
+<li>insert</li>
+<li>remove</li>
+<li>get</li>
+</ul>
+</section></section>
+<section>
+<section id="homework" class="title-slide slide level1">
+<h1>Homework</h1>
+<p>Due <strong>Tuesday, 2/15</strong>. Submit via <strong>Moodle</strong> (single PDF).</p>
+<p>Problem 1:</p>
+<p>Implement an Iterator for this LinkedList structure (code is on Moodle / CodingRooms)</p>
+</section>
+<section id="problem-2" class="slide level2">
+<h2>Problem 2</h2>
+<p>The following method removes the first half of the list passed as a parameter:</p>
+<pre ><code class="java">public static void removeFirstHalf(List&lt;?&gt; lst) {
+  int theSize = list.size() / 2;
+  for (int i = 0; i &lt; theSize; i++) {
+    lst.remove(0);
+  }
+}</code></pre>
+</section>
+<section id="problem-2-continued" class="slide level2">
+<h2>Problem 2, continued</h2>
+<ul>
+<li>Why is theSize saved prior to entering the for loop?</li>
+<li>What is the running time of removeFirstHalf is lst is an ArrayList?</li>
+<li>What is the running time of removeFirstHalf if lst is a LinkedList?</li>
+<li>Does using an iterator make removeFirstHalf faster for either type of list?</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
