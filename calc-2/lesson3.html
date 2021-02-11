@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-02-01">
+  <title>Calc II Lesson 3</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Calc II Lesson 3</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">1 February 2021</p>
+</section>
+
+<section id="daily-cases-integral" class="title-slide slide level1">
+<h1>Daily Cases Integral</h1>
+<p>In your breakout rooms, discuss your thoughts on the COVID-19 cases graph from last time. What does the area under that curve represent?</p>
+<p>Record your group’s ideas on <a href="https://docs.google.com/document/d/1bMHIf42wDEJsvweekw9_K4uM3Z9VqZJ04YrNmKT9Ns8/edit?usp=sharing">this Google Doc</a></p>
+</section>
+
+<section>
+<section id="questions" class="title-slide slide level1">
+<h1>Questions?</h1>
+<p>So far:</p>
+<ul>
+<li>FTC / Integration</li>
+<li>Substitution</li>
+<li>Inverse Trig Functions</li>
+</ul>
+</section>
+<section id="reminders" class="slide level2">
+<h2>Reminders</h2>
+<ul>
+<li>Written Homework due <strong>tomorrow</strong> on Moodle</li>
+<li>MyOpenMath Homework due <strong>Tuesday</strong> 2/16</li>
+</ul>
+</section></section>
+<section>
+<section id="integration-by-parts" class="title-slide slide level1">
+<h1>Integration by Parts</h1>
+<ul>
+<li>Substitution: “Reverse chain rule”</li>
+<li>Integration by parts: “Reverse product rule”</li>
+</ul>
+<p><span class="math display">\[(fg)^\prime = f^\prime g + fg^\prime\]</span></p>
+<p>Reverse? <span class="math inline">\(\int f^\prime(x)g(x) dx + \int f(x) g^\prime(x) dx = f(x) g(x) + C\)</span></p>
+</section>
+<section id="reverse-product-rule" class="slide level2">
+<h2>Reverse product rule</h2>
+<p><span class="math display">\[\int f^\prime(x)g(x) dx + \int f(x) g^\prime(x) dx = f(x) g(x) + C\]</span></p>
+<p>Or:</p>
+<p><span class="math display">\[\int f(x) g^\prime(x) dx = f(x) g(x) - \int f^\prime(x) g(x) dx + C\]</span></p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p>Substitute:</p>
+<ul>
+<li><span class="math inline">\(u = f(x)\)</span>, <span class="math inline">\(du = f^\prime(x) dx\)</span></li>
+<li><span class="math inline">\(v = g(x)\)</span>, <span class="math inline">\(dv = g^\prime(x) dx\)</span></li>
+</ul>
+<p>Then:</p>
+<p><span class="math display">\[\int u dv = uv - \int v du\]</span></p>
+<p><strong>Integration by parts formula</strong>!</p>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p><span class="math inline">\(\int x e^x dx\)</span>. Must pick <span class="math inline">\(u\)</span> and <span class="math inline">\(dv\)</span>.</p>
+<ul>
+<li>Let <span class="math inline">\(u = x\)</span>, <span class="math inline">\(dv = e^x dx\)</span>.</li>
+<li>Then <span class="math inline">\(du = dx\)</span>, <span class="math inline">\(v = e^x\)</span></li>
+<li><span class="math inline">\(uv - \int v du = xe^x - \int e^x dx\)</span></li>
+<li>Or just <span class="math inline">\(xe^x - e^x + C\)</span></li>
+</ul>
+<p>Q: What if we chose <span class="math inline">\(u = e^x\)</span>, dv = x dx$?</p>
+</section>
+<section id="hmm" class="slide level2">
+<h2>Hmm…</h2>
+<ul>
+<li><span class="math inline">\(u = e^x\)</span>, <span class="math inline">\(dv = x dx\)</span></li>
+<li><span class="math inline">\(du = e^x dx\)</span>, <span class="math inline">\(v = \frac{x^2}{2}\)</span></li>
+<li><span class="math inline">\(uv - \int vdu = \frac{x^2}{2} e^x - \int \frac{x^2}{2} e^x dx\)</span></li>
+<li>More complicated than original problem!</li>
+<li>Pick <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> carefully!</li>
+</ul>
+</section></section>
+<section>
+<section id="guidance" class="title-slide slide level1">
+<h1>Guidance</h1>
+<ul>
+<li>Picking <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> takes some intuition.</li>
+<li>Generally:
+<ul>
+<li><span class="math inline">\(u\)</span> should be easy to differentiate.</li>
+<li><span class="math inline">\(du\)</span> should be simpler than <span class="math inline">\(u\)</span></li>
+<li><span class="math inline">\(dv\)</span> should be easy to integrate</li>
+<li><span class="math inline">\(v\)</span> should not be much more complicated than <span class="math inline">\(u\)</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="more-guidance" class="slide level2">
+<h2>More guidance</h2>
+<ul>
+<li>For <span class="math inline">\(u\)</span>, prefer:
+<ul>
+<li>logarithms (<span class="math inline">\((\ln|x|)^\prime = \frac{1}{x}\)</span>)</li>
+<li>inverse trig functions</li>
+<li>polynomials / algebraic functions</li>
+</ul></li>
+<li>For <span class="math inline">\(dv\)</span>:
+<ul>
+<li>trig (sin / cos)</li>
+<li>exponential functions</li>
+</ul></li>
+</ul>
+</section>
+<section id="exercises" class="slide level2">
+<h2>Exercises</h2>
+<ol type="1">
+<li><span class="math inline">\(\int x \ln(x) dx\)</span></li>
+<li><span class="math inline">\(\int \frac{\ln(x)}{x^2} dx\)</span></li>
+</ol>
+</section></section>
+<section>
+<section id="harder-problem" class="title-slide slide level1">
+<h1>Harder problem</h1>
+<p><span class="math display">\[ \int e^x \sin(x) dx \]</span></p>
+<ul>
+<li>No obvious candidate for <span class="math inline">\(u\)</span> or <span class="math inline">\(dv\)</span>.</li>
+<li>Just pick one.</li>
+<li><span class="math inline">\(u = \sin(x)\)</span>, <span class="math inline">\(dv = e^x dx\)</span></li>
+<li>What happens?</li>
+</ul>
+</section>
+<section id="continue" class="slide level2">
+<h2>Continue</h2>
+<ul>
+<li><span class="math inline">\(u = \sin(x)\)</span>, <span class="math inline">\(dv = e^x dx\)</span></li>
+<li><span class="math inline">\(du = \cos(x) dx\)</span>, <span class="math inline">\(v = e^x\)</span></li>
+<li><span class="math inline">\(uv - \int v du = e^x \sin(x) - \int e^x \cos(x) dx\)</span></li>
+<li>Now what?</li>
+</ul>
+<div class="fragment">
+<p>Integrate by parts again!</p>
+</div>
+</section>
+<section id="continue-1" class="slide level2">
+<h2>Continue</h2>
+<ul>
+<li><span class="math inline">\(\int e^x \sin(x) dx = e^x \sin(x) - \int e^x \cos(x) dx\)</span></li>
+<li><span class="math inline">\(u = \cos(x)\)</span>, <span class="math inline">\(dv = e^x dx\)</span></li>
+<li><span class="math inline">\(du = -\sin(x)\)</span>, <span class="math inline">\(v = e^x\)</span></li>
+<li><span class="math inline">\(uv - \int v du = e^x \cos(x) - \int (-e^x \sin(x) dx\)</span></li>
+<li>Or: <span class="math inline">\(e^x \cos(x) + \int e^x \sin(x) dx\)</span></li>
+<li>Going in circles?</li>
+</ul>
+</section>
+<section id="catch-your-tail" class="slide level2">
+<h2>Catch your tail</h2>
+<p>Bring back the original problem:</p>
+<p><span class="math display">\[\int e^x \sin(x) dx = e^x \sin(x) - (e^x \cos(x) + \int e^x \sin(x) dx)\]</span></p>
+<p>Or:</p>
+<p><span class="math display">\[\int e^x \sin(x) dx = e^x \sin(x) - e^x \cos(x) - \int e^x \sin(x) dx\]</span></p>
+<p>Treat <span class="math inline">\(\int e^x \sin(x) dx\)</span> like a variable and solve for it</p>
+</section>
+<section id="solution" class="slide level2">
+<h2>Solution</h2>
+<ul>
+<li>Let <span class="math inline">\(y = \int e^x \sin(x) dx\)</span>.</li>
+<li><span class="math inline">\(y = e^x \sin(x) - e^x \cos(x) - y\)</span></li>
+<li>So: <span class="math inline">\(2y = e^x \sin(x) - e^x \cos(x)\)</span>, or:</li>
+</ul>
+<p><span class="math display">\[ \int e^x \sin(x) dx = \frac{e^x \sin(x) - e^x\cos(x)}{2} + C\]</span></p>
+<p>Moral: you may need to integrate by parts more than once in a problem.</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
