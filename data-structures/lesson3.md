@@ -42,7 +42,7 @@ Stack:
 
 Queue:
 
-<img class="noreverse" alt="Queue of people" src="queue.jpg" title="Queue of people" />
+<img class="noreverse" alt="Queue of people" src="queue.jpeg" title="Queue of people" />
 
 Both of these ADTs specify two operations: insertion and removal. Most implementations also specify a "peek" in addition to a "remove", as well as a "size" and/or "isEmpty" operation.
 
