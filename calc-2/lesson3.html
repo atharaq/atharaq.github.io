@@ -90,7 +90,7 @@
 <li><span class="math inline">\(uv - \int v du = xe^x - \int e^x dx\)</span></li>
 <li>Or just <span class="math inline">\(xe^x - e^x + C\)</span></li>
 </ul>
-<p>Q: What if we chose <span class="math inline">\(u = e^x\)</span>, dv = x dx$?</p>
+<p>Q: What if we chose <span class="math inline">\(u = e^x\)</span>, <span class="math inline">\(dv = x dx\)</span>?</p>
 </section>
 <section id="hmm" class="slide level2">
 <h2>Hmm…</h2>
@@ -138,58 +138,27 @@
 <li><span class="math inline">\(\int x \ln(x) dx\)</span></li>
 <li><span class="math inline">\(\int \frac{\ln(x)}{x^2} dx\)</span></li>
 </ol>
-</section></section>
-<section>
-<section id="harder-problem" class="title-slide slide level1">
-<h1>Harder problem</h1>
-<p><span class="math display">\[ \int e^x \sin(x) dx \]</span></p>
+</section>
+<section id="solution-1" class="slide level2">
+<h2>Solution (1)</h2>
+<p><span class="math display">\[\int x \ln(x) dx\]</span></p>
 <ul>
-<li>No obvious candidate for <span class="math inline">\(u\)</span> or <span class="math inline">\(dv\)</span>.</li>
-<li>Just pick one.</li>
-<li><span class="math inline">\(u = \sin(x)\)</span>, <span class="math inline">\(dv = e^x dx\)</span></li>
-<li>What happens?</li>
+<li>Let <span class="math inline">\(u = \ln(x)\)</span>, <span class="math inline">\(dv = x dx\)</span></li>
+<li><span class="math inline">\(du = \frac{1}{x} dx\)</span>, <span class="math inline">\(v = \frac{x^2}{2}\)</span></li>
+<li><span class="math inline">\(uv - \int v du = \frac{x^2}{2} \ln(x) - \int \frac{x}{2} dx\)</span></li>
+<li>Or <span class="math inline">\(\frac{x^2}{2}\ln(x) - \frac{x^2}{4} + C\)</span></li>
 </ul>
 </section>
-<section id="continue" class="slide level2">
-<h2>Continue</h2>
+<section id="solution-2" class="slide level2">
+<h2>Solution (2)</h2>
+<p><span class="math display">\[\int \frac{\ln(x)}{x^2} dx\]</span></p>
 <ul>
-<li><span class="math inline">\(u = \sin(x)\)</span>, <span class="math inline">\(dv = e^x dx\)</span></li>
-<li><span class="math inline">\(du = \cos(x) dx\)</span>, <span class="math inline">\(v = e^x\)</span></li>
-<li><span class="math inline">\(uv - \int v du = e^x \sin(x) - \int e^x \cos(x) dx\)</span></li>
-<li>Now what?</li>
+<li><span class="math inline">\(u = \ln(x)\)</span>, <span class="math inline">\(dv = \frac{dx}{x^2}\)</span></li>
+<li><span class="math inline">\(du = \frac{1}{x} dx\)</span>, <span class="math inline">\(v = -\frac{1}{x}\)</span></li>
+<li><span class="math inline">\(-\frac{\ln(x)}{x} - \int -\frac{1}{x^2} dx\)</span>, or</li>
+<li><span class="math inline">\(-\frac{\ln(x)}{x} + \int \frac{1}{x^2} dx\)</span></li>
+<li>Final answer: <span class="math inline">\(-\frac{\ln(x)}{x} - \frac{1}{x} + C\)</span></li>
 </ul>
-<div class="fragment">
-<p>Integrate by parts again!</p>
-</div>
-</section>
-<section id="continue-1" class="slide level2">
-<h2>Continue</h2>
-<ul>
-<li><span class="math inline">\(\int e^x \sin(x) dx = e^x \sin(x) - \int e^x \cos(x) dx\)</span></li>
-<li><span class="math inline">\(u = \cos(x)\)</span>, <span class="math inline">\(dv = e^x dx\)</span></li>
-<li><span class="math inline">\(du = -\sin(x)\)</span>, <span class="math inline">\(v = e^x\)</span></li>
-<li><span class="math inline">\(uv - \int v du = e^x \cos(x) - \int (-e^x \sin(x) dx\)</span></li>
-<li>Or: <span class="math inline">\(e^x \cos(x) + \int e^x \sin(x) dx\)</span></li>
-<li>Going in circles?</li>
-</ul>
-</section>
-<section id="catch-your-tail" class="slide level2">
-<h2>Catch your tail</h2>
-<p>Bring back the original problem:</p>
-<p><span class="math display">\[\int e^x \sin(x) dx = e^x \sin(x) - (e^x \cos(x) + \int e^x \sin(x) dx)\]</span></p>
-<p>Or:</p>
-<p><span class="math display">\[\int e^x \sin(x) dx = e^x \sin(x) - e^x \cos(x) - \int e^x \sin(x) dx\]</span></p>
-<p>Treat <span class="math inline">\(\int e^x \sin(x) dx\)</span> like a variable and solve for it</p>
-</section>
-<section id="solution" class="slide level2">
-<h2>Solution</h2>
-<ul>
-<li>Let <span class="math inline">\(y = \int e^x \sin(x) dx\)</span>.</li>
-<li><span class="math inline">\(y = e^x \sin(x) - e^x \cos(x) - y\)</span></li>
-<li>So: <span class="math inline">\(2y = e^x \sin(x) - e^x \cos(x)\)</span>, or:</li>
-</ul>
-<p><span class="math display">\[ \int e^x \sin(x) dx = \frac{e^x \sin(x) - e^x\cos(x)}{2} + C\]</span></p>
-<p>Moral: you may need to integrate by parts more than once in a problem.</p>
 </section></section>
     </div>
   </div>
