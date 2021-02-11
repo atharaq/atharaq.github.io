@@ -34,6 +34,10 @@ Now that said, some of these "efficient" operations are somewhat theoretical. He
 
 # Stacks and Queues
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/TUNxlSrMOaw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 Next we will examine two important ADTs: stacks and queues.
 
 Stack:
@@ -56,6 +60,8 @@ Some questions to think about:
 * How might you implement each of these ADTs with a LinkedList?
 
 See if you can come up with implementations in which all the operations listed above are $O(1)$.
+
+**Warning**: never use the built-in **java.util.Stack** class. There are better implementations: in particular, ArrayDeque and LinkedList.
 
 ## Deques
 
