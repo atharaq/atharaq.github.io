@@ -11,6 +11,10 @@
 
 Please read through [Chapter 5](https://books.trinket.io/thinkjava2/chapter5.html) on conditionals and logic. I hope you have seen "if" statements before, as well as the comparison operators and the logical operators.
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/8bmSniNfs8w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 Consider the following two code snippets:
 
 ```java
@@ -30,6 +34,22 @@ if (x < 1 && x > 10) {
 ```
 
 Which one of these correctly determines if the input is between 1 and 10 (inclusive)? What happens in the other case?
+
+## Using hasNextInt
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/2YSFH1sITaY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+In this video I go through using the **hasNextInt** method to validate input. Notice the syntax:
+
+```java
+if (sc.hasNextInt()) {
+  input = sc.nextInt();
+}
+```
+
+Inside the **if** statement, I can use **sc.hasNextInt()** by itself (without comparing it to anything), because the hasNextInt method returns a **boolean** value (true or false). You can put anything inside an if statement as long as it evaluates to true or false. That's why something like "x > 0" works, if x is an integer, since "x > 0" is true if x is positive and false if x is 0 or negative. But "if (x)" by itself does not work, if x is an integer.
 
 ## String equals
 
@@ -67,9 +87,19 @@ Try this out and see what happens when you input yes. Why does == not work for S
 
 Write a program which asks the user to input an integer from 1 to 10 (inclusive). If they input something that is not an integer, you should output an angry message and end the program (hint: look at this [Example Program](https://books.trinket.io/thinkjava2/chapter5.html#sec68) from the text). If they input an integer that is not in that range, you should remind them that you asked for the number to be between 1 and 10. If they do input a number in that range, you should congratulate them on following directions.
 
+## Reminder
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/hVjGWI4Bioo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 # Loops (Chapter 6)
 
 Now read through [Chapter 6](https://books.trinket.io/thinkjava2/chapter6.html) on for and while loops.
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/1buhhCHfk6c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Consider the following code snippet:
 
@@ -84,7 +114,7 @@ while (x / 2 > 0) {
 System.out.println(i);
 ```
 
-What does this program output if we input 10? What if we input 20? What if we input 100? 200? 1000?
+What does this program output if we input 10? What if we input 20? What if we input 100? 200? 1000? What mathematical function is being computed here?
 
 Another code snippet to look at:
 
@@ -99,6 +129,24 @@ if (input >= 0 && input <= 10) {
 ```
 
 What does this output if our input is 1000? What if our input is 10?
+
+## Nested loops
+
+<div class="youtube-container">
+  <iframe src="https://www.youtube.com/embed/kTs4kFPffJY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+What does the following output if input is 5? What if input is 10?
+
+```java
+for (int i = 0; i < input; i++) {
+  System.out.print("i=" + i + ": ");
+  for (int j = 0; j < i; j++) {
+    System.out.print("(" + i + ", " + j+") ");
+  }
+  System.out.println();
+}
+```
 
 ## Exercise (Don't submit)
 
