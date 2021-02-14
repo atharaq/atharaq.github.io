@@ -4,7 +4,7 @@
 1. Table of Contents
 {:toc}
 
-# OPTIONAL: Java Crash Course Videos
+# OPTIONAL: Java Crash Course Video
 
 <div class="youtube-container">
 <iframe src="https://www.youtube.com/embed/3cptnJBqYx8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

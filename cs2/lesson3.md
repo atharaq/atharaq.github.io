@@ -4,9 +4,6 @@
 1. Table of Contents
 {:toc}
 
-# Overview Videos
-{:.no_toc}
-
 # Conditionals and Logic (Chapter 5)
 
 Please read through [Chapter 5](https://books.trinket.io/thinkjava2/chapter5.html) on conditionals and logic. I hope you have seen "if" statements before, as well as the comparison operators and the logical operators.
