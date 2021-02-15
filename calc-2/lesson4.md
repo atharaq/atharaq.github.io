@@ -194,5 +194,5 @@ Due **Friday, February 19** on Moodle:
 
 Section 1.6 #346 (look at #383 - 387, but don't need to hand those in)  
 Section 1.7 #394, 398  
-Section 3.1 #7, 8, 47, 48, 52  
+Section 3.1 #7, 8, 48, 52  
 Section 3.2 #80, 98, 104  
