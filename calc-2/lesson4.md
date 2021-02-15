@@ -48,19 +48,19 @@ Let $u = e^x$, $dv = \cos(x) dx$. Then $du = e^x dx$, and $v = \sin(x)$. So our 
 
 $$\int e^x \cos(x) dx = e^x \sin(x) - \int e^x \sin(x) dx$$
 
-Now what should we do? As I said above, let's integrate by parts again. Let $u = e^x$, and $dv = \sin(x) dx$. Then $du = e^x dx$ and $v = -\cos(x)$. So now our integral is:
+Now what should we do? As I said above, let's integrate by parts again. Let $u = e^x$, and $dv = \sin(x) dx$. Then $du = e^x dx$ and $v = -\cos(x)$. So now $\int e^x \cos(x) dx$ is:
 
-$\int e^x \cos(x) dx = e^x \sin(x) - (e^x(-\cos(x)) - \int (e^x)(-\cos(x)) dx)$
+$$e^x \sin(x) - (e^x(-\cos(x)) - \int (e^x)(-\cos(x)) dx)$$
 
-Distributing negatives, on the right hand side we get $e^x \sin(x) + e^x \cos(x) - \int e^x \cos(x) dx$. But now we are back where we started: the original problem was to compute $\int e^x \cos(x) dx$!
+Distributing negatives, we get $e^x \sin(x) + e^x \cos(x) - \int e^x \cos(x) dx$. But now we are back where we started: the original problem was to compute $\int e^x \cos(x) dx$!
 
-So what do we do? Take a second to look at everything we have done.
+So what do we do? Take a second to look at everything we have done. We know that the integral $\int e^x \cos(x) dx$ is equal to:
 
-$\int e^x \cos(x) dx = e^x \sin(x) + e^x \cos(x) - \int e^x \cos(x) dx$
+$$e^x \sin(x) + e^x \cos(x) - \int e^x \cos(x) dx$$
 
 The fact that $\int e^x \cos(x) dx$ is on both sides makes it appear that we did something wrong. But actually we can use algebra to solve this problem: add $\int e^x \cos(x) dx$ to both sides! Then:
 
-$$ 2 \int e^x \cos(x) dx = e^x \sin(x) + e^x \cos(x)$$
+$$2 \int e^x \cos(x) dx = e^x \sin(x) + e^x \cos(x)$$
 
 Or, $\int e^x \cos(x) dx = \frac{e^x \sin(x) + e^x\cos(x)}{2} + C$.
 
