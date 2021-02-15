@@ -106,7 +106,7 @@ Then we integrate using the power rule: $\frac{u^3}{3} - \frac{u^5}{5} + C$. Sub
 <ol>
 <li>$\sin(x) - \frac{\sin^3(x)}{3} + C$</li>
 <li>$\frac{\cos^3(x)}{3} - \cos(x) + C$</li>
-<li>$\frac{\sin^4(x)}{4}+C$. Note that there is more than one acceptable answer here. Why might that be? The $+C$ is doing some work here. Take a look at [this graph](https://www.desmos.com/calculator/2s4z2531px), and recall that two functions which differ by a constant have the same derivative.</li>
+<li>$\frac{\sin^4(x)}{4}+C$. Note that there is more than one acceptable answer here. Why might that be? The $+C$ is doing some work here. Take a look at <a href="https://www.desmos.com/calculator/2s4z2531px">this graph</a>, and recall that two functions which differ by a constant have the same derivative.</li>
 <li>$\frac{\sin^7(x)}{7} - \frac{2\sin^5(x)}{5} + \frac{\sin^3(x)}{3} + C$</li>
 </ol>
 </details>
@@ -162,7 +162,7 @@ Check your answers:
 ## Different angles
 
 <div class="youtube-container">
-<ifram src="https://www.youtube.com/embed/OR_RO5Uesdg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/OR_RO5Uesdg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 As before, I will remind you of some of the trig identities that we may need before we use them here:
