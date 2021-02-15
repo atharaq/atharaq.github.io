@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-02-15">
+  <title>Data Structures</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">15 February 2021</p>
+</section>
+
+<section>
+<section id="challenge-questions" class="title-slide slide level1">
+<h1>Challenge Questions</h1>
+<ul>
+<li>LinkedList questions: coding exercises</li>
+<li>Collate Iterators, Bracket Matching, Base Counting: data structures!</li>
+</ul>
+</section>
+<section id="reverse-a-singly-linked-list" class="slide level2">
+<h2>Reverse a Singly Linked List</h2>
+<p>Given a singly LinkedList, how might you implement a reverse method? Moreover, how might you do this <strong>in-place</strong>: that is, without using a secondary list or additional storage?</p>
+</section>
+<section id="middle-element" class="slide level2">
+<h2>Middle Element</h2>
+<p>Given a singly LinkedList, how might you find the middle element in <strong>one</strong> loop? (ie in N steps, not in 2N steps).</p>
+</section>
+<section id="collate-iterators" class="slide level2">
+<h2>Collate Iterators</h2>
+<ul>
+<li>Read one item from an iterator, then switch iterators.</li>
+<li>If an iterator runs out, remove it.</li>
+<li>Cycle around when you get to the end.</li>
+<li>How?</li>
+<li>Can a data structure help?</li>
+</ul>
+</section>
+<section id="bracket-matching" class="slide level2">
+<h2>Bracket Matching</h2>
+<p>The following strings of brackets are perfectly matched:</p>
+<ul>
+<li>{}([])</li>
+<li>[(()())]</li>
+</ul>
+<p>The following are not:</p>
+<ul>
+<li>{(})</li>
+<li>(][)</li>
+</ul>
+<p>(CodingRooms)</p>
+</section>
+<section id="base-counting" class="slide level2">
+<h2>Base Counting</h2>
+<p>Devise an algorithm which, given an input <span class="math inline">\(n\)</span>, outputs all numbers from 1 to <span class="math inline">\(n\)</span> in binary. Example: if <span class="math inline">\(n = 6\)</span>, then we write 1, 10, 11, 100, 101, 110. (The format of the output doesn’t matter, they can all be on separate lines.)</p>
+</section></section>
+<section>
+<section id="project-1" class="title-slide slide level1">
+<h1>Project 1</h1>
+<p>Three parts:</p>
+<ul>
+<li>Stack / Queue implementations</li>
+<li>Application 1: General Base Counting</li>
+<li>Application 2: Postfix Calculator</li>
+</ul>
+<p>Due <strong>Sunday, February 28</strong> at 11:59 PM. (Two-ish weeks)</p>
+</section>
+<section id="general-base-counting" class="slide level2">
+<h2>General Base Counting</h2>
+<p>Given a file with a number b (from 2 - 8) and another number n (written in base 10), output all numbers from 1 to n in base b.</p>
+</section>
+<section id="postfix-calculator" class="slide level2">
+<h2>Postfix calculator</h2>
+<p>Regular (“infix”) arithmetic expressions require precedence rules and/or brackets to know how to evaluate them: <span class="math inline">\(3 + 4 * 5 = 23\)</span>. <strong>Postfix</strong> expressions do not require precedence rule. Postfix means the operator goes after the operands:</p>
+<ul>
+<li><span class="math inline">\(3+4 * 5\)</span> is 3 4 5 <span class="math inline">\(*\)</span> + in postfix</li>
+<li><span class="math inline">\((3+4)*5\)</span> is 3 4 <span class="math inline">\(+\)</span> 5 <span class="math inline">\(*\)</span> in postfix</li>
+<li>What is: 12 7 − 13 4 − 5 <span class="math inline">\(*\)</span> <span class="math inline">\(+\)</span>?</li>
+</ul>
+</section>
+<section id="reading-from-a-text-file" class="slide level2">
+<h2>Reading from a text file</h2>
+<pre ><code class="java">// assumes "data.txt" is in src folder
+InputStream is = MyClass.class.getResourceAsStream("data.txt");
+Scanner sc = new Scanner(is);
+// for the PostfixCalculator:
+while (sc.hasNextLine()) {
+  String line = sc.nextLine();
+  Scanner lineScanner = new Scanner(line); // this works!
+   // now we can read the data from the Scanner the same way we read input
+   // we can use lineScanner.nextInt(),
+   // or lineScanner.hasNextInt(), for example
+}</code></pre>
+</section>
+<section id="base_test.txt" class="slide level2">
+<h2>base_test.txt</h2>
+<p>For the “General Base counting” exercise, it’s somewhat easier. Just need to read two ints:</p>
+<pre ><code class="java">InputStream is = MyClass.class.getResourceAsStream("base_test.txt");
+Scanner sc = new Scanner(is);
+int base = sc.nextInt();
+int number = sc.nextInt();</code></pre>
+</section>
+<section id="postfix_text.txt" class="slide level2">
+<h2>postfix_text.txt</h2>
+<p>For the PostfixCalculator, need to parse several lines:</p>
+<pre ><code class="java">InputStream is = MyClass.class.getResourceAsStream("postfix_test.txt");
+Scanner sc = new Scanner(is);
+while (sc.hasNextLine()) {
+  String line = sc.nextLine();
+  Scanner lineScanner = new Scanner(line);
+  while (lineScanner.hasNext()) {
+    if (lineScanner.hasNextInt()) {
+      int number = lineScanner.nextInt(); // do something with this number
+    } else {
+      String operator = lineScanner.next(); // do something with this operator
+    }
+  }
+}</code></pre>
+</section></section>
+<section>
+<section id="presentation" class="title-slide slide level1">
+<h1>Presentation</h1>
+<ul>
+<li>Pick any of the problems we have discussed so far
+<ul>
+<li>Other ideas? Feel free, let me know.</li>
+</ul></li>
+<li>Describe an algorithm explaining how to solve that problem.</li>
+<li>Write some demo code implementing this algorithm (you can use built-in libraries like ArrayDeque or LinkedList to act as your stack / queue if you need them)</li>
+<li>Analyze the running time of the problem.</li>
+</ul>
+</section>
+<section id="submission" class="slide level2">
+<h2>Submission</h2>
+<ul>
+<li>Make a short presentation of this (take screenshots of your code to include in PPT, etc)</li>
+<li>Upload your slides to VoiceThread</li>
+<li>Add an audio comment on each slide to narrate your presentation</li>
+<li>Should be around 5 minutes total
+<ul>
+<li>Little bit longer is okay</li>
+<li>Don’t go past 10 minutes, I don’t have that kind of energy.</li>
+</ul></li>
+</ul>
+<p>Due <strong>Sunday, February 21</strong> at 11:59 PM (1 week).</p>
+</section>
+<section id="rubric" class="slide level2">
+<h2>Rubric</h2>
+<p>5 points:</p>
+<ul>
+<li>(2 points) Algorithm: clear description of the algorithm.</li>
+<li>(2 points) Code: show and explain a working demo for this problem.
+<ul>
+<li>Working demo doesn’t need to be perfect (ie don’t worry about validating inputs, etc.)</li>
+<li>You should explain how the code implements your algorithm</li>
+</ul></li>
+<li>(1 point) Running time: give a brief analysis of the running time for the problem</li>
+</ul>
+</section></section>
+<section>
+<section id="newsfeed" class="title-slide slide level1">
+<h1>Newsfeed</h1>
+<p>Suppose we are developing a newsfeed app for devices with very small amounts of memory. The app should store links to major news stories as they come in, subject to the following considerations:</p>
+<ul>
+<li>The app can only store up to a certain number <span class="math inline">\(N\)</span> of links at a time.</li>
+<li>When the app is full, as new links come in, old ones get deleted.</li>
+</ul>
+<p>How would you implement a solution to this problem?</p>
+</section>
+<section id="circular-queue" class="slide level2">
+<h2>Circular Queue</h2>
+<p>Implementation considerations:</p>
+<ul>
+<li>Array or linked list?</li>
+<li>How do we recognize the “front” and “back” of the queue?</li>
+<li>What happens to the “front” and “back” if we insert into a full queue?</li>
+<li>How do we recognize if the queue is empty? Let’s try to implement this together.</li>
+</ul>
+<p>Let’s implement this together.</p>
+</section></section>
+<section>
+<section id="tree-adt" class="title-slide slide level1">
+<h1>Tree ADT</h1>
+<p>A <strong>tree</strong> is a set of nodes with the following relationships:</p>
+<ul>
+<li>Every node has an edge (or link) with one parent node</li>
+<li>There is one, unique <strong>root</strong> node.</li>
+</ul>
+<p>Idea: if our tree is a balanced, <strong>binary search tree</strong>, we can hope for <span class="math inline">\(O(\log n)\)</span> for all operations: insertion, removal, lookups. (Compare to a list structure.)</p>
+</section>
+<section id="definitions" class="slide level2">
+<h2>Definitions</h2>
+<ul>
+<li><strong>arity</strong>: the maximum number of children a node in a tree has. (This might not be defined on an infinite tree). A tree of arity 2 is called a <strong>binary tree</strong>.</li>
+<li><strong>leaf</strong>: a node which has no children.</li>
+<li><strong>path</strong>: a path in a tree is a set of nodes <span class="math inline">\(n_1, n_2, \ldots, n_k\)</span> such that each <span class="math inline">\(n_i\)</span> is the parent of $n_{i+1}. This path has <strong>length</strong> <span class="math inline">\(k −1\)</span>, because there are <span class="math inline">\(k − 1\)</span> steps to go from <span class="math inline">\(n_1\)</span> to <span class="math inline">\(n_k\)</span>.</li>
+<li><strong>height</strong>: the height of a tree is the length of the longest path starting at the root and ending at a leaf.</li>
+</ul>
+</section>
+<section id="picture" class="slide level2">
+<h2>Picture</h2>
+<p><img alt="Binary tree, from Wikimedia Commons" title="Binary tree, from Wikimedia Commons" src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Binary_tree.svg" style="background: currentColor" /></p>
+</section>
+<section id="search-trees" class="slide level2">
+<h2>Search Trees</h2>
+<p>Idea: a <strong>binary search tree</strong> has the property that for any node, all of the data in its descendants on its left subtree are less than or equal to the data in the node, and all the data in its descendants on its right subtree are greater than or equal to the data in the node.</p>
+</section>
+<section id="codingrooms" class="slide level2">
+<h2>CodingRooms</h2>
+<p>Check CodingRooms classroom for a quick BinaryTree implementation. Let’s test it out.</p>
+<pre ><code class="java">BinaryTree&lt;Integer&gt; tree = new BinaryTree&lt;&gt;();
+tree.insert(5);
+tree.insert(10);
+tree.insert(-5);
+tree.insert(0);
+tree.insert(100);
+tree.printTree();</code></pre>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
