@@ -8,16 +8,16 @@
 
 Last time we described circular queues, but ran out of time before we could try to come up with a strategy for implementing one. I encourage you to think through this on your own, before you watching the next video. How would you implement a circular queue using an array of a fixed size? Remember that in a queue, you "enter" from the back, and "leave" from the front, so you need to keep track of those two. Dequeueing is just looking at the item in the "front" position, and moving the front up one (cycling around if you have to). (So we don't actually "delete" anything from memory, we just move the pointers around.)
 
-How can you tell if the queue is full? How can you tell if the queue is empty? Try to draw out the picture, and see what happens when you insert and remove a few items. Think this through, then watch the videos:
+How can you tell if the queue is full? How can you tell if the queue is empty? Try to draw out the picture, and see what happens when you insert and remove a few items. Think this through, then watch the video:
 
 <div class="youtube-container">
-
+<iframe src="https://www.youtube.com/embed/5Cmi-Y4aPv8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 This next video goes through an actual implementation of a circular queue, using a test driven format. I show how to create unit tests in IntelliJ so that you can try that out on your own as well.
 
 <div class="youtube-container">
-
+<iframe src="https://www.youtube.com/embed/DbmfPgJ1XGA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 # Trees
@@ -44,9 +44,39 @@ A **binary search tree** is a binary tree with the property that for each node, 
 
 ![Binary search tree](https://upload.wikimedia.org/wikipedia/commons/d/da/Binary_search_tree.svg)
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/uTMLbmmzHeQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+To make a generic, binary search tree, we need our generic type to implement Comparable, and so we use the paradigm described in [Lesson 1](https://atharaq.github.io/data-structures/lesson1.html).
+
+```java
+public class BinaryTree<T extends Comparable<? super T>>
+```
+
+We need a concept of a node in such a tree, and we used a static inner class to handle that:
+
+```java
+private static class TreeNode<T> {
+    T data;
+    TreeNode<T> left;
+    TreeNode<T> right;
+
+    TreeNode(T d, TreeNode<T> l, TreeNode<T> r) {
+        data = d;
+        left = l;
+        right = r;
+    }
+}
+```
+
 ## Traversals
 
-For a List structure, there is only one logical way to visit the elements in the structure. For a tree, though, there are multiple. The following recursive code snippet outputs the nodes of the tree using an **in-order traversal**
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/1mYr7kgbXn4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+For a List structure, there is only one logical way to visit the elements in the structure. For a tree, though, there are multiple. The following **recursive** code snippet outputs the nodes of the tree using an **in-order traversal**
 
 ```java
 private void printTree(TreeNode<T> tree) {
@@ -103,6 +133,10 @@ To implement the basic insert, contains, and "remove" methods, we similarly use 
 * If the item we wish to insert is less than the element in the root node, recursively insert this item into the root node's left subtree.
 * Otherwise, recursively insert the item into the root node's right subtree.
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/_njTKrlc0xw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 ```java
 public void insert(T item) {
     root = insert(root, item);
@@ -140,9 +174,11 @@ You don't need to submit this, but think about how you might implement the **rem
 * How do you remove a node if it has one child?
 * How do you remove a node if it has two children? We have a choice to make, but the idea we will use is to replace the node by its successor (the next largest element in the tree).
 
-# Theory (10)
+# Theory
 
 From the implementation, we can see that the running times of the basic operations (insert, remove, contains) of a tree are all roughly proportional to the height of the tree. Let's do some simple asymptotic analysis for now to determine these running times.
+
+**Note**: I have a video for this, but unfortunately YouTube upload limits have prevented me from being able to share this with you just yet. So please go through this on your own for now, and by Friday I will replace this note with a video of me working out some of the mathematics here.
 
 ## Complete Trees
 
