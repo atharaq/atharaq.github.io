@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-02-18">
+  <title>Calc II Lesson 5</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Calc II Lesson 5</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">18 February 2021</p>
+</section>
+
+<section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Today: partial fractions, center of mass application</li>
+<li>Next Thursday: review for exam 1</li>
+<li>Problem Presentation 1: <strong>Sunday, Feb 28</strong></li>
+<li>Exam 1 (asynchronous, week of March 1)
+<ul>
+<li>Chapter 1</li>
+<li>3.1, 3.2, 3.4</li>
+<li>2.6</li>
+</ul></li>
+</ul>
+</section>
+<section id="problem-presentation" class="slide level2">
+<h2>Problem Presentation</h2>
+<ul>
+<li>Describe a <strong>challenging problem</strong>
+<ul>
+<li>Homework (textbook / MOM)?</li>
+<li>Textbook, not assigned?</li>
+<li>Anywhere else?</li>
+</ul></li>
+<li>Explain the solution
+<ul>
+<li>Pretend you’re working through a problem “on the board” in class.</li>
+<li>What formulas / techniques / etc were needed?</li>
+<li>How did you know which method to use?</li>
+</ul></li>
+</ul>
+</section>
+<section id="problem-presentation-1" class="slide level2">
+<h2>Problem Presentation</h2>
+<ul>
+<li>Slides (PPT / Google Slides)</li>
+<li>Upload slides to VoiceThread</li>
+<li>Comment on each slide (add “audio” comment)</li>
+<li>Keep it short: roughly 5 minutes.</li>
+<li>See rubric on Moodle.</li>
+</ul>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions?</h2>
+<ul>
+<li>Meaning of Definite Integral / FTC</li>
+<li>Integration by substitution</li>
+<li>Exponential / Logarithmic Functions</li>
+<li>Inverse Trig</li>
+<li>Integration by Parts</li>
+<li>Trig powers</li>
+<li>Products of trig functions of different angles</li>
+</ul>
+</section></section>
+<section>
+<section id="partial-fractions" class="title-slide slide level1">
+<h1>Partial Fractions</h1>
+<p>How do we compute the following?</p>
+<p><span class="math display">\[\int \frac{1}{x^2 - 1} dx\]</span></p>
+</section>
+<section id="notice" class="slide level2">
+<h2>Notice</h2>
+<p><span class="math display">\[\frac{1/2}{x-1} - \frac{1/2}{x+1} = \frac{1}{x^2 - 1}\]</span></p>
+<p>(Algebra!)</p>
+<p>Then:</p>
+<p><span class="math display">\[\int (\frac{1/2}{x-1} - \frac{1/2}{x+1})dx = \frac{1}{2}(\ln|x-1| - \ln|x+1|) + C\]</span></p>
+</section>
+<section id="but-how" class="slide level2">
+<h2>But how?</h2>
+<p>How do we go from <span class="math inline">\(\frac{1}{x^2 - 1}\)</span> to <span class="math inline">\(\frac{1/2}{x-1} - \frac{1/2}{x+1}\)</span>?</p>
+<p>Another example:</p>
+<p><span class="math display">\[\frac{1}{(x+1)(x+2)} = \frac{A}{x+1} + \frac{B}{x+2}\]</span></p>
+<p>Solve for <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>?</p>
+</section>
+<section id="find-a-and-b" class="slide level2">
+<h2>Find A and B</h2>
+<p><span class="math display">\[
+\begin{align}
+\frac{1}{(x+1)(x+2)} &amp;= \frac{A}{x+1} + \frac{B}{x+2} \\
+&amp;= \frac{A(x+2) + B(x+1)}{(x+1)(x+2)}
+\end{align}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(A(x+2) + B(x+1) = 1\)</span>, no matter what <span class="math inline">\(x\)</span> is</li>
+<li><span class="math inline">\(x = -2\)</span>, then <span class="math inline">\(B = -1\)</span>.</li>
+<li><span class="math inline">\(x = -1\)</span>, then <span class="math inline">\(A = 1\)</span>.</li>
+</ul>
+<p>So: <span class="math inline">\(\frac{1}{(x+1)(x+2)} = \frac{1}{x+1} - \frac{1}{x+2}\)</span></p>
+</section>
+<section id="partial-fractions-1" class="slide level2">
+<h2>Partial Fractions</h2>
+<ul>
+<li>Rational function <span class="math inline">\(\frac{P(x)}{Q(x)}\)</span></li>
+<li>Factor <span class="math inline">\(Q(x)\)</span></li>
+<li>Most examples: <span class="math inline">\(Q(x) = (ax + b)(cx + d)\)</span></li>
+<li>Then <span class="math inline">\(\frac{P(x)}{Q(x)} = \frac{A}{ax + b} + \frac{B}{cx + d}\)</span> is the <strong>partial fraction decomposition</strong></li>
+<li>How to find <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>?
+<ul>
+<li>Common denominator</li>
+<li>Pick special values of <span class="math inline">\(x\)</span> that cancel nicely.</li>
+<li>Use zeroes of <span class="math inline">\(Q(x)\)</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="exercises" class="slide level2">
+<h2>Exercises</h2>
+<p>Decompose into partial fractions and integrate. (Breakout rooms / jamboard)</p>
+<ol type="1">
+<li><span class="math inline">\(\int \frac{1}{(x+2)(x-1)} dx\)</span></li>
+<li><span class="math inline">\(\int \frac{1}{x^2 - 6x + 5} dx\)</span></li>
+</ol>
+</section>
+<section id="more-general" class="slide level2">
+<h2>More general</h2>
+<p><span class="math display">\[\frac{1}{(x+1)(x+2)(x+3)} = \frac{A}{x+1} + \frac{B}{x+2} + \frac{C}{x+3}\]</span></p>
+<div class="fragment">
+<ul>
+<li><span class="math inline">\(x = -1\)</span>: <span class="math inline">\(A(x+2)(x+3) = 1\)</span> means <span class="math inline">\(A = \frac{1}{2}\)</span>.</li>
+<li><span class="math inline">\(x = -2\)</span>: <span class="math inline">\(B(x+1)(x+3) = 1\)</span> means <span class="math inline">\(B = -1\)</span>.</li>
+<li><span class="math inline">\(x = -3\)</span>: <span class="math inline">\(C(x+1)(x+2) = 1\)</span> means <span class="math inline">\(C = \frac{1}{2}\)</span>.</li>
+</ul>
+</div>
+</section>
+<section id="continued" class="slide level2">
+<h2>Continued</h2>
+<p>Integrate:</p>
+<p><span class="math inline">\(\frac{1}{2}\int \frac{dx}{x+1} - \int \frac{dx}{x+2} + \frac{1}{2} \int \frac{dx}{x+3}\)</span></p>
+<p>Final answer: <span class="math inline">\(\frac{1}{2}\ln|x+1| - \ln|x+2| + \frac{1}{2}\ln|x+3| + C\)</span></p>
+</section></section>
+<section>
+<section id="center-of-mass" class="title-slide slide level1">
+<h1>Center of Mass</h1>
+<p><img src="https://openstax.org/resources/42626723b995f5b5b5ef3657223f7d915b846120" style="background: currentColor" alt="Balancing point" /></p>
+<p>Suppose:</p>
+<ul>
+<li><span class="math inline">\(m_1 = 10\)</span> kg</li>
+<li><span class="math inline">\(m_2 = 20\)</span> kg</li>
+<li><span class="math inline">\(x_1 = -2\)</span></li>
+<li><span class="math inline">\(x_2 = 2\)</span></li>
+</ul>
+<p>What is the balancing point?</p>
+</section>
+<section id="moments-1d" class="slide level2">
+<h2>Moments, 1D</h2>
+<ul>
+<li>Looking for <span class="math inline">\(x\)</span> such that <span class="math inline">\(mass \cdot distance\)</span> is the same on both sides.</li>
+<li><span class="math inline">\(20(2-x) = 10(x - (-2))\)</span></li>
+<li><span class="math inline">\(40 - 20x = 10x + 20\)</span></li>
+<li><span class="math inline">\(20 = 30x\)</span></li>
+<li><span class="math inline">\(x = \frac{20}{30} = \frac{2}{3}\)</span></li>
+</ul>
+<p>30 is the total mass of the system. 20 is the <strong>moment</strong> of the system with respect to the origin.</p>
+</section>
+<section id="moments-2d" class="slide level2">
+<h2>Moments, 2D</h2>
+<p><img src="https://openstax.org/resources/e883c540354e80eb11c32e769534a18b96206078" style="background: currentColor" alt="Point mass located at (x1, y1)" /></p>
+<ul>
+<li><span class="math inline">\(M_x\)</span> = moment with respect to <span class="math inline">\(x\)</span>-axis? <span class="math inline">\(m_1 \cdot y_1\)</span> (mass times distance to x-axis)</li>
+<li><span class="math inline">\(M_y\)</span> = moment with respect to <span class="math inline">\(y\)</span>-axis? <span class="math inline">\(m_1 \cdot x_1\)</span> (mass times distance to y-axis)</li>
+</ul>
+</section>
+<section id="moments-2d-1" class="slide level2">
+<h2>Moments, 2D</h2>
+<iframe src="https://www.desmos.com/calculator/l3ndjrv9mq?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+<p>Center of mass?</p>
+</section>
+<section id="moments-2d-2" class="slide level2">
+<h2>Moments, 2D</h2>
+<p>Sum of all the moments:</p>
+<ul>
+<li><span class="math inline">\(M_x = 10(1) + 5(-3) = -5\)</span></li>
+<li><span class="math inline">\(M_y = 10(1) + 5(4) = 30\)</span></li>
+<li>Total mass: 15kg.</li>
+<li>Center of mass?
+<ul>
+<li><span class="math inline">\((\frac{M_y}{M}, \frac{M_x}{M})\)</span></li>
+<li><span class="math inline">\((2, -\frac{1}{3})\)</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="center-of-mass-1" class="slide level2">
+<h2>Center of Mass</h2>
+<ul>
+<li>Pretend all mass is concentrated on this one point</li>
+<li>Useful for calculating gravity
+<ul>
+<li>Much harder to compute the forces on all the individual particles</li>
+</ul></li>
+</ul>
+</section>
+<section id="centroid-of-rectangle" class="slide level2">
+<h2>Centroid of Rectangle</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<iframe src="https://www.desmos.com/calculator/inr2omxd5b?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+</div><div class="column" style="width:50$;">
+<ul>
+<li>Rectangle of uniform density <span class="math inline">\(\rho\)</span>?</li>
+<li><span class="math inline">\((\frac{x_1 + x_2}{2}, \frac{y}{2})\)</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="centroid-of-curve" class="slide level2">
+<h2>Centroid of Curve</h2>
+<p><img src="https://openstax.org/resources/df3152018c89d6a7aaafdb051ee8eb6d4569925e" style="background: currentColor" alt="Region enclosed by a curve" /></p>
+<ul>
+<li>Assume uniform density <span class="math inline">\(\rho\)</span>.</li>
+<li>Approximate the moments and total mass by rectangles.</li>
+<li>Split into <span class="math inline">\(n\)</span> rectangles</li>
+<li>Endpoints <span class="math inline">\(x_0, x_1, \ldots, x_n\)</span></li>
+</ul>
+</section>
+<section id="moments-of-one-rectangle" class="slide level2">
+<h2>Moments of one rectangle</h2>
+<p><img src="https://openstax.org/resources/4edea7bac957c4e910e44d8cf6308c13826cee17" style="background: currentColor" alt="One rectangle in curve" /></p>
+<ul>
+<li><span class="math inline">\(M_x\)</span> = (mass of rectangle) <span class="math inline">\(\cdot \frac{y}{2}\)</span></li>
+<li><span class="math inline">\(M_y\)</span> = (mass of rectangle) <span class="math inline">\(\cdot x_i\)</span> (if <span class="math inline">\(x_i\)</span> and <span class="math inline">\(x_{i+1}\)</span> are close)</li>
+<li>mass of rectangle <span class="math inline">\(= \rho y \Delta x\)</span></li>
+</ul>
+</section>
+<section id="moments-of-the-curve" class="slide level2">
+<h2>Moments of the curve</h2>
+<ul>
+<li><span class="math inline">\(M_x \approx \sum\limits_{i = 1}^n \rho (y \Delta x) (\frac{y}{2})\)</span></li>
+<li><span class="math inline">\(M_y \approx \sum\limits_{i = 1}^n \rho (y \Delta x) (x)\)</span></li>
+<li><span class="math inline">\(m \approx \sum\limits_{i = 1}^n \rho y \Delta x\)</span></li>
+</ul>
+</section>
+<section id="limit" class="slide level2">
+<h2>Limit</h2>
+<p>As <span class="math inline">\(n \rightarrow \infty\)</span>, if <span class="math inline">\(y = f(x)\)</span>:</p>
+<ul>
+<li><span class="math inline">\(M_x = \rho \int_a^b \frac{(f(x))^2}{2} dx\)</span></li>
+<li><span class="math inline">\(M_y = \rho \int_a^b xf(x) dx\)</span></li>
+<li><span class="math inline">\(m = \rho \int_a^b f(x) dx\)</span></li>
+<li>Center of mass = <span class="math inline">\((\frac{M_y}{m}, \frac{M_x}{m})\)</span></li>
+<li><span class="math inline">\(\rho\)</span> cancels</li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<iframe src="https://www.desmos.com/calculator/apbt3q6yak?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+</div><div class="column" style="width:50$;">
+<ul>
+<li>Region enclosed by <span class="math inline">\(y = \sin(x)\)</span></li>
+<li><span class="math inline">\(x = 0\)</span> to <span class="math inline">\(x = \pi\)</span></li>
+<li>Center of mass: <span class="math inline">\((\pi/2, \pi/8)\)</span></li>
+<li>Confirm this!</li>
+</ul>
+</div>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
