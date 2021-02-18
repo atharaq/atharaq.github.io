@@ -178,7 +178,9 @@ You don't need to submit this, but think about how you might implement the **rem
 
 From the implementation, we can see that the running times of the basic operations (insert, remove, contains) of a tree are all roughly proportional to the height of the tree. Let's do some simple asymptotic analysis for now to determine these running times.
 
-**Note**: I have a video for this, but unfortunately YouTube upload limits have prevented me from being able to share this with you just yet. So please go through this on your own for now, and by Friday I will replace this note with a video of me working out some of the mathematics here.
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/KEBbLynDJZk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ## Complete Trees
 
