@@ -1,5 +1,11 @@
 # Professor Abdul-Quader's Lecture Notes
 
+Lecture Notes for Spring 2021 Courses:
+
+* [Calculus II](calc-2)
+* [Computer Science II](cs-2)
+* [Data Structures](data-structures)
+
 Lecture Notes for Fall 2020 Courses:
 
 * [Calculus 1](https://atharaq.github.io/calc-1/)
