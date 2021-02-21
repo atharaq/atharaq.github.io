@@ -168,6 +168,14 @@ Check your answers:
 </ol>
 </details>
 
+# Homework 3
+
+Due **Friday, February 26** at 11:59 PM.
+
+* Section 3.2 # 82, 84, 104, 108
+* Section 3.4 # 196, 200, 202, 204
+* Section 2.6 # 264, 286
+
 # Exam 1 Practice Problems
 
 * Interpreting areas under curves (see activity from [Lesson 2](https://atharaq.github.io/calc-2/lesson2.html#meaning-of-the-definite-integral) and [Lesson 3](https://atharaq.github.io/calc-2/lesson3.html#/daily-cases-integral)).
