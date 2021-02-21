@@ -169,3 +169,14 @@ Check your answers:
 </details>
 
 # Exam 1 Practice Problems
+
+* Interpreting areas under curves (see activity from [Lesson 2](https://atharaq.github.io/calc-2/lesson2.html#meaning-of-the-definite-integral) and [Lesson 3](https://atharaq.github.io/calc-2/lesson3.html#/daily-cases-integral)).
+* (Substitution) Section 1.5 #271 - 280, 292 - 297
+* (Exponential / Logarithmic functions) Section 1.6 #331 - 340
+* (Inverse Trig) Section 1.7 #397 - 402, 411 - 413
+* Chapter 1 Review Exercises #447 - 451
+* (Integration by Parts) Section 3.1 #6 - 20, 38 - 45
+* (Trig Integrals) Section 3.2 #73, 74, 79 - 86, 97 - 100, 103 - 108
+* (Partial Fractions) Section 3.4 #182, 184, 196, 198, 202 - 204
+* Chapter 3 Review #412, 415, 418, 419
+* (Center of Mass) Section 2.6 #263 - 269, 273 - 276
