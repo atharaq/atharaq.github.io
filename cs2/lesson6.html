@@ -201,18 +201,21 @@ public static void main(String[] args) {
 <li>Do <strong>not</strong> let the program crash / throw an exception on its own.</li>
 </ul>
 </section>
-<section id="hints" class="slide level2">
-<h2>Hints</h2>
+<section id="hints-while-loop" class="slide level2">
+<h2>Hints: while loop</h2>
 <p>Use a <strong>while</strong> loop</p>
 <ul>
 <li>As long as you aren’t at the endpoint, keep</li>
 <li>What’s the while loop condition?</li>
 </ul>
 </section>
-<section id="hints-1" class="slide level2">
-<h2>Hints</h2>
+<section id="hints-navigation" class="slide level2">
+<h2>Hints: Navigation</h2>
 <ul>
-<li>Check if you can go east / west, north / south</li>
+<li>Check if you can go east / west, north / south
+<ul>
+<li>Hint: <span class="math inline">\(x\)</span> is even if <span class="math inline">\(x \% 2 == 0\)</span>.</li>
+</ul></li>
 <li>Nuance: can’t go east or west on 1 Street / 1 Ave</li>
 <li>Check if you <em>want</em> to go east / west, north / south
 <ul>
@@ -230,6 +233,21 @@ public static void main(String[] args) {
 <li>What if you can’t go anywhere you want to go?
 <ul>
 <li>Simple idea that works: pick any direction you can go, and just go (1 block)</li>
+</ul></li>
+</ul>
+</section>
+<section id="complicated-ideas" class="slide level2">
+<h2>Complicated Ideas?</h2>
+<ul>
+<li>Get something that works first</li>
+<li>That may take you the entire time</li>
+<li>If you have time, figure out how to optimize:
+<ul>
+<li>Test it out as much as possible</li>
+<li>Find all the edge cases that your code doesn’t handle</li>
+<li>Try to handle them</li>
+<li>More if statements?</li>
+<li>Elegant idea that solves all your problems? (Maybe not.)</li>
 </ul></li>
 </ul>
 </section></section>
