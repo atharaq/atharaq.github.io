@@ -176,7 +176,13 @@ Due **Friday, February 26** at 11:59 PM.
 * Section 3.4 # 196, 200, 202, 204
 * Section 2.6 # 264, 286
 
+In addition, be sure to submit your problem presentation on VoiceThread by **Sunday, February 28**. There is also MyOpenMath homework due **Tuesday, March 2**. Try and do a little bit of each over the next few days, so that you don't have to worry about catching up on a lot of things by next week.
+
 # Exam 1 Practice Problems
+
+**Exam 1** will be given out next week. You will be given the exam (either via email or on Moodle), and will need to do your work on paper, and upload all of your work as a **single PDF file** on Moodle. The exam will be due **Friday, March 5** at 11:59 PM.
+
+Here are some topics and practice problems for each topic that you should look at.
 
 * Interpreting areas under curves (see activity from [Lesson 2](https://atharaq.github.io/calc-2/lesson2.html#meaning-of-the-definite-integral) and [Lesson 3](https://atharaq.github.io/calc-2/lesson3.html#/daily-cases-integral)).
 * (Substitution) Section 1.5 #271 - 280, 292 - 297
