@@ -1,0 +1,171 @@
+# Calculus II Lesson 6: Center of Mass
+{: .no_toc}
+
+1. Table of Contents
+{:toc}
+
+# Center of Mass, Intro
+
+At the end of Thursday's lecture, we discussed this idea of the **center of mass** of a system. The idea is that it is the "balancing point" of the system. We will go through a couple of warm up examples first.
+
+## 1D Example
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/RSOzkbkiSnA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+First consider a one dimensional system, with two objects each concentrated on points on the $x$-axis. Then the center of mass is found by taking a weighted average of each object's location.
+
+(image)
+
+For example, if, in the above image, the mass $m_1$ is 10kg and is at position $x_1 = -2$, and $m_2$ is 5kg at position $x_2 = 2$, then the center of mass can be found algebraicaly. We look for $x$ such that $10(x + 2) = 5(2 - x)$. Solving for $x$, we get $10x + 20 = 10 - 5x$. Solve this equation and get $x = \frac{10}{15}$, or $\frac{2}{3}$.
+
+The idea is that the center of mass is found by adding up the **moments** of each object, and dividing by the sum of their masses. The **moment** of an object with respect to a point is the mass of the object multiplied by the distance from that object to a point. In this case, we add up the moments of each object with respect to the origin.
+
+## 2D Example
+
+Let's do a similar example, but in two dimensions. Suppose we have two objects with masses concentrated on points on the plane:
+
+(graph)
+
+Then the center of mass of this system can similarly be found by adding up the moments of each object, and dividing by the total mass. But in two dimensions, we have to look at the moments of each object with respect to each axis.
+
+The moment of an object with respect to the $x$-axis, $M_x$, is its mass multiplied by the $y$-value of its position. The moment with respect to the $y$-axis is the mass multiplied by the $x$-value of the position. We add up each individual moment to get the moments of the system. We add up the individual masses to get the mass of the system, $m$. The **center of mass** is located as position $(\frac{M_y}{m}, \frac{M_x}{m})$.
+
+In other words, the center of mass is located at $(\frac{m_1x_1 + m_2 x_2}{m_1 + m_2}, \frac{m_1y_1 + m_2 y_2}{m_1 + m_2})$, which is similarly a kind of weighted average.
+
+# Center of Mass, Continuous Region
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/H4RQc0PzZc8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+Now we assume that the masses of our objects are distributed continuously throughout a region. For some regions, it is not challenging to find its center of mass: if the region is a rectangle of uniform density $\rho$, its center of mass is at the actual center of the rectangle:
+
+(image)
+
+For more complicated regions, we can approximate the region with rectangles as we do for areas. We still need to assume the region has uniform density, $\rho$. We find the centers of mass of each of those rectangles, and use those to compute the center of mass for the region as a whole. In other words, we can assume that the entirety of the mass of each rectangle lies at its center (this is actually the entire point of the concept: the center of mass of an object is the point at which we can assume all of its mass is concentrated on, for the purposes of more complicated calculations.)
+
+## Derivation
+
+Then we use the same idea above: use the moments and masses of each rectangle to compute $M_x, M_y$ and $m$, and then the center of mass is located at $(\frac{M_y}{m}, \frac{M_x}{m})$. The computation is as follows:
+
+(picture)
+
+We split up our curve into $n$ rectangles. For one rectangle, its center is at $(\frac{x_i + x_{i+1}}{2}, \frac{f(x_i)}{2})$. Notice that the mass of each rectangle is its area multiplied by the density, $\rho$:
+
+$$m = \rho f(x_i) \Delta x$$
+
+The moments of that rectangle are then computed as follows:
+
+$$
+\begin{align}
+M_x &= \frac{f(x_i)}{2} m \\
+M_y &= \frac{x_i + x_{i+1}}{2} m
+\end{align}
+$$
+
+To simplify matters, we will assume that $x_i$ and $x_{i+1}$ are very close (as they will get closer to each other as $n \rightarrow \infty$). So $M_y = x_i m$. Replacing $m$ with $\rho f(x_i) \Delta x$ in each of the above formulas, we have:
+
+$$
+\begin{align}
+M_x &= \frac{\rho}{2} (f(x_i))^2 \Delta x \\
+M_y &= \rho x_i f(x_i) \Delta x
+\end{align}
+$$
+
+We add up each of these moments to get the (approximation of the) moments of the entire region:
+
+$$
+\begin{align}
+M_x &= \sum_{i=1}^n \frac{rho}{2} (f(x_i))^2 \Delta x \\
+M_y &= \sum_{i=1}^n \rho x_i f(x_i) \Delta x
+\end{align}
+$$
+
+As $n \rightarrow \infty$, these sums become integrals, and we get our exact formulas for the moments of the curve:
+
+$$
+\begin{align}
+M_x &= \frac{\rho}{2} \int_a^b f(x)^2 dx \\
+M_y &= \rho \int_a^b x f(x) dx
+\end{align}
+$$
+
+The mass of the region can be found by similarly adding up the masses of each rectangle ($\rho f(x_i) \Delta x$), and taking the limit as $n \rightarrow \infty$. We end up with:
+
+$$m = \rho \int_a^b f(x) dx$$
+
+Our center of mass can be found using these formulas, at the coordinate $(\frac{M_y}{m}, \frac{M_x}{m})$. Notice that the density constant $\rho$ will cancel out, so we can effectively ignore it (or just assume that it's equal to 1).
+
+## Example
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/4BcemHZ8KE4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+Let's use these formulas to find the center of mass of the region bounded by $y = \sin(x)$, with $0 \leq x \leq \pi$.
+
+(graph)
+
+First let's compute the mass (assuming $\rho = 1$):
+
+$$m = \int_0^\pi \sin(x) dx = \left.-\cos(x)\right|_0^\pi$$
+
+Plugging in the endpoints, the mass is $-\cos(\pi) + \cos(0) = 2$.
+
+Now we compute $M_x$:
+
+$$\frac{1}{2} \int_0^\pi (\sin(x))^2 dx$$
+
+Using what we learned in [Lesson 4](lesson4.html#even-powers), we replace $\sin^2(x)$ with $\frac{1}{2} - \frac{1}{2} \cos(2x)$:
+
+$$\frac{1}{2} \int_0^\pi (\frac{1}{2} - \frac{1}{2} \cos(2x)) dx = \left.(\frac{x}{4} - \frac{\sin(2x)}{8})\right|_0^\pi$$
+
+Plugging in endpoints, $M_x = (\frac{\pi}{4} - \frac{\sin(2\pi)}{8}) - (0 - \frac{\sin(0)}{8})$, or $M_x = \frac{\pi}42}$.
+
+Now we compute $M_y$:
+
+$$\int_0^\pi x \sin(x) dx$$
+
+We use [Integration by parts](lesson4.html#review-of-integration-by-parts) for this problem. Since $\sin(x)$ is easy to integrate, and the integral of $\sin(x)$ does not increase the complexity of the problem, we let:
+
+* $u = x$
+* $dv = \sin(x) dx$
+* $du = dx$
+* $v = -\cos(x)$
+
+So our antiderivative integral is:
+
+$$-x\cos(x) - \int -(\cos(x)) dx = -x \cos(x) + \int \cos(x) dx$$
+
+Computing one more integral, our $M_y$ is $\left.(-x\cos(x) + \sin(x))\right|_0^\pi$. Plug in the endpoints:
+
+$$(-\pi \cos(\pi) + \sin(\pi)) - (-0\cos(0) + \sin(0))$$
+
+Which is just $\pi$. To recap, we have:
+
+* $m = 2$
+* $M_x = \frac{\pi}{4}$
+* $M_y - \pi$
+
+So our center of mass $(\frac{M_y}{m}, \frac{M_x}{m})$ is ($\frac{\pi}{2}, \frac{\pi}{8})$. Here is the region with the center of mass plotted:
+
+(graph)
+
+As an exercise, find the centers of mass of the following regions, assuming a uniform density:
+
+1. The region bounded by $y = 4 - x^2$ and the $x$-axis, with $-2 \leq x \leq 2$.
+2. The region bounded by $y = \cos(x)$ and the $x$-axis, with $0 \leq x \leq \frac{\pi}{2}$.
+
+<details>
+<summary>
+Check your answers:
+</summary>
+<ol>
+  <li>$(0, \frac{8}{5})$</li>
+  <li>$(\frac{\pi}{2} - 1, \frac{\pi}{8})$</li>
+</ol>
+</details>
+
+# Exam 1 Practice Problems
