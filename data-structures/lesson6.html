@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-02-22">
+  <title>Data Structures</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">22 February 2021</p>
+</section>
+
+<section>
+<section id="binarytree" class="title-slide slide level1">
+<h1>BinaryTree</h1>
+<p>Today:</p>
+<ul>
+<li>contains / remove</li>
+<li>rotations</li>
+<li>balancing</li>
+</ul>
+</section>
+<section id="contains" class="slide level2">
+<h2>Contains</h2>
+<pre ><code class="java">if (root == null) {
+    return false;
+}
+int comparison = item.compareTo(root.data);
+if (comparison == 0) {
+    return true;
+} else if (comparison &lt; 0) {
+    return contains(root.left, item);
+} else {
+    return contains(root.right, item);
+}</code></pre>
+</section>
+<section id="remove" class="slide level2">
+<h2>Remove</h2>
+<ul>
+<li>if the node is a leaf, return null</li>
+<li>if the node has one child, replace its data with its child, delete its child.</li>
+<li>if the node has two children, replace its data with its successor, delete the successor</li>
+</ul>
+</section>
+<section id="successor" class="slide level2">
+<h2>Successor</h2>
+<pre ><code class="java">private int min(TreeNode&lt;T&gt; subtree) {
+    if (subtree.left == null) {
+        return subtree.data;
+    }
+    return min(subtree.left);
+}</code></pre>
+</section>
+<section id="remove-1" class="slide level2">
+<h2>Remove</h2>
+<ul>
+<li>CodingRooms</li>
+<li>Run Unit Tests in IntelliJ</li>
+</ul>
+</section></section>
+<section>
+<section id="tree-rotations" class="title-slide slide level1">
+<h1>Tree Rotations</h1>
+<figure>
+<img data-src="rightrotate1.png" alt="" /><figcaption>Right rotation around node E</figcaption>
+</figure>
+<ul>
+<li>Preserves “Search Tree” property</li>
+<li>Algorithm?</li>
+</ul>
+</section>
+<section id="right-rotation" class="slide level2">
+<h2>Right Rotation</h2>
+<pre ><code >L = root.left
+root.left = L.right
+L.right = root
+return L</code></pre>
+<p>Makes L the new root of this subtree.</p>
+</section>
+<section id="left-rotation" class="slide level2">
+<h2>Left Rotation</h2>
+<p>Similar idea:</p>
+<pre ><code >R = root.right
+root.right = R.left
+R.left = root
+return R</code></pre>
+<ul>
+<li>Makes R the new root of this subtree</li>
+<li>Inverse operations:
+<ul>
+<li>Right rotation followed by left rotation?</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="balancing" class="title-slide slide level1">
+<h1>Balancing</h1>
+<p>What does an “unbalanced” tree look like?</p>
+</section>
+<section id="unbalanced-trees" class="slide level2">
+<h2>Unbalanced Trees</h2>
+<div class="columns">
+<div class="column" style="width:10%;">
+
+</div><div class="column" style="width:35%;">
+<figure>
+<img data-src="right_right.png" alt="" /><figcaption>Right-right unbalanced tree</figcaption>
+</figure>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:35%;">
+<figure>
+<img data-src="right_left.png" alt="" /><figcaption>Right-left unbalanced tree</figcaption>
+</figure>
+</div><div class="column" style="width:10%;">
+
+</div>
+</div>
+</section>
+<section id="unbalanced-trees-1" class="slide level2">
+<h2>Unbalanced Trees</h2>
+<ul>
+<li>Can also define left-right and left-left unbalanced trees</li>
+<li>In general:
+<ul>
+<li>if heights of left and right subtrees differ by more than 1</li>
+</ul></li>
+<li>Keep track of the height of each node</li>
+<li>If one subtree has a larger height than the other, rebalance</li>
+<li>How do we rebalance? Tree rotations!</li>
+</ul>
+</section>
+<section id="algorithms-for-balancing" class="slide level2">
+<h2>Algorithms for balancing</h2>
+<p>Some unbalanced trees can be rebalanced easily:</p>
+<ul>
+<li>right-right: rotate left</li>
+<li>left-left: rotate right</li>
+</ul>
+</section>
+<section id="right-left" class="slide level2">
+<h2>Right-left</h2>
+<div class="columns">
+<div class="column" style="width:35%;">
+<p><img alt="Right-left unbalanced tree" src="right_left.png" /></p>
+</div><div class="column" style="width:65%;">
+<ul>
+<li>Rotate left around 30?</li>
+<li>Rotate right around 30? (can’t!)</li>
+<li>Solution?</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="self-balancing-pseudocode" class="slide level2">
+<h2>Self-balancing pseudocode</h2>
+<pre ><code class="java">// psuedocode
+private TreeNode&lt;T&gt; insert(T item, TreeNode&lt;T&gt; subtree) {
+   // code to insert
+   int balance = height(subtree.left) - height(subtree.right);
+   if (balance &gt; 1) {
+     // left-left or left-right?
+   } else if (balance &lt; -1) {
+     // right-right or right-left?
+   }
+}</code></pre>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Forget about the code for a bit. What <strong>should</strong> a self-balancing tree do when we insert in the following order: 1, 2, 3, 4, 5, 6, 7?</p>
+<p>Draw the pictures of the BSTs that result. When do we trigger a “rebalancing”?</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
