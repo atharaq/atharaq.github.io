@@ -122,7 +122,7 @@ Using what we learned in [Lesson 4](lesson4.html#even-powers), we replace $\sin^
 
 $$\frac{1}{2} \int_0^\pi (\frac{1}{2} - \frac{1}{2} \cos(2x)) dx = \left.(\frac{x}{4} - \frac{\sin(2x)}{8})\right|_0^\pi$$
 
-Plugging in endpoints, $M_x = (\frac{\pi}{4} - \frac{\sin(2\pi)}{8}) - (0 - \frac{\sin(0)}{8})$, or $M_x = \frac{\pi}42}$.
+Plugging in endpoints, $M_x = (\frac{\pi}{4} - \frac{\sin(2\pi)}{8}) - (0 - \frac{\sin(0)}{8})$, or $M_x = \frac{\pi}{2}$.
 
 Now we compute $M_y$:
 
@@ -139,7 +139,7 @@ So our antiderivative integral is:
 
 $$-x\cos(x) - \int -(\cos(x)) dx = -x \cos(x) + \int \cos(x) dx$$
 
-Computing one more integral, our $M_y$ is $\left.(-x\cos(x) + \sin(x))\right|_0^\pi$. Plug in the endpoints:
+Computing one more integral, our $M_y$ is $\left.(-x\cos(x) + \sin(x))\right\|_0^\pi$. Plug in the endpoints:
 
 $$(-\pi \cos(\pi) + \sin(\pi)) - (-0\cos(0) + \sin(0))$$
 
