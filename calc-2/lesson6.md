@@ -44,7 +44,7 @@ In other words, the center of mass is located at $(\frac{m_1x_1 + m_2 x_2}{m_1 +
 
 Now we assume that the masses of our objects are distributed continuously throughout a region. For some regions, it is not challenging to find its center of mass: if the region is a rectangle of uniform density $\rho$, its center of mass is at the actual center of the rectangle:
 
-<div class="youtube-container">
+<div class="desmos-container">
 <iframe src="https://www.desmos.com/calculator/toml3nhgba?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
 </div>
 
