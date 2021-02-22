@@ -66,11 +66,15 @@ if (comparison == 0) {
 </section>
 <section id="successor" class="slide level2">
 <h2>Successor</h2>
-<pre ><code class="java">private int min(TreeNode&lt;T&gt; subtree) {
-    if (subtree.left == null) {
-        return subtree.data;
+<pre ><code class="java">private T findMin(TreeNode&lt;T&gt; subtree) {
+    if (subtree == null) {
+        return null;
     }
-    return min(subtree.left);
+
+    while (subtree.left != null) {
+        subtree = subtree.left;
+    }
+    return subtree.data;
 }</code></pre>
 </section>
 <section id="remove-1" class="slide level2">
