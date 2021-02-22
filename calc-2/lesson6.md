@@ -16,7 +16,7 @@ At the end of Thursday's lecture, we discussed this idea of the **center of mass
 
 First consider a one dimensional system, with two objects each concentrated on points on the $x$-axis. Then the center of mass is found by taking a weighted average of each object's location.
 
-(image)
+<img src="https://openstax.org/resources/42626723b995f5b5b5ef3657223f7d915b846120" style="background: currentColor" alt="Balancing point" />
 
 For example, if, in the above image, the mass $m_1$ is 10kg and is at position $x_1 = -2$, and $m_2$ is 5kg at position $x_2 = 2$, then the center of mass can be found algebraicaly. We look for $x$ such that $10(x + 2) = 5(2 - x)$. Solving for $x$, we get $10x + 20 = 10 - 5x$. Solve this equation and get $x = \frac{10}{15}$, or $\frac{2}{3}$.
 
@@ -26,7 +26,9 @@ The idea is that the center of mass is found by adding up the **moments** of eac
 
 Let's do a similar example, but in two dimensions. Suppose we have two objects with masses concentrated on points on the plane:
 
-(graph)
+<div class="desmos-container">
+  <iframe src="https://www.desmos.com/calculator/91subwwlon?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
+</div>
 
 Then the center of mass of this system can similarly be found by adding up the moments of each object, and dividing by the total mass. But in two dimensions, we have to look at the moments of each object with respect to each axis.
 
@@ -42,7 +44,9 @@ In other words, the center of mass is located at $(\frac{m_1x_1 + m_2 x_2}{m_1 +
 
 Now we assume that the masses of our objects are distributed continuously throughout a region. For some regions, it is not challenging to find its center of mass: if the region is a rectangle of uniform density $\rho$, its center of mass is at the actual center of the rectangle:
 
-(image)
+<div class="youtube-container">
+<iframe src="https://www.desmos.com/calculator/toml3nhgba?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
+</div>
 
 For more complicated regions, we can approximate the region with rectangles as we do for areas. We still need to assume the region has uniform density, $\rho$. We find the centers of mass of each of those rectangles, and use those to compute the center of mass for the region as a whole. In other words, we can assume that the entirety of the mass of each rectangle lies at its center (this is actually the entire point of the concept: the center of mass of an object is the point at which we can assume all of its mass is concentrated on, for the purposes of more complicated calculations.)
 
@@ -50,9 +54,13 @@ For more complicated regions, we can approximate the region with rectangles as w
 
 Then we use the same idea above: use the moments and masses of each rectangle to compute $M_x, M_y$ and $m$, and then the center of mass is located at $(\frac{M_y}{m}, \frac{M_x}{m})$. The computation is as follows:
 
-(picture)
+<img src="https://openstax.org/resources/df3152018c89d6a7aaafdb051ee8eb6d4569925e" style="background: currentColor" alt="Region enclosed by a curve" />
 
-We split up our curve into $n$ rectangles. For one rectangle, its center is at $(\frac{x_i + x_{i+1}}{2}, \frac{f(x_i)}{2})$. Notice that the mass of each rectangle is its area multiplied by the density, $\rho$:
+Suppose we have a region enclosed by a curve $y = f(x)$. We split up our curve into $n$ rectangles. For one rectangle, its center is at $(\frac{x_i + x_{i+1}}{2}, \frac{f(x_i)}{2})$.
+
+<img src="https://openstax.org/resources/4edea7bac957c4e910e44d8cf6308c13826cee17" style="background: currentColor" alt="One rectangle in curve" />
+
+Notice that the mass of each rectangle is its area multiplied by the density, $\rho$:
 
 $$m = \rho f(x_i) \Delta x$$
 
@@ -106,7 +114,9 @@ Our center of mass can be found using these formulas, at the coordinate $(\frac{
 
 Let's use these formulas to find the center of mass of the region bounded by $y = \sin(x)$, with $0 \leq x \leq \pi$.
 
-(graph)
+<div class="youtube-container">
+<iframe src="https://www.desmos.com/calculator/lyjslvsepv?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
+</div>
 
 First let's compute the mass (assuming $\rho = 1$):
 
@@ -151,7 +161,9 @@ Which is just $\pi$. To recap, we have:
 
 So our center of mass $(\frac{M_y}{m}, \frac{M_x}{m})$ is ($\frac{\pi}{2}, \frac{\pi}{8})$. Here is the region with the center of mass plotted:
 
-(graph)
+<div class="youtube-container">
+<iframe src="https://www.desmos.com/calculator/3djgqeuywq?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
+</div>
 
 As an exercise, find the centers of mass of the following regions, assuming a uniform density:
 
