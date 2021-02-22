@@ -145,9 +145,14 @@ We use [Integration by parts](lesson4.html#review-of-integration-by-parts) for t
 * $du = dx$
 * $v = -\cos(x)$
 
-So our antiderivative integral is:
+We compute the general antiderivative:
 
-$$-x\cos(x) - \int -(\cos(x)) dx = -x \cos(x) + \int \cos(x) dx$$
+$$
+\begin{align}
+&-x\cos(x) - \int -(\cos(x)) dx \\
+= &-x \cos(x) + \int \cos(x) dx
+\end{align}
+$$
 
 Computing one more integral, our $M_y$ is $\left.(-x\cos(x) + \sin(x))\right\|_0^\pi$. Plug in the endpoints:
 
