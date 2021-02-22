@@ -44,7 +44,7 @@ In other words, the center of mass is located at $(\frac{m_1x_1 + m_2 x_2}{m_1 +
 
 Now we assume that the masses of our objects are distributed continuously throughout a region. For some regions, it is not challenging to find its center of mass: if the region is a rectangle of uniform density $\rho$, its center of mass is at the actual center of the rectangle:
 
-<div class="youtube-container">
+<div class="desmos-container">
 <iframe src="https://www.desmos.com/calculator/toml3nhgba?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
 </div>
 
@@ -114,7 +114,7 @@ Our center of mass can be found using these formulas, at the coordinate $(\frac{
 
 Let's use these formulas to find the center of mass of the region bounded by $y = \sin(x)$, with $0 \leq x \leq \pi$.
 
-<div class="youtube-container">
+<div class="desmos-container">
 <iframe src="https://www.desmos.com/calculator/lyjslvsepv?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
 </div>
 
@@ -145,9 +145,14 @@ We use [Integration by parts](lesson4.html#review-of-integration-by-parts) for t
 * $du = dx$
 * $v = -\cos(x)$
 
-So our antiderivative integral is:
+We compute the general antiderivative:
 
-$$-x\cos(x) - \int -(\cos(x)) dx = -x \cos(x) + \int \cos(x) dx$$
+$$
+\begin{align}
+&-x\cos(x) - \int -(\cos(x)) dx \\
+= &-x \cos(x) + \int \cos(x) dx
+\end{align}
+$$
 
 Computing one more integral, our $M_y$ is $\left.(-x\cos(x) + \sin(x))\right\|_0^\pi$. Plug in the endpoints:
 
@@ -161,7 +166,7 @@ Which is just $\pi$. To recap, we have:
 
 So our center of mass $(\frac{M_y}{m}, \frac{M_x}{m})$ is ($\frac{\pi}{2}, \frac{\pi}{8})$. Here is the region with the center of mass plotted:
 
-<div class="youtube-container">
+<div class="desmos-container">
 <iframe src="https://www.desmos.com/calculator/3djgqeuywq?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
 </div>
 
