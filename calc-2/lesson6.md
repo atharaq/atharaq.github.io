@@ -114,7 +114,7 @@ Our center of mass can be found using these formulas, at the coordinate $(\frac{
 
 Let's use these formulas to find the center of mass of the region bounded by $y = \sin(x)$, with $0 \leq x \leq \pi$.
 
-<div class="youtube-container">
+<div class="desmos-container">
 <iframe src="https://www.desmos.com/calculator/lyjslvsepv?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
 </div>
 
@@ -166,7 +166,7 @@ Which is just $\pi$. To recap, we have:
 
 So our center of mass $(\frac{M_y}{m}, \frac{M_x}{m})$ is ($\frac{\pi}{2}, \frac{\pi}{8})$. Here is the region with the center of mass plotted:
 
-<div class="youtube-container">
+<div class="desmos-container">
 <iframe src="https://www.desmos.com/calculator/3djgqeuywq?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
 </div>
 
