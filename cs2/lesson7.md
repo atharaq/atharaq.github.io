@@ -102,7 +102,7 @@ Describe, as clearly and succinctly as you can, what each of the following metho
   }
   ```
 
-3. Write a method "fibonacci" which returns the "n"-th fibonacci number. This is defined so that fibonacci(0) returns 0, fibonacci(1) returns 1, and the $n$-th fibonacci number is the sum of the $(n-1)$-st and $(n-2)$-nd.
+3. Write a method "fibonacci" which returns the "n"-th fibonacci number. This is defined so that fibonacci(0) returns 0, fibonacci(1) returns 1, and the $n$-th fibonacci number is the sum of the $(n-1)$-st and $(n-2)$-nd fibonacci numbers.
 
   ```java
   public static int fibonacci(int n) {
