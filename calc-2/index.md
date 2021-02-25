@@ -10,3 +10,4 @@ layout: default
 * [Lesson 3: Integration by parts](lesson3.html)
 * [Lesson 4: Integration by parts and trig integrals](lesson4.html)
 * [Lesson 5: Partial Fractions and Center of mass](lesson5.html)
+* [Lesson 6: Center of mass](lesson6.html)

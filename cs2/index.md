@@ -12,3 +12,5 @@ lang: en-US
 * [Lesson 3: Conditionals and logic](lesson3.html)
 * [Lesson 4: Arrays and References](lesson4.html)
 * [Lesson 5: Methods and Strings](lesson5.html)
+* [Lesson 6: Methods](lesson6.html)
+* [Lesson 7: Review](lesson7.html)
