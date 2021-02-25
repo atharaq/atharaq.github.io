@@ -81,6 +81,7 @@ Describe, as clearly and succinctly as you can, what each of the following metho
             i++;
             x /= 2;
         }
+        return i;
     }
     ```
 
