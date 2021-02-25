@@ -45,7 +45,7 @@ Some questions to think about:
 
 Describe, as clearly and succinctly as you can, what each of the following methods do. Use memory diagrams with some sample input and see if you can describe, in a succinct sentence, what the method is doing (at a "Big Picture" level).
 
- 1. 
+ 1. Example one:
 
     ```java  
     public static int t(int[] list) {
@@ -57,7 +57,7 @@ Describe, as clearly and succinctly as you can, what each of the following metho
     }
     ```
 
- 2.
+ 2. Example two:
 
     ```java
     public boolean p(int n) {
@@ -72,7 +72,7 @@ Describe, as clearly and succinctly as you can, what each of the following metho
     }
     ```
 
- 3.
+ 3. Example three:
 
     ```java
     public static int l(int x) {
