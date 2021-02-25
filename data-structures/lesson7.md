@@ -89,6 +89,8 @@ If you do this right, you might not get the same tree after each of these. But, 
     <iframe src="https://www.youtube.com/embed/FECXVU1ZzqI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
+I found a nice [AVL Tree visualization](https://www.cs.usfca.edu/~galles/visualization/AVLtree.html) which lets you see the steps of what happens when you insert into an AVL tree. Try this out with a few random examples and see which rebalancings are triggered. 
+
 ## Implementation
 
 How do we complete the implementation for the balance method? How do we tell if the tree is "right-right" unbalanced? Suppose we know that the tree is "right" unbalanced, so it's either right-right or right-left. In that case, we check if **height(subtree.right.right) >= height(subtree.right.left)**.
