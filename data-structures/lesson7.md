@@ -69,11 +69,11 @@ So what do we do in each of those situations? Two of the situations are fairly s
 * If the subtree is "right-right" unbalanced, rotate it left around the root of that subtree.
 * If the subtree is "left-left" unbalanced, rotate it right around the root of that subtree.
 
-(pictures)
+<img alt="Balance a right-right unbalanced tree with a left rotation" src="right-right-rotate.png" class="noreverse" />
 
 What should we do in the other situations? Hint: see if you can figure out how to turn a "right-left" tree into a "right-right" tree (using rotations).
 
-(pictures)
+<img alt="Turn a right-left unbalanced tree into a right-right tree" src="right-left-double-rotate.png" class="noreverse" />
 
 ## Exercise
 
@@ -93,7 +93,7 @@ If you do this right, you might not get the same tree after each of these. But, 
 
 How do we complete the implementation for the balance method? How do we tell if the tree is "right-right" unbalanced? Suppose we know that the tree is "right" unbalanced, so it's either right-right or right-left. In that case, we check if **height(subtree.right.right) >= height(subtree.right.left)**.
 
-(picture)
+<img alt="Right-right vs right-left unbalanced" src="right-right-vs-right-left.jpeg" class="noreverse" />
 
 Here is the code snippet:
 
