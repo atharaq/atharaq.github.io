@@ -60,7 +60,7 @@ Describe, as clearly and succinctly as you can, what each of the following metho
  2. Example two:
 
     ```java
-    public boolean p(int n) {
+    public static boolean p(int n) {
         int i = 0;
         while (i * i < n) {
             i++;
@@ -90,7 +90,7 @@ Describe, as clearly and succinctly as you can, what each of the following metho
  1. Write a method "subList", which takes in an array and two integers as parameters, and returns an array with just the elements from "start" up until (including) "end - 1". For example, if we call the method on the array ["alice", "bob", "claire", "david", "edward", "florence"] with start = 1 and end = 3, this should return an array ["bob", "claire"]:
 
     ```java
-    public String[] subList(String[] list, int start, int end) {
+    public static String[] subList(String[] list, int start, int end) {
 
     }
     ```
