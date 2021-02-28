@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-03-01">
+  <title>CS II Lesson 8</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS II Lesson 8</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">1 March 2021</p>
+</section>
+
+<section>
+<section id="project-1-status" class="title-slide slide level1">
+<h1>Project 1 Status</h1>
+<p>Quick poll.</p>
+</section>
+<section id="breakouts" class="slide level2">
+<h2>Breakouts</h2>
+<p>Choose your breakout room:</p>
+<ol type="1">
+<li>Getting started (choices 1 - 2)</li>
+<li>Navigation issues (choices 3 - 4)</li>
+<li>Perfectionists (choices 5 - 6)</li>
+</ol>
+<p>Get tips from each other.</p>
+</section>
+<section id="coding-style" class="slide level2">
+<h2>Coding Style</h2>
+<ul>
+<li><p>Proper indentation!!!</p></li>
+<li><p>Good variable names: startStreet, startAve</p></li>
+<li><p>Bad variable names: x, y</p></li>
+<li><p>Good comment:</p>
+<pre ><code class="java">// Check if we've reached the destination after we moved</code></pre></li>
+<li><p>Bad comment:</p>
+<pre ><code class="java">// Update variable</code></pre></li>
+<li><p>Tip: use comments to <em>outline</em> your code</p></li>
+</ul>
+</section>
+<section id="submission" class="slide level2">
+<h2>Submission</h2>
+<ul>
+<li>Your code must work in IntelliJ</li>
+<li>Compress the <strong>entire project</strong>:
+<ul>
+<li>File - Export - Project to Zip file</li>
+</ul></li>
+<li>Locate the .zip file on your computer</li>
+<li>Upload the .zip file to Moodle</li>
+<li>Grace time: 48 hours if you need it.
+<ul>
+<li>Save as much as you can for project 3.</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="review-problems" class="title-slide slide level1">
+<h1>Review Problems</h1>
+<p><a href="https://atharaq.github.io/cs2/lesson7.html">Review problems</a> posted on lesson 7. 4 types of problems on the exam:</p>
+<ol type="1">
+<li>Determine the output</li>
+<li>Understand the method</li>
+<li>Write a method</li>
+<li>Put it together (not listed in lesson 7)</li>
+</ol>
+</section>
+<section id="determine-the-output" class="slide level2">
+<h2>Determine the output</h2>
+<pre ><code class="java">public static boolean something(String[] list) {
+    for (int i = 0; i &lt; list.length; i++) {
+        String nameOne = list[i];
+        for (int j = i + 1; j &lt; list.size(); j++) {
+            String nameTwo = list[j];
+            if (nameOne.equals(nameTwo)) {
+                return true;
+            }
+        }
+    }
+    return false;
+}</code></pre>
+<ul>
+<li>list is [“Athar”, “Bob”, “Carl”, “David”]?</li>
+<li>list is [“Bob”, “Carl”, “Bob”, “David”]</li>
+<li>Memory diagram?</li>
+</ul>
+</section>
+<section id="understand-the-method" class="slide level2">
+<h2>Understand the method</h2>
+<pre ><code class="java">public static int l(int x) {
+    int i = 0;
+    while (x / 2 &gt; 0) {
+        i++;
+        x /= 2;
+    }
+    return i;
+}</code></pre>
+<ul>
+<li>One sentence explanation?</li>
+<li>(If you can): mathematical explanation?
+<ul>
+<li>If you cannot: don’t worry about mathematical terminology.</li>
+<li>Big picture idea?</li>
+</ul></li>
+</ul>
+</section>
+<section id="write-a-method" class="slide level2">
+<h2>Write a method</h2>
+<pre ><code class="java">public static String[] subList(String[] list, int start, int end) {
+
+}</code></pre>
+<ul>
+<li>Create a new array (size = “end - start”)</li>
+<li>Copy over the elements from <code>list</code> into your array</li>
+<li>Return that array</li>
+</ul>
+</section></section>
+<section>
+<section id="put-it-together" class="title-slide slide level1">
+<h1>Put it together</h1>
+<p>One type of problem I didn’t put on the review:</p>
+<ul>
+<li>You’ll be given a problem broken into components</li>
+<li>Write each component in its own method</li>
+<li>Write a main method that uses all the components</li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p>Write a program that asks the user for the current time (hour and minute, using a 24 hour clock), and a number of minutes, and outputs the time after that many minutes.</p>
+<p>You’ll first implement the following methods:</p>
+</section>
+<section id="getnumber" class="slide level2">
+<h2>getNumber</h2>
+<pre ><code class="java">public static int getNumber(Scanner scanner, String prompt, int lowerBound, int upperBound, String error)</code></pre>
+<ul>
+<li>This method should display the “prompt” message, get input from the scanner, and return an integer between lowerBound and upperBound, inclusive.</li>
+<li>For any invalid input, output the error message and try again.</li>
+</ul>
+</section>
+<section id="displaytime" class="slide level2">
+<h2>displayTime</h2>
+<pre ><code class="java">public static String displayTime(int hour, int minute)</code></pre>
+<ul>
+<li>This method returns a String version of the time</li>
+<li>Should handle cases like the minute being single or double digits</li>
+</ul>
+</section>
+<section id="hourafter-and-minuteafter" class="slide level2">
+<h2>hourAfter and minuteAfter</h2>
+<pre ><code class="java">public static int hourAfter(int oldHour, int oldMinute, int minutesToAdd) {
+
+}
+public static int minuteAfter(int oldHour, int oldMinute, int minutesToAdd) {
+
+}</code></pre>
+<p>These methods do the actual computation of the new hour and minute</p>
+</section>
+<section id="main" class="slide level2">
+<h2>main</h2>
+<pre ><code class="java">public static void main(String[] args) {
+
+}</code></pre>
+<ul>
+<li>After implementing all of the above methods, use them to implement the main program.</li>
+<li>Time.java on Moodle</li>
+<li>Implement each method, test it out, make sure it works, then put it all together</li>
+<li>Breakout rooms (no CodingRooms today)</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
