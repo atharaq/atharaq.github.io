@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-03-04">
+  <title>Calc II Lesson 7</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Calc II Lesson 7</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">4 March 2021</p>
+</section>
+
+<section id="reminder" class="title-slide slide level1">
+<h1>Reminder</h1>
+<ul>
+<li>Exam 1 due <strong>tomorrow</strong></li>
+<li>Submit via Moodle</li>
+<li>Single PDF file</li>
+<li>Show <strong>all</strong> your work</li>
+<li>Office hours tomorrow 10 - 11:30</li>
+</ul>
+</section>
+
+<section>
+<section id="improper-integrals" class="title-slide slide level1">
+<h1>Improper Integrals</h1>
+<p>How do we evaluate integrals where one bound goes off to infinity?</p>
+<ol type="1">
+<li><span class="math inline">\(\int\limits_a^{\infty} f(x) dx = \lim\limits_{b \rightarrow \infty} \int\limits_a^b f(x) dx\)</span>, if this limit exists.</li>
+<li><span class="math inline">\(\int\limits_{-\infty}^{b} f(x) dx = \lim\limits_{a \rightarrow -\infty} \int\limits_a^b f(x) dx\)</span>, if this limit exists.</li>
+</ol>
+</section>
+<section id="vocabulary" class="slide level2">
+<h2>Vocabulary</h2>
+<ol type="1">
+<li><span class="math inline">\(\int\limits_a^{\infty} f(x) dx = \lim\limits_{b \rightarrow \infty} \int\limits_a^b f(x) dx\)</span>, if this limit exists.</li>
+<li><span class="math inline">\(\int\limits_{-\infty}^{b} f(x) dx = \lim\limits_{a \rightarrow -\infty} \int\limits_a^b f(x) dx\)</span>, if this limit exists.</li>
+</ol>
+<p>If the limit exists, we say it <strong>converges</strong>. If not, we say it <strong>diverges</strong>.</p>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Compute the following definite integrals by taking the appropriate limit.</p>
+<ol type="1">
+<li><span class="math inline">\(\int\limits_0^{\infty} xe^{-x^2} dx\)</span></li>
+<li><span class="math inline">\(\int\limits_0^{\infty} e^{-x} dx\)</span></li>
+</ol>
+</section>
+<section id="divergence" class="slide level2">
+<h2>Divergence</h2>
+<p><span class="math inline">\(\int_0^{\infty} (e^{-x} + 1) dx\)</span>. Without computing?</p>
+<iframe src="https://www.desmos.com/calculator/o0plfqccr8?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+</section>
+<section id="divergence-1" class="slide level2">
+<h2>Divergence</h2>
+<p>If <span class="math inline">\(\lim\limits_{x \rightarrow \infty} f(x) \neq 0\)</span>, then can <span class="math inline">\(\int\limits_0^{\infty} f(x)dx\)</span> converge? Why or why not?</p>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p>Compute the following improper integral:</p>
+<p><span class="math display">\[\int_0^{\infty} \frac{1}{x} dx\]</span></p>
+<div class="fragment">
+<p>Since <span class="math inline">\(\frac{1}{x} \rightarrow 0\)</span>, must this integral converge?</p>
+</div>
+</section>
+<section id="limits-at-infinity-divergence" class="slide level2">
+<h2>Limits at infinity / Divergence</h2>
+<ul>
+<li>If the limit of a function at infinity is not 0, then the improper integral <em>must</em> diverge.</li>
+<li>If limit is 0, then we do not know about the improper integral! The integral can diverge even if the limit at infinity is 0.</li>
+</ul>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<p>Jamboards (slides 1-2).</p>
+<ol type="1">
+<li><span class="math inline">\(\int_1^{\infty} \frac{1}{x^2} dx\)</span></li>
+<li>Does <span class="math inline">\(\int\limits_0^{\infty} e^{-x^2} dx\)</span> converge or diverge?</li>
+</ol>
+<p>Hint on (2): <em>compare</em> <span class="math inline">\(e^{-x^2}\)</span> with <span class="math inline">\(e^{-x}\)</span>, which we already know converges.</p>
+</section></section>
+<section>
+<section id="discontinuities" class="title-slide slide level1">
+<h1>Discontinuities</h1>
+<p><span class="math inline">\(\int_0^4 \frac{1}{\sqrt{4-x}} dx\)</span>? Ideas?</p>
+<iframe src="https://www.desmos.com/calculator/jb6kzjrwon?embed" width="450px" height="450px" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+</section>
+<section id="solution" class="slide level2">
+<h2>Solution</h2>
+<p>Set up a limit:</p>
+<p><span class="math display">\[\lim\limits_{b \rightarrow 4^-} \int\limits_0^b \frac{1}{\sqrt{4-x}}dx\]</span></p>
+<div class="fragment">
+<p>Re-write the function as <span class="math inline">\((4-x)^{-\frac{1}{2}}\)</span>, and use the power rule:</p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[\lim\limits_{b \rightarrow 4^-} \left. -2(4-x)^{\frac{1}{2}}\right|_0^b = \lim\limits_{b\rightarrow 4^-} -2(4-b)^{1/2} + 2(4)^{1/2}\]</span></p>
+</div>
+</section>
+<section id="solution-1" class="slide level2">
+<h2>Solution</h2>
+<p><span class="math display">\[\lim\limits_{b\rightarrow 4^-} -2(4-b)^{1/2} + 2(4)^{1/2} = \lim\limits_{b\rightarrow 4^-} -2(4-b)^{1/2} + 4\]</span></p>
+<div class="fragment">
+<p>As <span class="math inline">\(b \rightarrow 4^{-}\)</span>, what happens to <span class="math inline">\((4-b)^{1/2}\)</span>?</p>
+</div>
+<div class="fragment">
+<p>It approaches 0! So the limit is just <strong>4</strong>!</p>
+</div>
+<div class="fragment">
+<p>Question: why is it important here that we approached 4 from the left?</p>
+</div>
+</section>
+<section id="exercise-2" class="slide level2">
+<h2>Exercise</h2>
+<p>Jamboard slide 3.</p>
+<p><span class="math display">\[\int_0^2 x \ln(x) dx\]</span></p>
+<p>(Where is the discontinuity here?)</p>
+</section>
+<section id="middle-of-interval" class="slide level2">
+<h2>Middle of Interval</h2>
+<p><span class="math inline">\(\int_{-1}^1 \frac{1}{x^2} dx\)</span>. Ideas?</p>
+<iframe src="https://www.desmos.com/calculator/kzgng8xu4u?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+</section>
+<section id="split-into-2" class="slide level2">
+<h2>Split into 2</h2>
+<p><span class="math inline">\(\int_{-1}^0 \frac{1}{x^2} dx + \int_0^1 \frac{1}{x^2} dx\)</span></p>
+<div class="fragment">
+<p><span class="math display">\[
+\begin{align}
+&amp;\lim_{b\rightarrow 0^-} \int_{-1}^b \frac{1}{x^2} dx &amp;+ \lim_{a \rightarrow 0^+} \int \frac{1}{x^2} dx \\
+&amp;= \lim_{b\rightarrow 0^-} \left. (-\frac{1}{x}) \right|_{-1}^b &amp;+ \lim_{a \rightarrow 0^+} \left.(-\frac{1}{x})\right|_a^1 \\
+&amp;= \ldots &amp;+ \lim_{a \rightarrow 0^+} -1 + \frac{1}{a}
+\end{align}
+\]</span></p>
+</div>
+<div class="fragment">
+<p>which diverges. (The other side diverges too.)</p>
+</div>
+</section>
+<section id="multiple" class="slide level2">
+<h2>Multiple?</h2>
+<p>What should we do here?</p>
+<iframe src="https://www.desmos.com/calculator/byb625k9x5?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+</section></section>
+<section>
+<section id="areas-between-curves" class="title-slide slide level1">
+<h1>Areas between curves</h1>
+<p>Determine the area of the region bounded by the curves <span class="math inline">\(y = x\)</span> and <span class="math inline">\(y = x^2\)</span>.</p>
+</section>
+<section id="graph" class="slide level2">
+<h2>Graph</h2>
+<iframe src="https://www.desmos.com/calculator/c1dvtpxv0a?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+<p>Ideas?</p>
+</section>
+<section id="intersection" class="slide level2">
+<h2>Intersection?</h2>
+<p>Where do these curves intersect? What are the endpoints of the region?</p>
+<div class="fragment">
+<p><span class="math display">\[
+\begin{align}
+x &amp;= x^2 \\
+x - x^2 &amp;= 0 \\
+x(1 - x) &amp;= 0 \\
+x = 0 \text{ or } x &amp;= 1
+\end{align}
+\]</span></p>
+</div>
+</section>
+<section id="area-under-one" class="slide level2">
+<h2>Area under one?</h2>
+<p>What’s the area under just one of those curves?</p>
+<p><span class="math display">\[\int_0^1 x dx = \left.\frac{x^2}{2}\right|_0^1 = \frac{1}{2}\]</span></p>
+<div class="fragment">
+<p><span class="math display">\[\int_0^1 x^2 dx = \left.\frac{x^3}{3}\right|_0^1 = \frac{1}{3}\]</span></p>
+</div>
+</section>
+<section id="area-between" class="slide level2">
+<h2>Area between?</h2>
+<p>Then just subtract those areas! <span class="math inline">\(A = \frac{1}{2} - \frac{1}{3} = \frac{1}{6}\)</span>.</p>
+<div class="fragment">
+<p>Or: take the integral of the difference!</p>
+<p><span class="math display">\[\int_0^1 (x - x^2) dx = \left.\frac{x^2}{2}-\frac{x^3}{3}\right|_0^1 - \frac{1}{6}\]</span></p>
+</div>
+<div class="fragment">
+<p>Q: Why <span class="math inline">\(x - x^2\)</span> and not <span class="math inline">\(x^2 - x\)</span>?</p>
+</div>
+</section>
+<section id="strategy" class="slide level2">
+<h2>Strategy</h2>
+<ol type="1">
+<li>Determine where they intersect</li>
+<li>Determine which function is greater in this region</li>
+<li>Set up the integral <span class="math inline">\(\int_a^b |f(x) - g(x)| dx\)</span>.</li>
+</ol>
+<p>(Use (2) to determine whether the integral is of <span class="math inline">\(f(x) - g(x)\)</span> or <span class="math inline">\(g(x) - f(x)\)</span>.)</p>
+</section>
+<section id="exercises" class="slide level2">
+<h2>Exercises</h2>
+<p>Jamboards slides 4-5.</p>
+<ol type="1">
+<li>Find the area between <span class="math inline">\(f(x) = x\)</span> and <span class="math inline">\(g(x) = x^3\)</span> in the first quadrant.</li>
+<li>Find the area between <span class="math inline">\(f(x) = \sin(x)\)</span> and <span class="math inline">\(g(x) = \cos(x)\)</span> between <span class="math inline">\(x = \pi/4\)</span> and <span class="math inline">\(x = 5\pi/4\)</span>.</li>
+</ol>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
