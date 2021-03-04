@@ -14,3 +14,4 @@ lang: en-US
 * [Lesson 5: Methods and Strings](lesson5.html)
 * [Lesson 6: Methods](lesson6.html)
 * [Lesson 7: Review](lesson7.html)
+* [Lesson 8: Project 1 discussion / exam 1 review](lesson8.html)
