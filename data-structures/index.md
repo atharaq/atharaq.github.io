@@ -14,3 +14,5 @@ lang: en-US
 * [Lesson 5: Trees](lesson5.html)
 * [Lesson 6: Tree Rotations](lesson6.html)
 * [Lesson 7: AVL Tree Implementation](lesson7.html)
+* [Lesson 8: Tree Problems / Hashtable intro](lesson8.html)
+* [Lesson 9: Hashtables](lesson9.html)
