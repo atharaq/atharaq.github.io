@@ -45,7 +45,7 @@ Since $\sin(x) > \cos(x)$ here, we compute the integral $\int_{\pi/4}^{5\pi/4} (
 
 $$
 \begin{align}
-& (-\cos(\5pi/4) - \sin(5\pi/4)) - (-\cos(\pi/4) - \sin(\pi/4)) \\
+& (-\cos(5\pi/4) - \sin(5\pi/4)) - (-\cos(\pi/4) - \sin(\pi/4)) \\
 &=(\frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2}) - (-\frac{\sqrt{2}}{2} - \frac{\sqrt{2}}{2}) \\
 &= \sqrt{2} + \sqrt{2} \\
 &= 2\sqrt{2}
@@ -128,7 +128,7 @@ We can see that from $x = 0$ to $x = \pi/4$, $\sin(x) \leq \cos(x)$, and from $x
 $$
 \begin{align}
 &\left.[\sin(x) + \cos(x)]\right|_0^{\pi/4} + \left.[-\cos(x) - \sin(x)]\right|_{\pi/4}^\pi \\
-&= [(\sqrt{2}{2} + \sqrt{2}{2}) - (0 + 1)] + [ (-(-1) - 0) - (-\frac{\sqrt{2}}{2} - \frac{\sqrt{2}}{2})] \\
+&= [(\frac{sqrt{2}}{2} + \\frac{sqrt{2}}{2}) - (0 + 1)] + [ (-(-1) - 0) - (-\frac{\sqrt{2}}{2} - \frac{\sqrt{2}}{2})] \\
 &= (\sqrt{2} - 1) + (1 + \sqrt{2}) \\
 &= 2\sqrt{2}
 \end{align}
