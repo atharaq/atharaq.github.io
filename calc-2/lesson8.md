@@ -123,7 +123,11 @@ Some problems require us to split the region up into smaller regions, and set up
 
 <img alt="Region between sin(x) and cos(x) from 0 to pi requires two integrals" src="https://openstax.org/resources/feb05292d88f275efda8e310a47d8a1d6fecf73b" />
 
-We can see that from $x = 0$ to $x = \pi/4$, $\sin(x) \leq \cos(x)$, and from $x = \pi/4$ to $x = \pi$, $\sin(x) \geq \cos(x)$. So we set up two integrals: $\int_0^{\pi/4} (\cos(x) - \sin(x)) dx + \int_{\pi/4}^{\pi} (\sin(x) - \cos(x)) dx$. Integrating:
+We can see that from $x = 0$ to $x = \pi/4$, $\sin(x) \leq \cos(x)$, and from $x = \pi/4$ to $x = \pi$, $\sin(x) \geq \cos(x)$. So we set up two integrals:
+
+$$\int_0^{\pi/4} (\cos(x) - \sin(x)) dx + \int_{\pi/4}^{\pi} (\sin(x) - \cos(x)) dx$$
+
+Integrating:
 
 $$
 \begin{align}
