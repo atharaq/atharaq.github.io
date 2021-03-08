@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-03-08">
+  <title>CS2 Lesson 9</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 9</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">8 March 2021</p>
+</section>
+
+<section id="welcome" class="title-slide slide level1">
+<h1>Welcome</h1>
+<p><img alt="Debugging" src="https://i.redd.it/ssudswyuv1i61.jpg" width="45%" height="45%"/></p>
+<p>(Courtesy of Reddit: /r/ProgrammerHumor)</p>
+</section>
+
+<section>
+<section id="project-1" class="title-slide slide level1">
+<h1>Project 1</h1>
+<ul>
+<li>Phew, you’re done!</li>
+<li>Take a breath.</li>
+<li>Any takeaways from the project? Lessons learned?</li>
+</ul>
+</section>
+<section id="takeaways" class="slide level2">
+<h2>Takeaways</h2>
+<ul>
+<li>Coding <em>is</em> learning.
+<ul>
+<li>Learn by doing.</li>
+<li>Besides the project? Textbook exercises, in-class exercises.</li>
+</ul></li>
+<li>Manage your time
+<ul>
+<li>Get a little bit working every day, test it out.</li>
+</ul></li>
+</ul>
+</section>
+<section id="getting-help" class="slide level2">
+<h2>Getting Help</h2>
+<ul>
+<li>Come to office hours as much as possible</li>
+<li>Bring some code you’re working on: old homework, textbook, etc.</li>
+<li>See me <em>early</em>! Way before things are due!</li>
+<li>See a tutor</li>
+<li>Help each other out!
+<ul>
+<li>Only two of us, 21 of you.</li>
+<li>Talk to each other.</li>
+<li>Form “study” groups.</li>
+</ul></li>
+</ul>
+</section>
+<section id="lessons" class="slide level2">
+<h2>Lessons</h2>
+<ul>
+<li>Make sure you’re working through the asynchronous lessons</li>
+<li>Find times to make sure you can go through each lesson.</li>
+<li>If you skipped earlier lessons, you are behind. Go back and catch yourself up.</li>
+<li>Synchronous classes: come prepared with questions about previous lessons!</li>
+<li>Come with questions about exercises.</li>
+<li>Set up an IntelliJ project for the lesson before the lesson starts.</li>
+</ul>
+</section></section>
+<section id="exam" class="title-slide slide level1">
+<h1>Exam</h1>
+<p>Reminders:</p>
+<ul>
+<li>Exam 1 due <strong>Thursday</strong> on Moodle</li>
+<li>Upload single PDF file</li>
+<li>Include all your work:
+<ul>
+<li>memory diagrams (draw on paper, take pictures, include in doc)</li>
+<li>Copy / paste code into Word / Google docs</li>
+<li>Export to PDF</li>
+</ul></li>
+<li>Any problems to go over now?</li>
+</ul>
+</section>
+
+<section>
+<section id="presentation-1" class="title-slide slide level1">
+<h1>Presentation 1</h1>
+<ul>
+<li>Pick any challenging problem you have worked on.
+<ul>
+<li>Should be something you can explain in a few minutes</li>
+<li>Old exercises, exam problems, exam review problems, textbook exercises</li>
+</ul></li>
+<li>Describe the algorithm (the idea of how to solve the problem).</li>
+<li>Show code where you solve the problem.</li>
+<li>Explain how your code solves the problem.</li>
+</ul>
+</section>
+<section id="submission" class="slide level2">
+<h2>Submission</h2>
+<ul>
+<li>Make a short presentation of this (take screenshots of your code to include in PPT, etc)</li>
+<li>Upload your slides to VoiceThread</li>
+<li>Add an audio comment on each slide to narrate your presentation</li>
+<li>Should be around 5 minutes total
+<ul>
+<li>Little bit longer is okay</li>
+<li>Don’t go past 10 minutes</li>
+</ul></li>
+</ul>
+<p>Due <strong>Sunday, March 14</strong> at 11:59 PM (1 week).</p>
+</section>
+<section id="rubric" class="slide level2">
+<h2>Rubric</h2>
+<p>5 points:</p>
+<ul>
+<li>(1 point) Problem Description</li>
+<li>(1 point) Algorithm explanation</li>
+<li>(2 points) Code: show and explain a working demo for this problem.</li>
+<li>(1 point) Explain how the code implements your algorithm</li>
+</ul>
+</section></section>
+<section>
+<section id="resize-array" class="title-slide slide level1">
+<h1>Resize Array</h1>
+<p>Problem with the following:</p>
+<pre ><code class="java">int[] numbers = new int[5]; // hope that 5 is big enough!
+Scanner sc = new Scanner(System.in);
+int index = 0;
+System.out.println("Input in the first number: ");
+while (sc.hasNextInt()) {
+    numbers[index] = sc.nextInt();
+    index++;
+    System.out.println("Input in the next number: ");
+}</code></pre>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Write a method which takes in an integer array as a parameter, creates a new array that is twice as big, and copies over all the elements of the old array. Your method should return the new array.</p>
+<pre ><code class="java">int[] numbers = new int[5];
+Scanner sc = new Scanner(System.in);
+int index = 0;
+System.out.println("Input in the first number: ");
+while (sc.hasNextInt()) {
+    int number = sc.nextInt();
+    if (index &gt;= numbers.length) {
+        numbers = resizeArray(numbers);
+    }
+    numbers[index] = number;
+    index++;
+    System.out.println("Input in the next number: ");
+}</code></pre>
+</section></section>
+<section>
+<section id="arraylist-class" class="title-slide slide level1">
+<h1>ArrayList class</h1>
+<ul>
+<li>Built-in class that handles “resizeable arrays”</li>
+<li>Can use with any type!</li>
+</ul>
+<pre ><code class="java">import java.util.ArrayList;
+// must import the above!
+
+// in main:
+ArrayList&lt;String&gt; stringList = new ArrayList&lt;&gt;();
+for(int i = 0; i &lt; 100; i++) {
+    stringList.add("hello!");
+}
+System.out.println(stringList.size());
+
+ArrayList&lt;Integer&gt; integerList = new ArrayList&lt;&gt;();
+for(int i = 0; i &lt; 20; i++) {
+    integerList.add(i * i);
+}
+System.out.println(integerList.get(15));</code></pre>
+</section>
+<section id="type-parameters" class="slide level2">
+<h2>Type Parameters</h2>
+<ul>
+<li>Inside angle brackets: the <em>type paramter</em></li>
+<li>Must be the name of a <em>class</em>
+<ul>
+<li>Not a primitive!</li>
+<li><code>ArrayList&lt;int&gt;</code> doesn’t work!</li>
+</ul></li>
+<li>For primitives: use wrapper classes
+<ul>
+<li>Integer for int</li>
+<li>Double for double</li>
+<li>Character for char</li>
+</ul></li>
+</ul>
+</section>
+<section id="arraylist-methods" class="slide level2">
+<h2>ArrayList Methods</h2>
+<pre ><code class="java">ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+list.add(1); // list[0] = 1
+list.add(5); // list[1] = 5
+list.add(10); // list[2] = 10
+System.out.println(list.get(1)); // should output 5
+System.out.println(list.size()); // should output 3
+list.set(2, 27); // list[2] = 27
+// list.set(25, 3); throws an exception! list size is only 3!</code></pre>
+</section>
+<section id="arraylist-methods-1" class="slide level2">
+<h2>ArrayList Methods</h2>
+<ul>
+<li><code>add</code>: add to the “end” of this list
+<ul>
+<li><code>add(index, element)</code>: add element to list at position <span class="math inline">\(index\)</span>, shift everything over</li>
+</ul></li>
+<li><code>get</code>: get the element at index <span class="math inline">\(i\)</span></li>
+<li><code>set</code>: change the value of the list at position <span class="math inline">\(i\)</span>
+<ul>
+<li>Only works if enough things have been added!</li>
+</ul></li>
+<li><code>remove</code></li>
+<li><code>size</code></li>
+</ul>
+</section>
+<section id="iterating" class="slide level2">
+<h2>Iterating</h2>
+<pre ><code class="java">// output all the contents of the list
+System.out.println("List contents:");
+for (int number : list) {
+    System.out.println(number);
+}</code></pre>
+<p>“Foreach” loop syntax above, regular for loop below:</p>
+<pre ><code class="java">for (int i = 0; i &lt; list.size(); i++) {
+    System.out.println(list.get(i));
+}</code></pre>
+</section></section>
+<section>
+<section id="classes" class="title-slide slide level1">
+<h1>Classes</h1>
+<ul>
+<li><p>ArrayList is a <strong>class</strong></p></li>
+<li><p>class: a template for a data type</p>
+<pre ><code class="java">ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+ArrayList&lt;Integer&gt; list2 = new ArrayList&lt;&gt;();</code></pre></li>
+<li><p><code>list</code> and <code>list2</code> are different <strong>objects</strong> of type ArrayList</p></li>
+<li><p>What does <strong>new</strong> do?</p></li>
+</ul>
+<div class="fragment">
+<ul>
+<li><strong>Instantiation</strong>: creating a new object of that type in memory. (What does this involve?)</li>
+</ul>
+</div>
+</section>
+<section id="constructors" class="slide level2">
+<h2>Constructors</h2>
+<p>Another way to define ArrayLists:</p>
+<pre ><code class="java">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(25);</code></pre>
+<ul>
+<li>ArrayList has multiple <strong>constructors</strong></li>
+<li>Constructor: special method that is called when we the object is created
+<ul>
+<li>In particular, when the <strong>new</strong> keyword is used.</li>
+</ul></li>
+<li>Used to initialize the data type.</li>
+</ul>
+</section>
+<section id="instance-methods" class="slide level2">
+<h2>Instance Methods</h2>
+<pre ><code class="java">ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+ArrayList&lt;Integer&gt; list2 = new ArrayList&lt;&gt;();
+list.add(1);
+System.out.println("List 1 size: " + list.size());
+System.out.println("list 2 size: " + list2.size());</code></pre>
+<p>What does this print out? Why?</p>
+</section>
+<section id="instance-methods-1" class="slide level2">
+<h2>Instance Methods</h2>
+<ul>
+<li><code>list</code> and <code>list2</code> are different <em>objects</em>
+<ul>
+<li>Keep track of different arrays in memory!</li>
+<li>The arrays have different elements!</li>
+<li>The arrays may have different sizes!</li>
+</ul></li>
+<li><code>size</code> is an <em>instance</em> method.
+<ul>
+<li>as opposed to a <em>static</em> method</li>
+</ul></li>
+<li><strong>instance methods</strong>: methods which act on specific objects
+<ul>
+<li>not on the class as a whole!</li>
+</ul></li>
+<li>syntax: <code>object.method(parameters)</code></li>
+</ul>
+</section>
+<section id="new-data-types" class="slide level2">
+<h2>New data types?</h2>
+<p>How do we define our own data types?</p>
+<ul>
+<li>Define a <strong>class</strong>: <code>public class MyClass</code></li>
+<li>In the class:
+<ul>
+<li>Define a <em>constructor</em> to initialize your data</li>
+<li>Define <em>instance methods</em> to act on that data</li>
+<li>How do we specify the data? **instance variables*</li>
+</ul></li>
+<li>Outside of the class: use the class!</li>
+</ul>
+<pre ><code class="java">MyClass m = new MyClass();
+m.someMethod();</code></pre>
+</section>
+<section id="data-behavior" class="slide level2">
+<h2>Data / Behavior</h2>
+<ul>
+<li>Objects encapsulate <strong>data</strong> and <strong>behavior</strong>:</li>
+<li>integer variable:
+<ul>
+<li>data: actual number it represents</li>
+<li>behavior: add, subtract, etc.</li>
+</ul></li>
+<li>ArrayList variable?
+<ul>
+<li>data?</li>
+<li>behavior?</li>
+</ul></li>
+<li>User-defined types? often:
+<ul>
+<li>data: instance variables</li>
+<li>behavior: instance methods</li>
+</ul></li>
+</ul>
+</section>
+<section id="tostring-and-equals" class="slide level2">
+<h2>toString and equals</h2>
+<p>Special methods that every class defines.</p>
+<pre ><code class="java">ArrayList&lt;Integer&gt; list1 = new ArrayList&lt;&gt;();
+ArrayList&lt;Integer&gt; list2 = new ArrayList&lt;&gt;();
+list1.add(10);
+list2.add(10);
+if (list1 == list2) {
+    System.out.println("The lists refer to the same object");
+} else if (list1.equals(list2)) {
+    System.out.println("The two lists have the same contents:");
+    System.out.println(list1.toString());
+    // technically, we could just do:
+    // System.out.println(list1);
+}</code></pre>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
