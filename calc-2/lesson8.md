@@ -128,7 +128,7 @@ We can see that from $x = 0$ to $x = \pi/4$, $\sin(x) \leq \cos(x)$, and from $x
 $$
 \begin{align}
 &\left.[\sin(x) + \cos(x)]\right|_0^{\pi/4} + \left.[-\cos(x) - \sin(x)]\right|_{\pi/4}^\pi \\
-&= [(\frac{sqrt{2}}{2} + \\frac{sqrt{2}}{2}) - (0 + 1)] + [ (-(-1) - 0) - (-\frac{\sqrt{2}}{2} - \frac{\sqrt{2}}{2})] \\
+&= [(\frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2}) - (0 + 1)] + [ (-(-1) - 0) - (-\frac{\sqrt{2}}{2} - \frac{\sqrt{2}}{2})] \\
 &= (\sqrt{2} - 1) + (1 + \sqrt{2}) \\
 &= 2\sqrt{2}
 \end{align}
