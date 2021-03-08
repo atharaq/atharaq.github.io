@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-03-08">
+  <title>Data Structures Lesson 10</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures Lesson 10</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">8 March 2021</p>
+</section>
+
+<section>
+<section id="sort-uniques" class="title-slide slide level1">
+<h1>Sort Uniques</h1>
+<p>Given a list of 2 million unique 7-digit phone numbers, output them in order using at most 4MB of memory.</p>
+</section>
+<section id="idea" class="slide level2">
+<h2>Idea</h2>
+<ul>
+<li>How many 7-digit numbers are there?
+<ul>
+<li>0000000 - 9999999</li>
+<li>10 million!</li>
+</ul></li>
+<li>New question: given a list of 10 million unique 7-digit phone numbers, output them in order without sorting them.</li>
+</ul>
+<div class="fragment">
+<p>Does this help you figure out how to solve the original problem?</p>
+</div>
+</section></section>
+<section>
+<section id="remove-duplicates" class="title-slide slide level1">
+<h1>Remove Duplicates</h1>
+<p><strong>Problem</strong>: Given a list of data, remove all duplicates from the data. That is, if your list is [1, 2, 1, 4, 3, 1, 3, 4, 1, 2], you should return [1, 2, 4, 3].</p>
+<p>(Can use the “Duplicates.java” on Moodle to get started)</p>
+</section>
+<section id="naive-solution" class="slide level2">
+<h2>Naive Solution</h2>
+<pre ><code class="java">private static List&lt;Integer&gt; removeDuplicates(List&lt;Integer&gt; list) {
+    List&lt;Integer&gt; uniques = new ArrayList&lt;&gt;();
+    boolean found = false;
+    for (int num : list) {
+        found = false;
+        for (int uniqueNum : uniques) {
+            if (num == uniqueNum) {
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            uniques.add(num);
+        }
+    }
+    return list;
+}</code></pre>
+<p>Running time?</p>
+</section>
+<section id="improvement" class="slide level2">
+<h2>Improvement?</h2>
+<p>How can we improve this to <span class="math inline">\(O(N)\)</span>? What data structure might help?</p>
+<div class="fragment">
+<ul>
+<li>Use a HashSet</li>
+<li>Before adding to our <code>uniques</code> list, check if it’s in our set</li>
+<li>If not, add it to both the list and the set</li>
+<li>If it is in the set, don’t add to the list.</li>
+<li>Running time? Code?</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="trees" class="title-slide slide level1">
+<h1>Trees</h1>
+<p>Given a tree (not necessarily a BST, not necessarily even a binary tree), and a node N, output the path (list of vertices visited) from the root to N.</p>
+<p>Hint: level-order traversal? Keep track of which nodes enqueue which other nodes?</p>
+</section>
+<section id="breadth-first-search" class="slide level2">
+<h2>Breadth-first search</h2>
+<ul>
+<li>Keep a “parent” map</li>
+<li><code>parent.put(root, null);</code></li>
+<li>Set the current node equal to the root</li>
+<li>while the current node is not equal to N:
+<ul>
+<li>enqueue its children</li>
+<li><code>parent.put(child, current);</code></li>
+</ul></li>
+<li>take off from the queue and set that as your new current node</li>
+<li>Use the map to find the path from the root to N</li>
+</ul>
+</section></section>
+<section>
+<section id="knight-path" class="title-slide slide level1">
+<h1>Knight Path</h1>
+<p>Given two positions on an empty chessboard, find the optimal (shortest) sequence of valid knight moves that one can take to travel from one position to the other. A <strong>knight move</strong> on a chessboard is a move where we move over by two columns and one row, or two rows and one column.</p>
+</section>
+<section id="similar-strategy" class="slide level2">
+<h2>Similar strategy</h2>
+<ul>
+<li>Breadth-first search</li>
+<li>But this is not quite a tree
+<ul>
+<li>It’s a (directed) graph!</li>
+</ul></li>
+<li>There may be cycles!</li>
+<li>What should we do?</li>
+</ul>
+</section>
+<section id="code" class="slide level2">
+<h2>Code</h2>
+<ul>
+<li><p>Download the KnightPath.zip file on Moodle.</p></li>
+<li><p>Open the project up in IntelliJ</p></li>
+<li><p>Implement the “compile directions” method:</p>
+<pre ><code class="java">private static void compileDirections(Position start, Position end, Map&lt;Position,Position&gt; posMap) {
+  // print out the positions on the path from start to end
+
+}</code></pre></li>
+<li><p>Start at the end and backtrack (but print the positions in correct order)</p></li>
+</ul>
+</section>
+<section id="city-path" class="slide level2">
+<h2>City Path</h2>
+<ul>
+<li>You are in a city laid out in a grid in which all streets and avenues are one-way.</li>
+<li>Streets are numbered 1-100</li>
+<li>Avenues are numbered 1-10</li>
+<li>1 street is furthest south, 1 ave is furthest east</li>
+<li>Odd streets go east</li>
+<li>Even streets go west</li>
+<li>Odd avenues go north</li>
+<li>Even avenues go south</li>
+</ul>
+<p>Given two locations in the city, output the shortest valid path between them.</p>
+</section>
+<section id="code-1" class="slide level2">
+<h2>Code</h2>
+<p>Exercise: solve this. Use the ShortestPathInCity.zip project on Moodle to get started.</p>
+</section></section>
+<section id="hashtable-questions" class="title-slide slide level1">
+<h1>Hashtable Questions</h1>
+<p>Technicalities:</p>
+<ul>
+<li>Separate chaining (“array of buckets”) vs open addressing</li>
+<li>Table size issues</li>
+<li>Load factor issues</li>
+<li>etc.</li>
+</ul>
+</section>
+
+<section id="presentation-2" class="title-slide slide level1">
+<h1>Presentation 2</h1>
+<p>Same idea as last time. Due <strong>Sunday, March 14</strong> at 11:59 PM.</p>
+</section>
+
+<section>
+<section id="project-2" class="title-slide slide level1">
+<h1>Project 2</h1>
+<p>Implement the Set interface in three ways: using an ArrayList, using an AVL tree (use the code on Moodle), and using a regular BST (not a self balancing tree). Write a Benchmark class which has the following methods:</p>
+<p>(continued)</p>
+</section>
+<section id="benchmark-class" class="slide level2">
+<h2>Benchmark Class</h2>
+<ul>
+<li><code>insertRandoms(Set&lt;Integer&gt; set, int n)</code> : this method should insert n random numbers into the set, and output the amount of time it takes to do this (use <code>System.nanoTime()</code> before and after you do the n insertions)</li>
+<li><code>insertInOrder(Set&lt;Integer&gt; set, int n)</code> : this method should insert all the numbers from <span class="math inline">\(0\)</span> to <span class="math inline">\(n − 1\)</span> into the set, and output the amount of time it takes to do this.</li>
+</ul>
+<p>(continued)</p>
+</section>
+<section id="benchmark-class-1" class="slide level2">
+<h2>Benchmark Class</h2>
+<ul>
+<li><code>containsRandom(Set&lt;Integer&gt; set, int size, int n, int numSearches)</code>: this method should first insert size many random numbers into the set. Then it should do numSearches many calls to <code>set.contains(n)</code>, and output the amount of time that takes.</li>
+<li><code>containsInOrder(Set&lt;Integer&gt; set, int size, int n, int numSearches)</code> : similar to above, but first insert the numbers <span class="math inline">\(0\)</span> to <span class="math inline">\(size − 1\)</span> in order into the set.</li>
+</ul>
+</section>
+<section id="write-up" class="slide level2">
+<h2>Write up</h2>
+<p>After writing the Benchmark code, you must use that class to test out your different Set implementations. You then must do a write-up explaining your results. We assume that an AVL tree and a BST should be much better than an ArrayList. Does this actually happen for different types of insertions / different sizes of trees? Organize your results into tables and provide your analysis of what’s happening.</p>
+</section>
+<section id="questions-to-explore" class="slide level2">
+<h2>Questions to explore</h2>
+<p>You should explore the following questions:</p>
+<ul>
+<li>Is the AVL tree or BST faster for random insertions? What about for in-order insertions?</li>
+<li>Does the ArrayList perform well for small sizes? For which sizes do we start to see its performance degrade?</li>
+<li>Do you ever get a StackOverflowError for the BST? What about for the AVL tree? Which methods trigger this?</li>
+</ul>
+<p>This project is due <strong>Sunday, March 21</strong> at 11:59 PM.</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
