@@ -1,4 +1,5 @@
 # Calculus II Lesson 8: Areas between curves
+{: .no_toc}
 
 1. Table of Contents
 {:toc}
