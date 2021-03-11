@@ -16,3 +16,5 @@ lang: en-US
 * [Lesson 7: AVL Tree Implementation](lesson7.html)
 * [Lesson 8: Tree Problems / Hashtable intro](lesson8.html)
 * [Lesson 9: Hashtables](lesson9.html)
+* [Lesson 10: Breadth first search](lesson10.html)
+* [Lesson 11: Wrapping up hashtables](lesson11.html)

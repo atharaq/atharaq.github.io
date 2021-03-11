@@ -1,4 +1,4 @@
-# Data Structures Lesson 9: Hashtables
+# Data Structures Lesson 11: Hashtables Wrap-up
 {:.no_toc}
 
 1. Table of Contents
