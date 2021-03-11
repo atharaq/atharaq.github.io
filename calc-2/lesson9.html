@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-03-11">
+  <title>Calc II Lesson 9</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Calc II Lesson 9</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">11 March 2021</p>
+</section>
+
+<section>
+<section id="exam-1-notes" class="title-slide slide level1">
+<h1>Exam 1 Notes</h1>
+<ul>
+<li>Grades were mostly good</li>
+<li>As always: look for <span class="math inline">\(u\)</span>-subs first</li>
+<li>If your grade is below 80, see a tutor.</li>
+<li>If you needed a lot of help on the exam (constantly looking up notes, etc), see a tutor.</li>
+<li>Feel free to make an appointment with me (office hours) to go over the exam.</li>
+</ul>
+</section>
+<section id="renewable-energy" class="slide level2">
+<h2>Renewable Energy</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><img alt="Annual change in renewable energy" src="annual-change-renewables.png" /></p>
+</div><div class="column" style="width:40%;">
+<ul>
+<li>Each data point: <em>change</em> since previous year</li>
+<li>How is renewable energy generation changing then?</li>
+<li>Add them up?</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="upcoming" class="slide level2">
+<h2>Upcoming</h2>
+<ul>
+<li>Homework due on Moodle tomorrow</li>
+<li>MyOpenMath homework: will post for the following week</li>
+<li>Presentation 2: March 21.</li>
+</ul>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions?</h2>
+<ul>
+<li>Improper integrals?</li>
+<li>Areas between curves?</li>
+<li>Homework?</li>
+</ul>
+</section></section>
+<section>
+<section id="volumes" class="title-slide slide level1">
+<h1>Volumes</h1>
+<p>General strategy:</p>
+<ul>
+<li>Take thin slices of 3D figure</li>
+<li>Find formula for <span class="math inline">\(A(x)\)</span>, the area of one cross-section</li>
+<li><span class="math inline">\(V = \int_a^b A(x) dx\)</span></li>
+</ul>
+</section>
+<section id="slicing-a-sphere" class="slide level2">
+<h2>Slicing a Sphere</h2>
+<p><strong>Problem</strong>: Derive the formula for the volume of a sphere of radius <span class="math inline">\(R\)</span>.</p>
+<div class="fragment">
+<p><img alt="One slice of a sphere has a volume of pi(R^2 - x^2) dx" src="https://xaktly.com/Images/Mathematics/VolumesOfRotation/VolumeOfASphere.png" style="background: currentColor" /></p>
+</div>
+</section>
+<section id="slicing-a-cone" class="slide level2">
+<h2>Slicing a Cone</h2>
+<p><strong>Problem</strong>: Derive the formula for the volume of a (right-circular) cone whose base has a radius <span class="math inline">\(R\)</span> and whose height is <span class="math inline">\(h\)</span>.</p>
+<ul>
+<li>Cross sections are circles</li>
+<li>Area of a circle: <span class="math inline">\(\pi r^2\)</span>.</li>
+<li>Radius of circle at height <span class="math inline">\(x\)</span>?</li>
+</ul>
+</section>
+<section id="similar-triangles" class="slide level2">
+<h2>Similar Triangles</h2>
+<p><img alt="Side view of a cone: similar triangles" src="similar-triangle-cone.jpeg" /></p>
+</section>
+<section id="solution" class="slide level2">
+<h2>Solution</h2>
+<p>First we see that <span class="math inline">\(r = \frac{Rx}{h}\)</span>, so the area of that slice is <span class="math inline">\(\pi (\frac{Rx}{h})^2\)</span>. Set up the volume integral:</p>
+<p><span class="math display">\[
+\begin{align}
+V &amp;= \int_0^h \pi (\frac{Rx}{h})^2 dx \\
+  &amp;= \pi \frac{R^2}{h^2} \int_0^h x^2 dx \\
+\end{align}
+\]</span></p>
+</section>
+<section id="solution-continued" class="slide level2">
+<h2>Solution, continued</h2>
+<p><span class="math display">\[
+\begin{align}
+V &amp;= \left. \pi \frac{R^2}{h^2} \frac{x^3}{3} \right|_0^3 \\
+  &amp;= \pi \frac{R^2}{h^2} \frac{h^3}{3} \\
+  &amp;= \frac{1}{3} \pi R^2 h
+\end{align}
+\]</span></p>
+</section></section>
+<section>
+<section id="revolution" class="title-slide slide level1">
+<h1>Revolution</h1>
+<p>Other three dimensional figures can be found by <em>revolving 2D regions around axes</em>.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/i4L5XoUBD_Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</section>
+<section id="notice" class="slide level2">
+<h2>Notice</h2>
+<p>When we revolve an entire region bounded by a curve <span class="math inline">\(y = f(x)\)</span> around the <span class="math inline">\(x\)</span>-axis:</p>
+<ul>
+<li>Cross sections are circle: <span class="math inline">\(A(x) = \pi r^2\)</span>.</li>
+<li><span class="math inline">\(r = f(x)\)</span>: the radius of each circle is <span class="math inline">\(f(x)\)</span>!</li>
+<li><span class="math inline">\(V = \int_a^b \pi (f(x))^2 dx\)</span></li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p>Find the volume of the solid formed by revolving the region bounded above by <span class="math inline">\(y = x^2\)</span>, below by the <span class="math inline">\(x\)</span>-axis, between <span class="math inline">\(x = 0\)</span> and <span class="math inline">\(x = 2\)</span>, around the <span class="math inline">\(x\)</span>-axis.</p>
+<p><a href="https://www.geogebra.org/m/z2ubhjru">Geogebra demo</a></p>
+</section>
+<section id="solution-1" class="slide level2">
+<h2>Solution</h2>
+<p><span class="math display">\[
+\begin{align*}
+V &amp;= \int_0^2 \pi (x^2)^2 dx \\
+&amp;= \pi \int_0^2 x^4 dx \\
+&amp;= \pi \left.\frac{x^5}{5} \right|_0^2 \\
+&amp;= \frac{32\pi}{5} \approx 20.1
+\end{align*}
+\]</span></p>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<ol type="1">
+<li>Find the volume of the solid formed by revolving the region bounded by <span class="math inline">\(f(x) = 1 - x^2\)</span>, <span class="math inline">\(x = 0\)</span>, <span class="math inline">\(x = 1\)</span>, and the <span class="math inline">\(x\)</span>-axis around the <span class="math inline">\(x\)</span>-axis.</li>
+<li>Find the volume of solid formed by revolving the region bounded on the left by <span class="math inline">\(x = 1\)</span>, and above by <span class="math inline">\(y = \frac{1}{x}\)</span>, around the <span class="math inline">\(x\)</span>-axis.</li>
+</ol>
+<p>Try to sketch the 3D solids that are formed in each case.</p>
+</section>
+<section id="gabriels-horn" class="slide level2">
+<h2>Gabriel’s Horn</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img alt="Gabriel's Horn Visualization" src="https://upload.wikimedia.org/wikipedia/commons/8/89/GabrielHorn.png" style="background: currentColor" /></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>“Gabriel’s Horn” (Who is Gabriel?)</li>
+<li>Finite Volume</li>
+<li>Infinite length?</li>
+<li>2D Projection: infinite area</li>
+<li>Infinite surface area</li>
+</ul>
+<div class="fragment">
+<p><img alt="Brain exploding gif" src="https://media3.giphy.com/media/26ufdipQqU2lhNA4g/200.gif" /></p>
+</div>
+</div>
+</div>
+</section>
+<section id="washer-method" class="slide level2">
+<h2>Washer Method</h2>
+<p>What if we revolve a region bounded between two curves around the <span class="math inline">\(x\)</span>-axis?</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3oAjcLD34kc?start=23" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</section>
+<section id="cross-sections" class="slide level2">
+<h2>Cross Sections</h2>
+<ul>
+<li>Cross sections are <em>washers</em>, outer radius <span class="math inline">\(R\)</span>, inner radius <span class="math inline">\(r\)</span></li>
+<li>Area of a washer: <span class="math inline">\(\pi (R^2 - r^2)\)</span></li>
+<li><span class="math inline">\(R = f(x)\)</span>, <span class="math inline">\(r = g(x)\)</span>.</li>
+<li><span class="math inline">\(V = \int_a^b \pi [(f(x))^2 - (g(x))^2] dx\)</span></li>
+</ul>
+</section>
+<section id="example-1" class="slide level2">
+<h2>Example</h2>
+<p>Find the volume of the solid formed by revolving the region bounded by <span class="math inline">\(y = \sin(x)\)</span> and <span class="math inline">\(y = \cos(x)\)</span> from <span class="math inline">\(x = 0\)</span> to <span class="math inline">\(x = \frac{\pi}{4}\)</span> around the <span class="math inline">\(x\)</span>-axis.</p>
+</section>
+<section id="solution-2" class="slide level2">
+<h2>Solution</h2>
+<p><span class="math display">\[
+\begin{align}
+V &amp;= \int_0^{\pi/4} (\cos^2(x) - \sin^2(x)) dx \\
+&amp;= \int_0^{\pi/4} \cos(2x) dx \\
+&amp;= \left. \frac{\sin(2x)}{2} \right|_0^{\pi/4} \\
+&amp;= \frac{\sin(\pi/2)}{2} = \frac{1}{2}
+\end{align}
+\]</span></p>
+</section></section>
+<section>
+<section id="shells" class="title-slide slide level1">
+<h1>Shells</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="which-region.jpeg" alt="Revolve the region bounded by y = x squared from x = 0 to x = 2 around y-axis" /><br />
+</p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>Revolving regions around the y-axis?</li>
+<li>Which region?</li>
+<li>A: disk method. Convert to an integral using <span class="math inline">\(y\)</span> and <span class="math inline">\(dy\)</span></li>
+<li>B? Something else.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="animation" class="slide level2">
+<h2>Animation</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JrRniVSW9tg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</section>
+<section id="shell-method" class="slide level2">
+<h2>Shell Method</h2>
+<ul>
+<li>Volume of one shell: <span class="math inline">\(2\pi rh\Delta x\)</span> (Why?)</li>
+<li><span class="math inline">\(r \approx x\)</span></li>
+<li><span class="math inline">\(h \approx f(x)\)</span>.</li>
+<li><span class="math inline">\(V = \int_a^b 2 \pi x f(x) dx\)</span></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
