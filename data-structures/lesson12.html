@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-03-15">
+  <title>Data Structures Lesson 12</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures Lesson 12</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">15 March 2021</p>
+</section>
+
+<section>
+<section id="class-progress" class="title-slide slide level1">
+<h1>Class Progress</h1>
+<p>So far:</p>
+<ul>
+<li>Project 1 (10%)</li>
+<li>HW 1 and 2 (10%)</li>
+<li>Presentations 1 and 2 (10%)</li>
+</ul>
+<p>Late? Need to make up stuff? Talk to me.</p>
+</section>
+<section id="whats-left" class="slide level2">
+<h2>What’s left?</h2>
+<ul>
+<li>Projects 2 and 3 (20%)</li>
+<li>HW 3 and 4? (10%)</li>
+<li>Presentations 3 and 4 (10%)</li>
+<li>Class Participation (10%)</li>
+<li>Paper and final presentation (20%)</li>
+</ul>
+</section></section>
+<section>
+<section id="synonymous-search-queries" class="title-slide slide level1">
+<h1>Synonymous Search Queries</h1>
+<ul>
+<li><a href="https://atharaq.github.io/data-structures/lesson11.html#coding-question">Description from last week</a></li>
+<li>Algorithm?</li>
+</ul>
+</section>
+<section id="pseudocode" class="slide level2">
+<h2>Pseudocode</h2>
+<pre ><code class="java">// checking two queries against each other
+boolean queriesMatch = true;
+String[] firstWords = query.first.split(" ");
+String[] secondWords = query.second.split(" ");
+if (firstWords.length != secondWords.length) {
+  returns.add(false); // add to list we will be returning
+}
+for (int i = 0; i &lt; firstWords.length; i++) {
+    if (wordsAreNotEqual && wordsAreNotSynonymous) {
+      queriesMatch = false;
+      break;
+    }
+}
+returns.add(queriesMatch);</code></pre>
+</section>
+<section id="synonymous" class="slide level2">
+<h2>synonymous?</h2>
+<pre ><code class="java">// assume we have a List&lt;Pair&gt; synonyms
+// wordsAreNotSynonymous
+if (!synonyms.contains(new Pair(firstWords[i], secondWords[i]))) {
+  // ...
+}</code></pre>
+<ul>
+<li><span class="math inline">\(M\)</span> pairs of synonyms, queries have <span class="math inline">\(N\)</span> words in them.</li>
+<li>Running time of this snippet?</li>
+<li>Running time of the whole thing?</li>
+<li>Obvious improvement?</li>
+</ul>
+</section></section>
+<section>
+<section id="shortest-job-first" class="title-slide slide level1">
+<h1>Shortest Job First</h1>
+<p>OS scheduler problem:</p>
+<ul>
+<li>Keep a “priority queue” of tasks</li>
+<li>When the CPU is free, take off the job with highest priority (smallest length)</li>
+<li>As tasks come in, insert into the priority queue</li>
+<li>Need to be able to order them?
+<ul>
+<li>Do we really need to keep them sorted?</li>
+</ul></li>
+</ul>
+</section>
+<section id="heap-structure" class="slide level2">
+<h2>Heap Structure</h2>
+<p>“min”-heap:</p>
+<ul>
+<li><em>Complete</em> binary tree
+<ul>
+<li>all levels completely filled (except possibly the last one)</li>
+<li>last level: nodes as far <em>left</em> as possible</li>
+<li>height: <span class="math inline">\(O(\log(N))\)</span> (why? You proved it already!)</li>
+</ul></li>
+<li>Each node is <em>smaller</em> than its children</li>
+<li>insert and remove</li>
+</ul>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><img alt="Binary max-heap; courtesey of Wikimedia Commons" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Max-Heap.svg/1920px-Max-Heap.svg.png" width="50%" height="50%" style="background: currentColor" /></p>
+</section>
+<section id="representation" class="slide level2">
+<h2>Representation</h2>
+<ul>
+<li>Keep an array</li>
+<li>Root: position 0</li>
+<li>Element <span class="math inline">\(i\)</span>:
+<ul>
+<li>Left child: <span class="math inline">\(2i + 1\)</span></li>
+<li>Right child: <span class="math inline">\(2i + 2\)</span></li>
+<li>No ordering between children</li>
+</ul></li>
+</ul>
+</section>
+<section id="insert-removemin" class="slide level2">
+<h2>insert / removeMin</h2>
+<ul>
+<li>min-heap has two operations:</li>
+<li><code>insert</code></li>
+<li><code>removeMin</code></li>
+<li>Pseudocode? (easiest if we draw it as a tree)</li>
+</ul>
+</section></section>
+<section id="application" class="title-slide slide level1">
+<h1>Application</h1>
+<p>Discuss the following problem in breakout rooms:</p>
+<p>Given an unsorted list of <span class="math inline">\(n\)</span> elements, find the <span class="math inline">\(k\)</span>-th largest element. (If <span class="math inline">\(k = 0\)</span>, find the largest, if <span class="math inline">\(k = 1\)</span>, find the second largest, etc.) Determine the running time of your algorithm (in terms of <span class="math inline">\(n\)</span> and <span class="math inline">\(k\)</span>). (Suppose you are given <span class="math inline">\(k\)</span> as a parameter to your method: so you don’t need to sort the whole list, just find the <span class="math inline">\(k\)</span>-th largest one.)</p>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
