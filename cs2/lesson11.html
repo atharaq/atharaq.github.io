@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-03-15">
+  <title>CS2 Lesson 11</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 11</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">15 March 2021</p>
+</section>
+
+<section id="welcome" class="title-slide slide level1">
+<h1>Welcome!</h1>
+<p>Happy belated <span class="math inline">\(\pi\)</span> day!</p>
+<p><img alt="Happy pi day!" src="pi-day-2021.jpg" width="25%" height="25%" /></p>
+</section>
+
+<section>
+<section id="exam-1" class="title-slide slide level1">
+<h1>Exam 1</h1>
+<ul>
+<li>If you are behind, you need to be doing every exercise you can find.</li>
+<li>I will <em>require</em> that for some of you, if you’ve fallen too far behind.</li>
+</ul>
+</section>
+<section id="memory-diagrams" class="slide level2">
+<h2>Memory Diagrams</h2>
+<p>Make a memory diagram if <span class="math inline">\(n = 2\)</span>:</p>
+<pre ><code class="java">public static int f(int n) {
+    int a = 0;
+    int b = 1;
+    if (n &lt;= 0) {
+        return 0;
+    }
+
+    for (int i = 1; i &lt;= n; i++) {
+        int tmp = a + b;
+        a = b;
+        b = tmp;
+    }
+    return a;
+}</code></pre>
+</section>
+<section id="find-the-mistakes" class="slide level2">
+<h2>Find the mistakes</h2>
+<p>Problem: given a String <em>name</em>, return the number of times the character <em>c</em> appears in it. What are all the mistakes in the following?</p>
+<pre ><code class="java">public static int numAppearances(String name, char c) {
+    String name = "bob";
+    char c = "b";
+    int n = 0;
+    for (int i = 0; i &lt; name.length(); i++) {
+        if (name.charAt(i) == c) {
+            System.out.println(c);
+            n++;
+        }
+    }
+    System.out.println(n);
+}</code></pre>
+</section>
+<section id="return-types-and-parameters" class="slide level2">
+<h2>Return types and parameters</h2>
+<ul>
+<li>Pay attention to return types / parameter types</li>
+<li>Do not <strong>set</strong> the parameters. (Why?)</li>
+<li>Read the questions carefully. Understand what is being asked. Understand what you are meant to return.</li>
+</ul>
+</section>
+<section id="extra-credit" class="slide level2">
+<h2>Extra Credit</h2>
+<p>If your grade on exam 1 was below 80, I will accept corrections for any problem you wish to correct. You will get up to <em>half</em> the credit lost for each perfectly corrected response (up to a max of 80). <em>Please come see me in office hours if you had trouble with any of these!</em></p>
+<p>If your grade was below 50, read on:</p>
+</section>
+<section id="extra-credit-2" class="slide level2">
+<h2>Extra Credit 2</h2>
+<p>If your grade was below 50:</p>
+<ol type="1">
+<li>Do the following exercises from the textbook:
+<ul>
+<li>Chapter 3 exercises 3 - 4.</li>
+<li>Chapter 4 exercises 1 - 5.</li>
+</ul></li>
+<li>Go over the exercises above with me in office hours <strong>tomorrow</strong>.</li>
+<li>Do the following exercises from the textbook:
+<ul>
+<li>Chapter 5 exercises 1, 4 - 7</li>
+<li>Chapter 6 exercises 1 (parts 1 and 2 only), 4, 6</li>
+<li>Chapter 7 exercises 1 - 3, 5 - 8</li>
+</ul></li>
+</ol>
+</section>
+<section id="extra-credit-2-continued" class="slide level2">
+<h2>Extra Credit 2 (continued)</h2>
+<ol start="4" type="1">
+<li>Go over the exercises above with me in office hours <strong>Friday</strong>.</li>
+<li>Do the following exercises from the textbook:
+<ul>
+<li>Chapter 9 exercises 5 - 6</li>
+<li>Chapter 11 exercises 2 - 4</li>
+</ul></li>
+<li>Go over the exercises above with me in office hours <strong>Tuesday (3/23)</strong></li>
+<li>If any of these are not perfect, we repeat this process until they are.</li>
+<li>If you are unable to make my office hours, make an appointment with me ASAP.</li>
+<li>Consistently come to office hours every week after this.</li>
+</ol>
+<p>This <strong>before</strong> you attempt the extra credit above. This will give you an additional 10 points on the exam (up to a max of 80).</p>
+</section></section>
+<section>
+<section id="section" class="title-slide slide level1">
+<h1></h1>
+<p><a target="_blank" href="https://upload.wikimedia.org/wikipedia/commons/4/49/%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg"><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg/773px-%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg" alt="Plato and Aristotle in The School of Athens (Raphael)" /></a></p>
+</section>
+<section id="object-oriented-design" class="slide level2">
+<h2>Object Oriented Design</h2>
+<ul>
+<li>Classes are templates for data types</li>
+<li>Represent <strong>data</strong> and <strong>behavior</strong></li>
+<li>Break your problem up into components: the <em>nouns</em> of your problem.</li>
+<li>Implement each component in its own <em>class</em></li>
+<li>Think about the <em>data</em> required to represnt that component</li>
+<li>Think about the <em>actions</em> the object should be able to do.</li>
+</ul>
+</section></section>
+<section>
+<section id="exercise" class="title-slide slide level1">
+<h1>Exercise</h1>
+<p>Today we will be re-working the Gaussian Integer program from the exam.</p>
+<ul>
+<li>A <strong>Gaussian integer</strong> is a complex number of the form <span class="math inline">\(a + bi\)</span> where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are integers.</li>
+<li>How do you design a Gaussian integer?</li>
+<li>What data is needed to represent a Gaussian integer?</li>
+<li>What are the actions it should be able to do?</li>
+</ul>
+</section>
+<section id="exercise-part-1" class="slide level2">
+<h2>Exercise Part 1</h2>
+<p>(Coding Rooms)</p>
+<ul>
+<li>Create a GaussianInteger class</li>
+<li>Create a constructor for that class</li>
+<li>Create a toString method for the class</li>
+<li>In the Main class, instantiate a GaussianInteger and output it:</li>
+</ul>
+<pre ><code class="java">public static void main(String[] args) {
+    GaussianInteger gi = new GaussianInteger(0, 1);
+    System.out.println(gi);
+}</code></pre>
+</section>
+<section id="exercise-part-2" class="slide level2">
+<h2>Exercise Part 2</h2>
+<p>Create a method <strong>add</strong> in the GaussianInteger class. We add two Gaussian integers as follows: <span class="math inline">\((a + bi) + (c + di) = (a + c) + (b + d)i\)</span>. Test it out in the main class:</p>
+<pre ><code class="java">GaussianInteger g1 = new GaussianInteger(2, 3);
+GaussianInteger g2 = new GaussianInteger(3, -5);
+System.out.println(g1);
+System.out.println(g2);
+g1.add(g2); // should be 5 + -2i
+System.out.println(g1);</code></pre>
+</section>
+<section id="exercise-part-3" class="slide level2">
+<h2>Exercise Part 3</h2>
+<p>Create a method <strong>multiply</strong> in the GaussianInteger class. We multiply Gaussian integers as follows: <span class="math inline">\((a + bi)(c + di) = (ac - bd) + (ad + bc)i\)</span>. Test it out in the main class:</p>
+<pre ><code class="java">GaussianInteger g1 = new GaussianInteger(0, 1);
+GaussianInteger g2 = new GaussianInteger(0, 1);
+System.out.println(g1);
+System.out.println(g2);
+g1.multiply(g2); // should be -1 + 0i
+System.out.println(g1);</code></pre>
+</section>
+<section id="exercise-part-4" class="slide level2">
+<h2>Exercise Part 4</h2>
+<p>Change your main method to ask the user for four inputs (realX, imagX, realY, imagY) representing two Gaussian integers <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. Do this in a <em>modular</em> way (next slide):</p>
+</section>
+<section id="exercise-part-4-1" class="slide level2">
+<h2>Exercise Part 4</h2>
+<ul>
+<li>Create a static getNumber method which takes in a Scanner, a String prompt, and an error message to display if the user types in something that’s not an integer.</li>
+<li>In the main method, create a Scanner object, and then call getNumber four times to input into the variables realX, imagX, realY, and imagY</li>
+<li>Construct two GaussianIntegers x and y using the variables above.</li>
+</ul>
+</section></section>
+<section>
+<section id="project-2-library" class="title-slide slide level1">
+<h1>Project 2: Library</h1>
+<p>Due <strong>Sunday, April 4</strong> at 11:59 PM. <a href="https://docs.google.com/document/d/1wtFOeMYqe_2E2rQsgSuzcsLzJ6fcwSfphiYBBlNtd-U/edit?usp=sharing">Description</a></p>
+<p>Implement three classes:</p>
+<ul>
+<li>Book</li>
+<li>Library</li>
+<li>MainMenu</li>
+</ul>
+</section>
+<section id="book-class" class="slide level2">
+<h2>Book Class</h2>
+<ul>
+<li>Should have done already (CodingRooms)</li>
+<li>Contains a title, author, publication year</li>
+<li>toString method</li>
+<li>Might need to add to this! (getters?)</li>
+</ul>
+</section>
+<section id="library-class" class="slide level2">
+<h2>Library class</h2>
+<ul>
+<li>Keep an <code>ArrayList&lt;Book&gt;</code> (private instance variable)</li>
+<li>add: adds a book to the library (ie, add to the ArrayList)</li>
+<li>listAllBooks: output the books in a numbered list</li>
+<li>findBookByTitle</li>
+<li>findAllBooksByAuthor</li>
+</ul>
+</section>
+<section id="mainmenu" class="slide level2">
+<h2>MainMenu</h2>
+<ul>
+<li>main method</li>
+<li>instantiate a Library object</li>
+<li>loop:
+<ol type="1">
+<li>Add a book</li>
+<li>List all books</li>
+<li>Find book by title</li>
+<li>Find all books by author</li>
+<li>Quit</li>
+</ol></li>
+<li>Anything other than 1 - 5: invalid choice, try again.</li>
+<li>(Hint: use Strings for input instead of ints)</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
