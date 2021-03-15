@@ -216,6 +216,6 @@ Use a calculator (graphing or online) to estimate your answer as well as the ans
 
 Due **Friday, March 19** on Moodle:
 
-Section 2.2 ...
-Section 2.3 ...
-Section 2.4 ...
+Section 2.2 #62, 78  
+Section 2.3 #142, 146, 158  
+Section 2.4 #172
