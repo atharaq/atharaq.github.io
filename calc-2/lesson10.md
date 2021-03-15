@@ -46,7 +46,7 @@ $$
 V = 2\pi \left. \frac{x^4}{4} \right|_0^1
 $$
 
-Plugging in the endpoints, our volume is $2\pi (\frac{1}{4}) - \2\pi (\frac{0}{4})$, or just $\frac{\pi}{2}$.
+Plugging in the endpoints, our volume is $2\pi (\frac{1}{4}) - 2\pi (\frac{0}{4})$, or just $\frac{\pi}{2}$.
 
 <div class="youtube-container">
     <iframe src="https://www.youtube.com/embed/GfHThSOJjgI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -112,7 +112,9 @@ Plugging in the endpoints, the volume of this region is $2\pi (\frac{7}{12})$, o
 
 # Arc Length
 
+<div class="youtube-container">
 <iframe src="https://www.youtube.com/embed/vHcS6FDVV2w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Our next application of integration comes from arc length. The concept of arc length is fairly simple: if we follow along the path of a curve, how much are we actually moving? That is, if we are in a car, driving along a path, how many miles are we actually putting on our car? Not the "straight-line distance" between our starting and ending points, but the actual, total amount we are driving.
 
@@ -209,3 +211,11 @@ Use a calculator (graphing or online) to estimate your answer as well as the ans
 <div class="desmos-container">
     <iframe src="https://www.desmos.com/calculator/pmmad6b1qj?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
 </div>
+
+# Homework
+
+Due **Friday, March 19** on Moodle:
+
+Section 2.2 ...
+Section 2.3 ...
+Section 2.4 ...
