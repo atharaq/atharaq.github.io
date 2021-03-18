@@ -1,4 +1,4 @@
-# CS2 Lesson 12: Designing Classes
+# CS2 Lesson 12: Mutable and Immutable classes
 {:.no_toc}
 
 1. Table of Contents
@@ -106,7 +106,7 @@ In the above video, I walk through the steps of using the debugger in IntelliJ. 
 
 # SequentialDie Exercise
 
-Implement a `SequentialDie` class. A `Sequential Die` is like a normal die (you can "roll" it and it will return a number from 1 to 6), except without randomness. That is: if I create a new `SequentialDie` object, and call `roll()` on it, I should first get the number 1. If I call `roll()` again, I should then get the number 2. Calling it again and again will continue to increase the value I get back, until I get to 6, at which point it cycles back to 1.
+On **CodingRooms**: implement a `SequentialDie` class. A `Sequential Die` is like a normal die (you can "roll" it and it will return a number from 1 to 6), except without randomness. That is: if I create a new `SequentialDie` object, and call `roll()` on it, I should first get the number 1. If I call `roll()` again, I should then get the number 2. Calling it again and again will continue to increase the value I get back, until I get to 6, at which point it cycles back to 1.
 
 To make this more precise:
 
