@@ -12,3 +12,6 @@ layout: default
 * [Lesson 5: Partial Fractions and Center of mass](lesson5.html)
 * [Lesson 6: Center of mass](lesson6.html)
 * [Lesson 7: Improper integrals](lesson7.html)
+* [Lesson 8: Areas between curves](lesson8.html)
+* [Lesson 9: Volumes of solids](lesson9.html)
+* [Lesson 10: Volumes of solids, shell method](lesson10.html)
