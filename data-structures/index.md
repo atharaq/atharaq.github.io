@@ -18,3 +18,5 @@ lang: en-US
 * [Lesson 9: Hashtables](lesson9.html)
 * [Lesson 10: Breadth first search](lesson10.html)
 * [Lesson 11: Wrapping up hashtables](lesson11.html)
+* [Lesson 12: Priority Queues / Heaps](lesson12.html)
+* [Lesson 13: Heap operations / heapsort](lesson13.html)

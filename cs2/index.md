@@ -17,3 +17,5 @@ lang: en-US
 * [Lesson 8: Project 1 discussion / exam 1 review](lesson8.html)
 * [Lesson 9: Intro to classes](lesson9.html)
 * [Lesson 10: Designing classes](lesson10.html)
+* [Lesson 11: More on classes](lesson11.html)
+* [Lesson 12: Mutable and Immutable classes](lesson12.html)
