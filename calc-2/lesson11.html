@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-03-18">
+  <title>Calc II Lesson 11</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Calc II Lesson 11</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">18 March 2021</p>
+</section>
+
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Today:
+<ul>
+<li>wrap up volumes and arc length</li>
+<li>Differential equations intro</li>
+</ul></li>
+<li>Tomorrow: HW (Moodle)</li>
+<li>Sunday: Presentation 2</li>
+<li>Tuesday: HW (MyOpenMath)</li>
+<li>Next week: quiz</li>
+<li>Exam 2: week of March 29</li>
+</ul>
+</section>
+
+<section>
+<section id="volumes" class="title-slide slide level1">
+<h1>Volumes</h1>
+<ul>
+<li>Disk method</li>
+<li>Washer method</li>
+<li>Shell method</li>
+</ul>
+</section>
+<section id="more-complicated" class="slide level2">
+<h2>More complicated</h2>
+<ul>
+<li>Can convert from <span class="math inline">\(y = f(x)\)</span> to <span class="math inline">\(x = g(y)\)</span></li>
+<li>Then use disk / shell / washer?</li>
+</ul>
+<p><img src="disk-over-y.jpeg" alt="Disk method over the y-axis" width="50%" height="50%"/></p>
+</section>
+<section id="activity" class="slide level2">
+<h2>Activity</h2>
+<p>In breakout rooms, look at the following problems:</p>
+<ol type="1">
+<li>Revolve the region bounded by <span class="math inline">\(y = x\)</span>, <span class="math inline">\(y = x^2\)</span>, <span class="math inline">\(x = 0\)</span> and <span class="math inline">\(x = 1\)</span> around the <span class="math inline">\(x\)</span>-axis.</li>
+<li>Revolve the region bounded by <span class="math inline">\(y = x^2\)</span>, <span class="math inline">\(x = 0\)</span>, <span class="math inline">\(x = 2\)</span> and <span class="math inline">\(y = 4\)</span> around the <span class="math inline">\(y\)</span>-axis.</li>
+<li>Revolve the region bounded by <span class="math inline">\(y = x^2\)</span>, <span class="math inline">\(x = 2\)</span>, <span class="math inline">\(x = 2\)</span> and <span class="math inline">\(y = 0\)</span> around the <span class="math inline">\(y\)</span>-axis.</li>
+</ol>
+</section>
+<section id="activity-1" class="slide level2">
+<h2>Activity</h2>
+<p>For each problem:</p>
+<ul>
+<li>Pick the method you will use for this problem.</li>
+<li>Pick the formula you will use for the problem.</li>
+<li>Solve one of the problems on the second slide.
+<ul>
+<li>Rooms 1-2: solve problem 1</li>
+<li>Rooms 3-4: solve problem 2</li>
+<li>Rooms 5-6: solve problem 3</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="arc-length" class="title-slide slide level1">
+<h1>Arc Length</h1>
+<p>Formula:</p>
+<p><span class="math display">\[ s = \int_a^b \sqrt{1 + (f^\prime)^2 } dx \]</span></p>
+<ul>
+<li>These integrals are tricky.</li>
+<li>Know how to do the algebra to set it up</li>
+<li>Then use a calculator (graphing or online)</li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p>The path of a rock thrown off a 100 meter cliff (approximately) follows the curve <span class="math inline">\(f(t) = 100 - 5t^2\)</span>, from <span class="math inline">\(t = 0\)</span> to <span class="math inline">\(t = \sqrt{20}\)</span> seconds. Find the length of the path the rock travels from <span class="math inline">\(t = 0\)</span> to <span class="math inline">\(t = \sqrt{20}\)</span>. Round your answer to the nearest hundredth of a meter.</p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<iframe src="https://www.desmos.com/calculator/7dqbm9j7zs?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+</section>
+<section id="example-1" class="slide level2">
+<h2>Example</h2>
+<p>Arc length of <span class="math inline">\(f(t) = 100 - 5t^2\)</span> from <span class="math inline">\(t = 0\)</span> to <span class="math inline">\(t = \sqrt{20}\)</span>. Round your answer to the nearest hundredth of a meter.</p>
+<div class="fragment">
+<p><span class="math display">\[
+\begin{align}
+f^\prime(x) = -10x \\
+(f^\prime(x))^2 = 100x^2 \\
+\int_0^{\sqrt{20}} \sqrt{1 + 100x^2}dx
+\end{align}
+\]</span></p>
+</div>
+<div class="fragment">
+<p><a href="https://www.wolframalpha.com/input/?i=integral+from+0+to+sqrt%2820%29+of+sqrt%281+%2B+100x%5E2%29+dx">WolframAlpha</a>: <span class="math inline">\(\approx 100.25\)</span> meters.</p>
+</div>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions?</h2>
+<p>Before we move on:</p>
+<ul>
+<li>Questions about volumes?</li>
+<li>Questions about arc length?</li>
+<li>Catenary arch example?</li>
+</ul>
+</section></section>
+<section>
+<section id="differential-equations" class="title-slide slide level1">
+<h1>Differential Equations</h1>
+<ul>
+<li>Scientific experiments: can be easier to observe <em>changes</em> to data</li>
+<li>Might not know the <em>actual</em> formula describing your data</li>
+<li>How a quantity changes may be related to the quantity itself
+<ul>
+<li>Ex: the more money you have, the more it earns in interest / investment</li>
+</ul></li>
+</ul>
+</section>
+<section id="differential-equations-1" class="slide level2">
+<h2>Differential Equations</h2>
+<ul>
+<li>Can be easier to find the relationship between the change and the quantity</li>
+<li>Set up a <em>differential equation</em></li>
+</ul>
+</section>
+<section id="example-2" class="slide level2">
+<h2>Example</h2>
+<ul>
+<li>Suppose we are growing a bacteria culture.</li>
+<li>The larger the culture, the bigger the growth of the culture at any given time.</li>
+<li>Let <span class="math inline">\(m(t)\)</span> be the mass of the culture at time <span class="math inline">\(t\)</span>. (Can easily measure its mass.)</li>
+<li>We notice: at any given <span class="math inline">\(t\)</span> (in seconds?), the culture grows at a rate <span class="math inline">\(.05m(t)\)</span>
+<ul>
+<li>Idea: take lots of measurements, compare mass to previous mass. Look for a pattern.</li>
+</ul></li>
+<li>Initial mass: 2 grams. Mass in 10 minutes?</li>
+</ul>
+</section>
+<section id="idea" class="slide level2">
+<h2>Idea</h2>
+<p>We have a <em>differential equation</em>:</p>
+<p><span class="math display">\[m^\prime(t) = .05 m(t)\]</span></p>
+<p>What functions are proportional to their own derivatives?</p>
+<div class="fragment">
+<p>Exponential functions! Guess <span class="math inline">\(m(t) = Ae^{kt}\)</span>, and use <span class="math inline">\(m^\prime\)</span> and <span class="math inline">\(m(0)\)</span> to find these constants <span class="math inline">\(A\)</span> and <span class="math inline">\(k\)</span>.</p>
+</div>
+</section>
+<section id="solution-if-time" class="slide level2">
+<h2>Solution (if time)</h2>
+<p><span class="math display">\[
+\begin{align}
+m(t) &amp;= Ae^{kt} \\
+m^\prime(t) &amp;= Ake^{kt} \\
+ &amp;= .05 m(t) \\
+ &amp;= .05 Ae^{kt} \\
+k &amp;= .05
+\end{align}
+\]</span></p>
+</section>
+<section id="solution-continued" class="slide level2">
+<h2>Solution (Continued)</h2>
+<ul>
+<li><span class="math inline">\(m(t) = Ae^{.05t}\)</span></li>
+<li><span class="math inline">\(m(0) = 2\)</span></li>
+</ul>
+<p>Find <span class="math inline">\(A\)</span>?</p>
+<p><span class="math display">\[
+\begin{align}
+Ae^{0} = 2 \\
+A = 2
+\end{align}
+\]</span></p>
+<p>Solution:</p>
+<ul>
+<li><span class="math inline">\(m(t) = 2e^{.05t}\)</span></li>
+<li><span class="math inline">\(m(10) = 2e^{.5} \approx 3.3\)</span> grams.</li>
+</ul>
+</section></section>
+<section>
+<section id="overview" class="title-slide slide level1">
+<h1>Overview</h1>
+<ul>
+<li>Any equation involving the <em>derivative</em> of a quantity is known as a <strong>differential equation</strong>.</li>
+<li>Example: <span class="math inline">\(y^\prime = x\)</span>.</li>
+<li>A function <span class="math inline">\(y = f(x)\)</span> satisfying that equation is called a <strong>solution</strong> to the differential equation.</li>
+<li>In general: differential equations do not have unique solutions:
+<ul>
+<li><span class="math inline">\(y = \frac{x^2}{2}\)</span> is a solution to <span class="math inline">\(y^\prime = x\)</span>.</li>
+<li><span class="math inline">\(y = \frac{x^2}{2} + 1\)</span> is another solution.</li>
+</ul></li>
+</ul>
+</section>
+<section id="solutions-to-differential-equations" class="slide level2">
+<h2>Solutions to differential equations</h2>
+<ul>
+<li>We look for a <strong>general form</strong> for a solution:
+<ul>
+<li><span class="math inline">\(y = \frac{x^2}{2} + C\)</span>.</li>
+</ul></li>
+<li>If we have an <strong>initial condition</strong>, we can find an exact solution.
+<ul>
+<li>Suppose <span class="math inline">\(y^\prime = x\)</span> and <span class="math inline">\(y(0) = -1\)</span>.</li>
+<li>Then <span class="math inline">\(y = \frac{x^2}{2} + C\)</span>.</li>
+<li><span class="math inline">\(-1 = \frac{0^2}{2} + C\)</span></li>
+<li><span class="math inline">\(C = -1\)</span>.</li>
+<li>So: <span class="math inline">\(y = \frac{x^2}{2} - 1\)</span>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="order" class="slide level2">
+<h2>Order</h2>
+<p>The <strong>order</strong> of a differential equation is the highest derivative that appears in the equation. Identify the orders of the following:</p>
+<ol type="1">
+<li><span class="math inline">\(y^\prime = y + x\)</span></li>
+<li><span class="math inline">\((y^\prime)^2 = (y - x)^2\)</span></li>
+<li><span class="math inline">\(y^{\prime\prime} = -y\)</span></li>
+<li><span class="math inline">\(y^{\prime\prime\prime} + (y^\prime)^5 = y\)</span></li>
+</ol>
+<p>We will mostly focus on first-order differential equations, but some simple higher order differential equations can be solved.</p>
+</section>
+<section id="example-3" class="slide level2">
+<h2>Example</h2>
+<p>A ball is thrown straight into the air with an initial velocity of 5 meters per second. It is acted on by a constant, downward force of gravity, causing an acceleration of <span class="math inline">\(-9.8\)</span> <span class="math inline">\(m/s^2\)</span>.</p>
+<ol type="1">
+<li>Find a formula <span class="math inline">\(v(t)\)</span> for the velocity at time <span class="math inline">\(t\)</span> seconds after the ball is thrown.</li>
+<li>How many seconds after the ball is thrown does it reach its maximum height?</li>
+<li>If the ball is thrown at a height of 2 meters above the ground, what is the maximum height reached?</li>
+</ol>
+</section>
+<section id="solution-1" class="slide level2">
+<h2>Solution (1)</h2>
+<p>Since <span class="math inline">\(v^\prime(t) = a(t)\)</span>, and <span class="math inline">\(a(t) = -9.8\)</span>, we know:</p>
+<ul>
+<li><span class="math inline">\(v^\prime(t) = -9.8\)</span></li>
+<li><span class="math inline">\(v(0) = 5\)</span>.</li>
+</ul>
+<div class="fragment">
+<p>So: <span class="math inline">\(v(t) = -9.8t + C\)</span>. Since <span class="math inline">\(v(0) = 5\)</span>, we can compute <span class="math inline">\(5 = -9.8(0) + C\)</span>, so <span class="math inline">\(C = 5\)</span>.</p>
+<p>So our formula for the velocity is <span class="math inline">\(v(t) = -9.8t + 5\)</span>.</p>
+</div>
+</section>
+<section id="solution-2" class="slide level2">
+<h2>Solution (2)</h2>
+<p>Going back to Calc I:</p>
+<ul>
+<li>the ball reaches its maximum height when its upward velocity is 0</li>
+<li><span class="math inline">\(v(t) = -9.8t + 5 = 0\)</span></li>
+<li>Solve for <span class="math inline">\(t\)</span>: <span class="math inline">\(t = \frac{-5}{-9.8} \approx .51\)</span> seconds.</li>
+</ul>
+</section>
+<section id="solution-3" class="slide level2">
+<h2>Solution (3)</h2>
+<ul>
+<li>Derivative of height: velocity.</li>
+<li><span class="math inline">\(h^\prime(t) = -9.8t + 5\)</span>.</li>
+<li>So: <span class="math inline">\(h(t) = -4.9t^2 + 5t + C\)</span>.</li>
+<li><span class="math inline">\(h(0) = 2\)</span> means <span class="math inline">\(-4.9(0) + 5(0) + C = 2\)</span></li>
+<li>So <span class="math inline">\(C = 2\)</span></li>
+</ul>
+<p>Therefore <span class="math inline">\(h(t) = -4.9t^2 + 5t + 2\)</span>. Then <span class="math inline">\(h(\frac{5}{9.8}) \approx 3.28\)</span> meters.</p>
+<div class="fragment">
+<p>This is basically the exam 1 extra credit problem.</p>
+</div>
+</section>
+<section id="wrap-up" class="slide level2">
+<h2>Wrap-up</h2>
+<ul>
+<li>We really solved a <em>second-order</em> differential equation:</li>
+<li><span class="math inline">\(h^{\prime\prime}(t) = -9.8\)</span></li>
+<li>Initial condition: <span class="math inline">\(h(0) = 2\)</span> and <span class="math inline">\(h^\prime(0) = 5\)</span>.</li>
+<li>We did this by splitting it up into two steps:
+<ul>
+<li>First find <span class="math inline">\(h^\prime(t)\)</span></li>
+<li>Then find <span class="math inline">\(h(t)\)</span>.</li>
+</ul></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
