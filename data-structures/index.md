@@ -20,3 +20,4 @@ lang: en-US
 * [Lesson 11: Wrapping up hashtables](lesson11.html)
 * [Lesson 12: Priority Queues / Heaps](lesson12.html)
 * [Lesson 13: Heap operations / heapsort](lesson13.html)
+* [Lesson 14: Graphs](lesson14.html)
