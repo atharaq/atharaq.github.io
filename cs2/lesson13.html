@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-03-22">
+  <title>CS2 Lesson 13</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 13</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">22 March 2021</p>
+</section>
+
+<section id="project-2" class="title-slide slide level1">
+<h1>Project 2</h1>
+<ul>
+<li><p>Book class: should be done.</p></li>
+<li><p>Library class: one week. Write code that tests it out.</p>
+<pre ><code class="java">Library l = new Library();
+Book b = new Book("Virginia Woolf", "To The Lighthouse", 1927);
+Book b2 = new Book("Sheldon Axler", "Linear Algebra Done Right", 2015);
+l.add(b);
+l.add(b2);
+l.listAllBooks();</code></pre></li>
+<li><p>MainMenu: one week</p></li>
+</ul>
+</section>
+
+<section>
+<section id="kinds-of-errors" class="title-slide slide level1">
+<h1>Kinds of errors</h1>
+<ul>
+<li>Compiler errors: syntax errors, type mismatches, etc. These are caught by the compiler.</li>
+<li>Run-time errors: usually Exceptions, but also things like <code>OutOfMemoryError</code> or <code>StackOverflowError</code>.</li>
+<li>“Bugs” or logic errors: when the program doesn’t do what you wanted it to do. Our focus today will be on these.</li>
+</ul>
+<p>Examples for today are taken from Bloch and Gafter, <em>Java Puzzlers: Traps, Pitfalls and Corner Cases</em> (2005).</p>
+</section>
+<section id="set-up" class="slide level2">
+<h2>Set-up</h2>
+<ul>
+<li>Download the LogicErrors.zip file on Moodle.</li>
+<li>Unzip the file, it should create a folder.</li>
+<li>Open IntelliJ: File -&gt; “Open Project” and go to the folder that was just created.</li>
+<li>If IntelliJ is running too slowly, you can find the code on CodingRooms as well.
+<ul>
+<li>Part of the point is to use the IntelliJ debugger today. Spend time getting used to this tool.</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="example-1-increment" class="title-slide slide level1">
+<h1>Example 1: Increment</h1>
+<pre ><code class="java">int j = 0;
+for (int i = 0; i &lt; 100; i++) {
+    j = j++;
+}
+System.out.println(j);
+</code></pre>
+<ul>
+<li>What do you expect this will output?</li>
+<li>What does it print?</li>
+</ul>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<ul>
+<li>(In breakout rooms) Figure out what happened.</li>
+<li>Put print statements in the for loop to see what the value of <span class="math inline">\(j\)</span> is</li>
+<li>Or: if you know how (from last week’s video), you can use the debugger.</li>
+</ul>
+</section>
+<section id="debugger" class="slide level2">
+<h2>Debugger</h2>
+<p>Modern IDEs have built-in tools to help us debug.</p>
+<ul>
+<li>Click on the “side” of line 6 to add a <strong>breakpoint</strong>.</li>
+<li>Click on the “Run” menu and select “Debug…” and debug the “Increment” program.</li>
+<li>The program will run until it hits the breakpoint, and then stop and let us continue execution one line at a time.</li>
+<li>The debugger shows us a <strong>memory diagram</strong>, the values of all the variables at a particular moment. What happens to <span class="math inline">\(j\)</span> as <span class="math inline">\(i\)</span> increases?</li>
+</ul>
+</section>
+<section id="wrap-up-example-1" class="slide level2">
+<h2>Wrap-up Example 1</h2>
+<ul>
+<li>Assignment statements also can be used as expressions!</li>
+<li>The value of <code>j++</code> is the value of <span class="math inline">\(j\)</span> <strong>before</strong> the increment.</li>
+<li>The line <code>j = j++;</code> returns the previous value of <span class="math inline">\(j\)</span> and assigns that back to itself.</li>
+</ul>
+<p><strong>Lesson</strong>: Never assign to the same variable more than once in a single expression.</p>
+</section></section>
+<section>
+<section id="intheloop" class="title-slide slide level1">
+<h1>InTheLoop</h1>
+<p>Look at the InTheLoop program:</p>
+<pre ><code class="java">public static final int END = Integer.MAX_VALUE;
+public static final int START = END - 5;
+
+public static void main(String[] args) {
+    int count = 0;
+    for (int i = START; i &lt;= END; i++)
+        count++;
+    System.out.println(count);
+}</code></pre>
+<ul>
+<li>Before running, what do you think will happen?</li>
+<li>Run the program. What happens?</li>
+<li>Use the debugger to figure out what happened.</li>
+</ul>
+</section>
+<section id="example-2-lessons" class="slide level2">
+<h2>Example 2 Lessons</h2>
+<p>Main Lesson for example 2: <strong>be aware of boundary conditions</strong>. Every integer <span class="math inline">\(i\)</span> is less than or equal to <code>Integer.MAX_VALUE</code>, so the condition in the for loop is always true!</p>
+<p>We can fix this by changing the <code>int i = START;</code> to <code>long i = START;</code>.</p>
+<div class="fragment">
+<p>Also, notice anything in the IDE?</p>
+</div>
+</section></section>
+<section>
+<section id="animalfarm" class="title-slide slide level1">
+<h1>AnimalFarm</h1>
+<p>Look at the “AnimalFarm” program.</p>
+<pre ><code class="java">final String pig = "length: 10";
+final String dog = "length: " + pig.length();
+System.out.println(pig);
+System.out.println(dog);
+System.out.println("Animals are equal: " + pig == dog);</code></pre>
+<ul>
+<li>Before running, what do you think will happen?</li>
+<li>Run the program. What happens?</li>
+<li>Use the debugger to figure out what happened.</li>
+</ul>
+</section>
+<section id="example-3-lessons" class="slide level2">
+<h2>Example 3 Lessons</h2>
+<p>There are two main lessons here:</p>
+<ol type="1">
+<li>Precedence rules are tricky. <strong>Use parentheses when worried about precedence rules</strong>. It’s not clear that the +’ symbol concatenates two strings first, and then the == symbol checks for equality after, but that’s what happened!</li>
+<li>Reference equality (==) is usually not what you want to use for non-primitive types. <strong>Use the <code>.equals</code> method!</strong></li>
+</ol>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
