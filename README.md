@@ -3,7 +3,7 @@
 Lecture Notes for Spring 2021 Courses:
 
 * [Calculus II](calc-2)
-* [Computer Science II](cs-2)
+* [Computer Science II](cs2)
 * [Data Structures](data-structures)
 
 Lecture Notes for Fall 2020 Courses:
