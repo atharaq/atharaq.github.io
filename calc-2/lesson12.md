@@ -65,7 +65,7 @@ Integrating:
 
 $$\frac{y^2}{2} = \frac{x^2}{2} + C$$
 
-Or $y^2 = x^2 + C$. Taking square roots, either $y = \sqrt{x^2 + C}$ or $y = -\sqrt{x^2 + C$}$. Since $y(0) = 2 > 0$, we know that the second option is not possible, so it must be that $y = \sqrt{x^2 + C}$.
+Or $y^2 = x^2 + C$. Taking square roots, either $y = \sqrt{x^2 + C}$ or $y = -\sqrt{x^2 + C}$. Since $y(0) = 2 > 0$, we know that the second option is not possible, so it must be that $y = \sqrt{x^2 + C}$.
 
 Now we plug in our initial condition: $y(0) = 2$ means that $\sqrt{C} = 2$. Therefore $C = 4$, and so the solution to the original equation is $y = \sqrt{x^2 + 4}$.
 
