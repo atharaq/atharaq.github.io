@@ -19,3 +19,4 @@ lang: en-US
 * [Lesson 10: Designing classes](lesson10.html)
 * [Lesson 11: More on classes](lesson11.html)
 * [Lesson 12: Mutable and Immutable classes](lesson12.html)
+* [Lesson 13: Debugging](lesson13.html)
