@@ -15,3 +15,5 @@ layout: default
 * [Lesson 8: Areas between curves](lesson8.html)
 * [Lesson 9: Volumes of solids](lesson9.html)
 * [Lesson 10: Volumes of solids, shell method](lesson10.html)
+* [Lesson 11: Differential Equations Intro](lesson11.html)
+* [Lesson 12: Differential Equations](lesson12.html)
