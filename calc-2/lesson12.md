@@ -99,6 +99,10 @@ Notice that we have two unknown constants here: $A$ and $k$. We can use the two 
 
 $m(1) = 15$ means $10e^{k} = 15$, or $e^k = 1.5$. Therefore $k = \ln(1.5) \approx 0.41$. The solution, then, is $y = 10 e^{\ln(1.5) t}$. Using rules for exponents, $e^{\ln(1.5) t} = (e^{\ln(1.5)})^t$, and since $e^{\ln(x)} = x$, we can further simplify our solution to $m(t) = 10 \cdot 1.5^t$.
 
+## Textbook Section
+
+Material on separable equations is covered in [Section 4.3](https://openstax.org/books/calculus-volume-2/pages/4-3-separable-equations) in the textbook. There are several other worked examples there, I strongly encourage going through those as well as the exercises in that section.
+
 # Linear First Order Differential Equations
 
 <div class="youtube-container">
@@ -124,6 +128,10 @@ Then we multiply both sides by $e^{2x}$: $(e^{2x} y)^\prime = e^{2x}$. Integrate
 $y = \frac{e^2x + C}{2e^{2x}} = \frac{1}{2} + \frac{C}{e^{2x}}$, or $y = \frac{1}{2} + Ce^{-2x}$. Now we can use $y(0) = 0$ to find the solution: $y(0) = 0$ means that $\frac{1}{2} + C = 0$. So $C = -\frac{1}{2}$.
 
 Therefore our final answer is $y = \frac{1}{2} - \frac{1}{2} e^{-2x}$.
+
+## Examples from the book
+
+This particular method can be challenging. I encourage you to also follow along the [examples in the textbook](https://openstax.org/books/calculus-volume-2/pages/4-5-first-order-linear-equations). Try to use these 5 steps before you see the textbook do the problem, and then follow along as the textbook solves these problems as well.
 
 # Quiz
 
