@@ -7,7 +7,7 @@
 # Exceptions
 
 <div class="youtube-container">
-video-1
+<iframe src="https://www.youtube.com/embed/q_vbII-u0Jg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 An **exception** is short for "an exceptional event": anything which disrupts the normal flow of the program's instructions. When such an event occurs in a method, the following steps are taken:
@@ -39,7 +39,7 @@ You get some useful information in this error message: exactly the lines of code
 # Handling Exceptions: try-catch
 
 <div class="youtube-container">
-video 2
+<iframe src="https://www.youtube.com/embed/QlB6eKQYjvM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 As mentioned earlier: the JVM will search for an exception handler in the form of a `try-catch` block. So what exactly does that look like?
@@ -101,7 +101,7 @@ int input = sc.nextInt();
 # finally clause
 
 <div class="youtube-container">
-video 3
+<iframe src="https://www.youtube.com/embed/Am0zf_iqUGk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 Often times, there is some code you wish to always run, regardless of whether an exception was thrown. Usually, this involves closing resources of some kind. For example, the following code (from "CopyFile.java" on Moodle) is part of a program which makes a copy of a file. The code opens a file to read from it, creates a second file to write to, and copies things from the first one to the second.
@@ -161,7 +161,7 @@ Note: running the file multiple times will just overwrite that output.jpeg file,
 # Throwing (and re-throwing) Exceptions
 
 <div class="youtube-container">
-video 4?
+<iframe src="https://www.youtube.com/embed/2i99eepMNJk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 As an alternative to a try-catch block: you can simply declare that your method throws the appropriate exception.
@@ -204,16 +204,31 @@ Some Exceptions, like the InputMismatchException thrown by the Scanner class, do
 
 In general, we should respect the following paradigms:
 
-1. Checked exceptions are for conditions that you expect clients to try to recover from. For example: FileNotFoundException!
+1. Checked exceptions are for conditions that you expect clients to try to recover from. For example: `FileNotFoundException`!
 2. Unchecked exceptions are for "logic errors": `ArrayIndexOutOfBoundsException`, `NullPointerException`, etc. These really shouldn't happen.
-3. **Rule of thumb**: Use Exceptions for exceptional situations: not as fancy if-thens! That means, don't use try-catch to check for NumberFormatException. Don't use try-catch to check for NullPointerExceptions. Instead, check hasNextInt, or check if the object is null.
+3. **Rule of thumb**: Use Exceptions for exceptional situations: not as fancy if-thens! That means, don't use try-catch to check for `NumberFormatException`. Don't use try-catch to check for `NullPointerExceptions`. Instead, check hasNextInt, or check if the object is null.
 
 # Some Common Exceptions
 
 Your code, outside of a `catch` block, might need to throw its own Exceptions. You could create your own Exception types (create a new class which `extends` Exception -- more on "extending" classes later), but there are often built-in Exception classes that you can use for most situations:
 
-* IllegalArgumentException: for instance, if you expect only positive integer values, but a negative value is passed in
-* IllegalStateException: perhaps the object needs to be initialized or is in the middle of updating and is not in an appropriate state
-* NullPointerException: this is often thrown automatically
-* IndexOutOfBoundsException
-* UnsupportedOperationException: for instance, if you implement an interface but you don't expect certain methods to be invoked on that implementation.
+* `IllegalArgumentException`: for instance, if you expect only positive integer values, but a negative value is passed in
+* `IllegalStateException`: perhaps the object needs to be initialized or is in the middle of updating and is not in an appropriate state
+* `NullPointerException`: this is often thrown automatically
+* `IndexOutOfBoundsException`
+* `UnsupportedOperationException`: for instance, if you implement an interface but you don't expect certain methods to be invoked on that implementation.
+
+# Polymorphism
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/k1HrkQEo8iU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+Next time we will be talking about polymorphism. This is the ability of one object to take on multiple forms. We are seeing this in several ways in this lesson:
+
+* Any "resource" that can be used in the try-with-resources block must be of the type `AutoCloseable`.
+* Any `RuntimeException` does not need to be "caught".
+
+What does it mean, then, that the `FileOutputStream` and the `InputStream` classes both are allowed to be used in the try-with-resources block? It means that those objects are polymorphic: objects of those type can be seen as being of the type `AutoCloseable`, too! We will see how to implement this kind of polymorphism using **interfaces** next week.
+
+If this doesn't make total sense yet: that's because we haven't studied what polymorphism actually is, how we use it, etc. We will, and then I hope you can revisit this lesson on your own and think about these issues.
