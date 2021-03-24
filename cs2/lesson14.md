@@ -104,7 +104,7 @@ int input = sc.nextInt();
 video 3
 </div>
 
-Often times, there is some code you wish to always run, regardless of whether an exception was thrown. Usually, this involves closing resources of some kind. For example, the following code (from "CopyFile.java" on Moodle / CodingRooms) is part of a program which makes a copy of a file. The code opens a file to read from it, creates a second file to write to, and copies things from the first one to the second.
+Often times, there is some code you wish to always run, regardless of whether an exception was thrown. Usually, this involves closing resources of some kind. For example, the following code (from "CopyFile.java" on Moodle) is part of a program which makes a copy of a file. The code opens a file to read from it, creates a second file to write to, and copies things from the first one to the second.
 
 ```java
 try {
@@ -139,7 +139,7 @@ The code above is actually terrible! While trying to make sure we close an Input
 
 Thankfully, there is a better way: try-with-resources:
 
-```
+```java
 try (InputStream stream = CopyFile.class.getResourceAsStream(FILENAME);
 	 FileOutputStream out = new FileOutputStream(OUTPUT_FILE)) {
 	...	 
@@ -175,7 +175,7 @@ public static void main(String[] args) throws IOException {
 Often, you don't want to do this for your main method. But for other methods: it may be the right option! You can also throw (or re-throw) exceptions that you have caught on your own:
 
 
-```
+```java
 } catch (IOException e) {
 	// try to handle e
 	...
@@ -197,6 +197,8 @@ public Time(int h, int m, String amOrPm) {
 You can `throw` any object whose type is "Exception".
 
 # Properly using Exceptions
+
+video 5?
 
 Some Exceptions, like the InputMismatchException thrown by the Scanner class, don't need to be surrounded by a try-catch block. These are called **unchecked** exceptions. Others, like the `IOException` in the `CopyFile` example, need to be caught or handled. These are **checked** exceptions.
 
