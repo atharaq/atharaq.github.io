@@ -89,7 +89,7 @@ try {
 
 Since the more specific exception would have been caught by the "general" exception class.
 
-## Exercise
+## Exercise (Don't Submit)
 
 Every Exception class has a `printStackTrace` method. Surround the following code with a `try-catch` block and, in the catch clause, call the `printStackTrace` method. Run the code and put in some text (not an integer) so that an exception is thrown.
 
