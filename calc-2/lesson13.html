@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-03-25">
+  <title>Calc II Lesson 11</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Calc II Lesson 11</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">25 March 2021</p>
+</section>
+
+<section>
+<section id="warm-up" class="title-slide slide level1">
+<h1>Warm-up</h1>
+<p>Solve the following differential equations:</p>
+<ol type="1">
+<li><span class="math inline">\(y^\prime = \cos(x)\sqrt{y}\)</span>, with <span class="math inline">\(y(\pi/2) = 1\)</span></li>
+<li><span class="math inline">\(y^\prime = e^{x - y}\)</span>, with <span class="math inline">\(y(0) = 2\)</span></li>
+</ol>
+</section>
+<section id="separable-equations" class="slide level2">
+<h2>Separable Equations</h2>
+<ul>
+<li><span class="math inline">\(y^\prime = f(x) g(y)\)</span></li>
+<li>Separate variables and solve</li>
+<li><span class="math inline">\(\int \frac{dy}{g(y)} = \int f(x) dx\)</span></li>
+<li>Then use initial conditions (if any) to find exact solutions.</li>
+</ul>
+</section></section>
+<section>
+<section id="physics" class="title-slide slide level1">
+<h1>Physics</h1>
+<p>Physics application</p>
+<ul>
+<li>Falling object experiences two forces:</li>
+<li>Acceleration due to gravity: <span class="math inline">\(F_g = mg = 9.8m\)</span> (assume downward is positive)</li>
+<li>Air resistance (assume proportional to velocity): <span class="math inline">\(F_A = -kv\)</span> (opposite direction)</li>
+<li>Sum of forces = mass <span class="math inline">\(\cdot\)</span> acceleration = <span class="math inline">\(m \frac{dv}{dt}\)</span></li>
+</ul>
+</section>
+<section id="air-resistance" class="slide level2">
+<h2>Air Resistance</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<figure>
+<img alt="Air resistance on a ball" style="background: currentColor" src="https://openstax.org/resources/7204f86c68a6bc61fe612b898938cea7992fdb93" />
+<figcaption>
+From Section 4.5 of the textbook
+</figcaption>
+</figure>
+</div><div class="column" style="width:40%;">
+<p>Differential equation!</p>
+<p><span class="math display">\[ m\frac{dv}{dt} = 9.8m - kv\]</span></p>
+</div>
+</div>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>A penny with weight 0.0025 kg is dropped from the top of the Empire State Building (369m). The force of air resistance on the penny is assumed to be about <span class="math inline">\(-.0025v\)</span>. Set up and solve a differential equation to find the formula for the velocity <span class="math inline">\(v(t)\)</span> of the penny at time <span class="math inline">\(t\)</span>.</p>
+</section>
+<section id="equation" class="slide level2">
+<h2>Equation</h2>
+<ul>
+<li><span class="math inline">\(0.0025 v^\prime = 9.8(0.0025) - 0.0025v\)</span></li>
+<li>Simplify: <span class="math inline">\(v^\prime = 9.8 - v\)</span></li>
+<li>Standard form: <span class="math inline">\(v^\prime + v = 9.8\)</span> (linear first order equation!)</li>
+<li>Initial condition: <span class="math inline">\(v(0) = 0\)</span> (dropped at rest)</li>
+</ul>
+</section>
+<section id="steps" class="slide level2">
+<h2>Steps</h2>
+<p>Steps to solving a linear first order differential equation:</p>
+<ol type="1">
+<li>Get in standard form <span class="math inline">\(y^\prime + p(x)y = q(x)\)</span>.</li>
+<li><span class="math inline">\(\mu(x) = e^{\int p(x) dx}\)</span></li>
+<li>Multiply both sides by <span class="math inline">\(\mu(x)\)</span>: <span class="math inline">\((\mu(x) y)^\prime = \mu(x) q(x)\)</span></li>
+<li>Integrate: <span class="math inline">\(\mu(x) y = \int \mu(x) q(x) dx + C\)</span>.</li>
+<li>Divide by <span class="math inline">\(\mu(x)\)</span> / plug in initial conditions / solve.</li>
+</ol>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<p>Solve the differential equation on slide 3 of the jamboard:</p>
+<p><span class="math inline">\(v^\prime + v = 9.8\)</span>, with <span class="math inline">\(v(0) = 0\)</span></p>
+</section>
+<section id="terminal-velocity" class="slide level2">
+<h2>Terminal Velocity</h2>
+<p>Now that we have <span class="math inline">\(v(t)\)</span>:</p>
+<ul>
+<li>
+What is the <em>terminal velocity</em> of the penny?
+</li>
+<li class="fragment">
+ie, as <span class="math inline">\(t \rightarrow \infty\)</span>, what is <span class="math inline">\(v(t)\)</span>?
+</li>
+</ul>
+</section>
+<section id="graph" class="slide level2">
+<h2>Graph</h2>
+<iframe src="https://www.desmos.com/calculator/8jdok69txd?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+</section></section>
+<section>
+<section id="logistic" class="title-slide slide level1">
+<h1>Logistic</h1>
+<ul>
+<li>Earlier: modeled population growth as exponential</li>
+<li><span class="math inline">\(P^\prime = kP\)</span></li>
+<li>What happens to population as <span class="math inline">\(t \rightarrow \infty\)</span>?</li>
+</ul>
+</section>
+<section id="carrying-capacity" class="slide level2">
+<h2>Carrying Capacity</h2>
+<ul>
+<li>Several factors limit unbounded growth.</li>
+<li>Food scarcity, predator-prey relations, etc.</li>
+<li>Definition: <strong>carrying capacity</strong>: the maximum population that can be sustained in an environment indefinitely. Denoted with a constant <span class="math inline">\(K\)</span>.</li>
+<li>Eventually, <span class="math inline">\(P \rightarrow K\)</span></li>
+<li>Equation: <span class="math inline">\(\frac{dP}{dt} = rP(1 - \frac{P}{K})\)</span>.</li>
+<li>When <span class="math inline">\(P\)</span> is small? Roughly exponential.</li>
+<li>As <span class="math inline">\(P \rightarrow K\)</span>?</li>
+</ul>
+</section>
+<section id="graph-1" class="slide level2">
+<h2>Graph</h2>
+<iframe src="https://www.desmos.com/calculator/9szimnhv6b?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+</section>
+<section id="other-situations" class="slide level2">
+<h2>Other situations?</h2>
+<ul>
+<li>Epidemiology! (Spread of diseases)</li>
+<li>Number of infections over time cannot grow exponentially.</li>
+<li>Why?</li>
+</ul>
+</section></section>
+<section>
+<section id="slope-fields" class="title-slide slide level1">
+<h1>Slope Fields</h1>
+<ul>
+<li>How might one “graph” a differential equation?</li>
+<li><span class="math inline">\(y^\prime = -\frac{x}{y}\)</span>?</li>
+<li>At each <span class="math inline">\((x, y)\)</span> coordinate, compute <span class="math inline">\(\frac{x}{y}\)</span>.</li>
+<li>Make a short line segment at that point with that slope.</li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<figure>
+<img src="https://openstax.org/resources/88bc25e3eeba750f9c758f33ba80becb128f8f3b" style="background: currentColor" alt="Slope field for y' = 3x + 2y - 4" />
+<figcaption>
+<span class="math inline">\(y^\prime = 3x + 2y - 4\)</span> (textbook section 4.2)
+</figcaption>
+</figure>
+</section></section>
+<section>
+<section id="exam-2" class="title-slide slide level1">
+<h1>Exam 2</h1>
+<p>Next week:</p>
+<ul>
+<li>Exam 2</li>
+<li>Given Monday, due Friday</li>
+<li>Cumulative (some topics from exam 1)
+<ul>
+<li>Explicitly and implicitly!</li>
+</ul></li>
+</ul>
+</section>
+<section id="since-exam-1" class="slide level2">
+<h2>Since Exam 1</h2>
+<ul>
+<li>Improper integrals (3.7)</li>
+<li>Areas between curves (2.1)</li>
+<li>Volumes (2.2 - 2.3)
+<ul>
+<li>Disk Method: <span class="math inline">\(V = \int \pi (f(x))^2 dx\)</span></li>
+<li>Washer: <span class="math inline">\(V = \int \pi (f(x)^2 - g(x)^2) dx\)</span></li>
+<li>Shell: <span class="math inline">\(V = \int 2\pi x f(x) dx\)</span></li>
+</ul></li>
+<li>Arc Length (2.4)</li>
+<li>Differential Equations:
+<ul>
+<li>Basic (4.1), position / velocity / acceleration</li>
+<li>Separable (4.3), exponential growth</li>
+<li>Linear (4.5)</li>
+</ul></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
