@@ -17,3 +17,4 @@ layout: default
 * [Lesson 10: Volumes of solids, shell method](lesson10.html)
 * [Lesson 11: Differential Equations Intro](lesson11.html)
 * [Lesson 12: Differential Equations](lesson12.html)
+* [Lesson 13: Differential Equations Wrap up](lesson13.html)
