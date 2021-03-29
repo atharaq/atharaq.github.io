@@ -20,3 +20,5 @@ lang: en-US
 * [Lesson 11: More on classes](lesson11.html)
 * [Lesson 12: Mutable and Immutable classes](lesson12.html)
 * [Lesson 13: Debugging](lesson13.html)
+* [Lesson 14: Exceptions](lesson14.html)
+* [Lesson 15: Polymorphism I](lesson15.html)
