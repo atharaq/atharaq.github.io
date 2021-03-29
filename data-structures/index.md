@@ -21,4 +21,4 @@ lang: en-US
 * [Lesson 12: Priority Queues / Heaps](lesson12.html)
 * [Lesson 13: Heap operations / heapsort](lesson13.html)
 * [Lesson 14: Graphs](lesson14.html)
-* [Lesson 14: Shortest Path Algorithms](lesson15.html)
+* [Lesson 15: Shortest Path Algorithms](lesson15.html)
