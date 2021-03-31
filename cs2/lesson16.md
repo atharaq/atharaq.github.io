@@ -116,3 +116,27 @@ So can we introduce some more abstraction and refactor our code to use that abst
 *Effective Java* is a really important book for all professional Java developers to refer to. It describes the ways in which we *should* use Java language features in a way that makes our code clean, easy to understand, and exploits the built-in features of the language and the standard library.
 
 This particular item states that we should "Favor composition over inheritance". That is: often times, if we think that one class should extend from another, what we really want is for one class to use the other class's methods. This can be done by using composition (keeping a private instance variable) instead of inheritance.
+
+# Next time: CoinGame
+
+On Moodle, download the CoinGame project and open it in IntelliJ.
+
+We will be looking at this on Monday. This is a simple coin flip guessing game. It is not coded using "Object-Oriented" principles, we will think through how to change this.
+
+As it is, the game begins by flipping a coin 9 times and counting the number of heads. A human player is then prompted to guess the number of heads. Then a computer player enters a random guess, and a winner is declared.
+
+Unzip this project and open it up in IntelliJ. Play the game!
+
+On Monday, we will be going through the following steps (together and in small groups):
+
+1. Change the game so that the user can enter in the number of times we will flip the coin.
+2. Change the game so that the user can choose who guesses first (the human or the computer player).
+3. Come up with another (smarter) strategy for the computer player. Change the game so that the user can select between the two strategies (the Random strategy that I implemented, and this other strategy that you are implementing).
+4. Change the game to allow for multiple ways to play: Human vs Human, Computer vs Computer, etc. Allowing all possible strategies for computer players as well.
+
+You will see that some of these changes are easy to implement, and some are more challenging. Refactoring the code to use object oriented principles will help us here.
+
+# Upcoming
+
+* Project 3 will be announced Monday (4/5), due 4/25
+* Exam 2 will be given Thursday (4/8), due 4/15
