@@ -25,6 +25,10 @@ First: let's finish up the slides from Monday. Take a look at the following slid
 
 # Implementing vs extending
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/TzJvn7EdR8M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 Now that we know about interfaces and inheritance, let's recap some of the differences between them.
 
 Interfaces:
@@ -60,6 +64,10 @@ Think about this in terms of your second project. A `Library` is **not** a list.
 
 # Case Study: Averager
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/d4TjtggzZqM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 Download the Averager class on Moodle. Answer the following questions first, before writing any code.
 
 * What does the Averager class do?
@@ -87,7 +95,15 @@ Since the Averager class seems to do many things, let's break it up into smaller
 
 After you have done this on your own, or if you get stuck, take a look at the video below where I go through the steps of breaking this up into components.
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/JgxaG_fh0BM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 ## More abstraction?
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/DV_jNP9NNiQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 At this point, your code should be fairly clean. Your main method should be short, and each line of code should be pretty simple, so it seems like our code is nicely object-oriented. I'd like to try to probe a little deeper and see if there is anything that we can make even more abstract. At this point, I'd like to focus on Input.
 
@@ -137,6 +153,8 @@ On Monday, we will be going through the following steps (together and in small g
 You will see that some of these changes are easy to implement, and some are more challenging. Refactoring the code to use object oriented principles will help us here.
 
 # Upcoming
+
+We are heading into the home stretch of the semester. Some things are coming up, so keep an eye out for the following:
 
 * Project 3 will be announced Monday (4/5), due 4/25
 * Exam 2 will be given Thursday (4/8), due 4/15
