@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-04-01">
+  <title>Calc II Lesson 14</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Calc II Lesson 14</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">1 April 2021</p>
+</section>
+
+<section id="good-news" class="title-slide slide level1">
+<h1>Good News!</h1>
+<blockquote class="twitter-tweet">
+<p lang="en" dir="ltr">
+<a href="https://twitter.com/hashtag/BREAKING?src=hash&amp;ref_src=twsrc%5Etfw">#BREAKING</a>: Starting Tuesday, April 6 at 8am, all New Yorkers age 16+ will be eligible to schedule and receive the COVID-19 vaccines.<br><br>And beginning tomorrow at 8am, all New Yorkers age 30+ will be eligible to schedule and receive the vaccines. <br> <br>Let’s <a href="https://twitter.com/hashtag/VaccinateNY?src=hash&amp;ref_src=twsrc%5Etfw">#VaccinateNY</a>
+</p>
+— Andrew Cuomo (<span class="citation" data-cites="NYGovCuomo">@NYGovCuomo</span>) <a href="https://twitter.com/NYGovCuomo/status/1376579469616541699?ref_src=twsrc%5Etfw">March 29, 2021</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+
+<section id="exam-2" class="title-slide slide level1">
+<h1>Exam 2</h1>
+<ul>
+<li>Due Friday on Moodle</li>
+<li>Questions?
+<ul>
+<li>Don’t give me question numbers, your exams are all different.</li>
+<li>Feel free to mention the problem type and I can speak generally about the methods.</li>
+</ul></li>
+<li>Presentation 2 grades coming soon.</li>
+<li>Quiz 2 makeups: contact me if interested.</li>
+</ul>
+</section>
+
+<section>
+<section id="d-curves" class="title-slide slide level1">
+<h1>2D Curves</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<iframe src="https://www.desmos.com/calculator/t5gl4c8pxk?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>Not a function</li>
+<li>But…can still study tangent lines!</li>
+<li>Every 2D curve can be described with <em>parametric equations</em></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="parametric-equations" class="slide level2">
+<h2>Parametric Equations</h2>
+<ul>
+<li>Instead of <span class="math inline">\(y = f(x)\)</span>, we have two functions: <span class="math inline">\(x(t)\)</span> and <span class="math inline">\(y(t)\)</span></li>
+<li><span class="math inline">\(x(t)\)</span> and <span class="math inline">\(y(t)\)</span> describe the <span class="math inline">\((x, y)\)</span> coordinates of the curve at time <span class="math inline">\(t\)</span>.</li>
+<li><span class="math inline">\(t\)</span> is referred to as the <em>parameter</em></li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p>Graph the curve described by <span class="math inline">\(x(t) = t^2\)</span>, <span class="math inline">\(y(t) = t + 1\)</span>:</p>
+<div class="fragment">
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(t\)</span></th>
+<th><span class="math inline">\(x\)</span></th>
+<th><span class="math inline">\(y\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>-2</td>
+<td>4</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>-1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>4</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="graph" class="slide level2">
+<h2>Graph</h2>
+<iframe src="https://www.desmos.com/calculator/vtddnk5bqn?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Graph the parametric curve given by:</p>
+<ul>
+<li><span class="math inline">\(x(t) = 2 \cos(t)\)</span></li>
+<li><span class="math inline">\(y(t) = 2 \sin(t)\)</span></li>
+</ul>
+<p>from <span class="math inline">\(t = 0\)</span> to <span class="math inline">\(t = 2\pi\)</span>.</p>
+<p>Find the point on the graph when <span class="math inline">\(t = \pi/4\)</span>.</p>
+</section>
+<section id="dimension" class="slide level2">
+<h2>Dimension</h2>
+<p>Aside: is a circle a <em>one</em>-dimensional object or a <em>two</em>-dimensional object?</p>
+<div class="fragment">
+<ul>
+<li>The <em>space</em> we draw the circle in is two-dimensional. (We could draw it in a three dimensional space if we wanted to…)</li>
+<li>Is the circle <em>itself</em> 2D?</li>
+<li>To describe points on a circle, we really need only one variable.</li>
+<li>Mathematically: one-dimensional object living in a two-dimensional space.</li>
+</ul>
+</div>
+</section>
+<section id="desmos" class="slide level2">
+<h2>Desmos</h2>
+<p>Aside: graphing parametric curves in desmos.</p>
+<ul>
+<li>Instead of writing in a function <span class="math inline">\(f(x) = \ldots\)</span>:</li>
+<li>Input <em>coordinate</em> functions: <span class="math inline">\((x(t), y(t))\)</span>.</li>
+<li>ie: <span class="math inline">\((2\cos(t), 2\sin(t))\)</span>.</li>
+<li>Must provide range, ie <span class="math inline">\(0 \leq t \leq 2\pi\)</span></li>
+<li><a href="https://www.desmos.com/calculator/b0mork1xom">Example</a></li>
+</ul>
+</section></section>
+<section>
+<section id="calculus" class="title-slide slide level1">
+<h1>Calculus</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<iframe src="https://www.desmos.com/calculator/4x9thzc8jz?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>If the curve is “smooth”, we can find derivatives.</li>
+<li><span class="math inline">\(x(t) = 2\cos(t)\)</span></li>
+<li><span class="math inline">\(y(t) = 2\sin(t)\)</span></li>
+<li><span class="math inline">\(x^\prime(t) = -2\sin(t)\)</span> means?</li>
+<li><span class="math inline">\(x^\prime(0) = -2\sin(0) = 0\)</span> means?</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="derivatives" class="slide level2">
+<h2>Derivatives</h2>
+<ul>
+<li><span class="math inline">\(x^\prime(t)\)</span>: rate of change of the curve in the <span class="math inline">\(x\)</span>-direction</li>
+<li><span class="math inline">\(y^\prime(t)\)</span>: rate of change of the curve in the <span class="math inline">\(y\)</span>-direction</li>
+<li>What about the slope of a tangent line?</li>
+<li><span class="math inline">\(\frac{dy}{dt} = y^\prime(t)\)</span></li>
+<li><span class="math inline">\(\frac{dx}{dt} = x^\prime(t)\)</span></li>
+</ul>
+<div class="fragment">
+<p>Chain rule! <span class="math inline">\(\frac{dy}{dx} = \frac{y^\prime(t)}{x^\prime(t)}\)</span></p>
+</div>
+</section>
+<section id="tangent-lines" class="slide level2">
+<h2>Tangent Lines</h2>
+<p>Example: Find the equation of the tangent line to the graph of <span class="math inline">\(x(t) = 2\cos(t)\)</span>, <span class="math inline">\(y(t) = 2\sin(t)\)</span> at <span class="math inline">\(t = \pi/4\)</span>.</p>
+<div class="fragment">
+<ul>
+<li>Use <em>point-slope</em> form: <span class="math inline">\(y - y_0 = m(x - x_0)\)</span></li>
+<li><span class="math inline">\(y_0 = y(\pi/4) = 2\sin(\pi/4) = \sqrt{2}\)</span></li>
+<li><span class="math inline">\(x_0 = x(\pi/4) = 2\cos(\pi/4) = \sqrt{2}\)</span></li>
+<li><span class="math inline">\(m = \frac{y^\prime(\pi/4)}{x^\prime(\pi/4)}\)</span></li>
+<li><span class="math inline">\(y^\prime(t) = 2\cos(t)\)</span>, <span class="math inline">\(x^\prime(t) = -2\sin(t)\)</span></li>
+</ul>
+</div>
+</section>
+<section id="tangent-lines-continued" class="slide level2">
+<h2>Tangent Lines (Continued)</h2>
+<ul>
+<li><span class="math inline">\(y^\prime(t) = 2\cos(t)\)</span>, <span class="math inline">\(x^\prime(t) = -2\sin(t)\)</span></li>
+<li><span class="math inline">\(y^\prime(\pi/4) = 2\cos(\pi/4) = \sqrt{2}\)</span></li>
+<li><span class="math inline">\(x^\prime(\pi/4) = -2\sin(\pi/4) = -\sqrt{2}\)</span></li>
+<li><span class="math inline">\(\frac{dy}{dx} = \frac{\sqrt{2}}{-\sqrt{2}} = -1\)</span></li>
+</ul>
+<p>Equation: <span class="math inline">\(y - \sqrt{2} = -1(x - \sqrt{2})\)</span>.</p>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<p>Find the equation of the line tangent to the parametric curve given by the equations <span class="math inline">\(x(t) = t^2, y(t) = t^3\)</span> when <span class="math inline">\(t = 2\)</span>.</p>
+</section></section>
+<section id="coming-up" class="title-slide slide level1">
+<h1>Coming Up</h1>
+<ul>
+<li>Exam 2 Due tomorrow
+<ul>
+<li>Office hours tomorrow: 9:30 - 11:30 (extended it a bit)</li>
+</ul></li>
+<li>Areas and Arc Lengths of Parametric Curves</li>
+<li>Polar Coordinates</li>
+<li>Presentation 3 (4/11)</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
