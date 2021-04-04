@@ -18,3 +18,5 @@ layout: default
 * [Lesson 11: Differential Equations Intro](lesson11.html)
 * [Lesson 12: Differential Equations](lesson12.html)
 * [Lesson 13: Differential Equations Wrap up](lesson13.html)
+* [Lesson 14: Parametric Equations](lesson14.html)
+* [Lesson 15: Areas and Arc Lengths of Parametric Curves](lesson15.html)
