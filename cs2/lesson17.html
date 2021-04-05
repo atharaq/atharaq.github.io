@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-04-05">
+  <title>CS2 Lesson 17</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 17</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">5 April 2021</p>
+</section>
+
+<section>
+<section id="coingame" class="title-slide slide level1">
+<h1>CoinGame</h1>
+<ul>
+<li>Run the CoinGame project (either IntelliJ / CodingRooms)</li>
+<li>Play the game.</li>
+<li>We will be modifying the game. Some modifications will be easy, others will require a lot of changes.</li>
+<li>Object Oriented Programming can help!</li>
+<li>Part 0: change the game to allow the user to enter in the number of times we flip the coin.</li>
+</ul>
+</section>
+<section id="part-1" class="slide level2">
+<h2>Part 1</h2>
+<p>Now change the game so that the user can choose who guesses first (the human or the computer player).</p>
+</section>
+<section id="part-2" class="slide level2">
+<h2>Part 2</h2>
+<ul>
+<li>Come up with another strategy for the computer player.</li>
+<li>Change the game so that the user can select between the two strategies (the Random strategy that I implemented, and this other strategy that you are implementing).</li>
+</ul>
+</section>
+<section id="part-3" class="slide level2">
+<h2>Part 3</h2>
+<p>Lastly: change the game to allow for multiple ways to play: Human vs Human, Computer vs Computer, etc. Allowing all possible strategies for computer players as well.</p>
+</section></section>
+<section>
+<section id="project-3" class="title-slide slide level1">
+<h1>Project 3</h1>
+<p>Liar’s Dice is a game played with two players (technically it can be played with any number, but let’s stick with two players). Each player has five dice. (This is a stripped down version of the game, so you may see other variants online.) <em>You cannot see your opponent’s dice!</em></p>
+</section>
+<section id="gameplay" class="slide level2">
+<h2>Gameplay</h2>
+<ol type="1">
+<li>Player 1 “bids”: they state a face value (1-6) and a guess for the minimum number of dice that they believe show that face value.</li>
+<li>Player 2 either raises, or calls "LIAR! (challenges). If they raise, they guess a higher number (for the same face value).</li>
+<li>Play continues until one player challenges. If a player challenges, the previous player (“bidder”) wins if the number of dice that shows the face value in question is at least as high as the current bid. If not, the “challenger” wins.</li>
+</ol>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<ul>
+<li>Player 1’s dice: [1, 2, 1, 4, 6]</li>
+<li>Player 2’s dice: ???</li>
+<li>Player 1 bids: face value 1, minimum = 2.</li>
+<li>Player 2 raises: minimum = 4.</li>
+<li>Player 1 calls LIAR</li>
+<li>Player 1 reveals dice: [1, 2, 1, 4, 6]</li>
+<li>Player 2 reveals: [6, 1, 5, 1, 1]</li>
+<li>Player 2 wins! There are 5 ones on the table!</li>
+</ul>
+</section>
+<section id="design" class="slide level2">
+<h2>Design</h2>
+<p>Consider a scenario in which we want to allow for human players, a “smart” computer player, and a “random” computer player. How would we design this project?</p>
+</section>
+<section id="getting-started" class="slide level2">
+<h2>Getting Started</h2>
+<p>Implement the <code>Die</code> class. You may need to use the <code>Random</code> class (<code>import java.util.Random;</code>). Here is a quick example:</p>
+<pre ><code class="java">Random r = new Random(); // should be an instance variable.
+
+int roll = r.nextInt(6) + 1; // returns a random number from 1 to 6.
+// r.nextInt(6) returns a random number from 0 to 5, so we add one.</code></pre>
+</section>
+<section id="grading" class="slide level2">
+<h2>Grading</h2>
+<ul>
+<li>25%: <strong>compiles</strong></li>
+<li>25%: <strong>functionality</strong>
+<ul>
+<li>3 player types (Human, Random, Smart)</li>
+<li>All possible matchups: Computer (either) vs Computer (either), Computer (either) vs Human, Human vs Computer (either)</li>
+<li>Correctly determine winner in all cases</li>
+</ul></li>
+</ul>
+</section>
+<section id="grading-continued" class="slide level2">
+<h2>Grading (continued)</h2>
+<ul>
+<li>30%: <strong>object-oriented design / style</strong>
+<ul>
+<li>Code is “lightly coupled”, independent testable components</li>
+<li>Limit static methods as much as possible</li>
+<li>Normal style rules apply: indentation, good variable names, comments, etc.</li>
+</ul></li>
+</ul>
+</section>
+<section id="grading-continued-1" class="slide level2">
+<h2>Grading (continued)</h2>
+<ul>
+<li>20%: <strong>documentation</strong>
+<ul>
+<li>Explain how the various components are implemented</li>
+<li>If you use inheritance, explain why; if you use interfaces, explain why. etc</li>
+<li>Clearly document the “Smarter” strategy (either in a text file in the src folder, or in the comments at the top of the Smarter class)</li>
+</ul></li>
+</ul>
+</section>
+<section id="time-management" class="slide level2">
+<h2>Time Management</h2>
+<ul>
+<li>Probably the most challenging project</li>
+<li>Get started now.</li>
+<li>What can you do now? (Die class, Player interface, RandomComputer, HumanPlayer)</li>
+<li>Design the main game with just these players. (Object-oriented so it’s easy to extend!)</li>
+</ul>
+<p>Use your time wisely!</p>
+<p>Due <strong>Sunday, April 25</strong>. 20 days.</p>
+</section></section>
+<section id="exam-2" class="title-slide slide level1">
+<h1>Exam 2</h1>
+<ul>
+<li>Given Thursday, April 8.</li>
+<li>Due Thursday, April 15.</li>
+<li>Similar to exam 1, plus questions on classes / object oriented design.</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
