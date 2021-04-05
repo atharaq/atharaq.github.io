@@ -78,7 +78,7 @@ $$\sum_{i=0}^{n} \sqrt{(\Delta x)^2 + (\Delta y)^2}$$
 
 Similarly, we multiply this by $\frac{\Delta t}{\Delta t}$, and using some algebra, we end up with:
 
-$$\sum_{i = 0}^n \sqrt{\frac{\Delta x}{\Delta t}^2 + \frac{\Delta y}{\Delta t}^2} \Dedla t$$
+$$\sum_{i = 0}^n \sqrt{\frac{\Delta x}{\Delta t}^2 + \frac{\Delta y}{\Delta t}^2} \Delta t$$
 
 As $n \rightarrow \infty$, again the approximation should get better, and the exact arc length is given by
 
