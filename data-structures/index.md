@@ -22,3 +22,6 @@ lang: en-US
 * [Lesson 13: Heap operations / heapsort](lesson13.html)
 * [Lesson 14: Graphs](lesson14.html)
 * [Lesson 15: Shortest Path Algorithms](lesson15.html)
+* [Lesson 16: Topological Sorting](lesson16.html)
+* [Lesson 17: NP Completeness](lesson17.html)
+* [Lesson 18: Sorting](lesson18.html)

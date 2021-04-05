@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-04-05">
+  <title>Data Structures Lesson 18</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures Lesson 18</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">5 April 2021</p>
+</section>
+
+<section id="sorting" class="title-slide slide level1">
+<h1>Sorting</h1>
+<ul>
+<li>Bubblesort: repeatedly compare consecutive elements, moving the bigger one to the right.</li>
+<li>Selection sort: for each <span class="math inline">\(i\)</span> from <span class="math inline">\(0\)</span> to <span class="math inline">\(n - 2\)</span>, find the minimum of the elements from <span class="math inline">\(i\)</span> to <span class="math inline">\(n - 1\)</span> and swap it with the element at position <span class="math inline">\(i\)</span>.</li>
+<li>Insertion sort: keep the array sorted from <span class="math inline">\(0\)</span> up to <span class="math inline">\(i\)</span>. Then put <span class="math inline">\(a_{i+1}\)</span> in the correct place.</li>
+</ul>
+<p>What are the running times of these algorithms?</p>
+</section>
+
+<section>
+<section id="mergesort" class="title-slide slide level1">
+<h1>MergeSort</h1>
+<p>Recursive algorithm:</p>
+<pre ><code >procedure mergesort(array, tmpArray, left, right):
+    if (left &gt;= right) return
+    mid = (left + right)  / 2
+    mergesort(array, tmpArray, left, mid)
+    mergesort(array, tmpArray, mid + 1, right)
+    merge(array, tmpArray, left, mid + 1, right)</code></pre>
+<p>How do we implement the <code>merge</code> algorithm? (This is why we have a <code>tmpArray</code>)</p>
+</section>
+<section id="analysis" class="slide level2">
+<h2>Analysis</h2>
+<ol type="1">
+<li>How many comparisons does this algorithm make for an array of size <span class="math inline">\(4\)</span>? How many would the insertion sort algorithm make?</li>
+<li>What is the worst case running time of this algorithm? Average case?</li>
+<li>A sorting algorithm is called <strong>stable</strong> if whenever multiple elements of the input array are equal, they are left in their original order. Is this algorithm stable?</li>
+<li>What is the <em>space</em> complexity of this algorithm?</li>
+</ol>
+</section></section>
+<section>
+<section id="stability" class="title-slide slide level1">
+<h1>Stability</h1>
+<p>Why is “stability” important? Suppose we have a list of Employees. Each employee has a startDate and a job title.</p>
+<pre ><code >sortByStartDate(employees)
+sortByJobTitle(employees)</code></pre>
+<p>What does the employees list look like after this?</p>
+</section>
+<section id="heap-tree" class="slide level2">
+<h2>Heap, Tree</h2>
+<p>Recall: we have seen other sorting algorithms which use data structures.</p>
+<ul>
+<li>Heapsort. <span class="math inline">\(O(n \log(n))\)</span> running time, <span class="math inline">\(O(1)\)</span> space complexity (use an “in-place” heap).</li>
+<li>“TreeSort”: <span class="math inline">\(O(n \log(n))\)</span> running time. What is the space complexity?</li>
+</ul>
+<p>Are these algorithms stable?</p>
+</section></section>
+<section>
+<section id="quicksort" class="title-slide slide level1">
+<h1>QuickSort</h1>
+<p>Pick a pivot. <strong>Partition</strong> the array: the left part should only contain elements smaller than the pivot. Then you know exactly where the pivot should be, and then recursively quicksort the left and right parts.</p>
+<pre ><code >procedure quicksort(list, start, end):
+    if (start &gt;= end) return
+    pivot = list[end]
+    pivotIndex = partition(list, start, end, pivot)
+    quicksort(list, start, pivotIndex)
+    quicksort(list, pivotIndex + 1, end)</code></pre>
+<p>Let’s write pseudocode for partition together.</p>
+</section>
+<section id="analysis-1" class="slide level2">
+<h2>Analysis</h2>
+<ul>
+<li>Is this algorithm stable? (Think about what happens if there are multiple elements equal to the pivot).</li>
+<li>What is the space complexity?</li>
+<li>What is the worst case time complexity? What choice of pivot gives us this worst case?</li>
+<li>What is the average case running time?</li>
+</ul>
+</section></section>
+<section id="interview" class="title-slide slide level1">
+<h1>Interview</h1>
+<p>Suppose we have <span class="math inline">\(16\)</span> GB of data to sort on disk. We can store, in memory, <span class="math inline">\(4\)</span> GB of data at a time. How can we sort all of this data? In particular, we cannot possibly hope to keep it all in memory, so the goal is to store the data on disk in sorted order.</p>
+</section>
+
+<section>
+<section id="project-3" class="title-slide slide level1">
+<h1>Project 3</h1>
+<p>Due April 18 (two weeks). Three parts:</p>
+<ol type="1">
+<li><p>Given (as input) a list of course rosters (each line is list of student IDs), form a graph.</p>
+<ul>
+<li>The nodes are the courses (use numbers <span class="math inline">\(0, 1, \ldots, numCourses - 1\)</span>)
+<ul>
+<li><span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> share an edge if there is at least one student in both courses</li>
+<li>Output the edges as pairs of nodes.</li>
+</ul></li>
+</ul></li>
+</ol>
+</section>
+<section id="part-2" class="slide level2">
+<h2>Part 2</h2>
+<p>Output a schedule for the courses (assign each course a time slot).</p>
+<ul>
+<li>Valid if no two courses which share a student have the same time slot</li>
+<li>Output the list of courses scheduled in time slot 0, then the list of courses scheduled for time slot 1, etc.</li>
+<li>Ideally: minimal number of time slots.</li>
+<li>Should be able to run Parts 1 and 2 independently. Two main methods!</li>
+</ul>
+</section>
+<section id="part-3-write-up" class="slide level2">
+<h2>Part 3 (Write-up)</h2>
+<ul>
+<li><p>Try to break your algorithm.</p>
+<ul>
+<li>Describe a graph for which your algorithm does not output the minimal coloring for that graph.</li>
+<li>Hint: start with a coloring (ie, nodes 0, 2, 5 are red, 1, 3, 6 are green, 4 are blue) and work backwards.</li>
+</ul></li>
+<li><p>Describe the coloring algorithm you implemented.</p></li>
+<li><p>This write-up should be in a text file or a PDF. Save it in your src folder.</p></li>
+</ul>
+</section></section>
+<section id="presentation-3" class="title-slide slide level1">
+<h1>Presentation 3</h1>
+<ul>
+<li>See description from <a href="https://atharaq.github.io/data-structures/lesson4.html#/presentation">presentation 1</a></li>
+<li>Due <strong>Sunday, April 11</strong>.</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
