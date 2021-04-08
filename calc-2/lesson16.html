@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-04-08">
+  <title>Calc II Lesson 14</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Calc II Lesson 14</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">8 April 2021</p>
+</section>
+
+<section>
+<section id="recap" class="title-slide slide level1">
+<h1>Recap</h1>
+<ul>
+<li>Parametric Equations</li>
+<li>Tangent lines</li>
+<li>Areas</li>
+<li>Arc Lengths</li>
+</ul>
+</section>
+<section id="reminders" class="slide level2">
+<h2>Reminders</h2>
+<ul>
+<li>Homework 6 (Moodle) due tomorrow</li>
+<li>Presentation 3 Sunday</li>
+<li>MyOpenMath Homework 4 due Tuesday</li>
+</ul>
+<p>Questions?</p>
+</section>
+<section id="today" class="slide level2">
+<h2>Today</h2>
+<ul>
+<li>Polar</li>
+<li>Converting between polar and rectangular</li>
+<li>Graphs of polar curves</li>
+<li>Calculus of polar curves</li>
+</ul>
+</section></section>
+<section>
+<section id="polar" class="title-slide slide level1">
+<h1>Polar</h1>
+<ul>
+<li>Before last lesson, had you heard of polar coordinates?</li>
+<li>If so, general opinion of the topic?</li>
+</ul>
+</section>
+<section id="idea" class="slide level2">
+<h2>Idea</h2>
+<ul>
+<li>Describe points on the plane using <span class="math inline">\((r, \theta)\)</span></li>
+<li><span class="math inline">\(r\)</span>: “radius” (distance from origin)</li>
+<li><span class="math inline">\(\theta\)</span>: “angle” (when you draw a straight line to the point)</li>
+<li>Useful if our motivating geometry is “circular” or “rotational”.</li>
+</ul>
+</section>
+<section id="playing-with-desmos" class="slide level2">
+<h2>Playing with desmos</h2>
+<p><a href="https://www.desmos.com/calculator/cvap2ojnds">Graph of <span class="math inline">\(y = x^2 + a\)</span> on Desmos</a></p>
+<ul>
+<li>What happens when we change <span class="math inline">\(y = x^2\)</span> to <span class="math inline">\(y = x^2 + a\)</span>?</li>
+<li>What about <span class="math inline">\(y = (x - b)^2 + a\)</span>?</li>
+<li>What about <span class="math inline">\(y = cx^2\)</span>?</li>
+<li>Similar questions: what if we graph <span class="math inline">\(r\)</span> as a function of <span class="math inline">\(\theta\)</span>?</li>
+<li>Ex: <span class="math inline">\(r = \cos(3\theta)\)</span>.</li>
+</ul>
+</section>
+<section id="physics-analogy" class="slide level2">
+<h2>Physics analogy</h2>
+<ul>
+<li>
+Q: what is a <strong>vector</strong> (in physics)?
+</li>
+<li class="fragment">
+A quantity which has <emph>magnitude</emph> and <emph>direction</emph>.
+</li>
+<li class="fragment">
+A 2 pound force horizontally pushing an object to the right is not the same as a 2 pound force pushing an object down.
+</li>
+<li class="fragment">
+Locations on the plane be thought of as vectors: the magnitude is <span class="math inline">\(r\)</span>, direction is <span class="math inline">\(\theta\)</span>.
+</li>
+</ul>
+</section>
+<section id="converting" class="slide level2">
+<h2>Converting</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Convert from <span class="math inline">\((x, y)\)</span> coordinates to <span class="math inline">\((r, \theta)\)</span> (and back)?</li>
+<li>Example: express the point <span class="math inline">\((1, \sqrt{3})\)</span> in polar coordinates.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<iframe src="https://www.desmos.com/calculator/a3uqlxlitj?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+</div>
+</div>
+</section>
+<section id="converting-1" class="slide level2">
+<h2>Converting</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img alt="Figure 7.27: a point on the plane in polar / rectangular coordinates" src="https://openstax.org/resources/932155f04af9236bbe09f7ba933f710a2032c227" style="background: currentColor" /></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><span class="math inline">\((x, y) \rightarrow (r, \theta)\)</span>:
+<ul>
+<li><span class="math inline">\(r^2 = x^2 + y^2\)</span></li>
+<li><span class="math inline">\(\tan(\theta) = \frac{y}{x}\)</span></li>
+</ul></li>
+<li><span class="math inline">\((r, \theta) \rightarrow (x, y)\)</span>:
+<ul>
+<li><span class="math inline">\(x = r \cos(\theta)\)</span></li>
+<li><span class="math inline">\(y = r \sin(\theta)\)</span></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Plot the following points expressed in polar, and express them in <span class="math inline">\((x, y)\)</span> coordinates:</p>
+<ol type="1">
+<li><span class="math inline">\((1, \frac{\pi}{2})\)</span></li>
+<li><span class="math inline">\((2, -\frac{\pi}{4})\)</span></li>
+<li><span class="math inline">\((3, \frac{3\pi}{4})\)</span></li>
+</ol>
+</section>
+<section id="notice" class="slide level2">
+<h2>Notice</h2>
+<ul>
+<li><span class="math inline">\((2, -\frac{\pi}{4}) = (2, \frac{7\pi}{4}) = \ldots\)</span></li>
+<li>The same point can be represented in infinitely many ways (in polar)</li>
+<li>Same reason as why <span class="math inline">\(\sin\)</span> and <span class="math inline">\(\cos\)</span> are periodic.</li>
+</ul>
+</section></section>
+<section>
+<section id="graphs" class="title-slide slide level1">
+<h1>Graphs</h1>
+<ul>
+<li>Previously saw some examples of polar graphs</li>
+<li>Want to graph functions of the form <span class="math inline">\(r = f(\theta)\)</span></li>
+<li>Ex: <span class="math inline">\(r = 2\cos(\theta)\)</span></li>
+</ul>
+</section>
+<section id="table" class="slide level2">
+<h2>Table</h2>
+<p><span class="math display">\[
+\begin{array}{c|c}
+\theta &amp; r = 2\cos(\theta) \\
+\hline
+0 &amp; 2 \\
+\frac{\pi}{6} &amp; \sqrt{3} \approx 1.73 \\
+\frac{\pi}{4} &amp; \sqrt{2} \approx 1.41 \\
+\frac{\pi}{3} &amp; 1 \\
+\frac{\pi}{2} &amp; 0 \\
+\frac{2\pi}{3} &amp; -1 \\
+\pi &amp; -2
+\end{array}
+\]</span></p>
+</section>
+<section id="special-curves-7.3" class="slide level2">
+<h2>Special Curves (7.3)</h2>
+<ul>
+<li>Cardioid: <span class="math inline">\(r = 2 + 2 \cos(\theta)\)</span></li>
+<li>Rose: <span class="math inline">\(r = 5\sin(2\theta)\)</span> (4 petals)</li>
+<li><span class="math inline">\(r = 2 \sin(3\theta)\)</span> (3 petals)</li>
+<li><span class="math inline">\(r = 2\sin(\frac{3}{7} \theta)\)</span> (more complicated rose)</li>
+<li><span class="math inline">\(r = 4\sin(\pi \theta)\)</span> Hmmm…</li>
+</ul>
+</section></section>
+<section>
+<section id="calculus" class="title-slide slide level1">
+<h1>Calculus</h1>
+<ul>
+<li>Any polar curve <span class="math inline">\(r = f(\theta)\)</span> can be converted to paramteric equations:</li>
+<li><span class="math inline">\(x = r\cos(\theta) = f(\theta)\cos(\theta)\)</span></li>
+<li><span class="math inline">\(y = r\sin(\theta) = f(\theta)\sin(\theta)\)</span></li>
+<li><span class="math inline">\(\frac{dy}{dx}\)</span> can be found as before: <span class="math inline">\(\frac{y^\prime(\theta)}{x^\prime(\theta)}\)</span></li>
+</ul>
+</section>
+<section id="arc-lengths" class="slide level2">
+<h2>Arc Lengths</h2>
+<ul>
+<li>Can use parametric: <span class="math inline">\(s = \int_a^b \sqrt{(x^\prime(\theta))^2 + (y^\prime(\theta))^2} d\theta\)</span></li>
+<li>Plug in <span class="math inline">\(x = r\cos(\theta)\)</span>:</li>
+<li><span class="math inline">\(x^\prime(\theta) = r^\prime \cdot \cos(\theta) - r\sin(\theta)\)</span></li>
+<li><span class="math inline">\((x^\prime(\theta))^2 = (r^\prime)^2 \cos^2(\theta) - 2r^\prime \cdot r \cdot \cos(\theta)\sin(\theta) + r^2 \sin^2(\theta)\)</span></li>
+<li><span class="math inline">\(y = r\sin(\theta)\)</span>:</li>
+<li><span class="math inline">\(y^\prime = r^\prime \cdot \sin(\theta) + r\cos(\theta)\)</span></li>
+<li><span class="math inline">\((y^\prime)^2 = (r^\prime)^2 \sin^2(\theta) + 2r^\prime \cdot r \cos(\theta)\sin(\theta) + r^2 \cos^2(\theta)\)</span></li>
+<li>Add them: <span class="math inline">\((r^\prime)^2(\cos^2(\theta) + \sin^2(\theta)) + r^2(\cos^2(\theta) + \sin^2(\theta))\)</span></li>
+<li>Simplify: <span class="math inline">\((r^\prime)^2 + r^2\)</span>!</li>
+</ul>
+</section>
+<section id="polar-arc-length" class="slide level2">
+<h2>Polar arc length</h2>
+<p>Arc length of a polar curve from <span class="math inline">\(\theta = a\)</span> to <span class="math inline">\(\theta = b\)</span>: <span class="math inline">\(\int_a^b \sqrt{(r^\prime)^2 + r^2} d\theta\)</span></p>
+<ul>
+<li>Example: <span class="math inline">\(r = \sin(2\theta)\)</span> from <span class="math inline">\(\theta = 0\)</span> to <span class="math inline">\(\theta = \frac{\pi}{2}\)</span>.</li>
+<li>(One petal of the rose).</li>
+<li><span class="math inline">\(r^\prime = 2\cos(2\theta)\)</span></li>
+<li><span class="math inline">\((r^\prime)^2 = 4 \cos^2(2\theta)\)</span></li>
+<li><span class="math inline">\(r^2 = \sin^2(2\theta)\)</span></li>
+<li><span class="math inline">\(\int_0^{\pi/2} \sqrt{4\cos^2(2\theta) + \sin^2(2\theta)} d\theta \approx 2.42\)</span></li>
+</ul>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<p>Arc length of <span class="math inline">\(r = 4 \sin(\theta)\)</span> from <span class="math inline">\(\theta = 0\)</span> to <span class="math inline">\(\theta = \pi\)</span>.</p>
+</section></section>
+<section>
+<section id="areas" class="title-slide slide level1">
+<h1>Areas</h1>
+<p><img width="40%" src="https://openstax.org/resources/374ca90b66bbe8eb730fe00a57955d0acef42fa1" alt="Figure 7.39 from textbook: splitting a polar curve into sectors" style="background: currentColor" /></p>
+<p>Instead of approximating by rectangles, we approximate by <em>sectors</em>.</p>
+</section>
+<section id="circular-sectors" class="slide level2">
+<h2>Circular Sectors</h2>
+<ul>
+<li>Area of a circle: <span class="math inline">\(A = \pi r^2\)</span>.</li>
+<li>Area of a sector with angle <span class="math inline">\(\theta\)</span>: proportion! <span class="math inline">\(\frac{\theta}{2\pi} \cdot (\pi r^2) = \frac{1}{2} r^2 \theta\)</span></li>
+</ul>
+<p><img src="https://openstax.org/resources/bbbd6ff8f4a85e311447cd02bfb3db101c8e9787" alt="Figure 7.40 area of a sector of a circle" style="background: currentColor" /></p>
+</section>
+<section id="formula" class="slide level2">
+<h2>Formula</h2>
+<p>Approximate area as:</p>
+<p><span class="math display">\[\sum_{i = 1}^n \frac{1}{2} r(\theta_i)^2 (\Delta \theta)\]</span></p>
+<p>As <span class="math inline">\(n \rightarrow \infty\)</span>? <span class="math inline">\(A = \int_a^b \frac{1}{2} r^2 d\theta\)</span></p>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p>Find the area of the region bounded by <span class="math inline">\(r = 2 \cos(2\theta)\)</span> between <span class="math inline">\(\theta = -\frac{\pi}{4}\)</span> and <span class="math inline">\(\theta = \frac{\pi}{4}\)</span>.</p>
+<p>(graph)</p>
+</section>
+<section id="example-1" class="slide level2">
+<h2>Example</h2>
+<p><span class="math display">\[
+\begin{align}
+A &amp;= \int_{-\pi/4}^{\pi/4} \frac{1}{2} r^2 d\theta \\
+&amp;= \int_{-\pi/4}^{\pi/4} \frac{1}{2} (4\cos^2(2\theta)) d\theta \\
+&amp;= \int_{-\pi/4}^{\pi/4} 2\cos^2(2\theta) d\theta \\
+\end{align}
+\]</span></p>
+</section>
+<section id="example-2" class="slide level2">
+<h2>Example</h2>
+<ul>
+<li>Use <span class="math inline">\(\cos^2(2\theta) = \frac{1}{2} + \frac{1}{2}\cos(4\theta)\)</span>.</li>
+<li><span class="math inline">\(2\cos^2(2\theta) = 1 + \cos(4\theta)\)</span>.</li>
+</ul>
+<p><span class="math display">\[
+\begin{align}
+&amp;\int_{-\pi/4}^{\pi/4} (1 + \cos(4\theta)) d\theta = \left.\frac{\sin(4\theta)}{4} + \theta \right|_{-\pi/4}^{\pi/4} \\
+&amp;= (\frac{\sin(\pi)}{4} + \frac{\pi}{4}) - (\frac{\sin(-\pi)}{4} - \frac{\pi}{4}) \\
+&amp;= \frac{\pi}{2}
+\end{align}
+\]</span></p>
+</section></section>
+<section>
+<section id="playing-with-desmos-again" class="title-slide slide level1">
+<h1>Playing with desmos again</h1>
+<ul>
+<li>Q: How might we “rotate” <span class="math inline">\(y = x^2\)</span> by <span class="math inline">\(45^\circ\)</span>? (<span class="math inline">\(\frac{\pi}{4}\)</span>)</li>
+<li>90 degrees? 30 degrees? etc?</li>
+<li>In rectangular? Impossible.</li>
+</ul>
+</section>
+<section id="switch-to-polar" class="slide level2">
+<h2>Switch to polar</h2>
+<ul>
+<li><span class="math inline">\(r\sin(\theta) = r^2 \cos^2(\theta)\)</span></li>
+<li>Solve for <span class="math inline">\(r\)</span>:</li>
+<li><span class="math inline">\(r = \sec(\theta)\tan(\theta)\)</span></li>
+<li>Rotate: <span class="math inline">\(r = \sec(\theta - \pi/4)\tan(\theta - \pi/4)\)</span>!</li>
+<li><a href="https://www.desmos.com/calculator/ddd5mpfva2">Graph!</a></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
