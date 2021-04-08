@@ -4,6 +4,14 @@
 1. Table of Contents
 {:toc}
 
+# Project 3 Getting Started
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/6tPVY2DGbnA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+Take a look at this video which explains how to use the Parser and input text files for Project 3. This should help you get started. Your first task is to turn this list of course rosters into a graph: the nodes of the graph should be courses, and the edges should be determined based on which courses share students.
+
 # Heapsort stability
 
 <div class="youtube-container">
