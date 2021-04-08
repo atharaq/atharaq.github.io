@@ -33,7 +33,7 @@ A lot of the work goes into the *partition* method. Try to write pseudocode for 
 
 ## Analysis
 
-<div class="youtube-contaienr">
+<div class="youtube-container">
 <iframe src="https://www.youtube.com/embed/GR-j_qnKM_g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
@@ -113,6 +113,8 @@ $$
 &= \frac{N}{2} \log(\frac{N}{2})
 \end{align}
 $$
+
+That means that every comparison based sorting algorithm must use at least $\Omega(N \log(N))$ comparisons.
 
 # Interview question
 
