@@ -82,11 +82,11 @@ means that we can control how close to $L$ we make $f(x)$ by making sure we look
 
 Now that we've reviewed limits, what exactly are sequences? Sequences are lists of numbers. For example, the sequence $1, 3, 5, 7, \ldots$ is the list of all odd numbers in order.
 
-Formally, the definition of a sequence is a function with domain $\mathbb{N} = \{ 0, 1, 2, \ldots \}$. So for example, the sequence above is given by the function $f(n) = 2n + 1$: $f(0) = 1$, $f(1) = 3$, $f(2) = 5$, etc. Usually, though, we don't use function notation to write sequences, we use "subscript" notation: $a_0, a_1, a_2, \ldots$
+Formally, the definition of a sequence is a function with domain $\mathbb{N} = \\{ 0, 1, 2, \ldots \\}$. So for example, the sequence above is given by the function $f(n) = 2n + 1$: $f(0) = 1$, $f(1) = 3$, $f(2) = 5$, etc. Usually, though, we don't use function notation to write sequences, we use "subscript" notation: $a_0, a_1, a_2, \ldots$
 
 Since sequences are just functions, we can use the definitions of limits of functions given above. But the question is: do those definitions make sense, if the domains of our functions is the set of natural numbers $\{ 0, 1, 2, \ldots \}$?
 
-In other words, if we have a sequence $\{ a_n : n \in \mathbb{N} \}$, can we define $\lim\limits_{n \rightarrow 5} a_n$? What would that even mean? Can $n$ get "closer and closer" to 5? Not really: the closest $n$ can get to 5 is just $n = 4$ or $n = 6$: there is nothing "closer" than that.
+In other words, if we have a sequence $(a_n)_{n \in \mathbb{N}}$, can we define $\lim\limits_{n \rightarrow 5} a_n$? What would that even mean? Can $n$ get "closer and closer" to 5? Not really: the closest $n$ can get to 5 is just $n = 4$ or $n = 6$: there is nothing "closer" than that.
 
 But we *can* talk about $\lim\limits_{n \rightarrow \infty} a_n$. This makes sense: the limit as $n \rightarrow \infty$ is equal to $L$ if the distances $\|a_n - L\|$ become arbitrarily small. The same definition for $\lim\limits_{x \rightarrow \infty} f(x)$ can be used for the definition of limits of sequences.
 
