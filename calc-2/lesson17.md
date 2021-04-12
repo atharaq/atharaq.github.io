@@ -136,7 +136,7 @@ Instead of thinking about digits, we should think about real numbers as just tho
         <li>No.</li>
         <li>Yes: the sequence $\frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \ldots$ converges to 1.</li>
         <li>No.</li>
-        <li>Yes: the seuqence $\frac{3}{2}, \frac{7}{4}, \frac{15}{8}, \frac{31}{16}, \ldots$ converges to 2</li>
+        <li>Yes: the sequence $\frac{3}{2}, \frac{7}{4}, \frac{15}{8}, \frac{31}{16}, \ldots$ converges to 2</li>
     </ol>
     <p>The intuition is if an interval contains its boundary points, it is closed under limits of sequences.</p>
 </details>
@@ -157,7 +157,7 @@ This can help us find the limits of such a sequence: perhaps, eyeballing it, we 
 
 Due **Friday, April 16** at 11:59 PM on Moodle:
 
-7.3 #168, 170
-7.4 #190, 192, 194, 220
+7.3 #168, 170  
+7.4 #190, 192, 194, 220  
 
 There is an assignment on MyOpenMath due tomorrow and there will also be another MyOpenMath assignment due next Tuesday as well.
