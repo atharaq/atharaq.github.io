@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-04-12">
+  <title>CS2 Lesson 18</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 18</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">12 April 2021</p>
+</section>
+
+<section>
+<section id="inspiration" class="title-slide slide level1">
+<h1>Inspiration</h1>
+<blockquote class="twitter-tweet" data-dnt="true" data-theme="dark">
+<p lang="en" dir="ltr">
+I was a much better student when I got my 2nd bachelors (it was in math) than when I got my 1st or was in high school.<br><br>I think it was because I was older, married, and a parent. I had a different (wider) perspective. I love the notion that life made me a better mathematician.
+</p>
+— Will M Dunn (<span class="citation" data-cites="Willmdunn">@Willmdunn</span>) <a href="https://twitter.com/Willmdunn/status/1380999663856332809?ref_src=twsrc%5Etfw">April 10, 2021</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="save-the-date" class="slide level2">
+<h2>Save the Date</h2>
+<ul>
+<li>Guest Lecture: “Computational Biology: Using Data Science to Fight Cancer”</li>
+<li><strong>Monday, May 3</strong> (Wellness day) at <strong>2 PM</strong></li>
+<li>Maysun Hasan, Memorial Sloan Kettering Cancer Center</li>
+<li>Zoom link to come</li>
+</ul>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions</h2>
+<p>Exam 2 due Thursday.</p>
+<p>Any problems you want me to go over?</p>
+</section>
+<section id="project-3" class="slide level2">
+<h2>Project 3</h2>
+<ul>
+<li>Implement the smaller pieces first: Die, Bid, HumanPlayer, RandomPlayer</li>
+<li>Make sure they all work on their own.</li>
+<li>Then try to put things together.
+<ul>
+<li>Get a bid from player one</li>
+<li>Keep track of “bidder” and “caller” players</li>
+<li>As long as no one has called LIAR (loop):
+<ul>
+<li>Get a raise from the “caller”</li>
+<li>Swap the “bidder” and “caller” players</li>
+</ul></li>
+<li>After LIAR called: determine the winner</li>
+</ul></li>
+</ul>
+</section>
+<section id="syllabus-change" class="slide level2">
+<h2>Syllabus Change</h2>
+<ul>
+<li>Originally: 3-5 presentations</li>
+<li>Now: 2 presentations</li>
+<li>Next / last presentation will be due on <strong>May 2</strong>.</li>
+</ul>
+</section></section>
+<section>
+<section id="recursion" class="title-slide slide level1">
+<h1>Recursion</h1>
+<p><a href="https://www.google.com/search?q=recursion" target="_blank"><img src="recursion.PNG" alt="What happens if you google 'recursion'" /></a></p>
+</section>
+<section id="warning" class="slide level2">
+<h2>Warning</h2>
+<p>Today most of our examples will be <strong>static methods</strong>. This does not mean you should be using static methods on project 3!</p>
+<ul>
+<li>Most things (Player types, Game, Bids, Die, etc) should be non-static.</li>
+<li>Maybe just the main method, some helper methods in the main class, can be static.</li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p>Download the RecursionExample class from Moodle / open up CodingRooms.</p>
+<pre ><code class="java">public static int add(int x, int y) {
+    System.out.println("Calling add(" + x + ", " + y + ")");
+    if (y == 0) {
+        return x;
+    }
+    if (y &gt; 0) {
+        return add(x + 1, y - 1);
+    }
+    if (y &lt; 0) {
+        return add(x - 1, y + 1);
+    }
+    // this shouldn't happen
+    return -1;
+}</code></pre>
+</section>
+<section id="base-case" class="slide level2">
+<h2>Base Case</h2>
+<p>A method which invokes itself is called <strong>recursive</strong>. The <code>add</code> method invokes itself (as long as <span class="math inline">\(y \neq 0\)</span>).</p>
+<p>Recursive methods have a <strong>base case</strong>: a condition which leads to an actual answer, rather than recursively calling the same method again.</p>
+<ol type="1">
+<li>What is the need for a base case?</li>
+<li>What is the base case in the <code>add</code> method?</li>
+</ol>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<ol type="1">
+<li>Run the RecursionExample program. What is output?</li>
+<li>Change the parameters and see what happens.</li>
+<li>Given any input <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, if we invoke <code>add(x, y)</code>, how “deep” does the recursion go?</li>
+</ol>
+<p>5 minutes in breakout rooms to discuss these. Nominate one person from your room to share.</p>
+</section></section>
+<section>
+<section id="leap-of-faith" class="title-slide slide level1">
+<h1>Leap of Faith</h1>
+<p>Project design:</p>
+<ul>
+<li>Break up the problem into smaller components.</li>
+<li>Implement each component on its own (<strong>once</strong>!), and test each one.</li>
+<li>Re-use the components as needed – trusting that they were implemented correctly the first time!</li>
+</ul>
+</section>
+<section id="recursive-calls" class="slide level2">
+<h2>Recursive Calls</h2>
+<ul>
+<li>If we <strong>know</strong> that a method has been implemented correctly, we don’t need to know how it works, we can just call it and use it.</li>
+<li>Similarly, when we see a recursive call, assume it works! Then we can just use it.</li>
+<li>Important: the assumption is that the recursive call works on <em>smalller</em> inputs.</li>
+<li>Strategy is often to reduce the problem to a smaller problem.</li>
+</ul>
+</section>
+<section id="recursive-factorial" class="slide level2">
+<h2>Recursive Factorial</h2>
+<pre ><code class="java">public int recursiveFactorial(int n) {
+    if (n &lt;= 0) {
+        return 1;
+    }
+
+    return n * recursiveFactorial(n - 1);
+}</code></pre>
+<ul>
+<li>Assume that <code>recursiveFactorial(n-1)</code> correctly returns <span class="math inline">\((n-1)!\)</span>.</li>
+<li>Then <span class="math inline">\(n \times\)</span> <code>recursiveFactorial(n-1)</code> is, in fact, equal to <span class="math inline">\(n!\)</span> (Why?)</li>
+<li>Math analogy: proof by induction.</li>
+</ul>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<p>Implement a recursive Fibonacci method. Remember:</p>
+<ul>
+<li><code>fib(0)</code> should return <span class="math inline">\(0\)</span></li>
+<li><code>fib(1)</code> should return <span class="math inline">\(1\)</span></li>
+<li><code>fib(n)</code> should return <code>fib(n-1) + fib(n-2)</code> if <span class="math inline">\(n &gt; 1\)</span>.</li>
+<li>For the purposes of this method, if <span class="math inline">\(n &lt; 0\)</span>, return <span class="math inline">\(-1\)</span></li>
+</ul>
+</section></section>
+<section>
+<section id="sum-the-digits" class="title-slide slide level1">
+<h1>Sum the digits</h1>
+<p>Problem: Given a (positive) integer, add up its digits.</p>
+<p>Recursive idea:</p>
+<ol type="1">
+<li>What is the base case?</li>
+<li>If we know how to solve the problem for a number with <em>fewer</em> digits, how can we use that to solve the problem for a bigger list?</li>
+</ol>
+</section>
+<section id="exercise-sum-digits" class="slide level2">
+<h2>Exercise: Sum Digits</h2>
+<p>Implement the sumDigits method recursively. Hint: to get the ones digit of a number, use <span class="math inline">\(num % 10\)</span>. To remove the ones digit from the number, use <span class="math inline">\(num / 10\)</span>.</p>
+<pre ><code class="java">public static int sumDigits(int num) {
+    if (num &lt; 0) {
+        return sumDigits(-num);
+    }
+    if (num &lt; 10) {
+        return num;
+    }
+    // implement the rest...
+}</code></pre>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

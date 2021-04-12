@@ -22,3 +22,6 @@ lang: en-US
 * [Lesson 13: Debugging](lesson13.html)
 * [Lesson 14: Exceptions](lesson14.html)
 * [Lesson 15: Polymorphism I](lesson15.html)
+* [Lesson 16: Polymorphism II](lesson16.html)
+* [Lesson 17: Coin Game Activity](lesson17.html)
+* [Lesson 18: Recursion](lesson18.html)

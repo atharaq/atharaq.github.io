@@ -74,7 +74,7 @@ Attendance at all classes is required. You are allowed **three** absences. After
 
 * 40%: 4 programming assignments (10% each)
 * 15%: Homework, quizzes, class exercises, and class participation
-* 10%: Presentations (3-5 short code demos / algorithm explanations)
+* 10%: Presentations (2 short code demos / algorithm explanations)
 * 20%: 2 mid-semester exams (tentatively scheduled: March 1 and April 5). Open book, open notes, not timed (several days).
 * 15%: Final Exam (scheduled May 13). Open book, open notes, not timed (several days).
 
