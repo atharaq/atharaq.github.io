@@ -20,4 +20,5 @@ layout: default
 * [Lesson 13: Differential Equations Wrap up](lesson13.html)
 * [Lesson 14: Parametric Equations](lesson14.html)
 * [Lesson 15: Areas and Arc Lengths of Parametric Curves](lesson15.html)
-* [Lesson 16: Calculus of polar curves](lesson16.html)
+* [Lesson 16: Polar coordinates](lesson16.html)
+* [Lesson 17: Areas and arc lengths of polar; intro to sequences](lesson17.html)
