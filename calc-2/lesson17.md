@@ -104,7 +104,7 @@ As another example, let $a_n = (-1)^n$. This is the sequence $1, -1, 1, -1, \ldo
 
 **Notation**:
 
-1. By "sequence of real numbers", I mean a sequence $\{a_n\}_{n \in \mathbb{N}}$ such that each $a_n$ is a real number.
+1. By "sequence of real numbers", I mean a sequence $(a_n)_{n \in \mathbb{N}}$ such that each $a_n$ is a real number.
 2. Similarly, I can talk about a "sequence of integers", a "sequence of rational numbers", etc.
 
 We have seen that there are sequences of *positive* numbers that converge to a limit that is not positive (0): the sequence $1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \ldots \rightarrow 0$. This is somewhat surprising: we might think that if every number in our sequence has some property, then the limit should have that property too!
