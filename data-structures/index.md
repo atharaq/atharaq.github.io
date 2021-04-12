@@ -26,3 +26,4 @@ lang: en-US
 * [Lesson 17: NP Completeness](lesson17.html)
 * [Lesson 18: Sorting](lesson18.html)
 * [Lesson 19: Quicksort](lesson19.html)
+* [Lesson 20: Quickselect + radix sorting](lesson20.html)
