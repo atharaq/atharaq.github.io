@@ -86,7 +86,7 @@ Formally, the definition of a sequence is a function with domain $\mathbb{N} = \
 
 Since sequences are just functions, we can use the definitions of limits of functions given above. But the question is: do those definitions make sense, if the domains of our functions is the set of natural numbers $\{ 0, 1, 2, \ldots \}$?
 
-In other words, if we have a sequence $\{ a_n \}_{n \in \mathbb{N}}$, can we define $\lim\limits_{n \rightarrow 5} a_n$? What would that even mean? Can $n$ get "closer and closer" to 5? Not really: the closest $n$ can get to 5 is just $n = 4$ or $n = 6$: there is nothing "closer" than that.
+In other words, if we have a sequence $\{ a_n : n \in \mathbb{N} \}$, can we define $\lim\limits_{n \rightarrow 5} a_n$? What would that even mean? Can $n$ get "closer and closer" to 5? Not really: the closest $n$ can get to 5 is just $n = 4$ or $n = 6$: there is nothing "closer" than that.
 
 But we *can* talk about $\lim\limits_{n \rightarrow \infty} a_n$. This makes sense: the limit as $n \rightarrow \infty$ is equal to $L$ if the distances $\|a_n - L\|$ become arbitrarily small. The same definition for $\lim\limits_{x \rightarrow \infty} f(x)$ can be used for the definition of limits of sequences.
 
