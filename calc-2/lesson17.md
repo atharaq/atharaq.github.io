@@ -33,7 +33,7 @@ As an exercise, find the arc length of the curve $r = 4 \sin(\theta)$ from $\the
     </p>
     <p>Since $\sqrt{16} = 4$, we set up the integral:
 
-        $$\int_0^{\pi} 4d\theta = \left. 4\theta\right_0^\pi = 4\pi$$
+        $$\int_0^{\pi} 4d\theta = \left. 4\theta\right|_0^\pi = 4\pi$$
     </p>
 </details>
 
@@ -149,7 +149,7 @@ For example, consider the following sequence:
 
 $$0, \frac{1}{2}, \frac{3}{4}, \frac{7}{8}, \frac{15}{16}, \ldots $$
 
-It might not be obvious what the closed form expression for this sequence would be. It really just depends on how you look at the number. Here, I'd recommend starting with the denominators: 1, 2, 4, 8, 16$. These are all powers of 2, so the denominator of the term $a_n$ can be expressed as $2^n$. Then notice that the numerator is just 1 less than that, and so $a_n = \frac{2^n - 1}{2^n}$.
+It might not be obvious what the closed form expression for this sequence would be. It really just depends on how you look at the number. Here, I'd recommend starting with the denominators: 1, 2, 4, 8, 16. These are all powers of 2, so the denominator of the term $a_n$ can be expressed as $2^n$. Then notice that the numerator is just 1 less than that, and so $a_n = \frac{2^n - 1}{2^n}$.
 
 This can help us find the limits of such a sequence: perhaps, eyeballing it, we can tell that this sequence converges to 1, but how might we be sure? We can compute the limit of $\frac{2^n - 1}{2^n}$. To do this, notice that we can separate this fraction out to $1 - \frac{1}{2^n}$, and so, as $n \rightarrow \infty$, this approaches $1 - 0$, or just $1$.
 
