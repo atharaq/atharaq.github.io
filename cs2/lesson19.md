@@ -98,7 +98,7 @@ Try to do the following:
   for i = 0 to l.size()
     if l[i] == o
       return i
-    return -1</code></pre></div></div>
+  return -1</code></pre></div></div>
 </details>
 
 There is no generally accepted syntax for pseudocode. It's not a real language and doesn't have a compiler, so the point is to describe the algorithm precisely. You can use some general constructs that are available in most languages:
