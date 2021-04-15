@@ -22,3 +22,4 @@ layout: default
 * [Lesson 15: Areas and Arc Lengths of Parametric Curves](lesson15.html)
 * [Lesson 16: Polar coordinates](lesson16.html)
 * [Lesson 17: Areas and arc lengths of polar; intro to sequences](lesson17.html)
+* [Lesson 18: Describing sequences](lesson18.html)
