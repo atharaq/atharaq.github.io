@@ -39,7 +39,7 @@ public static void printAfterRecursion(ArrayList<String> list, int i) {
 * The goal is to move all the disks from one peg to another.
 * No bigger disk can be placed on top of a smaller disk.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Tower_of_Hanoi.jpeg" alt="Towers of Hanoi game (Wikimedia Commons)" width="50%" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Tower_of_Hanoi.jpeg" alt="Towers of Hanoi game (Wikimedia Commons)" />
 
 [Click this link to play the game](https://www.mathsisfun.com/games/towerofhanoi.html). Play the game with 3 disks. See if you can win in the minimum number of moves. Then play again with 4 disks. See if you can figure out the pattern and find a solution for the puzzle.
 
@@ -94,13 +94,11 @@ Try to do the following:
 
 <details>
 <summary>Pseudocode of a possible solution</summary>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-procedure find(list l, object o):
-	for i = 0 to l.size()
-		if l[i] == o
-			return i
-	return -1
-</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>procedure find(list l, object o):
+  for i = 0 to l.size()
+    if l[i] == o
+      return i
+    return -1</code></pre></div></div>
 </details>
 
 There is no generally accepted syntax for pseudocode. It's not a real language and doesn't have a compiler, so the point is to describe the algorithm precisely. You can use some general constructs that are available in most languages:
@@ -118,3 +116,5 @@ We will work on analysis of algorithms next week. When we **analyze** algorithms
 **Definition**: The running time of an algorithm is the function $t(n)$ which, for each $n$, gives the maximum number of steps required for the algorithm to run on any input of size $n$.
 
 **Exercise**: Come up with a formula for $t(n)$ for the `find` algorithm mentioned earlier. What's the worst case scenario for finding an object? How many steps would that take if our list has $10$ elements? How many steps if the list has $100$? Can you find a general formula in terms of $n$?
+
+Record your answer in the response page on Moodle for today.
