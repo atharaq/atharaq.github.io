@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-04-19">
+  <title>Data Structures Lesson 22</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures Lesson 22</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">19 April 2021</p>
+</section>
+
+<section id="guest-lecture" class="title-slide slide level1">
+<h1>Guest Lecture</h1>
+<ul>
+<li>Monday May 3 (Wellness Day) 2 PM</li>
+<li>“Computational Biology: Using Data Science to Fight Cancer”</li>
+<li>Maysun Hasan, Memorial Sloan Kettering Cancer Center</li>
+<li><a href="https://purchase.zoom.us/meeting/register/tJwodeyqqDkiHd3L8syMj_tgRD-S1zZ9lDgj">Register via Zoom</a></li>
+</ul>
+</section>
+
+<section id="final-project" class="title-slide slide level1">
+<h1>Final Project</h1>
+<ul>
+<li>Let me know your preference by <strong>tonight</strong>!</li>
+<li>Many other possibilities if you want to study something else.</li>
+<li>Most advanced topics in CS have something to do with data structures: compilers, OS, databases, etc.</li>
+</ul>
+</section>
+
+<section>
+<section id="secretary-problem" class="title-slide slide level1">
+<h1>Secretary Problem</h1>
+<p><a href="https://atharaq.github.io/data-structures/lesson21.html#secretary-problem">From last time</a></p>
+<ul>
+<li>Interview <span class="math inline">\(N\)</span> candidates.</li>
+<li>Yes / No at the end of the interview.</li>
+<li>If you say “Yes”, can’t interview anyone else.</li>
+<li>If you say “No”, can’t come crawling back.</li>
+</ul>
+</section>
+<section id="hiring-strategy" class="slide level2">
+<h2>Hiring Strategy?</h2>
+<ul>
+<li>If we interview 10 candidates.</li>
+<li>Best candidate is equally likely to be any of the 10.</li>
+<li>Strategy to maximize probability of hiring the best one?</li>
+</ul>
+</section></section>
+<section>
+<section id="concurrency" class="title-slide slide level1">
+<h1>Concurrency</h1>
+<ul>
+<li>(Processes)</li>
+<li>Thread: an execution context (the information a CPU needs to execute a sequence of instructions).</li>
+<li>Time Slicing</li>
+<li>Context switching</li>
+<li>Race conditions</li>
+<li>Thread Safety</li>
+</ul>
+</section>
+<section id="runnables" class="slide level2">
+<h2>Runnables</h2>
+<pre ><code class="java">Thread t = new Thread(someRunnableObject);
+t.start();</code></pre>
+<ul>
+<li>Creates a new thread</li>
+<li>In that thread, calls <code>someRunnableObject.run()</code></li>
+<li>Other way to do this: <code>class C extends Thread</code> and override <code>run</code></li>
+<li>Preferred way: implement <code>Runnable</code></li>
+</ul>
+</section>
+<section id="creating-threads" class="slide level2">
+<h2>Creating Threads</h2>
+<p>Last time: created Threads directly. <strong>Don’t ever do that.</strong> Creating a thread involves:</p>
+<ul>
+<li>allocating memory for the thread’s stack frame (for method invocations in that thread)</li>
+<li>allocating a program counter (points to the instruction that the processor is executing)</li>
+<li>an actual OS thread is created (corresponding to the Java “Thread” object)</li>
+<li>All threads share heap memory</li>
+</ul>
+</section>
+<section id="thread-tradeoffs" class="slide level2">
+<h2>Thread tradeoffs</h2>
+<p>Some tradeoffs should be thought about:</p>
+<ul>
+<li>If we do everything in one thread (or very few threads), we might not be able to take advantage of parallelization.</li>
+<li>If we create too many threads?</li>
+<li>So what should we do?</li>
+</ul>
+</section>
+<section id="thread-pools-executors" class="slide level2">
+<h2>Thread Pools / Executors</h2>
+<p>Thread pools: re-use threads that were already created.</p>
+<ul>
+<li>Create a (possibly fixed) set of “worker threads”.</li>
+<li>When “tasks” come in, pick off the next available thread and use it.</li>
+<li>If no threads are available, add to a “task queue”</li>
+<li>When a thread finishes working, it goes back into the pool</li>
+</ul>
+</section>
+<section id="executor-framework" class="slide level2">
+<h2>Executor framework</h2>
+<p>There is a framework for this in Java: Executor and ExecutorService objects:</p>
+<pre ><code class="java">ExecutorService pool = Executors.newFixedThreadPool(5);
+pool.execute(someRunnableObject);</code></pre>
+<p>This is very flexible – many possible “execution” policies. See <a href="https://jcip.net/"><em>Java Concurrency in Practice</em></a>.</p>
+</section></section>
+<section>
+<section id="dining-philosophers" class="title-slide slide level1">
+<h1>Dining Philosophers</h1>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/An_illustration_of_the_dining_philosophers_problem.png" alt="Image of the Dining Philosophers Problem (Wikimedia Commons)" width="40%" /></p>
+</section>
+<section id="problem" class="slide level2">
+<h2>Problem</h2>
+<ul>
+<li>Philosophers can eat and think</li>
+<li>Think until right fork is available, then pick it up.</li>
+<li>Think until left fork is available, then pick it up.</li>
+<li>Then eat until full, and put both down.</li>
+<li>Repeat.</li>
+<li>Problem?</li>
+</ul>
+</section>
+<section id="deadlock" class="slide level2">
+<h2>Deadlock</h2>
+<p>A <a href="https://en.wikipedia.org/wiki/Deadlock">deadlock</a> is when several processes / threads are all waiting for each other to finish working before they can do their work.</p>
+</section></section>
+<section>
+<section id="thread-safety" class="title-slide slide level1">
+<h1>Thread Safety</h1>
+<blockquote>
+<p>A class is thread-safe if it behaves correctly when accessed from multiple threads, regardless of the scheduling or interleaving of the execution of those threads by the runtime environment, and with no additional synchronization or other coordination on the part of the calling code. — <cite>Java Concurrency In Practice</cite></p>
+</blockquote>
+</section>
+<section id="state" class="slide level2">
+<h2>State</h2>
+<p>In general, what is most worrisome is <em>state</em>.</p>
+<ul>
+<li>A class which only uses immutable objects, or does not have any state variables, is thread-safe. (Example: “stateless servers”)</li>
+<li>You might opt to only allow one thread to access a state variable (don’t share it across threads).</li>
+<li>You might need to use synchronization whenever accessing a state variable.</li>
+</ul>
+</section>
+<section id="synchronization-primitives" class="slide level2">
+<h2>Synchronization Primitives</h2>
+<ul>
+<li>OS: <strong>synchronization primitives</strong>: semaphores, mutexes, etc.</li>
+<li>Not all available in high-level languages.</li>
+<li>Prior to Java 5: <code>synchronized</code> keyword.</li>
+</ul>
+</section>
+<section id="synchronized" class="slide level2">
+<h2>Synchronized</h2>
+<pre ><code class="java">public synchronized void add(T item) {
+  ...
+}
+public synchronized T get(int i) {
+  ...
+}</code></pre>
+<ul>
+<li>Thread 1: calls “add”</li>
+<li>Thread 2: calls “get”</li>
+<li>What happens?</li>
+</ul>
+</section>
+<section id="vectors" class="slide level2">
+<h2>Vectors</h2>
+<p>A <code>Vector</code> is like an <code>ArrayList</code>, with all of its methods synchronized. Is the following code thread-safe?</p>
+<pre ><code class="java">// ensures that there is exactly one "item" object in the vector v
+public void addIfNotFound(Vector&lt;T&gt; v, T item) {
+    if (!v.contains(item)) {
+        v.add(item);
+    }
+}</code></pre>
+</section>
+<section id="adding-to-linkedlist" class="slide level2">
+<h2>Adding to LinkedList</h2>
+<p>See ListRaceCondition on Moodle. What happens when we run the code? Play around with the type of “Executor” we use (single vs multithreaded).</p>
+<div class="fragment">
+<p>Question: why do we see a <code>NullPointerException</code>? What is the race condition here?</p>
+</div>
+</section>
+<section id="linkedlist-code" class="slide level2">
+<h2>LinkedList Code</h2>
+<p><code>add</code> calls the following:</p>
+<pre ><code class="java">void linkLast(E e) {
+    final Node&lt;E&gt; l = last;
+    final Node&lt;E&gt; newNode = new Node&lt;&gt;(l, e, null);
+    last = newNode;
+    if (l == null)
+        first = newNode;
+    else
+        l.next = newNode;
+    size++;
+    modCount++;
+}</code></pre>
+<ul>
+<li>This is extremely non-thread safe.</li>
+<li>Not meant to be!</li>
+<li>Draw out race condition.</li>
+</ul>
+</section></section>
+<section>
+<section id="concurrent-lists-and-queues" class="title-slide slide level1">
+<h1>Concurrent Lists and Queues</h1>
+<ul>
+<li>Writing your own thread-safe collection is hard!</li>
+<li>Use one of the built-in <strong>thread-safe collections</strong>:
+<ul>
+<li>LinkedBlockingQueue, ArrayBlockingQueue</li>
+<li>ConcurrentLinkedQueue</li>
+<li>CopyOnWriteArrayList</li>
+</ul></li>
+<li>Or, wrap: <code>List&lt;T&gt; synchronizedList = Collections.synchronizedList(list);</code></li>
+</ul>
+</section>
+<section id="next-time" class="slide level2">
+<h2>Next Time</h2>
+<ul>
+<li>Synchronized Collections</li>
+<li>CopyOnWriteArrayList</li>
+<li>Producer-Consumer pattern</li>
+<li>HashMap race condition</li>
+<li>ConcurrentHashMap</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
