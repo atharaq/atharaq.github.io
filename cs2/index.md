@@ -25,3 +25,5 @@ lang: en-US
 * [Lesson 16: Polymorphism II](lesson16.html)
 * [Lesson 17: Coin Game Activity](lesson17.html)
 * [Lesson 18: Recursion](lesson18.html)
+* [Lesson 19: Recursion (again)](lesson19.html)
+* [Lesson 20: Analysis of Algorithms](lesson20.html)

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-04-19">
+  <title>CS2 Lesson 20</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 20</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">19 April 2021</p>
+</section>
+
+<section id="guest-lecture" class="title-slide slide level1">
+<h1>Guest Lecture</h1>
+<ul>
+<li>Monday May 3 (Wellness Day) 2 PM</li>
+<li>“Computational Biology: Using Data Science to Fight Cancer”</li>
+<li>Maysun Hasan, Memorial Sloan Kettering Cancer Center</li>
+<li><a href="https://purchase.zoom.us/meeting/register/tJwodeyqqDkiHd3L8syMj_tgRD-S1zZ9lDgj">Register via Zoom</a></li>
+</ul>
+</section>
+
+<section>
+<section id="towers-of-hanoi" class="title-slide slide level1">
+<h1>Towers of Hanoi</h1>
+<ul>
+<li>Algorithm questions?</li>
+<li>Number of steps?</li>
+</ul>
+</section>
+<section id="algorithm" class="slide level2">
+<h2>Algorithm:</h2>
+<ul>
+<li>Base case: if <span class="math inline">\(numDisks == 0\)</span>?</li>
+<li>Recursively solve the problem of moving <span class="math inline">\(numDisks - 1\)</span> disks to the “spare” peg (from original peg)</li>
+<li>Move last disk to the target peg.</li>
+<li>Recursively solve the problem of moving <span class="math inline">\(numDisks - 1\)</span> disks to the target peg (from the “spare” peg)</li>
+<li>Code is fairly minimal: just implement the base case, and each of these parts.</li>
+</ul>
+</section>
+<section id="lesson-19" class="slide level2">
+<h2>Lesson 19</h2>
+<ul>
+<li>Recursive Prints: predictions and explanations.</li>
+<li>Sequential Search Running Time</li>
+<li>Record your responses on Moodle</li>
+</ul>
+</section></section>
+<section>
+<section id="project-3" class="title-slide slide level1">
+<h1>Project 3</h1>
+<ul>
+<li>Player interface</li>
+<li>RandomPlayer</li>
+<li>HumanPlayer?</li>
+</ul>
+</section>
+<section id="playing-a-game" class="slide level2">
+<h2>Playing a game</h2>
+<pre ><code >void play(Player one, Player two) {
+  one.rollDice();
+  two.rollDice();
+  get bid from one
+  bidder = one, caller = two
+  while (caller does not call liar) {
+    get raise from caller
+    swap bidder and caller
+  }
+  determine who won
+}</code></pre>
+</section>
+<section id="swapping" class="slide level2">
+<h2>Swapping?</h2>
+<pre ><code >Player temp = bidder;
+bidder = caller;
+caller = temp;</code></pre>
+</section>
+<section id="smarter-player" class="slide level2">
+<h2>Smarter Player</h2>
+<p>If you haven’t gotten the game working yet?</p>
+<ul>
+<li>Focus on getting it working for Human vs Random.</li>
+<li>Then focus on getting it working for all ways of playing with Human / Random.</li>
+<li>Use OOP techniques well so that it’s easy to implement a third option.</li>
+<li>Then: just make it “smarter” than Random.</li>
+<li>Let it look at its dice! Eliminate obviously impossible choices.</li>
+</ul>
+</section>
+<section id="smarter-player-1" class="slide level2">
+<h2>Smarter Player?</h2>
+<p>If you’ve gotten the game working? Probability.</p>
+<ul>
+<li>Look up the binomial distribution.</li>
+<li>Determine the probability of there being at least <span class="math inline">\(k\)</span> dice with face value <span class="math inline">\(f\)</span>.</li>
+<li>Then make decisions based on that.</li>
+<li><code>if (r.nextDouble() &lt; prob)</code></li>
+</ul>
+</section>
+<section id="menu" class="slide level2">
+<h2>Menu</h2>
+<ul>
+<li>8 ways to play the game</li>
+<li>Don’t allow for Human vs Human</li>
+<li>Don’t overthink it: list all the valid ways of playing:
+<ul>
+<li>Human vs Random</li>
+<li>Human vs Smart</li>
+<li>Smart vs Random</li>
+<li>etc</li>
+</ul></li>
+<li>Then based on user’s choice, construct both players (one and two).</li>
+<li>Send those player objects to a Game</li>
+</ul>
+</section></section>
+<section>
+<section id="algorithms" class="title-slide slide level1">
+<h1>Algorithms</h1>
+<ul>
+<li>An <strong>algorithm</strong> is a precise list of instructions for solving a general problem.</li>
+<li>Most of the semester: we used Java to describe algorithms.</li>
+<li>If our focus is analyzing algorithms, we often want to describe them in <em>pseudocode</em>.</li>
+<li>Ignore language-specific features / issues, just focus on whether the overall idea is good or not.</li>
+</ul>
+</section>
+<section id="analysis" class="slide level2">
+<h2>Analysis</h2>
+<ul>
+<li>
+Difference between an <emph>algorithm</emph> and its <emph>implementation</emph>?
+</li>
+<li class="fragment">
+We analyze algorithms without worrying about hardware or language specific details.
+</li>
+<li class="fragment">
+Focus on the number of steps it takes for an algorithm to run on any input of a specified size.
+</li>
+<li class="fragment">
+Ideally, try to describe this using a mathematical function.
+</li>
+</ul>
+</section>
+<section id="running-time" class="slide level2">
+<h2>Running Time</h2>
+<p>The running time of an algorithm is the function <span class="math inline">\(t(n)\)</span> which, for each <span class="math inline">\(n\)</span>, gives the maximum number of steps required for the algorithm to run on any input of size <span class="math inline">\(n\)</span>.</p>
+<p>Recall the “find” algorithm:</p>
+<pre ><code >procedure find(list l, object o):
+    for i = 0 to l.size()
+        if l[i] == o
+            return i
+    return -1</code></pre>
+</section>
+<section id="comparing-functions" class="slide level2">
+<h2>Comparing Functions</h2>
+<p>Worst / averge case of <code>find</code>:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Size of list</th>
+<th style="text-align: right;">Worst Case</th>
+<th style="text-align: right;">Average Case</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">100</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Often: don’t care exactly about <span class="math inline">\(t(n)\)</span>, just what it’s <em>proportional</em> to.</li>
+<li>Both worst and average case: proportional to <span class="math inline">\(n\)</span> (linear).</li>
+</ul>
+</section></section>
+<section>
+<section id="string-concatenation" class="title-slide slide level1">
+<h1>String concatenation</h1>
+<p>Determine what the following algorithm does:</p>
+<pre ><code >procedure create(int n)
+    String s = ""
+    for i = 1 to n
+        s += "1"
+    return s</code></pre>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Recall: how does the += operator on <strong>immutable</strong> Strings? Fill in the following table for the number of steps for the <code>create</code> method:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;"><span class="math inline">\(n\)</span></th>
+<th style="text-align: right;">Number of steps</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;"> </td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="analysis-1" class="slide level2">
+<h2>Analysis</h2>
+<ul>
+<li>The <span class="math inline">\(n\)</span>-fold concatenation ends up taking <span class="math inline">\(1 + 2 + \ldots + n\)</span> steps to create a string of <span class="math inline">\(n\)</span> 1’s.</li>
+<li>(<strong>Tip</strong>: use a <code>StringBuilder</code> instead of a String to do things like this).</li>
+<li>Exercise: find a formula for <span class="math inline">\(1 + 2 + 3 + \ldots + n\)</span>.</li>
+</ul>
+</section>
+<section id="big-oh" class="slide level2">
+<h2>Big Oh</h2>
+<ul>
+<li><span class="math inline">\(1 + 2 + \ldots + n = n(n+1) / 2 = \frac{n^2 + n}{2}\)</span>.</li>
+<li>For large <span class="math inline">\(n\)</span>, roughly proportional to <span class="math inline">\(n^2\)</span>: the <span class="math inline">\(n^2\)</span> term dominates.</li>
+<li>Formalize: “Big Oh” notation.</li>
+<li>This algorithm takes <span class="math inline">\(O(n^2)\)</span> steps.</li>
+</ul>
+</section></section>
+<section>
+<section id="arraylist-add" class="title-slide slide level1">
+<h1>ArrayList add</h1>
+<ul>
+<li><code>ArrayList</code> class: dynamic list implementation based on an array</li>
+<li>Arrays, in Java, have fixed sizes.</li>
+<li>Under the hood: when it runs out of space, ArrayList creates new, larger array, copies the old elements over, and then adds the new element at the correct position.</li>
+</ul>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<p><strong>Exercise</strong>: write pseudocode for the following two versions of the “add” algorithm.</p>
+<ol type="1">
+<li>When you create a new array, make it be exactly <span class="math inline">\(1\)</span> element larger.</li>
+<li>When you create a new array, make it be twice the size as the original array.</li>
+</ol>
+</section>
+<section id="analysis-2" class="slide level2">
+<h2>Analysis</h2>
+<ul>
+<li>Analyze the two “add” algorithms. If we start with an ArrayList of size <span class="math inline">\(10\)</span>, how many steps are taken in each algorithm when we add <span class="math inline">\(10\)</span> new elements? What if we add <span class="math inline">\(100\)</span> new elements?</li>
+<li>How many steps does it take to add in <span class="math inline">\(N\)</span> new elements in each of the algorithms? (In terms of “Big Oh”)</li>
+<li>Based on the above, on average, how many steps does it take to add in 1 new element in each of the algorithms (in terms of “Big Oh”)?</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
