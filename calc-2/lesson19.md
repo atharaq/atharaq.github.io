@@ -48,18 +48,122 @@ If the limit exists, we say $\sum\limits_{n=0}^{\infty} a_n$ **converges**. Othe
 
 ## Geometric Series
 
-## Examples
+A series $\sum\limits_{n=0}^{\infty} a_n$ is called a **geometric series** if the sequence $(a_n)$ is a geometric sequence. That is, if $a_n = a \cdot r^n$, for some constants $a$ and $r$. For example, the series $10 + 1 + 0.1 + 0.01 + \ldots$ we saw above is a geometric series: $\sum\limits_{n=0}^{\infty} 10 \cdot (\frac{1}{10})^n$.
 
-## Geometric Argument
+Let's go through a few other examples. FIrst, we consider the geometric series where $a = 100$ and $r = \frac{1}{10}$. This series is $100 + 10 + 0.1 + 0.01 + \ldots$; we can see that it converges to $111.1111\ldots$
+
+What if $a = 1, r = 2$? This series is $1 + 2 + 4 + 8 + \ldots$ Clearly, this sum goes off to infinity, so it *diverges*.
+
+What if $a = 1, r = 1$? This is the series $1 + 1 + 1 + \ldots$, which also goes off to infinity.
+
+What if $a = \frac{1}{2}, r = \frac{1}{2}$? This is the series $1 + \frac{1}{2} + \frac{1}{4} + \ldots$ Perhaps it's not obvious if this converges or not, so let's look at the sequence of *partial sums*: $\frac{1}{2}, \frac{3}{4}, \frac{7}{8}, \frac{15}{16}, \ldots$ We can find a closed form for this sequence. Notice that the denominators are powers of 2 (starting at $2^1$), so the sequence is:
+
+$$s_n = \frac{2^{n+1} - 1}{2^{n+1}} = 1 - \frac{1}{2^{n+1}}$$
+
+As $n \rightarrow \infty$, $s_n \rightarrow 1$, and so this *converges*.
 
 # Geometric Series Test / Formula
 
+<div class="youtube-container">
+  
+</div>
+
+We have seen that some geometric series converge and some don't. Let's look again at some of the ones that don't converge:
+
+The series where $a = 1, r = 1$ does not converge because $1 + 1 + 1 + \ldots$ goes off to infinty. Similarly, if $a = 1, r = 2$, the series $1 + 2 + 4 + 8 + \ldots$ also goes off to infinity. Another series which does not converge is when $a = 1, r = -1$: this is the series $1 + (-1) + 1 + (-1) + \ldots$, which does not actually go off to infinity, but also does not settle down on an actual answer (sometimes the partial sums are 0, and sometimes they're 1). Similarly, if $a = 2, r = -1$, the series $2 + (-2) + 2 + (-2) + \ldots$ will also diverge.
+
+Hopefully it is clear, then, that the key factor in determining if a geometric series will converge or not is the **common ratio**. If $\|r\| < 1$, then the series converges. Otherwise, it will diverge. This simple fact is known as the **Geometric Series Test**.
+
+Moreover, geometric series are nice because if they do converge, we can determine exactly what they converge to. Let's suppose $a = 1$, and $r = x$. Then the $n$-th partial sum is $1 + x + \ldots + x^n$. It might not be obvious what this will converge to, but a bit of algebra will help. First, multiply $1 + x + \ldots + x^n$ by $\frac{1-x}{1-x}$. We get:
+
+$$\frac{(1 + x + \ldots + x^n) - (x + x^2 + \ldots + x^{n+1})}{1 - x}$$
+
+Now combine like terms and simplify, and we see:
+
+$$s_n = \frac{1 - x^{n+1}}{1 - x}$$
+
+As $n \rightarrow \infty$< then, since $\|x\| < 1$, $s_n \rightarrow \frac{1}{1 - x}$. In general, for a geometric series $\sum a \cdot r^n$, if $\| r \| < 1$, then the series converges to $\frac{a}{1 - r}$.
+
 ## $0.999\ldots$
+
+As an application, let's try to understand what is going on with the infinite decimal $0.999\ldots$ What does this infinite decimal mean? We should think of this in terms of place value: we have one 9 at each place value after the decimal point. That means, the number $0.999\ldots$ is the result of adding $0.9 + 0.09 + 0.009 + \ldots$ This is a geometric series, with $a = 0.9$ and $r = \frac{1}{10}$. Therefore it converges to $\frac{a}{1 - r} = \frac{0.9}{1 - \frac{1}{10}} = 1$.
+
+This is one reason why $0.999\ldots = 1$!
 
 # Divergence Test
 
+<div class="youtube-container">
+  
+</div>
+
+Geometric series are particularly nice, but there are other series as well. Let's look at the constant series $\sum\limits_{n = 0}^{\infty} \frac{1}{2}$. It should be clear that this diverges: the partial sums are $\frac{1}{2}, 1, \frac{3}{2}, 2 \frac{5}{2}, \ldots$ which continue to get bigger and bigger. Similarly, the series $\sum\limits_{n = 0}^{\infty} \frac{1}{1000000}$ also diverges, even if it grows pretty slowly. Moreover there is a nice theorem that generalizes both of these:
+
+**Theorem**: If $\lim\limits_{n \rightarrow \infty} a_n \neq 0$, then $\sum\limits_{n=0}^{\infty} a_n$ diverges.
+
+That is: if the limit of a sequence either does not exist, or exists but is not 0, then the sum of that sequence diverges. This is known as the **Divergence Test**.
+
+For example, the series $0 + \frac{1}{2} + \frac{2}{3} + \frac{3}{4} + \frac{4}{5} + \ldots$ diverges, since the sequence can be written as $a_n = \frac{n}{n+1}$. This sequence approaches $1$, and so the series diverges.
+
 ## Converse?
+
+The Divergence Theorem tells you directly which series diverge. But does it tell you anything about which series must converge? Not necessarily. For example, let's look at the "Harmonic Series" $\sum \frac{1}{n}$:
+
+* $1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} \geq 2$, since $\frac{1}{3} + \frac{1}{4} \geq \frac{1}{2}$.
+* $1 + \frac{1}{2} + \ldots + \frac{1}{8} \geq 2.5$, since $\frac{1}{5} + \frac{1}{6} + \frac{1}{7} + \frac{1}{8} \geq \frac{1}{2}$
+* $1 + \ldots + \frac{1}{16} \geq 3$, for similar reasons.
+
+This series diverges! It goes off to infinity quite slowly, but it does, in fact, go off to infinity. How can we tell?
 
 # Integral Test
 
+<div class="youtube-container">
+
+</div>
+
+One way to tell is by graphing the function $f(x) = \frac{1}{x}$ and drawing in the "Riemann sum" approximations.
+
+(picture)
+
+Notice that the rectangles are all above the graph, and, therefore, we can see:
+
+$$\sum_{n = 1}^{\infty} \frac{1}{n} \geq \int_1^{\inftY} \frac{1}{x} dx$$
+
+Further, we know how to compute this integral: since the antiderivative of $\frac{1}{x}$ is $\ln(x)$, this integral can be computed as the limit as $b \rightarrow \infty$ of $\ln(b) - \ln(1)$, which is $\infty$. Therefore, the series must also diverge.
+
+Similarly, let's look at the series $\sum\limits_{n = 1}^{\infty} \frac{1}{n^2}$. We can similarly compare it to the integral of $f(x) = \frac{1}{x^2}$. In fact, there are two ways we can compare it:
+
+(graph 1)
+
+and
+
+(graph 2)
+
+Notice that this means that if
+
+$$\int_1^\infty \frac{1}{x^2} dx$$
+
+converges, then so does
+
+$$\sum_{n=1}^{\infty} \frac{1}{n^2}$$
+
+and if the integral diverges, then so does the series. And, again, we know how to compute the integral:
+
+$$
+\begin{align}
+&\lim_{b \rightarrow \infty} \int_1^b \frac{1}{x^2} dx \\
+&= \lim_{b \rightarrow \infty} (-\frac{1}{b} + 1) \\
+&= 1
+\end{align}
+$$
+
+Since the integral converges, the series also converges. This is known as the **Integral Test**: suppose $(a_n)$ is a sequence of positive terms, and $f(x)$ is a function with the following properties:
+
+* $f(x)$ is decreasing,
+* $f(x)$ is continuous, and
+* there is some $N$ such that for all $n \geq N$, $a_n = f(n)$
+
+Then either $$\int_N^{\infty} f(x) dx \textrm{ and } \sum_{n = 1}^{\infty} a_n$$ both converge or they both diverge. Note that this does not necessarily mean that they both converge to the same value: we can see that the integral of $\frac{1}{x^2}$ from $1$ to $\infty$ converged to $1$. But the series actually converges to $\frac{\pi^2}{6}$: this is known as the [Basel problem](https://en.wikipedia.org/wiki/Basel_problem).
+
 # Homework
+
+...
