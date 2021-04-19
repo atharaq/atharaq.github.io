@@ -6,6 +6,10 @@
 
 # Achilles and the Tortoise
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/UCe7ftOhedc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 [Zeno of Elea](https://en.wikipedia.org/wiki/Zeno_of_Elea) was a Greek philosopher famous for his "Paradoxes of Motion". He posed several of these paradoxes, but I wanted to discuss the [paradox of Achilles and the Tortoise](https://plato.stanford.edu/entries/paradox-zeno/#AchTor):
 
 > The [second] argument was called “Achilles,” accordingly, from the fact that Achilles was taken [as a character] in it, and the argument says that it is impossible for him to overtake the tortoise when pursuing it. For in fact it is necessary that what is to overtake [something], before overtaking [it], first reach the limit from which what is fleeing set forth. In [the time in] which what is pursuing arrives at this, what is fleeing will advance a certain interval, even if it is less than that which what is pursuing advanced …. And in the time again in which what is pursuing will traverse this [interval] which what is fleeing advanced, in this time again what is fleeing will traverse some amount …. And thus in every time in which what is pursuing will traverse the [interval] which what is fleeing, being slower, has already advanced, what is fleeing will also advance some amount. (Simplicius, *On Aristotle’s Physics*)
@@ -18,7 +22,7 @@ Suppose we have a $100m$ race between Achilles (a hero) who can run fast, and a 
 * In that time, the Tortoise will have moved some amount $x_2$.
 * Keep going: Achilles will *never* catch up to the Tortoise, because as soon as he catches up to where the Tortoise was, the Tortoise will have moved (albeit a small amount) forward.
 
-(picture)
+<img class="noreverse" src="achiles_catch_tortoise.jpeg" alt="Intuitively, Achilles cannot catch the Tortoise, since every time it catches up, the Tortoise moves a little bit." />
 
 Where does this argument go wrong? Let's do some actual math here, knowing that Achilles runs $5 m/s$, the Tortoise runs $0.5 m/s$, and the Tortoise is initially $50m$ ahead of Achilles:
 
@@ -30,13 +34,17 @@ Where does this argument go wrong? Let's do some actual math here, knowing that 
 * In that time, the Tortoise moves $0.05s$.
 * etc.
 
-(picture)
+<img class="noreverse" src="achiles_tortoise_numbers.jpeg" alt="Looking at the numbers, we can compute exactly when Achilles does catch the Tortoise" />
 
 In other words, Achilles will catch up to the Tortoise after $10 + 1 + 0.1 + 0.01 + \ldots$ seconds! This is an infinite sum. But it is an actual number: it's just $11.111\ldots$. This number can be expressed as a mixed fraction: $11 \frac{1}{9}$. Certainly after 11.5 seconds, Achilles will have overtaken the Tortoise!
 
 The key issue in this paradox is that the mathematical tool of being able to add up infinitely many numbers together, and still get a finite amount, was not known to the Ancient Greeks. What does $11.111\ldots$ even mean? What does it mean to add up infinitely many numbers? This is the topic we will explore in today's lesson.
 
 # Infinite Series
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/oc9RPZ8Tstk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 How do we define the notion of adding up infinitely many numbers? The sum of infinitely many numbers is called an **infinite series**, and we can make this notion rigorous using limits:
 
@@ -65,7 +73,7 @@ As $n \rightarrow \infty$, $s_n \rightarrow 1$, and so this *converges*.
 # Geometric Series Test / Formula
 
 <div class="youtube-container">
-  
+<iframe src="https://www.youtube.com/embed/mZ3QaRuztMI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 We have seen that some geometric series converge and some don't. Let's look again at some of the ones that don't converge:
@@ -93,7 +101,7 @@ This is one reason why $0.999\ldots = 1$!
 # Divergence Test
 
 <div class="youtube-container">
-  
+<iframe src="https://www.youtube.com/embed/ABSs3CqJOSk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 Geometric series are particularly nice, but there are other series as well. Let's look at the constant series $\sum\limits_{n = 0}^{\infty} \frac{1}{2}$. It should be clear that this diverges: the partial sums are $\frac{1}{2}, 1, \frac{3}{2}, 2 \frac{5}{2}, \ldots$ which continue to get bigger and bigger. Similarly, the series $\sum\limits_{n = 0}^{\infty} \frac{1}{1000000}$ also diverges, even if it grows pretty slowly. Moreover there is a nice theorem that generalizes both of these:
@@ -117,26 +125,30 @@ This series diverges! It goes off to infinity quite slowly, but it does, in fact
 # Integral Test
 
 <div class="youtube-container">
-
+<iframe src="https://www.youtube.com/embed/cmXIKn6A0Co" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 One way to tell is by graphing the function $f(x) = \frac{1}{x}$ and drawing in the "Riemann sum" approximations.
 
-(picture)
+<img src="https://openstax.org/resources/6f54f61c1ccfb6a0dc8dbcd8be64b5333e7a35b0" alt="Figure 5.12 from the textbook: the sum of 1 + 1/2 + 1/3 + 1/4 + ... is larger than the integral from 1 to infinity of 1/x" />
 
 Notice that the rectangles are all above the graph, and, therefore, we can see:
 
-$$\sum_{n = 1}^{\infty} \frac{1}{n} \geq \int_1^{\inftY} \frac{1}{x} dx$$
+$$\sum_{n = 1}^{\infty} \frac{1}{n} \geq \int_1^{\infty} \frac{1}{x} dx$$
 
 Further, we know how to compute this integral: since the antiderivative of $\frac{1}{x}$ is $\ln(x)$, this integral can be computed as the limit as $b \rightarrow \infty$ of $\ln(b) - \ln(1)$, which is $\infty$. Therefore, the series must also diverge.
 
 Similarly, let's look at the series $\sum\limits_{n = 1}^{\infty} \frac{1}{n^2}$. We can similarly compare it to the integral of $f(x) = \frac{1}{x^2}$. In fact, there are two ways we can compare it:
 
-(graph 1)
+<div class="desmos-container">
+<iframe src="https://www.desmos.com/calculator/iauoqi5fcb?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
+</div>
 
 and
 
-(graph 2)
+<div class="desmos-container">
+<iframe src="https://www.desmos.com/calculator/q8nhlmziwl?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
+</div>
 
 Notice that this means that if
 
@@ -166,4 +178,18 @@ Then either $$\int_N^{\infty} f(x) dx \textrm{ and } \sum_{n = 1}^{\infty} a_n$$
 
 # Homework
 
-...
+Due **Friday** April 23:
+
+5.1 #4, 8
+
+5.2 #74, 94, 96
+
+5.3 #146, 160
+
+In addition, find a closed form expression for the following sequences:
+
+(a) 1, 1/4, 1/9, 1/16, 1/25, ...
+
+(b) 1, -1/2, 1/24, -1/720, ...
+
+(c) 1, -1/6, 1/120, ...
