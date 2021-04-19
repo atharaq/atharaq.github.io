@@ -22,7 +22,7 @@ Suppose we have a $100m$ race between Achilles (a hero) who can run fast, and a 
 * In that time, the Tortoise will have moved some amount $x_2$.
 * Keep going: Achilles will *never* catch up to the Tortoise, because as soon as he catches up to where the Tortoise was, the Tortoise will have moved (albeit a small amount) forward.
 
-<img class="noreverse" src="achiles_catch_tortoise.jpeg" alt="Intuitively, Achilles cannot catch the Tortoise, since every time it catches up, the Tortoise moves a little bit." />
+<img class="noreverse" src="achilles_catch_tortoise.jpeg" alt="Intuitively, Achilles cannot catch the Tortoise, since every time it catches up, the Tortoise moves a little bit." />
 
 Where does this argument go wrong? Let's do some actual math here, knowing that Achilles runs $5 m/s$, the Tortoise runs $0.5 m/s$, and the Tortoise is initially $50m$ ahead of Achilles:
 
@@ -34,7 +34,7 @@ Where does this argument go wrong? Let's do some actual math here, knowing that 
 * In that time, the Tortoise moves $0.05s$.
 * etc.
 
-<img class="noreverse" src="achiles_tortoise_numbers.jpeg" alt="Looking at the numbers, we can compute exactly when Achilles does catch the Tortoise" />
+<img class="noreverse" src="achilles_tortoise_numbers.jpeg" alt="Looking at the numbers, we can compute exactly when Achilles does catch the Tortoise" />
 
 In other words, Achilles will catch up to the Tortoise after $10 + 1 + 0.1 + 0.01 + \ldots$ seconds! This is an infinite sum. But it is an actual number: it's just $11.111\ldots$. This number can be expressed as a mixed fraction: $11 \frac{1}{9}$. Certainly after 11.5 seconds, Achilles will have overtaken the Tortoise!
 
