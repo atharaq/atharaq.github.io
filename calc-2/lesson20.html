@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-04-22">
+  <title>Calc II Lesson 20</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Calc II Lesson 20</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">22 April 2021</p>
+</section>
+
+<section id="reminder" class="title-slide slide level1">
+<h1>Reminder</h1>
+<ul>
+<li>Guest Lecture May 3 (2 PM)</li>
+<li>“Computational Biology: Using Data Science to Fight Cancer”</li>
+<li>Maysun Hasan, Memorial Sloan Kettering Cancer Center</li>
+<li><a href="https://purchase.zoom.us/meeting/register/tJwodeyqqDkiHd3L8syMj_tgRD-S1zZ9lDgj">Register via Zoom</a></li>
+</ul>
+</section>
+
+<section id="questions" class="title-slide slide level1">
+<h1>Questions?</h1>
+<ul>
+<li>Homework questions?</li>
+<li>MyOpenMath?</li>
+<li>Zeno’s Paradox</li>
+<li><span class="math inline">\(0.999\ldots\)</span></li>
+</ul>
+</section>
+
+<section>
+<section id="warm-up" class="title-slide slide level1">
+<h1>Warm-up</h1>
+<p>Use the integral test to determine if the following series converge or diverge:</p>
+<ol type="1">
+<li><span class="math inline">\(\sum\limits_{n=1}^{\infty} \frac{1}{\sqrt{n}}\)</span></li>
+<li><span class="math inline">\(\sum\limits_{n=1}^{\infty} \frac{1}{n^{3/2}}\)</span></li>
+</ol>
+</section>
+<section id="p-series" class="slide level2">
+<h2>p-series</h2>
+<p>In general:</p>
+<ul>
+<li><span class="math inline">\(\sum\limits_{n=1}^{\infty} \frac{1}{n^p}\)</span> is called a <span class="math inline">\(p\)</span>-series.</li>
+<li>A <span class="math inline">\(p\)</span>-series converges if <span class="math inline">\(p &gt; 1\)</span></li>
+<li>Diverges if <span class="math inline">\(p \leq 1\)</span>.</li>
+</ul>
+</section>
+<section id="comparison" class="slide level2">
+<h2>Comparison</h2>
+<p>Notice:</p>
+<p><span class="math display">\[
+\begin{align}
+1 + \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{3}} + \frac{1}{\sqrt{4}} + \ldots \\
+\geq 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \ldots \rightarrow \infty
+\end{align}
+\]</span></p>
+<p>Since <span class="math inline">\(\frac{1}{\sqrt{n}} \geq \frac{1}{n}\)</span> for all <span class="math inline">\(n \geq 1\)</span>.</p>
+</section></section>
+<section>
+<section id="alternating" class="title-slide slide level1">
+<h1>Alternating</h1>
+<p><strong>Definition</strong>: An <strong>alternating</strong> series is one in which the terms alternate between positive and negative.</p>
+<p>Example: <span class="math inline">\(1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \ldots\)</span></p>
+<p><span class="math display">\[ = \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{n+1} \]</span></p>
+</section>
+<section id="examples" class="slide level2">
+<h2>Examples</h2>
+<ul>
+<li><span class="math inline">\(1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \ldots\)</span> converges! (<span class="math inline">\(\rightarrow \ln(2)\)</span>)</li>
+<li><span class="math inline">\(1 - 1 + 1 - 1 +1 \ldots\)</span> diverges.</li>
+<li><span class="math inline">\(1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \ldots\)</span>…?</li>
+</ul>
+<div class="fragment">
+<p>This also converges! In fact this converges to <span class="math inline">\(\frac{\pi}{4}\)</span>, giving us a formula to compute <span class="math inline">\(\pi\)</span>! (This converges quite slowly, though…)</p>
+</div>
+</section>
+<section id="theorem" class="slide level2">
+<h2>Theorem</h2>
+<p>Suppose either:</p>
+<ul>
+<li><span class="math inline">\(a_n = (-1)^n b_n\)</span>, or,</li>
+<li><span class="math inline">\(a_n = (-1)^{n+1} b_n\)</span>,</li>
+</ul>
+<p>where <span class="math inline">\(b_n \geq 0\)</span>, <span class="math inline">\(\lim\limits_{n \rightarrow \infty} b_n = 0\)</span>, and <span class="math inline">\(b_n\)</span> is decreasing. Then <span class="math inline">\(\sum\limits_{n=0}^{\infty} a_n\)</span> converges.</p>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p>Does the series <span class="math inline">\(1 - \frac{1}{4} + \frac{1}{2} - \frac{1}{16} + \frac{1}{4} - \frac{1}{64} + \frac{1}{8} - \ldots\)</span> converge?</p>
+<div class="fragment">
+<p>This test is <strong>inconclusive</strong>. <span class="math inline">\(b_n = 1, \frac{1}{4}, \frac{1}{2}, \frac{1}{16}, \ldots\)</span>. Not decreasing!</p>
+</div>
+</section>
+<section id="alternating-harmonic-series" class="slide level2">
+<h2>Alternating Harmonic Series</h2>
+<p><strong>Commutative law of addition</strong>:</p>
+<ul>
+<li><span class="math inline">\(x + y = y + x\)</span>. Right?</li>
+<li><span class="math inline">\(x_1 + x_2 + x_3 + \ldots + x_n = x_7 + x_{23} + \ldots + x_2\)</span></li>
+</ul>
+<p><span class="math display">\[1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4}  + \ldots\]</span></p>
+<p>converges to <span class="math inline">\(\ln(2)\)</span>. What happens when we rearrange?</p>
+</section>
+<section id="rearranging" class="slide level2">
+<h2>Rearranging</h2>
+<p><span class="math display">\[
+\begin{align}
+&amp;(1 - \frac{1}{2}) - \frac{1}{4} + (\frac{1}{3} - \frac{1}{6}) - \frac{1}{8} + (\frac{1}{5} - \frac{1}{10}) - \ldots \\
+&amp;=\frac{1}{2}(1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \ldots
+\end{align}
+\]</span></p>
+<p>converges to <span class="math inline">\(\frac{1}{2} \ln(2)\)</span>!</p>
+</section>
+<section id="conditional-convergence" class="slide level2">
+<h2>Conditional Convergence</h2>
+<ul>
+<li>Alternating harmonic series converges to <span class="math inline">\(\ln(2)\)</span></li>
+<li>Rearranging some terms, it converges to <span class="math inline">\(\frac{\ln(2)}{2}\)</span></li>
+<li>This is because of <strong>conditional convergence</strong>!</li>
+</ul>
+</section>
+<section id="absolute-convergence" class="slide level2">
+<h2>Absolute Convergence</h2>
+<ul>
+<li>If a series <span class="math inline">\(\sum |a_n|\)</span> converges, we say it converges <strong>absolutely</strong>.</li>
+<li>If not, but <span class="math inline">\(\sum a_n\)</span> converges, we say it converges <strong>conditionally</strong>.</li>
+<li>Series that converge conditionally do not <em>respect the commutative law of addition</em>!</li>
+<li>This is crazy!</li>
+</ul>
+</section></section>
+<section>
+<section id="comparison-test" class="title-slide slide level1">
+<h1>Comparison Test</h1>
+<p>Suppose <span class="math inline">\(0 \leq a_n \leq b_n\)</span>. Then:</p>
+<ol type="1">
+<li>If <span class="math inline">\(\sum b_n\)</span> converges, then <span class="math inline">\(\sum a_n\)</span> converges.</li>
+<li>If <span class="math inline">\(\sum a_n\)</span> diverges, then <span class="math inline">\(\sum b_n\)</span> diverges.</li>
+</ol>
+<p>“If the bigger series converges, so does the smaller series. If the smaller series diverges, so does the bigger series.”</p>
+</section>
+<section id="example-1" class="slide level2">
+<h2>Example</h2>
+<p><span class="math display">\[\sum_{n = 1}^{\infty} \frac{1}{n^2 + 1}\]</span></p>
+<ul>
+<li>Compare with <span class="math inline">\(\sum\limits_{n = 1}^{\infty} \frac{1}{n^2}\)</span>: converges (<span class="math inline">\(p\)</span>-series).</li>
+<li>Notice: <span class="math inline">\(\frac{1}{n^2 + 1} \leq \frac{1}{n^2}\)</span> for all <span class="math inline">\(n\)</span>.</li>
+<li>(Algebra)</li>
+<li>The bigger series converges.</li>
+<li>So this also converges!</li>
+</ul>
+</section>
+<section id="example-2" class="slide level2">
+<h2>Example 2</h2>
+<p><span class="math display">\[\sum_{n = 1}^{\infty} \frac{1}{2^n + n^2}\]</span></p>
+<p>What should we compare this with?</p>
+</section>
+<section id="example-3" class="slide level2">
+<h2>Example 3</h2>
+<p><span class="math display">\[1 + \frac{1}{3} + \frac{1}{5} + \ldots\]</span></p>
+<p>What should we compare this with?</p>
+</section></section>
+<section>
+<section id="ratio" class="title-slide slide level1">
+<h1>Ratio</h1>
+<p>Given a series <span class="math inline">\(\sum a_n\)</span>, look at the <em>ratios</em>:</p>
+<p><span class="math display">\[ \lim_{n \rightarrow \infty} |\frac{a_{n+1}}{a_n}| = L\]</span></p>
+<ul>
+<li><span class="math inline">\(L &lt; 1\)</span>: absolute convergence</li>
+<li><span class="math inline">\(L &gt; 1\)</span>: divergence</li>
+<li><span class="math inline">\(L = 1\)</span>: inconclusive</li>
+</ul>
+</section>
+<section id="example-4" class="slide level2">
+<h2>Example</h2>
+<p><span class="math display">\[\sum_{n=0}^{\infty} \frac{1}{n!} = 1 + 1 + \frac{1}{2} + \frac{1}{6} + \ldots\]</span></p>
+<ul>
+<li><span class="math inline">\(a_{n+1} = \frac{1}{(n+1)!}\)</span></li>
+<li><span class="math inline">\(a_n = \frac{1}{n!}\)</span></li>
+<li><span class="math inline">\(\frac{a_{n+1}}{a_n} = \frac{n!}{(n+1)!} = \frac{1}{n+1} \rightarrow 0\)</span></li>
+<li>So this series converges absolutely!</li>
+<li>In fact: the series converges to <span class="math inline">\(e\)</span>!</li>
+</ul>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Determine if the following series converge:</p>
+<ol type="1">
+<li><span class="math inline">\(\sum_{n = 0}^{\infty} \frac{3^n}{n!}\)</span></li>
+<li><span class="math inline">\(\sum_{n = 0}^{\infty} \frac{3^n}{(-2)^{n+1} \cdot n}\)</span></li>
+</ol>
+</section></section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Power series / Taylor series</li>
+<li>Exam 3 given next week, due May 7.</li>
+<li>Final exam (given May 7, due May 13)</li>
+<li>One more problem presentation (May 9?)</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

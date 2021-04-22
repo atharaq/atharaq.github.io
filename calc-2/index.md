@@ -23,3 +23,5 @@ layout: default
 * [Lesson 16: Polar coordinates](lesson16.html)
 * [Lesson 17: Areas and arc lengths of polar; intro to sequences](lesson17.html)
 * [Lesson 18: Describing sequences](lesson18.html)
+* [Lesson 19: Infinite Series](lesson19.html)
+* [Lesson 20: Convergence Tests](lesson20.html)
