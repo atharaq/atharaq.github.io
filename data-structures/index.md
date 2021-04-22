@@ -5,7 +5,7 @@ lang: en-US
 ---
 
 # MAT 3710: Data Structures
- 
+
 * [Lesson 0: Intro to course](lesson0.html)
 * [Lesson 1: Java generics](lesson1.html)
 * [Lesson 2: Lists and Iterators](lesson2.html)
@@ -29,3 +29,4 @@ lang: en-US
 * [Lesson 20: Quickselect + radix sorting](lesson20.html)
 * [Lesson 21: Algorithm Design / Intro to concurrency](lesson21.html)
 * [Lesson 22: Concurrency](lesson22.html)
+* [Lesson 23: Concurrent Data Structures](lesson23.html)

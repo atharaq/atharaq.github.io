@@ -46,7 +46,7 @@ The lesson is mostly self directed, and so I am not including notes here, but pl
 <iframe src="https://www.youtube.com/embed/r8cMvABL9G4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-Please work on this, but you do not need to submit it.
+Please work on this, but you do not need to submit it. (I mentioned CodingRooms a couple of times here, but you can **safely ignore that** as I don't want to overload you all this weekend.)
 
 # Moodle Response
 
