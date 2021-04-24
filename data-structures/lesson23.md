@@ -1,4 +1,4 @@
-# Data Structures Lesson 21: Algorithm Design
+# Data Structures Lesson 23: Concurrent Data Structures
 {:.no_toc}
 
 1. Table of Contents
