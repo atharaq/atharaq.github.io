@@ -7,7 +7,7 @@
 # Ratio Test
 
 <div class="youtube-container">
-
+<iframe src="https://www.youtube.com/embed/N0tBc0N1xrE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 Last time we discussed the [ratio test](https://atharaq.github.io/calc-2/lesson20.html#/ratio). Recall: given a series $\sum a_n$, we look at the limits of the ratios $\|\frac{a_{n+1}}{a_n}\|$. If this limit is less than $1$, then the series converges absolutely. If it's greater than $1$, the series diverges. If it is equal to $1$, then the series converges conditionally. Here we go through two examples of using the ratio test to check for convergence of a series.
@@ -41,7 +41,7 @@ Determine if the series $\sum\limits_{n=0}^{\infty} \frac{n^2}{n!}$ converges.
 
 <details>
 <summary>Check your answer</summary>
-<p>Applying the ratio test, we get $\frac{n+1}{n^2}$, which, as $n \rightarrow \infty$, approaches 0. Therefore, this series <strong>converges absolutely</strong>,
+<p>Applying the ratio test, we get $\frac{n+1}{n^2}$, which, as $n \rightarrow \infty$, approaches 0. Therefore, this series <strong>converges absolutely</strong>.</p>
 </details>
 
 # Power Series
@@ -114,6 +114,45 @@ And so the series $1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \ldots$ converg
 <div class="youtube-container">
 <iframe src="https://www.youtube.com/embed/HUOE4aoJ9kg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+
+We have studied the functions $f(x) = \frac{1}{1-x}$ and its "power series representation" $p(x) = \sum\limits_{n=0}^{\infty} x^n$. We notice that $p(x)$ converges $f(x)$ if $\|x\| < 1$.
+
+Specifically, we have looked at **power series centered around $x = 0$**. A power series centered at $x = 0$ looks like a function of the form
+
+$$f(x) = \sum_{n=0}^{\infty} a_n x^n$$
+
+where $a_n$ is an infinite sequence. Since $f(x) = a_0 + a_1 x + a_2 x^2 + \ldots$, if we plug in $x = 0$, we get $f(0) = a_0$, and so $f(0)$ converges! What if $x \neq 0$? There are three possibilities:
+
+1. $f(x)$ might converge for **all** $x$,
+2. $f(x)$ might diverge for **all** $x \neq 0$, or,
+3. there is some real number $R$ such that if $-R < x < R$, then $f(x)$ converges.
+
+That third point can be stated as "$f(x)$ converges in some interval of radius $R$ centered around $0$." If $x = R$ or $x = -R$, $f(x)$ may or may not converge (more specific analysis might be needed for that).
+
+More generally, we could study series centered at any $x$-value. A series centered at $x = 5$ might look like
+
+$$p(x) = \sum_{n=0}^{\infty} a_n (x - 5)^n$$
+
+Or even more generally, a power series centered at $x = x_0$ would look like:
+
+$$p(x) = \sum_{n=0}^{\infty} a_n (x - x_0)^n$$
+
+Notice that $p(x) = a_0 + a_1 (x - x_0) + a_2 (x-x_0)^2 + \ldots$, and so $p(x_0) = a_0 + 0 + 0 + \ldots$. Therefore $p(x_0)$ converges! Similarly, there are three possibilities for whether $p(x)$ converges for $x \neq 0$:
+
+1. $p(x)$ might converge for **all** $x$,
+2. $p(x)$ might diverge for **all** $x \neq x_0$, or,
+3. there is some real number $R$ such that if $-R < x - x_0 < R$, then $f(x)$ converges.
+
+This $R$ is referred to as the **radius of convergence** of the power series $p(x)$ around $x_0$. In case (1), we say that the radius of convergence is $\infty$, and in case (2), the radius of convergence is $0$.
+
+## Determining the radius of convergence
+
+How do we find the radius of convergence? We use the ratio test. For example, let's look at the power series $\sum \frac{x^n}{n}$. Applying the ratio test to the terms of this series, we get:
+
+* $a_{n+1} = \frac{x^{n+1}}{n + 1}$
+* $a_n = \frac{x^n}{n}$
+
+Dividing, we get $\frac{x^{n+1}}{n + 1} \cdot \frac{n}{x^n} = x \cdot \frac{n}{n+1}$. Now we look at the limit as $n \rightarrow \infty$ of $\|x \cdot \frac{n}{n+1} \|$, which is just $\|x\|$. Since the ratio test says that the series converges absolutely if $L < 1$, we see that we must have $\|x\| < 1$. Therefore our radius of convergence is 1.
 
 ## Example: $\frac{x^n}{n!}$
 
