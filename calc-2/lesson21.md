@@ -108,3 +108,13 @@ $$
 \ln(2) &= \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n}
 \end{align}
 $$
+
+And so the series $1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \ldots$ converges to $\ln(2)$.
+
+# Radius of Convergence
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/HUOE4aoJ9kg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+We have studied the functions $f(x) = \frac{1}{1-x}$ and its "power series representation" $p(x) = \sum\limits_{n=0}^{\infty} x^n$. We notice that $p(x)$ converges $f(x)$ if $\|x\| < 1$.
