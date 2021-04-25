@@ -83,3 +83,13 @@ More generally: $p(x)$ converges for all $x$ such that $\|x\| < 1$, and diverges
 </div>
 
 The nice thing about power series is that we can use the normal rules for derivatives and integrals of polynomials. For example, since $p(x) = 1 + x + x^2 + \ldots$, $p^\prime(x) = 1 + 2x + 3x^2 + \ldots$ or $p^\prime(x) = \sum\limits_{n=0}^{\infty} (n+1) x^n$.
+
+Symbolically, we can do something very similar using the closed form for the series. Since $p(x) = \sum\limits_{n=0}^{\infty} x^n$, taking the derivative of each term we get $p^\prime(x) = \sum\limits_{n=1}^{\infty} nx^{n-1}$. Notice that when we take the derivative, the $n = 0$ term goes away (since the derivative of a constant is 0). We can then re-write $\sum\limits_{n=1}^{\infty} nx^{n-1}$ as $\sum\limits_{n=0}^{\infty} (n+1) x^n$, by shifting the value of $n$ over by one.
+
+Similarly, we can integrate, term-by-term, the series $p(x) = 1 + x + x^2 + x^3 + \ldots$ and, since $p(x) = \frac{1}{1 - x}$ when $\|x\| < 1$, this will be the same as integrating $\frac{1}{1 - x}$, at least for those $x$ in that interval.
+
+$$ \int \sum_{n=0}^{\infty} x^n = C + \sum_{n=0}^{\infty} \frac{x^{n+1}}{n+1}$$
+
+Or: $\int p(x) dx = C + \sum\limits_{n=1}^{\infty} \frac{x^n}{n}$
+
+Notice that $\int \frac{1}{1-x} dx = -\ln\|1 - x\| + C$, and so for $\|x\| < 1$, this gives us a power series representation for $\ln\|1 - x\|$. In particular, since, when $x = 0$, $\ln\|1\| = 0$, we have that $-\ln\|1 - x\| = \sum\limit_{n=1}^{\infty} \frac{x^n}{n}$, for all $\|x\| < 1$.
