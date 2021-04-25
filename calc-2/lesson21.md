@@ -99,3 +99,12 @@ This series converges for all $\|x\| < 1$, similar to the series $1 + x + x^2 + 
 If $x = 1$, we get the harmonic series $\sum \frac{1}{n}$, which we know diverges (using the integral test).
 
 If $x = -1$, we get the *alternating* harmonic series $\sum \frac{(-1)^n}{n}$, which converges (using the alternating series test). And now we can actually see why $\sum \frac{(-1)^{n+1}}{n}$ converges to $\ln(2)$:
+
+$$
+\begin{align}
+-\ln(1 - (-1)) &= \sum_{n=1}^{\infty} \frac{(-1)^n}{n} \\
+-\ln(2) &= \sum_{n=1}^{\infty} \frac{(-1)^n}{n} \\
+\ln(2) &= -\sum_{n=1}^{\infty} \frac{(-1)^n}{n} \\
+\ln(2) &= \sum_{n=1}^{\infty} \frac{(-1)^{n+1}{n}
+\end{align}
+$$
