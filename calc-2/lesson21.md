@@ -104,5 +104,7 @@ $$
 \begin{align}
 -\ln(1 - (-1)) &= \sum_{n=1}^{\infty} \frac{(-1)^n}{n} \\
 -\ln(2) &= \sum_{n=1}^{\infty} \frac{(-1)^n}{n} \\
+\ln(2) &= -\sum_{n=1}^{\infty} \frac{(-1)^n}{n} \\
+\ln(2) &= \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n}
 \end{align}
 $$
