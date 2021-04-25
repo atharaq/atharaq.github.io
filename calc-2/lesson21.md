@@ -76,7 +76,7 @@ What do we know about this function?
 
 More generally: $p(x)$ converges for all $x$ such that $\|x\| < 1$, and diverges otherwise. This is because it's a geometric series! In particular, we even know what it converges to: the series $\sum x^n$ is a geometric series with $a = 1$ and $r = x$, and so it converges to $\frac{1}{1 - x}$ for all $\|x\| < 1$.
 
-## $\int (1 + x + x^2 + \ldots) dx$
+## Derivatives and Integrals 
 
 <div class="youtube-container">
 <iframe src="https://www.youtube.com/embed/A5kiabXU7uY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
