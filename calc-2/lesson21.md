@@ -92,4 +92,4 @@ $$ \int \sum_{n=0}^{\infty} x^n = C + \sum_{n=0}^{\infty} \frac{x^{n+1}}{n+1}$$
 
 Or: $\int p(x) dx = C + \sum\limits_{n=1}^{\infty} \frac{x^n}{n}$
 
-Notice that $\int \frac{1}{1-x} dx = -\ln\|1 - x\| + C$, and so for $\|x\| < 1$, this gives us a power series representation for $\ln\|1 - x\|$. In particular, since, when $x = 0$, $\ln\|1\| = 0$, we have that $-\ln\|1 - x\| = \sum\limit_{n=1}^{\infty} \frac{x^n}{n}$, for all $\|x\| < 1$.
+Notice that $\int \frac{1}{1-x} dx = -\ln\|1 - x\| + C$, and so for $\|x\| < 1$, this gives us a power series representation for $\ln\|1 - x\|$. In particular, since, when $x = 0$, $\ln\|1\| = 0$, we have that $-\ln\|1 - x\| = \sum\limits_{n=1}^{\infty} \frac{x^n}{n}$, for all $\|x\| < 1$.
