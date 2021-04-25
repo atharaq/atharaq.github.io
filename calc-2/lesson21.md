@@ -161,3 +161,33 @@ Dividing, we get $\frac{x^{n+1}}{n + 1} \cdot \frac{n}{x^n} = x \cdot \frac{n}{n
 <div class="youtube-container">
 <iframe src="https://www.youtube.com/embed/sI1_eIhps5A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+
+Lastly we look at the series $f(x) = \sum\limits_{n=0}^{\infty} \frac{x^n}{n!}$. This is the series $1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \frac{x^4}{24} + \ldots$ Notice two things about this series:
+
+1. $f(0) = 1$, since $1 + 0 + 0 + \ldots = 1$.
+2. $f^\prime(x) = 1 + \frac{2x}{2} + \frac{3x}{6} + \frac{4x}{24} + \ldots$ and if we simplify these fractions, we'll see: $f^\prime(x) = f(x)$.
+
+In particular, $f(x)$ is a solution to an initial value problem:
+
+* $y^\prime = y$
+* $y(0) = 1$
+
+If we try to solve this using our methods of solving differential equations, we would get $y = e^x$. This means, if the power series $f(x)$ converges, it **must** converge to $e^x$! So let's see where it actually converges by finding the radius of convergence.
+
+Since $a_{n+1} = \frac{x^{n+1}}{(n+1)!}$ and $a_n = \frac{x^n}{n!}$, we can compute the ratio:
+
+$$|\frac{a_{n+1}}{a_n}| = |\frac{x^{n+1}}{(n+1)!} \cdot \frac{n!}{x^n}|$$
+
+Simplifying:
+
+$$\frac{|x|}{n+1}$$
+
+As $n \rightarrow \infty$, this approaches $0$, **no matter what $x$ is**! Therefore this power series **converges absolutely** for every $x$. In particular, we see that $f(x) = e^x$ for all $x$.
+
+Take a look at this animation on Desmos, which shows that as we take more and more terms of this infinite sum, we get a polynomial that approximates the graph of $e^x$ really well:
+
+<div class="desmos-container">
+  <iframe src="https://www.desmos.com/calculator/tt5csokfsm?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
+</div>
+
+Next time we will go the other way: starting with a series
