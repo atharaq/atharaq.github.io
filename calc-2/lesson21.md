@@ -88,8 +88,14 @@ Symbolically, we can do something very similar using the closed form for the ser
 
 Similarly, we can integrate, term-by-term, the series $p(x) = 1 + x + x^2 + x^3 + \ldots$ and, since $p(x) = \frac{1}{1 - x}$ when $\|x\| < 1$, this will be the same as integrating $\frac{1}{1 - x}$, at least for those $x$ in that interval.
 
-$$ \int \sum_{n=0}^{\infty} x^n = C + \sum_{n=0}^{\infty} \frac{x^{n+1}}{n+1}$$
+$$\int \sum_{n=0}^{\infty} x^n = C + \sum_{n=0}^{\infty} \frac{x^{n+1}}{n+1}$$
 
 Or: $\int p(x) dx = C + \sum\limits_{n=1}^{\infty} \frac{x^n}{n}$
 
 Notice that $\int \frac{1}{1-x} dx = -\ln\|1 - x\| + C$, and so for $\|x\| < 1$, this gives us a power series representation for $\ln\|1 - x\|$. In particular, since, when $x = 0$, $\ln\|1\| = 0$, we have that $-\ln\|1 - x\| = \sum\limits_{n=1}^{\infty} \frac{x^n}{n}$, for all $\|x\| < 1$.
+
+This series converges for all $\|x\| < 1$, similar to the series $1 + x + x^2 + \ldots$ What about if $x = 1$ or $x = -1$?
+
+If $x = 1$, we get the harmonic series $\sum \frac{1}{n}$, which we know diverges (using the integral test).
+
+If $x = -1$, we get the *alternating* harmonic series $\sum \frac{(-1)^n}{n}$, which converges (using the alternating series test). And now we can actually see why $\sum \frac{(-1)^{n+1}}{n}$ converges to $\ln(2)$:
