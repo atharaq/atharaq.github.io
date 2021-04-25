@@ -44,3 +44,22 @@ Determine if the series $\sum\limits_{n=0}^{\infty} \frac{n^2}{n!}$ converges.
 <summary>Check your answer</summary>
 <p>Applying the ratio test, we get $\frac{n+1}{n^2}$, which, as $n \rightarrow \infty$, approaches 0. Therefore, this series <strong>converges absolutely</strong>.</p>
 </details>
+
+
+# Power Series
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/niTeSUGQsdc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+Polynomial functions are the easiest functions to work with in calculus. They are continuous and differentiable everywhere, we can use the power rule to take derivatives, and the "reverse" power rule to find antiderivatives. These techniques are so powerful that students often mistake *all* functions for polynomials (perhaps due to a bit of wishful thinking).
+
+It would be nice if we could approximate any function we want using polynomials. Recall that in Calculus I, we found [linear approximations](https://atharaq.github.io/calc-1/lesson14.html#linear-approximations) to functions using derivatives. We can similarly find quadratic approximations or cubic approximations to functions. This is the idea behind **power series** (or more specifically, **Taylor series**).
+
+**Definition**: A **power series** is an infinite sum of polynomials.
+
+For example, we will be studying the following power series:
+
+$$p(x) = \sum_{n = 0}^{\infty} x^n$$
+
+Notice that when we plug in a number for $x$, we get an infinite series, and we can determine if $p(x)$ converges or not for that value of $x$ (using the convergence tests we learned about last week).
