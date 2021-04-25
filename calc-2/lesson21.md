@@ -190,4 +190,4 @@ Take a look at this animation on Desmos, which shows that as we take more and mo
   <iframe src="https://www.desmos.com/calculator/tt5csokfsm?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
 </div>
 
-Next time we will go the other way: starting with a series
+Next time we will go the other way: starting with a function, can we find a power series which approximates it near a point?
