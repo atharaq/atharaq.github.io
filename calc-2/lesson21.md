@@ -19,3 +19,28 @@ First we compute $\frac{a_{n+1}}{a_n}$. Here, $a_{n+1} = \frac{n+1}{2^{n+1}}$ an
 $$\frac{a_{n+1}}{a_n} = \frac{n+1}{2^{n+1}} \cdot \frac{2^n}{n}$$
 
 Simplifying, we get $\frac{n+1}{2n}$ or $\frac{1}{2} + \frac{1}{2n}$. As $n \rightarrow \infty$, this appraoches $\frac{1}{2}$. Since $\frac{1}{2} < 1$, this series **converges absolutely**.
+
+
+## Example 2: $\sum \frac{n^n}{n!}$
+
+* $a_{n+1} = \frac{(n+1)^{n+1}}{(n+1)!}$
+* $a_n = \frac{n^n}{n!}$
+
+So $\frac{a_{n+1}}{a_n} = \frac{(n+1)^{n+1}}{(n+1)!} \cdot \frac{n!}{n^n}$. Simplifying,
+
+$$\frac{a_{n+1}}{a_n} = \frac{(n+1)^{n+1}}{(n+1) \cdot n^n}$$
+
+Since one factor of $n+1$ cancels, we can simplify further:
+
+$$ \frac{(n+1)^n}{n^n} = (\frac{n+1}{n})^n = (1 + \frac{1}{n})^n$$
+
+As $n \rightarrow \infty$, $(1 + \frac{1}{n})^n \rightarrow e$. And since $e > 1$, this series **diverges**.
+
+## Exercise
+
+Determine if the series $\sum\limits_{n=0}^{\infty} \frac{n^2}{n!}$ converges.
+
+<details>
+<summary>Check your answer</summary>
+<p>Applying the ratio test, we get $\frac{n+1}{n^2}$, which, as $n \rightarrow \infty$, approaches 0. Therefore, this series <strong>converges absolutely</strong>.</p>
+</details>
