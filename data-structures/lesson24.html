@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-04-26">
+  <title>Data Structures Lesson 24</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures Lesson 24</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">26 April 2021</p>
+</section>
+
+<section id="guest-lecture" class="title-slide slide level1">
+<h1>Guest Lecture</h1>
+<ul>
+<li>Next week! Monday May 3 (Wellness Day) 2 PM</li>
+<li>“Computational Biology: Using Data Science to Fight Cancer”</li>
+<li>Maysun Hasan, Memorial Sloan Kettering Cancer Center</li>
+<li><a href="https://purchase.zoom.us/meeting/register/tJwodeyqqDkiHd3L8syMj_tgRD-S1zZ9lDgj">Register via Zoom</a></li>
+</ul>
+</section>
+
+<section id="last-time" class="title-slide slide level1">
+<h1>Last time</h1>
+<ul>
+<li>CopyOnWriteArrayList</li>
+<li>ConcurrentHashMap</li>
+</ul>
+</section>
+
+<section id="system-design" class="title-slide slide level1">
+<h1>System Design</h1>
+<p>3 types of technical interview questions:</p>
+<ol type="1">
+<li>Coding</li>
+<li>Algorithms</li>
+<li>System design: “How would you design Twitter?”</li>
+</ol>
+</section>
+
+<section>
+<section id="producer-consumers" class="title-slide slide level1">
+<h1>Producer-Consumers</h1>
+<p>Common asynchronous design pattern.</p>
+<ul>
+<li>Producer <em>produces</em> data</li>
+<li>Consumer <em>consumes</em> data</li>
+<li>Data stored in some buffer</li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p>Alerting system.</p>
+<ul>
+<li>Something bad happens</li>
+<li>Security alert message is “produced”.</li>
+<li>Anyone in the “911 hotline” can “consume” that message</li>
+<li>They then dispatch to the correct system.</li>
+</ul>
+<p>Data structure?</p>
+</section>
+<section id="queues" class="slide level2">
+<h2>Queues</h2>
+<ul>
+<li>Is there a max number of messages that can be stored at a time? Use ArrayBlockingQueue</li>
+<li>If not, do the consumers need to wait until a message is on the queue? (Probably!) Use LinkedBlockingQueue.</li>
+<li>ConcurrentLinkedQueue? What do consumers do if there’s nothing there?</li>
+</ul>
+</section></section>
+<section>
+<section id="programming-paradigms" class="title-slide slide level1">
+<h1>Programming Paradigms</h1>
+<p>Quick poll (participants):</p>
+<p>Have you heard of “imperative” and/or “declarative” programming?</p>
+</section>
+<section id="paradigms" class="slide level2">
+<h2>Paradigms</h2>
+<ul>
+<li><em>Imperative</em> programming: what you’re used to
+<ul>
+<li>Procedural: C</li>
+<li>Object-oriented: Java, C++</li>
+<li>Everything: Python</li>
+</ul></li>
+<li><em>Declarative</em> programming: just say what needs to happen
+<ul>
+<li>SQL, HTML (I guess?)</li>
+<li><em>Functional</em> programming: Lisp, Haskell, F#, …</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="functional-programming" class="title-slide slide level1">
+<h1>Functional Programming</h1>
+<ul>
+<li>Functions are first-class objects</li>
+<li>Complex operations: apply / compose functions</li>
+<li>Functions are <em>pure</em></li>
+</ul>
+</section>
+<section id="pure-functions" class="slide level2">
+<h2>Pure functions</h2>
+<ul>
+<li>Think mathematically</li>
+<li>Result of a function is the same every time it is called on the same input</li>
+<li>No side effects</li>
+<li>Don’t change any <em>state</em> (memory)
+<ul>
+<li>Objects are <em>immutable</em> (variables are constant?)</li>
+</ul></li>
+<li>Loops? (Recursion!)</li>
+</ul>
+</section>
+<section id="why" class="slide level2">
+<h2>Why?</h2>
+<ul>
+<li>Getting more popular nowadays</li>
+<li>Reason: parallelism</li>
+<li>Functions are easy to run in parallel!</li>
+<li>No concurrency issues!</li>
+<li>Concurrency issues usually come from <em>state</em></li>
+</ul>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><img data-src="meme.jpeg" alt="Can’t change mutable state / if you don’t have any variables" /><br />
+</p>
+</section>
+<section id="computability-theory" class="slide level2">
+<h2>Computability Theory</h2>
+<ul>
+<li>Imperative programming: based on <em>Turing machines</em>
+<ul>
+<li>Several “states” in your program, arbitrary large memory space</li>
+<li>Program: based on current state, memory, change your state / memory</li>
+</ul></li>
+<li>Functional programming: based on <em>lambda calculus</em>
+<ul>
+<li>Formal model of computation based on functions</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="java-miscellany" class="title-slide slide level1">
+<h1>Java miscellany</h1>
+<ul>
+<li>Lots of features in “newer” versions of Java</li>
+<li>Maybe we can talk about two: streams and enums</li>
+<li>Enums: not so new!</li>
+<li>Mandatory reading: <em>Effective Java</em> (2017)</li>
+</ul>
+</section>
+<section id="streams" class="slide level2">
+<h2>Streams</h2>
+<ul>
+<li>Java 8: Streams, lambda expressions, method references</li>
+<li>Making Java “functional”</li>
+<li>Stream: “lazy” pipeline.</li>
+<li>Apply function 1, then function 2, then function 3, etc.</li>
+<li>Can parallelize</li>
+</ul>
+</section>
+<section id="example-1" class="slide level2">
+<h2>Example</h2>
+<pre ><code class="java">String list = "[1, 3, 5, 7, 9]";
+int[] intList = Arrays.stream(list.split(",")).map(String::trim).mapToInt(Integer::valueOf).toArray();</code></pre>
+<p>Yikes!</p>
+</section>
+<section id="whats-going-on" class="slide level2">
+<h2>What’s going on</h2>
+<pre ><code class="java">list.split(",")</code></pre>
+</section>
+<section id="part-2" class="slide level2">
+<h2>Part 2</h2>
+<pre ><code class="java">Arrays.stream(array).map(String::trim)</code></pre>
+<ul>
+<li>Create a “pipeline” using the objects in the array.</li>
+<li><code>map</code>: apply a function to the elements of the stream</li>
+<li>returns a new stream (pipeline)</li>
+</ul>
+</section>
+<section id="part-3" class="slide level2">
+<h2>Part 3</h2>
+<pre ><code class="java">// have a stream of Strings now
+stream.mapToInt(Integer::valueOf)</code></pre>
+<ul>
+<li>maps from Strings to Integers</li>
+<li>Now we have an IntStream instead of Stream<String></li>
+<li>Could use Stream<Integer> instead (boxing / slower)</li>
+</ul>
+</section>
+<section id="parallelizing" class="slide level2">
+<h2>Parallelizing?</h2>
+<pre ><code class="java">Array.stream(array).parallel().map(String::trim).mapToInt(Integer::valueOf).toArray();</code></pre>
+<ul>
+<li>Careful when parallelizing streams</li>
+<li>Might not always be worth it.</li>
+</ul>
+</section>
+<section id="mapreduce-hadoop" class="slide level2">
+<h2>MapReduce / Hadoop</h2>
+<p><a href="https://en.wikipedia.org/wiki/MapReduce">MapReduce</a></p>
+<ul>
+<li>“Big Data” on large, distributed servers</li>
+<li>map: apply an operation to each element of the data set</li>
+<li>reduce: summarize</li>
+<li>Developed at Google, open sourced: Hadoop</li>
+<li>Parallelized: data not all in one place!</li>
+<li>maps can be parallel.</li>
+<li>reductions can be parallel (somewhat)</li>
+<li>Final project topic!</li>
+</ul>
+</section></section>
+<section>
+<section id="enums" class="title-slide slide level1">
+<h1>Enums</h1>
+<ul>
+<li>Special class that represents a group of constants</li>
+<li>In C++: really just integers</li>
+<li>In Java: actual objects.</li>
+</ul>
+</section>
+<section id="java-enums" class="slide level2">
+<h2>Java Enums</h2>
+<pre ><code class="java">public enum Operator {
+    PLUS, MINUS, TIMES, DIVIDES;
+}
+</code></pre>
+<p>Why?</p>
+<ul>
+<li>Pre-set list of objects</li>
+<li>Might want to have variables / methods</li>
+</ul>
+</section>
+<section id="more-fancy" class="slide level2">
+<h2>More fancy</h2>
+<pre ><code class="java">public enum Operator {
+  PLUS(Integer::sum), MINUS((x, y) -&gt; x - y),
+  TIMES(x, y) -&gt; x * y), DIVIDES (x, y -&gt; x / y);
+
+  private IntBinaryOperator operator;
+
+  Operator(IntBinaryOperator o) {
+    operator = o;
+  }
+
+  public int operate(int num1, int num2) {
+    return operator.applyAsInt(num1, num2);
+  }
+}</code></pre>
+</section>
+<section id="what" class="slide level2">
+<h2>What?</h2>
+<pre ><code class="java">(x, y) -&gt; x - y</code></pre>
+<ul>
+<li>Lambda expressions</li>
+<li>Functions-as-objects!</li>
+<li>Under the hood?</li>
+</ul>
+</section></section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Groups: pick a topic ASAP!</li>
+<li>This week: dynamic programming</li>
+<li>Next week: work on presentations / papers</li>
+<li>I owe you project 3 + presentation 3 grades</li>
+<li>No presentation 4; feel free to make up old ones</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

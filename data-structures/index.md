@@ -30,3 +30,4 @@ lang: en-US
 * [Lesson 21: Algorithm Design / Intro to concurrency](lesson21.html)
 * [Lesson 22: Concurrency](lesson22.html)
 * [Lesson 23: Concurrent Data Structures](lesson23.html)
+* [Lesson 24: Producer-Consumer / Java miscellany](lesson24.html)
