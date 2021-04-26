@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-04-26">
+  <title>CS2 Lesson 22</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 22</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">26 April 2021</p>
+</section>
+
+<section id="guest-lecture" class="title-slide slide level1">
+<h1>Guest Lecture</h1>
+<ul>
+<li>Next week! Monday May 3 (Wellness Day) 2 PM</li>
+<li>“Computational Biology: Using Data Science to Fight Cancer”</li>
+<li>Maysun Hasan, Memorial Sloan Kettering Cancer Center</li>
+<li><a href="https://purchase.zoom.us/meeting/register/tJwodeyqqDkiHd3L8syMj_tgRD-S1zZ9lDgj">Register via Zoom</a></li>
+</ul>
+</section>
+
+<section>
+<section id="project-3-recap" class="title-slide slide level1">
+<h1>Project 3 Recap</h1>
+<p>Will show my “quick and dirty” version.</p>
+</section>
+<section id="documentation" class="slide level2">
+<h2>Documentation</h2>
+<ul>
+<li>Make sure you explained your smarter strategy!</li>
+<li>Could be in a separate text file, included in the src folder</li>
+<li>Or in the comments of the SmartPlayer class.</li>
+</ul>
+</section>
+<section id="grading" class="slide level2">
+<h2>Grading</h2>
+<p>Reminder of the grading rubric for project 3:</p>
+<ul>
+<li>25% compilation</li>
+<li>25% functionality (all player types work; bidding / raising loop works; correctly determines winner)</li>
+<li>30% OOP design / style (separate components into independent classes; use polymorphism / interfaces correctly, etc)</li>
+<li>20% Documentation: explain the smarter strategy somewhere; explain your OOP design choices in the comments</li>
+</ul>
+</section>
+<section id="reminder" class="slide level2">
+<h2>Reminder</h2>
+<p>If you need to, use your grace time.</p>
+</section></section>
+<section id="binary-search" class="title-slide slide level1">
+<h1>Binary Search</h1>
+<ul>
+<li>Questions from Lesson 21?</li>
+<li>Respond to Lesson 21 on Moodle.</li>
+</ul>
+</section>
+
+<section>
+<section id="demo" class="title-slide slide level1">
+<h1>Demo</h1>
+<p><a href="https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/visualize/">Interactive sorting demo.</a></p>
+</section>
+<section id="pseudocode-running-time" class="slide level2">
+<h2>Pseudocode / running time</h2>
+<p>The algorithm we used was called the “Bubble Sort” algorithm. It’s called this because the bigger elements “bubble up” to the top at each iteration.</p>
+<p><strong>Exercise</strong>: Write pseudo-code for the algorithm we described.</p>
+</section>
+<section id="selection-sort" class="slide level2">
+<h2>Selection Sort</h2>
+<p>Here we describe another algorithm to sort. This algorithm uses the fact that it’s easy to find the smallest element in a list.</p>
+<ul>
+<li>For each <span class="math inline">\(i\)</span>, look for the smallest element in the list between <span class="math inline">\(i\)</span> and the end of the list.</li>
+<li>If we find something smaller than <span class="math inline">\(a_i\)</span>, swap it with the smallest element between <span class="math inline">\(i\)</span> and the end.</li>
+<li>Repeat this until we have looked through all <span class="math inline">\(i\)</span> from <span class="math inline">\(0\)</span> to <span class="math inline">\(n - 1\)</span>.</li>
+</ul>
+<p>Write pseudocode for this algorithm.</p>
+</section>
+<section id="running-times" class="slide level2">
+<h2>Running times</h2>
+<p>Analyze the running times of the two algorithms. Is one better than the other in terms of Big Oh? Fill in the table:</p>
+<p><span class="math display">\[
+\begin{array}{|c|c|}
+\hline
+\text{Algorithm} &amp; \text{Running Time} \\
+\hline
+\text{Bubble Sort} &amp; \\
+\hline
+\text{Selection Sort} &amp; \\
+\hline
+\end{array}
+\]</span></p>
+</section></section>
+<section>
+<section id="divide-and-conquer" class="title-slide slide level1">
+<h1>Divide and conquer</h1>
+<p>It seems like sorting algorithms are <span class="math inline">\(O(n^2)\)</span>. Can we do any better?</p>
+</section>
+<section id="recursion" class="slide level2">
+<h2>Recursion</h2>
+<p>There are several options; most involve <strong>divide-and-conquer</strong> algorithms. Divide-and-conquer means we split the list into smaller parts, and (recursively) sort these smaller lists. There are several ways to do this, we will describe one: the <strong>merge sort</strong> algorithm.</p>
+</section>
+<section id="merge-sort" class="slide level2">
+<h2>Merge sort</h2>
+<ol type="1">
+<li>Split the list in half.</li>
+<li>(Recursively) merge sort each half.</li>
+<li>Merge the two halves to produce one, sorted list.</li>
+</ol>
+<p>Exercise: write pseudocode for merging two lists. We will discuss the running time together.</p>
+</section></section>
+<section id="presentation-2" class="title-slide slide level1">
+<h1>Presentation 2</h1>
+<ul>
+<li>Due <strong>Sunday, May 2</strong></li>
+<li>Focus on one challenging aspect of a larger problem</li>
+<li>Ideally use problems you needed to solve for project 2 or 3.</li>
+<li>Clearly explain the background of the problem, explain the overall, high-level solution, show code, then explain how the code implements your solution.</li>
+</ul>
+</section>
+
+<section>
+<section id="project-4" class="title-slide slide level1">
+<h1>Project 4</h1>
+<p>Final project of the semester: Sorted List implementation.</p>
+<p>You are meant to implement a list structure with the methods:</p>
+<ul>
+<li>insert(): adds an element to the list.</li>
+<li>get(): gets the <span class="math inline">\(i^\text{th}\)</span> smallest element of the list.</li>
+<li>size(): returns the size of the list.</li>
+</ul>
+</section>
+<section id="trade-offs" class="slide level2">
+<h2>Trade-offs</h2>
+<p>You can decide how to implement this. For example, you can keep the elements of the list in sorted order every time you insert (which would make <code>get</code> easier), or you can make <code>insert</code> easier by just adding to the end of the list, but make <code>get</code> harder.</p>
+</section>
+<section id="trade-offs-1" class="slide level2">
+<h2>Trade-offs</h2>
+<p>Suppose we keep the elements sorted every time we insert. What would the best running times be for the insert and get methods?</p>
+</section>
+<section id="trade-offs-2" class="slide level2">
+<h2>Trade-offs</h2>
+<p>Now suppose we just add to the end of the list. Its running time is (amortized) <span class="math inline">\(O(1)\)</span>. How would we implement <code>get</code>?</p>
+<div class="fragment">
+<p>There is a data structure one can use to get (average-case) <span class="math inline">\(O(\log{n})\)</span> insertion and <span class="math inline">\(O(\log{n})\)</span> get (not covered in this class, but discussed in MAT 3710: Data Structures).</p>
+</div>
+</section>
+<section id="written-part" class="slide level2">
+<h2>Written Part</h2>
+<ul>
+<li>Determine the asymptotic running time (“Big Oh”) of all of the functions.</li>
+<li>Explain the tradeoffs:
+<ul>
+<li>Make get faster at expense of insert?</li>
+<li>Why would you want that?</li>
+<li>What kind of application would that be appropriate for?</li>
+</ul></li>
+</ul>
+<p><strong>Note</strong>: this written part should be in either a txt file or a Word doc, saved in the “src” folder.</p>
+</section>
+<section id="grading-1" class="slide level2">
+<h2>Grading</h2>
+<ul>
+<li>25% for compiling</li>
+<li>40% for the programming part (insert / get / size / Main method)
+<ul>
+<li>Includes standard “good style” considerations</li>
+</ul></li>
+<li>35% for the written part
+<ul>
+<li>10% each: Big Oh of each method</li>
+<li>5%: tradeoffs</li>
+</ul></li>
+</ul>
+<p><strong>Due Sunday, May 16</strong> at 11:59 PM.</p>
+</section></section>
+<section id="coming-up" class="title-slide slide level1">
+<h1>Coming Up</h1>
+<ul>
+<li>Mergesort algorithm</li>
+<li>Running time of mergesort</li>
+<li>Intro to data structures</li>
+<li>Final Exam review</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

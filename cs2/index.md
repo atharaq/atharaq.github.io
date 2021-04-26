@@ -28,3 +28,4 @@ lang: en-US
 * [Lesson 19: Recursion (again)](lesson19.html)
 * [Lesson 20: Analysis of Algorithms](lesson20.html)
 * [Lesson 21: Guessing Game / Binary Search Activity](lesson21.html)
+* [Lesson 22: Sorting](lesson22.html)

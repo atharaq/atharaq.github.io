@@ -25,3 +25,4 @@ layout: default
 * [Lesson 18: Describing sequences](lesson18.html)
 * [Lesson 19: Infinite Series](lesson19.html)
 * [Lesson 20: Convergence Tests](lesson20.html)
+* [Lesson 21: Power Series](lesson21.html)
