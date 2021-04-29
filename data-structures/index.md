@@ -31,3 +31,4 @@ lang: en-US
 * [Lesson 22: Concurrency](lesson22.html)
 * [Lesson 23: Concurrent Data Structures](lesson23.html)
 * [Lesson 24: Producer-Consumer / miscellany](lesson24.html)
+* [Lesson 25: Dynamic Programming](lesson25.html)
