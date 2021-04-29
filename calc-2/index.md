@@ -26,3 +26,4 @@ layout: default
 * [Lesson 19: Infinite Series](lesson19.html)
 * [Lesson 20: Convergence Tests](lesson20.html)
 * [Lesson 21: Power Series](lesson21.html)
+* [Lesson 22: Taylor Series](lesson22.html)

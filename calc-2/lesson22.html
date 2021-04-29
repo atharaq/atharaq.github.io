@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-04-29">
+  <title>Calc II Lesson 22</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Calc II Lesson 22</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">29 April 2021</p>
+</section>
+
+<section id="reminder" class="title-slide slide level1">
+<h1>Reminder</h1>
+<ul>
+<li>Guest Lecture May 3 (2 PM)</li>
+<li>“Computational Biology: Using Data Science to Fight Cancer”</li>
+<li>Maysun Hasan, Memorial Sloan Kettering Cancer Center</li>
+<li><a href="https://purchase.zoom.us/meeting/register/tJwodeyqqDkiHd3L8syMj_tgRD-S1zZ9lDgj">Register via Zoom</a></li>
+<li>Monday is a wellness day: no lesson / work for this class.</li>
+</ul>
+</section>
+
+<section>
+<section id="power-series" class="title-slide slide level1">
+<h1>Power Series</h1>
+<p>Last time:</p>
+<ul>
+<li>Power series</li>
+<li>Radius of convergence (ratio test)</li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p><span class="math display">\[p(x) = \sum_{n=0}^{\infty} \frac{x^n}{n!}\]</span></p>
+<ul>
+<li>Or: <span class="math inline">\(p(x) = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \ldots\)</span>.</li>
+<li>Radius of convergence = <span class="math inline">\(\infty\)</span></li>
+<li>Notice: <span class="math inline">\(p^\prime(x) = p(x)\)</span>, <span class="math inline">\(p(0) = 1\)</span></li>
+<li>So: <span class="math inline">\(p(x) = e^x\)</span>.</li>
+<li>Today: go the other way?</li>
+</ul>
+</section></section>
+<section>
+<section id="taylor-series" class="title-slide slide level1">
+<h1>Taylor series</h1>
+<ul>
+<li>Start with <span class="math inline">\(f(x) = e^x\)</span>.</li>
+<li>Find <span class="math inline">\(g(x) = a_0 + a_1 x + a_2 x^2 + \ldots\)</span></li>
+<li>Or <span class="math inline">\(g(x) = \sum\limits_{n=0}^{\infty} a_n x^n\)</span> (centered at <span class="math inline">\(x = 0\)</span>)</li>
+</ul>
+</section>
+<section id="idea" class="slide level2">
+<h2>Idea</h2>
+<ul>
+<li>We want <span class="math inline">\(g(x) = f(x)\)</span> (for as many <span class="math inline">\(x\)</span> as possible)</li>
+<li>What is the best <em>polynomial</em> representation of <span class="math inline">\(f(x)\)</span> near <span class="math inline">\(x = 0\)</span>?</li>
+<li>Degree 1 approximation: <span class="math inline">\(y = f(0) + f^\prime(0)x\)</span></li>
+<li>Degree 2?</li>
+</ul>
+</section>
+<section id="linear-approximation" class="slide level2">
+<h2>Linear approximation</h2>
+<p><span class="math display">\[ y = a_0 + a_1x\]</span></p>
+<ul>
+<li>Want <span class="math inline">\(y(0) = f(0)\)</span> and <span class="math inline">\(y^\prime(0) = f^\prime(0)\)</span></li>
+<li>Hence: <span class="math inline">\(a_0 = f(0)\)</span>, <span class="math inline">\(a_1 = f^\prime(0)\)</span></li>
+<li>Higher degrees? Want:
+<ul>
+<li><span class="math inline">\(g^\prime(0) = f^\prime(0)\)</span></li>
+<li><span class="math inline">\(g^{\prime\prime}(0) = f^{\prime\prime}(0)\)</span></li>
+<li><span class="math inline">\(g^{\prime\prime\prime}(0) = f^{\prime\prime\prime}(0)\)</span></li>
+<li>etc.</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="example-1" class="title-slide slide level1">
+<h1>Example</h1>
+<p>Find a power series representation for <span class="math inline">\(f(x) = e^x\)</span>.</p>
+<p><span class="math display">\[g(x) = a_0 + a_1x + a_2 x^2 + a_3 x^3 + \ldots\]</span></p>
+<ul>
+<li><span class="math inline">\(g(0) = f(0)\)</span> means <span class="math inline">\(a_0 = f(0)\)</span></li>
+<li><span class="math inline">\(g^\prime(x) = a_1 + 2a_2x + 3a_3 x^2 + \ldots\)</span></li>
+<li><span class="math inline">\(g^\prime(0) = a_1 = f^\prime(0)\)</span></li>
+</ul>
+</section>
+<section id="notice" class="slide level2">
+<h2>Notice</h2>
+<p>Since <span class="math inline">\(f^\prime(x) = e^x\)</span>, these are easy to see: <span class="math inline">\(a_0 = 1, a_1 = 1\)</span>.</p>
+<p>If we stop here, we get <span class="math inline">\(g(x) = 1 + x\)</span>, a <strong>linear approximation</strong> of <span class="math inline">\(f(x) = e^x\)</span>.</p>
+</section>
+<section id="more-terms" class="slide level2">
+<h2>More terms</h2>
+<p>Again: <span class="math inline">\(f^{\prime\prime}(x) = e^x\)</span>, so <span class="math inline">\(f^{\prime\prime}(0) = 1\)</span>.</p>
+<ul>
+<li><span class="math inline">\(g^{\prime\prime}(x) = 2a_2 + 6a_3x + \ldots\)</span></li>
+<li><span class="math inline">\(g^{\prime\prime}(0) = 2a_2 = 1\)</span></li>
+<li>So: <span class="math inline">\(a_2 = \frac{1}{2}\)</span></li>
+</ul>
+<p>If we stop? <span class="math inline">\(g(x) = 1 + x + \frac{x^2}{2}\)</span>. Degree two approximation.</p>
+</section>
+<section id="even-more-terms" class="slide level2">
+<h2>Even more terms</h2>
+<ul>
+<li><span class="math inline">\(g^{\prime\prime\prime}(x) = 6a_3 + \ldots\)</span></li>
+<li>At <span class="math inline">\(x = 0\)</span>, <span class="math inline">\(6a_3 = 1\)</span>, so <span class="math inline">\(a_3 = \frac{1}{6}\)</span>.</li>
+</ul>
+<p>Now: <span class="math inline">\(g(x) = 1 + x + \frac{x^2}{2} + \frac{x^3}{6}\)</span>.</p>
+</section>
+<section id="pattern" class="slide level2">
+<h2>Pattern?</h2>
+<p><span class="math display">\[g(x) = \sum_{n=0}^{\infty} a_n x^n\]</span></p>
+<ul>
+<li><span class="math inline">\(g^\prime(x) = \sum_{n=1}^{\infty} n \cdot a_n x^{n - 1}\)</span>.</li>
+<li><span class="math inline">\(g^{\prime\prime}(x) = \sum_{n=2}^{\infty} (n \cdot (n - 1) \cdot a_n) x^{n - 2}\)</span>.</li>
+<li><span class="math inline">\(g^{\prime\prime\prime}(x) = \sum_{n=3}^{\infty} (n \cdot (n - 1) \cdot (n - 2) \cdot a_n) x^{n - 3}\)</span>.</li>
+<li>etc.</li>
+</ul>
+</section>
+<section id="plug-in" class="slide level2">
+<h2>Plug in?</h2>
+<p>Plug in <span class="math inline">\(x = 0\)</span> to each of these. Only term that remains is the <span class="math inline">\(x^0\)</span> term:</p>
+<ul>
+<li><span class="math inline">\(g^{\prime}(0) = a_1\)</span></li>
+<li><span class="math inline">\(g^{\prime\prime}(0) = 2a_2\)</span></li>
+<li><span class="math inline">\(g^{\prime\prime\prime}(0) = 6a_3\)</span></li>
+</ul>
+</section></section>
+<section>
+<section id="taylor-series-1" class="title-slide slide level1">
+<h1>Taylor Series</h1>
+<p>In general, if <span class="math inline">\(f(0), f^\prime(0), f^{\prime\prime}(0)\)</span>, etc. all exist, we can form the <strong>Taylor series</strong> centered at <span class="math inline">\(x = 0\)</span> by letting:</p>
+<ul>
+<li><span class="math inline">\(a_0 = f(0)\)</span></li>
+<li><span class="math inline">\(a_1 = f^\prime(0)\)</span></li>
+<li><span class="math inline">\(a_2 = \frac{f^{\prime\prime}(0)}{2}\)</span></li>
+<li><span class="math inline">\(a_3 = \frac{f^{\prime\prime\prime}(0)}{6}\)</span></li>
+<li><span class="math inline">\(a_4 = \frac{f^{(4)}(0)}{24}\)</span> (fourth derivative)</li>
+</ul>
+</section>
+<section id="formula" class="slide level2">
+<h2>Formula</h2>
+<p>So the Taylor series for <span class="math inline">\(f(x)\)</span> centered at <span class="math inline">\(x = 0\)</span> is:</p>
+<p><span class="math display">\[\sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!} x^n\]</span></p>
+<p>(We can then try to find a closed form for these terms, and ask where it converges, etc.)</p>
+</section></section>
+<section>
+<section id="exercise" class="title-slide slide level1">
+<h1>Exercise</h1>
+<p>Find a Taylor series representation for <span class="math inline">\(f(x) = \cos(x)\)</span>.</p>
+<p>Hints:</p>
+<ul>
+<li>First find <span class="math inline">\(f^{\prime}(x), f^{\prime\prime}(x)\)</span>, etc. There is a pattern.</li>
+<li>Plug in <span class="math inline">\(x = 0\)</span> to each of these to find <span class="math inline">\(a_0, a_1, a_2, a_3\)</span>, etc.</li>
+<li>Write it out as <span class="math inline">\(\sum a_n x^n\)</span></li>
+<li>See if you can find a closed form expression.</li>
+</ul>
+</section>
+<section id="solution" class="slide level2">
+<h2>Solution</h2>
+<ul>
+<li>Derivatives: <span class="math inline">\(\cos(x), -\sin(x), -\cos(x), \sin(x)\)</span>, repeating forever.</li>
+<li>Plugging in 0: <span class="math inline">\(1, 0, -1, 0, \ldots\)</span></li>
+<li>Odd terms disappear!</li>
+<li>So: <span class="math inline">\(1 - \frac{x^2}{2} + \frac{x^4}{4!} - \ldots\)</span></li>
+<li>Closed form for <span class="math inline">\(1, \frac{-1}{2}, \frac{1}{4!}, \frac{-1}{6!}, \ldots\)</span>?</li>
+</ul>
+</section>
+<section id="closed-form" class="slide level2">
+<h2>Closed form</h2>
+<ul>
+<li>Alternating reciprocals of even factorials.</li>
+<li><span class="math inline">\(\frac{(-1)^n}{(2n)!}\)</span></li>
+</ul>
+<p>So our closed form is:</p>
+<p><span class="math display">\[g(x) = \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n)!} x^{2n}\]</span></p>
+<p>(Notice that the power of <span class="math inline">\(x\)</span> matches the factorial. Only even powers show up here.)</p>
+</section>
+<section id="graph" class="slide level2">
+<h2>Graph</h2>
+<iframe src="https://www.desmos.com/calculator/sy42p5jw2o?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+</section>
+<section id="radius-of-convergence" class="slide level2">
+<h2>Radius of Convergence</h2>
+<p>Ratio test:</p>
+<ul>
+<li><span class="math inline">\(a_{n+1} = \frac{(-1)^{n+1}}{2(n+1)!} x^{2(n+1)}\)</span></li>
+<li><span class="math inline">\(a_{n} = \frac{(-1)^{n}}{2n)!} x^{2n)}\)</span></li>
+<li>Divide: <span class="math inline">\(\frac{-x^2}{(2n+2)(2n+1)}\)</span></li>
+<li>Absolute values and limits: as <span class="math inline">\(n \rightarrow \infty\)</span>, this approaches <span class="math inline">\(0\)</span>.</li>
+<li>Absolutely convergent.</li>
+</ul>
+</section>
+<section id="derivative" class="slide level2">
+<h2>Derivative?</h2>
+<p><span class="math display">\[f(x) = 1 - \frac{x^2}{2} + \frac{x^4}{4!} - \frac{x^6}{6!} + \ldots\]</span></p>
+<ul>
+<li>Derivative: <span class="math inline">\(f^\prime(x) = -x + \frac{x^3}{3!} - \frac{x^5}{5!} + \ldots\)</span></li>
+<li>We know: <span class="math inline">\(f^\prime(x) = -\sin(x)\)</span>.</li>
+<li>So: Taylor series for <span class="math inline">\(\sin(x)\)</span>?</li>
+</ul>
+</section></section>
+<section>
+<section id="arctan" class="title-slide slide level1">
+<h1>Arctan</h1>
+<ul>
+<li>Taylor series for <span class="math inline">\(\arctan(x)\)</span>? Not so easy.</li>
+<li>Derivative of <span class="math inline">\(\arctan(x)\)</span> is <span class="math inline">\(\frac{1}{1 + x^2}\)</span></li>
+<li>Taylor series for <span class="math inline">\(\frac{1}{1 + x^2}\)</span>?</li>
+<li>Also not so easy.</li>
+</ul>
+</section>
+<section id="what-about" class="slide level2">
+<h2>What about?</h2>
+<ul>
+<li>Taylor series for <span class="math inline">\(\frac{1}{1-x} = 1 + x + x^2 + \ldots\)</span></li>
+<li>Taylor series for <span class="math inline">\(\frac{1}{1 - (-(x^2))}\)</span>?</li>
+<li><span class="math inline">\(1 + (-x^2) + (-x^2)^2 + \ldots\)</span></li>
+<li>Or: <span class="math inline">\(1 - x^2 + x^4 - x^6 + \ldots\)</span></li>
+</ul>
+</section>
+<section id="arctan-1" class="slide level2">
+<h2>arctan</h2>
+<ul>
+<li>We know the Taylor series for the derivative.</li>
+<li>Integrate: <span class="math inline">\(\int (1 - x^2 + x^4 - \ldots)dx = C + x - \frac{x^3}{3} + \frac{x^5}{5} - \ldots\)</span></li>
+<li><span class="math inline">\(\arctan(0) = 0\)</span>, so <span class="math inline">\(C = 0\)</span>.</li>
+<li><span class="math inline">\(x - \frac{x^3}{3} + \frac{x^5}{5} - \ldots\)</span></li>
+<li>Closed form?</li>
+</ul>
+<p><span class="math display">\[\sum_{n=0}^{\infty} \frac{(-1)^n}{2n+1} x^{2n+1}\]</span></p>
+</section>
+<section id="radius-of-convergence-1" class="slide level2">
+<h2>Radius of convergence?</h2>
+<p>Ratio test:</p>
+<p><span class="math display">\[ |\frac{(-1)^{n+1} x^{2n+3}}{2n+3} \cdot \frac{2n+1}{(-1)^n x^{2n+1}} | \]</span></p>
+<p>Simplifies:</p>
+<p><span class="math display">\[ x^2 \frac{2n+1}{2n+3}\]</span></p>
+</section>
+<section id="ratio-test" class="slide level2">
+<h2>Ratio Test</h2>
+<ul>
+<li>As <span class="math inline">\(n \rightarrow \infty\)</span>, <span class="math inline">\(x^2 \frac{2n+1}{2n+3} \rightarrow x^2\)</span>.</li>
+<li>Ratio test: converges if <span class="math inline">\(x^2 &lt; 1\)</span>.</li>
+<li>That means: <span class="math inline">\(-1 &lt; x &lt; 1\)</span>.</li>
+<li>Endpoints? Specifically, <span class="math inline">\(x = 1\)</span>?</li>
+</ul>
+</section>
+<section id="x-1" class="slide level2">
+<h2>x = 1?</h2>
+<p>Does this converge at <span class="math inline">\(x = 1\)</span>? Yes: alternating series test.</p>
+<p><span class="math display">\[1 - \frac{1}{3} + \frac{1}{5} - \ldots\]</span></p>
+<p>But <span class="math inline">\(\arctan(1) = \frac{\pi}{4}\)</span>!</p>
+</section></section>
+<section id="coming-up" class="title-slide slide level1">
+<h1>Coming up</h1>
+<ul>
+<li>Exam 3 sent out tomorrow (due next Friday)</li>
+<li>Review next Thursday</li>
+<li>Final exam sent out 5/10 (Monday).</li>
+<li>Due (tentatively) 5/13 (Thursday).</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
