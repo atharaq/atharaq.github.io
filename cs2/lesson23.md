@@ -110,3 +110,15 @@ Test it out with a main method that creates an (unsorted) array and attempts to 
 <div class="youtube-container">
 <iframe src="https://www.youtube.com/embed/BmUFrtA7fco" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+
+# Next time
+
+Next week, we will study data structures. A **data structure** is a way of organizing data in memory. We have seen two important kinds of data structures already: arrays and ArrayList.
+
+A **linked list** is another kind of list structure.
+
+<img src="singly_linked_list.png" alt="Singly linked list diagram, Wikimedia Commons" class="noreverse" />
+
+The data is organized into **nodes**. Each node has a data item and a link to the next node. (The last node links to `null`.)
+
+We will see how to implement these kinds of data structures, as well as how using different data structures (arrays vs linked lists) could affect the kind of algorithm we might use to solve a problem.
