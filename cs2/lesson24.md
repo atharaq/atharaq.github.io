@@ -27,7 +27,9 @@ On CodingRooms, create a "singly" linked list class using the `Node` class. It s
 
 How do we do these things? To add a data element to the beginning of the list: create a new Node (with the correct data value), have it link to the old `head` variable, and update that head variable to the new node.
 
-(picture)
+<img class="noreverse" src="linked-list-add.jpeg" alt="Adding 2 to a linked list" />
+
+For example, in this picture, we created a new node with data item 2, had it point to the old head, and changed `head` to point to the 2 node.
 
 What about size? We can figure out the size of a linked list by counting. Using a while loop, keep track of a "current" node and, as long as the node we're looking at is not null, advance to the next node and increment a counter.
 
@@ -72,11 +74,10 @@ In addition, update your `size` method written previously to run in $O(1)$ time.
 
 To truly have a list structure, we should be able to access any element of the list. For example, if I add $5, 10, 3, 7$ to my list, I should be able to call `list.get(1)` and it should return $10$.
 
-(picture)
+<img class="noreverse" src="list-get-1.jpeg" alt="Linked List with 5 -> 10 -> 3 -> 7" />
 
 * What is the running time (in terms of Big Oh) of the `get` method in the `ArrayList` class?
 * What is the best running time we can have for the `get` method in our linked list class? Write pseudocode for this method. Record this in your **response on Moodle**.
-
 
 In general, a structure in which we can access the $i^{\text{th}}$ element in constant time is said to support **random access**. Arrays and ArrayLists support random access, while LinkedLists support *sequential* access.
 
