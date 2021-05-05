@@ -6,6 +6,10 @@
 
 # Linked Lists
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/DZ21H6nq-Zo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 A **data structure** is a way of organizing data in memory. We have seen two important kinds of data structures already: arrays and ArrayList.
 
 * Arrays store a *fixed* amount of data contiguously.
@@ -18,6 +22,10 @@ A **linked list** is another kind of list structure.
 In a linked list, data is organized into **nodes**. Each node has a *data* item and a *link* to the next node. (The last node links to `null`.)
 
 ## Exercise
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/hWKcyIT-5GM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 On CodingRooms, create a "singly" linked list class using the `Node` class. It should store a reference to the "head" node. First just implement the following operations:
 
@@ -37,10 +45,6 @@ Test out your class using the main method provided.
 
 ## Running Time
 
-<div class="youtube-container">
-
-</div>
-
 * What is the running time of the `addFirst` method?
 * What is the running time of the `size` method?
 
@@ -57,6 +61,10 @@ If we design the class well, we can support this operation in **constant time** 
     </details>
 </details>
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/m1iK1BGYC5E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 ## Exercise (Part 2)
 
 Implement the following methods. They should run in $O(1)$ time:
@@ -69,7 +77,7 @@ In addition, update your `size` method written previously to run in $O(1)$ time.
 # `get` method
 
 <div class="youtube-container">
-
+<iframe src="https://www.youtube.com/embed/BPcLuOb_SVc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 To truly have a list structure, we should be able to access any element of the list. For example, if I add $5, 10, 3, 7$ to my list, I should be able to call `list.get(1)` and it should return $10$.
