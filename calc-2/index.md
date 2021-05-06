@@ -27,3 +27,4 @@ layout: default
 * [Lesson 20: Convergence Tests](lesson20.html)
 * [Lesson 21: Power Series](lesson21.html)
 * [Lesson 22: Taylor Series](lesson22.html)
+* [Lesson 23: Review](lesson23.html)

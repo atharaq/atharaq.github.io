@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-05-06">
+  <title>Calc II Lesson 23</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Calc II Lesson 23</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">6 May 2021</p>
+</section>
+
+<section id="winner" class="title-slide slide level1">
+<h1>Winner!</h1>
+<div style="width: 30%; margin-left: 35%;">
+<p><img src="zeno-meme.png" alt="Zeno's paradox cartoon"/></p>
+</div>
+<p>(<span class="citation" data-cites="scigags">@scigags</span> on instagram / courtesy of Tasiyah Essop)</p>
+</section>
+
+<section>
+<section id="problem" class="title-slide slide level1">
+<h1>Problem?</h1>
+<p><img src="trollpi.jpeg" alt="Problem with limits?" /></p>
+</section>
+<section id="perimeter" class="slide level2">
+<h2>Perimeter</h2>
+<ul>
+<li>How is perimeter calculated?</li>
+<li>Assume that the shapes are given by <em>parametric equations</em>.</li>
+<li>Find the arc length of those parametric equations:</li>
+</ul>
+<p><span class="math display">\[ \int \sqrt{(x^\prime(t))^2 + (y^\prime(t))^2} dt \]</span></p>
+<p>What happens?</p>
+</section>
+<section id="moral" class="slide level2">
+<h2>Moral</h2>
+<ul>
+<li>There are lots of intuitive arguments regarding limits that don’t hold up.</li>
+<li>The limit of a sequence of integrals is not necessarily equal to the integral of the limit of the sequence.</li>
+<li>These kinds of counterintuitive ideas are explored in real analysis (not offered here).</li>
+<li>This is why it took so long (in history) for limits to be made rigorous!</li>
+</ul>
+</section></section>
+<section>
+<section id="topics" class="title-slide slide level1">
+<h1>Topics</h1>
+<ul>
+<li>Integration techniques (substitution, parts, partial fractions, trig integrals, improper integrals)</li>
+<li>Applications (Center of mass, areas between curves, volumes)</li>
+<li>Differential equations</li>
+<li>Parametric and polar</li>
+<li>Sequences and series</li>
+</ul>
+</section>
+<section id="exam-questions" class="slide level2">
+<h2>Exam questions</h2>
+<ul>
+<li>Exam 3 is your best study guide for the final.</li>
+<li>Questions on the exam?</li>
+<li>Happy to go over topics based on those questions.</li>
+<li>(Not necessarily going over the exact question)</li>
+</ul>
+</section></section>
+<section>
+<section id="fun-stuff" class="title-slide slide level1">
+<h1>Fun stuff</h1>
+<ul>
+<li>Complex powers?</li>
+<li><span class="math inline">\(e^{i\pi}\)</span>?</li>
+<li>Use the Taylor series!</li>
+</ul>
+</section>
+<section id="taylor-series" class="slide level2">
+<h2>Taylor series</h2>
+<p><span class="math display">\[\sum_{n=0}^{\infty} \frac{(i\cdot \pi)^n}{n!}\]</span></p>
+<ul>
+<li><span class="math inline">\(\sum \frac{x^n}{n!}\)</span> converges <strong>absolutely</strong> for <strong>every</strong> <span class="math inline">\(x\)</span>, including complex numbers!</li>
+<li>Can just use the Taylor series then to define <span class="math inline">\(e\)</span> to imaginary / complex powers!</li>
+</ul>
+<p><span class="math display">\[1 + (i \pi) + \frac{i^2 \pi^2}{2} + \frac{i^3 \pi^3}{6} + \ldots\]</span></p>
+</section>
+<section id="hmm" class="slide level2">
+<h2>Hmm…</h2>
+<p>Notice that <span class="math inline">\(i^2 = -1\)</span>, <span class="math inline">\(i^3 = -i\)</span>, <span class="math inline">\(i^4 = 1\)</span>, etc. So this simplifies!</p>
+<p><span class="math display">\[ 1 + i\pi - \frac{\pi^2}{2} - \frac{i\pi^3}{6} + \frac{\pi^4}{4!} - \ldots \]</span></p>
+<ul>
+<li>Kind-of alternating series? Not exactly?</li>
+<li>Sometimes <span class="math inline">\(i\)</span> is there, sometimes not?</li>
+</ul>
+</section>
+<section id="separate-real-and-complex" class="slide level2">
+<h2>Separate real and complex</h2>
+<p><span class="math inline">\(i\)</span> to any even power will be <span class="math inline">\(\pm 1\)</span>. The <em>real part</em> of the above?</p>
+<p><span class="math display">\[ 1 - \frac{\pi^2}{2} + \frac{\pi^4}{4!} - \frac{\pi^6}{6!} + \ldots\]</span></p>
+<p>Does this look like something?</p>
+</section>
+<section id="real-complex-parts" class="slide level2">
+<h2>Real / complex parts</h2>
+<p><span class="math display">\[\sum_{n=0}^{\infty} \frac{(-1)^n \pi^{2n}}{(2n)!} = ?\]</span></p>
+<p><span class="math display">\[i \sum_{n=0}^{\infty} \frac{(-1)^n \pi^{2n+1}}{(2n+1)!} = ?\]</span></p>
+</section></section>
+<section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Exam 3 due tomorrow</li>
+<li>Final Exam sent out tomorrow</li>
+<li>Due <strong>next Friday</strong> 5/14 (date change). (My Eid present to you all.)</li>
+<li>Office hours tomorrow, Tuesday, plus by appointment next Friday.</li>
+</ul>
+</section>
+<section id="now" class="slide level2">
+<h2>Now</h2>
+<ol type="1">
+<li>Thank you!!!</li>
+<li>Take 10 minutes (these last 10 minutes) to fill out the course evaluations! (Sent over email.)</li>
+</ol>
+<p>(If you’re busy and need the time for other things, just make sure to fill it out by next <strong>Wednesday</strong> 5/12)</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
