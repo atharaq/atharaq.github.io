@@ -30,3 +30,4 @@ lang: en-US
 * [Lesson 21: Guessing Game / Binary Search Activity](lesson21.html)
 * [Lesson 22: Sorting](lesson22.html)
 * [Lesson 23: Mergesort](lesson23.html)
+* [Lesson 24: Data structures](lesson24.html)
