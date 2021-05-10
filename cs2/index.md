@@ -31,3 +31,4 @@ lang: en-US
 * [Lesson 22: Sorting](lesson22.html)
 * [Lesson 23: Mergesort](lesson23.html)
 * [Lesson 24: Data structures](lesson24.html)
+* [Lesson 25: Review](lesson25.html)

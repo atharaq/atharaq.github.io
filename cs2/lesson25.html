@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2021-05-10">
+  <title>CS2 Lesson 25</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 25</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">10 May 2021</p>
+</section>
+
+<section>
+<section id="questions" class="title-slide slide level1">
+<h1>Questions?</h1>
+<ul>
+<li>Project 4 questions?</li>
+<li>LinkedList questions?</li>
+</ul>
+</section>
+<section id="addfirst" class="slide level2">
+<h2>addFirst</h2>
+<ul>
+<li>Create a new Node, point to old head.</li>
+<li>Update old head.</li>
+<li>What if <code>tail == null</code>?</li>
+<li>Update <code>size</code></li>
+<li>Running time?</li>
+</ul>
+</section>
+<section id="addlast" class="slide level2">
+<h2>addLast</h2>
+<ul>
+<li>Create a new Node, point to <code>null</code>.</li>
+<li>If <code>head == null</code>? (edge case)</li>
+<li>If <code>tail == null</code>? (edge case)</li>
+<li>If <code>tail != null</code>? (normal case)</li>
+<li>Running time?</li>
+</ul>
+</section></section>
+<section>
+<section id="final-exam" class="title-slide slide level1">
+<h1>Final Exam</h1>
+<ul>
+<li>Sent out tomorrow</li>
+<li>Due next <strong>Monday</strong>, 5/17.</li>
+<li>Today: review.</li>
+</ul>
+</section>
+<section id="open-book-open-notes" class="slide level2">
+<h2>“Open book / open notes”</h2>
+<ul>
+<li>My notes, textbook, <a href="https://docs.oracle.com/en/java/javase/15/docs/api/index.html">Java API</a>: fine</li>
+<li>Other resources?
+<ul>
+<li><strong>Cite them</strong>. With URLs!</li>
+<li>Nothing that answers the question directly.</li>
+<li>Use your judgment.</li>
+<li>In doubt? Ask me.</li>
+</ul></li>
+</ul>
+</section>
+<section id="review" class="slide level2">
+<h2>Review</h2>
+<ul>
+<li>Practice final posted on Moodle.</li>
+<li>Let’s go over some of these.</li>
+</ul>
+</section></section>
+<section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Project 4 due Sunday.</li>
+<li>Final Exam due Monday.</li>
+<li>Use your time wisely!
+<ul>
+<li>Office hours tomorrow.</li>
+<li>By appointment on Friday and next Monday.</li>
+</ul></li>
+</ul>
+</section>
+<section id="now" class="slide level2">
+<h2>Now</h2>
+<ol type="1">
+<li>Thank you!!!</li>
+<li>Take 10 minutes (these last 10 minutes) to fill out the course evaluations! (Sent over email.)</li>
+</ol>
+<p>(If you’re busy and need the time for other things, just make sure to fill it out by <strong>Wednesday</strong> 5/12)</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
