@@ -14,7 +14,9 @@ Last time, we discussed graphs of polar curves. In the video above, I go through
 
 Follow along and take a look at the slides from last time:
 
-* [Deriving the formula slide](https://atharaq.github.io/calc-2/lesson16.html#/arc-lengths)
+* [Deriving the formula slide 1](https://atharaq.github.io/calc-2/lesson16.html#/arc-lengths)
+* [Deriving the formula slide 2](https://atharaq.github.io/calc-2/lesson16.html#/similarly)
+* [Deriving the formula slide 1](https://atharaq.github.io/calc-2/lesson16.html#/add-them)
 * [Formula and example](https://atharaq.github.io/calc-2/lesson16.html#/polar-arc-length)
 
 I go through the above example in the following video:
