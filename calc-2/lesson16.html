@@ -205,15 +205,25 @@ Locations on the plane be thought of as vectors: the magnitude is <span class="m
 <h2>Arc Lengths</h2>
 <ul>
 <li>Can use parametric: <span class="math inline">\(s = \int_a^b \sqrt{(x^\prime(\theta))^2 + (y^\prime(\theta))^2} d\theta\)</span></li>
-<li>Plug in <span class="math inline">\(x = r\cos(\theta)\)</span>:</li>
+<li>Plug in <span class="math inline">\(x = r\cos(\theta)\)</span> and <span class="math inline">\(y = r\sin(\theta)\)</span>:</li>
 <li><span class="math inline">\(x^\prime(\theta) = r^\prime \cdot \cos(\theta) - r\sin(\theta)\)</span></li>
-<li><span class="math inline">\((x^\prime(\theta))^2 = (r^\prime)^2 \cos^2(\theta) - 2r^\prime \cdot r \cdot \cos(\theta)\sin(\theta) + r^2 \sin^2(\theta)\)</span></li>
+</ul>
+<p>Square both sides:</p>
+<p><span class="math display">\[(r^\prime)^2 \cos^2(\theta) - 2r^\prime \cdot r \cdot \cos(\theta)\sin(\theta) + r^2 \sin^2(\theta)\]</span></p>
+</section>
+<section id="similarly" class="slide level2">
+<h2>Similarly</h2>
+<ul>
 <li><span class="math inline">\(y = r\sin(\theta)\)</span>:</li>
 <li><span class="math inline">\(y^\prime = r^\prime \cdot \sin(\theta) + r\cos(\theta)\)</span></li>
-<li><span class="math inline">\((y^\prime)^2 = (r^\prime)^2 \sin^2(\theta) + 2r^\prime \cdot r \cos(\theta)\sin(\theta) + r^2 \cos^2(\theta)\)</span></li>
-<li>Add them: <span class="math inline">\((r^\prime)^2(\cos^2(\theta) + \sin^2(\theta)) + r^2(\cos^2(\theta) + \sin^2(\theta))\)</span></li>
-<li>Simplify: <span class="math inline">\((r^\prime)^2 + r^2\)</span>!</li>
 </ul>
+<p>Square both sides:</p>
+<p><span class="math display">\[(r^\prime)^2 \sin^2(\theta) + 2r^\prime \cdot r \cos(\theta)\sin(\theta) + r^2 \cos^2(\theta)\]</span></p>
+</section>
+<section id="add-them" class="slide level2">
+<h2>Add them</h2>
+<p><span class="math display">\[(r^\prime)^2(\cos^2(\theta) + \sin^2(\theta)) + r^2(\cos^2(\theta) + \sin^2(\theta))\]</span></p>
+<p>Simplify: <span class="math inline">\((r^\prime)^2 + r^2\)</span>!</p>
 </section>
 <section id="polar-arc-length" class="slide level2">
 <h2>Polar arc length</h2>
