@@ -113,8 +113,3 @@ We've see how to "output" numbers and strings to the console. This is done using
 * println is the name of a **method** that the out variable can access. Depending on the data type of the variable, there are different methods that may be available to different variables.
 
 Moreover, once we know how to output information to the screen, we may wish to ask the user to **input** data to the program. That way, we can respond to the user's choices intelligently. Take a look at [Chapter 3](https://books.trinket.io/thinkjava2/chapter3.html) to see how to use the **Scanner** class to get input from the user. There are some strange issues that come up with the Scanner class, and we will be sure to look at this on Monday!
-
-
-# Testing adding a new section
-
-Does this work?
