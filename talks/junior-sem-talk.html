@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Athar Abdul-Quader">
-  <title>Paradoxes, Truth, Provability and Arithmetic</title>
+  <title>Paradoxes, Provability and Truth</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -87,7 +87,7 @@
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">Paradoxes, Truth, Provability and Arithmetic</h1>
+  <h1 class="title">Paradoxes, Provability and Truth</h1>
   <p class="author">Athar Abdul-Quader</p>
   <p class="date">February 2022</p>
 </section>
@@ -142,8 +142,8 @@
 <section id="aside-quines" class="slide level2">
 <h2>Aside: Quines</h2>
 <p>What does the following Python code output?</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>var <span class="op">=</span> <span class="st">&#39;print(&quot;var = &quot; + repr(var) + &quot;</span><span class="ch">\\</span><span class="st">neval(var)&quot;)&#39;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="bu">eval</span>(var)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>var <span class="op">=</span> <span class="st">&#39;print(&quot;var = &quot;, repr(var)); print(var)&#39;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="bu">print</span>(<span class="st">&quot;var = &quot;</span>, <span class="bu">repr</span>(var))<span class="op">;</span> <span class="bu">print</span>(var)</span></code></pre></div>
 <p><a href="https://replit.com/@atharaq/quine#main.py">Run it!</a></p>
 </section></section>
 <section>
