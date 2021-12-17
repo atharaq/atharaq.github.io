@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Athar Abdul-Quader">
+  <title>Paradoxes, Truth, Provability and Arithmetic</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Paradoxes, Truth, Provability and Arithmetic</h1>
+  <p class="author">Athar Abdul-Quader</p>
+  <p class="date">February 2022</p>
+</section>
+
+<section>
+<section id="liars-paradox" class="title-slide slide level1">
+<h1>Liar’s Paradox</h1>
+<p>Let <span class="math inline">\(P\)</span> be the assertion: “This statement is false.”</p>
+<p>Is <span class="math inline">\(P\)</span> true? Is <span class="math inline">\(P\)</span> false?</p>
+</section>
+<section id="legal-notice" class="slide level2">
+<h2>Legal Notice</h2>
+<p>What statements are considered “legal”? First: what are formulas?</p>
+<ul>
+<li>Start with: equations / inequalities of terms (using <span class="math inline">\(+\)</span> and <span class="math inline">\(\times\)</span>).</li>
+<li>Add in conjunctions (<span class="math inline">\(\wedge\)</span>), disjunctions (<span class="math inline">\(\vee\)</span>), negations (<span class="math inline">\(\lnot\)</span>), and quantifiers (<span class="math inline">\(\forall\)</span> and <span class="math inline">\(\exists\)</span>)
+<ul>
+<li><span class="math inline">\(\forall x P(x)\)</span> means “The property <span class="math inline">\(P(x)\)</span> is true for every number <span class="math inline">\(x\)</span>”.</li>
+<li><span class="math inline">\(\exists x P(x)\)</span> means "There is some number <span class="math inline">\(x\)</span> such that <span class="math inline">\(P(x)\)</span> is true.</li>
+</ul></li>
+</ul>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Technically: we also allow <span class="math inline">\(\rightarrow\)</span> and <span class="math inline">\(\leftrightarrow\)</span>, which can be defined using <span class="math inline">\(\wedge, \vee\)</span> and <span class="math inline">\(\lnot\)</span>.</p>
+<p><strong>Exercise</strong>: Let <span class="math inline">\(P(x)\)</span> be the formula <span class="math display">\[x &gt; 1 \wedge \forall y \forall z (yz = x \rightarrow y = x \vee z = x).\]</span></p>
+<ul>
+<li>For which positive integers <span class="math inline">\(n\)</span> will <span class="math inline">\(P(n)\)</span> be true?</li>
+<li>Recall: <span class="math inline">\(\forall y\)</span> means “for every number <span class="math inline">\(y\)</span>.” By “number”, today I just mean natural number: 0, 1, 2, <span class="math inline">\(\ldots\)</span></li>
+</ul>
+</section>
+<section id="statements" class="slide level2">
+<h2>Statements</h2>
+<p>A <strong>statement</strong> is a formula (built up in the above way) in which all variables are either replaced by numbers, or bound by a quantifier.</p>
+<ul>
+<li><span class="math inline">\(\forall x (x &gt; 5 \rightarrow x &gt; 3)\)</span> is a <strong>true statement</strong></li>
+<li><span class="math inline">\(\forall x (x &gt; y \rightarrow x &gt; z)\)</span> is a formula, with free variables <span class="math inline">\(y\)</span> and <span class="math inline">\(z\)</span>.</li>
+</ul>
+</section>
+<section id="self-reference" class="slide level2">
+<h2>Self-reference</h2>
+<p>So can an assertion refer to itself? No!</p>
+<ul>
+<li>Formulas describe properties of <em>numbers</em>.</li>
+<li>A statement can quantify over those numbers, or can say something about a specific number (like 5).</li>
+<li>Numbers aren’t statements!</li>
+</ul>
+<div class="fragment">
+<p>…are they?</p>
+</div>
+</section>
+<section id="aside-quines" class="slide level2">
+<h2>Aside: Quines</h2>
+<p>What does the following Python code output?</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>var <span class="op">=</span> <span class="st">&#39;print(&quot;var = &quot; + repr(var) + &quot;</span><span class="ch">\\</span><span class="st">neval(var)&quot;)&#39;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="bu">eval</span>(var)</span></code></pre></div>
+<p><a href="https://replit.com/@atharaq/quine#main.py">Run it!</a></p>
+</section></section>
+<section>
+<section id="numbering" class="title-slide slide level1">
+<h1>Numbering</h1>
+<ul>
+<li>Consider a program which takes in one input, <span class="math inline">\(s\)</span>.</li>
+<li>The program determines if <span class="math inline">\(s\)</span> represents a legal formula of arithmetic.</li>
+</ul>
+<p>Question: what is the <strong>data type</strong> of <span class="math inline">\(s\)</span>? (Built-in data type, no OOP here.)</p>
+</section>
+<section id="unicode" class="slide level2">
+<h2>Unicode</h2>
+<ul>
+<li>All inputs can be handled as strings.</li>
+<li>Strings are “arrays of characters”.</li>
+<li>Characters are stored as numbers, using some <em>encoding</em> (ASCII or Unicode).</li>
+<li>In fact: all data on a computer eventually is stored as a number!</li>
+</ul>
+</section>
+<section id="gödel-code" class="slide level2">
+<h2>Gödel Code</h2>
+<ul>
+<li>There is a (computable) function which converts a formula <span class="math inline">\(\theta(x)\)</span> to a number.</li>
+<li>This function is one to one, and therefore there is a (computable) inverse.</li>
+<li>We refer to this as the <strong>Gödel code</strong> of the formula.</li>
+<li>For a formula <span class="math inline">\(\theta(x)\)</span>, represent its Gödel code as <span class="math inline">\(\ulcorner \theta(x) \urcorner\)</span>.</li>
+<li>So a formula <em>can</em> talk about properties of statements!</li>
+</ul>
+</section>
+<section id="proofs" class="slide level2">
+<h2>Proofs</h2>
+<ul>
+<li>What is a proof, formally?</li>
+<li>A sequence of “deductions”.</li>
+<li>In other words: a sequence of statements.</li>
+<li>Each statement is either:
+<ul>
+<li>an “axiom”,</li>
+<li>a hypothesis of the proof,</li>
+<li>or follows from previous statements, using rules like “modus ponens”.</li>
+</ul></li>
+<li>If numbers can refer to statements, then sequences of numbers can refer to proofs!</li>
+</ul>
+</section>
+<section id="sequences" class="slide level2">
+<h2>Sequences</h2>
+<ul>
+<li>Next step: code sequences of numbers.</li>
+<li>Many ways of doing this. My favorite uses prime factorization.</li>
+<li>Let <span class="math inline">\(p_0, p_1, p_2, \ldots\)</span> be the sequence of prime numbers in order. (So <span class="math inline">\(p_0 = 2, p_1 = 3, \ldots\)</span>)</li>
+<li>The sequence <span class="math inline">\(\langle x_0, x_1, \ldots, x_{n-1} \rangle\)</span> is coded by the number <span class="math inline">\(p_0^{x_0} \times p_1^{x_1} \times \ldots \times p_{n-1}^{x_{n-1}}\)</span>.</li>
+</ul>
+</section>
+<section id="proofs-coded" class="slide level2">
+<h2>Proofs, coded</h2>
+<p>There is a formula <span class="math inline">\(Pr(x, y)\)</span> that says:</p>
+<ul>
+<li>The number <span class="math inline">\(x\)</span> represents a sequence <span class="math inline">\((x_0, \ldots, x_{n-1})\)</span>.</li>
+<li>The number <span class="math inline">\(y\)</span> represents the Gödel code of a statement <span class="math inline">\(\theta\)</span>.</li>
+<li>Each number <span class="math inline">\(x_i\)</span> is the Gödel code of a statement <span class="math inline">\(\phi_i\)</span>.</li>
+<li>Each statement <span class="math inline">\(\phi_i\)</span> is either an axiom of arithemtic, a hypothesis of <span class="math inline">\(\theta\)</span>, or follows from previous statements <span class="math inline">\(\phi_j\)</span> using the rules of inferences.</li>
+<li>Question: what does <span class="math inline">\(\exists x Pr(x, y)\)</span> mean?</li>
+</ul>
+</section></section>
+<section>
+<section id="self-reference-1" class="title-slide slide level1">
+<h1>Self Reference</h1>
+<p>So far:</p>
+<ul>
+<li>Formulas <em>can</em> talk about statements.</li>
+<li>In fact, formulas can talk about whether or not a statement is provable.</li>
+<li>But what about self-reference?</li>
+<li>Are self-referential statements inherently impossible?</li>
+</ul>
+</section>
+<section id="fixed-points" class="slide level2">
+<h2>Fixed Points</h2>
+<p><strong>Theorem</strong> (Gödel 1931 / Carnap 1934): For every formula <span class="math inline">\(\theta(x)\)</span> of arithmetic, there is a statement <span class="math inline">\(P\)</span> such that <span class="math inline">\(\theta(\ulcorner P \urcorner) \leftrightarrow P\)</span> is true.</p>
+<ul>
+<li><span class="math inline">\(P\)</span> essentially asserts “I have the property defined by <span class="math inline">\(\theta\)</span>.”</li>
+<li>Technically: <span class="math inline">\(P\)</span> is really asserting something about its <em>code</em>, but it really is self-referential: consider the “fixed point” of <span class="math inline">\(\exists x Pr(x, y)\)</span>.</li>
+</ul>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p>“The fixed point lemma is profound because it reveals a surprisingly deep capacity in mathematics for self-reference: when a statement <span class="math inline">\(A\)</span> is equivalent to <span class="math inline">\(F(A)\)</span>, it effectively asserts ‘<span class="math inline">\(F\)</span> holds of me’. How shocking it is to find that self-reference, the stuff of paradox and nonsense, is fundamentally embedded in our beautiful number theory! The fixed point lemma shows that every elementary property <span class="math inline">\(F\)</span> admits a statement of arithmetic asserting ‘this statement has property <span class="math inline">\(F\)</span>’.”</p>
+<p><a href="https://mathoverflow.net/a/31649/35887">Joel David Hamkins</a></p>
+</section>
+<section id="applications" class="slide level2">
+<h2>Applications</h2>
+<ul>
+<li>Consider the statement <span class="math inline">\(\theta(z) = \lnot \exists x (Pr(x, z))\)</span>.</li>
+<li><span class="math inline">\(\theta(z)\)</span> is true about <span class="math inline">\(\ulcorner P \urcorner\)</span> if there is no proof of <span class="math inline">\(P\)</span>.</li>
+<li>Fixed Point Theorem: there is <span class="math inline">\(P\)</span> such that <span class="math inline">\(\theta(\ulcorner P \urcorner)\)</span> if and only if <span class="math inline">\(P\)</span> is true.</li>
+<li><span class="math inline">\(P\)</span> expresses “This statement <em>has no proof</em>.”</li>
+<li>Is <span class="math inline">\(P\)</span> true? Is it false?</li>
+<li>How is this any different from the Liar’s Paradox?</li>
+</ul>
+</section>
+<section id="resolution" class="slide level2">
+<h2>Resolution</h2>
+<ul>
+<li><span class="math inline">\(P\)</span> <em>cannot</em> be false, otherwise there would be a proof that it is true.</li>
+<li>It <em>must</em> be true. But there is no proof that it is true.</li>
+<li>In other words: there are arithmetic statements which are true, but have no proof from the axioms of arithmetic!</li>
+<li>This is Gödel’s (First) Incompleteness Theorem!</li>
+</ul>
+</section>
+<section id="liars-paradox-1" class="slide level2">
+<h2>Liar’s Paradox</h2>
+<p><strong>Theorem</strong> (Tarski): There is no formula <span class="math inline">\(\theta(x)\)</span> such that for each arithmetic statement <span class="math inline">\(P\)</span>, <span class="math inline">\(P\)</span> is true if and only if <span class="math inline">\(\theta(\ulcorner P \urcorner)\)</span> is true.</p>
+<ul>
+<li>“Tarski’s Undefinability of Truth”.</li>
+<li>Can you think of a proof? (Argue by contradiction, and use the Fixed Point lemma.)</li>
+</ul>
+</section>
+<section id="resolution-1" class="slide level2">
+<h2>Resolution</h2>
+<ul>
+<li>So what do we make of the “Liar’s Paradox”?</li>
+<li>What’s the problem with “This statement is not true.”</li>
+<li>It’s <em>not</em> that it’s a statement that talks about statements: Gödel coding allows for that.</li>
+<li>It’s <em>not</em> that it’s self-referential: the fixed-point lemma allows for that.</li>
+<li>It’s that it talks about <em>truth</em>!</li>
+<li>Truth is somehow different from <em>provability</em>.</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
