@@ -98,6 +98,22 @@
 <p>Let <span class="math inline">\(P\)</span> be the assertion: “This statement is false.”</p>
 <p>Is <span class="math inline">\(P\)</span> true? Is <span class="math inline">\(P\)</span> false?</p>
 </section>
+<section id="resolution" class="slide level2">
+<h2>Resolution</h2>
+<ul>
+<li>The resolution to the liar’s paradox is that the assertion <span class="math inline">\(P\)</span> is not a statement, and so does not have a truth value.</li>
+<li>Often, it is assumed: statements cannot be <em>self-referential</em>.</li>
+<li>Let’s investigate this today. Is this really the problem? Why can’t statements be self-referential?</li>
+</ul>
+</section>
+<section id="today" class="slide level2">
+<h2>Today:</h2>
+<ol type="1">
+<li>What kinds of things can be described by arithmetic formulas / statements?</li>
+<li>What are proofs, formally?</li>
+<li>Can statements refer to themselves?</li>
+</ol>
+</section>
 <section id="legal-notice" class="slide level2">
 <h2>Legal Notice</h2>
 <p>What statements are considered “legal”? First: what are formulas?</p>
@@ -204,9 +220,20 @@
 <ul>
 <li>The number <span class="math inline">\(x\)</span> represents a sequence <span class="math inline">\((x_0, \ldots, x_{n-1})\)</span>.</li>
 <li>The number <span class="math inline">\(y\)</span> represents the Gödel code of a statement <span class="math inline">\(\theta\)</span>.</li>
-<li>Each number <span class="math inline">\(x_i\)</span> is the Gödel code of a statement <span class="math inline">\(\phi_i\)</span>.</li>
-<li>Each statement <span class="math inline">\(\phi_i\)</span> is either an axiom of arithemtic, a hypothesis of <span class="math inline">\(\theta\)</span>, or follows from previous statements <span class="math inline">\(\phi_j\)</span> using the rules of inferences.</li>
-<li>Question: what does <span class="math inline">\(\exists x Pr(x, y)\)</span> mean?</li>
+<li>Each number <span class="math inline">\(x_i\)</span> is the Gödel code of a statement <span class="math inline">\(\phi_i\)</span>, and <span class="math inline">\(\phi_{n-1} = \theta\)</span>.</li>
+<li>Each statement <span class="math inline">\(\phi_i\)</span> is either an axiom of arithmetic, a hypothesis of <span class="math inline">\(\theta\)</span>, or follows from previous statements <span class="math inline">\(\phi_j\)</span> using the rules of inferences.</li>
+</ul>
+</section>
+<section id="things-to-think-about" class="slide level2">
+<h2>Things to think about</h2>
+<ul>
+<li>What does <span class="math inline">\(\exists x Pr(x, y)\)</span> assert?</li>
+<li>How might we write down a formula <span class="math inline">\(Pr(x, y)\)</span>?</li>
+<li>What “logical” or “proof-theoretic” properties does <span class="math inline">\(Pr(x, y)\)</span> have?
+<ul>
+<li>For example, can we formalize the modus ponens principle: if <span class="math inline">\(p \rightarrow q\)</span> and <span class="math inline">\(p\)</span> are true, then <span class="math inline">\(q\)</span> is true?</li>
+<li>(Yes.)</li>
+</ul></li>
 </ul>
 </section></section>
 <section>
@@ -244,7 +271,7 @@
 <li>How is this any different from the Liar’s Paradox?</li>
 </ul>
 </section>
-<section id="resolution" class="slide level2">
+<section id="resolution-1" class="slide level2">
 <h2>Resolution</h2>
 <ul>
 <li><span class="math inline">\(P\)</span> <em>cannot</em> be false, otherwise there would be a proof that it is true.</li>
@@ -261,7 +288,7 @@
 <li>Can you think of a proof? (Argue by contradiction, and use the Fixed Point lemma.)</li>
 </ul>
 </section>
-<section id="resolution-1" class="slide level2">
+<section id="resolution-2" class="slide level2">
 <h2>Resolution</h2>
 <ul>
 <li>So what do we make of the “Liar’s Paradox”?</li>
