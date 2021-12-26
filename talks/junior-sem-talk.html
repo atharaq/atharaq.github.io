@@ -67,7 +67,7 @@
 <ul>
 <li><span class="math inline">\(x &lt; y\)</span></li>
 <li><span class="math inline">\(x &gt; 3\)</span></li>
-<li><span class="math inline">\(2x_1 + 3x_2^4 &lt; 78\)</span></li>
+<li><span class="math inline">\(2x + 3y^4 + z^2 &lt; 78\)</span></li>
 <li>These are all called “atomic” formulas.</li>
 </ul>
 </section>
@@ -77,19 +77,19 @@
 <li>Add in conjunctions (<span class="math inline">\(\wedge\)</span>), disjunctions (<span class="math inline">\(\vee\)</span>), negations (<span class="math inline">\(\lnot\)</span>), and quantifiers (<span class="math inline">\(\forall\)</span> and <span class="math inline">\(\exists\)</span>)
 <ul>
 <li><span class="math inline">\(\forall x P(x)\)</span> means “The property <span class="math inline">\(P(x)\)</span> is true for every number <span class="math inline">\(x\)</span>”.</li>
-<li><span class="math inline">\(\exists x P(x)\)</span> means "There is some number <span class="math inline">\(x\)</span> such that <span class="math inline">\(P(x)\)</span> is true.</li>
+<li><span class="math inline">\(\exists x P(x)\)</span> means “There is some number <span class="math inline">\(x\)</span> such that <span class="math inline">\(P(x)\)</span> is true.”</li>
 </ul></li>
 <li>By “number”, for today, we mean “natural number”, like <span class="math inline">\(0, 1, 2, \ldots\)</span> (non-negative, whole numbers)</li>
 </ul>
 </section>
 <section id="exercise" class="slide level2">
 <h2>Exercise</h2>
-<p>Technically: we also allow <span class="math inline">\(\rightarrow\)</span> and <span class="math inline">\(\leftrightarrow\)</span>, which can be defined using <span class="math inline">\(\wedge, \vee\)</span> and <span class="math inline">\(\lnot\)</span>.</p>
-<p><strong>Exercise</strong>: Let <span class="math inline">\(P(x)\)</span> be the formula <span class="math display">\[x &gt; 1 \wedge \forall y \forall z (yz = x \rightarrow y = x \vee z = x).\]</span></p>
+<p>Technically: we also allow <span class="math inline">\(\rightarrow\)</span> and <span class="math inline">\(\leftrightarrow\)</span>:</p>
 <ul>
-<li>For which positive integers <span class="math inline">\(n\)</span> will <span class="math inline">\(P(n)\)</span> be true?</li>
-<li>Recall: <span class="math inline">\(\forall y\)</span> means “for every number <span class="math inline">\(y\)</span>.” By “number”, today I just mean natural number: 0, 1, 2, <span class="math inline">\(\ldots\)</span></li>
+<li><span class="math inline">\(p \rightarrow q\)</span> is defined as <span class="math inline">\(\lnot p \vee q\)</span></li>
+<li><span class="math inline">\(p \leftrightarrow q\)</span> is defined as <span class="math inline">\(p \rightarrow q \wedge q \rightarrow p\)</span>.</li>
 </ul>
+<p><strong>Exercise</strong>: Let <span class="math inline">\(P(x)\)</span> be the formula <span class="math display">\[x &gt; 1 \wedge \forall y \forall z [(yz = x) \rightarrow (y = x \vee z = x)].\]</span> For which positive integers <span class="math inline">\(n\)</span> is <span class="math inline">\(P(n)\)</span> true? Recall: <span class="math inline">\(\forall y\)</span> means “for every natural number <span class="math inline">\(y\)</span>.”</p>
 </section>
 <section id="statements" class="slide level2">
 <h2>Statements</h2>
@@ -97,6 +97,11 @@
 <ul>
 <li><span class="math inline">\(\forall x (x &gt; 5 \rightarrow x &gt; 3)\)</span> is a <strong>true statement</strong></li>
 <li><span class="math inline">\(\forall x (x &gt; y \rightarrow x &gt; z)\)</span> is a formula, with free variables <span class="math inline">\(y\)</span> and <span class="math inline">\(z\)</span>.</li>
+<li><span class="math inline">\(\forall x_1 \exists x_2 (x_2 &gt; x_1 \wedge P(x_2))\)</span>, where <span class="math inline">\(P(x)\)</span> was the formula defined in the exercise?
+<ul>
+<li>Is this a statement?</li>
+<li>Is it true?</li>
+</ul></li>
 </ul>
 </section>
 <section id="self-reference" class="slide level2">
@@ -104,7 +109,7 @@
 <p>So can an assertion refer to itself? No!</p>
 <ul>
 <li>Formulas describe properties of <em>numbers</em>.</li>
-<li>A statement can quantify over those numbers, or can say something about a specific number (like 5).</li>
+<li>A statement can quantify over those numbers, or can say something about specific numbers (like 5 and 3).</li>
 <li>Numbers aren’t statements!</li>
 </ul>
 <div class="fragment">
@@ -124,7 +129,11 @@
 <li>Consider a program which takes in one input, <span class="math inline">\(s\)</span>.</li>
 <li>The program determines if <span class="math inline">\(s\)</span> represents a legal formula of arithmetic.</li>
 </ul>
-<p>Question: what is the <strong>data type</strong> of <span class="math inline">\(s\)</span>? (Built-in data type, no OOP here.)</p>
+<p>Questions:</p>
+<ol type="1">
+<li>What is the <strong>data type</strong> of <span class="math inline">\(s\)</span>? (Built-in data type, no OOP here.)</li>
+<li>How is <span class="math inline">\(s\)</span> actually represented in memory?</li>
+</ol>
 </section>
 <section id="unicode" class="slide level2">
 <h2>Unicode</h2>
@@ -138,7 +147,10 @@
 <section id="gödel-code" class="slide level2">
 <h2>Gödel Code</h2>
 <ul>
-<li>There is a (computable) function which converts a formula <span class="math inline">\(\theta(x)\)</span> to a number.</li>
+<li>There is a (computable) function which converts a formula <span class="math inline">\(\theta(x)\)</span> to a number.
+<ul>
+<li>Can you figure out how?</li>
+</ul></li>
 <li>This function is one to one, and therefore there is a (computable) inverse.</li>
 <li>We refer to this as the <strong>Gödel code</strong> of the formula.</li>
 <li>For a formula <span class="math inline">\(\theta(x)\)</span>, represent its Gödel code as <span class="math inline">\(\ulcorner \theta(x) \urcorner\)</span>.</li>
@@ -202,6 +214,20 @@
 <li>Are self-referential statements inherently impossible?</li>
 </ul>
 </section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<figure>
+<img data-src="https://upload.wikimedia.org/wikipedia/en/4/42/Kurt_g%C3%B6del.jpg" alt="" /><figcaption>Kurt Gödel (1906-1978)</figcaption>
+</figure>
+</div><div class="column" style="width:50%;">
+<figure>
+<img data-src="https://upload.wikimedia.org/wikipedia/en/5/50/Rudolf_Carnap_%281891_%E2%80%93_1970%29.jpg" alt="" /><figcaption>Rudolph Carnap (1891-1970)</figcaption>
+</figure>
+</div>
+</div>
+</section>
 <section id="fixed-points" class="slide level2">
 <h2>Fixed Points</h2>
 <p><strong>Theorem</strong> (Gödel 1931 / Carnap 1934): For every formula <span class="math inline">\(\theta(x)\)</span> of arithmetic, there is a statement <span class="math inline">\(P\)</span> such that <span class="math inline">\(\theta(\ulcorner P \urcorner) \leftrightarrow P\)</span> is true.</p>
@@ -210,7 +236,7 @@
 <li>Technically: <span class="math inline">\(P\)</span> is really asserting something about its <em>code</em>, but it really is self-referential: consider the “fixed point” of <span class="math inline">\(\exists x Pr(x, y)\)</span>.</li>
 </ul>
 </section>
-<section id="section" class="slide level2">
+<section id="section-1" class="slide level2">
 <h2></h2>
 <p>“The fixed point lemma is profound because it reveals a surprisingly deep capacity in mathematics for self-reference: when a statement <span class="math inline">\(A\)</span> is equivalent to <span class="math inline">\(F(A)\)</span>, it effectively asserts ‘<span class="math inline">\(F\)</span> holds of me’. How shocking it is to find that self-reference, the stuff of paradox and nonsense, is fundamentally embedded in our beautiful number theory! The fixed point lemma shows that every elementary property <span class="math inline">\(F\)</span> admits a statement of arithmetic asserting ‘this statement has property <span class="math inline">\(F\)</span>’.”</p>
 <p><a href="https://mathoverflow.net/a/31649/35887">Joel David Hamkins</a></p>
