@@ -74,22 +74,32 @@
 <section id="more-formulas" class="slide level2">
 <h2>More formulas</h2>
 <ul>
-<li>Add in conjunctions (<span class="math inline">\(\wedge\)</span>), disjunctions (<span class="math inline">\(\vee\)</span>), negations (<span class="math inline">\(\lnot\)</span>), and quantifiers (<span class="math inline">\(\forall\)</span> and <span class="math inline">\(\exists\)</span>)
+<li>Add in conjunctions (<span class="math inline">\(\wedge\)</span>), disjunctions (<span class="math inline">\(\vee\)</span>), negations (<span class="math inline">\(\lnot\)</span>), and quantifiers (<span class="math inline">\(\forall\)</span> and <span class="math inline">\(\exists\)</span>)</li>
+<li>Examples (without quantifiers):
+<ul>
+<li>For which integers is <span class="math inline">\(x &gt; 3 \wedge x &lt; 4\)</span> true?</li>
+<li>For which integers is <span class="math inline">\(x &gt; 3 \vee x &lt; 4\)</span> true?</li>
+<li>For which integers is <span class="math inline">\(\lnot (x &gt; 3)\)</span> true?</li>
+</ul></li>
+</ul>
+</section>
+<section id="quantifiers" class="slide level2">
+<h2>Quantifiers</h2>
 <ul>
 <li><span class="math inline">\(\forall x P(x)\)</span> means “The property <span class="math inline">\(P(x)\)</span> is true for every number <span class="math inline">\(x\)</span>”.</li>
 <li><span class="math inline">\(\exists x P(x)\)</span> means “There is some number <span class="math inline">\(x\)</span> such that <span class="math inline">\(P(x)\)</span> is true.”</li>
-</ul></li>
 <li>By “number”, for today, we mean “natural number”, like <span class="math inline">\(0, 1, 2, \ldots\)</span> (non-negative, whole numbers)</li>
+<li>Aside: technically, we also allow <span class="math inline">\(\rightarrow\)</span> and <span class="math inline">\(\leftrightarrow\)</span>:
+<ul>
+<li><span class="math inline">\(p \rightarrow q\)</span> is defined as <span class="math inline">\(\lnot p \vee q\)</span></li>
+<li><span class="math inline">\(p \leftrightarrow q\)</span> is defined as <span class="math inline">\(p \rightarrow q \wedge q \rightarrow p\)</span>.</li>
+</ul></li>
 </ul>
 </section>
 <section id="exercise" class="slide level2">
 <h2>Exercise</h2>
-<p>Technically: we also allow <span class="math inline">\(\rightarrow\)</span> and <span class="math inline">\(\leftrightarrow\)</span>:</p>
-<ul>
-<li><span class="math inline">\(p \rightarrow q\)</span> is defined as <span class="math inline">\(\lnot p \vee q\)</span></li>
-<li><span class="math inline">\(p \leftrightarrow q\)</span> is defined as <span class="math inline">\(p \rightarrow q \wedge q \rightarrow p\)</span>.</li>
-</ul>
-<p><strong>Exercise</strong>: Let <span class="math inline">\(P(x)\)</span> be the formula <span class="math display">\[x &gt; 1 \wedge \forall y \forall z [(yz = x) \rightarrow (y = x \vee z = x)].\]</span> For which positive integers <span class="math inline">\(n\)</span> is <span class="math inline">\(P(n)\)</span> true? Recall: <span class="math inline">\(\forall y\)</span> means “for every natural number <span class="math inline">\(y\)</span>.”</p>
+<p><strong>Exercise</strong>: Let <span class="math inline">\(P(x)\)</span> be the formula <span class="math display">\[x &gt; 1 \wedge \forall y \forall z [(yz = x) \rightarrow (y = x \vee z = x)].\]</span> For which positive integers <span class="math inline">\(n\)</span> is <span class="math inline">\(P(n)\)</span> true?</p>
+<p>Recall: <span class="math inline">\(\forall y\)</span> means “for every natural number <span class="math inline">\(y\)</span>.”</p>
 </section>
 <section id="statements" class="slide level2">
 <h2>Statements</h2>
@@ -154,7 +164,7 @@
 <li>This function is one to one, and therefore there is a (computable) inverse.</li>
 <li>We refer to this as the <strong>Gödel code</strong> of the formula.</li>
 <li>For a formula <span class="math inline">\(\theta(x)\)</span>, represent its Gödel code as <span class="math inline">\(\ulcorner \theta(x) \urcorner\)</span>.</li>
-<li>So a formula <em>can</em> talk about properties of statements!</li>
+<li>So a formula <em>can</em> talk about properties of statements (or other formulas)!</li>
 </ul>
 </section>
 <section id="proofs" class="slide level2">
@@ -198,7 +208,7 @@
 <li>How might we write down a formula <span class="math inline">\(Pr(x, y)\)</span>?</li>
 <li>What “logical” or “proof-theoretic” properties does <span class="math inline">\(Pr(x, y)\)</span> have?
 <ul>
-<li>For example, can we formalize the modus ponens principle: if <span class="math inline">\(p \rightarrow q\)</span> and <span class="math inline">\(p\)</span> are true, then <span class="math inline">\(q\)</span> is true?</li>
+<li>For example, can we formalize the modus ponens principle: if <span class="math inline">\(p \rightarrow q\)</span> and <span class="math inline">\(p\)</span> are provable, then <span class="math inline">\(q\)</span> is provable?</li>
 <li>(Yes.)</li>
 </ul></li>
 </ul>
@@ -232,6 +242,7 @@
 <h2>Fixed Points</h2>
 <p><strong>Theorem</strong> (Gödel 1931 / Carnap 1934): For every formula <span class="math inline">\(\theta(x)\)</span> of arithmetic, there is a statement <span class="math inline">\(P\)</span> such that <span class="math inline">\(\theta(\ulcorner P \urcorner) \leftrightarrow P\)</span> is true.</p>
 <ul>
+<li>Usually referred to as the “Fixed Point Lemma”.</li>
 <li><span class="math inline">\(P\)</span> essentially asserts “I have the property defined by <span class="math inline">\(\theta\)</span>.”</li>
 <li>Technically: <span class="math inline">\(P\)</span> is really asserting something about its <em>code</em>, but it really is self-referential: consider the “fixed point” of <span class="math inline">\(\exists x Pr(x, y)\)</span>.</li>
 </ul>
@@ -245,8 +256,8 @@
 <h2>Applications</h2>
 <ul>
 <li>Consider the statement <span class="math inline">\(\theta(z) = \lnot \exists x (Pr(x, z))\)</span>.</li>
-<li><span class="math inline">\(\theta(z)\)</span> is true about <span class="math inline">\(\ulcorner P \urcorner\)</span> if there is no proof of <span class="math inline">\(P\)</span>.</li>
-<li>Fixed Point Theorem: there is <span class="math inline">\(P\)</span> such that <span class="math inline">\(\theta(\ulcorner P \urcorner)\)</span> if and only if <span class="math inline">\(P\)</span> is true.</li>
+<li><span class="math inline">\(\theta(z)\)</span> is true about <span class="math inline">\(\ulcorner P \urcorner\)</span> if and only if there is no proof of <span class="math inline">\(P\)</span>.</li>
+<li>Fixed Point Lemma: there is <span class="math inline">\(P\)</span> such that <span class="math inline">\(\theta(\ulcorner P \urcorner)\)</span> if and only if <span class="math inline">\(P\)</span> is true.</li>
 <li><span class="math inline">\(P\)</span> expresses “This statement <em>has no proof</em>.”</li>
 <li>Is <span class="math inline">\(P\)</span> true? Is it false?</li>
 <li>How is this any different from the Liar’s Paradox?</li>
@@ -257,6 +268,7 @@
 <ul>
 <li><span class="math inline">\(P\)</span> <em>cannot</em> be false, otherwise there would be a proof that it is true.</li>
 <li>It <em>must</em> be true. But there is no proof that it is true.</li>
+<li>It is different from the Liar’s Paradox: <span class="math inline">\(P\)</span> is an <em>actual statement</em>, whose existence is <em>guaranteed</em> by the Fixed Point Lemma!</li>
 <li>In other words: there are arithmetic statements which are true, but have no proof from the axioms of arithmetic!</li>
 <li>This is Gödel’s (First) Incompleteness Theorem!</li>
 </ul>
@@ -273,7 +285,7 @@
 <h2>Resolution</h2>
 <ul>
 <li>So what do we make of the “Liar’s Paradox”?</li>
-<li>What’s the problem with “This statement is not true.”</li>
+<li>What’s the problem with “This statement is not true”?</li>
 <li>It’s <em>not</em> that it’s a statement that talks about statements: Gödel coding allows for that.</li>
 <li>It’s <em>not</em> that it’s self-referential: the fixed-point lemma allows for that.</li>
 <li>It’s that it talks about <em>truth</em>!</li>
