@@ -6,7 +6,7 @@
 
 This is just a test page to see how Github Pages handles embedding a SageCell. We used the following code:
 
-```python`
+```python
 from sage.misc.prandom import randrange
 
 def grid(v1, v2, endpoints=[-3, 3, -3, 3], color1='blue', color2='red'):
