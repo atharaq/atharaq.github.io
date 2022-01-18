@@ -24,8 +24,6 @@ Topics include linear equations, row reduction, matrix algebra, determinants, ve
 
 Upon completion of this course, students should be able to...
 
-(update this)
-
 * Rigorous proofs
 * Understanding abstract vector spaces and linear transformations
 * Matrix algebra, determinants, row elimination
