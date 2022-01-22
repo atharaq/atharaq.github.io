@@ -29,17 +29,15 @@ Upon completion of this course, students should be able to...
 * Apply various proof techniques, including induction, contradiction, and direct proof, to analyze and construct arguments regarding vector spaces and linear transformations (PLO 3, 5)
 * Compute matrix products and explain why the matrix product is defined in that way (PLO 1, 3)
 * Compute determinants and explain what they represent (PLO 1, 3)
-* Solve linear systems of equations using Gaussian elimination
-* Use knowledge of matrices to understand applications including, but not limited to, discrete dynamical systems, differential equations, and least squares (PLO 1, 2)
+* Solve linear systems of equations using Gaussian elimination (PLO 1, 2)
+* Use knowledge of linear algebra to solve problems from a variety of applications possibly including discrete dynamical systems, differential equations, Google's PageRank algorithm, and clustering (PLO 1, 2, 3)
 * Compute eigenvectors and eigenvalues of a given linear transformation, and explain what they mean (PLO 1, 3, 5)
 
 ## Required Textbook
 
-...
+For now, we will be using the following text, available as a free PDF online. [Cherney, Denton, Thomas, and Waldron, *Linear Algebra*](https://www.math.ucdavis.edu/~linear/linear-guest.pdf)
 
-## MyOpenMath?
-
-...
+We may also use readings and exercises from [Grossman, *Linear Algebra in a Nutshell](https://jp-g.de/Skripte/LA-GES-CS-JPG.pdf).
 
 ## Discord Server
 
@@ -49,7 +47,9 @@ The link to the Discord server will be available on Moodle.
 
 ## Attendance
 
-see https://www.purchase.edu/faculty-handbook/planning-the-course-syllabus/student-absence-policy/
+My expectation is that students come to class as much as possible. Given the ongoing nature of the pandemic, I understand when this may be difficult or outright impossible (see the next section on community health). In particular, please do stay home if you feel sick at all. I will do my best to make sure notes, readings, and other materials are available online for those who need them.
+
+That said, please do come to class as much as you can. This will allow me to see how well students understand material, and you to work through problems and questions with each other (and me).
 
 ## Community Health During COVID-19
 
