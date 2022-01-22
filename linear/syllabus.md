@@ -24,10 +24,14 @@ Topics include linear equations, row reduction, matrix algebra, determinants, ve
 
 Upon completion of this course, students should be able to...
 
-* Rigorous proofs
-* Understanding abstract vector spaces and linear transformations
-* Matrix algebra, determinants, row elimination
-* Geometric understanding of linear transformations
+* Understand the geometry of $\mathbb{R}^2$ and $\mathbb{R}^3$, and their generalizations to abstract vector spaces (PLO 5)
+* Understand the definition of linear function, and characterize functions as linear or non-linear (PLO 5)
+* Apply various proof techniques, including induction, contradiction, and direct proof, to analyze and construct arguments regarding vector spaces and linear transformations (PLO 3, 5)
+* Compute matrix products and explain why the matrix product is defined in that way (PLO 1, 3)
+* Compute determinants and explain what they represent (PLO 1, 3)
+* Solve linear systems of equations using Gaussian elimination
+* Use knowledge of matrices to understand applications including, but not limited to, discrete dynamical systems, differential equations, and least squares (PLO 1, 2)
+* Compute eigenvectors and eigenvalues of a given linear transformation, and explain what they mean (PLO 1, 3, 5)
 
 ## Required Textbook
 
@@ -45,7 +49,15 @@ The link to the Discord server will be available on Moodle.
 
 ## Attendance
 
-...
+see https://www.purchase.edu/faculty-handbook/planning-the-course-syllabus/student-absence-policy/
+
+## Community Health During COVID-19
+
+To ensure that each of us has a healthy and safe learning experience, all students are required to remain informed and follow Purchase College Policy and/or any departmental, local, state, or federal laws, rules, or regulations for attending classes on campus and in a remote learning environment.
+
+Within courses that involve in-person contact, all students, faculty members, staff, and visitors are required to adhere to the expectations outlined on the [College’s COVID-19 website](https://www.purchase.edu/covid-19-updates-and-plans/). Failure to comply with requirements (e.g. wearing masks, maintaining social distancing where applicable) will result in the request to leave the classroom for that in-person class session. Students may also be referred to the [Office of Community Standards](https://www.purchase.edu/offices/community-standards/).
+
+Do not enter campus buildings if you test positive for or are experiencing any symptoms of COVID-19. Contact your faculty and [Health Services](https://www.purchase.edu/offices/health-services/index.php) if you need to miss class because of COVID-19 symptoms or a positive COVID-19 test result. The conservatory/school will address on a case by case basis student absences due to COVID-19, while awaiting test results, or during quarantine.
 
 ## Grading Policy
 
@@ -62,17 +74,13 @@ Being absent the day that homework is assigned, or the day that it is due, is **
 
 ## Collaboration Policy
 
-You are encouraged to *discuss* homework assignments and projects with other students. You must complete the assignment on your own, however. There is a clear difference between copying someone else’s work and discussing a problem with another person. The latter is encouraged. Plagiarising another student’s work can lead to academic sanctions as per [Purchase College’s Academic Integrity Policy](https://www.purchase.edu/live/blurbs/840-academic-and-professional-integrity)
+You are encouraged to *discuss* homework assignments and problem sets with other students. You must complete the assignment on your own, however. There is a clear difference between copying someone else’s work and discussing a problem with another person. The latter is encouraged. Plagiarising another student’s work can lead to academic sanctions as per [Purchase College’s Academic Integrity Policy](https://www.purchase.edu/live/blurbs/840-academic-and-professional-integrity)
+
+Collaboration is not allowed on any exam, including take-home exams. We will have time in-class for questions about take-home exams.
 
 ## Office of Disabilities
 
-The Office of Disability Resources collaborates directly with students who identify documented disabilities to create accommodation plans, including testing accommodations, in order for students to access course content and validly demonstrate learning. For those students who may require accommodations, please call or email the Office of Disability Resources, (914) 251- 6035, odr@purchase.edu
-
-## Tutoring
-
-Tutoring is available from the Einstein Corner (virtually or in-person?). Students can make appointments via the Starfish platform. [More information here.](https://www.purchase.edu/academics/school-of-natural-social-sciences/academic-support/)
-
-**Note**: this is an upper-level course, and so they might not have a tutor who has taken Linear Algebra. I suggest forming study groups with each other, and coming to office hours regularly.
+It is my goal that this class be an accessible and welcoming experience for all students, including those with disabilities. You are welcome to talk to me at any point in the semester about course design concerns, but it is always best if we can talk as soon as possible about the need for any modifications. The Office of Disability Resources collaborates directly with students who identify documented disabilities to create accommodation plans, including testing accommodations, in order for students to access course content and validly demonstrate learning. For those students who may require accommodations, please call or email the Office of Disability Resources, (914) 251-6035, odr@purchase.edu.
 
 ## Mental Health
 
@@ -87,7 +95,7 @@ I understand that this is a challenging and stressful time. Please check the [Co
 | 3 (2/14, 2/17) | Linear Functions, Matrix Representations, Application: discrete dynamics | Quiz 1 |
 | 4 (2/21, 2/24) | Systems of Equations, Gaussian Elimination, Invertibility |  ... |
 | 5 (2/28, 3/3) | Determinants, Areas, Volumes | ... |
-| 6 (3/7, 3/10) | Review and Exam 1 | ...  |
+| 6 (3/7, 3/10) | Review and **Exam 1** | ...  |
 | 7 (3/14, 3/17) | Vector Spaces, Linear Transformations, and subspaces | ... |
 | 8 (3/21, 3/24) | Linear combinations and Span | ... |
 | 9 (3/28, 3/31) | Application: differential equations; Bases / dimension | Quiz 2 |
