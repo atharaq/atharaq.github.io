@@ -1,4 +1,4 @@
-# Computability 
+# Computability
 
 MAT 4520
 
@@ -13,19 +13,26 @@ Spring 2022
 
 ## Course Description
 
-**Prerequisite**: Computer Science II
-
-...
+**Prerequisite**: Computer Science II  
+An introduction to concepts and methods of theoretical computer science: what it means for something to be computable (finite state automata, formal languages, Turing machines) and how to measure resources used to solve problems (Big Oh notation and complexity classes like P and NP). Some attention is paid to the relationship between computability, logic, and philosophy, as well as "impossibility" results in these disciplines. This course brings together the two parts of the major in mathematics/computer science and provides historical background as well as insight into current issues.
 
 ## Learning Outcomes
 
 Upon completion of this course, students should be able to...
 
-...
+* Writing clear proofs
+* Formal Definitions of Computation
+* Automata theory, Grammars, and Turing Machines
+* Complexity Theory
+* First-order Logic and Undecidability
 
 ## Required Textbook
 
-...
+*Introduction to the Theory of Computation* (3rd edition) by Michael Sipser. ISBN-13: 978-1133187790   
+Available at Amazon, the bookstore, etc.  
+
+Feel free to purchase the second edition / used copies if they are cheaper.
+
 
 ## Discord Server
 
@@ -47,7 +54,11 @@ Do not enter campus buildings if you test positive for or are experiencing any s
 
 ## Grading Policy
 
-...
+* 10% Pre-class work and participation (watching videos, short responses)
+* 30% Quizzes and/or take-home exams
+* 40% Problem Sets (5-8 problem sets)
+* 10%: VoiceThread Presentations (2 proofs / problem presentations)
+* 10%: Final paper and presentation
 
 ## Late Homework Policy
 
@@ -71,20 +82,20 @@ I understand that this is a challenging and stressful time. Please check the [Co
 
 | Week | Topics | Readings |
 | ---- | ------ | -------- |
-| 1 (1/31, 2/3) | ... | ... |
-| 2 (2/7, 2/10) | ... | ... |
-| 3 (2/14, 2/17) | ... | ... |
-| 4 (2/21, 2/24) | ... |  ... |
-| 5 (2/28, 3/3) | ... | ... |
-| 6 (3/7, 3/10) | ... | ...  |
-| 7 (3/14, 3/17) | ... | ... |
-| 8 (3/21, 3/24) | ... | ... |
-| 9 (3/28, 3/31) | ... | ... |
-| 10 (4/4, 4/7) | ... | ... |
-| 11 (**spring break**) | No classes  | **Take Home Exam 2?** |
-| 12 (4/18, 4/21) | ... | ... |
-| 13 (4/25, 4/28) | ... | ... |
-| 14 (5/2, 5/5) | ... | ... |
-| 15 (5/9, 5/12) | Final Presentations | ... |
+| 1 (1/31, 2/3) | Intro to proofs, set theory, LaTeX | Chapter 0 and LaTeX handouts |
+| 2 (2/7, 2/10) | DFAs and NFAs | Section 1.1 - 1.2 |
+| 3 (2/14, 2/17) | NFAs and Regular Expressions | Sections 1.2 - 1.3; **Quiz 1** |
+| 4 (2/21, 2/24) | Non-Regular Languages, Grammars | Sections 1.4, 2.1 |
+| 5 (2/28, 3/3) | Grammars and Pushdown Automata | Sections 2.1 - 2.2 |
+| 6 (3/7, 3/10) | Non-context free languages | Section 2.3; **Quiz 2** |
+| 7 (3/14, 3/17) | Intro to Turing Machines | Section 3.1 |
+| 8 (3/21, 3/24) | Variants of Turing Machines and Church’s Thesis | Section 3.2 - 3.3 |
+| 9 (3/28, 3/31) | Set Theory | Sections 4.1 - 4.2; **Take home exam?** |
+| 10 (4/4, 4/7) | Reductions | Sections 5.1 - 5.3 |
+| 11 (**spring break**) | No classes  |  |
+| 12 (4/18, 4/21) | Complexity Theory | 7.1 - 7.5 |
+| 13 (4/25, 4/28) | Introduction to Logic | Sections 6.1 - 6.2; **Quiz 3** |
+| 14 (5/2, 5/5) | Undecidability of arithmetic | Section 6.2 |
+| 15 (5/9, 5/12) | Final Presentations | |
 
 This is very much subject to change.

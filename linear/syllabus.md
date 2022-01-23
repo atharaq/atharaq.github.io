@@ -26,7 +26,7 @@ Upon completion of this course, students should be able to...
 * Compute matrix products and explain why the matrix product is defined in that way (PLO 1, 3)
 * Compute determinants and explain what they represent (PLO 1, 3)
 * Solve linear systems of equations using Gaussian elimination (PLO 1, 2)
-* Use knowledge of linear algebra to solve problems from a variety of applications possibly including discrete dynamical systems, differential equations, Google's PageRank algorithm, and clustering (PLO 1, 2, 3)
+* Use knowledge of linear algebra to solve problems from a variety of applications possibly including discrete dynamical systems, differential equations, Google's PageRank algorithm, and network / graph theory (PLO 1, 2, 3)
 * Compute eigenvectors and eigenvalues of a given linear transformation, and explain what they mean (PLO 1, 3, 5)
 
 ## Required Textbook
