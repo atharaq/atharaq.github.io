@@ -11,10 +11,6 @@ Spring 2022
 **Meeting Times**: Mondays and Thursdays, 2:30 - 4:10
 **Location**: ...
 
-## Disclaimer
-
-Due to the nature of this semester, please note that the syllabus is subject to change. Any changes to the syllabus will be announced either in class or via an announcement posted to Moodle and emailed to the class.
-
 ## Course Description
 
 **Prerequisite**: Calculus II
@@ -37,7 +33,7 @@ Upon completion of this course, students should be able to...
 
 For now, we will be using the following text, available as a free PDF online. [Cherney, Denton, Thomas, and Waldron, *Linear Algebra*](https://www.math.ucdavis.edu/~linear/linear-guest.pdf)
 
-We may also use readings and exercises from [Grossman, *Linear Algebra in a Nutshell](https://jp-g.de/Skripte/LA-GES-CS-JPG.pdf).
+We may also use readings and exercises from [Grossman, *Linear Algebra in a Nutshell*](https://jp-g.de/Skripte/LA-GES-CS-JPG.pdf).
 
 ## Discord Server
 
