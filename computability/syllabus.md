@@ -20,23 +20,30 @@ An introduction to concepts and methods of theoretical computer science: what it
 
 Upon completion of this course, students should be able to...
 
-* Writing clear proofs
-* Formal Definitions of Computation
-* Automata theory, Grammars, and Turing Machines
-* Complexity Theory
-* First-order Logic and Undecidability
+* Understand some of the basic structures of mathematics, including sets (and operations on sets), functions, and relations. (PLO 5)
+* Determine the languages described by various constructs, including finite state machines, context free grammars, and Turing Machines. (PLO 1)
+* Create a finite state automata, context free grammar, or Turing Machine for a given language. (PLO 1, 2)
+* Understand non-determinism, including the equivalence between deterministic and non-deterministic models in various contexts. (PLO 1, 3, 5)
+* Explain what it means for a problem to be unsolvable by an algorithm, and to give examples of such problems. (PLO 3)
+* Classify problems as being either decidable (solvable by an algorithm) or undecidable. (PLO 3, 5)
+* Compare the relative degrees of unsolvability between problems. (PLO 3, 5)
+* Explain what is meant by the running time of an algorithm.  (PLO 3)
+* Define the different complexity classes, including P and NP, in a variety of ways, and explain why these definitions are equivalent. (PLO 4)
+* Apply various proof techniques, including induction, contradiction, and direct proof, to analyze and construct arguments regarding automata, grammars, Turing Machines, and complexity theory. (PLO 3, 5)
 
-## Required Textbook
+## Textbook
 
-*Introduction to the Theory of Computation* (3rd edition) by Michael Sipser. ISBN-13: 978-1133187790   
+We will be following the classic textbook by Sipser: *Introduction to the Theory of Computation* (3rd edition) by Michael Sipser. ISBN-13: 978-1133187790   
 Available at Amazon, the bookstore, etc.  
 
-Feel free to purchase the second edition / used copies if they are cheaper.
+The book is strongly recommended, but not required. Feel free to purchase the second edition / used copies if they are cheaper. We will also use readings from
 
 
 ## Discord Server
 
-...
+Over the past year, some students have found that using a Discord server to chat remotely about coursework was very helpful. I encourage you all to join our Discord server for this course. I will monitor the chat from time to time to help answer questions, but you all should join so you can work with each other!
+
+The link to the Discord server will be available on Moodle.
 
 ## Attendance
 
@@ -57,7 +64,7 @@ Do not enter campus buildings if you test positive for or are experiencing any s
 * 10% Pre-class work and participation (watching videos, short responses)
 * 30% Quizzes and/or take-home exams
 * 40% Problem Sets (5-8 problem sets)
-* 10%: VoiceThread Presentations (2 proofs / problem presentations)
+* 10%: VoiceThread Presentations (2 proof / problem presentations)
 * 10%: Final paper and presentation
 
 ## Late Homework Policy
@@ -82,20 +89,20 @@ I understand that this is a challenging and stressful time. Please check the [Co
 
 | Week | Topics | Readings |
 | ---- | ------ | -------- |
-| 1 (1/31, 2/3) | Intro to proofs, set theory, LaTeX | Chapter 0 and LaTeX handouts |
-| 2 (2/7, 2/10) | DFAs and NFAs | Section 1.1 - 1.2 |
-| 3 (2/14, 2/17) | NFAs and Regular Expressions | Sections 1.2 - 1.3; **Quiz 1** |
-| 4 (2/21, 2/24) | Non-Regular Languages, Grammars | Sections 1.4, 2.1 |
-| 5 (2/28, 3/3) | Grammars and Pushdown Automata | Sections 2.1 - 2.2 |
-| 6 (3/7, 3/10) | Non-context free languages | Section 2.3; **Quiz 2** |
-| 7 (3/14, 3/17) | Intro to Turing Machines | Section 3.1 |
-| 8 (3/21, 3/24) | Variants of Turing Machines and Church’s Thesis | Section 3.2 - 3.3 |
-| 9 (3/28, 3/31) | Set Theory | Sections 4.1 - 4.2; **Take home exam?** |
-| 10 (4/4, 4/7) | Reductions | Sections 5.1 - 5.3 |
+| 1 (1/31, 2/3) | Intro to the course; Proofs and Set theory; LaTeX | Chapter 0 and LaTeX handouts |
+| 2 (2/7, 2/10) | DFAs, NFAs, Closure Properties | Section 1.1 - 1.2 |
+| 3 (2/14, 2/17) | NFAs and Closure Properties | Sections 1.2 - 1.3; **Quiz 1** |
+| 4 (2/21, 2/24) | Regular Expressions and Non-Regular Languages | Sections 1.3 - 1.4 |
+| 5 (2/28, 3/3) | Context-Free Grammars and Pushdown Automata | Sections 2.1 - 2.2 |
+| 6 (3/7, 3/10) | Pushdown Automata and Intro to Turing Machines | Sections 2.2, 3.1; **Quiz 2** |
+| 7 (3/14, 3/17) | Describing Turing Machines, Variants of TMs, and Church's Thesis | Sections 3.1 - 3.3 |
+| 8 (3/21, 3/24) | Review of Set Theory and Diagonalization | Section 4.1 |
+| 9 (3/28, 3/31) | Undecidability | Sections 4.1 - 4.2; **Take home exam?** |
+| 10 (4/4, 4/7) | Reducibility | Sections 5.1 - 5.3 |
 | 11 (**spring break**) | No classes  |  |
-| 12 (4/18, 4/21) | Complexity Theory | 7.1 - 7.5 |
-| 13 (4/25, 4/28) | Introduction to Logic | Sections 6.1 - 6.2; **Quiz 3** |
-| 14 (5/2, 5/5) | Undecidability of arithmetic | Section 6.2 |
+| 12 (4/18, 4/21) | Complexity Theory and P vs NP | 7.1 - 7.3 |
+| 13 (4/25, 4/28) | NP-Completeness; Introduction to Logic | Sections 7.4 - 7.5; 6.1 - 6.2; **Quiz 3** |
+| 14 (5/2, 5/5) | Logic, arithmetic, and the undefinability of truth | Section 6.2 |
 | 15 (5/9, 5/12) | Final Presentations | |
 
 This is very much subject to change.
