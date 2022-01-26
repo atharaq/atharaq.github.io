@@ -98,7 +98,7 @@ I understand that this is a challenging and stressful time. Please check the [Co
 | 10 (4/4, 4/7) | Application: recurrence relations | ... |
 | 11 (**spring break**) | No classes  | **Take Home Exam 2?** |
 | 12 (4/18, 4/21) | Change of bases, matrix representations, similarity | ... |
-| 13 (4/25, 4/28) | Diagonalization, eigenvectors and eigenvalues | Quiz 3? |
+| 13 (4/25, 4/28) | Diagonalization, eigenvectors and eigenvalues | Quiz 3 |
 | 14 (5/2, 5/5) | Putting it all together / wrap-up | ... |
 | 15 (5/9, 5/12) | **Exam 3**? + Final Presentations | ... |
 
