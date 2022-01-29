@@ -84,22 +84,24 @@ I understand that this is a challenging and stressful time. Please check the [Co
 
 ## Course Outline (Tentative)
 
-| Week | Topics | Readings |
+Below, CDTW refers to [Cherney, Denton, Thomas, and Waldron](https://www.math.ucdavis.edu/~linear/linear-guest.pdf), and G refers to [Grossman](https://jp-g.de/Skripte/LA-GES-CS-JPG.pdf).
+
+| Week | Topics | Readings / Quizzes / Exams |
 | ---- | ------ | -------- |
-| 1 (1/31, 2/3) | Vectors, Geometry, and Linearity | ... |
-| 2 (2/7, 2/10) | Sets, Functions, Proofs | ... |
-| 3 (2/14, 2/17) | Linear Functions, Matrix Representations, Application: discrete dynamics | Quiz 1 |
-| 4 (2/21, 2/24) | Systems of Equations, Gaussian Elimination, Invertibility |  ... |
-| 5 (2/28, 3/3) | Determinants, Areas, Volumes | ... |
-| 6 (3/7, 3/10) | Review and **Exam 1** | ...  |
-| 7 (3/14, 3/17) | Vector Spaces, Linear Transformations, and subspaces | ... |
-| 8 (3/21, 3/24) | Linear combinations and Span | ... |
-| 9 (3/28, 3/31) | Application: differential equations; Bases / dimension | Quiz 2 |
-| 10 (4/4, 4/7) | Application: recurrence relations | ... |
+| 1 (1/31, 2/3) | Vectors, Geometry, and Linearity | CDTW Ch. 1 |
+| 2 (2/7, 2/10) | Sets, Functions, Proofs | G Ch. 1-2 |
+| 3 (2/14, 2/17) | Linear Functions, Matrix Representations, Application: discrete dynamics | G Ch.3 Quiz 1 |
+| 4 (2/21, 2/24) | Systems of Equations, Gaussian Elimination, Invertibility |  CDTW Ch. 2 / G Ch.3 |
+| 5 (2/28, 3/3) | Determinants, Areas, Volumes | G. Ch. 4 / CDTW Ch. 8 |
+| 6 (3/7, 3/10) | Review | **Exam 1** |
+| 7 (3/14, 3/17) | Vector Spaces, Linear Transformations, and subspaces | CDTW Ch. 4-5, G Ch. 7 |
+| 8 (3/21, 3/24) | Linear combinations and Span | CDTW Ch. 9 |
+| 9 (3/28, 3/31) | Application: differential equations; Bases / dimension | CDTW Ch. 9 - 10; Quiz 2 |
+| 10 (4/4, 4/7) | Application: recurrence relations | Lecture notes |
 | 11 (**spring break**) | No classes  | **Take Home Exam 2?** |
-| 12 (4/18, 4/21) | Change of bases, matrix representations, similarity | ... |
-| 13 (4/25, 4/28) | Diagonalization, eigenvectors and eigenvalues | Quiz 3 |
-| 14 (5/2, 5/5) | Putting it all together / wrap-up | ... |
-| 15 (5/9, 5/12) | **Exam 3**? + Final Presentations | ... |
+| 12 (4/18, 4/21) | Change of bases, matrix representations, similarity | CDTW Ch. 11;  G Ch. 8 |
+| 13 (4/25, 4/28) | Diagonalization, eigenvectors and eigenvalues | CDTW Ch. 12-13; G Ch. 6; Quiz 3 |
+| 14 (5/2, 5/5) | Putting it all together / wrap-up |  |
+| 15 (5/9, 5/12) | Final Presentations | **Exam 3** |
 
 This is very much subject to change.
