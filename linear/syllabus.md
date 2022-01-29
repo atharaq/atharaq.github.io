@@ -9,7 +9,7 @@ Spring 2022
 **Email**: athar.abdulquader AT purchase DOT edu  
 **Office Hours** TBD in Natural Sciences 3003 / possibly on Zoom?  
 **Meeting Times**: Mondays and Thursdays, 2:30 - 4:10  
-**Location**: ...
+**Location**: Natural Sciences 3053
 
 ## Course Description
 

@@ -12,7 +12,7 @@ Spring 2021
   * Chumba Kiplagat (chumba.kiplagat AT purchase DOT edu)  
   * Dylan McLaughlin (dylan.mclaughlin AT purchase DOT edu)
 **Meeting Times**: Mondays, 10:30 - 12:10
-**Location**: NS 1013
+**Location**: Natural Sciences 1013
 
 ## Course Description
 
