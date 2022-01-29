@@ -176,6 +176,69 @@ In general, though, much of the theory of vectors (and linear functions between 
 
 # Reachability
 
-Let's go back to the 2D setting for now.
+Let's go back to the 2D setting for now. Let's explore the "Magic Carpet Ride" problem (this is taken from the "Inquiry-Oriented Linear Algebra" curriculum; a PDF of this problem is available on Moodle):
 
-# Homework
+> You	are	a	young	traveler,	leaving	home for	the	first	time. Your parents want to help you on your journey, so just before	your departure,	they give you two gifts. Specifically,	they give	you	two	forms	of transportation: a hover board and a magic carpet. Your	parents	inform you that both the hover board and the magic carpet have	restrictions in how they operate:
+
+We denote the restriction	on the hover board’s movement	by the vector $\binom{3}{1}$. By this	we mean	that if the	hover	board	traveled “forward” for	one	hour,	it would move along	a	“diagonal” path that would result	in a displacement	of 3 miles East and 1	mile North of its starting location.
+
+We denote the restriction on the magic carpet's movement by the vector $\binom{1}{2}$. Similarly, this means that every hour on the magic carpet, you move 1 mile East and 2 miles North of your starting location.
+
+You wish to visit the Old Man Gauss. Gauss lives in a cabin that is 107 miles East and 64 miles North of your home.
+
+In class, we worked on this task: can you use the hover board and magic carpet to get to Gauss's cabin? If so, how? If not, why not?
+
+In other words: is the vector $\vec{t} = \binom{107}{64}$ **reachable** using the vectors $\vec{h} = \binom{3}{1}$ and $\vec{c} = \binom{1}{2}$?
+
+## Geometry
+
+One way to think about this is to see what points are reachable using these two vectors. We've see that the vectors $\vec{v}$ and $\vec{w}$ form a parallelogram; if you keep adding different multiples of $\vec{v}$ and $\vec{w}$, you get a whole *grid* of parallelograms:
+
+<div class="sage">
+<script type="text/x-sage">
+def grid(v1, v2, endpoints=[-3, 3, -3, 3], color1='blue', color2='red'):
+    G = Graphics()
+    for i in range(endpoints[0], endpoints[1]):
+        for j in range(endpoints[2], endpoints[3]):
+            base = i * v1 + j*v2
+            G += arrow(base, base+v1, color=color1)
+            G += arrow(base, base+v2, color=color2)
+    return G
+
+
+G = Graphics()
+origin = vector([0, 0])
+v = vector([3, 1])
+w = vector([1, 2])
+G += grid(v, w)
+G.show(xmin=-5, xmax=5, ymin=-5, ymax=5)
+</script>
+</div>
+
+These are all using **integer** multiples of the vectors. What would happen if we used decimal multiples? What do they correspond to in this problem?
+
+## Solution, Algebraically
+
+As a class, we determined that we are really asking: are there numbers $a$ and $b$, so that if we travel on the hoverboard for $a$ hours and the magic carpet for $b$ hours, that we end up **exactly** at $\binom{107}{64}$? In other words, we need to solve this vector equation:
+
+$$a \cdot \binom{3}{1} + b \cdot{1}{2} = \binom{107}{64}$$
+
+If we expand this out, we end up getting a system of two equations with two variables, $a$ and $b$:
+
+$$
+\begin{align}
+3a + b &= 107 \\
+a + 2b &= 64
+\end{align}
+$$
+
+We can solve this using algebraic techniques (elimination or substitution).
+
+<details>
+<summary>Answer:</summary>
+<p>If we solve this system, we get $a = 30$ and $b = 17$. This means that <strong>yes</strong>, we can reach Gauss's cabin using just these two directions.</p>
+</details>
+
+# Pre-work Lesson 1
+
+Similar problems to the above are posted on Moodle ("Pre-work Lesson 1"). Try these out! This is due before class on **Thursday**!
