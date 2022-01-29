@@ -3,7 +3,7 @@
 Lecture Notes for Spring 2022 Courses:
 
 * [Computer Science II](cs2-s22)
-* [Linear Algebra](linear)
+* [Linear Algebra](linear) 
 * [Computability](computability)
 
 Old lecture notes can still be found at their respective sites. Contact me if you need access to them.
