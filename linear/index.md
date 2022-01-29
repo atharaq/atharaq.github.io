@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# MAT 4520: Computability
+# MAT 3170: Linear Algebra
 
 ## Resources
 
