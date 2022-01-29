@@ -54,9 +54,13 @@ The original paper in which computability theory was born was authored by Alan T
 > The behaviour of the computer at any moment is determined by the symbols which he is observing, and his " state of mind " at that moment.
 We may suppose that there is a bound B to the number of symbols or squares which the computer can observe at one moment. If he wishes to
 observe more, he must use successive observations. We will also suppose that the number of states of mind which need be taken into account is finite. . .
+
 > Let us imagine the operations performed by the computer to be split up into "simple operations" which are so elementary that it is not easy to imagine them further divided. Every such operation consists of some change of the physical system consisting of the computer and his tape. We know the state of the system if we know the sequence of symbols on the tape, which of these are observed by the computer (possibly with a special order), and the state of mind of the computer. We may suppose that in a simple operation not more than one symbol is altered. Any other changes can be split up into simple changes of this kind. . .
+
 > The most general single operation must therefore be taken to be one of the following:
+
 > (a) A possible change . . . of symbol together with a possible change of state of mind.
+
 > (b) A possible change . . . of observed squares, together with a possible change of state of mind.
 
 # Mathematical writing
