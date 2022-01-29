@@ -241,4 +241,6 @@ We can solve this using algebraic techniques (elimination or substitution).
 
 # Pre-work Lesson 1
 
-Similar problems to the above are posted on Moodle ("Pre-work Lesson 1"). Try these out! This is due before class on **Thursday**!
+1. Similar problems to the above are posted on Moodle ("Pre-work Lesson 1"). Try these out! This is due before class on **Thursday**!
+2. Watch the [Essence of Linear Algebra, Chapter 1](https://www.youtube.com/watch?v=fNk_zzaMoSs) video.
+3. Come to Thursday's class prepared with any questions you had about the homework, today's lesson, or the video!
