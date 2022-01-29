@@ -12,11 +12,11 @@ In this course, we will formalize the notion of **algorithms** and **computation
 
 ```python
 def fn(list):
-	m = list[0]
-	for n in list:
-		if n > m:
-			m = n
-	return m
+  m = list[0]
+  for n in list:
+    if n > m:
+      m = n
+  return m
 ```
 
 1. What does the function $fn$ do?
@@ -38,7 +38,7 @@ In 1900, David Hilbert (famous German mathematician) presented a list of 23 prob
 
 The tenth problem read:
 
-> ... insert text
+> Given a Diophantine equation with any number of unknown quantities and with rational integral numerical coefficients: To devise a process according to which it can be determined in a finite number of operations whether the equation is solvable in rational integers.
 
 A *Diophantine equation* is a polynomial (in several variables) with integer coefficients. A *solution* to a Diophantine equation is an assignment of integer values to all the variables that satisfies the equation. For example, the equation $x^2 + y^2 = z^2$ is a Diophantine equation, with many solutions ($x = 3, y = 4, z = 5$ is a solution).
 
@@ -48,11 +48,16 @@ Proving that no algorithm exists to solve a problem sounds like an incredibly da
 
 ## Turing
 
-The original paper in which computability theory was born was authored by Alan Turing in 1936 ("On Computable Numbers, With an Application to the Entscheidungsproblem.") This paper is one of the single-most influential papers in mathematics in the twentieth century. There is a particular section of [the paper](insert link) that really helps motivate the constructions of computability theory.
+The original paper in which computability theory was born was authored by Alan Turing in 1936 ("On Computable Numbers, With an Application to the Entscheidungsproblem.") This paper is one of the single-most influential papers in mathematics in the twentieth century. There is a particular section of [the paper](https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf), Section 9, that really helps motivate the constructions of computability theory. I suggest we look at this briefly now, but really come back to it later in the semester when we study Turing Machines.
 
-> ... insert text.
-
-
+> Computing is normally done by writing certain symbols on paper. We may suppose this paper is divided into squares like a child's arithmetic book. . . The differences from our point of view between the single and compound symbols is that the compound symbols, if they are too lengthy, cannot be observed at one glance. This is in accordance with experience. We cannot tell at a glance whether 9999999999999999 and 999999999999999 are the same.
+> The behaviour of the computer at any moment is determined by the symbols which he is observing, and his " state of mind " at that moment.
+We may suppose that there is a bound B to the number of symbols or squares which the computer can observe at one moment. If he wishes to
+observe more, he must use successive observations. We will also suppose that the number of states of mind which need be taken into account is finite. . .
+> Let us imagine the operations performed by the computer to be split up into "simple operations" which are so elementary that it is not easy to imagine them further divided. Every such operation consists of some change of the physical system consisting of the computer and his tape. We know the state of the system if we know the sequence of symbols on the tape, which of these are observed by the computer (possibly with a special order), and the state of mind of the computer. We may suppose that in a simple operation not more than one symbol is altered. Any other changes can be split up into simple changes of this kind. . .
+> The most general single operation must therefore be taken to be one of the following:
+> (a) A possible change . . . of symbol together with a possible change of state of mind.
+> (b) A possible change . . . of observed squares, together with a possible change of state of mind.
 
 # Mathematical writing
 
@@ -94,7 +99,6 @@ $$
 and obtain two solutions: $x = 4$ and $x = -3$. Since the problem asks for a point in the first quadrant, we have $(4, 4)$ as the desired point on the line $y = x$.
 
 The moral of the story is that mathematics is written in natural language. Get in the habit of writing your mathematical arguments *primarily* in English in this course. This example is loosely taken from [Francis Su, "Guidelines for Good Mathematical Writing"](https://math.hmc.edu/su/wp-content/uploads/sites/10/2019/11/good-math-writing.pdf).
-
 
 # LaTeX Markup
 
@@ -177,4 +181,5 @@ $$
 &= f^\prime(a) + g^\prime(a)
 \end{align}
 $$
-
+2. Write down any questions you have about the reading in the .tex file.
+3. Compile the .tex file to a PDF, and upload the PDF to the assignment space on Moodle.
