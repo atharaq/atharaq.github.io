@@ -104,7 +104,7 @@ When we start at $\vec{v}$ and add $\vec{w}$, we get $\vec{v} + \vec{w}$. We cou
 
 We can also think about three-dimensional vectors. (In fact, we can also talk about 1D vectors. What are they?) A vector in 3D has an $x$-coordinate, $y$-coordinate, and $z$-coordinate. They also can be re-scaled and added! Let's give a couple of examples:
 
-**Rescaling**: Here we have the vector $\vec{v} = \begin{pmatrix}2 \\ -1 \\ 1\end{pmatrix}$ and the vector $2 \cdot \vec{v}$.
+**Rescaling**: Here we have the vector $\vec{v} = \begin{pmatrix}2 \\\ -1 \\\ 1\end{pmatrix}$ and the vector $2 \cdot \vec{v}$.
 
 <div class="sage">
 <script type="text/x-sage">
@@ -126,7 +126,7 @@ G.show()
 </script>
 </div>
 
-**Addition**: Here we add $\vec{v} = \begin{pmatrix}2 \\ -1 \\ 1\end{pmatrix}$ and $\vec{w} = \begin{pmatrix}1 \\ 3 \\ 2\end{pmatrix}$.
+**Addition**: Here we add $\vec{v} = \begin{pmatrix}2 \\\ -1 \\\ 1\end{pmatrix}$ and $\vec{w} = \begin{pmatrix}1 \\\ 3 \\\ 2\end{pmatrix}$.
 
 <div class="sage">
 <script type="text/x-sage">
@@ -158,6 +158,24 @@ Can you figure out how to define rescaling and addition for three dimensional ve
 
 # Abstraction
 
+**Vectors** are objects which can be added and rescaled. Besides 1D / 2D / 3D / etc "arrows", what other objects can be added and re-scaled?
+
+One good example is **functions**. For example, if $f(x)$ and $g(x)$ are functions with domain $\mathbb{R}$, then $(f + g)(x)$ is also a function with domain $\mathbb{R}$. And so is $2 \cdot f(x)$, which is defined just as the function whose $y$-values are $2 \times f(x)$ for each $x$-value.
+
+We can also look at more specific cases of functions:
+
+* If $f(x)$ and $g(x)$ are both **polynomials**, then $f + g$ is a polynomial. (Do you know why?)
+* If $f(x)$ and $g(x)$ are both **continuous**, then $f + g$ is continuous. (Why?)
+* If they are both **differentiable**?
+* If they both have convergent Taylor series?
+* If they are both **non-zero**?
+
+One of the above is false. Which one?
+
+In general, though, much of the theory of vectors (and linear functions between vector spaces, which is coming soon) can be applied to sets of functions as well. This is what I meant when I said we will try to prove things abstractly. If we can prove properties of vectors, using only the fact that they can be added and rescaled, then it doesn't matter if the vectors, themselves, have some sort of geometric meaning; nor does it matter what *kind* of vectors they are. Imagine if we had to prove a theorem once for 1D vectors, again for 2D, again for 3D, and again for each of the classes of functions mentioned above!
+
 # Reachability
+
+Let's go back to the 2D setting for now.
 
 # Homework
