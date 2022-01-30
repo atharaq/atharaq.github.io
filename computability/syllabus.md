@@ -36,8 +36,7 @@ Upon completion of this course, students should be able to...
 We will be following the classic textbook by Sipser: *Introduction to the Theory of Computation* (3rd edition) by Michael Sipser. ISBN-13: 978-1133187790   
 Available at Amazon, the bookstore, etc.  
 
-The book is strongly recommended, but not required. Feel free to purchase the second edition / used copies if they are cheaper. We will also use readings from
-
+The book is strongly recommended, but not required. Feel free to purchase the second edition / used copies if they are cheaper. We will also use readings from [Maheshwari and Smid, *Introduction to the Theory of Computation (draft)](https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf).
 
 ## Discord Server
 
