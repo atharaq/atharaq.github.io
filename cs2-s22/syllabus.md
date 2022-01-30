@@ -10,8 +10,8 @@ Spring 2021
 **Office Hours** TBD in Natural Sciences 3003 / possibly on Zoom?  
 **Learning Assistants**:
   * Chumba Kiplagat (chumba.kiplagat AT purchase DOT edu)  
-  * Dylan McLaughlin (dylan.mclaughlin AT purchase DOT edu)
-**Meeting Times**: Mondays, 10:30 - 12:10
+  * Dylan McLaughlin (dylan.mclaughlin AT purchase DOT edu)  
+**Meeting Times**: Mondays, 10:30 - 12:10  
 **Location**: Natural Sciences 1013
 
 ## Course Description
