@@ -221,7 +221,7 @@ These are all using **integer** multiples of the vectors. What would happen if w
 
 As a class, we determined that we are really asking: are there numbers $a$ and $b$, so that if we travel on the hoverboard for $a$ hours and the magic carpet for $b$ hours, that we end up **exactly** at $\binom{107}{64}$? In other words, we need to solve this vector equation:
 
-$$a \cdot \binom{3}{1} + b \cdot{1}{2} = \binom{107}{64}$$
+$$a \cdot \binom{3}{1} + b \cdot \binom{1}{2} = \binom{107}{64}$$
 
 If we expand this out, we end up getting a system of two equations with two variables, $a$ and $b$:
 
