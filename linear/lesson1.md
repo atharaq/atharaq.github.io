@@ -232,7 +232,7 @@ We've already seen that vectors can be added and re-scaled. Technically we say t
 
 Given vectors $\vec{v_1}$ and $\vec{v_2}$ and real numbers $a_1$ and $a_2$, the vector $a_1 \cdot \vec{v_1} + a_2 \cdot \vec{v_2}$ is called a **linear combination** of $\vec{v_1}$ and $\vec{v_2}$. We've seen this! In the "Carpet Ride" exercise, we saw that we needed to find a linear combination of the "hoverboard" vector and the "magic carpet" vector that reached Gauss's cabin.
 
-We can extend this definition to talk about linear combinations of three vectors, or four vectors, or, more abstractly, $n$ vectors. Given $n$ vectors $\vec{v_1}, \vec{v_2}, \ldots \vec{v_n}$ and $n$ real numbers $a_1, \ldot, a_n$, the vector $a_1 \cdot \vec{v_1} + a_2 \cdot \vec{v_2} + \ldots + a_n \cdot \vec{v_n}$ is a **linear combination** of the vectors $\vec{v_1}, \ldots, \vec{v_n}$.
+We can extend this definition to talk about linear combinations of three vectors, or four vectors, or, more abstractly, $n$ vectors. Given $n$ vectors $\vec{v_1}, \vec{v_2}, \ldots \vec{v_n}$ and $n$ real numbers $a_1, \ldots, a_n$, the vector $a_1 \cdot \vec{v_1} + a_2 \cdot \vec{v_2} + \ldots + a_n \cdot \vec{v_n}$ is a **linear combination** of the vectors $\vec{v_1}, \ldots, \vec{v_n}$.
 
 **Question**: What would a linear combination of a single vector be?
 
