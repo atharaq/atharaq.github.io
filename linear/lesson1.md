@@ -422,3 +422,9 @@ $$
 Right away, if we know $x$, we know $a = x$. Substituting in, we can solve for $b$ by plugging in $x$ for $a$; so $b = y - 2x$. Then we can solve for $c$: $c = z - 2x - 2y$. In other words: if you know $x, y$, and $z$, there is a linear combination of $\vec{v}, \vec{w}$ and $\vec{u}$ that reaches $\begin{pmatrix}x\\\y\\\z\end{pmatrix}$. The span of these three vectors is **all** of $\mathbb{R}^3$!
 
 # Pre-work Lesson 2
+
+On Moodle, answer the following question in the assignment space for this:
+
+1. Question 2 of the last pre-work stated: "True or false: there is a vector in $\mathbb{R}^2$ that **cannot** be reached using combinations of vectors $\binom{1}{1}$ and $\binom{2}{2}$." Restate this question using the terms we learned today (linear combinations, span).
+2. Two vectors on different lines "span" a plane. What do three vectors on different planes span? How does your answer change if our vectors are in $\mathbb{R}^4$, four-dimensional space?
+3. Make a guess: what is the minimum number of vectors we need to "span" the set of all vectors in $\mathbb{R}^4$?
