@@ -24,7 +24,7 @@ Initially, the switch is off. Let's say a *word* is a string of F's, representin
 
 Abstractly, we can represent this with a simple diagram:
 
-(diagram)
+<img class="noreverse" src="light-switch.jpeg" alt="State diagram showing two states: off and on; transitions between each state labeled with letter F"/>
 
 **Exercise**: Define, precisely, the set of words accepted by the machine.
 
@@ -41,7 +41,7 @@ While it might not seem like much, we did just describe one type of a somewhat u
 
 Technically, we also need to describe, precisely, what *kind* of input we allow to our machines as well. The light switch doesn't know how to handle any input besides a sequence of "flips". So we make the following definitions:
 
-**Definition**: 
+**Definition**:
 
 1. An **alphabet** is a nonempty, finite set of symbols.
 2. If $\Sigma$ is an alphabet, a **string** or **word** is a finite sequence of symbols from $\Sigma$.
@@ -108,9 +108,9 @@ We will talk more about these as they come up in the course.
 
 As mentioned before, our first class of machines generalize the light switch machine. The idea is that we keep track of a finite set of states and the "transitions" between them, based on the input. We consider the input to be given to us externally to the machine (so the machine does not have to have any memory). Eventually we will define these machines very formally, but for now, we will keep things somewhat informal. Here is an example, where the alphabet is $\Sigma = \{ 0, 1 \}$.
 
-(diagram)
+<img class="noreverse" src="dfa-example.jpeg" />
 
-This kind of machine is called a **deterministic finite-state automaton**, or DFA. The "arrow" at the beginning means it is the "starting" state, and the double circle indicates that it is an "accept" state. We "feed" the machine a string. As an example, what does the machine "do" (how does it compute) on the string $010$:
+This kind of machine is called a **deterministic finite-state automaton**, or DFA. Each circle represents a *state*. The "arrow" at the beginning means it is the "starting" state, and the double circle on $q_1$ indicates that it is an "accept" state. We "feed" the machine a string. As an example, what does the machine "do" (how does it compute) on the string $010$:
 
 * Start at state $q_0$.
 * See a $0$: move to state $q_1$.
@@ -130,7 +130,7 @@ Since we end in an **accept** state, we say the machine **accepts** the string $
 
 **Example**: Determine the following:
 
-(diagram)
+<img class="noreverse" src="dfa-ex2.jpeg" />
 
 1. Is $1 \in \mathcal{L}(M)$?
 2. Is $00 \in \mathcal{L}(M)$?
@@ -151,9 +151,9 @@ Suppose we want to design a DFA over the alphabet $\Sigma = \{ 0, 1 \}$ which ac
 
 # Lesson 2 "Pre-work"
 
-* Determine the language recognized by the following machines:
+* Determine the language recognized by the following machine:
 
-(image)
+<img class="noreverse" src="dfa-hw.jpeg" / >
 
 * Read Sipser section 1.1, up until Example 1.21 (page 44), or [Maheshwari-Smid](link) sections 2.1-2.2.
 * Think about what we would need to describe in order to define, formally, a DFA and its computation. Can you come up with a complete list?
