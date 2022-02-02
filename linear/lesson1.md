@@ -123,9 +123,9 @@ $$
 
 The last question on the homework was about reachability in three dimensions. Let's do a similar example:
 
-**True or false**: every vector in $\mathbb{R}^3$ is reachable from the vectors $\vec{v} = \begin{pmatrix}0 \\ 1 \\ 0\end{pmatrix}$ and $\vec{w} = \begin{pmatrix}1 \\ 0 \\ 2\end{pmatrix}$.
+**True or false**: every vector in $\mathbb{R}^3$ is reachable from the vectors $\vec{v} = \begin{pmatrix}0 \\\ 1 \\\ 0\end{pmatrix}$ and $\vec{w} = \begin{pmatrix}1 \\\ 0 \\\ 2\end{pmatrix}$.
 
-Showing that this kind of "every vector is reachable" statement is true is, again, somewhat tricky. We would need to take a vector of the form $\vec{r} = \begin{pmatrix}x \\ y \\ z\end{pmatrix}$, where we don't know $x$, $y$, or $z$ (they can be any real number), and try to reach it using $\vec{v}$ and $\vec{w}$. Or, to show that it's false, we just need to find **one** vector that is not reachable.
+Showing that this kind of "every vector is reachable" statement is true is, again, somewhat tricky. We would need to take a vector of the form $\vec{r} = \begin{pmatrix}x \\\ y \\\ z\end{pmatrix}$, where we don't know $x$, $y$, or $z$ (they can be any real number), and try to reach it using $\vec{v}$ and $\vec{w}$. Or, to show that it's false, we just need to find **one** vector that is not reachable.
 
 Again, it's a good idea to first try to visualize this. It may be hard to draw, but we can plot it in Sage:
 
@@ -170,7 +170,7 @@ a &= y \\
 \end{align}
 $$
 
-Using some algebraic substitution, you can see that this is only solvable if $z = 2x$. So for example, the vector $\begin{pmatrix}0 \\ 0 \\ 1 \end{pmatrix}$ cannot be reached! **The statement is false**!
+Using some algebraic substitution, you can see that this is only solvable if $z = 2x$. So for example, the vector $\begin{pmatrix}0 \\\ 0 \\\ 1 \end{pmatrix}$ cannot be reached! **The statement is false**!
 
 <div class="sage">
 <script type="text/x-sage">
@@ -339,7 +339,7 @@ G.show()
 </script>
 </div>
 
-Three vectors? Let's try $\vec{v} = \begin{pmatrix}1 \\ 2 \\ 3\end{pmatrix}, \vec{w} = \begin{pmatrix}0\\1\\2\end{pmatrix}$, and $\vec{u}=\begin{pmatrix}-1\\0\\1\end{pmatrix}$. None of these are on the same line:
+Three vectors? Let's try $\vec{v} = \begin{pmatrix}1 \\\ 2 \\\ 3\end{pmatrix}, \vec{w} = \begin{pmatrix}0\\\1\\\2\end{pmatrix}$, and $\vec{u}=\begin{pmatrix}-1\\\0\\\1\end{pmatrix}$. None of these are on the same line:
 
 <div class="sage">
 <script type="text/x-sage">
@@ -374,7 +374,7 @@ G.show()
 
 What happened? It turned out the the vector $\vec{u}$ is already in the span of $\vec{v}$ and $\vec{w}$! In fact, you can check: $\vec{u} = -1 \cdot \vec{v} + 2 \cdot \vec{w}$. That means it lies **on the same plane** as the vectors $\vec{v}$ and $\vec{w}$. The span of these three vectors is *two-dimensional*!
 
-Of course, if we picked a vector that was *not* on the same plane, we'd get a very different picture. Here we change $\vec{u}$ to be the vector $\begin{pmatrix}0\\0\\1\end{pmatrix}$.
+Of course, if we picked a vector that was *not* on the same plane, we'd get a very different picture. Here we change $\vec{u}$ to be the vector $\begin{pmatrix}0\\\0\\\1\end{pmatrix}$.
 
 <div class="sage">
 <script type="text/x-sage">
@@ -419,6 +419,6 @@ a &= x \\
 \end{align}
 $$
 
-Right away, if we know $x$, we know $a = x$. Substituting in, we can solve for $b$ by plugging in $x$ for $a$; so $b = y - 2x$. Then we can solve for $c$: $c = z - 2x - 2y$. In other words: if you know $x, y$, and $z$, there is a linear combination of $\vec{v}, \vec{w}$ and $\vec{u}$ that reaches $\begin{pmatrix}x\\y\\z\end{pmatrix}$. The span of these three vectors is **all** of $\mathbb{R}^3$!
+Right away, if we know $x$, we know $a = x$. Substituting in, we can solve for $b$ by plugging in $x$ for $a$; so $b = y - 2x$. Then we can solve for $c$: $c = z - 2x - 2y$. In other words: if you know $x, y$, and $z$, there is a linear combination of $\vec{v}, \vec{w}$ and $\vec{u}$ that reaches $\begin{pmatrix}x\\\y\\\z\end{pmatrix}$. The span of these three vectors is **all** of $\mathbb{R}^3$!
 
 # Pre-work Lesson 2
