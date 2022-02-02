@@ -48,13 +48,13 @@ Technically, we also need to describe, precisely, what *kind* of input we allow 
 
 **Example 1**: If $\Sigma = \{ 0 \}$, then the following are strings over $\Sigma$:
 
-*   (the empty string, usually represented by $\epsilon$)
+*   (the empty string, usually represented by $\varepsilon$)
 * 0
 * 00000
 
 **Example 2**: If $\Sigma = \{ 0, 1 \}$, then the the following are valid strings:
 
-* $\epsilon$
+* $\varepsilon$
 * 0
 * 1
 * 10
