@@ -11,6 +11,7 @@ Spring 2021
 **Learning Assistants**:
   * Chumba Kiplagat (chumba.kiplagat AT purchase DOT edu)  
   * Dylan McLaughlin (dylan.mclaughlin AT purchase DOT edu)  
+
 **Meeting Times**: Mondays and Thursdays, 10:30 - 12:10  
 **Location**: Natural Sciences 1013
 
