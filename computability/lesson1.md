@@ -151,7 +151,7 @@ Suppose we want to design a DFA over the alphabet $\Sigma = \{ 0, 1 \}$ which ac
 
 # Lesson 2 "Pre-work"
 
-<img class="noreverse" src="dfa-hw.jpeg" / >
+<img class="noreverse" src="dfa-hw.jpeg" />
 
 <ol>
 <li>Determine the language recognized by the above machine. Write your answer in set theoretic notation.</li>
