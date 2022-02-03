@@ -151,11 +151,10 @@ Suppose we want to design a DFA over the alphabet $\Sigma = \{ 0, 1 \}$ which ac
 
 # Lesson 2 "Pre-work"
 
-<ul>
-<li>Determine the language recognized by the following machine. Write your answer in set theoretic notation.
-<img class="noreverse" src="dfa-hw.jpeg" / >
+<ol>
+<li><img class="noreverse" src="dfa-hw.jpeg" / > Determine the language recognized by the following machine. Write your answer in set theoretic notation.
 </li>
 <li>In the previous problem, explain why the machine accepts every string in the set you listed, and why it rejects every string not in the set you listed..</li>
-<li>Read Sipser section 1.1, up until Example 1.21 (page 44), or [Maheshwari-Smid](link) sections 2.1-2.2.</li>
+<li>Read Sipser section 1.1, up until Example 1.21 (page 44), or <a href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf">Maheshwari-Smid</a> sections 2.1-2.2.</li>
 <li>Think about what we would need to describe in order to define, formally, a DFA and its computation. Can you come up with a complete list?</li>
-</ul>
+</ol>
