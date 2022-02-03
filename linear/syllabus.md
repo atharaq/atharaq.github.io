@@ -7,7 +7,7 @@ Spring 2022
 
 **Instructor**: Professor Abdul-Quader (or just "Athar")  
 **Email**: athar.abdulquader AT purchase DOT edu  
-**Office Hours** TBD in Natural Sciences 3003 / possibly on Zoom?  
+**Office Hours**: Mondays and Thursdays, 12:45 - 2:15 PM in Natural Sciences 3003  
 **Meeting Times**: Mondays and Thursdays, 2:30 - 4:10  
 **Location**: Natural Sciences 3053
 
