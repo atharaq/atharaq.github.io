@@ -10,6 +10,7 @@ Spring 2022
 **Office Hours**: 
   * Mondays and Thursdays, 1 - 2 PM Natural Sciences 3003  
   * Tuesdays, 11 AM - 12 Noon on Zoom (link on Moodle)
+
 **Meeting Times**: Mondays and Thursdays, 4:30 - 6:10  
 **Location**: Natural Sciences 2001
 
