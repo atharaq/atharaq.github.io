@@ -7,10 +7,14 @@ Spring 2021
 
 **Instructor**: Professor Abdul-Quader (or just "Athar")  
 **Email**: athar.abdulquader AT purchase DOT edu  
-**Office Hours** TBD in Natural Sciences 3003 / possibly on Zoom?  
+**Office Hours**: 
+  * Mondays and Thursdays, 1 - 2 PM in Natural Sciences 3003  
+  * Tuesdays, 11 AM - 12 Noon on Zoom (link on Moodle)  
+
 **Learning Assistants**:
   * Chumba Kiplagat (chumba.kiplagat AT purchase DOT edu)  
   * Dylan McLaughlin (dylan.mclaughlin AT purchase DOT edu)  
+
 **Meeting Times**: Mondays and Thursdays, 10:30 - 12:10  
 **Location**: Natural Sciences 1013
 
