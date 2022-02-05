@@ -151,7 +151,7 @@ Of course, we never write $(x, y) \in f$. We usually just write $f(x) = y$.
 <details>
 <summary>Check your answers:</summary>
 <ol>
-<li>The image $f(A)$ is the set of <strong>all real numbers</strong, $\mathbb{R}$. In this case, we are looking at $f(\binom{x}{x})$, which is $2x - x$. So $f(\binom{x}{x}) = 2x - x = x$. That means for any $y \in \mathbb{R}$, there is some $\vec{v} \in A$ such that $f(\vec{v}) = y$: in particular, the vector $\vec{v} = \binom{y}{y}$ works!</li>
+<li>The image $f(A)$ is the set of <strong>all real numbers</strong>, $\mathbb{R}$. In this case, we are looking at $f(\binom{x}{x})$, which is $2x - x$. So $f(\binom{x}{x}) = 2x - x = x$. That means for any $y \in \mathbb{R}$, there is some $\vec{v} \in A$ such that $f(\vec{v}) = y$: in particular, the vector $\vec{v} = \binom{y}{y}$ works!</li>
 <li>The image $f(B)$ is just the set with a single element in it: $\\{ 0 \\}$! This is because $f(\binom{x}{y}) = 2x - y$. Substitute in $y = 2x$ and we get $f(\binom{x}{y}) = 2x - 2x = 0$.</li>
 </ol>
 </details>
