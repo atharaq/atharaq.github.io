@@ -1,7 +1,7 @@
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
 <script>sagecell.makeSagecell({"inputLocation": ".sage"});</script>
 
-$\DeclareMathOperator{\Span}{Span}
+$\DeclareMathOperator{\Span}{Span}$
 
 # Linear Lesson 2: Functions and Linearity
 {:.no_toc}
