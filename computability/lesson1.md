@@ -32,7 +32,7 @@ Abstractly, we can represent this with a simple diagram:
 <summary>Check your answer</summary>
 <p>The language of this machine is the set of those strings of F's that have <strong>odd</strong> length.</p>
 <p>To see this, notice that every two flips "cancel out". So if we start at the off state, we need an odd number of F's in order to end up in the on state.</p>
-<p>In set-theoretic notation, we say that the language of the machine is $\{ w : w$ is a string consisting entirely of an odd number of $F$'s $\}$.</p>
+<p>In set-theoretic notation, we say that the language of the machine is $\\{ w : w$ is a string consisting entirely of an odd number of $F$'s $\\}$.</p>
 </details>
 
 # Alphabets, Words, Strings, and Languages
@@ -46,13 +46,13 @@ Technically, we also need to describe, precisely, what *kind* of input we allow 
 1. An **alphabet** is a nonempty, finite set of symbols.
 2. If $\Sigma$ is an alphabet, a **string** or **word** is a finite sequence of symbols from $\Sigma$.
 
-**Example 1**: If $\Sigma = \{ 0 \}$, then the following are strings over $\Sigma$:
+**Example 1**: If $\Sigma = \\{ 0 \\}$, then the following are strings over $\Sigma$:
 
 *   (the empty string, usually represented by $\varepsilon$)
 * 0
 * 00000
 
-**Example 2**: If $\Sigma = \{ 0, 1 \}$, then the the following are valid strings:
+**Example 2**: If $\Sigma = \\{ 0, 1 \\}$, then the the following are valid strings:
 
 * $\varepsilon$
 * 0
@@ -68,12 +68,12 @@ The set of all strings over a given alphabet $\Sigma$ is referred to as $\Sigma^
 
 Set theoretically, we say $\mathcal{L}$ is a language over $\Sigma$ is $\mathcal{L} \subseteq \mathcal{P}(\Sigma^*)$.
 
-**Examples**: Here we use the alphabet $\Sigma = \{ 0, 1 \}$.
+**Examples**: Here we use the alphabet $\Sigma = \\{ 0, 1 \\}$.
 
 1. $\mathcal{L}_1 = \emptyset$. The set of no words.
 2. $\mathcal{L}_2 = \Sigma^*$. The set of **all** possible words.
-3. $\mathcal{L}_3 = \{ 0, 1, 00, 01 \}$. This is a finite language. ($\mathcal{L}_2$ is not!)
-4. $\mathcal{L}_4 = \{ w \in \Sigma^* : w$ has more 0s than 1s $\}$.
+3. $\mathcal{L}_3 = \\{ 0, 1, 00, 01 \\}$. This is a finite language. ($\mathcal{L}_2$ is not!)
+4. $\mathcal{L}_4 = \\{ w \in \Sigma^* : w$ has more 0s than 1s $\\}$.
 
 **Exercise**: Give 3 examples of strings in $\mathcal{L}_4$, and one example of a string not in $\mathcal{L}_4$.
 
@@ -87,11 +87,11 @@ If you are interested, you can look at my [slides from Discrete Mathematics, Fal
 
 A **set** is an unordered collection of distinct objects. By now, we have seen **alphabets**, which are finite sets of symbols, and **languages**, which are sets of strings over some alphabet.
 
-**Notation**: We use curly braces, $\{$ and $\}$, to denote sets. The set $\{1, 2, 3 \}$ is the set of those three elements. The set $\{ 1, 1, 1 \}$ is a set of just one element. Sets are determined by their elements (there is no notion of multiplicity).
+**Notation**: We use curly braces, $\\{$ and $\\}$, to denote sets. The set $\\{1, 2, 3 \\}$ is the set of those three elements. The set $\\{ 1, 1, 1 \\}$ is a set of just one element. Sets are determined by their elements (there is no notion of multiplicity).
 
-We also use "set-builder notation": for example, $P = \{ x : x$ is a prime number$ \}$. We read this as "the set of all $x$ such that $x$ is a prime number."
+We also use "set-builder notation": for example, $P = \\{ x : x$ is a prime number$ \\}$. We read this as "the set of all $x$ such that $x$ is a prime number."
 
-**More notation**: if $X$ is a set, then $a \in X$ means "$a$ is an element of the set $X$," and $a \not \in X$ means "$a$ is not an element of $X$." For example, let $X = \{$ "red", "blue", $13 \}$. Then $1 \not \in X$, but the word "red" $\in X$.
+**More notation**: if $X$ is a set, then $a \in X$ means "$a$ is an element of the set $X$," and $a \not \in X$ means "$a$ is not an element of $X$." For example, let $X = \\{$ "red", "blue", $13 \\}$. Then $1 \not \in X$, but the word "red" $\in X$.
 
 ## Operations on sets
 
@@ -106,7 +106,7 @@ We will talk more about these as they come up in the course.
 
 # Deterministic Finite State Automata
 
-As mentioned before, our first class of machines generalize the light switch machine. The idea is that we keep track of a finite set of states and the "transitions" between them, based on the input. We consider the input to be given to us externally to the machine (so the machine does not have to have any memory). Eventually we will define these machines very formally, but for now, we will keep things somewhat informal. Here is an example, where the alphabet is $\Sigma = \{ 0, 1 \}$.
+As mentioned before, our first class of machines generalize the light switch machine. The idea is that we keep track of a finite set of states and the "transitions" between them, based on the input. We consider the input to be given to us externally to the machine (so the machine does not have to have any memory). Eventually we will define these machines very formally, but for now, we will keep things somewhat informal. Here is an example, where the alphabet is $\Sigma = \\{ 0, 1 \\}$.
 
 <img class="noreverse" src="dfa-example.jpeg" />
 
@@ -142,7 +142,7 @@ Since we end in an **accept** state, we say the machine **accepts** the string $
 
 Given a machine, it may take some work, but we will kind of get the hang of determining the language that the machine recognizes. The other way around can be more challenging: given a language, *design* a machine which recognizes this language. Let's try this out.
 
-Suppose we want to design a DFA over the alphabet $\Sigma = \{ 0, 1 \}$ which accepts exactly those strings of even length. How would we do this?
+Suppose we want to design a DFA over the alphabet $\Sigma = \\{ 0, 1 \\}$ which accepts exactly those strings of even length. How would we do this?
 
 * Can we count all the symbols in the string, and try to divide by two?
 * If not, why not? What else can we try?
@@ -155,7 +155,7 @@ Suppose we want to design a DFA over the alphabet $\Sigma = \{ 0, 1 \}$ which ac
 
 <ol>
 <li>Determine the language recognized by the above machine. Write your answer in set theoretic notation.</li>
-<li>In the previous problem, explain why the machine accepts every string in the set you listed, and why it rejects every string not in the set you listed..</li>
+<li>In the previous problem, explain why the machine accepts every string in the set you listed, and why it rejects every string not in the set you listed.</li>
 <li>Read Sipser section 1.1, up until Example 1.21 (page 44), or <a href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf">Maheshwari-Smid</a> sections 2.1-2.2.</li>
 <li>Think about what we would need to describe in order to define, formally, a DFA and its computation. Can you come up with a complete list?</li>
 </ol>
