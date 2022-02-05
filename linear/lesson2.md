@@ -121,10 +121,41 @@ For example: suppose $A = \\{ n \in \mathbb{N} : n > 1$ and there is $k \in \mat
 
 **Proof**: Let $n \in A$. Then we know that there is $k \in \mathbb{N}$ such that $k^2 = n$. Moreover, we know that $n \neq 1$ so $k \neq 1$. This tells us that $k$ is a factor of $n$, and, importantly, $k \neq n$. (Do you see why? If $k = n$, divide both sides by $k$ and you get $k = 1$, which contradicts that $n \neq 1$) So $n$ has a factor that is not equal to $1$ and is not equal to $n$. That means $n$ is not a prime number, so it must be composite. Therefore $n \in B$.
 
-## Functions
+# Functions (Set-Theoretically)
 
-## Domains / Codomains / Images
+Now that we have the language of set theory, we can make some definitions:
 
-## Injections / Surjections / Bijections
+**Definition**: Given sets $X$ and $Y$, the **Cartesian product** of $X$ and $Y$, denoted $X \times Y$, is the set of all *ordered pairs* of the form $(x, y)$, where $x \in X$ and $y \in Y$.
+
+Ordered pairs are not sets: they are **ordered**, of course, so there is a first component and a second. Now we define functions using this notation:
+
+**Definition**: Given sets $X$ and $Y$, then a **function** $f : X \to Y$ is a subset of $X \times Y$ such that for every $x \in X$, there is **exactly** one $y \in Y$ such that $(x, y) \in f$. $X$ is called the **domain** of $f$, and $Y$ is called the **codomain** of $f$.
+
+Of course, we never write $(x, y) \in f$. We usually just write $f(x) = y$.
+
+**Question**: What does this have to do with the vertical line test?
+
+**Exercise**: For now, we will use $X = Y = \mathbb{R}$. Are the following sets of ordered pairs functions or not? (**Hint**: Plot the points. See what happens.)
+
+1. $\\{ (0, 1), (0, 2), (1, 3) \\}$
+2. $\\{ (0, 1), (1, 1), (2, 1) \\}$
+3. $\\{ (0, 1), (1, 2), (2, 3) \\}$
+
+**Definition**: The set $\\{ y \in Y : $ there is $x \in X$ such that $f(x) = y \\}$ is called the **image** of $f$. (This is sometimes referred to as the *range* of $f$, but I will usually avoid this term.) For any sset $A \subseteq X$, we also define $f(A) = \\{ y : $ there is $x \in A$ such that $f(x) = y \\}$.
+
+**Exercise**: Let $f : \mathbb{R}^2 \to \mathbb{R}$ be defined by $f(\binom{x}{y}) = 2x - y$. Determine the images of the following subsets of $\mathbb{R}^2$. Describe these set-theoretically.
+
+1. $A = \\{ \binom{x}{x} : x \in \mathbb{R} \\}$.
+2. $B = \\{ \binom{x}{y} : y = 2x \\}$.
+
+<details>
+<summary>Check your answers:</summary>
+<ol>
+<li>The image $f(A)$ is the set of <strong>all real numbers</strong, $\mathbb{R}$. In this case, we are looking at $f(\binom{x}{x})$, which is $2x - x$. So $f(\binom{x}{x}) = 2x - x = x$. That means for any $y \in \mathbb{R}$, there is some $\vec{v} \in A$ such that $f(\vec{v}) = y$: in particular, the vector $\vec{v} = \binom{y}{y}$ works!</li>
+<li>The image $f(B)$ is just the set with a single element in it: $\\{ 0 \\}$! This is because $f(\binom{x}{y}) = 2x - y$. Substitute in $y = 2x$ and we get $f(\binom{x}{y}) = 2x - 2x = 0$.</li>
+</ol>
+</details>
+
+**Important**: More than just understanding the *rule* of a function, we need to spend time thinking about how functions *act* on sets. For example, the function $f$ above "shrinks" the line $y = 2x$ to the single point $0$.
 
 # Linear Functions
