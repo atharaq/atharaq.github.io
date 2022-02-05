@@ -171,17 +171,67 @@ Recall that vectors can be added and rescaled. "Addition" might mean something d
 * What is $T(\binom{2}{1})$?
 * What is $T(\binom{-1}{1})$?
 
-(sage drawing showing (2, 1), (-1, 1), and T(those))
+<div class="sage">
+<script type="text/x-sage">
+G = Graphics()
+M = Matrix([[0, -1], [1, 0]])
+z = vector([0, 0])
+
+v = vector([2, 1])
+w = vector([-1, 1])
+G += arrow(z, v, color='blue')
+G += arrow(z, w, color='red')
+G += arrow(z, M*v, color='blue', linestyle='dotted')
+G += arrow(z, M*w, color='red', linestyle='dotted')
+G.show(xmin=-2, xmax=2, ymin=-2, ymax=2, aspect_ratio=1)
+</script>
+</div>
 
 Of course, we can add and rescale vectors. We could add before we rotate, or add after we rotate. That is: we could add $\binom{2}{1} + \binom{-1}{1}$, and then rotate that by $\pi / 2$, or rotate each of those two vectors, and then add the results. If $T$ is well-behaved: it shouldn't matter what we do first!
 
-(sage drawing showing ...)
+<div class="sage">
+<script type="text/x-sage">
+def parallelogram(v1, v2, color1='blue', color2='red', linestyle='solid'):
+    G = Graphics()
+    G += arrow([0, 0], v1, color=color1, linestyle=linestyle)
+    G += arrow([0, 0], v2, color=color2, linestyle=linestyle)
+    G += arrow(v1, v1 + v2, color=color2, linestyle=linestyle)
+    G += arrow(v2, v1 + v2, color=color1, linestyle=linestyle)    
+    return G
+
+G = Graphics()
+M = Matrix([[0, -1], [1, 0]])
+z = vector([0, 0])
+
+v = vector([2, 1])
+w = vector([-1, 1])
+G += parallelogram(v, w)
+G += arrow(z, v + w, color='green')
+G += parallelogram(M*v, M*w, linestyle='dotted')
+G += arrow(z, M*(v + w), color='green', linestyle='dotted')
+G.show(xmin=-2, xmax=2, ymin=-2, ymax=2, aspect_ratio=1)
+</script>
+</div>
 
 In other words: *rotations respect vector addition*!
 
 What about scalar multiplication? If we rescale a vector, and then rotate the result by 90 degrees, or if we rotate a vector and then rescale its result, does it change? Let's see:
 
-(sage drawing showing (1, 1), (3, 3), and their rotations)
+<div class="sage">
+<script type="text/x-sage">
+G = Graphics()
+M = Matrix([[0, -1], [1, 0]])
+z = vector([0, 0])
+
+v = vector([1, 1])
+
+G += arrow(z, v)
+G += arrow(z, 3*v, color='green', linestyle='dashed')
+G += arrow(z, M*(3*v), color='green', linestyle='dotted')
+G += arrow(z, M*v, linestyle='dotted')
+G.show(xmin=-3, xmax=3, ymin=-3, ymax=3, aspect_ratio=1)
+</script>
+</div>
 
 Again: rotations respect scalar multiplication!
 
