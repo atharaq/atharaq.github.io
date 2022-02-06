@@ -6,7 +6,7 @@
 
 # Warm Up
 
-1. Determine the language recognized by the following machine:
+1. Determine the language recognized by the following machine: <img class="noreverse" src="warmup-l2.jpeg" />
 2. Design a DFA that recognizes the language $\\{ w : w $ has an even number of 0s and an odd number of 1s $\\}$.
 3. Design DFAs that recognize the following languages over $\Sigma = \\{ a, b \\}$:
   * $\mathcal{L}_1 = \\{ w : $ the number of $a$s in $w$ is a multiple of 3 $\\}$.
@@ -17,7 +17,7 @@ Recall that the "union" of two sets is defined using "inclusive or": we are look
 
 # Homework
 
-(image)
+<img src="dfa-hw.jpeg" class="noreverse" />
 
 What is the language of this machine?
 
@@ -60,7 +60,7 @@ That is: $\delta$ takes in, as input, a state and a symbol, and outputs a state.
 
 Let's recall the "Even / Odd" example from last time:
 
-(image)
+<img src="even-odd.jpeg" class="noreverse" />
 
 How do we describe this formally?
 
@@ -104,7 +104,7 @@ Recall that we say that $M$ **recognizes** $\mathcal{L}$ if $\mathcal{L} = \\{ w
 
 Previously we saw regular languages $\mathcal{L}_1$ and $\mathcal{L}_2$ such that their union $\mathcal{L}_1 \cup \mathcal{L}_2$ is also regular. How did this work?
 
-(pictures of each machine)
+<img class="noreverse" src="union-example-warmup.jpeg" />
 
 It almost looks like we took 2 copies of $M_1$ and put them on top of each other; alternatively, you could think of it as putting three copies of $M_2$ next to each other.
 
@@ -118,15 +118,15 @@ Let's do another warmup example.
 2. Design a DFA which accepts $\mathcal{L}_2 = \\{ w : w$ ends with $b \\}$.
 3. Design a DFA which accepts $\mathcal{L}_1 \cup \mathcal{L}_2$. (What words do we need to accept here? What words do we reject here?)
 
-(image of the first two)
+<img class="noreverse" src="two-machines.jpeg" />
 
 So how do we design the third one? Again, try to design a machine which "runs" both machines at once. That is, if we see any symbol while we're in the start state, we move to a state that keeps track of where machine $M_1$ is in (after reading that symbol) and where machine $M_2$ is in.
 
-(Start of picture).
+<img class="noreverse" src="start-union.jpeg" />
 
 Then keep going!
 
-(final picture)
+<img class="noreverse" src="final-union-ex.jpeg" />
 
 ## Union
 
