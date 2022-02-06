@@ -169,7 +169,7 @@ Now suppose $M_1$ accepts $w$. Then $r_n \in F_1$, so $(r_n, s_n) \in F$, and so
 
 # Problem Set 1
 
-**Due Monday, February 21**:
+**Due Thursday, February 17**:
 
 For all of these problems, the alphabet $\Sigma = \\{ 0, 1 \\}$.
 
