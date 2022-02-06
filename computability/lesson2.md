@@ -44,7 +44,41 @@ Aside: what does $\delta : Q \times \Sigma \to Q$ mean?
 
 That is: $\delta$ takes in, as input, a state and a symbol, and outputs a state. The meaning of $\delta(q, a) = q^\prime$ is that "if we are at state $q$ and see the symbol $a$ from the input, then we move to state $q^\prime$."
 
+**Questions**: From the formal description:
+
+1. Must there be a start state?
+2. Must there be an accept state?
+3. Can there be more than one start state?
+4. Can there be more than one accept state?
+4. Can all states be accept states?
+
 ## Example
+
+Let's recall the "Even / Odd" example from last time:
+
+(image)
+
+How do we describe this formally?
+
+* There are two states: $q_{\text{even}}$ and $q_{\text{odd}}$.
+* The alphabet is $\\{ 0, 1 \\}$.
+* Let's talk about the transition function, $\delta$, later.
+* The start state is $q_{\text{even}}$.
+* There is one accept state, $q_{\text{even}}$.
+
+So formally, our machine is $M = \\{ \\{q_{\text{even}}, q_{\text{odd} \\}, \\{0, 1 \\}, \delta, q_{\text{even}}, \\{ q_{\text{even}} \\} \\}$.
+
+How do we describe $\delta$? We could just give the diagram, or we could use the following table:
+
+$$
+\begin{array}{c | c | c}
+\delta & 0 & 1 \\
+\hline
+q_{\text{even}} & q_{\text{odd}} & q_{\text{odd}} \\
+\hline
+q_{\text{odd}} & q_{\text{even}} & q_{\text{even}}
+\end{array}
+$$
 
 ## Computation
 
