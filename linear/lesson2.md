@@ -250,3 +250,28 @@ A function which respects **both** vector addition and scalar multiplication is 
 
 1. Consider the function $F : \mathbb{R} \to \mathbb{R}$ defined by $F(x) = \sqrt{x}$. This is a function between "one dimensional" vector spaces. Is $F$ linear? Why or why not?
 2. Suppose $T : \mathbb{R} \to \mathbb{R}$ is linear and suppose we know $T(1) = a$. What is $T(2)$? What is $T(3)$? What is $T(x)$ for any $x$?
+
+# Pre-Work
+
+Please watch the following videos from the "Essence of Calculus" series:
+
+This one reviews the concepts of linear combinations and span:
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/k7RM-ot2NWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+This one discusses linear functions, with kind of a preview of how they relate to matrices:
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/kYB8IZa5AuE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+On Moodle:
+
+1. What is the most interesting part of each video you watched?
+2. What is the most confusing part of each video you watched?
+
+## Problem Set 1
+
+If we get far enough today, I will post Problem Set 1 on Moodle and it will be due in a week. If not, I will post it on Thursday and it will be due next Thursday. You will need to upload your work as a **PDF** file to Moodle. You can do this by using a scanner app like Scannable, Microsoft Office Lens, CamScanner, etc. Alternatively, if you know LaTeX, you can use LaTeX to typeset your work and compile it to a PDF.
