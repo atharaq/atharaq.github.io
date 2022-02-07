@@ -101,7 +101,7 @@ Sets are determined by their **elements**: not by "multiplicity", not by "order"
 
 ## Subsets
 
-For sets $A$ and $B$, we say $A \subseteq B$, or "$A$ is a **subset** of $B$", if every element of $A$ is an element of $B$. In other words, if we want to show that $A$ is **not** a subset of $B$, we need to find a *counterexample*: some element of $A$ that is **not** an element of $B$. For example, if $A = \\{ 0, 1, 2 \\}$ and $B = \\{ 1, 2 \\$, are the following true or false?
+For sets $A$ and $B$, we say $A \subseteq B$, or "$A$ is a **subset** of $B$", if every element of $A$ is an element of $B$. In other words, if we want to show that $A$ is **not** a subset of $B$, we need to find a *counterexample*: some element of $A$ that is **not** an element of $B$. For example, if $A = \\{ 0, 1, 2 \\}$ and $B = \\{ 1, 2 \\}$, are the following true or false?
 
 * Is $A \subseteq B$? If so, give an argument, if not, a counterexample.
 * Is $B \subseteq A$? If so, give an argument, if not, a counterexample.
@@ -271,7 +271,3 @@ On Moodle:
 
 1. What is the most interesting part of each video you watched?
 2. What is the most confusing part of each video you watched?
-
-## Problem Set 1
-
-If we get far enough today, I will post Problem Set 1 on Moodle and it will be due in a week. If not, I will post it on Thursday and it will be due next Thursday. You will need to upload your work as a **PDF** file to Moodle. You can do this by using a scanner app like Scannable, Microsoft Office Lens, CamScanner, etc. Alternatively, if you know LaTeX, you can use LaTeX to typeset your work and compile it to a PDF.
