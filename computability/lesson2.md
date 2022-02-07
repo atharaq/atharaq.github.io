@@ -70,7 +70,7 @@ How do we describe this formally?
 * The start state is $q_{\text{even}}$.
 * There is one accept state, $q_{\text{even}}$.
 
-So formally, our machine is $M = \\{ \\{q_{\text{even}}, q_{\text{odd} \\}, \\{0, 1 \\}, \delta, q_{\text{even}}, \\{ q_{\text{even}} \\} \\}$.
+So formally, our machine is $M = \\{ \\{q_{\text{even}}, q_{\text{odd}} \\}, \\{ 0, 1 \\}, \delta, q_{\text{even}}, \\{ q_{\text{even}} \\} \\}$.
 
 How do we describe $\delta$? We could just give the diagram, or we could use the following table:
 
