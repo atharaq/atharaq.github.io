@@ -7,7 +7,7 @@
 1. Table of Contents
 {:toc}
 
-# Warm Up: Rotations
+# Warm Up: Rotating by 90 degrees
 
 Suppose $V = W = \mathbb{R}^2$. Consider the function $T : \mathbb{R}^2 \to \mathbb{R}^2$ defined so that $T(\vec{v})$ is the vector $\vec{v}$, rotated 90$^\circ$ counterclockwise ($\pi/2$).
 
@@ -137,13 +137,19 @@ Consider the function $T : \mathbb{R}^2 \to \mathbb{R}^2$ defined by $T(\binom{x
 
 The idea would be: let $\vec{v} = \binom{v_1}{v_2}$ and $\vec{w} = \binom{w_1}{w_2}$ be two vectors. Compute $T(\vec{v})$ and $T(\vec{w})$ and add them. Then add $\vec{v} + \vec{w}$ and compute $T(\vec{v} + \vec{w})$. Then verify if $T(\vec{v} + \vec{w}) = T(\vec{v}) + T(\vec{w})$. (This would just check if $T$ respects vector addition, we would similarly check if $T$ respects scalar multiplication.)
 
-## Preimages
-
 # Injections / Surjections / Bijections
+
+**Definition**: Let $f : X \to Y$ be a function. $f$ is called **injective** (or "one to one") if, whenever $x \neq y \in X$, then $f(x) \neq f(y)$. $f$ is called **surjective** (or "onto") if whenever $y \in Y$, there is $x \in X$ such that $f(x) = y$. $f$ is called a **bijection** if it is both injective and surjective.
+
+**Example**: The function $f : \mathbb{R}^2 \to \mathbb{R}$ defined by $f(\binom{x}{y}) = 2x - y$ is a surjection. Why? This is because, if $z \in \mathbb{R}$, then we can let $x = z$ and $y = z$, and then $f(\binom{x}{y}) = 2x - y = 2z - z = z$. So there is $\binom{x}{y} \in \mathbb{R}^2$ such that $f(\binom{x}{y}) = z$.
+
+**Question**: Is this function an injection? (Hint: when is $f(\binom{x}{y}) = 0$?)
 
 ## Exercises
 
 # Rotations
+
+# Matrices
 
 # Problem Set 1
 
