@@ -213,7 +213,7 @@ In general, *every* vector in $\mathbb{R}^2$ can be written as a linear combinat
 
 First, we know that $R_\theta(\binom{x}{0}) = x \cdot \binom{\cos(\theta)}{\sin(\theta)}$, and $R_\theta(\binom{0}{y}) = y \cdot \binom{-\sin(\theta)}{\cos(\theta)}$. And because rotations respect vector addition, $R_\theta(\binom{x}{y}) = R_\theta(\binom{x}{0}) + R_\theta(\binom{0}{y})$. Putting these together:
 
-$$R_\theta(\binom{x}{y}) = x \cdot \binom{\cos(\theta){\sin(\theta)} + y \cdot \binom{-\sin(\theta)}{\cos(\theta)}$.
+$$R_\theta(\binom{x}{y}) = x \cdot \binom{\cos(\theta){\sin(\theta)} + y \cdot \binom{-\sin(\theta)}{\cos(\theta)}.$$
 
 Again: these two values of $R_\theta$ are all we need to know in order to determine every output of this function!
 
