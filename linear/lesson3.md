@@ -145,11 +145,90 @@ The idea would be: let $\vec{v} = \binom{v_1}{v_2}$ and $\vec{w} = \binom{w_1}{w
 
 **Question**: Is this function an injection? (Hint: when is $f(\binom{x}{y}) = 0$?)
 
-## Exercises
+## Another Example
+
+Consider the function $f : \mathbb{R}^2 \to \mathbb{R}^2$ defined by $f(\binom{x}{y}) = \binom{x + y}{x - y}$.
+
+* What is $f(\binom{1}{0})$?
+* What is $f(\binom{0}{1})$?
+* What is the image of the $x$-axis?
+* What is the image of the $y$-axis?
+
+(picture)
+
+$f$ is a linear function (I won't prove that here). The nice thing about linearity is that once we know the images of $f(\binom{1}{0})$ and $f(\binom{0}{1})$, we can figure out $f(\binom{x}{y})$ for any $x$ and any $y$. If $f$ is linear, then $f(\binom{x}{y})$ is always some linear combination of $f(\binom{1}{0})$ and $f(\binom{0}{1})$! In particular, the image of $f$ will be the **span** of $f(\binom{1}{0})$ and $f(\binom{0}{1})$! (Do you see why?)
+
+**Question**: Is $f$ a surjection? That is, if $\vec{u} = \binom{a}{b}$, are there $x$ and $y$ such that $f(\binom{x}{y}) = \binom{a}{b}$? Let's think of this geometrically first. Since $f(\binom{1}{0}) = \binom{1}{1}$ and $f(\binom{0}{1} = \binom{1}{-1}$, and these two vectors do not lie on the same plane, we can conclude that their span is the entire plane $\mathbb{R}^2$.
+
+Algebraically, we can prove our answer by showing that for every $\binom{a}{b}$, there are $x$ and $y$ so that the system
+
+$$
+\begin{align}
+x + y &= a \\
+x - y &= b
+\end{align}
+$$
+
+has a solution. (How do we show this? Solve for $x$ and $y$ in terms of $a$ and $b$)
+
+**Injectivity**: This is a bit harder. We will look at this once, but in the future we will have a better method to show injectivity later on in the semester.
+
+The question is: if $T(\vec{u}) = T(\vec{v})$, does this mean that $\vec{u} = \vec{v}$? Let's let $\vec{u} = \binom{u_1}{u_2}$ and $\vec{v} = \binom{v_1}{v_2}$. Suppose that $\
+binom{u_1 + u_2}{u_1 - u_2} = \binom{v_1 + v_2}{v_1 - v_2}$. Then $u_1 + u_2 = v_1 + v_2$ and $u_1 - u_2 = v_1 - v_2$. Does this mean that $u_1 = v_1$ and $u_2 = v_2$? It's not immediately clear. If you do some algebra, though, you might see:
+
+$$
+\begin{align}
+u_1 - v_1 &= v_2 - u_2 \\
+u_1 - v_1 &= u_2 - v_2
+\end{align}
+$$
+
+That means we can set $v_2 - u_2 = u_2 - v_2$, and solve. If you solve this you get that $u_2 = v_2$. **Exercise**: Plug this in, and show that $u_1 = v_1$< therefore showing that $f$ is injective.
+
+**Notice**: The definition of "injective function" is that if $x \neq y$, then $f(x) \neq f(y)$. What we actually proved is that if $f(x) = f(y)$, then $x = y$. Logically, this is equivalent to the original definition, since it's just the *contrapositive* of the original statement.
 
 # Rotations
 
-# Matrices
+Let $\theta$ be any angle. Let $R_\theta : \mathbb{R}^2 \to \mathbb{R}^2$ be the "rotation by $\theta$ function."
+
+(picture)
+
+The picture shows that $R_\theta$ is linear! That means, again, we only need to know what $R_\theta(\binom{1}{0})$ and $R_\theta(\binom{0}{1})$ are in order to figure out what $R_\theta(\binom{x}{y})$ is for any $x$ and any $y$.
+
+So, what is $R_\theta(\binom{1}{0})$? This is unit circle trig!
+
+(picture)
+
+$R_\theta(\binom{1}{0}) = \binom{\cos(\theta)}{\sin(\theta)}$! What about $R_\theta(\binom{0}{1})$?
+
+(picture)
+
+Here, again, we can figure out the coordinates using trig, and we get $R_\theta(\binom{0}{1}) = \binom{-\sin(\theta)}{\cos(\theta)}$. Now we can figure out $R_\theta(\binom{x}{y})$ using these two values!
+
+**Exercise**: Find $R_\theta(\binom{2}{1}$. Hint: write $\binom{2}{1}$ as a linear combination of $\binom{1}{0}$ and $\binom{0}{1}$, and then use linearity.
+
+**Solution**: Since $\binom{2}{1} = 2 \cdot \binom{1}{0} + \binom{0}{1}$, we get $R_\theta(\binom{2}{1}) = 2 \cdot R_\theta(\binom{1}{0}) + R_\theta(\binom{0}{1})$. Then plug in the values we had before, so $R_\theta(\binom{2}{1}) = 2 \cdot \binom{\cos(\theta)}{\sin(\theta)} + \binom{-\sin(\theta)}{\cos(\theta)}$. Then add these vectors and we get $\binom{2\cos(\theta) - \sin(\theta)}{2 \sin(\theta) + \cos(\theta)}$.
+
+In general, *every* vector in $\mathbb{R}^2 can be written as a linear combination of $\binom{1}{0}$ and $\binom{0}{1}$. So because of linearity, if we know $R_\theta(\binom{1}{0}})$ and $R_\theta(\binom{0}{1})$, we know $R_\theta(\binom{x}{y})$ for every $x$ and $y$! This is what we do below:
+
+First, we know that $R_\theta(\binom{x}{0}) = x \cdot \binom{\cos{\theta}}{\sin(\theta}}$, and $R_\theta(\binom{0}{y}) = y \cdot \binom{-\sin(\theta)}{\cos(\theta)}$. And because rotations respect vector addition, $R_\theta(\binom{x}{y}) = R_\theta(\binom{x}{0}) + R_\theta(\binom{0}{y})$. Putting these together:
+
+$$R_\theta(\binom{x}{y}) = x \cdot \binom{\cos(\theta){\sin(\theta)} + y \cdot \binom{-\sin(\theta)}{\cos(\theta)}$.
+
+Again: these two values of $R_\theta$ are all we need to know in order to determine every output of this function!
+
+## Matrix Notation
+
+To keep track of these two special values that tell us everything we need to know about this function, we use **matrix notation**:
+
+$$
+\begin{pmatrix}
+\cos(\theta) & -\sin(\theta) \\
+\sin(\theta) & \cos(\theta)
+\end{pmatrix}
+$$
+
+We say that this matrix **represents** the linear function $R_\theta$. Every linear function has a matrix representation! This will be the chief object of study in this course.
 
 # Problem Set 1
 
