@@ -111,11 +111,49 @@ In other words: the current state and the symbol we read do not *uniquely* deter
 
 We say that $N$ accepts a word $w$ if there is *some* way to parse the input $w$ and end up in an accept state. For example: does $N$ accept the string 110? Try parsing it:
 
-* $q_0 \xrightarrow[1] q_1 \xrightarrow[1]$ ? (crashes)
-* $q_0 \xrightarrow[1] q_0 \xrightarrow[1] q_0 \xrightarrow[0] q_0$? (rejects)
-* $q_0 \xrightarrow[1] q_0 \xrightarrow[1] q_1 \xrightarrow[0] q_2$ accepts!
+* $q_0 \xrightarrow[1]{} q_1 \xrightarrow[1]{} $ ? (crashes)
+* $q_0 \xrightarrow[1]{} q_0 \xrightarrow[1]{} q_0 \xrightarrow[0]{} q_0$? (rejects)
+* $q_0 \xrightarrow[1]{} q_0 \xrightarrow[1]{} q_1 \xrightarrow[0]{} q_2$ accepts!
+
+**Exercise**:
+
+1. Find three strings *not* accepted by $N$.
+2. Describe $\mathcal{L}(N)$ as precisely as possible.
 
 ## Designing an NFA
+
+**Exercise**: Design an NFA which accepts the language $\mathcal{L} = \\{ w : w $ starts with $(01)^n$ for some $n \geq 1 \\}$.
+
+<details>
+<summary>A possible solution</summary>
+<p>image</p>
+</details>
+
+## Epsilon Transitions
+
+(image)
+
+NFAs are allowed to have "$\varepsilon$-transitions". In the above, if you are at state $q_1$, you can immediately jump to state $q_2$ without reading any symbol. This gives us many more ways to parse the input. (It can complicate things a lot, but also, when we design NFAs, it can make that process easier!)
+
+Let's see how we can parse a few words. Again, we will *try* to get to an accept state ($q_2)$ if we can:
+
+* $w = 011$. We can parse this as $q_0 \xrightarrow{0} q_1 \xrightarrow{\varepsilon} q_2 \xrightarrow{1} q_3 \xrightarrow{1} q_2$.
+* $w = 1110$. These first three 1s have to be processed deterministically (why?): $q_1 \xrightarrow{1} q_0 \xrightarrow{1} q_0 \xrightarrow{1} q_0 \xrightarrow{0} q_1 \xrightarrow{\varepsilon} q_2$.
+
+What about $w = 1001$? There are two ways to parse this:
+
+* $q_0 \xrightarrow{1} q_0 \xrightarrow{0} q_1 \xrightarrow{\varepsilon} q_2 \xrightarrow{0} q_2 \xrightarrow{1} q_3$ (rejects)
+* $q_0 \xrightarrow{1} q_0 \xrightarrow{0} q_1 \xrightarrow{0} q_0 \xrightarrow{1} q_0$ (rejects).
+
+There is no way to parse this while ending up in $q_2$. Why not?
+
+* In order to get to $q_2$, we first have to get to $q_1$.
+* To get to $q_1$, we need an *odd number of 0s*!
+* If we then get to $q_2$, we need an *even number of 1s* to stay at $q_2$!
+
+So: $\mathcal{L}(N) = \\{ w : w = xy$, where $x$ has an odd number of 0s and $y$ has an even number of 1s $\\}$!
+
+So $1001 \not \in \mathcal{L}(N)$, because there is no way to break up $1001$ into two strings where the first has an odd number of 0s and the second has an even number of 1s.
 
 ## Formal Definition
 
