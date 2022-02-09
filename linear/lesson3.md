@@ -209,7 +209,7 @@ Here, again, we can figure out the coordinates using trig, and we get $R_\theta(
 
 **Solution**: Since $\binom{2}{1} = 2 \cdot \binom{1}{0} + \binom{0}{1}$, we get $R_\theta(\binom{2}{1}) = 2 \cdot R_\theta(\binom{1}{0}) + R_\theta(\binom{0}{1})$. Then plug in the values we had before, so $R_\theta(\binom{2}{1}) = 2 \cdot \binom{\cos(\theta)}{\sin(\theta)} + \binom{-\sin(\theta)}{\cos(\theta)}$. Then add these vectors and we get $\binom{2\cos(\theta) - \sin(\theta)}{2 \sin(\theta) + \cos(\theta)}$.
 
-In general, *every* vector in $\mathbb{R}^2 can be written as a linear combination of $\binom{1}{0}$ and $\binom{0}{1}$. So because of linearity, if we know $R_\theta(\binom{1}{0}})$ and $R_\theta(\binom{0}{1})$, we know $R_\theta(\binom{x}{y})$ for every $x$ and $y$! This is what we do below:
+In general, *every* vector in $\mathbb{R}^2$ can be written as a linear combination of $\binom{1}{0}$ and $\binom{0}{1}$. So because of linearity, if we know $R_\theta(\binom{1}{0}})$ and $R_\theta(\binom{0}{1})$, we know $R_\theta(\binom{x}{y})$ for every $x$ and $y$! This is what we do below:
 
 First, we know that $R_\theta(\binom{x}{0}) = x \cdot \binom{\cos(\theta)}{\sin(\theta)}$, and $R_\theta(\binom{0}{y}) = y \cdot \binom{-\sin(\theta)}{\cos(\theta)}$. And because rotations respect vector addition, $R_\theta(\binom{x}{y}) = R_\theta(\binom{x}{0}) + R_\theta(\binom{0}{y})$. Putting these together:
 
