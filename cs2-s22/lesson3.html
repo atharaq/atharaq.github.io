@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2022-02-10">
+  <title>CS II</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS II</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">10 February 2022</p>
+</section>
+
+<section>
+<section id="warm-up" class="title-slide slide level1">
+<h1>Warm up</h1>
+<p>Write a program that asks the user to input an integer number a seconds, and converts that to hours, minutes and seconds:</p>
+<pre ><code >Enter a number of seconds:
+   4000
+4000 seconds = 1 hours, 6 minutes and 40 seconds</code></pre>
+</section>
+<section id="conditionals" class="slide level2">
+<h2>Conditionals</h2>
+<p>If the user enters in a number of seconds below 3600, we output “0 hours”. Perhaps we do not want to output any hours in that case:</p>
+<pre ><code class="java">String message = originalSeconds + " = " + numHours + " hours, " + numMinutes + " minutes and " + numSeconds + " seconds";
+if (hours == 0) {
+    message = originalSeconds + " = " + numMinutes + " minutes and " + numSeconds  + " seconds";
+}
+System.out.println(message);</code></pre>
+<ul>
+<li><strong>condition</strong> must be in parentheses.</li>
+<li>optional <code>else</code> block.</li>
+</ul>
+</section></section>
+<section>
+<section id="scanner-api" class="title-slide slide level1">
+<h1>Scanner API</h1>
+<ul>
+<li><strong>nextInt</strong>, <strong>nextDouble</strong>, <strong>nextLong</strong></li>
+<li><strong>next</strong>: reads the next “token” (until whitespace, by default), store as a String</li>
+<li><strong>nextLine</strong>: reads the entire next line (until a newline), store as a String</li>
+<li><strong>hasNextInt</strong>, <strong>hasNextDouble</strong>, <strong>hasNextLine</strong>: check if there is more input</li>
+</ul>
+<p><strong>hasNextInt</strong> may be useful for us in combination with <strong>if</strong> and <strong>while</strong> statements</p>
+</section>
+<section id="scanner-pitfall" class="slide level2">
+<h2>Scanner Pitfall</h2>
+<pre ><code class="java">Scanner sc = new Scanner(System.in);
+System.out.println("Enter your age: ");
+int age = sc.nextInt();
+System.out.println("Enter your name: ");
+String name = sc.nextLine();
+System.out.println("Hi " + name + ", you are " + age + " years old!");</code></pre>
+<p>What happens?</p>
+</section>
+<section id="explanation" class="slide level2">
+<h2>Explanation</h2>
+<ul>
+<li>Scanner object parse input as <strong>tokens</strong>, not as entire lines.</li>
+<li><strong>nextInt</strong>: parses all of the input up until the end of the integer.</li>
+<li>“enter” key (newline) not processed by <strong>nextInt</strong></li>
+<li>newline processed by <strong>nextLine</strong></li>
+</ul>
+<p>Fix? Call <strong>nextLine</strong> after every group of nextInts.</p>
+</section>
+<section id="fix" class="slide level2">
+<h2>Fix</h2>
+<pre ><code class="java" data-line-numbers="1-7|3-4">Scanner sc = new Scanner(System.in);
+System.out.println("Enter your age: ");
+int age = sc.nextInt();
+sc.nextLine();
+System.out.println("Enter your name: ");
+String name = sc.nextLine();
+System.out.println("Hi " + name + ", you are " + age + " years old!");</code></pre>
+</section></section>
+<section>
+<section id="java-structure" class="title-slide slide level1">
+<h1>Java Structure</h1>
+<p><img alt="Program Structure, Think Java Chapter 3" src="https://trinket-app-assets.trinket.io/thinkjava2/thinkjava2_008.png" title="Program Structure, Think Java Chapter 3" /></p>
+</section>
+<section id="structure" class="slide level2">
+<h2>Structure</h2>
+<ul>
+<li><strong>Packages</strong> (java.util) group related classes</li>
+<li><strong>classes</strong> (Scanner) contain methods (and more…)</li>
+<li><strong>methods</strong>: named sequences of statements</li>
+</ul>
+<p>All code goes inside a method!</p>
+</section></section>
+<section>
+<section id="if-statements" class="title-slide slide level1">
+<h1>If statements</h1>
+<pre ><code class="java">if (condition) {
+  statement1;
+  statement2;
+  ...
+} else {
+  statement3;
+  statement4;
+}</code></pre>
+<p>You need the parentheses. You can get away without curly braces ({ and }) if there is only one statement after the if or else line. Suggestion: <strong>always</strong> use curly braces. Also use proper indentation to keep your code readable.</p>
+</section>
+<section id="comparison-operators" class="slide level2">
+<h2>Comparison Operators</h2>
+<pre ><code class="java">if (x &lt; 0) {
+    System.out.println("x is negative");
+} else if (x &gt; 0) {
+    System.out.println("x is positive");
+} else {
+    System.out.println("x is 0.");
+}
+
+if (y != 1) {
+    System.out.println("y is not 1");
+}
+
+if (z &gt;= x) {
+    System.out.println("z is bigger than x");
+}</code></pre>
+<p>Do not use these to compare Strings! More on comparing Strings later.</p>
+</section>
+<section id="boolean-operators" class="slide level2">
+<h2>Boolean Operators</h2>
+<ul>
+<li>&amp;&amp;: <strong>conjunction</strong>. Evaluates to <code>true</code> if both conjuncts are true.</li>
+<li>||: <strong>disjunction</strong>. Evaluates to <code>true</code> if at least one disjunct is true.</li>
+<li>!: <strong>negation</strong>. Evaluates to <code>true</code> if the original condition is false.</li>
+</ul>
+<pre ><code class="java">System.out.println("Enter a number from 1 to 10: ");
+x = sc.nextInt();
+if (x &lt; 1 || x &gt; 10) {
+    System.out.println("I said 1 to 10!");
+}</code></pre>
+</section>
+<section id="boolean-variables-and-methods" class="slide level2">
+<h2>Boolean variables and methods</h2>
+<ul>
+<li>Boolean operators are often useful with boolean variables and methods</li>
+<li><code>Scanner</code> class has a method <code>hasNextInt</code>:
+<ul>
+<li><code>true</code> if the next input token can be interpreted as an integer.</li>
+<li><code>false</code> if it cannot be interpreted as an integer (ie, the user typed in “hello” or “3.5”)</li>
+</ul></li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<pre ><code class="java">Scanner sc = new Scanner(System.in);
+System.out.println("Input an integer");
+if (!sc.hasNextInt()) {
+  System.out.println("I said an integer!");
+  System.exit(0);
+}
+int number = sc.nextInt();
+System.out.println("You typed in: " + number);</code></pre>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Write a program which asks the user to input an integer from 1 to 10 (inclusive). If they input something that is not an integer, you should output an angry message. If they input an integer that is not in that range, you should remind them that you asked for the number to be between 1 and 10. If they do input a number in that range, you should congratulate them on following directions.</p>
+</section></section>
+<section>
+<section id="while-loops" class="title-slide slide level1">
+<h1>While loops</h1>
+<p><code>while</code> loops repeat all the statements inside the curly braces as long as the condition is still true. What does the following code output (keep track of the variables in a state table) in the case where we input 10, 20, or 100?</p>
+<pre ><code class="java">Scanner sc = new Scanner(System.in);
+int x = sc.nextInt();
+int i = 0;
+while (x / 2 &gt; 0) {
+    i++;
+    x /= 2;
+}
+System.out.println(i);</code></pre>
+</section>
+<section id="infinite-loops" class="slide level2">
+<h2>Infinite Loops</h2>
+<p>Make sure the code inside the while loop actually updates the condition! If it doesn’t, you might never end up exiting the loop, and the program will eventually crash.</p>
+<pre ><code class="java">while (x / 2 &gt; 0) {
+    i++;
+}</code></pre>
+</section>
+<section id="for-loops" class="slide level2">
+<h2>For loops</h2>
+<p>The other major loop structure: for loops.</p>
+<pre ><code class="java">for (int i = 0; i &lt; 10; i++) {
+    System.out.println("i is now: " + i);
+}</code></pre>
+<p>This prints out the numbers 0 - 9.</p>
+<p>A <code>for</code> loop has an <strong>initializer</strong>, a <strong>condition</strong>, and an <strong>update</strong>, all in parentheses. That order is important! Most loops can be written either as a <code>for</code> loop or as a <code>while</code> loop.</p>
+</section>
+<section id="code-sample" class="slide level2">
+<h2>Code sample</h2>
+<p>What does the following code do?</p>
+<pre ><code class="java">Scanner sc = new Scanner(System.in);
+int input = sc.nextInt();
+if (input &gt;= 0 && input &lt;= 10) {
+    for (int i = 0; i &lt; input; i++) {
+      System.out.println(i * i);
+    }
+}</code></pre>
+<p>What does it output when we input 1000? What if we input 10?</p>
+</section></section>
+<section id="hw-exercise" class="title-slide slide level1">
+<h1>(HW) Exercise</h1>
+<p>Write a program which asks the user to input a positive integer. Check that the input is valid (using hasNextInt) and that it is positive. If the number is positive, determine if it is a perfect square.</p>
+<p>Think for a bit first about how you might try to figure this one out. Describe your method on paper, in words or in pseudocode first, before you write the code.</p>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
