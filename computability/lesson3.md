@@ -111,14 +111,18 @@ In other words: the current state and the symbol we read do not *uniquely* deter
 
 We say that $N$ accepts a word $w$ if there is *some* way to parse the input $w$ and end up in an accept state. For example: does $N$ accept the string 110? Try parsing it:
 
-* $q_0 \xrightarrow[1]{} q_1 \xrightarrow[1]{} $ ? (crashes)
-* $q_0 \xrightarrow[1]{} q_0 \xrightarrow[1]{} q_0 \xrightarrow[0]{} q_0$? (rejects)
-* $q_0 \xrightarrow[1]{} q_0 \xrightarrow[1]{} q_1 \xrightarrow[0]{} q_2$ accepts!
+* $q_0 \xrightarrow{1} q_1 \xrightarrow{1} $ ? (crashes)
+* $q_0 \xrightarrow{1} q_0 \xrightarrow{1} q_0 \xrightarrow{0} q_0$? (rejects)
+* $q_0 \xrightarrow{1} q_0 \xrightarrow{1} q_1 \xrightarrow{0} q_2$ accepts!
+
+There is an accepting computation, so $N$ **accepts** $w$!.
 
 **Exercise**:
 
-1. Find three strings *not* accepted by $N$.
-2. Describe $\mathcal{L}(N)$ as precisely as possible.
+1. Find two strings *not* accepted by $N$.
+2. Describe $\mathcal{L}(N)$ as precisely as possible. (Hint: how do you get to $q_2$?)
+
+In general, when we try to compute with a non-deterministic machine, we can think of the machine as "making a guess" at the correct computation, or that the machine goes through all possible computations in parallel.
 
 ## Designing an NFA
 
@@ -155,13 +159,100 @@ So: $\mathcal{L}(N) = \\{ w : w = xy$, where $x$ has an odd number of 0s and $y$
 
 So $1001 \not \in \mathcal{L}(N)$, because there is no way to break up $1001$ into two strings where the first has an odd number of 0s and the second has an even number of 1s.
 
-## Formal Definition
+# Formal Definition
+
+Notice that there are two main differences between DFAs and NFAs:
+
+1. We are allowed to read $\varepsilon$ as a symbol (so this should change the inputs to $\delta$), and
+2. The transition function does not need to pick out exactly one state (this should change the *outputs* of $\delta$).
+
+The first change is easy to make. Instead of making the domain of $\delta$ be $Q \times \Sigma$, we let $\Sigma_{\varepsilon} = \Sigma \cup \\{ \varepsilon \\}$ and make the domain of $\delta$ $Q \times \Sigma_{\varepsilon}$.
+
+The second change may be a little harder to reason about. What does the transition function actually output now? Now, instead of saying $\delta(q, a) = q^\prime$, we have to be able to answer: "What are all the possible states that we can transition to from $q$ when we read the symbol $a$?" In other words, the outputs of $\delta$ need to be *subsets* of $Q$, not just elements of $Q$!
+
+**Definition**: Let $X$ be any set. We say $A \subseteq X$ if every element of $A$ is an element of $X$. The collection of all possible subsets of $X$ is called the **power set** of $X$, denoted $\mathcal{P}(X)$.
+
+So in other words: the main change is that we modify the definition of $\delta$. Now the transition function is $\delta : Q \times \Sigma_{\varepsilon} \to \mathcal{P}(Q)$. Note that $\emptyset \in \mathcal{P}(Q)$, which means it's possible that $\delta(q, a)$ is the empty set. What would that mean?
+
+**Definition**: A **non-deterministic finite automaton** (NFA) is a 5-tuple $(Q, \Sigma, \delta, q_0, F)$, where:
+
+1. $Q$ is a finite set (of state),
+2. $\Sigma$ is a finite, non-empty set (symbols), and $\varepsilon \not \in \Sigma$,
+3. $\delta : Q \times \Sigma_{\varepsilon} \to \mathcal{P}(Q)$ is a function (transition function),
+4. $q_0 \in Q$ (start state), and
+5. $F \subseteq Q$ (accepting states)
+
+Notice that every DFA is automatically an NFA. Why is that? Suppose we have a DFA, with transition function $\delta_1$. We can define an NFA with the same states, alphabet, start state and accepting state by defining a new transition function $\delta_2$ by $\delta_2(q, \varepsilon) = \\{ q \\}$ (add $\varepsilon$-transitions from each state to itself) and $\delta_2(q, a) = \\{ \delta_1(q, a) \\}$ (make the outputs of $\delta$ "singleton" sets).
+
+## Computation
+
+We can define computation similarly to how we define it for DFAs. The issue, of course, is that there may be many ways to parse the input.
+
+**Definition**: Let $N = (Q, \Sigma, \delta, q_0, F)$ be an NFA and $w$ a word over $\Sigma$. Then $N$ **accepts** $w$ if there are $w_1, \ldots, w_n \in \Sigma_{\varepsilon}$ and states $r_0, \ldots, r_n \in Q$ such that:
+
+1. $w = w_1 \ldots w_n$,
+2. $r_0 = q_0$,
+3. $r_{i+1} \in \delta(r_i, w_{i+1})$ for each $0 \leq i < n$, and
+4. $r_n \in F$
+
+Then $\mathcal{L}(N) = \\{ w : N$ accepts $w \\}$ is the **language** of $N$. We say that $N$ **recognizes** (or **accepts**) $\mathcal{L}(N)$.
 
 # Equivalence
 
+**Theorem**: Let $\Sigma$ be an alphabet and $\mathcal{L}$ a language of words over $\Sigma$. Then $\mathcal{L}$ is regular if and only if there is an NFA which recognizes it.
+
+What does "if and only if" mean? We need to prove two things:
+
+1. If $\mathcal{L}$ is regular, there is an NFA which recognizes it.
+2. If an NFA recognizes a language $\mathcal{L}$, it is regular.
+
+Let's examine this a bit deeper. What does it mean for a language to be regular? Recall: $\mathcal{L}$ is regular if there is a DFA (deterministic!) which recognizes it. This definition makes one of the two statements above obvious. (Which one?)
+
 ## Exercise
 
+**Definition**: Let $\mathcal{L}_1$ and $\mathcal{L}_2$ be two languages. The **concatenation** of $\mathcal{L}_1$ and $\mathcal{L}_2$ is given by $$\mathcal{L}_1 \cdot \mathcal{L}_2 = \{ w : w = w_1 w_2 \text{ for some } w_1 \in \mathcal{L}_1, w_2 \in \mathcal{L}_2 \}$$. Suppose the theorem stated above is true. (It is, we just haven't proved it yet.) Use this theorem to prove the following statement:
+
+**Exercise**: Prove that the class of regular languages is closed under concatenation.
+
+**Idea**: What do we need to prove here? First suppose we have two regular languages $\mathcal{L}_1$ and $\mathcal{L}_2$. By definition, there are DFAs which recognize those two languages. We need to construct a DFA which recognizes the concatenation.
+
+But wait: we have a new tool we can use. The theorem above says that if we can actually just construct an NFA which recognizes the concatenation, then we are done, because if an NFA recognizes the language, then the language is regular!
+
+(So: any idea on how to construct an NFA which recognizes the concatenation? Again, start with two DFAs, $M_1$ and $M_2$. Then design an NFA $N$, giving its states, alphabet, transition function, start state, and final states.)
+
 ## Proof Idea
+
+We won't prove the theorem today, but let's do an exercise.
+
+**Exercise**: Given the following NFA, find a DFA which accepts the same language.
+
+(image)
+
+Idea: start at $q_0$, and keep track of all the states you could possibly transition to.
+
+**Example 2**: Design a DFA which accepts the language $\mathcal{L} = \\{ xy : x$ ends in 0 and $y$ has an even number of 1s $\\}$.
+
+First, here is a DFA which accepts $\mathcal{L}_1 = \\{ x : x$ ends in 0 $\\}$:
+
+(image)
+
+Here is one which accepts $\mathcal{L}_2 = \\{ y : y$ has an even numer of 1s $\\}$.
+
+(image)
+
+Here is an NFA which accepts the concatenation:
+
+(image)
+
+Now again, start at $q_0$. If we see a $0$, we can end up in either $q_0, q_1$, or $q_2$. So we need a state $q_{0,1,2}$ which represents being in any of those three. If we see a 1? We stay at $q_0$.
+
+Now check what states we can go to if we are in any of $q_0, q_1$, or $q_2$, and we see a 0. Similarly, where could we go if we see a 1? Then keep going. Eventually we have to stop. Why?
+
+(image)
+
+**Question**: Why does this process have to stop?
+
+Since there are only finitely many states in $Q$, there are only finitely many *subsets* of $Q$. In fact, we know exactly how many subsets of $Q$ there are (maybe we'll do this next time): if a set $X$ has $n$ elements, then $\mathcal{P}(X)$ has $2^n$ elements! (This can be proved by induction).
 
 # Problem Set 1
 
@@ -178,3 +269,5 @@ For all of these problems, the alphabet $\Sigma = \\{ 0, 1 \\}$.
 3. Show that if $\mathcal{L}_1$ and $\mathcal{L}_2$ are regular languages, then so is $\mathcal{L}_1 \cap \mathcal{L}_2$. That is: prove that the class of regular languages is closed under intersection.
 4. (We haven't learned this yet) Let $\mathcal{L}_3 = \\{ xy : x$ and $y$ are words over $\Sigma$, $x$ starts with a $0$, and $y$ starts with a $1 \\}.$ Show that $\mathcal{L}_3$ is regular by giving a state diagram of an NFA which recognizes it.
 5. Convert your NFA in question (4) to a DFA using the algorithm described in class.
+
+## Quiz
