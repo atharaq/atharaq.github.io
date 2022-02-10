@@ -107,7 +107,7 @@ In other words: the current state and the symbol we read do not *uniquely* deter
 
 ## Example
 
-(image)
+<img class="noreverse" src="nfa-ex1.jpeg" />
 
 We say that $N$ accepts a word $w$ if there is *some* way to parse the input $w$ and end up in an accept state. For example: does $N$ accept the string 110? Try parsing it:
 
@@ -130,12 +130,12 @@ In general, when we try to compute with a non-deterministic machine, we can thin
 
 <details>
 <summary>A possible solution</summary>
-<p>image</p>
+<img class="noreverse" src="nfa-solution-exercise.jpeg" />
 </details>
 
 ## Epsilon Transitions
 
-(image)
+<img class="noreverse" src="nfa-ex-epsilons.jpeg" />
 
 NFAs are allowed to have "$\varepsilon$-transitions". In the above, if you are at state $q_1$, you can immediately jump to state $q_2$ without reading any symbol. This gives us many more ways to parse the input. (It can complicate things a lot, but also, when we design NFAs, it can make that process easier!)
 
@@ -226,29 +226,29 @@ We won't prove the theorem today, but let's do an exercise.
 
 **Exercise**: Given the following NFA, find a DFA which accepts the same language.
 
-(image)
+<img class="noreverse" src="nfa-to-dfa-problem.jpeg" />
 
 Idea: start at $q_0$, and keep track of all the states you could possibly transition to.
 
 **Example 2**: Design a DFA which accepts the language $\mathcal{L} = \\{ xy : x$ ends in 0 and $y$ has an even number of 1s $\\}$.
 
-First, here is a DFA which accepts $\mathcal{L}_1 = \\{ x : x$ ends in 0 $\\}$:
+First, here is an NFA which accepts $\mathcal{L}_1 = \\{ x : x$ ends in 0 $\\}$:
 
-(image)
+<img class="noreverse" src="nfa-ends-0.jpeg" />
 
 Here is one which accepts $\mathcal{L}_2 = \\{ y : y$ has an even numer of 1s $\\}$.
 
-(image)
+<img class="noreverse" src="dfa-even-1s.jpeg" />
 
 Here is an NFA which accepts the concatenation:
 
-(image)
+<img class="noreverse" src="nfa-concatenation.jpeg" />
 
 Now again, start at $q_0$. If we see a $0$, we can end up in either $q_0, q_1$, or $q_2$. So we need a state $q_{0,1,2}$ which represents being in any of those three. If we see a 1? We stay at $q_0$.
 
 Now check what states we can go to if we are in any of $q_0, q_1$, or $q_2$, and we see a 0. Similarly, where could we go if we see a 1? Then keep going. Eventually we have to stop. Why?
 
-(image)
+<img class="noreverse" src="equivalent-dfa.jpeg" />
 
 **Question**: Why does this process have to stop?
 
@@ -271,3 +271,5 @@ For all of these problems, the alphabet $\Sigma = \\{ 0, 1 \\}$.
 5. Convert your NFA in question (4) to a DFA using the algorithm described in class.
 
 ## Quiz
+
+Currently planning on having a quiz next Thursday. This may change to the following Monday.
