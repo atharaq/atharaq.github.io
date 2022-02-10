@@ -232,23 +232,23 @@ We say that this matrix **represents** the linear function $R_\theta$. Every lin
 
 **Due Thursday, February 17**.
 
-1. Consider the vectors $\vec{v} = \binom{1}{1}$ and $\vec{w} = \binom{1}{-1}$.
-   a. Is $\binom{1}{0} \in \textrm{Span}(\vec{v}, \vec{w})$? If so, find scalars $a$ and $b$ so that $\binom{1}{0} = a \cdot \vec{v} = b \cdot \vec{w}$. If not, explain why no such scalars exist.
-   b. Is $\binom{0}{1} \in \textrm{Span}(\vec{v}, \vec{w})$? If so, find scalars $a$ and $b$ so that $\binom{0}{1} = a \cdot \vec{v} = b \cdot \vec{w}$. If not, explain why no such scalars exist.
-2. In this problem, we will determine the functions from $\mathbb{R}^2$ to $\mathbb{R}$ that are linear. Let $f : \mathbb{R}^2 \to \mathbb{R}$.
-   a. Suppose $f(\binom{1}{0}) = a$. Use the fact that $f$ respects scalar multiplication to determine the value of $f(\binom{x}{0})$.
-   b. Suppose $f(\binom{0}{1}) = b$. Use the fact that $f$ respects scalar multiplication to determine the value of $f(\binom{0}{y})$.
-   c. Suppose both $f(\binom{1}{0}) = a$ and $f(\binom{0}{1}) = b$. Use the fact that $f$ respects vector addition to determine the value of $f(\binom{1}{1})$.
-   d. Suppose both $f(\binom{1}{0}) = a$ and $f(\binom{0}{1}) = b$. Use the fact that $f$ respects scalar multiplication and vector addition to determine the value of $f(\binom{x}{y})$. Hint: $\binom{x}{y} = x\binom{1}{0} = y\binom{0}{1}$.
-3. Suppose $T : \mathbb{R}^2 \to \mathbb{R}^2$ is linear. If $T(\binom{1}{0}) = \binom{1}{1}$ and $T(\binom{0}{1}) = \binom{0}{0}$, what, if anything, can be determined about the values of the following:
-   a. $T(\binom{x}{0})$
-   b. $T(\binom{0}{y})$
-   c. $T(\binom{1}{1})$
-   d. $T(\binom{x}{y}$
-4. Suppose $T : \mathbb{R}^2 \to \mathbb{R}^2$ is linear. If $T(\binom{1}{1}) = \binom{0}{1}$ and $T(\binom{1}{-1}) = \binom{1}{0}$, what, if anything, can be determined about the values of the following:
-   a. $T(\binom{1}{0})$
-   b. $T(\binom{0}{1})$
-   c. $T(\binom{x}{y}$
+1. Consider the vectors $\vec{v} = \binom{1}{1}$ and $\vec{w} = \binom{1}{-1}$.  
+   a. Is $\binom{1}{0} \in \textrm{Span}(\vec{v}, \vec{w})$? If so, find scalars $a$ and $b$ so that $\binom{1}{0} = a \cdot \vec{v} = b \cdot \vec{w}$. If not, explain why no such scalars exist.  
+   b. Is $\binom{0}{1} \in \textrm{Span}(\vec{v}, \vec{w})$? If so, find scalars $a$ and $b$ so that $\binom{0}{1} = a \cdot \vec{v} = b \cdot \vec{w}$. If not, explain why no such scalars exist.  
+2. In this problem, we will determine the functions from $\mathbb{R}^2$ to $\mathbb{R}$ that are linear. Let $f : \mathbb{R}^2 \to \mathbb{R}$.  
+   a. Suppose $f(\binom{1}{0}) = a$. Use the fact that $f$ respects scalar multiplication to determine the value of $f(\binom{x}{0})$.  
+   b. Suppose $f(\binom{0}{1}) = b$. Use the fact that $f$ respects scalar multiplication to determine the value of $f(\binom{0}{y})$.  
+   c. Suppose both $f(\binom{1}{0}) = a$ and $f(\binom{0}{1}) = b$. Use the fact that $f$ respects vector addition to determine the value of $f(\binom{1}{1})$.  
+   d. Suppose both $f(\binom{1}{0}) = a$ and $f(\binom{0}{1}) = b$. Use the fact that $f$ respects scalar multiplication and vector addition to determine the value of $f(\binom{x}{y})$. Hint: $\binom{x}{y} = x\binom{1}{0} = y\binom{0}{1}$.  
+3. Suppose $T : \mathbb{R}^2 \to \mathbb{R}^2$ is linear. If $T(\binom{1}{0}) = \binom{1}{1}$ and $T(\binom{0}{1}) = \binom{0}{0}$, what, if anything, can be determined about the values of the following:  
+   a. $T(\binom{x}{0})$.  
+   b. $T(\binom{0}{y})$.  
+   c. $T(\binom{1}{1})$.  
+   d. $T(\binom{x}{y}$.  
+4. Suppose $T : \mathbb{R}^2 \to \mathbb{R}^2$ is linear. If $T(\binom{1}{1}) = \binom{0}{1}$ and $T(\binom{1}{-1}) = \binom{1}{0}$, what, if anything, can be determined about the values of the following:  
+   a. $T(\binom{1}{0})$.  
+   b. $T(\binom{0}{1})$.  
+   c. $T(\binom{x}{y}$.  
 
 Hint on the last one: use your work from problem 1!
 
