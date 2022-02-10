@@ -1,4 +1,4 @@
-# Computability Lesson 2: Deterministic Finite State Automata
+# Computability Lesson 3: Non-Deterministic Finite State Automata
 {:.no_toc}
 
 1. Table of Contents
