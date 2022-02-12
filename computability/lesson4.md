@@ -134,11 +134,87 @@ Since there are only finitely many states in $Q$, there are only finitely many *
 
 ## Proof
 
+In fact, we will prove:
+
+**Theorem**: Let $N = (Q, \Sigma, \delta, q_0, F)$ be an NFA. There is a DFA $M = (Q^\prime, \Sigma, \delta^\prime, q_0^\prime, F^\prime)$ which recognizes the same language.
+
+This in fact proves the earlier theorem, since then it shows that $\mathcal{L}(N)$ is regular for any NFA $N$.
+
+**Proof**: The idea is to keep track of all the states that $N$ could possibly be in at once. We can do this, since $N$ has finitely many states, if we keep track of one state for each possible *set* of states there are in $N$. That is:
+
+Let $Q^\prime = \mathcal{P}(Q)$ be the *power set* of $Q$!
+
+We will let a state be accepting if it represents any subset of $Q$ which contains any accepting state from $N$. That is:
+
+$F^\prime = \\{ A \subseteq Q : $ there is $q \in A$ such that $q \in F \\}$.
+
+In order to define $q_0^\prime$ and $\delta^\prime$, we need to first define "$\varepsilon$-reachability." For example, in the following NFA, what if we read a 0?
+
+(picture)
+
+If we see a 0 at the start, we could possibly be in states 0, 1, 2, 3, 4, ...
+
+**Definition**: Given a set $A \subseteq Q$, let $E(A) = \\{ q : $ there are states $r_0, \ldots, r_n$ such that $r_0 \in A$ and, for each $i < n$, $r_{i+1} \in \delta(r_i, \varepsilon) \\}$.
+
+Then we can let $\delta^\prime(A, a) = E(\\{ q : $ there is $q^\prime \in A$ such that $q \in \delta(q^\prime, a) \\})$, and $q_0^\prime = E(\\{ q_0 \\})$.
+
+**Claim**: If $M = (Q^\prime, \Sigma, \delta^\prime, q_0^\prime, F^\prime)$ (as described above), then $\mathcal{L}(M) = \mathcal{L}(N)$. (Try to justify this to yourself.)
+
+## Example
+
+(image)
+
+Build an equivalent DFA using the method in the theorem. First, we need 8 states, since there are 8 subsets of $\\{ 0, 1, 2 \\}$:
+
+(image)
+
+Nothing points to $\\{ q_0 \\}$, $\\{ q_1 \\}$, $\\{ q_2 \\}$, $\\{ q_0, q_2 \\}$, or $\\{ q_0, q_1, q_2 \\}$, so we can simplify this:
+
+(image)
+
+What is the language of the machine?
+
 ## Observations
+
+In general, it can be easier to construct an NFA for a language than a DFA. The theorem gives us an algorithm to construct an equivalent DFA, but the number of states can get very large. How large?
+
+If we have an NFA with 1 state $q_0$, how many states would the equivalent DFA have? ($q_{\emptyset}$ and $q_{\\{ 0 \\}}$).
+
+* With 2 states $q_0, q_1$?
+* 3 states?
+* 4 states?
+* 10 states?
+* 20 states? (about 1 million!)
+* 30 states? (about 1 billion!)
+
+**Exercise**: Convert the following to a DFA, and then get rid of the extra states. Determine the language recognized by this machine as well.
+
+(image)
 
 # Regular Operations
 
+We have shown, so far, that the class of regular languages is closed under the union and concatenation operations.
+
+**Definition**: Let $\mathcal{L}$ be a language. The **Kleene star** operation is defined as
+
+$\mathcal{L}^* = \\{ w_1 \ldots w_n : n \geq 0$ and $w_i \in \mathcal{L}$ for each $1 \leq i \leq n \\}$.
+
+Two quick observations:
+
+* For an alphabet $\Sigma$, the language $\Sigma^*$ is the set of all possibly words over $\Sigma$.
+* The empty word $\varepsilon$ is always in $\mathcal{L}^*$. To see this, just let $n = 0$ in the definition above.
+
+**Definition**: The *regular operations* are union, concatenation, and Kleene star.
+
 ## Kleene Star
+
+**Theorem**: The class of regular languages is closed under the Kleene star operation.
+
+The idea is that if $\mathcal{L}$ is a regular language, and N is an NFA recognizing L, we construct a new machine $N^\prime$ which adds in $\varepsilon$ transitions back to the start state of $N$ (from each of the accepting states).
+
+How do we make sure that $\varepsilon \in \mathcal{L}(N^\prime)$? Just add a new start state, make that accepting, and add in a $\varepsilon$-transition to the old start state.
+
+**Exercise**: Fill in the details of this proof.
 
 ## Next Time
 

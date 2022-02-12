@@ -187,7 +187,7 @@ That is: $f(\binom{1}{1}) = 1$, but $f(\binom{2}{2}) = 4$, so this function is *
 
 ## Matrix Notation
 
-Every **linear** function $L : \mathbb{R}^n \to \mathbb{R}^m$ has a matrix representation. How do we find it? First, write down the "standard basis vectors" for $\mathbb{R}^n$. There are exactly $n$ of these: $\begin{pmatrix}1 \\\ 0 \\\ \vdots \\\ 0 \end{pmatrix}, \begin{pmatrix}0 \\\ 1 \\\ vdots \\\ 0 \end{pmatrix}, \ldots, \begin{pmatrix}0 \\\ 0 \\ vdots \\\ 1 \end{pmatrix}$. Call these vectors $\vec{e_1}, \vec{e_2}, \ldots, \vec{e_n}$.
+Every **linear** function $L : \mathbb{R}^n \to \mathbb{R}^m$ has a matrix representation. How do we find it? First, write down the "standard basis vectors" for $\mathbb{R}^n$. There are exactly $n$ of these: $\begin{pmatrix}1 \\\ 0 \\\ \vdots \\\ 0 \end{pmatrix}, \begin{pmatrix}0 \\\ 1 \\\ \vdots \\\ 0 \end{pmatrix}, \ldots, \begin{pmatrix}0 \\\ 0 \\\ \vdots \\\ 1 \end{pmatrix}$. Call these vectors $\vec{e_1}, \vec{e_2}, \ldots, \vec{e_n}$.
 
 Then the **columns** of the matrix representing $L$ are exactly given by $L(\vec{e_1}), L(\vec{e_2}), \ldots, L(\vec{e_n})$! There are $n$ columns. Each column is a vector in $\mathbb{R}^m$, so there are $m$ rows!
 
