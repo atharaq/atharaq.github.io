@@ -193,17 +193,6 @@ Then the **columns** of the matrix representing $L$ are exactly given by $L(\vec
 
 # Practice Quiz Questions
 
-## True / False
-
-For the following, find a vector that is not in the required span, or show that no such vector exists.
-1. True or false: there is a vector $\vec{v} \in \mathbb{R}^2$ that is **not** in the span of $\binom{1}{1}$ and $\binom{1}{0}$.
-2. True or false: there is a vector $\vec{v} \in \mathbb{R}^2$ that is **not** in the span of $\binom{1}{1}$ and $\binom{2}{2}$.
-
-For the following: show that every vector is in the required span, or find a vector that isn't.
-
-3. True or false: every vector in $\mathbb{R}^3$ is in the span of $\begin{pmatrix}1\\\ 0 \\\ 1\end{pmatrix}$ and $\begin{pmatrix}0 \\\ 1 \\\ 1 \end{pmatrix}$.  
-4. True or false: every vector in $\mathbb{R}^3$ is in the span of $\begin{pmatrix}1 \\\ 0 \\\ 0\end{pmatrix}, \begin{pmatrix}0 \\\ 1 \\\ 1\end{pmatrix}$, and $\begin{pmatrix}1 \\\ 0 \\ 1\end{pmatrix}$.
-
 ## Definitions
 
 Define the following as precisely as possible:
@@ -214,6 +203,17 @@ Define the following as precisely as possible:
 4. Function
 5. Injective function / surjective function / bijection
 6. Linear function
+
+## True / False
+
+For the following, find a vector that is not in the required span, or show that no such vector exists.
+1. True or false: there is a vector $\vec{v} \in \mathbb{R}^2$ that is **not** in the span of $\binom{1}{1}$ and $\binom{1}{0}$.
+2. True or false: there is a vector $\vec{v} \in \mathbb{R}^2$ that is **not** in the span of $\binom{1}{1}$ and $\binom{2}{2}$.
+
+For the following: show that every vector is in the required span, or find a vector that isn't.
+
+3. True or false: every vector in $\mathbb{R}^3$ is in the span of $\begin{pmatrix}1\\\ 0 \\\ 1\end{pmatrix}$ and $\begin{pmatrix}0 \\\ 1 \\\ 1 \end{pmatrix}$.  
+4. True or false: every vector in $\mathbb{R}^3$ is in the span of $\begin{pmatrix}1 \\\ 0 \\\ 0\end{pmatrix}, \begin{pmatrix}0 \\\ 1 \\\ 1\end{pmatrix}$, and $\begin{pmatrix}1 \\\ 0 \\\ 1\end{pmatrix}$.
 
 ## Linear functions
 
