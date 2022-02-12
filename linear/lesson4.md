@@ -49,7 +49,7 @@ u_1 - v_1 &= u_2 - v_2
 \end{align}
 $$
 
-That means we can set $v_2 - u_2 = u_2 - v_2$, and solve. If you solve this you get that $u_2 = v_2$. **Exercise**: Plug this in, and show that $u_1 = v_1$< therefore showing that $f$ is injective.
+That means we can set $v_2 - u_2 = u_2 - v_2$, and solve. If you solve this you get that $u_2 = v_2$. **Exercise**: Plug this in, and show that $u_1 = v_1$, therefore showing that $f$ is injective.
 
 **Notice**: The definition of "injective function" is that if $x \neq y$, then $f(x) \neq f(y)$. What we actually proved is that if $f(x) = f(y)$, then $x = y$. Logically, this is equivalent to the original definition, since it's just the *contrapositive* of the original statement.
 
@@ -69,6 +69,10 @@ a + b &= 1 \\
 a - b &= 0
 \end{align}
 $$
+
+If you can solve this system, then $\binom{1}{0} \in \textrm{Span}(\vec{v}, \vec{w})$. If you cannot, then you have shown that $\binom{1}{0} \not \in \textrm{Span}(\vec{v}, \vec{w})$.
+
+Similarly, for part (b), you can set up another system of equations and determine if that system is solvable.
 
 ## Question 2
 
@@ -166,7 +170,7 @@ This matrix has 1 **row** and 2 **columns**. That is, it is a $1 \times 2$ matri
 
 ## Exercise
 
-Let $L : \mathbb{R}^2 \to \mathbb{R}^3$ be defined by the function $L(\binom{x}{y}) = \begin{pmatrix}x - y \\ x + y \\ 2x \end{pmatrix}$.
+Let $L : \mathbb{R}^2 \to \mathbb{R}^3$ be defined by the function $L(\binom{x}{y}) = \begin{pmatrix}x - y \\\ x + y \\\ 2x \end{pmatrix}$.
 
 1. Show that $L$ respects scalar multiplication. That is, show that $L(a \cdot \binom{x}{y}) = a \cdot L(\binom{x}{y})$.
 2. Show that $L$ respects vector addition. That is, show that $L(\binom{u_1}{u_2}) + L(\binom{v_1}{v_2}) = L(\binom{u_1}{u_2} + \binom{v_1}{v_2})$.
@@ -183,8 +187,39 @@ That is: $f(\binom{1}{1}) = 1$, but $f(\binom{2}{2}) = 4$, so this function is *
 
 ## Matrix Notation
 
-Every **linear** function $L : \mathbb{R}^n \to \mathbb{R}^m$ has a matrix representation. How do we find it? First, write down the "standard basis vectors" for $\mathbb{R}^n$. There are exactly $n$ of these: $\begin{pmatrix}1 \\ 0 \\ \vdots \\ 0 \end{pmatrix}, \begin{pmatrix}0 \\ 1 \\vdots \\ 0 \end{pmatrix}, \ldots, \begin{pmatrix}0 \\ 0 \\ vdots \\ 1 \end{pmatrix}$. Call these vectors $\vec{e_1}, \vec{e_2}, \ldots, \vec{e_n}$.
+Every **linear** function $L : \mathbb{R}^n \to \mathbb{R}^m$ has a matrix representation. How do we find it? First, write down the "standard basis vectors" for $\mathbb{R}^n$. There are exactly $n$ of these: $\begin{pmatrix}1 \\\ 0 \\\ \vdots \\\ 0 \end{pmatrix}, \begin{pmatrix}0 \\\ 1 \\\ vdots \\\ 0 \end{pmatrix}, \ldots, \begin{pmatrix}0 \\\ 0 \\ vdots \\\ 1 \end{pmatrix}$. Call these vectors $\vec{e_1}, \vec{e_2}, \ldots, \vec{e_n}$.
 
 Then the **columns** of the matrix representing $L$ are exactly given by $L(\vec{e_1}), L(\vec{e_2}), \ldots, L(\vec{e_n})$! There are $n$ columns. Each column is a vector in $\mathbb{R}^m$, so there are $m$ rows!
 
 # Practice Quiz Questions
+
+## True / False
+
+For the following, find a vector that is not in the required span, or show that no such vector exists.
+1. True or false: there is a vector $\vec{v} \in \mathbb{R}^2$ that is **not** in the span of $\binom{1}{1}$ and $\binom{1}{0}$.
+2. True or false: there is a vector $\vec{v} \in \mathbb{R}^2$ that is **not** in the span of $\binom{1}{1}$ and $\binom{2}{2}$.
+
+For the following: show that every vector is in the required span, or find a vector that isn't.
+
+3. True or false: every vector in $\mathbb{R}^3$ is in the span of $\begin{pmatrix}1\\\ 0 \\\ 1\end{pmatrix}$ and $\begin{pmatrix}0 \\\ 1 \\\ 1 \end{pmatrix}$.  
+4. True or false: every vector in $\mathbb{R}^3$ is in the span of $\begin{pmatrix}1 \\\ 0 \\\ 0\end{pmatrix}, \begin{pmatrix}0 \\\ 1 \\\ 1\end{pmatrix}$, and $\begin{pmatrix}1 \\\ 0 \\ 1\end{pmatrix}$.
+
+## Definitions
+
+Define the following as precisely as possible:
+
+1. Linear combination.
+2. Span.
+3. Image of a function.
+4. Function
+5. Injective function / surjective function / bijection
+6. Linear function
+
+## Linear functions
+
+Determine if the following functions are linear (either *prove* that they are linear, or give a *counterexample*, showing which property of linearity they fail):
+
+1. $f : \mathbb{R} \to \mathbb{R}$ given by $f(x) = 2x + 3$.
+2. $g: \mathbb{R} \to \mathbb{R}^2$ given by $g(x) = \binom{x}{1}$.
+3. $H : \mathbb{R}^2 \to \mathbb{R}$ given by $H(\binom{x}{y}) = x - y$.
+4. $z : \mathbb{R}^2 \to \mathbb{R}^2$ given by $z(\binom{x}{y}) = \binom{0}{0}$.
