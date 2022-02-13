@@ -150,7 +150,7 @@ $F^\prime = \\{ A \subseteq Q : $ there is $q \in A$ such that $q \in F \\}$.
 
 In order to define $q_0^\prime$ and $\delta^\prime$, we need to first define "$\varepsilon$-reachability." For example, in the following NFA, what if we read a 0?
 
-(picture)
+<img class="noreverse" src="lots-of-epsilons.jpeg" />
 
 If we see a 0 at the start, we could possibly be in states 0, 1, 2, 3, 4, ...
 
@@ -162,15 +162,15 @@ Then we can let $\delta^\prime(A, a) = E(\\{ q : $ there is $q^\prime \in A$ suc
 
 ## Example
 
-(image)
+<img class="noreverse" src="nfa-l4-ex.jpeg" />
 
-Build an equivalent DFA using the method in the theorem. First, we need 8 states, since there are 8 subsets of $\\{ 0, 1, 2 \\}$:
+Suppose the alphabet is $\Sigma = \\{ 0, 1 \\}$. Build an equivalent DFA using the method in the theorem. First, we need 8 states, since there are 8 subsets of $\\{ 0, 1, 2 \\}$:
 
-(image)
+<img class="noreverse" src="nfa-to-dfa-all-subsets.jpeg" />
 
 Nothing points to $\\{ q_0 \\}$, $\\{ q_1 \\}$, $\\{ q_2 \\}$, $\\{ q_0, q_2 \\}$, or $\\{ q_0, q_1, q_2 \\}$, so we can simplify this:
 
-(image)
+<img class="noreverse" src="simplified-nfa.jpeg" />
 
 What is the language of the machine?
 
@@ -189,7 +189,7 @@ If we have an NFA with 1 state $q_0$, how many states would the equivalent DFA h
 
 **Exercise**: Convert the following to a DFA, and then get rid of the extra states. Determine the language recognized by this machine as well.
 
-(image)
+<img class="noreverse" src="nfa-to-dfa-exercise.jpeg" />
 
 # Regular Operations
 
