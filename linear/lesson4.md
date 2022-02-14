@@ -39,8 +39,7 @@ has a solution. (How do we show this? Solve for $x$ and $y$ in terms of $a$ and 
 
 **Injectivity**: This is a bit harder. We will look at this once, but in the future we will have a better method to show injectivity later on in the semester.
 
-The question is: if $T(\vec{u}) = T(\vec{v})$, does this mean that $\vec{u} = \vec{v}$? Let's let $\vec{u} = \binom{u_1}{u_2}$ and $\vec{v} = \binom{v_1}{v_2}$. Suppose that $\
-binom{u_1 + u_2}{u_1 - u_2} = \binom{v_1 + v_2}{v_1 - v_2}$. Then $u_1 + u_2 = v_1 + v_2$ and $u_1 - u_2 = v_1 - v_2$. Does this mean that $u_1 = v_1$ and $u_2 = v_2$? It's not immediately clear. If you do some algebra, though, you might see:
+The question is: if $T(\vec{u}) = T(\vec{v})$, does this mean that $\vec{u} = \vec{v}$? Let's let $\vec{u} = \binom{u_1}{u_2}$ and $\vec{v} = \binom{v_1}{v_2}$. Suppose that $\binom{u_1 + u_2}{u_1 - u_2} = \binom{v_1 + v_2}{v_1 - v_2}$. Then $u_1 + u_2 = v_1 + v_2$ and $u_1 - u_2 = v_1 - v_2$. Does this mean that $u_1 = v_1$ and $u_2 = v_2$? It's not immediately clear. If you do some algebra, though, you might see:
 
 $$
 \begin{align}
