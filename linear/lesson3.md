@@ -239,7 +239,7 @@ We say that this matrix **represents** the linear function $R_\theta$. Every lin
    a. Suppose $f(\binom{1}{0}) = a$. Use the fact that $f$ respects scalar multiplication to determine the value of $f(\binom{x}{0})$.  
    b. Suppose $f(\binom{0}{1}) = b$. Use the fact that $f$ respects scalar multiplication to determine the value of $f(\binom{0}{y})$.  
    c. Suppose both $f(\binom{1}{0}) = a$ and $f(\binom{0}{1}) = b$. Use the fact that $f$ respects vector addition to determine the value of $f(\binom{1}{1})$.  
-   d. Suppose both $f(\binom{1}{0}) = a$ and $f(\binom{0}{1}) = b$. Use the fact that $f$ respects scalar multiplication and vector addition to determine the value of $f(\binom{x}{y})$. Hint: $\binom{x}{y} = x\binom{1}{0} = y\binom{0}{1}$.  
+   d. Suppose both $f(\binom{1}{0}) = a$ and $f(\binom{0}{1}) = b$. Use the fact that $f$ respects scalar multiplication and vector addition to determine the value of $f(\binom{x}{y})$. Hint: $\binom{x}{y} = x \cdot \binom{1}{0} + y \cdot \binom{0}{1}$.  
 3. Suppose $T : \mathbb{R}^2 \to \mathbb{R}^2$ is linear. If $T(\binom{1}{0}) = \binom{1}{1}$ and $T(\binom{0}{1}) = \binom{0}{0}$, what, if anything, can be determined about the values of the following:  
    a. $T(\binom{x}{0})$.  
    b. $T(\binom{0}{y})$.  
