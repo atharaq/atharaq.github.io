@@ -80,7 +80,7 @@ Similarly, for part (b), you can set up another system of equations and determin
    a. Suppose $f(\binom{1}{0}) = a$. Use the fact that $f$ respects scalar multiplication to determine the value of $f(\binom{x}{0})$.  
    b. Suppose $f(\binom{0}{1}) = b$. Use the fact that $f$ respects scalar multiplication to determine the value of $f(\binom{0}{y})$.  
    c. Suppose both $f(\binom{1}{0}) = a$ and $f(\binom{0}{1}) = b$. Use the fact that $f$ respects vector addition to determine the value of $f(\binom{1}{1})$.  
-   d. Suppose both $f(\binom{1}{0}) = a$ and $f(\binom{0}{1}) = b$. Use the fact that $f$ respects scalar multiplication and vector addition to determine the value of $f(\binom{x}{y})$. Hint: $\binom{x}{y} = x\binom{1}{0} = y\binom{0}{1}$.  
+   d. Suppose both $f(\binom{1}{0}) = a$ and $f(\binom{0}{1}) = b$. Use the fact that $f$ respects scalar multiplication and vector addition to determine the value of $f(\binom{x}{y})$. Hint: $\binom{x}{y} = x \cdot \binom{1}{0} + y \cdot \binom{0}{1}$.  
 
 These types of problems illustrate the strength of the notion of linearity. We can write $f(\binom{x}{0})$ as $f(x \cdot \binom{1}{0})$, and then use linearity. Similarly, we can write $f(\binom{0}{y})$ as $f(y \cdot \binom{0}{1})$ and use linearity, and we can write any $f(\binom{x}{y})$ as $f(x \cdot \binom{1}{0} + y \cdot \binom{0}{1})$.
 
