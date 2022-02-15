@@ -59,7 +59,33 @@ If $A$ represents a function $L$, then *outputs* of $L$ are always *linear combi
 ## Exercise
 
 1. Let $F : \mathbb{R}^2 \to \mathbb{R}^3$ be the linear function specified by $F(\binom{1}{0}) = \begin{pmatrix}1 \\\ 0 \\\ 2 \end{pmatrix}$ and $F(\binom{0}{1}) = \begin{pmatrix}0 \\\ 1 \\\ 1\end{pmatrix}$. Write the matrix representation of $F$. Is it $2 \times 3$ or $3 \times 2$?
-2. Let $G : \mathbb{R}^3 \to \mathbb{R}$ be the linear function specified by $G(\begin{pmatrix}1 \\\ 0 \\\ 0\end{pmatrix}) = 1$, $G(\begin{pmatrix}0 \\\ 1 \\\ 0\end{pmatrix}) = 0$, and $G(\begin{pmatrix}0 \\\ 0 \\\ 1\end{pmatrix}) = -5$. Write the matrix representation of $G$.
+2. Use the fact that $F$ is linear to compute $F(\binom{3}{1})$.
+3. Let $G : \mathbb{R}^3 \to \mathbb{R}$ be the linear function specified by $G\left(\begin{pmatrix}1 \\\ 0 \\\ 0\end{pmatrix}\right) = 1$, $G\left(\begin{pmatrix}0 \\\ 1 \\\ 0\end{pmatrix}\right) = 0$, and $G\left(\begin{pmatrix}0 \\\ 0 \\\ 1\end{pmatrix}\right) = -5$. Write the matrix representation of $G$.
+4. Use the fact that $G$ is linear to compute $G\left(\begin{pmatrix}2 \\ 1 \\ 2\end{pmatrix}\right)$.
+
+## Notice
+
+Let's look at the computation fo $F(\binom{3}{1})$ a little closer.
+
+$$
+\begin{align}
+F(\binom{3}{1}) &= 3 \cdot \begin{pmatrix}1 \\\ 0 \\\ 2 \end{pmatrix} + 1 \cdot \begin{pmatrix}0 \\\ 1 \\\ 1 \end{pmatrix} \\
+&= \begin{pmatrix}3 \cdot 1 + 1 \cdot 0 \\\ 3 \cdot 0 + 1 \cdot 1 \\\ 3 \cdot 2 + 1 \cdot 1 \end{pmatrix}
+\end{align}
+$$
+
+In other words: to find $F(\binom{3}{1})$, we start with the matrix representation of $F$. Then we end up with a vector of the form $\begin{pmatrix} \text{row 1 of F} \cdot  \binom{3}{1} \\\ \text{row 2 of F} \cdot \binom{3}{1} \\\ \text{row 3 of F} \cdot \binom{3}{1}\end{pmatrix}$, using the *dot product* notation (from Calculus III).
+
+**Definition**: Let $\vec{v} = \begin{pmatrix}v_1 \\\ v_2 \\\ \vdots \\\ v_n\end{pmatrix}$ and $\vec{w} = \begin{pmatrix} w_1 \\\ w_2 \\\ \vdots \\\ w_n \end{pmatrix}$. Then $\vec{v} \cdot \vec{w} = v_1 w_1 + v_2 w_2 + \ldots + v_n w_n$.
+
+This gives us an easy way to compute outputs of linear functions!
+
+**Exercise**:
+
+Let $R_{\pi/4} = \begin{pmatrix} \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \end{pmatrix}$ be the rotation matrix, rotating a vector by $\frac{\pi}{4}$ (45 degrees).
+
+1. What is $R_{\pi/4}(\binom{1}{2})$?
+2. What is $R_{\pi/4}(R_{\pi/4}(\binom{1}{2}))$?
 
 # Composition
 
@@ -116,11 +142,7 @@ $$
 
 **Definition** (Matrix multiplication): If $A$ is an $m \times n$ matrix representing a linear functino $F : \mathbb{R}^n \to \mathbb{R}^m$ and $B$ is an $n \times r$ matrix representing $G : \mathbb{R}^r \to \mathbb{R}^n$, then $AB$ is the $m \times r$ matrix representing $(F \circ G) : \mathbb{R}^r \to \mathbb{R}^m$.
 
-That is: the *definition* of matrix multiplication that we use is just function composition. How do we actually compute the values here? Recall the **dot product** of vectors (from Calculus III):
-
-**Definition**: Let $\vec{v} = \begin{pmatrix}v_1 \\\ v_2 \\\ \vdots \\\ v_n\end{pmatrix}$ and $\vec{w} = \begin{pmatrix} w_1 \\\ w_2 \\\ \vdots \\\ w_n \end{pmatrix}$. Then $\vec{v} \cdot \vec{w} = v_1 w_1 + v_2 w_2 + \ldots + v_n w_n$.
-
-It turns out that matrix multiplication can be computed using these dot products!
+That is: the *definition* of matrix multiplication that we use is just function composition. How do we actually compute the values here? It turns out that matrix multiplication can be computed using dot products!
 
 $$
 \begin{pmatrix}
