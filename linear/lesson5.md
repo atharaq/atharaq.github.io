@@ -69,7 +69,7 @@ Recall the notion of *function composition*. If $f : X \to Y$ and $g : Y \to Z$ 
 Since $F(\binom{1}{0}) = \begin{pmatrix}1 \\\ 0 \\\ 2\end{pmatrix} = \begin{pmatrix}1 \\\ 0 \\\ 0\end{pmatrix} + 2 \begin{pmatrix}0 \\\ 0 \\\ 1\end{pmatrix}$, we use linearity to plug that in to $G$:
 
 $$
-G(\begin{pmatrix}1 \\\ 0 \\\ 2) &= G(\begin{pmatrix}1 \\\ 0 \\\ 0\end{pmatrix} + 2 \begin{pmatrix}0 \\\ 0 \\\ 1\end{pmatrix}) \\
+G(\begin{pmatrix}1 \\\ 0 \\\ 2\end{pmatrix}) &= G(\begin{pmatrix}1 \\\ 0 \\\ 0\end{pmatrix} + 2 \begin{pmatrix}0 \\\ 0 \\\ 1\end{pmatrix}) \\
 &= G(\begin{pmatrix}1 \\\ 0 \\\ 0\end{pmatrix}) + 2 G(\begin{pmatrix}0 \\\ 0 \\\ 1\end{pmatrix}) \\
 &= 1 + 2(-5) \\
 &= -9
@@ -93,7 +93,26 @@ $$
 
 ## Exercise
 
+Consider the linear functions $A : \mathbb{R}^2 \to \mathbb{R}^3$ and $B : \mathbb{R}^2 \to \mathbb{R}^3$ defined by the following matrices:
+
+$$
+A = \begin{pmatrix}1 & 2 \\ 2 & 4 \\ 3 & 6\end{pmatrix}
+B = \begin{pmatrix}3 & 1 \\ 0 & 5 \end{pmatrix}
+$$
+
+1. What is $A(\binom{1}{0})$? $A(\binom{0}{1})$?
+2. What is $B(\binom{1}{0})$? $B(\binom{0}{1})$?
+3. What is $A(B(\binom{1}{0}))$?
+4. What is $A(B(\binom{0}{1}))$?
+5. Write down the matrix representing $A \circ B$.
+
 ## Definition
+
+**Definition** (Matrix multiplication): If $A$ is an $m \times n$ matrix representing a linear functino $F : \mathbb{R}^n \to \mathbb{R}^m$ and $B$ is an $n \times r$ matrix representing $G : \mathbb{R}^r \to \mathbb{R}^n$, then $AB$ is the $m \times r$ matrix representing $(F \circ G) : \mathbb{R}^r \to \amthbb{R}^m$.
+
+That is: the *definition* of matrix multiplication that we use is just function composition. How do we actually compute the values here? Recall the **dot product** of vectors (from Calculus III):
+
+**Definition**: Let $\vec{v} = \begin{pmatrix}v_1 \\\ v_2 \\\ \vdots \\\ v_n\end{pmatrix}$ and $\vec{w} = \begin{pmatrix} w_1 \\\ w_2 \\\ \vdots \\\ w_n \end{pmatrix}$. Then $\vec{v} \cdot \vec{w} = v_1 w_1 + v_2 w_2 + \ldots + v_n w_n$.
 
 # Application
 
