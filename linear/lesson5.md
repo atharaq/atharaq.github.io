@@ -4,6 +4,13 @@
 1. Table of Contents
 {:toc}
 
+<!--
+1. 2:30 - 2:50 quiz
+2. 2:50 - 3:10 matrix intro + exercise
+3. 3:10 - 3:40 non-ex / notation / exercise
+4. 3:40 - 4:10 composition intro
+-->
+
 # Quiz
 
 # Matrices
@@ -27,7 +34,7 @@ $$
 \end{pmatrix}
 $$
 
-This matrix has 1 **row** and 2 **columns**. That is, it is a $1 \times 2$ matrix. It represents the linear function $L \mathbb{R}^2 \to \mathbb{R}$! In general, if a matrix is $m \times n$ (m rows, n columns), what kind of function does it represent?
+This matrix has 1 **row** and 2 **columns**. That is, it is a $1 \times 2$ matrix. It represents the linear function $L : \mathbb{R}^2 \to \mathbb{R}$! In general, if a matrix is $m \times n$ (m rows, n columns), what kind of function does it represent?
 
 ## Exercise
 
@@ -82,7 +89,7 @@ This gives us an easy way to compute outputs of linear functions!
 
 **Exercise**:
 
-Let $R_{\pi/4} = \begin{pmatrix} \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \end{pmatrix}$ be the rotation matrix, rotating a vector by $\frac{\pi}{4}$ (45 degrees).
+Let $R_{\pi/4} = \begin{pmatrix} \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} \\\ \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \end{pmatrix}$ be the rotation matrix, rotating a vector by $\frac{\pi}{4}$ (45 degrees).
 
 1. What is $R_{\pi/4}(\binom{1}{2})$?
 2. What is $R_{\pi/4}(R_{\pi/4}(\binom{1}{2}))$?
@@ -172,9 +179,9 @@ In particular: suppsoe $L : \mathbb{R}^n \to \mathbb{R}^m$ is a linear function 
 
 ## Exercise
 
-Recall the rotation matrix $R_\theta = \begin{pmatrix} \cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos(\theta) \end{pmatrix}$.
+Recall the rotation matrix $R_{\theta} = \begin{pmatrix} \cos(\theta) & -\sin(\theta) \\\ \sin(\theta) & \cos(\theta) \end{pmatrix}$.
 
-1. Find $R_theta \circ R_theta$.  What does this transformation do to a vector $\vec{v}$ (geometrically)?
+1. Find $R_\theta \circ R_\theta$.  What does this transformation do to a vector $\vec{v}$ (geometrically)?
 2. Find $R_{2 \theta}$. What does this transformation do to a vector $\vec{v}$ (geometically)?
 3. What can we conclude from the above?
 
