@@ -146,6 +146,8 @@ $$
 
 where $c^i_j$ is given by the *dot product* of the $i$-th row of $A$ with the $j$-th column of $B$!
 
+In particular: suppsoe $L : \mathbb{R}^n \to \mathbb{R}^m$ is a linear function and $A$ is an $m \times n$ matrix that represents $L$. If $\vec{v} \in \mathbb{R}^n$, then we can compute $A \cdot \vec{v}$ (using matrix multiplication), and we get exactly the output of $L(\vec{v})$!
+
 ## Exercise
 
 Recall the rotation matrix $R_\theta = \begin{pmatrix} \cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos(\theta) \end{pmatrix}$.
