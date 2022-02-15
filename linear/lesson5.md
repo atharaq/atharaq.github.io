@@ -135,7 +135,7 @@ b^n_1 \ldots b^n_r
 \begin{pmatrix}
 c^1_1 \ldots c^1_r \\
 c^2_1 \ldots c^2_r \\
-\vdots \ldots \vdots
+\vdots \ldots \vdots \\
 c^m_1 \ldots c^m_r
 \end{pmatrix}
 $$
