@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Athar Abdul-Quader">
+  <meta name="dcterms.date" content="2022-02-16">
   <title>Paradoxes, Provability and Truth</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -18,7 +19,8 @@
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
   </style>
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
 </head>
 <body>
   <div class="reveal">
@@ -27,7 +29,7 @@
 <section id="title-slide">
   <h1 class="title">Paradoxes, Provability and Truth</h1>
   <p class="author">Athar Abdul-Quader</p>
-  <p class="date">February 2022</p>
+  <p class="date">February 16, 2022</p>
 </section>
 
 <section>
@@ -35,6 +37,11 @@
 <h1>Liar’s Paradox</h1>
 <p>Let <span class="math inline">\(P\)</span> be the assertion: “This statement is false.”</p>
 <p>Is <span class="math inline">\(P\)</span> true? Is <span class="math inline">\(P\)</span> false?</p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><img data-src="meme.jpeg" alt="Liar’s Paradox Meme" /><br />
+</p>
 </section>
 <section id="resolution" class="slide level2">
 <h2>Resolution</h2>
@@ -51,6 +58,7 @@
 <li>Can statements / formulas refer to other statements / formulas?</li>
 <li>Can statements refer to themselves? What happens if we formalize this paradox?</li>
 </ol>
+<p>Moral of the story: “Lots of things can be encoded in arithmetic.”</p>
 </section></section>
 <section>
 <section id="legal-notice" class="title-slide slide level1">
@@ -77,18 +85,18 @@
 <li>Add in conjunctions (<span class="math inline">\(\wedge\)</span>), disjunctions (<span class="math inline">\(\vee\)</span>), negations (<span class="math inline">\(\lnot\)</span>), and quantifiers (<span class="math inline">\(\forall\)</span> and <span class="math inline">\(\exists\)</span>)</li>
 <li>Examples (without quantifiers):
 <ul>
-<li>For which integers is <span class="math inline">\(x &gt; 3 \wedge x &lt; 4\)</span> true?</li>
-<li>For which integers is <span class="math inline">\(x &gt; 3 \vee x &lt; 4\)</span> true?</li>
-<li>For which integers is <span class="math inline">\(\lnot (x &gt; 3)\)</span> true?</li>
+<li>For which natural numbers is <span class="math inline">\(x &gt; 3 \wedge x &lt; 4\)</span> true?</li>
+<li>For which natural numbers is <span class="math inline">\(x &gt; 3 \vee x &lt; 4\)</span> true?</li>
+<li>For which natural numbers is <span class="math inline">\(\lnot (x &gt; 3)\)</span> true?</li>
 </ul></li>
 </ul>
 </section>
 <section id="quantifiers" class="slide level2">
 <h2>Quantifiers</h2>
 <ul>
-<li><span class="math inline">\(\forall x P(x)\)</span> means “The property <span class="math inline">\(P(x)\)</span> is true for every number <span class="math inline">\(x\)</span>”.</li>
-<li><span class="math inline">\(\exists x P(x)\)</span> means “There is some number <span class="math inline">\(x\)</span> such that <span class="math inline">\(P(x)\)</span> is true.”</li>
-<li>By “number”, for today, we mean “natural number”, like <span class="math inline">\(0, 1, 2, \ldots\)</span> (non-negative, whole numbers)</li>
+<li><span class="math inline">\(\forall x P(x)\)</span> means “The property <span class="math inline">\(P(x)\)</span> is true for every natural number <span class="math inline">\(x\)</span>.”</li>
+<li><span class="math inline">\(\exists x P(x)\)</span> means “There is some natural number <span class="math inline">\(x\)</span> such that <span class="math inline">\(P(x)\)</span> is true.”</li>
+<li>“Natural number” means <span class="math inline">\(0, 1, 2, \ldots\)</span> (non-negative, whole numbers)</li>
 <li>Aside: technically, we also allow <span class="math inline">\(\rightarrow\)</span> and <span class="math inline">\(\leftrightarrow\)</span>:
 <ul>
 <li><span class="math inline">\(p \rightarrow q\)</span> is defined as <span class="math inline">\(\lnot p \vee q\)</span></li>
@@ -98,12 +106,12 @@
 </section>
 <section id="exercise" class="slide level2">
 <h2>Exercise</h2>
-<p><strong>Exercise</strong>: Let <span class="math inline">\(P(x)\)</span> be the formula <span class="math display">\[x &gt; 1 \wedge \forall y \forall z [(yz = x) \rightarrow (y = x \vee z = x)].\]</span> For which positive integers <span class="math inline">\(n\)</span> is <span class="math inline">\(P(n)\)</span> true?</p>
+<p><strong>Exercise</strong>: Let <span class="math inline">\(P(x)\)</span> be the formula <span class="math display">\[x &gt; 1 \wedge \forall y \forall z [(yz = x) \rightarrow (y = x \vee z = x)].\]</span> For which natural numbers <span class="math inline">\(n\)</span> is <span class="math inline">\(P(n)\)</span> true?</p>
 <p>Recall: <span class="math inline">\(\forall y\)</span> means “for every natural number <span class="math inline">\(y\)</span>.”</p>
 </section>
 <section id="statements" class="slide level2">
 <h2>Statements</h2>
-<p>A <strong>statement</strong> is a formula (built up in the above way) in which all variables are either replaced by numbers, or bound by a quantifier.</p>
+<p>A <strong>statement</strong> is a formula (built up in the above way) in which all variables are either replaced by natural numbers, or bound by a quantifier.</p>
 <ul>
 <li><span class="math inline">\(\forall x (x &gt; 5 \rightarrow x &gt; 3)\)</span> is a <strong>true statement</strong></li>
 <li><span class="math inline">\(\forall x (x &gt; y \rightarrow x &gt; z)\)</span> is a formula, with free variables <span class="math inline">\(y\)</span> and <span class="math inline">\(z\)</span>.</li>
@@ -118,7 +126,7 @@
 <h2>Self-reference</h2>
 <p>So can an assertion refer to itself? No!</p>
 <ul>
-<li>Formulas describe properties of <em>numbers</em>.</li>
+<li>Formulas describe properties of (natural) <em>numbers</em>.</li>
 <li>A statement can quantify over those numbers, or can say something about specific numbers (like 5 and 3).</li>
 <li>Numbers aren’t statements!</li>
 </ul>
@@ -136,7 +144,7 @@
 <section id="numbering" class="title-slide slide level1">
 <h1>Numbering</h1>
 <ul>
-<li>Consider a program which takes in one input, <span class="math inline">\(s\)</span>.</li>
+<li>Consider a program (in whatever programming language you know) which takes in one input, <span class="math inline">\(s\)</span>.</li>
 <li>The program determines if <span class="math inline">\(s\)</span> represents a legal formula of arithmetic.</li>
 </ul>
 <p>Questions:</p>
@@ -165,6 +173,7 @@
 <li>We refer to this as the <strong>Gödel code</strong> of the formula.</li>
 <li>For a formula <span class="math inline">\(\theta(x)\)</span>, represent its Gödel code as <span class="math inline">\(\ulcorner \theta(x) \urcorner\)</span>.</li>
 <li>So a formula <em>can</em> talk about properties of statements (or other formulas)!</li>
+<li>Ex: “The statement with code <span class="math inline">\(n\)</span> has length <span class="math inline">\(m\)</span>.”</li>
 </ul>
 </section>
 <section id="proofs" class="slide level2">
@@ -224,7 +233,7 @@
 <li>Are self-referential statements inherently impossible?</li>
 </ul>
 </section>
-<section id="section" class="slide level2">
+<section id="section-1" class="slide level2">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -247,9 +256,9 @@
 <li>Technically: <span class="math inline">\(P\)</span> is really asserting something about its <em>code</em>, but it really is self-referential: consider the “fixed point” of <span class="math inline">\(\exists x Pr(x, y)\)</span>.</li>
 </ul>
 </section>
-<section id="section-1" class="slide level2">
+<section id="section-2" class="slide level2">
 <h2></h2>
-<p>“The fixed point lemma is profound because it reveals a surprisingly deep capacity in mathematics for self-reference: when a statement <span class="math inline">\(A\)</span> is equivalent to <span class="math inline">\(F(A)\)</span>, it effectively asserts ‘<span class="math inline">\(F\)</span> holds of me’. How shocking it is to find that self-reference, the stuff of paradox and nonsense, is fundamentally embedded in our beautiful number theory! The fixed point lemma shows that every elementary property <span class="math inline">\(F\)</span> admits a statement of arithmetic asserting ‘this statement has property <span class="math inline">\(F\)</span>’.”</p>
+<p>“How shocking it is to find that self-reference, the stuff of paradox and nonsense, is fundamentally embedded in our beautiful number theory! The fixed point lemma shows that every elementary property <span class="math inline">\(F\)</span> admits a statement of arithmetic asserting ‘this statement has property <span class="math inline">\(F\)</span>’.”</p>
 <p><a href="https://mathoverflow.net/a/31649/35887">Joel David Hamkins</a></p>
 </section>
 <section id="applications" class="slide level2">
@@ -279,6 +288,7 @@
 <ul>
 <li>“Tarski’s Undefinability of Truth”.</li>
 <li>Can you think of a proof? (Argue by contradiction, and use the Fixed Point lemma.)</li>
+<li>Provability can be expressed in logic, but truth cannot!</li>
 </ul>
 </section>
 <section id="resolution-2" class="slide level2">
@@ -292,6 +302,16 @@
 <li>Truth is somehow different from <em>provability</em>.</li>
 </ul>
 </section></section>
+<section id="a-puzzle" class="title-slide slide level1">
+<h1>A Puzzle</h1>
+<p>Consider the following infinite family of assertions:</p>
+<ul>
+<li><span class="math inline">\(S_0\)</span>: each <span class="math inline">\(S_i\)</span> is false for all <span class="math inline">\(i &gt; 0\)</span>.</li>
+<li><span class="math inline">\(S_1\)</span>: each <span class="math inline">\(S_i\)</span> is false for all <span class="math inline">\(i &gt; 1\)</span>.</li>
+<li>…etc (so <span class="math inline">\(S_n\)</span> is “each <span class="math inline">\(S_i\)</span> is false for all <span class="math inline">\(i &gt; n\)</span>”.)</li>
+</ul>
+<p>Is <span class="math inline">\(S_0\)</span> true? Is it false?</p>
+</section>
     </div>
   </div>
 
@@ -302,6 +322,8 @@
   <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
   <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
   <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
 
   <script>
 
@@ -332,6 +354,7 @@
         // reveal.js plugins
         plugins: [
           RevealMath,
+          RevealHighlight,
           RevealNotes,
           RevealSearch,
           RevealZoom
