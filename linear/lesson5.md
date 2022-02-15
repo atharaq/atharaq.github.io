@@ -71,10 +71,10 @@ Recall the notion of *function composition*. If $f : X \to Y$ and $g : Y \to Z$ 
 Since $F(\binom{1}{0}) = \begin{pmatrix}1 \\\ 0 \\\ 2\end{pmatrix} = \begin{pmatrix}1 \\\ 0 \\\ 0\end{pmatrix} + 2 \begin{pmatrix}0 \\\ 0 \\\ 1\end{pmatrix}$, we use linearity to plug that in to $G$:
 
 $$
-G(\begin{pmatrix}1 \\\ 0 \\\ 2\end{pmatrix}) &= G(\begin{pmatrix}1 \\\ 0 \\\ 0\end{pmatrix} + 2 \begin{pmatrix}0 \\\ 0 \\\ 1\end{pmatrix}) \\
-&= G(\begin{pmatrix}1 \\\ 0 \\\ 0\end{pmatrix}) + 2 G(\begin{pmatrix}0 \\\ 0 \\\ 1\end{pmatrix}) \\
-&= 1 + 2(-5) \\
-&= -9
+G(\begin{pmatrix}1 \\\ 0 \\\ 2\end{pmatrix}) = G(\begin{pmatrix}1 \\\ 0 \\\ 0\end{pmatrix} + 2 \begin{pmatrix}0 \\\ 0 \\\ 1\end{pmatrix}) \\
+= G(\begin{pmatrix}1 \\\ 0 \\\ 0\end{pmatrix}) + 2 G(\begin{pmatrix}0 \\\ 0 \\\ 1\end{pmatrix}) \\
+= 1 + 2(-5) \\
+= -9
 $$
 
 **Exercise**: Compute $(G \circ F)(\binom{0}{1})$. (First compute $F(\binom{0}{1})$, then break that down into linear combinations of $\begin{pmatrix}1 \\\ 0 \\\ 0\end{pmatrix}, \begin{pmatrix}0 \\\ 1 \\\ 0 \end{pmatrix}$ and $\begin{pmatrix}0 \\\ 0 \\\ 1 \end{pmatrix}$ and use linearity of $G$).
