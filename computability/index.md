@@ -14,3 +14,4 @@ layout: default
 * [Lesson 1: Finite State Machines](lesson1.html)
 * [Lesson 2: Deterministic Finite State Automata](lesson2.html)
 * [Lesson 3: NFAs](lesson3.html) 
+* [Lesson 4: Equivalence between NFAs / DFAs](lesson4.html) 

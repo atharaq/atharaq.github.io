@@ -39,8 +39,7 @@ has a solution. (How do we show this? Solve for $x$ and $y$ in terms of $a$ and 
 
 **Injectivity**: This is a bit harder. We will look at this once, but in the future we will have a better method to show injectivity later on in the semester.
 
-The question is: if $T(\vec{u}) = T(\vec{v})$, does this mean that $\vec{u} = \vec{v}$? Let's let $\vec{u} = \binom{u_1}{u_2}$ and $\vec{v} = \binom{v_1}{v_2}$. Suppose that $\
-binom{u_1 + u_2}{u_1 - u_2} = \binom{v_1 + v_2}{v_1 - v_2}$. Then $u_1 + u_2 = v_1 + v_2$ and $u_1 - u_2 = v_1 - v_2$. Does this mean that $u_1 = v_1$ and $u_2 = v_2$? It's not immediately clear. If you do some algebra, though, you might see:
+The question is: if $T(\vec{u}) = T(\vec{v})$, does this mean that $\vec{u} = \vec{v}$? Let's let $\vec{u} = \binom{u_1}{u_2}$ and $\vec{v} = \binom{v_1}{v_2}$. Suppose that $\binom{u_1 + u_2}{u_1 - u_2} = \binom{v_1 + v_2}{v_1 - v_2}$. Then $u_1 + u_2 = v_1 + v_2$ and $u_1 - u_2 = v_1 - v_2$. Does this mean that $u_1 = v_1$ and $u_2 = v_2$? It's not immediately clear. If you do some algebra, though, you might see:
 
 $$
 \begin{align}
@@ -80,9 +79,9 @@ Similarly, for part (b), you can set up another system of equations and determin
    a. Suppose $f(\binom{1}{0}) = a$. Use the fact that $f$ respects scalar multiplication to determine the value of $f(\binom{x}{0})$.  
    b. Suppose $f(\binom{0}{1}) = b$. Use the fact that $f$ respects scalar multiplication to determine the value of $f(\binom{0}{y})$.  
    c. Suppose both $f(\binom{1}{0}) = a$ and $f(\binom{0}{1}) = b$. Use the fact that $f$ respects vector addition to determine the value of $f(\binom{1}{1})$.  
-   d. Suppose both $f(\binom{1}{0}) = a$ and $f(\binom{0}{1}) = b$. Use the fact that $f$ respects scalar multiplication and vector addition to determine the value of $f(\binom{x}{y})$. Hint: $\binom{x}{y} = x\binom{1}{0} = y\binom{0}{1}$.  
+   d. Suppose both $f(\binom{1}{0}) = a$ and $f(\binom{0}{1}) = b$. Use the fact that $f$ respects scalar multiplication and vector addition to determine the value of $f(\binom{x}{y})$. Hint: $\binom{x}{y} = x \cdot \binom{1}{0} + y \cdot \binom{0}{1}$.  
 
-These types of problems illustrate the strength of the notion of linearity. We can write $f(\binom{x}{0})$ as $f(x \cdot \binom{1}{0})$, and then use linearity. Similarly, we can write $f(\binom{0}{y})$ as $f(y \cdot \binom{0}{1})$ and use linearity, and we can write any $f(\binom{x}{y})$ and $f(x \cdot \binom{1}{0} + y \cdot \binom{0}{1})$.
+These types of problems illustrate the strength of the notion of linearity. We can write $f(\binom{x}{0})$ as $f(x \cdot \binom{1}{0})$, and then use linearity. Similarly, we can write $f(\binom{0}{y})$ as $f(y \cdot \binom{0}{1})$ and use linearity, and we can write any $f(\binom{x}{y})$ as $f(x \cdot \binom{1}{0} + y \cdot \binom{0}{1})$.
 
 In other words: every vector in $\mathbb{R}^2$ can be written as a linear combination of $\binom{1}{0}$ and $\binom{0}{1}$! These two vectors are called the **standard basis vectors** for $\mathbb{R}^2$. Similarly, there are standard basis vectors for $\mathbb{R}^3$, $\mathbb{R}^4$, and for $\mathbb{R}^n$, for any $n$.
 
