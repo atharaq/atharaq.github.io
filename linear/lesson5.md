@@ -110,7 +110,7 @@ $$
 
 ## Definition
 
-**Definition** (Matrix multiplication): If $A$ is an $m \times n$ matrix representing a linear functino $F : \mathbb{R}^n \to \mathbb{R}^m$ and $B$ is an $n \times r$ matrix representing $G : \mathbb{R}^r \to \mathbb{R}^n$, then $AB$ is the $m \times r$ matrix representing $(F \circ G) : \mathbb{R}^r \to \amthbb{R}^m$.
+**Definition** (Matrix multiplication): If $A$ is an $m \times n$ matrix representing a linear functino $F : \mathbb{R}^n \to \mathbb{R}^m$ and $B$ is an $n \times r$ matrix representing $G : \mathbb{R}^r \to \mathbb{R}^n$, then $AB$ is the $m \times r$ matrix representing $(F \circ G) : \mathbb{R}^r \to \mathbb{R}^m$.
 
 That is: the *definition* of matrix multiplication that we use is just function composition. How do we actually compute the values here? Recall the **dot product** of vectors (from Calculus III):
 
