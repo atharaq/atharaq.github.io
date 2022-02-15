@@ -52,6 +52,8 @@ Every **linear** function $L : \mathbb{R}^n \to \mathbb{R}^m$ has a matrix repre
 
 Then the **columns** of the matrix representing $L$ are exactly given by $L(\vec{e_1}), L(\vec{e_2}), \ldots, L(\vec{e_n})$! There are $n$ columns. Each column is a vector in $\mathbb{R}^m$, so there are $m$ rows!
 
+(add remarks about notation here!)
+
 ## Exercise
 
 1. Let $F : \mathbb{R}^2 \to \mathbb{R}^3$ be the linear function specified by $F(\binom{1}{0}) = \begin{pmatrix}1 \\\ 0 \\\ 2 \end{pmatrix}$ and $F(\binom{0}{1}) = \begin{pmatrix}0 \\\ 1 \\\ 1\end{pmatrix}$. Write the matrix representation of $F$. Is it $2 \times 3$ or $3 \times 2$?
@@ -113,6 +115,32 @@ $$
 That is: the *definition* of matrix multiplication that we use is just function composition. How do we actually compute the values here? Recall the **dot product** of vectors (from Calculus III):
 
 **Definition**: Let $\vec{v} = \begin{pmatrix}v_1 \\\ v_2 \\\ \vdots \\\ v_n\end{pmatrix}$ and $\vec{w} = \begin{pmatrix} w_1 \\\ w_2 \\\ \vdots \\\ w_n \end{pmatrix}$. Then $\vec{v} \cdot \vec{w} = v_1 w_1 + v_2 w_2 + \ldots + v_n w_n$.
+
+It turns out that matrix multiplication can be computed using these dot products!
+
+$$
+\begin{pmatrix}
+a^1_1 \ldots a^1_n \\
+a^2_1 \ldots a^2_n \\
+\vdots \ldots \vdots \\
+a^m_1 \ldots a^m_n
+\end{pmatrix}
+\begin{pmatrix}
+b^1_1 \ldots b^1_r \\
+b^2_1 \ldots b^2_r \\
+\vdots \ldots \vdots \\
+b^n_1 \ldots b^n_r
+\end{pmatrix}
+=
+\begin{pmatrix}
+c^1_1 \ldots c^1_r \\
+c^2_1 \ldots c^2_r \\
+\vdots \ldots \vdots
+c^m_1 \ldots c^m_r
+\end{pmatrix}
+$$
+
+where $c^i_j$ is given by the *dot product* of the $i$-th row of $A$ with the $j$-th column of $B$!
 
 # Application
 
