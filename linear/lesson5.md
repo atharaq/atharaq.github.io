@@ -107,8 +107,8 @@ Since $F(\binom{1}{0}) = \begin{pmatrix}1 \\\ 0 \\\ 2\end{pmatrix} = \begin{pmat
 
 $$
 \begin{align}
-G(\begin{pmatrix}1 \\\ 0 \\\ 2\end{pmatrix}) &= G(\begin{pmatrix}1 \\\ 0 \\\ 0\end{pmatrix} + 2 \begin{pmatrix}0 \\\ 0 \\\ 1\end{pmatrix}) \\
-&= G(\begin{pmatrix}1 \\\ 0 \\\ 0\end{pmatrix}) + 2 G(\begin{pmatrix}0 \\\ 0 \\\ 1\end{pmatrix}) \\
+G\left(\begin{pmatrix}1 \\\ 0 \\\ 2\end{pmatrix}\right) &= G\left(\begin{pmatrix}1 \\\ 0 \\\ 0\end{pmatrix} + 2 \begin{pmatrix}0 \\\ 0 \\\ 1\end{pmatrix}\right) \\
+&= G\left(\begin{pmatrix}1 \\\ 0 \\\ 0\end{pmatrix}\right) + 2 G\left(\begin{pmatrix}0 \\\ 0 \\\ 1\end{pmatrix}\right) \\
 &= 1 + 2(-5) \\
 = -9
 \end{align}
