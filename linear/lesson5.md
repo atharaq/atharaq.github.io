@@ -52,7 +52,9 @@ Every **linear** function $L : \mathbb{R}^n \to \mathbb{R}^m$ has a matrix repre
 
 Then the **columns** of the matrix representing $L$ are exactly given by $L(\vec{e_1}), L(\vec{e_2}), \ldots, L(\vec{e_n})$! There are $n$ columns. Each column is a vector in $\mathbb{R}^m$, so there are $m$ rows!
 
-(add remarks about notation here!)
+**Notation**: For an $m \times n$ matrix $A$, we denote its entries as  $a_{i, j}$. This is the element in the $i$-th row and $j$-th column of the matrix. The textbook uses the notation $a^i_j$
+
+If $A$ represents a function $L$, then *outputs* of $L$ are always *linear combinations* of the columns of $A$. That is: the image of $L$ is the span of the columns of $A$. Why?
 
 ## Exercise
 
@@ -144,6 +146,14 @@ $$
 
 where $c^i_j$ is given by the *dot product* of the $i$-th row of $A$ with the $j$-th column of $B$!
 
-# Application
+## Exercise
+
+Recall the rotation matrix $R_\theta = \begin{pmatrix} \cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos(\theta) \end{pmatrix}$.
+
+1. Find $R_theta \circ R_theta$.  What does this transformation do to a vector $\vec{v}$ (geometrically)?
+2. Find $R_{2 \theta}$. What does this transformation do to a vector $\vec{v}$ (geometically)?
+3. What can we conclude from the above?
 
 # Homework
+
+Watch the next video in the Essence of Linear Algebra series:
