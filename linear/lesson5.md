@@ -103,14 +103,14 @@ Recall the notion of *function composition*. If $f : X \to Y$ and $g : Y \to Z$ 
    a. What is $(G \circ F)(\binom{1}{0})$?
    b. What is $(G \circ F)(\binom{0}{1})$?
 
-Since $F(\binom{1}{0}) = \begin{pmatrix}1 \\\ 0 \\\ 2\end{pmatrix} = \begin{pmatrix}1 \\\ 0 \\\ 0\end{pmatrix} + 2 \begin{pmatrix}0 \\\ 0 \\\ 1\end{pmatrix}$, we use linearity to plug that in to $G$:
+Since $F(\binom{1}{0}) = \begin{pmatrix}1 \\\ 0 \\\ 2\end{pmatrix}$, we can plug that in to $G$ and use the "dot product" to compute it:
 
 $$
 \begin{align}
-G\left(\begin{pmatrix}1 \\\ 0 \\\ 2\end{pmatrix}\right) &= G\left(\begin{pmatrix}1 \\\ 0 \\\ 0\end{pmatrix} + 2 \begin{pmatrix}0 \\\ 0 \\\ 1\end{pmatrix}\right) \\
-&= G\left(\begin{pmatrix}1 \\\ 0 \\\ 0\end{pmatrix}\right) + 2 G\left(\begin{pmatrix}0 \\\ 0 \\\ 1\end{pmatrix}\right) \\
-&= 1 + 2(-5) \\
-= -9
+G\left(\begin{pmatrix}1 \\ 0 \\ 2\end{pmatrix}\right) &= \begin{pmatrix}1 & 0 & -5\end{pmatrix} \left(\begin{pmatrix}1 \\ 0 \\ 2\end{pmatrix}\right) \\
+&= \left( \begin{pmatrix}1 \\ 0 \\ -5\end{pmatrix} \cdot \begin{pmatrix}1 \\ 0 \\ 2 \end{pmatrix} \right) \\
+&= \left(1 \cdot 1 + 0 \cdot 0 + (-5) \cdot 2 \right) \\
+&= -9
 \end{align}
 $$
 
