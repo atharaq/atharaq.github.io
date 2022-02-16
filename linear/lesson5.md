@@ -135,8 +135,7 @@ $$
 Consider the linear functions $A : \mathbb{R}^2 \to \mathbb{R}^3$ and $B : \mathbb{R}^2 \to \mathbb{R}^3$ defined by the following matrices:
 
 $$
-A = \begin{pmatrix}1 & 2 \\ 2 & 4 \\ 3 & 6\end{pmatrix}
-B = \begin{pmatrix}3 & 1 \\ 0 & 5 \end{pmatrix}
+A = \begin{pmatrix}1 & 2 \\ 2 & 4 \\ 3 & 6\end{pmatrix}, \: B = \begin{pmatrix}3 & 1 \\ 0 & 5 \end{pmatrix}
 $$
 
 1. What is $A(\binom{1}{0})$? $A(\binom{0}{1})$?
