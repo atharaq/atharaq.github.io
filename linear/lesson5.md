@@ -15,7 +15,7 @@
 
 # Matrices
 
-As another example, consider the function $L : \mathbb{R}^2 \to \mathbb{R}$ defined by $L(\binom{x}{y}) = x - 3y$.
+Consider the function $L : \mathbb{R}^2 \to \mathbb{R}$ defined by $L(\binom{x}{y}) = x - 3y$.
 
 First, notice that $L$ is **linear**. To see this, we first check that $L$ respects scalar multiplication. Let $\binom{x}{y}$ be a vector and $a$ be a scalar. Then $L(\binom{x}{y}) = x - 3y$, and $L(a \cdot \binom{x}{y}) = ax - 3ay$, or $a(x - 3y)$. That is, $L(a \cdot \binom{x}{y}) = a \cdot L(\binom{x}{y})$.
 
