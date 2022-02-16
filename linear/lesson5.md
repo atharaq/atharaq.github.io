@@ -114,7 +114,7 @@ G\left(\begin{pmatrix}1 \\ 0 \\ 2\end{pmatrix}\right) &= \begin{pmatrix}1 & 0 & 
 \end{align}
 $$
 
-**Exercise**: Compute $(G \circ F)(\binom{0}{1})$. (First compute $F(\binom{0}{1})$, then break that down into linear combinations of $\begin{pmatrix}1 \\\ 0 \\\ 0\end{pmatrix}, \begin{pmatrix}0 \\\ 1 \\\ 0 \end{pmatrix}$ and $\begin{pmatrix}0 \\\ 0 \\\ 1 \end{pmatrix}$ and use linearity of $G$).
+**Exercise**: Compute $(G \circ F)(\binom{0}{1})$.
 
 **Question**: Is $(G \circ F)$ linear? We would need to check if $(G \circ F)(\vec{v} + \vec{w}) = (G \circ F)(\vec{v}) + (G \circ F)(\vec{w})$, and if $(G \circ F)(a \cdot \vec{v}) = a \cdot (G \circ F)(\vec{v})$.
 
