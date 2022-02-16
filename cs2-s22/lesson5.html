@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2022-02-17">
+  <title>CS II</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS II</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">17 February 2022</p>
+</section>
+
+<section>
+<section id="loops" class="title-slide slide level1">
+<h1>Loops</h1>
+<!--
+
+* Loops + exercise (10:30 - 10:55)
+* 2D arrays (10:55 - 11:05)
+* Strings, immutability, API (11:05 - 11:20)
+* Exercise (11:20 - 11:35)
+* Quiz Discussion (11:35 - 11:55)
+* Exercise (11:55 - 12:10)
+
+-->
+<p>Use “length” property to tell the size of the array:</p>
+<pre ><code class="java">int[] numbers;
+// some code that initializes numbers
+...
+
+// add up all the elements of numbers
+int total = 0;
+for (int i = 0; i &lt; numbers.length; i++) {
+   total += numbers[i];
+}
+System.out.println("The total is " + total);</code></pre>
+</section>
+<section id="foreach-loop" class="slide level2">
+<h2>Foreach loop</h2>
+<pre ><code class="java">String[] names;
+// some code which initializes names
+
+for (String name : names) {
+  System.out.println(name);
+}</code></pre>
+<p>If we just need the objects in the arrays, and not the index, this is helpful.</p>
+<p>Technically called “enhanced for loop.” (Usually just referred to as “foreach”)</p>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Write a program which asks the user to input the size of a list. Then ask the user to input an integer for each element of the list, and output the <strong>arithmetic mean</strong> of the list (truncated if it is a decimal). Recall: the arithmetic mean of a set of numbers is the sum of all the numbers divided by the number of numbers.</p>
+<pre ><code >How large a list do you want?
+   3
+Enter in element 0:
+   5
+Enter in element 1:
+   -2
+Enter in element 2:
+   7
+The arithmetic mean of these numbers is 3.</code></pre>
+</section></section>
+<section>
+<section id="arrays-of-arrays" class="title-slide slide level1">
+<h1>Arrays of arrays</h1>
+<p>We can create arrays of any type we like, using this [] syntax:</p>
+<pre ><code class="java">int[] x = new int[5]; // creates an array of integers
+String[] s = new String[10]; // creates an array of strings</code></pre>
+<p>Question: What about arrays of arrays?</p>
+</section>
+<section id="multidimensional-arrays" class="slide level2">
+<h2>Multidimensional arrays</h2>
+<p>Yes, it works!</p>
+<pre ><code class="java">int[][] x = new int[5][];
+for (int i = 0; i &lt; 5; i++) {
+  x[i] = new int[3]; // each element of x is also an array.
+  for (int j = 0; j &lt; 3; j++) {
+    x[i][j] = i*j;
+  }
+}
+</code></pre>
+<p>Take a minute to draw a memory diagram for this.</p>
+</section>
+<section id="alternative-syntax" class="slide level2">
+<h2>Alternative Syntax</h2>
+<pre ><code class="java">Scanner sc = new Scanner(System.in);
+System.out.println("Input a number: ");
+int n = sc.nextInt();
+boolean[][] sieve = new boolean[n][n];
+for (int i = 0; i &lt; sieve.length; i++) {
+  for (int j = 0; j &lt; sieve[i].length; j++) {
+    x[i][j] = true;
+  }
+}
+</code></pre>
+</section></section>
+<section>
+<section id="strings" class="title-slide slide level1">
+<h1>Strings</h1>
+<p>Like arrays, Strings are stored, technically, as <strong>references</strong>. (Every “object” in Java is stored as a reference to some data).</p>
+<p><img alt="Memory diagram of a String of 6 characters (Think Java, Chapter 6.)" src="https://trinket-app-assets.trinket.io/thinkjava2/thinkjava2_015.png" /></p>
+</section>
+<section id="immutability" class="slide level2">
+<h2>Immutability</h2>
+<p>Technically: Strings are <strong>immutable</strong>. Once a String is created, it cannot be changed. You can, however, change that reference!</p>
+<pre ><code class="java">String text = "Hello";
+String other = text;
+String newText = " there";
+text += newText;
+System.out.println(other);
+System.out.println(text);</code></pre>
+<p>What is going on here? Draw the memory diagram to explain what is happening.</p>
+</section>
+<section id="string-api" class="slide level2">
+<h2>String API</h2>
+<p><strong>API</strong>: Application Programming Interface.</p>
+<ul>
+<li>Describes how you might interact with a class / package.</li>
+<li>In particular, the methods that are available to use.</li>
+<li>We can access the API for the String class by searching for <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html">Java String API</a>.</li>
+</ul>
+</section>
+<section id="some-string-methods" class="slide level2">
+<h2>Some String methods:</h2>
+<ul>
+<li><code>length()</code>: returns the length of the String</li>
+<li><code>substring()</code>: <code>"hello".substring(2)</code> returns “llo”, <code>"okay".substring(1, 3)</code> returns “ka”.</li>
+<li><code>equals()</code> and <code>equalsIgnoreCase()</code>: Checks if two Strings are the same (depending on whether you want case sensitivity or not).</li>
+<li><code>compareTo()</code>: Compares Strings based on alphabetical order.</li>
+<li><code>charAt()</code>: Determines the character at a given position in the String</li>
+</ul>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<p>Ask the user to input in some text (use the nextLine() method in the Scanner class). Then do the following:</p>
+<ol type="1">
+<li>Output the length of that text.</li>
+<li>Determine if the text they entered is exactly the same as the String “help!”.</li>
+<li>Output the last two characters of the String.</li>
+</ol>
+</section></section>
+<section id="quiz-discussion" class="title-slide slide level1">
+<h1>Quiz Discussion</h1>
+<ul>
+<li>Quiz 1 <strong>Monday</strong>; 45 minutes.</li>
+<li>One page of notes (double sided).</li>
+<li>Three types of problems:
+<ul>
+<li>Determine the output.</li>
+<li>Big picture descriptions (“What does this code do?”)</li>
+<li>Writing code.</li>
+</ul></li>
+<li>Treat like a mini-exam!</li>
+</ul>
+</section>
+
+<section>
+<section id="determine-the-output" class="title-slide slide level1">
+<h1>Determine the output</h1>
+<p>For these problems:</p>
+<ul>
+<li>Given some code, and what the variables are, determine what is output.</li>
+<li>Use memory diagrams!</li>
+</ul>
+</section>
+<section id="example-1" class="slide level2">
+<h2>Example 1</h2>
+<pre ><code class="java">String[] list;
+String s;
+// ...
+// assume "list" and "s" variables are initialized
+// perhaps from user input.
+
+int n = 0;
+for (String str : list) {
+  if (str.equals(s)) {
+    n++;
+  }
+}
+System.out.println(n);</code></pre>
+<p>What does this output if <span class="math inline">\(list\)</span> is [“a”, “aa”, “ab”, “aa”] and <span class="math inline">\(s\)</span> is “aa”? What if <span class="math inline">\(s\)</span> is “ee”? Show your memory diagrams.</p>
+</section>
+<section id="example-2" class="slide level2">
+<h2>Example 2</h2>
+<pre ><code class="java">String[] list;
+// ...
+// again assume "list" has been initialized
+for (int i = 0; i &lt; list.length; i++) {
+  String nameOne = list[i];
+  for (int j = i + 1; j &lt; list.size(); j++) {
+    String nameTwo = list[j];
+    if (nameOne.equals(nameTwo)) {
+      System.out.println("Yes");
+      System.exit(0);
+    }
+  }
+}
+System.out.println("No");</code></pre>
+<p>What does this output if list is [“Athar”, “Bob”, “Carl”, “David”]? What if list is [“Athar”, “Bob”, “Athar”, “David”]? Show your memory diagrams.</p>
+</section></section>
+<section>
+<section id="explain-the-code" class="title-slide slide level1">
+<h1>Explain the code</h1>
+<p>Describe, as clearly and succinctly as you can, what each of the following methods do. Use memory diagrams with some sample input and see if you can describe, in a succinct sentence, what the method is doing (at a “Big Picture” level).</p>
+</section>
+<section id="example-1-1" class="slide level2">
+<h2>Example 1</h2>
+<pre ><code class="java">int n;
+// ...
+// assume n is initailized somewhere
+int i = 0;
+while (i * i &lt; n) {
+    i++;
+}
+if (i * i == n) {
+    System.out.println("Yes.");
+}
+System.out.println("No");</code></pre>
+</section>
+<section id="example-2-1" class="slide level2">
+<h2>Example 2</h2>
+<pre ><code class="java">int x;
+// ...
+// assume x is initialized somewhere
+int i = 0;
+while (x / 2 &gt; 0) {
+    i++;
+    x /= 2;
+}
+System.out.println(i);</code></pre>
+</section></section>
+<section>
+<section id="write-some-code" class="title-slide slide level1">
+<h1>Write some code</h1>
+<p>Write a program which asks for a user to input an integer from 1 - 16 (inclusive).</p>
+<ul>
+<li>If they input something that is not an integer, output “That is not an integer”, and exit (don’t crash!).</li>
+<li>If they input an integer <span class="math inline">\(x\)</span> that is not in the correct range, output that <span class="math inline">\(x\)</span> is not between 1 and 16, and exit.</li>
+<li>If they input an integer in the correct range, output “Huzzah!”</li>
+</ul>
+</section>
+<section id="example-2-2" class="slide level2">
+<h2>Example 2</h2>
+<pre ><code class="java">Scanner sc = new Scanner(System.in);
+System.out.println("How many words?");
+int n = sc.nextInt();
+String[] list = new String[n];
+for (int i = 0; i &lt; n; i++) {
+  System.out.println("Enter in the next word: ");
+  list[i] = sc.nextLine();
+}
+System.out.println("Start?");
+int start = sc.nextInt();
+System.out.println("End?");
+int end = sc.nextInt();
+</code></pre>
+<p>Output all the words in list between positions <span class="math inline">\(start\)</span> and <span class="math inline">\(end - 1\)</span>. That is, if list is [“Athar”, “Bob”, “Carl”, “David”] and start = 1, end = 3, then output “Bob” and “Carl”.</p>
+</section>
+<section id="exercise-2" class="slide level2">
+<h2>Exercise</h2>
+<p>A word is said to be a “doubloon” if every letter that appears in the word appears exactly twice. Here are some example doubloons found in the dictionary:</p>
+<blockquote>
+<p>Abba, Anna, appall, appearer, appeases, arraigning, beriberi, bilabial,</p>
+</blockquote>
+<p>Write a program which takes a String as input and checks whether it is a doubloon. If it is, output “Doubloon!” If not, output “Not a doubloon!” To ignore case, use <code>string.toLowerCase()</code>.</p>
+</section>
+<section id="hints" class="slide level2">
+<h2>Hints</h2>
+<ul>
+<li>Iterate through the string. How? (for loop, use <code>length()</code>).</li>
+<li>Get a character at position <span class="math inline">\(i\)</span> (<code>charAt</code>).</li>
+<li>Check if that character appears exactly twice. (How?)
+<ul>
+<li>If so, keep going.</li>
+<li>If not?</li>
+</ul></li>
+<li>If we get to the end?</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
