@@ -186,4 +186,14 @@ Recall the rotation matrix $R_{\theta} = \begin{pmatrix} \cos(\theta) & -\sin(\t
 
 # Homework
 
-Watch the next video in the Essence of Linear Algebra series:
+1. Use the definition of matrix multiplication as function composition to argue that $\cos(\alpha + \beta) = \cos(\alpha)\cos(\beta) - \sin(\alpha)\sin(\beta)$. Hint: consider the matrices $R_\alpha$, $R_\beta$, and compute the composition $R_\alpha \circ R_\beta$. Argue geometrically that this matrix represents $R_{\alpha + \beta}$.
+
+2. Watch the next two videos in the Essence of Linear Algebra series:
+
+<div class="youtube-container">
+   <iframe src="https://www.youtube.com/embed/XkY2DOUCWMU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<div class="youtube-container">
+   <iframe src="https://www.youtube.com/embed/rHLEWRxRGiM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>   
+</div>
