@@ -5,9 +5,9 @@
 {:toc}
 
 <!--
-1. 4:30 - 4:50 quiz
-2. 4:50 - 5:05 warm up
-3. 5:05 - 5:25 power set proof
+1. 4:30 - 4:55 quiz
+2. 4:55 - 5:10 warm up
+3. 5:10 - 5:25 power set proof
 4. 5:25 - 5:50 main theorem proof
 5. 5:50 - 6:10 regular operations + regular expressions intro
 -->
