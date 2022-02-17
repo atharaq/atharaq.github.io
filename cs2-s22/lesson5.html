@@ -208,7 +208,7 @@ System.out.println(n);</code></pre>
 // again assume "list" has been initialized
 for (int i = 0; i &lt; list.length; i++) {
   String nameOne = list[i];
-  for (int j = i + 1; j &lt; list.size(); j++) {
+  for (int j = i + 1; j &lt; list.length; j++) {
     String nameTwo = list[j];
     if (nameOne.equals(nameTwo)) {
       System.out.println("Yes");
@@ -235,8 +235,9 @@ while (i * i &lt; n) {
 }
 if (i * i == n) {
     System.out.println("Yes.");
-}
-System.out.println("No");</code></pre>
+} else {
+  System.out.println("No");
+}</code></pre>
 </section>
 <section id="example-2-1" class="slide level2">
 <h2>Example 2</h2>
