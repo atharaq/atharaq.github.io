@@ -15,3 +15,4 @@ layout: default
 * [Lesson 2: Functions and Linearity](lesson2.html)
 * [Lesson 3: Linear Functions](lesson3.html) 
 * [Lesson 4: Matrix notation](lesson4.html) 
+* [Lesson 5: Matrices](lesson5.html) 
