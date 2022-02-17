@@ -15,3 +15,4 @@ layout: default
 * [Lesson 2: Deterministic Finite State Automata](lesson2.html)
 * [Lesson 3: NFAs](lesson3.html) 
 * [Lesson 4: Equivalence between NFAs / DFAs](lesson4.html) 
+* [Lesson 5: NFA / DFA Proof](lesson5.html) 
