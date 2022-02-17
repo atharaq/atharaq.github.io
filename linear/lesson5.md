@@ -68,7 +68,7 @@ If $A$ represents a function $L$, then *outputs* of $L$ are always *linear combi
 1. Let $F : \mathbb{R}^2 \to \mathbb{R}^3$ be the linear function specified by $F(\binom{1}{0}) = \begin{pmatrix}1 \\\ 0 \\\ 2 \end{pmatrix}$ and $F(\binom{0}{1}) = \begin{pmatrix}0 \\\ 1 \\\ 1\end{pmatrix}$. Write the matrix representation of $F$. Is it $2 \times 3$ or $3 \times 2$?
 2. Use the fact that $F$ is linear to compute $F(\binom{3}{1})$.
 3. Let $G : \mathbb{R}^3 \to \mathbb{R}$ be the linear function specified by $G\left(\begin{pmatrix}1 \\\ 0 \\\ 0\end{pmatrix}\right) = 1$, $G\left(\begin{pmatrix}0 \\\ 1 \\\ 0\end{pmatrix}\right) = 0$, and $G\left(\begin{pmatrix}0 \\\ 0 \\\ 1\end{pmatrix}\right) = -5$. Write the matrix representation of $G$.
-4. Use the fact that $G$ is linear to compute $G\left(\begin{pmatrix}2 \\ 1 \\ 2\end{pmatrix}\right)$.
+4. Use the fact that $G$ is linear to compute $G\left(\begin{pmatrix}2 \\\ 1 \\\ 2\end{pmatrix}\right)$.
 
 ## Notice
 
