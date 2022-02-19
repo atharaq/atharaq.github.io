@@ -18,7 +18,7 @@
 
 1. Know your definitions! These definitions are a core part of the course. Memorization strategies like flashcards can help.
 2. "Every vector" vs "There is a vector".
-   * To show something is true about "every vector", you let $\vec{v}$ be an arbitrary vector (so for example, if you need to show something about *every vector* in $\mathbb{R}^3$, you let $\vec{v} = \begin{pmatrix}x \\\ y \\\ z \end{pmatrix}$, and don't assume anything about $x$, $y$, or $z$!)
+   * To show something is true about "every vector", you let $\vec{v}$ be an arbitrary vector (so for example, if you need to show something about *every vector* in $\mathbb{R}^3$, you let $\vec{v} = \begin{pmatrix}x \\\ y \\\ z \end{pmatrix}$, and don't assume anything about $x$, $y$, or $z$!) Then argue that $\vec{v}$ has the required property.
    * To show "There is a vector...", you find a specific example (specific numbers for $x$, $y$, $z$, etc).
 3. Using the definitions:
    * To show $f$ is linear: $f(\vec{v} + \vec{w}) = f(\vec{v}) + f(\vec{w})$. Plug in to both sides of this equation. Same for scalar multiplication. (This is an "every" statement. "For every $\vec{v}$ and $\vec{w}$...")
