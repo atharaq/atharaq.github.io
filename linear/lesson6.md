@@ -21,7 +21,7 @@
    * To show something is true about "every vector", you let $\vec{v}$ be an arbitrary vector (so for example, if you need to show something about *every vector* in $\mathbb{R}^3$, you let $\vec{v} = \begin{pmatrix}x \\\ y \\\ z \end{pmatrix}$, and don't assume anything about $x$, $y$, or $z$!)
    * To show "There is a vector...", you find a specific example (specific numbers for $x$, $y$, $z$, etc).
 3. Using the definitions:
-   * To show $f$ is linear: $f(\vec{v} + \vec{w}) = f(\vec{v}) + f(\vec{w})$. Plug in to both sides of this equation. Same for scalar multiplication. (This is an "every" statement. "For every $\vec{v]$ and $\vec{w}$...")
+   * To show $f$ is linear: $f(\vec{v} + \vec{w}) = f(\vec{v}) + f(\vec{w})$. Plug in to both sides of this equation. Same for scalar multiplication. (This is an "every" statement. "For every $\vec{v}$ and $\vec{w}$...")
    * To show $f$ is not linear: *find* vectors $\vec{v}$ and $\vec{w}$ so that $f(\vec{v} + \vec{w}) \neq f(\vec{v}) + f(\vec{w})$. Or find $\vec{v}$ and a scalar $a$ so that $f(a \cdot \vec{v}) \neq a \cdot f(\vec{v})$.
 
 Questions?
@@ -47,7 +47,7 @@ Write down the matrix representation of $B \circ A$.
 
 **Recall**: If $L$ is a linear function, the matrix representation of $L$ is found by determining what $L$ does to each of the *standard basis vectors* $\vec{e}_1, \ldots, \vec{e_n}$. If the domain of $L$ is $\mathbb{R}^3$ for example, we need to compute $L\left(\begin{pmatrix}1 \\\ 0 \\\ 0 \end{pmatrix}\right), L\left(\begin{pmatrix}0 \\\ 1 \\\ 0 \end{pmatrix}\right)$, and $L\left(\begin{pmatrix{0 \\\ 0 \\\ 1 \end{pmatrix}\right)$.  Then we write these vectors down as the *columns* of our matrix.
 
-So if we want to find the matric representation of $(B \circ A)$, we need to compute $B(A(\vec{e}_1))$, $B(A(\vec{e}_2))$, and $B(A(\vec{e}_3))$. But $A(\vec{e_1})$ is just the first column of A$, $A(\vec{e}_2)$ is the second column, and $A(\vec{e}_3)$ is the third column.
+So if we want to find the matric representation of $(B \circ A)$, we need to compute $B(A(\vec{e}_1))$, $B(A(\vec{e}_2))$, and $B(A(\vec{e}_3))$. But $A(\vec{e_1})$ is just the first column of A, $A(\vec{e}_2)$ is the second column, and $A(\vec{e}_3)$ is the third column.
 
 For any vector $\vec{v}$, to compute $B(\vec{v})$, we compute $\binom{\text{row 1 of B} \cdot \vec{v}}{\text{row 2 of B} \cdot \vec{v}}$.
 
@@ -57,11 +57,11 @@ What about all the other columns of $(B \circ A)$? Can you describe the general 
 
 # Application: Population Dynamics
 
-Suppose we have two cities $A$ and $B$, and in both cities, birth rates are equal to death rates, so the total population is stable. Every year, 10\% of residents of city A move to city B, and 20\% of residents of city B move to city A. Let $a$ be the population of city $A$ and $B$ is the population of city B in a given year. Let $a^\prime$ and $b^\prime$ be the respective populations of cities $A$ and $B$ after all the previous movement.
+Suppose we have two cities $A$ and $B$, and in both cities, birth rates are equal to death rates, so the total population is stable. Every year, 10% of residents of city A move to city B, and 20% of residents of city B move to city A. Let $a$ be the population of city $A$ and $B$ is the population of city B in a given year. Let $a^\prime$ and $b^\prime$ be the respective populations of cities $A$ and $B$ after all the previous movement.
 
 Then the function $F : \mathbb{R}^2 \to \mathbb{R}^2$ that maps $\binom{a}{b}$ to $\binom{a^\prime}{b^\prime}$. In fact, this function is linear, so we can represent it with a matrix. What is that matrix?
 
-After one year, the population of $A$ is given by $.9 a + .2 b$ (90\% of the residents of A last year, and 20\% of the residents of B last year). Similarly, the population of $B$ is given by $.1 a + .8 b$. That is, the matrix representation of $F$ is:
+After one year, the population of $A$ is given by $.9 a + .2 b$ (90% of the residents of A last year, and 20% of the residents of B last year). Similarly, the population of $B$ is given by $.1 a + .8 b$. That is, the matrix representation of $F$ is:
 
 $$F = \begin{pmatrix}.9 & .2 \\ .1 & .8 \end{pmatrix}$$
 
@@ -124,8 +124,8 @@ How would we find this? Well again, this is really asking about the following sy
 
 $$
 \begin{align}
-x_1 &+ x_2 &- x_3 &= 0 \\
-2x_1 & &+ 5x_3 &=0
+x_1 + &x_2 - &x_3 &= 0 \\
+2x_1 & &+ &5x_3 &=0
 \end{align}
 $$
 
@@ -134,7 +134,7 @@ We can multiply the first equation by -2 and add that to the second equation, to
 $$
 \begin{align}
 x_1 &+ x_2 &- x_3 &= 0 \\
-&-2_x2 &+ 7x_3 &= 0
+&-2 x_2 &+ 7x_3 &= 0
 \end{align}
 $$
 
@@ -142,7 +142,7 @@ We can divide the second equation by -2:
 
 $$
 \begin{align}
-x_1 &+ x_2 &- x_3 &= 0 \\
+x_1 + &x_2 &- x_3 &= 0 \\
 & x_2 &- \frac{7}{2} x_3 &= 0
 \end{align}
 $$
@@ -156,7 +156,7 @@ x_1 & &+ \frac{5}{2} x_3 &= 0 \\
 \end{align}
 $$
 
-Now we can solve for $x_1$ and $x_2$ in terms of $x_3$! $x_1 = -\frac{5}{2}x_3$ and $x_2 = frac{7}{2} x_3$. $x_3$ is a free variable, and can be any real number, so for example, $x_3 = 2$ is a solution. In that case, we get $\vec{v} = \begin{pmatrix}-5 \\\ 7 \\\ 2 \end{pmatrix}$.
+Now we can solve for $x_1$ and $x_2$ in terms of $x_3$! $x_1 = -\frac{5}{2}x_3$ and $x_2 = \frac{7}{2} x_3$. $x_3$ is a free variable, and can be any real number, so for example, $x_3 = 2$ is a solution. In that case, we get $\vec{v} = \begin{pmatrix}-5 \\\ 7 \\\ 2 \end{pmatrix}$.
 
 What are all the solutions here?
 
@@ -199,6 +199,8 @@ At this point, there is nothing left to do. (Why not?) This matrix is in **reduc
 1. The leading entry of each row is 1.
 2. Each leading entry is to the right of the leading entry of the previous row.
 3. If a row has only zeroes, it's at the bottom.
+
+The method we used is called, again, **Gaussian elimination**. It is detailed in [the textbook](...), in chapter (fill in). Take a look at at that for help with these computations!
 
 # Problem Set 2
 
