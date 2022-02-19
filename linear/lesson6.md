@@ -168,11 +168,37 @@ What we just did was an example of the method known as **Gaussian elimination**.
 
 To keep track of all of this, we don't even need to keep track of the variables at all. We can just keep track of these coefficients, using matrices!
 
-We first set up an **augmented matrix**, to capture the idea of $A\cdot \vec{v} = \vec{0}$:
+We first set up an **augmented matrix**, to capture the idea of $A(\vec{v}) = \vec{0}$:
 
 $$
-\left(\begin{matrix}1 & 1 & -1 \\ 2 & 0 & 5\end{matrix}\right| \left.\begin{matrix} 0 \\ 0 \end{matrix}\right)
+\left(\begin{matrix}1 & 1 & -1 \\ 2 & 0 & 5\end{matrix} \: \right| \: \left.\begin{matrix} 0 \\ 0 \end{matrix}\right)
 $$
+
+This *represents* the equation $A(\vec{v}) = \vec{0}$. Then everything we did can be captured in "elementary row operations" on this matrix:
+
+For example, our first step was to replace $2x_1 + 5x_3 = 0$ by $-2(equation 1) + (1)(equation 2)$. We can represent this by multipying the first row by negative 2, and adding it to the second row (and replacing the second row with that sum):
+
+$$
+\left(\begin{matrix}1 & 1 & -1 \\ 0 & -2 & 7\end{matrix} \: \right| \: \left.\begin{matrix} 0 \\ 0 \end{matrix}\right)
+$$
+
+Dividing row 2 by -2 looks like this:
+
+$$
+\left(\begin{matrix}1 & 1 & -1 \\ 0 & 1 & -\frac{7}{2} \end{matrix} \: \right| \: \left.\begin{matrix} 0 \\ 0 \end{matrix}\right)
+$$
+
+Replacing row 1 by 1(row 2) + row 1:
+
+$$
+\left(\begin{matrix}1 & 0 & \frac{5}{2} \\ 0 & 1 & -\frac{7}{2} \end{matrix} \: \right| \: \left.\begin{matrix} 0 \\ 0 \end{matrix}\right)
+$$
+
+At this point, there is nothing left to do. (Why not?) This matrix is in **reduced row echelon form**:
+
+1. The leading entry of each row is 1.
+2. Each leading entry is to the right of the leading entry of the previous row.
+3. If a row has only zeroes, it's at the bottom.
 
 # Problem Set 2
 
