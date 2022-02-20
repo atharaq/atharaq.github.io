@@ -144,6 +144,6 @@ Due **Thursday, March 3** at 11:59 PM on Moodle:
 2. Find a regular expression for the language $\mathcal{L}_2 = \\{ w: w$ has even length $\\}$, over the alphabet $\Sigma = \\{ 0, 1 \\}$.
 3. For the following regular expressions, give the state diagram of an NFA recognizing the same language. In all of the following, the alphabet is $\Sigma = \\{ a, b \\}$:  
    * $(a \cup b)^\* ((ab)b^\* )$  
-   * $((a \cup b)(aa))^*$  
-   * $(a \cup b^*)a^*b^*$.  
+   * $((a \cup b)(aa))^\*$  
+   * $(a \cup b^\*)a^\*b^\*$.  
 4. Show that $\mathcal{L}_4 = \\{ a^i b^j : i \neq j \\}$ is not a regular language. (This will likely use methods discussed on Thursday and/or next Monday.)
