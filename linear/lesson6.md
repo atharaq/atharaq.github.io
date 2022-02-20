@@ -207,17 +207,17 @@ The method we used is called, again, **Gaussian elimination**. It is detailed in
 **Due Thursday, March 3** on Moodle:
 
 1. Suppose $F : \mathbb{R}^n \to \mathbb{R}^m$ and $G : \mathbb{R}^m \to \mathbb{R}^r$ are linear functions. That is, they each preserve vector additions (in their own dimensions) and scalar multiplications. Show that $G \circ F$ is a linear function. What is the domain and codomain of $G \circ F$?
-2. This question has two parts:
-   a. Given the linear function $F : \mathbb{R}^3 \to \mathbb{R}^2$ determined by
+2. This question has two parts:  
+   * (a) Given the linear function $F : \mathbb{R}^3 \to \mathbb{R}^2$ determined by
    $$
 	\begin{align*}
 	F\begin{pmatrix}1\\0\\0\end{pmatrix} &= \binom{1}{2} \\
 	F\begin{pmatrix}0\\1\\0\end{pmatrix} &= \binom{0}{4} \\
 	F\begin{pmatrix}0\\0\\1\end{pmatrix} &= \binom{-3}{0},
 	\end{align*}
-  $$ give a matrix representation of $F$.
-   b. Given the matrix: $\begin{pmatrix} 1/2 & 1/3 & 1/4 \\\ 1 & 2/3 & 3/4 \end{pmatrix},$ determine the linear function it describes. That is, what is $T(\vec{x})$, where $\vec{x}$ is a column vector of the appropriate length?
-3. Let $F : \mathbb{R}^3 \to \mathbb{R}^3$ and $G : \mathbb{R}^3 \to \mathbb{R}^3$ be determined by the following:
+  $$ give a matrix representation of $F$.  
+   * (b) Given the matrix: $\begin{pmatrix} 1/2 & 1/3 & 1/4 \\\ 1 & 2/3 & 3/4 \end{pmatrix},$ determine the linear function it describes. That is, what is $T(\vec{x})$, where $\vec{x}$ is a column vector of the appropriate length?
+3. Let $F : \mathbb{R}^3 \to \mathbb{R}^3$ and $G : \mathbb{R}^3 \to \mathbb{R}^3$ be determined by the following:  
 $$
 \begin{align}
 F\begin{pmatrix}1\\0\\0\end{pmatrix} &= \begin{pmatrix}1 \\ 0 \\ 0 \end{pmatrix} ,
@@ -227,14 +227,14 @@ G\begin{pmatrix}1\\0\\0\end{pmatrix} &= \begin{pmatrix}1 \\ 0 \\ 0 \end{pmatrix}
 G\begin{pmatrix}0\\1\\0\end{pmatrix} = \begin{pmatrix}2 \\ 0 \\ 4 \end{pmatrix},
 G\begin{pmatrix}0\\0\\1\end{pmatrix} = \begin{pmatrix}3 \\ 1 \\ 2 \end{pmatrix}
 \end{align}
-$$
-   a. Give matrix representations for $F$ and for $G$
-   b. Give matrix representations for $F \circ G$ and for $G \circ F$. Are they the same?
+$$  
+   * (a) Give matrix representations for $F$ and for $G$
+   * (b) Give matrix representations for $F \circ G$ and for $G \circ F$. Are they the same?
 4. Suppose $A$ is the linear function given by the matrix $\begin{pmatrix}1 & 2 & 3 \\\ 1 & 1 & 1 \end{pmatrix}$. Use Gaussian elimination to determine the set of all vectors $\vec{v}$ such that $A(\vec{v}) = \vec{0}$. Describe this set geometrically.
 5. Suppose there are three types of people: iPhone users, Android users, and "dumb phone" users. Each year, about 10% of Android users switch to an iPhone, and about 15% of iPhone users switch to an Android. Each year, about 25% of "dumb phone" users start using an iPhone and 20% of "dumb phone" users start using an Android. No one ever goes from a smartphone (Android, iPhone) to a dumb phone (except for my dad once upon a time, but let's ignore him). Let $\mathbf{a}, \mathbf{i}, \mathbf{d}$ represent the number of Android, iPhone, and "dumb phone" users in a given year.
-   a. Write down a 3 x 3 matrix $A$ so that $A\begin{pmatrix} \mathbf{a}\\\ \mathbf{i} \\\ \mathbf{d} \end{pmatrix}$ outputs a 3-vector which represents the number of Android, iPhone, and "dumb phone" users the following year.
-   b. Compute the matrix $A^2$. What does this represent?
-   c. Suppose that in a population of $500$ people, there are $300$ Android users and $200$ iPhone users this year  (2022). All the "dumb" phone users have already been converted. How many Android, iPhone, and "dumb" phone users will there be in 2023? What about in 2025? 2050? (Ignore birth and death rates.)
+   * (a) Write down a 3 x 3 matrix $A$ so that $A\begin{pmatrix} \mathbf{a}\\\ \mathbf{i} \\\ \mathbf{d} \end{pmatrix}$ outputs a 3-vector which represents the number of Android, iPhone, and "dumb phone" users the following year.
+   * (b) Compute the matrix $A^2$. What does this represent?
+   * (c) Suppose that in a population of $500$ people, there are $300$ Android users and $200$ iPhone users this year  (2022). All the "dumb" phone users have already been converted. How many Android, iPhone, and "dumb" phone users will there be in 2023? What about in 2025? 2050? (Ignore birth and death rates.)
 
 # Presentation 1
 
