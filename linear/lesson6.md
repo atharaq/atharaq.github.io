@@ -28,6 +28,19 @@ Questions?
 
 # Problem Set Comments
 
+Question 4: Since we know that $\binom{1}{0} = \frac{1}{2} \binom{1}{1} + \frac{1}{2}\binom{1}{-1}$, and we know:
+
+* $T\binom{1}{1} = \binom{0}{1}$, and
+* $T\binom{1}{-1} = \binom{1}{0}$,
+
+Then we should be able to figure out $T\binom{1}{0}$. Use linearity to get that $T\binom{1}{0} = \frac{1}{2} T\binom{1}{1} + \frac{1}{2}T\binom{1}{-1}$. Then plug in.
+
+Similarly, we know that $\binom{0}{1} = \frac{1}{2} \binom{1}{1} - \frac{1}{2} \binom{1}{-1}$, so we know that $T\binom{0}{1} = \frac{1}{2} \binom{0}{1} - \frac{1}{2} \binom{1}{0}$. (Why?)
+
+To figure out $T\binom{x}{y}$, use $T\binom{1}{0}$ and $T\binom{0}{1}$.
+
+The point of this problem is to figure out that if you know what a linear function $T : \mathbb{R}^2 \to \mathbb{R}^n$ (no matter what $n$ is) does to *any* two vectors $\vec{v}$ and $\vec{w}$, if those vectors span $\mathbb{R}^2$, then you can figure out what $T$ does to any vector in $\mathbb{R}^2$. First figure out what it does to the standard basis vectors (by finding the linear combination of $\vec{v}$ and $\vec{w}$ that gives you $\binom{1}{0}$ and $\binom{0}{1}$), and then use linearity to find everything else.
+
 # Warmup
 
 Consider the following matrices $A$ and $B$:
