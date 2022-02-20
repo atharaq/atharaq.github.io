@@ -39,7 +39,7 @@ That is: every regular language can be built up from the symbols using the regul
 
 Consider the following machines. Which one recognizes $\mathcal{L} = \emptyset$, and which one recognizes $\mathcal{L} = \\{ \varepsilon \\}$?
 
-(image)
+<img class="noreverse" src="epsilon-and-empty.jpeg" />
 
 2) A regular expression $R$ is defined using regular expressions $R_1$ and $R_2$. Isn't this definition circular?
 
@@ -68,15 +68,15 @@ One of the directions of this theorem is easy: if $R$ is a regular expression, i
 
 The idea: first build NFAs for $(00)^*$ and $(11)^*$.
 
-(image)
+<img class="noreverse" src="00-or-11.jpeg" />
 
 Now build an NFA for their union:
 
-(image)
+<img class="noreverse" src="00-union-11.jpeg" />
 
 Now take the Kleene star of that:
 
-(image)
+<img class="noreverse" src="00-union-11-star.jpeg" />
 
 **Idea**: Given a regular expression, use the algorithms we came up with earlier (that proved the closure properties) to find an NFA recognizing the same language.
 
@@ -88,17 +88,7 @@ Now take the Kleene star of that:
 
 **Proof**: We prove this by induction on $R$. For the base cases, we consider $R = a$, $R = \varepsilon$, or $R = \emptyset$. The following NFAs recognize these languages:
 
-$R = a$:
-
-(image)
-
-$R = \varepsilon$:
-
-(image)
-
-$R = \emptyset$:
-
-(image)
+<img class="noreverse" src="reg-ex-to-dfa-base.jpeg" />
 
 By induction, assume that $R_1$ and $R_2$ are regular languages. Then $R_1 \cup R_2$ is regular, since regular languages are closed under unions. Moreover, $R_1 \circ R_2$ is regular, since regular languages are closed under concatenation. Lastly, $(R_1)^*$ is regular since regular languages are closed under the Kleene star operation.
 
@@ -116,27 +106,33 @@ We will not prove the other direction, but we will do some examples to get the i
 
 **Example**: Convert the following machine to a regular expression.
 
-(image)
+<img class="noreverse" src="dfa-to-regex-begin.jpeg" />
 
 First, add a new start state, and add a new "accept" state, and put epsilon transitions as appropriate (from the old accept states).
 
-(iamge)
+<img class="noreverse" src="dfa-to-regex-step1.jpeg" />
 
-Then the idea is to get rid of states, one by one, and relabel using regular expressions. For each pair of states $q$ and $q^\prime$ left, we compute *all* the ways of getting from $q$ to $q^\prime$, including by using a state you just removed. So for example, if we remove $q_1$, we look at how we can get from $q_0$ to $q_0$: either we can take the $0$ self-loop, or we can go from $q_0$ to $q_1$ with a 1, loop at $q_1$ with a 0, and then come back to $q_0$ with a 1:
+Then the idea is to get rid of states, one by one, and relabel using regular expressions. For each pair of states $q$ and $q^\prime$ left, we compute *all* the ways of getting from $q$ to $q^\prime$, including by using a state you just removed. So for example, if we remove $q_2$, we look at how to get from $q_1$ to $q_1$: we can first go to $q_2$ with a 0, then take the self-loop with a 1, then come back to $q_1$ with a 0:
 
-(image)
+<img class="noreverse" src="dfa-to-regex-remove-q2.jpeg" />
+
+Now we remove $q_1$:
+
+<img class="noreverse" src="dfa-to-regex-remove-q1.jpeg" />
 
 Now if we remove $q_0$, we can go from the start to the end immediately with $(0 \cup (101^*01))^*$
+
+<img class="noreverse" src="dfa-to-regex-remove-q0.jpeg" />
 
 # Exercises
 
 Come up with regular expressions that recognize the same languages as the following machines:
 
-(image)
+<img class="noreverse" src="lesson6-exercise-1.jpeg" />
 
 and
 
-(image)
+<img class="noreverse" src="lesson6-exercise-2.jpeg" />
 
 (There may be more than one answer.)
 
