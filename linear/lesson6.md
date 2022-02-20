@@ -208,15 +208,15 @@ The method we used is called, again, **Gaussian elimination**. It is detailed in
 
 1. Suppose $F : \mathbb{R}^n \to \mathbb{R}^m$ and $G : \mathbb{R}^m \to \mathbb{R}^r$ are linear functions. That is, they each preserve vector additions (in their own dimensions) and scalar multiplications. Show that $G \circ F$ is a linear function. What is the domain and codomain of $G \circ F$?
 2. This question has two parts:  
-   * (a) Given the linear function $F : \mathbb{R}^3 \to \mathbb{R}^2$ determined by
+   * (a) Given the linear function $F : \mathbb{R}^3 \to \mathbb{R}^2$ determined by the following:
    $$
 	\begin{align*}
-	F\begin{pmatrix}1\\0\\0\end{pmatrix} &= \binom{1}{2} \\
-	F\begin{pmatrix}0\\1\\0\end{pmatrix} &= \binom{0}{4} \\
-	F\begin{pmatrix}0\\0\\1\end{pmatrix} &= \binom{-3}{0},
+	F\begin{pmatrix}1\\0\\0\end{pmatrix} = \binom{1}{2},
+	F\begin{pmatrix}0\\1\\0\end{pmatrix} = \binom{0}{4},
+	F\begin{pmatrix}0\\0\\1\end{pmatrix} = \binom{-3}{0},
 	\end{align*}
   $$ give a matrix representation of $F$.  
-   * (b) Given the matrix: $\begin{pmatrix} 1/2 & 1/3 & 1/4 \\\ 1 & 2/3 & 3/4 \end{pmatrix},$ determine the linear function it describes. That is, what is $T(\vec{x})$, where $\vec{x}$ is a column vector of the appropriate length?
+   * (b) Given the matrix $T = \begin{pmatrix} 1/2 & 1/3 & 1/4 \\\ 1 & 2/3 & 3/4 \end{pmatrix},$ determine the linear function it describes. That is, what is $T(\vec{x})$, where $\vec{x}$ is a column vector of the appropriate length?
 3. Let $F : \mathbb{R}^3 \to \mathbb{R}^3$ and $G : \mathbb{R}^3 \to \mathbb{R}^3$ be determined by the following:  
 $$
 \begin{align}
