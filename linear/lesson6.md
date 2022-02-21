@@ -58,7 +58,7 @@ Write down the matrix representation of $B \circ A$.
 
 ## Matrix Multiplication
 
-**Recall**: If $L$ is a linear function, the matrix representation of $L$ is found by determining what $L$ does to each of the *standard basis vectors* $\vec{e}_1, \ldots, \vec{e_n}$. If the domain of $L$ is $\mathbb{R}^3$ for example, we need to compute $L\left(\begin{pmatrix}1 \\\ 0 \\\ 0 \end{pmatrix}\right), L\left(\begin{pmatrix}0 \\\ 1 \\\ 0 \end{pmatrix}\right)$, and $L\left(\begin{pmatrix{0 \\\ 0 \\\ 1 \end{pmatrix}\right)$.  Then we write these vectors down as the *columns* of our matrix.
+**Recall**: If $L$ is a linear function, the matrix representation of $L$ is found by determining what $L$ does to each of the *standard basis vectors* $\vec{e}_1, \ldots, \vec{e_n}$. If the domain of $L$ is $\mathbb{R}^3$ for example, we need to compute $L\begin{pmatrix}1 \\\ 0 \\\ 0 \end{pmatrix}, L\begin{pmatrix}0 \\\ 1 \\\ 0 \end{pmatrix}$, and $L\begin{pmatrix}0 \\\ 0 \\\ 1 \end{pmatrix}$.  Then we write these vectors down as the *columns* of our matrix.
 
 So if we want to find the matric representation of $(B \circ A)$, we need to compute $B(A(\vec{e}_1))$, $B(A(\vec{e}_2))$, and $B(A(\vec{e}_3))$. But $A(\vec{e_1})$ is just the first column of A, $A(\vec{e}_2)$ is the second column, and $A(\vec{e}_3)$ is the third column.
 
