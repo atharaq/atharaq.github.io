@@ -16,3 +16,4 @@ layout: default
 * [Lesson 3: Control Flow](lesson3.html) 
 * [Lesson 4: Arrays](lesson4.html) 
 * [Lesson 5: Arrays and Strings](lesson5.html) 
+* [Lesson 6: Methods](lesson6.html) 
