@@ -62,9 +62,9 @@ Write down the matrix representation of $B \circ A$.
 
 So if we want to find the matric representation of $(B \circ A)$, we need to compute $B(A(\vec{e}_1))$, $B(A(\vec{e}_2))$, and $B(A(\vec{e}_3))$. But $A(\vec{e_1})$ is just the first column of A, $A(\vec{e}_2)$ is the second column, and $A(\vec{e}_3)$ is the third column.
 
-For any vector $\vec{v}$, to compute $B(\vec{v})$, we compute $\binom{\text{row 1 of B} \cdot \vec{v}}{\text{row 2 of B} \cdot \vec{v}}$.
+For any vector $\vec{v}$, to compute $B(\vec{v})$, we compute $\begin{pmatrix}\text{row 1 of B} \cdot \vec{v} \\\ \text{row 2 of B} \cdot \vec{v}\end{pmatrix}$.
 
-So to sum up: the first column of $(B \circ A)$ is just $\binom{\text{row 1 of B} \cdot \text{column 1 of A}}{\text{row 2 of B} \cdot \text{column 1 of A}}$!
+So to sum up: the first column of $(B \circ A)$ is just $\begin{pmatrix}\text{row 1 of B} \cdot \text{column 1 of A} \\\ \text{row 2 of B} \cdot \text{column 1 of A}\end{pmatrix}$!
 
 What about all the other columns of $(B \circ A)$? Can you describe the general rule for multiplying matrices?
 
@@ -82,7 +82,7 @@ $$F = \begin{pmatrix}.9 & .2 \\ .1 & .8 \end{pmatrix}$$
 
 <details>
 <summary>Solution</summary>
-<p>$$\begin{pmatrix}.9 & .2 \\ .1 & .8 \end{pmatrix} \begin{pmatrix} .9 && .2 \\ .1 & .8 \end{pmatrix} = \begin{pmatrix} .83 & .34 \\ .17 & .66 \end{pmatrix}$$</p>
+<p>$$\begin{pmatrix}.9 & .2 \\ .1 & .8 \end{pmatrix} \begin{pmatrix} .9 & .2 \\ .1 & .8 \end{pmatrix} = \begin{pmatrix} .83 & .34 \\ .17 & .66 \end{pmatrix}$$</p>
 <p>This represents what happens after 2 years. That is: in two years, the population of A will be $.83a + .34 b$, and the population of B will be $.17 a + .66 b$.</p>
 </details>
 
