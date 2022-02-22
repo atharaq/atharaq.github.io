@@ -229,7 +229,7 @@ The method we used is called, again, **Gaussian elimination**. It is detailed in
 	F\begin{pmatrix}0\\0\\1\end{pmatrix} = \binom{-3}{0},
 	\end{align*}
   $$ give a matrix representation of $F$.  
-   * (b) Given the matrix $T = \begin{pmatrix} 1/2 & 1/3 & 1/4 \\\ 1 & 2/3 & 3/4 \end{pmatrix},$ determine the linear function it describes. That is, what is $T(\vec{x})$, where $\vec{x}$ is a column vector of the appropriate length?
+   * (b) Given the matrix $T = \begin{pmatrix} 1/2 & 1/3 & 1/4 \\\ 1 & 2/3 & 3/4 \end{pmatrix},$ determine the linear function it describes. That is, what is $T(\vec{x})$, where $\vec{x}$ is a vector of the appropriate length?
 3. Let $F : \mathbb{R}^3 \to \mathbb{R}^3$ and $G : \mathbb{R}^3 \to \mathbb{R}^3$ be determined by the following:  
 $$
 \begin{align}
