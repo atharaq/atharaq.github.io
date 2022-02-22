@@ -45,16 +45,16 @@ Consider the following machines. Which one recognizes $\mathcal{L} = \emptyset$,
 
 In fact, we use **induction**: assume $R_1$ and $R_2$ are constructed already, then $R_1 \circ R_2$ is a regular expression.
 
-Regular expressions represent *languages*. That is, a regular expression represents the set of all possible words, over the alphabet $\Sigma$, that can be generated using the expression given. For example, the expression $1^* (00)$ represents the set of all words that start with a sequence of just 1s, and then have two zeros (and that's it). For example, if $R$ is the language represented by $1^* (00)$, then $11100 \in R$ and $1001 \not \in R$.
+Regular expressions represent *languages*. That is, a regular expression represents the set of all possible words, over the alphabet $\Sigma$, that can be generated using the expression given. For example, the expression $1^\* (00)$ represents the set of all words that start with a sequence of just 1s, and then have two zeros (and that's it). For example, if $R$ is the language represented by $1^\* (00)$, then $11100 \in R$ and $1001 \not \in R$.
 
-**Example**: What is the language represented by $1^* \cup 0^*$? Can you find a DFA which recognizes this language?
+**Example**: What is the language represented by $1^\* \cup 0^\*$? Can you find a DFA which recognizes this language?
 
 ## Exercises
 
 Describe the languages represented by the following regular expressions:
 
-1. $(00)^*$
-2. $( (00)^* \cup (11)^*)^*$
+1. $(00)^\*$
+2. $( (00)^\* \cup (11)^\*)^\*$
 
 # Theorem
 
@@ -64,9 +64,9 @@ Notice that this is equivalent to the theorem mentioned last time. Why? Because 
 
 One of the directions of this theorem is easy: if $R$ is a regular expression, it represents a regular language.
 
-**Example**: Let $R = ((00)^* \cup (11)^*)^*$. Find an NFA which recognizes the same language.
+**Example**: Let $R = ((00)^\* \cup (11)^\*)^\*$. Find an NFA which recognizes the same language.
 
-The idea: first build NFAs for $(00)^*$ and $(11)^*$.
+The idea: first build NFAs for $(00)^\*$ and $(11)^\*$.
 
 <img class="noreverse" src="00-or-11.jpeg" />
 
@@ -90,13 +90,13 @@ Now take the Kleene star of that:
 
 <img class="noreverse" src="reg-ex-to-dfa-base.jpeg" />
 
-By induction, assume that $R_1$ and $R_2$ are regular languages. Then $R_1 \cup R_2$ is regular, since regular languages are closed under unions. Moreover, $R_1 \circ R_2$ is regular, since regular languages are closed under concatenation. Lastly, $(R_1)^*$ is regular since regular languages are closed under the Kleene star operation.
+By induction, assume that $R_1$ and $R_2$ are regular languages. Then $R_1 \cup R_2$ is regular, since regular languages are closed under unions. Moreover, $R_1 \circ R_2$ is regular, since regular languages are closed under concatenation. Lastly, $(R_1)^\*$ is regular since regular languages are closed under the Kleene star operation.
 
 ## Exercise
 
-Convert the following regular expression to an NFA: $R = (0 \cup (10^* 1))^*$.
+Convert the following regular expression to an NFA: $R = (0 \cup (10^\* 1))^\*$.
 
-Hint: first convert $(10^*1)$, then $0 \cup (10^1)$, then add in the "star" operator.
+Hint: first convert $(10^\*1)$, then $0 \cup (10^1)$, then add in the "star" operator.
 
 What is the language of this machine?
 
@@ -120,7 +120,7 @@ Now we remove $q_1$:
 
 <img class="noreverse" src="dfa-to-regex-remove-q1.jpeg" />
 
-Now if we remove $q_0$, we can go from the start to the end immediately with $(0 \cup (101^*01))^*$
+Now if we remove $q_0$, we can go from the start to the end immediately with $(0 \cup (101^\*01))^\*$
 
 <img class="noreverse" src="dfa-to-regex-remove-q0.jpeg" />
 
@@ -140,7 +140,7 @@ and
 
 Due **Thursday, March 3** at 11:59 PM on Moodle:
 
-1. Fill in the details for the proof, mentioned in lecture, that the class of regular languages is closed under the Kleene star operation. That is: Let $M = (Q, \Sigma, \delta, q_0, F)$ be a DFA. Find an NFA $N$ which accepts $\mathcal{L}(M)^*$.
+1. Fill in the details for the proof, mentioned in lecture, that the class of regular languages is closed under the Kleene star operation. That is: Let $M = (Q, \Sigma, \delta, q_0, F)$ be a DFA. Find an NFA $N$ which accepts $\mathcal{L}(M)^\*$.
 2. Find a regular expression for the language $\mathcal{L}_2 = \\{ w: w$ has even length $\\}$, over the alphabet $\Sigma = \\{ 0, 1 \\}$.
 3. For the following regular expressions, give the state diagram of an NFA recognizing the same language. In all of the following, the alphabet is $\Sigma = \\{ a, b \\}$:  
    * $(a \cup b)^\* ((ab)b^\* )$  
