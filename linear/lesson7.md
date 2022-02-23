@@ -170,13 +170,15 @@ $$
 \left(\begin{matrix}1 & 1 & -1 \\ 0 & 1 & -\frac{7}{2} \end{matrix} \: \right| \: \left.\begin{matrix} 0 \\ 0 \end{matrix}\right)
 $$
 
-Replacing row 1 by 1(row 2) + row 1:
+Replacing row 1 by -1(row 2) + row 1:
 
 $$
 \left(\begin{matrix}1 & 0 & \frac{5}{2} \\ 0 & 1 & -\frac{7}{2} \end{matrix} \: \right| \: \left.\begin{matrix} 0 \\ 0 \end{matrix}\right)
 $$
 
-At this point, there is nothing left to do. (Why not?) This matrix is in **reduced row echelon form**:
+At this point, there is nothing left to do. (Why not?) We can read off the solutions at this point: $x_1 + \frac{5}{2} x_3 = 0$ and $x_2 - \frac{7}{2} x_3 = 0$. In other words, $x_1$ and $x_2$ both depend on $x_3$, and so if $x_3 = a$, then $x_1 = -\frac{5}{2}a$ and $x_2 = \frac{7}{2} a$. All solutions are of the form $a \cdot \begin{pmatrix} -\frac{5}{2} \\\ \frac{7}{2} \\\ 1 \end{pmatrix}$, for some $a \in \mathbb{R}$. (What does this look like, geometrically?) 
+
+We know we are done because the matrix is in **reduced row echelon form**:
 
 1. The leading entry of each row is 1.
 2. Each leading entry is to the right of the leading entry of the previous row.
@@ -197,7 +199,7 @@ x_1 && &= \ldots \\
 \end{align}
 $$
 
-or: an augmented matrix which looks like: $\left(\begin{matrix}1 & 0 & 0 & 0 \\\ 0 & 1 & 0 & 0 \\\ 0 & 0 & 1 & 0 \\\ 0 & 0 & 0 & 1 \end{matrix}\right| \: \left. \begin{matrix} \vdots \end{matrix} \right)$. That is, get it into an *identity matrix*.
+or: an augmented matrix which looks like: $\left(\begin{matrix}1 & 0 & 0 & 0 \\\ 0 & 1 & 0 & 0 \\\ 0 & 0 & 1 & 0 \\\ 0 & 0 & 0 & 1 \end{matrix}\right\| \: \left. \begin{matrix} \vdots \end{matrix} \right)$. That is, get it into an *identity matrix*.
 
 If $m \neq n$, this wouldn't be possible. But in fact, this might not always be possible, even if $m = n$. For example:
 
@@ -232,7 +234,7 @@ So what does this mean? We end up with, basically, $x + 2y = 1$. This means any 
 
 ## Allowable Operations
 
-Remember that $\left(A \right| \left. \vec{b} \right)$ represents the system of equations $A(\vec{x}) = \vec{b}$. That is, we're asking the question: "find all $\vec{x}$ such that $A(\vec{x}) = \vec{b}$." (If $\vec{b} = \vec{0}$, this is asking about the null space of $A$. But in general we can ask about any vector.)
+Remember that $\left(A \right\| \: \left. \vec{b} \right)$ represents the system of equations $A(\vec{x}) = \vec{b}$. That is, we're asking the question: "find all $\vec{x}$ such that $A(\vec{x}) = \vec{b}$." (If $\vec{b} = \vec{0}$, this is asking about the null space of $A$. But in general we can ask about any vector.)
 
 We are allowed to do three things to such a system of equations:
 
@@ -247,7 +249,7 @@ $$
   0 & 1 & 4 \\
   0 & -1 & 3 \\
   5 & 3 & 6
-  \end{matrix}\right| \:
+  \end{matrix} \: \right| \:
 \left.\begin{matrix}
 2 \\
 4 \\
@@ -261,7 +263,7 @@ $$
   5 & 3 & 6 \\
   0 & -1 & 3 \\
   0 & 1 & 4
-  \end{matrix}\right| \:
+  \end{matrix}\: \right| \:
 \left.\begin{matrix}
 8 \\
 4 \\
@@ -275,7 +277,7 @@ $$
   1 & \frac{3}{5} & \frac{6}{5} \\
   0 & -1 & 3 \\
   0 & 1 & 4
-  \end{matrix}\right| \:
+  \end{matrix}\: \right| \:
 \left.\begin{matrix}
 \frac{8}{5} \\
 4 \\
@@ -289,7 +291,7 @@ $$
   1 & \frac{3}{5} & \frac{6}{5} \\
   0 & 1 & -3 \\
   0 & 1 & 4
-  \end{matrix}\right| \:
+  \end{matrix}\: \right| \:
 \left.\begin{matrix}
 \frac{8}{5} \\
 -4 \\
@@ -303,7 +305,7 @@ $$
   1 & \frac{3}{5} & \frac{6}{5} \\
   0 & 1 & -3 \\
   0 & 0 & 7
-  \end{matrix}\right| \:
+  \end{matrix}\: \right| \:
 \left.\begin{matrix}
 \frac{8}{5} \\
 -4 \\
@@ -317,7 +319,7 @@ $$
   1 & \frac{3}{5} & \frac{6}{5} \\
   0 & 1 & -3 \\
   0 & 0 & 1
-  \end{matrix}\right| \:
+  \end{matrix}\: \right| \:
 \left.\begin{matrix}
 \frac{8}{5} \\
 -4 \\
@@ -331,7 +333,7 @@ $$
   1 & 0 & 3 \\
   0 & 1 & -3 \\
   0 & 0 & 1
-  \end{matrix}\right| \:
+  \end{matrix}\: \right| \:
 \left.\begin{matrix}
 4 \\
 -4 \\
@@ -345,7 +347,7 @@ $$
   1 & 0 & 0 \\
   0 & 1 & 0 \\
   0 & 0 & 1
-  \end{matrix}\right| \:
+  \end{matrix}\: \right| \:
 \left.\begin{matrix}
 \frac{10}{7} \\
 -\frac{10}{7} \\
@@ -360,7 +362,7 @@ $$
 \left(\begin{matrix}
   1 & -3 \\
   -3 & 9
-  \end{matrix}\right| \:
+  \end{matrix}\: \right| \:
 \left.\begin{matrix}
 2 \\
 0\end{matrix}\right)
@@ -385,7 +387,7 @@ $$
   1 & 0 & 8 \\
   0 & 0 & 4 \\
   0 & 1 & 0
-  \end{matrix}\right| \:
+  \end{matrix}\: \right| \:
 \left.\begin{matrix}
 22 \\
 16 \\
@@ -399,7 +401,7 @@ $$
   1 & 0 & 1 \\
   0 & 1 & 2 \\
   0 & 0 & 0
-  \end{matrix}\right| \:
+  \end{matrix}\: \right| \:
 \left.\begin{matrix}
 -10  \\
 10 \\
@@ -421,7 +423,7 @@ $$
   1 & 0 & -1 \\
   0 & 1 & 2 \\
   0 & 0 & 0
-  \end{matrix}\right| \:
+  \end{matrix}\: \right| \:
 \left.\begin{matrix}
 0  \\
 5 \\
