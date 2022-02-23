@@ -199,7 +199,7 @@ x_1 && &= \ldots \\
 \end{align}
 $$
 
-or: an augmented matrix which looks like: $\left(\begin{matrix}1 & 0 & 0 & 0 \\\ 0 & 1 & 0 & 0 \\\ 0 & 0 & 1 & 0 \\\ 0 & 0 & 0 & 1 \end{matrix}\right\| \: \left. \begin{matrix} \vdots \end{matrix} \right)$. That is, get it into an *identity matrix*.
+or: an augmented matrix which looks like: $\left(\begin{matrix}1 & 0 & 0 & 0 \\\ 0 & 1 & 0 & 0 \\\ 0 & 0 & 1 & 0 \\\ 0 & 0 & 0 & 1 \end{matrix} \\: \right\| \\: \left. \begin{matrix} a_1 \\\ a_2 \\\ \vdots \\\ a_n \end{matrix} \right)$. That is, get it into an *identity matrix*.
 
 If $m \neq n$, this wouldn't be possible. But in fact, this might not always be possible, even if $m = n$. For example:
 
@@ -234,7 +234,7 @@ So what does this mean? We end up with, basically, $x + 2y = 1$. This means any 
 
 ## Allowable Operations
 
-Remember that $\left(A \right\| \: \left. \vec{b} \right)$ represents the system of equations $A(\vec{x}) = \vec{b}$. That is, we're asking the question: "find all $\vec{x}$ such that $A(\vec{x}) = \vec{b}$." (If $\vec{b} = \vec{0}$, this is asking about the null space of $A$. But in general we can ask about any vector.)
+Remember that $\left(A \\: \right\| \\: \left. \vec{b} \right)$ represents the system of equations $A(\vec{x}) = \vec{b}$. That is, we're asking the question: "find all $\vec{x}$ such that $A(\vec{x}) = \vec{b}$." (If $\vec{b} = \vec{0}$, this is asking about the null space of $A$. But in general we can ask about any vector.)
 
 We are allowed to do three things to such a system of equations:
 
