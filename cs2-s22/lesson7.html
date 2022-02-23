@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2022-02-24">
+  <title>CS II</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS II</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">24 February 2022</p>
+</section>
+
+<section>
+<section id="homework" class="title-slide slide level1">
+<h1>Homework</h1>
+<!--
+1. (10:30 - 11) Go over homework.
+2. (11:00 - 11:15) Go over quiz / extra credit.
+3. (11:15 - 11:35) Parameters / methods.
+4. (11:50 - 12:10) Project 1 hints.
+-->
+<ol type="1">
+<li>What is meant by the “return type” of a method? What are some possible return types?</li>
+<li>What is meant by a “parameter” of a method?</li>
+</ol>
+<p>(Continue on the following slide)</p>
+</section>
+<section id="homework-1" class="slide level2">
+<h2>Homework</h2>
+<pre ><code class="java">public static void printManyTimes(String message, int n) {
+  for (int i = 0; i &lt; n; i+) {
+    System.out.println(message);
+  }
+}
+
+public static int minElement(int[] list) {
+  int min = list[0];
+  for (int i = 1; i &lt; list.length; i++) {
+    if (list[i] &lt; min) {
+      min = list[i];
+    }
+  }
+  return min;
+}</code></pre>
+<p>(Next slide)</p>
+</section>
+<section id="homework-2" class="slide level2">
+<h2>Homework</h2>
+<ol start="3" type="1">
+<li>What are the return types and parameters for each of the above methods?</li>
+<li>How would we use <code>printManyTimes</code> to output “Hi” 4 times?</li>
+<li>How would we use <code>minElement</code> to output the smallest element of an int[] array variable <span class="math inline">\(x\)</span>?</li>
+</ol>
+</section></section>
+<section>
+<section id="quiz" class="title-slide slide level1">
+<h1>Quiz</h1>
+<pre ><code class="java">for (int i = 0; i &lt; s.length() / 2; i++) {
+    if (s.charAt(i) != s.charAt(s.length() - i - 1)) {
+        System.out.println("No");
+        System.exit(0);
+    }
+}
+// if we didn't exit yet, we're good.
+System.out.println("Yes");</code></pre>
+<p>Make a memory diagram if <span class="math inline">\(s\)</span> = “abca”.</p>
+</section>
+<section id="extra-credit" class="slide level2">
+<h2>Extra Credit</h2>
+<p>If your grade on quiz 1 was below 40/50, I will accept corrections for any problem you wish to correct. You will get up to half the credit lost for each perfectly corrected response (up to a max of 40). Please come see me in office hours if you had trouble with any of these!</p>
+<p>If your grade was below 25/50, read on:</p>
+</section>
+<section id="extra-credit-2" class="slide level2">
+<h2>Extra Credit 2</h2>
+<p>If your grade is below 25/50:</p>
+<ol type="1">
+<li>Do the following exercises from the textbook:
+<ul>
+<li>Chapter 3 exercises 4</li>
+<li>Chapter 5 exercises 1, 4, 5.</li>
+</ul></li>
+<li>Go over the exercises above with me in office hours (preferably <strong>tomorrow</strong>).</li>
+<li>Do the following exercises from the textbook:
+<ul>
+<li>Chapter 5 exercises 6-7</li>
+<li>Chapter 6 exercises 1 (parts 1 and 2 only), 4</li>
+<li>Chapter 7 exercises 1 - 3, 5.</li>
+</ul></li>
+<li>Go over these with me in office hours.</li>
+</ol>
+</section>
+<section id="extra-credit-2-1" class="slide level2">
+<h2>Extra Credit 2</h2>
+<ol start="5" type="1">
+<li>If any of these are not perfect, we repeat this process until they are.</li>
+<li>Consistently come to office hours every week after this!</li>
+<li>Do all of these before you attempt the quiz corrections.</li>
+<li>This will give you an additional 5 points on the quiz (up to a max of 40 / 50, after the corrections).</li>
+</ol>
+</section></section>
+<section>
+<section id="parameters" class="title-slide slide level1">
+<h1>Parameters</h1>
+<p>Part 1:</p>
+<pre ><code class="java">public static void changeNumber(int x) {
+    x++;
+}
+public static void main(String[] args) {
+    int x = 0;
+    changeNumber(x);
+    System.out.println(x);
+}</code></pre>
+<p>What do you think this outputs? What does this actually output?</p>
+</section>
+<section id="part-2" class="slide level2">
+<h2>Part 2</h2>
+<pre ><code class="java">public static void changeNumber(int[] x) {
+    x[0]++;
+}
+public static void main(String[] args) {
+    int[] x = new int[1];
+    x[0] = 0;
+    changeNumber(x);
+    System.out.println(x[0]);
+}</code></pre>
+<p>What do you think this outputs? What does this actually output?</p>
+</section>
+<section id="part-3" class="slide level2">
+<h2>Part 3</h2>
+<pre ><code class="java">public static void changeNumber(int[] x) {
+    x = new int[1];
+    x[0] = 1;
+}
+public static void main(String[] args) {
+    int[] x = new int[1];
+    x[0] = 0;
+    changeNumber(x);
+    System.out.println(x[0]);
+}</code></pre>
+</section>
+<section id="passing-parameters" class="slide level2">
+<h2>Passing Parameters</h2>
+<ul>
+<li><em>Invoke</em> a method:
+<ul>
+<li>Evaluate arguments</li>
+<li>Copy values over to the parameters</li>
+</ul></li>
+<li>Value of a variable?
+<ul>
+<li>Value of an int/char: the number / character</li>
+<li>Value of a String / array / other objects: reference to memory location</li>
+</ul></li>
+<li>Does this explain what happened in parts 1 - 3?</li>
+</ul>
+</section>
+<section id="local-variables" class="slide level2">
+<h2>Local Variables</h2>
+<ul>
+<li>Parameters exist <strong>locally</strong></li>
+<li>Cannot be used outside of the method they are defined in</li>
+</ul>
+<pre ><code class="java">public static void printLines(int num) {
+    for (int i = 0; i &lt; num; i++) {
+        System.out.println(); // blank line
+    }
+}
+public static void main(String[] args) {
+    printLines(20);
+    System.out.println(num); // compiler error!
+}</code></pre>
+</section></section>
+<section>
+<section id="program-design" class="title-slide slide level1">
+<h1>Program Design</h1>
+<p>Two key benefits of using methods: <strong>code re-use</strong> and <strong>modular design</strong>. You can write a method once to solve a problem, and never have to re-write it or copy/paste it.</p>
+<p><strong>Rule of thumb</strong>: if you need to do something more than once, you probably should write a method for it.</p>
+</section>
+<section id="modular-design" class="slide level2">
+<h2>Modular Design</h2>
+<ul>
+<li>Break up the problem into <strong>components</strong>: smaller building blocks that can be re-used and/or combined with other components to form an application.</li>
+<li>Implement each component in its own method.</li>
+<li>Test each method on its own.</li>
+<li>Integrate the components together (and test the final solution).</li>
+</ul>
+</section>
+<section id="example-project-1" class="slide level2">
+<h2>Example: Project 1</h2>
+<p>What are some “reusable building blocks” we can make for project 1?</p>
+<ul>
+<li>Get input.</li>
+<li>Check if a pair (row, column) is a valid position on this larger chessboard.</li>
+<li>Check if I can get from one position (row / column) to another in a single move.</li>
+</ul>
+<p>If you’re stuck: see if you can try writing these smaller bits first. This might help you get ideas for how to build the larger project.</p>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Write the method <code>getInput</code>:</p>
+<ul>
+<li>Take in the Scanner, a String prompt, a lower bound and an upper bound as parameters.</li>
+<li>Display the prompt to the user.</li>
+<li>If the user types in something that’s not an integer, output “That is not an integer”, and exit.</li>
+<li>If they type in an integer that is not between the <code>low</code> and <code>high</code> variables, output that the number is not between <code>low</code> and <code>high</code>, and exit.</li>
+<li>Otherwise, return the number the user inputted in.</li>
+</ul>
+</section>
+<section id="method-skeleton" class="slide level2">
+<h2>Method skeleton</h2>
+<pre ><code class="java">public static int getInput(Scanner sc, String prompt, int low, int high) {
+
+
+}</code></pre>
+</section></section>
+<section>
+<section id="project-1-hints" class="title-slide slide level1">
+<h1>Project 1 Hints</h1>
+<ul>
+<li>Validate input (we just did this).</li>
+<li>Call that method four times! The only thing that might change?</li>
+<li>Use a <strong>while</strong> loop:
+<ul>
+<li>As long as you aren’t at the right place, move the piece.</li>
+<li>What’s the loop condition?</li>
+<li>How do we find a move?</li>
+</ul></li>
+</ul>
+</section>
+<section id="finding-a-move" class="slide level2">
+<h2>Finding a move</h2>
+<ul>
+<li>Many possible strategies.</li>
+<li>Maybe just pick any move that’s valid?</li>
+<li>Maybe try to pick a move in the right “direction”?</li>
+<li>Maybe pick a random move? (Use Random)?
+<ul>
+<li>Eventually it should get there, right?</li>
+</ul></li>
+</ul>
+</section>
+<section id="suggestion" class="slide level2">
+<h2>Suggestion</h2>
+<ul>
+<li>First, check if you can get there in one move.</li>
+<li>If you can, move the piece straight there.</li>
+<li>Otherwise? (Pick any move.)</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
