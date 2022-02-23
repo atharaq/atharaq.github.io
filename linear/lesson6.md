@@ -213,7 +213,7 @@ At this point, there is nothing left to do. (Why not?) This matrix is in **reduc
 2. Each leading entry is to the right of the leading entry of the previous row.
 3. If a row has only zeroes, it's at the bottom.
 
-The method we used is called, again, **Gaussian elimination**. It is detailed in [the textbook](...), in chapter (fill in). Take a look at at that for help with these computations!
+The method we used is called, again, **Gaussian elimination**. It is detailed in [the textbook](https://www.math.ucdavis.edu/~linear/linear-guest.pdf), in chapter 2. Take a look at at that for help with these computations!
 
 # Problem Set 2
 
