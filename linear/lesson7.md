@@ -19,7 +19,9 @@
 
 # Homework comments
 
-...
+What does $(R_\alpha \circ R_\beta)$ do to a vector $\vec{v}$? What about the rotation $R_{\alpha + \beta}$?
+
+Any points of confusion or interest from either of the videos?
 
 # Application: Population Dynamics
 
