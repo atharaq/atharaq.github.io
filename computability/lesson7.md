@@ -38,7 +38,7 @@ So we need to find a way to **prove** that there is no possible NFA or DFA (or r
 
 **Idea**: Find a *property* of languages that is shared by **all** regular languages. Then show that this particular language does not have this property.
 
-(subset picture).
+<img class="noreverse" src="subset-diagram.jpeg" />
 
 This is the point of the **Pumping Lemma**.
 
@@ -50,7 +50,7 @@ This is the point of the **Pumping Lemma**.
 
 Let's look at an example:
 
-(picture)
+<img class="noreverse" src="pumping-lemma-example.jpeg" />
 
 For this language, $p = 4$ (I'm just telling you that, we don't really care *how* we know at this point.) The pumping lemma says that any word of length at least 4 in this language can be broken down into $xyz$ satisfying the three conditions above. Let's give a few examples of words in this language:
 
@@ -129,7 +129,7 @@ That is, $\overline{\mathcal{L}} \cap 0^\* 1^\* = \\{ 0^i 1^j : i \leq j \\}$. N
 
 In general, it is not true that all non-regular languages can be proven non-regular using the pumping lemma.
 
-(subset diagram again)
+<img class="noreverse" src="subset-diagram.jpeg" />
 
 For example: $\mathcal{L} = \\{ a b^i c^i : i \in \mathbb{N} \\} \cup \\{ a^i b^j c^k : i \neq 1, j, k \geq 0 \\}$ is not regular.  You can prove this by looking at $\mathcal{L} \cap a b^\* c^\*$, which is $\\{ a b^i c^i : i \in \mathbb{N} \\}$, then use the pumping lemma.
 
