@@ -2,6 +2,14 @@
 {:.no_toc}
 
 1. Table of Contents
+{:toc}
+
+<!--
+1. (2:30 - 3) Problem Set
+2. (3 - 3:20) Augmented matrix / systems of equations.
+3. (3:20 - 3:45) gaussian elim / allowable operations
+4. (3:45 - 4:10) example / exercise / rref / span
+-->
 
 # Problem Set Questions
 
@@ -187,7 +195,7 @@ $$
 \frac{6}{7}\end{matrix}\right)
 $$
 
-Nowe we have an upper triangular matrix. We are almost done: we can get this into the identity matrix by adding $-\frac{3}{5}\cdot$ row 2 + row 1:
+Now we have an upper triangular matrix. We are almost done: we can get this into the identity matrix by adding $-\frac{3}{5}\cdot$ row 2 + row 1:
 
 $$
 \left(\begin{matrix}
@@ -277,6 +285,8 @@ For an $m \times n$ matrix $A$ and a vector $\vec{b} \in \mathbb{R}^M$, the syst
 * 1 solution (exactly) (a single point, which is 0-dimensional), or
 * infinitely many solutions. (Possibly 1-dimensional, 2-dimensional, or higher even.)
 
+If there are no solutions, the system is called *inconsistent*. If there are solutions (either 1 or infinitely manY), it is called *consistent*.
+
 For example:
 
 $$
@@ -333,7 +343,7 @@ $$
 1 \end{matrix}\right)
 $$
 
-That is: to check if a vector $\vec{b}$ is in the span of some vectors $\vec{v_1}, \vec{v_2}, \ldots, \vec{v_n}$, we really just write down the matrix $M$ whose columns are $\vec{v_1}, \vec{v_2}$, etc, and consider the system $\left( M \: \right| \: \left. \vec{b} \right)$. If we can solve this system, then $\vec{b}$ is in the required span, and if we cannot, then $\vec{b}$ is not in the required span!
+That is: to check if a vector $\vec{b}$ is in the span of some vectors $\vec{v_1}, \vec{v_2}, \ldots, \vec{v_n}$, we really just write down the matrix $M$ whose columns are $\vec{v_1}, \vec{v_2}$, etc, and consider the system $\left( M \: \right\| \: \left. \vec{b} \right)$. If we can solve this system, then $\vec{b}$ is in the required span, and if we cannot, then $\vec{b}$ is not in the required span!
 
 ## Images
 
