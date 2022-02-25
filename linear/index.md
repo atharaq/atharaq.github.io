@@ -17,3 +17,4 @@ layout: default
 * [Lesson 4: Matrix notation](lesson4.html)
 * [Lesson 5: Matrices](lesson5.html)
 * [Lesson 6: Matrix multiplication](lesson6.html)
+* [Lesson 7: Systems of equations](lesson7.html)
