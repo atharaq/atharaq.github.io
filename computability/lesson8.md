@@ -45,6 +45,73 @@ $S$ is a **variable** (the "start variable"). '(' and ')' are **terminals**. $S 
 
 $$S \implies SS \implies (S) S \implies ((S))S \implies (()) S \implies (()) (S) \implies (()) () \in \mathcal{L}(G)$$
 
+## Examples
+
+$G_1$:
+
+$$
+\begin{align}
+S \rightarrow TTS | \varepsilon \\
+T \rightarrow a | b
+\end{align}
+$$
+
+For example, we can see the derivation:
+
+$$
+\begin{align}
+S &\implies TTS \implies aTS \implies aaS \implies aaTTS \\
+&\implies aabTS \implies aabaS \implies aabaTTS \\
+&\implies aabaaTS \implies aabaaaS \implies aabaaa
+\end{align}
+$$
+
+What is $\mathcal{L}(G_1)$?
+
+$G_2$: Let $\Sigma = \\{ 0, 1 \\}$.
+
+$$
+\begin{align}
+S \rightarrow a S b | \varepsilon
+\end{align}
+$$
+
+For example:
+
+$$
+\begin{align}
+S &\implies a S b \implies aa S bb \implies aaa S bbb \\
+ &\implies aaaa S bbbb \implies aaabbbb
+\end{align}
+$$
+
+What is $\mathcal{L}(G_2)$?
+
+In fact, these two examples show us important properties:
+
+1. Grammars can generate regular languages (like $\mathcal{L}(G_1)$)!
+2. Grammars can generate non-regular languages (like $\mathcal{L}(G_2)$)!
+
 ## Formal Description
+
+Formally, a **context-free grammar** (CFG) $G$ is a 4-tuple $G = (V, \Sigma, R, S)$, where:
+
+1. $V$ is a (non-empty) finite set (**variables**),
+2. $\Sigma$ is a non-empty, finite set (the **terminals**),
+3. $R \subseteq V \times (V \cup \Sigma)^*$ is a non-empty, finite set (the production **rules**), and
+4. $S \in V$ (the *start* variable).
+
+What does (3) mean? First, $(V \cup \Sigma)^*$ is a word consisting of terminals and variables. $V \times (V \cup \Sigma)^*$ is the set of ordered pairs of the form $(A, w)$, where $A$ is a variable, and $w$ is such a word. So (3) just means that the rules are ordered pairs of this form.
+
+Normally, though, we won't write $(A, w) \in R$. Instead, we write $A \rightarrow w$, as we did above.
+
+**Definitions**:
+
+1. Let $u, v, w \in (V \cup \Sigma)^*$, $A \in V$, and $A \rightarrow w \in R$. Then we say $uAv$ **yields** $uwv$, written $uAv \implies uwv$.
+2. We say $u$ **derives** $v$, written $u \xRightarrow{*} v$ if $u = v$, or if there is $k \geq 0$ and a sequence $u \implies u_1 \implies u_2 \implies \ldots \implies u_k \implies v$.
+3. The **language** of a grammar $G$ is $\mathcal{L}(G) = \\{ w \in \Sigma^* : S \xRightarrow{*} w \\}$.
+4. $\mathcal{L}$ is a **context-free language** if there is a CFG G such that $\mathcal{L}(G) = \mathcal{L}$.
+
+
 
 # Design Examples
