@@ -101,7 +101,7 @@ Formally, a **context-free grammar** (CFG) $G$ is a 4-tuple $G = (V, \Sigma, R, 
 3. $R \subseteq V \times (V \cup \Sigma)^*$ is a non-empty, finite set (the production **rules**), and
 4. $S \in V$ (the *start* variable).
 
-What does (3) mean? First, $(V \cup \Sigma)^*$ is a word consisting of terminals and variables. $V \times (V \cup \Sigma)^*$ is the set of ordered pairs of the form $(A, w)$, where $A$ is a variable, and $w$ is such a word. So (3) just means that the rules are ordered pairs of this form.
+What does (3) mean? First, $(V \cup \Sigma)^\*$ is a word consisting of terminals and variables. $V \times (V \cup \Sigma)^\*$ is the set of ordered pairs of the form $(A, w)$, where $A$ is a variable, and $w$ is such a word. So (3) just means that the rules are ordered pairs of this form.
 
 Normally, though, we won't write $(A, w) \in R$. Instead, we write $A \rightarrow w$, as we did above.
 
