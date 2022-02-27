@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2022-02-28">
+  <title>CS II</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS II</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">28 February 2022</p>
+</section>
+
+<section>
+<section id="designing-programs" class="title-slide slide level1">
+<h1>Designing Programs</h1>
+<!--
+1. (10:30 - 10:40) Team brainstorm
+2. (10:40 - 10:50) Some methods / pseudocode
+3. (10:50 - 11:20) Group work
+4. (11:30 - 12:10) Project 1 hints.
+-->
+<p><strong>In small groups (3-5)</strong>: design a program which asks the user to input in the current time (hour and minute, using 24-hour format) and a number of minutes to add (up to a max of 1000), and outputs the time after that many minutes.</p>
+<ul>
+<li>What <em>methods</em> do we need?</li>
+<li>What are the return types and parameters for those methods?</li>
+<li>Pseudocode for main method?</li>
+</ul>
+<p>Brainstorm for about 5-10 minutes with your group.</p>
+</section>
+<section id="methods" class="slide level2">
+<h2>Methods</h2>
+<p>Consider the <code>displayTime</code> method:</p>
+<ul>
+<li>What does the method <em>require</em>? These will be its parameters.</li>
+<li>What does the method <em>return</em>? This will be its return type.
+<ul>
+<li>Multiple ways to design it: could return the string?</li>
+<li>Or: might not return anything! Instead it might just output!</li>
+</ul></li>
+</ul>
+</section>
+<section id="hourafter" class="slide level2">
+<h2>hourAfter</h2>
+<p>hourAfter:</p>
+<ul>
+<li>requires the current hour and minute, and the number of minutes to add</li>
+<li>returns the hour of the time after that many minutes.</li>
+<li>Method signature?</li>
+</ul>
+<pre ><code class="java">int newHour = hourAfter(11, 30, 45);
+int newMinute = minuteAfter(11, 30, 45);
+// newHour should be 12, new minute should be 15.</code></pre>
+</section>
+<section id="pseudocode-for-main" class="slide level2">
+<h2>Pseudocode for main</h2>
+<pre ><code class="java">int hour = getNumber(...);
+int minute = getNumber(...);
+int numMins = getNumber(...);
+print(current time); // use displayTime!
+compute the new hour; // use hourAfter!
+compute the new minute; // use minuteAfter!
+print("After " + numMins + " minutes, it will be ..."); // use displayTime again!</code></pre>
+</section>
+<section id="group-work" class="slide level2">
+<h2>Group work</h2>
+<ul>
+<li>On Replit, join a group for <a href="https://replit.com/team/cs2-spring22/Lesson-8">Lesson 8</a>.</li>
+<li>Everyone in your table should join the same group.</li>
+<li>Split up the work:
+<ul>
+<li>Implement each method.</li>
+<li>Test out each method.</li>
+<li>Put it all together in the main method.</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="project-1-hints" class="title-slide slide level1">
+<h1>Project 1 Hints</h1>
+<ul>
+<li>while loop:
+<ul>
+<li>Loop condition?</li>
+<li>Is it: <code>row != endRow &amp;&amp; col != endCol</code>?</li>
+<li>Or is it: <code>row != endRow || col != endCol</code>?</li>
+<li>Which one is correct?</li>
+</ul></li>
+</ul>
+</section>
+<section id="more-hints" class="slide level2">
+<h2>More Hints</h2>
+<p>Finding all possible moves:</p>
+<pre ><code class="java">// somewhere at the top of the program, before the loop
+int[][] possibleMoves = { {2, 3}, {2, -3}, {-2, 3}, {-2, -3},
+                          {3, 2}, {3, -2}, {-3, 2}, {-3, -2} };</code></pre>
+</section>
+<section id="one-step-away" class="slide level2">
+<h2>One step away?</h2>
+<pre ><code class="java">for (int[] move : possibleMoves) {
+  if (currentRow + move[0] == endRow &&
+      currentCol + move[1] == endCol) {
+    // ...
+  }
+}</code></pre>
+<p>Probably should be the <strong>first</strong> thing you check (inside the while loop)! If you can’t find a move this way, then do something else.</p>
+</section>
+<section id="one-step-away-1" class="slide level2">
+<h2>One step away</h2>
+<pre ><code class="java">boolean moved = false;
+for (int[] move : possibleMoves) {
+  if (currentRow + move[0] == endRow && currentCol + move[1] == endCol) {
+    // ...
+    moved = true;
+  }
+}
+if (!moved) {
+  // then use another strategy
+}</code></pre>
+</section>
+<section id="random-move" class="slide level2">
+<h2>Random move?</h2>
+<pre ><code class="java">// import java.util.Random; at the top
+Random r = new Random(); // near the top of the program
+
+// in the loop:
+int[] move = possibleMoves[r.nextInt(possibleMoves.length)];
+// but: (currentRow + move[0], currentCol + move[1]) might not be valid?
+// isValid(row, col) method?</code></pre>
+</section>
+<section id="other-issues" class="slide level2">
+<h2>Other issues?</h2>
+<pre ><code class="java">boolean[][] visited = new boolean[16][16];
+
+// every time you visit a square, maybe you can mark it as visited?
+// maybe: if you come to a square you previously visited, pick a random move from there?
+// lots of possibilities</code></pre>
+</section></section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Project 1 due Sunday</li>
+<li>Quiz 2 <strong>Thursday, March 10</strong> (11:25 - 12:10)</li>
+<li>Catch yourself up via tutoring, office hours, etc.
+<ul>
+<li>Make sure you are able to do <em>any</em> exercise introduced in class.</li>
+<li>Make sure you can do all exercises from Chapters 1-7.</li>
+<li>Get help (office hours, tutoring, etc) if you can’t!</li>
+</ul></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
