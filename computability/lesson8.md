@@ -112,6 +112,28 @@ Normally, though, we won't write $(A, w) \in R$. Instead, we write $A \rightarro
 3. The **language** of a grammar $G$ is $\mathcal{L}(G) = \\{ w \in \Sigma^* : S \overset{*}{\implies} w \\}$.
 4. $\mathcal{L}$ is a **context-free language** if there is a CFG G such that $\mathcal{L}(G) = \mathcal{L}$.
 
-
-
 # Design Examples
+
+**Example**: Design a CFG over $\Sigma = \\{ 0, 1 \\}$ which recognizes $\mathcal{L} = \\{ w : w$ is a palindrome $\\}$.
+
+Often the idea behind designing grammars is to think recursively. So first, what are some base cases?
+
+1. $\varepsilon$ is a palindrome.
+2. 0 is a palindrome.
+3. 1 is a palindrome.
+
+Recursively, if $w$ is a palindrome, then so are $0w0$ and $1w1$. So we can use all of this to determine our production rules:
+
+$$S \rightarrow \varepsilon | 0 | 1 | 0S0 | 1S1$$
+
+For example, the word $w = 101101$ is a palindrome. What is the derivation for $w$?
+
+**Next time**: There are two ways to think about "derivations". One is, as we've done, just applying rules one by one. But in fact, it often makes sense to think of derivations as "parse trees"; in particular, this may be helpful if we have more than one variable in a derivation, and hence more than one rule one could use at a particular time.
+
+**Exercise**: Design CFG's for the following languages:
+
+1. $\mathcal{L}_1 = \\{ a^i b^i c^j : i, j \in \mathbb{N} \\}$
+2. $\mathcal{L}_2 = \\{ a^i b^j c^j : i, j \in \mathbb{N} \\}$
+3. $\mathcal{L} = \mathcal{L}_1 \cup \mathcal{L}_2$.
+
+Hint: we saw a CFG for $a^i b^i$ earlier. How might it change to add in $c^j$ after that?
