@@ -89,7 +89,7 @@ $$
   \left. \begin{matrix} 1 \\ 2 \end{matrix}\right)
 $$
 
-Try to eliminate the 2 in the bottom left: $(-1) \cdot$ row 1 + row 2:
+Try to eliminate the 2 in the bottom left: $(-2) \cdot$ row 1 + row 2:
 
 $$
 \left(\begin{matrix}
