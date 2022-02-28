@@ -17,7 +17,7 @@ Determine if the following languages are regular or not. Prove your answer. Let 
 
 Let $\Sigma = \\{ (, ) \\}$, and $\mathcal{L} = \\{ w : w$ is a string of perfectly nested parentheses $\\}$.
 
-For example: $() \in \mathcal{L}$, $()() \in \mathcal{L}$, $(())() \in \ mathcal{L}$, but $)()( \not \in \mathcal{L}$.
+For example: $() \in \mathcal{L}$, $()() \in \mathcal{L}$, $(())() \in \mathcal{L}$, but $)()( \not \in \mathcal{L}$.
 
 **Claim**: $\mathcal{L}$ is not regular.
 
