@@ -18,3 +18,4 @@ layout: default
 * [Lesson 5: NFA / DFA Proof](lesson5.html)
 * [Lesson 6: Regular expressions](lesson6.html)
 * [Lesson 7: Non-regular languages](lesson7.html)
+* [Lesson 8: Context-free Grammars](lesson8.html)
