@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2022-03-03">
+  <title>CS2 Lesson 9</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 9</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">3 March 2022</p>
+</section>
+
+<section>
+<section id="find-the-mistakes" class="title-slide slide level1">
+<h1>Find the mistakes</h1>
+<!--
+10:30 - 10:40 find the mistakes.
+10:40 - 10:45 explanation
+10:45 - 11:05 exercise: fix the code.
+11:05 - 11:10 explanation
+11:10 - 11:20 resize array.
+11:20 - 11:35 arraylist explanation
+11:35 - 11:55 exercise
+11:55 - 12 explanation
+12 - 12:10 explain what classes are.
+-->
+<p>Problem: given a String <em>name</em>, return the number of times the character <em>c</em> appears in it. What are all the mistakes in the following?</p>
+<pre ><code class="java" data-line-numbers="1-12">public static int numAppearances(String name, char c) {
+    String name = "bob";
+    char c = "b";
+    int n = 0;
+    for (int i = 0; i &lt; name.length(); i++) {
+        if (name.charAt(i) == c) {
+            System.out.println(c);
+            n++;
+        }
+    }
+    System.out.println(n);
+}</code></pre>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>On Replit: fix the code so that it correctly returns the number of appearances of the character <em>c</em> in <em>name</em>.</p>
+<pre ><code class="java">public static void main(String[] args) {
+  System.out.println(numAppearances("bob", 'b'));
+  System.out.println(numAppearances("bob", 'a'));
+  System.out.println(numAppearances("athar", 'a'));
+}</code></pre>
+<p>What should this output?</p>
+</section></section>
+<section>
+<section id="resize-array" class="title-slide slide level1">
+<h1>Resize Array</h1>
+<p>Problem with the following:</p>
+<pre ><code class="java">int[] numbers = new int[5]; // hope that 5 is big enough!
+Scanner sc = new Scanner(System.in);
+int index = 0;
+System.out.println("Input in the first number: ");
+while (sc.hasNextInt()) {
+    numbers[index] = sc.nextInt();
+    index++;
+    System.out.println("Input in the next number: ");
+}</code></pre>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<p>Write a method which takes in an integer array as a parameter, creates a new array that is twice as big, and copies over all the elements of the old array. Your method should return the new array.</p>
+<pre ><code class="java">int[] numbers = new int[5];
+Scanner sc = new Scanner(System.in);
+int index = 0;
+System.out.println("Input in the first number: ");
+while (sc.hasNextInt()) {
+    int number = sc.nextInt();
+    if (index &gt;= numbers.length) {
+        numbers = resizeArray(numbers);
+    }
+    numbers[index] = number;
+    index++;
+    System.out.println("Input in the next number: ");
+}</code></pre>
+</section></section>
+<section>
+<section id="arraylist-class" class="title-slide slide level1">
+<h1>ArrayList class</h1>
+<pre ><code class="java">import java.util.ArrayList;
+// must import the above!
+
+// in main:
+ArrayList&lt;String&gt; stringList = new ArrayList&lt;&gt;();
+for(int i = 0; i &lt; 100; i++) {
+    stringList.add("hello!");
+}
+System.out.println(stringList.size());
+
+ArrayList&lt;Integer&gt; integerList = new ArrayList&lt;&gt;();
+for(int i = 0; i &lt; 20; i++) {
+    integerList.add(i * i);
+}
+System.out.println(integerList.get(15));</code></pre>
+</section>
+<section id="arraylist-class-1" class="slide level2">
+<h2>ArrayList class</h2>
+<ul>
+<li>Built-in class that handles “resizeable arrays”</li>
+<li>Can use with any type!</li>
+</ul>
+</section>
+<section id="type-parameters" class="slide level2">
+<h2>Type Parameters</h2>
+<ul>
+<li>Inside angle brackets: the <em>type paramter</em></li>
+<li>Must be the name of a <em>class</em>
+<ul>
+<li>Not a primitive!</li>
+<li><code>ArrayList&lt;int&gt;</code> doesn’t work!</li>
+</ul></li>
+<li>For primitives: use wrapper classes
+<ul>
+<li>Integer for int</li>
+<li>Double for double</li>
+<li>Character for char</li>
+</ul></li>
+</ul>
+</section>
+<section id="arraylist-methods" class="slide level2">
+<h2>ArrayList Methods</h2>
+<pre ><code class="java">ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+list.add(1); // list[0] = 1
+list.add(5); // list[1] = 5
+list.add(10); // list[2] = 10
+System.out.println(list.get(1)); // should output 5
+System.out.println(list.size()); // should output 3
+list.set(2, 27); // list[2] = 27
+// list.set(25, 3); throws an exception! list size is only 3!</code></pre>
+</section>
+<section id="arraylist-methods-1" class="slide level2">
+<h2>ArrayList Methods</h2>
+<ul>
+<li><code>add</code>: add to the “end” of this list
+<ul>
+<li><code>add(index, element)</code>: add element to list at position <span class="math inline">\(index\)</span>, shift everything over</li>
+</ul></li>
+<li><code>get</code>: get the element at index <span class="math inline">\(i\)</span></li>
+<li><code>set</code>: change the value of the list at position <span class="math inline">\(i\)</span>
+<ul>
+<li>Only works if enough things have been added!</li>
+</ul></li>
+<li><code>remove</code></li>
+<li><code>size</code></li>
+</ul>
+</section>
+<section id="iterating" class="slide level2">
+<h2>Iterating</h2>
+<pre ><code class="java">// output all the contents of the list
+System.out.println("List contents:");
+for (int number : list) {
+    System.out.println(number);
+}</code></pre>
+<p>“Foreach” loop syntax above, regular for loop below:</p>
+<pre ><code class="java">for (int i = 0; i &lt; list.size(); i++) {
+    System.out.println(list.get(i));
+}</code></pre>
+</section>
+<section id="exercise-2" class="slide level2">
+<h2>Exercise</h2>
+<p>Write a method (with no parameters) which allows the user to input in as many numbers as possible (until they input in something that is not an integer), and continues to add them to an <code>ArrayList</code>. Test it out with the following main method:</p>
+<pre ><code class="java">public static void main(String[] args) {
+    ArrayList&lt;Integer&gt; numbersList = getInput();
+
+    // print out all the numbers in the list:
+    for (int i = 0; i &lt; numbersList.size(); i++) {
+        System.out.println("Element " + i + ": " + numbersList.get(i));
+    }
+}</code></pre>
+</section></section>
+<section>
+<section id="classes" class="title-slide slide level1">
+<h1>Classes</h1>
+<ul>
+<li><p>ArrayList is a <strong>class</strong></p></li>
+<li><p>class: a template for a data type</p>
+<pre ><code class="java">ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+ArrayList&lt;Integer&gt; list2 = new ArrayList&lt;&gt;();</code></pre></li>
+<li><p><code>list</code> and <code>list2</code> are different <strong>objects</strong> of type ArrayList</p></li>
+<li><p>What does <strong>new</strong> do?</p></li>
+</ul>
+</section>
+<section id="instantiation" class="slide level2">
+<h2>Instantiation</h2>
+<ul>
+<li>The <strong>new</strong> keyword <strong>instantiates</strong> the ArrayList object.</li>
+<li><strong>Instantiation</strong>: creating a new object of that type in memory.</li>
+<li>What does this involve?</li>
+</ul>
+</section>
+<section id="constructors" class="slide level2">
+<h2>Constructors</h2>
+<p>Another way to define ArrayLists:</p>
+<pre ><code class="java">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(25);</code></pre>
+<ul>
+<li>ArrayList has multiple <strong>constructors</strong></li>
+<li>Constructor: special method that is called when we the object is created
+<ul>
+<li>In particular, when the <strong>new</strong> keyword is used.</li>
+</ul></li>
+<li>Used to initialize the data type.</li>
+</ul>
+</section>
+<section id="instance-methods" class="slide level2">
+<h2>Instance Methods</h2>
+<pre ><code class="java">ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+ArrayList&lt;Integer&gt; list2 = new ArrayList&lt;&gt;();
+list.add(1);
+System.out.println("List 1 size: " + list.size());
+System.out.println("list 2 size: " + list2.size());</code></pre>
+<p>What does this print out? Why?</p>
+</section>
+<section id="instance-methods-1" class="slide level2">
+<h2>Instance Methods</h2>
+<ul>
+<li><code>list</code> and <code>list2</code> are different <em>objects</em>
+<ul>
+<li>Keep track of different arrays in memory!</li>
+<li>The arrays have different elements!</li>
+<li>The arrays may have different sizes!</li>
+</ul></li>
+<li><code>size</code> is an <em>instance</em> method.
+<ul>
+<li>as opposed to a <em>static</em> method</li>
+</ul></li>
+<li><strong>instance methods</strong>: methods which act on specific objects
+<ul>
+<li>not on the class as a whole!</li>
+</ul></li>
+<li>syntax: <code>object.method(parameters)</code></li>
+</ul>
+</section>
+<section id="new-data-types" class="slide level2">
+<h2>New data types?</h2>
+<p>How do we define our own data types?</p>
+<ul>
+<li>Define a <strong>class</strong>: <code>public class MyClass</code></li>
+<li>In the class:
+<ul>
+<li>Define a <em>constructor</em> to initialize your data</li>
+<li>Define <em>instance methods</em> to act on that data</li>
+<li>How do we specify the data? **instance variables*</li>
+</ul></li>
+<li>Outside of the class: use the class!</li>
+</ul>
+<pre ><code class="java">MyClass m = new MyClass();
+m.someMethod();</code></pre>
+</section>
+<section id="data-behavior" class="slide level2">
+<h2>Data / Behavior</h2>
+<ul>
+<li>Objects encapsulate <strong>data</strong> and <strong>behavior</strong>:</li>
+<li>integer variable:
+<ul>
+<li>data: actual number it represents</li>
+<li>behavior: add, subtract, etc.</li>
+</ul></li>
+<li>ArrayList variable?
+<ul>
+<li>data?</li>
+<li>behavior?</li>
+</ul></li>
+<li>User-defined types? often:
+<ul>
+<li>data: instance variables</li>
+<li>behavior: instance methods</li>
+</ul></li>
+</ul>
+</section>
+<section id="tostring-and-equals" class="slide level2">
+<h2>toString and equals</h2>
+<p>Special methods that every class defines.</p>
+<pre ><code class="java">ArrayList&lt;Integer&gt; list1 = new ArrayList&lt;&gt;();
+ArrayList&lt;Integer&gt; list2 = new ArrayList&lt;&gt;();
+list1.add(10);
+list2.add(10);
+if (list1 == list2) {
+    System.out.println("The lists refer to the same object");
+} else if (list1.equals(list2)) {
+    System.out.println("The two lists have the same contents:");
+    System.out.println(list1.toString());
+    // technically, we could just do:
+    // System.out.println(list1);
+}</code></pre>
+</section></section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Project 1: due Sunday night.</li>
+<li>Reading: skim chapters 9 and 11.</li>
+<li>Quiz 2: next <strong>Thursday</strong>, 3/10, 11:25-12:10.
+<ul>
+<li>Practice Problems on Monday.</li>
+</ul></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
