@@ -83,7 +83,7 @@ Hint: Consider the languages $\mathcal{L}_1 = \\{ a^n b^n : n \in \mathbb{N} \\}
 
 ## Exercise
 
-Find a CFG for $\mathcal{L} = \\{ 0, 1, 10, 11, 100, 101, \ldot \\}$, the set of all binary strings with no leading zeros.
+Find a CFG for $\mathcal{L} = \\{ 0, 1, 10, 11, 100, 101, \ldots \\}$, the set of all binary strings with no leading zeros.
 
 Hints:
 
