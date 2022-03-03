@@ -69,7 +69,9 @@ $$
 \left(\begin{matrix}1 & 0 & -\frac{1}{3} \\ 0 & 1 & \frac{7}{6}\end{matrix} \: \right| \: \left.\begin{matrix} -\frac{17}{3} \\ \frac{85}{3} \end{matrix}\right)
 $$
 
-Then, from RREF, we were able to find a **particular** solution, $\begin{pmatrix}-\frac{17}{3} \\\ \frac{85}{3} \\\ 0 \end{pmatrix}$, **and** the general form for the entire set of all solutions: $\\{ $\begin{pmatrix}-\frac{17}{3} \\\ \frac{85}{3} \\\ 0 \end{pmatrix} + a \cdot \begin{pmatrix}\frac{1}{3} \\\ -\frac{7}{6} \\\ 1 \end{pmatrix} : a \in \mathbb{R} \\}$.
+Then, from RREF, we were able to find a **particular** solution, $\begin{pmatrix}-\frac{17}{3} \\\ \frac{85}{3} \\\ 0 \end{pmatrix}$, **and** the general form for the entire set of all solutions: 
+
+$$\{ $\begin{pmatrix}-\frac{17}{3} \\ \frac{85}{3} \\ 0 \end{pmatrix} + a \cdot \begin{pmatrix}\frac{1}{3} \\ -\frac{7}{6} \\ 1 \end{pmatrix} : a \in \mathbb{R} \}.$
 
 If we isolate the two parts of this solution set, we have one particular solution, $\begin{pmatrix}-\frac{17}{3} \\\ \frac{85}{3} \\\ 0 \end{pmatrix}$, and the other part, $a \cdot \begin{pmatrix}\frac{1}{3} \\\ -\frac{7}{6} \\\ 1 \end{pmatrix}$ is the set of all "homogeneous" solutions!
 
@@ -112,13 +114,13 @@ In this last case, the only $n$-dimensional subspace of $\mathbb{R}^n$ is $\math
 Determine the set of all solutions to the following augmented matrix system:
 
 $$
-\left(\begin{matrix}1 & -3 \\ 2 & -1 \: \right| \end{matrix} \: \left.\begin{matrix} 1 \\ 1 \end{matrix}\right)
+\left(\begin{matrix}1 & -3 \\ 2 & -1\end{matrix} \: \right| \: \left.\begin{matrix} 1 \\ 1 \end{matrix}\right)
 $$
 
 In RREF:
 
 $$
-\left(\begin{matrix}1 & 0 \\ 0 & 1 \: \right| \end{matrix} \: \left.\begin{matrix} \frac{2}{5} \\ -\frac{1}{5} \end{matrix}\right)
+\left(\begin{matrix}1 & 0 \\ 0 & 1\end{matrix} \: \right| \: \left.\begin{matrix} \frac{2}{5} \\ -\frac{1}{5} \end{matrix}\right)
 $$
 
 Here we get the solution $x_1 = \frac{2}{5}$ and $x_2 = -\frac{1}{5}$. There are no free variables, so the only homogeneous solution is $\binom{0}{0}$!
