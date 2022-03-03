@@ -71,7 +71,7 @@ $$
 
 Then, from RREF, we were able to find a **particular** solution, $\begin{pmatrix}-\frac{17}{3} \\\ \frac{85}{3} \\\ 0 \end{pmatrix}$, **and** the general form for the entire set of all solutions: 
 
-$$\{ $\begin{pmatrix}-\frac{17}{3} \\ \frac{85}{3} \\ 0 \end{pmatrix} + a \cdot \begin{pmatrix}\frac{1}{3} \\ -\frac{7}{6} \\ 1 \end{pmatrix} : a \in \mathbb{R} \}.$$
+$$\{ \begin{pmatrix}-\frac{17}{3} \\ \frac{85}{3} \\ 0 \end{pmatrix} + a \cdot \begin{pmatrix}\frac{1}{3} \\ -\frac{7}{6} \\ 1 \end{pmatrix} : a \in \mathbb{R} \}.$$
 
 If we isolate the two parts of this solution set, we have one particular solution, $\begin{pmatrix}-\frac{17}{3} \\\ \frac{85}{3} \\\ 0 \end{pmatrix}$, and the other part, $a \cdot \begin{pmatrix}\frac{1}{3} \\\ -\frac{7}{6} \\\ 1 \end{pmatrix}$ is the set of all "homogeneous" solutions!
 
