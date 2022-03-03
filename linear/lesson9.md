@@ -112,13 +112,13 @@ In this last case, the only $n$-dimensional subspace of $\mathbb{R}^n$ is $\math
 Determine the set of all solutions to the following augmented matrix system:
 
 $$
-\left(\begin{matrix}1 & -3 \\ 2 & -1 \: \right| \end{matrix}\: \left. \begin{matrix} 1 \\ 1 \end{matrix}\right)
+\left(\begin{matrix}1 & -3 \\ 2 & -1 \: \right| \end{matrix} \: \left.\begin{matrix} 1 \\ 1 \end{matrix}\right)
 $$
 
 In RREF:
 
 $$
-\left(\begin{matrix}1 & 0 \\ 0 & 1 \: \right| \end{matrix} \: \left. \begin{matrix} \frac{2}{5} \\ -\frac{1}{5} \end{matrix}\right)
+\left(\begin{matrix}1 & 0 \\ 0 & 1 \: \right| \end{matrix} \: \left.\begin{matrix} \frac{2}{5} \\ -\frac{1}{5} \end{matrix}\right)
 $$
 
 Here we get the solution $x_1 = \frac{2}{5}$ and $x_2 = -\frac{1}{5}$. There are no free variables, so the only homogeneous solution is $\binom{0}{0}$!
@@ -142,25 +142,25 @@ How do we find $A^{-1}$? Gaussian Elimination, again! But instead of writing dow
 ## Example
 
 $$
-\left(\begin{matrix}1 & -3 \\  2 & -1 \: \right|  \end{matrix}\: \left. \begin{matrix}1 & 0 \\ 0 & 1 \end{matrix}\right)
+\left(\begin{matrix}1 & -3 \\  2 & -1 \: \right|  \end{matrix}\: \left.\begin{matrix}1 & 0 \\ 0 & 1 \end{matrix}\right)
 $$
 
 $-2 \cdot$ R1 + R2:
 
 $$
-\left(\begin{matrix}1 & -3 \\  0 & 5 \: \right|  \end{matrix}\: \left. \begin{matrix}1 & 0 \\ -2 & 1\end{matrix}\right)
+\left(\begin{matrix}1 & -3 \\  0 & 5 \: \right|  \end{matrix}\: \left.\begin{matrix}1 & 0 \\ -2 & 1\end{matrix}\right)
 $$
 
 $\frac{1}{5} \cdot$ R2:
 
 $$
-\left(\begin{matrix}1 & -3 \\  0 & 1 \: \right|  \end{matrix} \: \left. \begin{matrix} 1 & 0 \\ -\frac{2}{5} & \frac{1}{5} \end{matrix}\right)
+\left(\begin{matrix}1 & -3 \\  0 & 1 \: \right|  \end{matrix} \: \left.\begin{matrix} 1 & 0 \\ -\frac{2}{5} & \frac{1}{5} \end{matrix}\right)
 $$
 
 Now eliminate the top right with 3R2 + R1:
 
 $$
-\left(\begin{matrix}1 & 0 \\   0 & 1 \: \right|  \end{matrix} \: \left. \begin{matrix} -\frac{1}{5} & \frac{3}{5} \\ -\frac{2}{5} & \frac{1}{5} \end{matrix}\right)
+\left(\begin{matrix}1 & 0 \\   0 & 1 \: \right|  \end{matrix} \: \left.\begin{matrix} -\frac{1}{5} & \frac{3}{5} \\ -\frac{2}{5} & \frac{1}{5} \end{matrix}\right)
 $$
 
 So that means the inverse of $\begin{pmatrix}1 & -3 \\\ 2 & -1\end{pmatrix}$ is $\begin{pmatrix}-\frac{1}{5} & \frac{3}{5} \\\ -\frac{2}{5} & \frac{4}{5} \end{pmatrix}$.
