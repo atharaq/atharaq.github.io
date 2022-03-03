@@ -246,3 +246,7 @@ $$
 2 & 1 & 3
 \end{pmatrix}
 $$
+
+# Upcoming
+
+**Exam 1**: Thursday, **March 10** (one week from today). We will review on Monday.

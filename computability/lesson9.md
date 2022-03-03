@@ -116,13 +116,9 @@ These are basically the same derivations: each application of a rule replaced th
 
 What is the difference here? To explain the difference between true ambiguities like 1/3 instead of 1/2, we use **parse trees** or **leftmost derivations**.
 
-The parse trees for (1) and (2) are the same:
+In the image below, the left is the parse tree for (1) and (2),a nd the right is the parse tree for (3):
 
-(image of parse tree 1)
-
-The parse tree for (3) is different than those:
-
-(image of parse tree for 3)
+<img class="noreverse" src="parse-trees.jpeg" />
 
 **Definitions**:
 
@@ -146,7 +142,7 @@ $$
 
 The string $a + a \times a$ is generated ambiguously.
 
-(parse trees)
+<img src="ambiguity-expressions.jpeg" class="noreverse" />
 
 Let's introduce some precedence rules:
 
