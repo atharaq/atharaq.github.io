@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2022-03-07">
+  <title>CS2 Lesson 10</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 10</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">7 March 2022</p>
+</section>
+
+<section>
+<section id="review-of-terms" class="title-slide slide level1">
+<h1>Review of terms</h1>
+<!--
+* 10:30 - 10:40 Review of terms
+* 10:40 - 11:00 Designing classes example
+* 11:00 - 11:20 Exercise: toString
+* (If time at 11:15) Magic Numbers
+* 11:30 - 11:50 Quiz Review: what does this do
+* 11:50 - 12 Sum exercise
+* 12 - 12:10
+-->
+<ul>
+<li><strong>class</strong>: a template for a new data type. Examples: <code>ArrayList</code>, <code>Scanner</code>.</li>
+<li><strong>object</strong>: a particular instance of a class.</li>
+<li><strong>constructor</strong>: a method that is invoked when the <strong>new</strong> keyword is used. This method is used for setting up anything we need to create an object of that type.</li>
+</ul>
+</section>
+<section id="more-terms" class="slide level2">
+<h2>More terms</h2>
+<ul>
+<li><strong>instance method</strong>: a method which is invoked on an object. Example: <code>list.add(5);</code></li>
+<li><strong>static method</strong>: a method invoked using the name of a class. Example: <code>Math.sqrt(25);</code>.</li>
+</ul>
+</section></section>
+<section>
+<section id="designing-classes" class="title-slide slide level1">
+<h1>Designing classes</h1>
+<p>Create a new file, call it “Time.java”. Create the class:</p>
+<pre ><code class="java">public class Time {
+
+}</code></pre>
+</section>
+<section id="instance-variables" class="slide level2">
+<h2>Instance Variables</h2>
+<p>Inside the class, we can declare our instance variables, constructors, and instance methods. Declare three new variables:</p>
+<pre ><code class="java">private int hour;
+private int minute;
+private String amPm;</code></pre>
+<p>These are <strong>instance variables</strong>. Each instance of the Time class will have their own variables (independent of all the other instances).</p>
+</section>
+<section id="constructors" class="slide level2">
+<h2>Constructors</h2>
+<p>Now let’s give our class a constructor. We need an hour, minute, and whether it is AM or PM actually initialize our instance variables, so let’s pass them in as parameters.</p>
+<pre ><code class="java">public Time(int currentHour, int currentMinute, String amOrPm) {
+    hour = currentHour;
+    minute = currentMinute;
+    amPm = amOrPm;
+}</code></pre>
+</section>
+<section id="using-the-class" class="slide level2">
+<h2>Using the class</h2>
+<p>In Main.java:</p>
+<pre ><code class="java">public class Main {
+    public static void main(String[] args) {
+        Time time = new Time(11, 2, "AM");
+        System.out.println(time); // this is not so great
+    }
+}</code></pre>
+<p>What happened?</p>
+</section>
+<section id="tostring" class="slide level2">
+<h2>toString</h2>
+<p>There are certain special methods that <strong>every</strong> class should define. Two of them are <strong>toString</strong> and <strong>equals</strong>.</p>
+<pre ><code class="java">public String toString() {
+
+
+}</code></pre>
+<ul>
+<li>toString returns a “String” representation of the object. <code>System.out.println</code> uses this toString method under the hood!</li>
+<li><strong>Exercise</strong>: implement the toString() method.</li>
+</ul>
+</section>
+<section id="problem" class="slide level2">
+<h2>Problem?</h2>
+<pre ><code class="java">Time time = new Time(13, 75, "Go away!");
+System.out.println(time);</code></pre>
+<ul>
+<li>Is there a way we can get it to not work?</li>
+<li>What happens when you create an ArrayList with a negative size?
+<ul>
+<li>Throws an <code>IllegalArgumentException</code>!</li>
+<li>We can do that too!</li>
+</ul></li>
+</ul>
+</section>
+<section id="error-checking" class="slide level2">
+<h2>Error Checking</h2>
+<pre ><code class="java">public Time(int currentHour, int currentMinute, String amOrPm) {
+    if (currentHour &lt; 1 || currentHour &gt; 12) {
+        throw new IllegalArgumentException("hour must be between 1 and 12");
+    } else {
+        hour = currentHour;
+    }
+    ...
+}</code></pre>
+<ul>
+<li>Yes, this will crash the program.</li>
+<li>Not <code>Time</code>’s problem.</li>
+<li>It’s a main method problem: make sure you validate <strong>before</strong> creating a Time object.</li>
+<li>More on <em>handling</em> exceptions later this semester.</li>
+</ul>
+</section></section>
+<section>
+<section id="magic-numbers" class="title-slide slide level1">
+<h1>Magic Numbers</h1>
+<ul>
+<li>We know that the hour needs to be between 1 and 12 by common sense. But it’s bad practice to use <strong>literals</strong> or “magic numbers”.</li>
+<li>Instead, we should use <strong>constant class variables</strong>, which have <em>names</em> which are easier to understand as we read the code (see: Think Java, 3.4).</li>
+</ul>
+</section>
+<section id="constant-class-variables" class="slide level2">
+<h2>Constant Class Variables</h2>
+<ul>
+<li>A <strong>class variable</strong> is a static variable: created once for the class as a whole (not created when constructors are called).</li>
+<li>To make a variable <strong>constant</strong> (meaning it can’t be changed after it is created), we use the <strong>final</strong> keyword. Here is an example:</li>
+</ul>
+<pre ><code class="java">public static final int MIN_HOUR = 1; // convention: constants are UPPER_CASE</code></pre>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Clean up your constructor so that it checks if the hour, minute, and “AM” or “PM” variables are valid. Use constant class variables so that there are no “magic values”.</p>
+</section></section>
+<section>
+<section id="quiz-review" class="title-slide slide level1">
+<h1>Quiz Review</h1>
+<!--
+Start by 11:30!
+-->
+<p>Similar format as last time:</p>
+<ul>
+<li>Determine what a method returns / outputs (memory diagrams!)</li>
+<li>Describe the method (“big picture”, one sentence). (Use examples + memory diagrams, then generalize)</li>
+<li>Write a method.</li>
+<li>Design a (simple) class (similar to the Time one we did today).</li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<pre ><code class="java">public boolean check(ArrayList&lt;String&gt; list) {
+  String nameOne, nameTwo;
+  for (int i = 0; i &lt; list.size(); i++) {
+    nameOne = list.get(i);
+    for (int j = i + 1; j &lt; list.size(); j++) {
+      nameTwo = list.get(j);
+      if (nameOne.equals(nameTwo)) {
+        return false;
+      }
+    }
+  }
+  return true;
+}</code></pre>
+<ul>
+<li><span class="math inline">\(list\)</span> = [“Alice”, “Bob”, “Chelsea”, “David”, “Bob”]?</li>
+<li><span class="math inline">\(list\)</span> = [“Alice”, “Bob”, “Chelsea”, “David”, “Eloise”]?</li>
+<li>Big picture description?</li>
+</ul>
+</section>
+<section id="write-a-method" class="slide level2">
+<h2>Write a method</h2>
+<p>Given a list of integers, return the sum of all the numbers in the list. For example, if our list is [1, -1, 2, -5], the we should return -3, since <span class="math inline">\(1 + (−1) + 2 + (−5) = -3\)</span>.</p>
+<pre ><code class="java">public static int sum(ArrayList&lt;Integer&gt; list) {
+
+
+
+
+}</code></pre>
+</section>
+<section id="write-a-method-1" class="slide level2">
+<h2>Write a method</h2>
+<p>Given an array of integers, return the <em>second smallest</em> element of the array. For example, if the array is [1, 2, 3, 0, 5, -2], this should return 0.</p>
+<pre ><code class="java">public int secondSmallest(int[] list) {
+
+
+
+}</code></pre>
+</section>
+<section id="design-a-class" class="slide level2">
+<h2>Design a class</h2>
+<p>Design a class which represents a date, consisting of a year, month, and a day. Implement the toString() method for your class. When you finish, the following main method should work with no changes:</p>
+<pre ><code class="java">public class Main {
+   public static void main(String[] args) {
+     Date today = new Date(2022, 3, 7);
+     System.out.println(today);  // should output 3/7/2022
+ }
+}</code></pre>
+</section>
+<section id="design-a-class-1" class="slide level2">
+<h2>Design a class</h2>
+<pre ><code class="java">public class Date {
+  // 1. what instance variables do we need?
+
+  // 2. constructor: how should we initialize those instance variables?
+  public Date(int y, int m, int d) {
+
+  }
+
+  // 3: toString: return the date in "month / day / year" format
+  public String toString() {
+
+  }
+}</code></pre>
+</section>
+<section id="reminders" class="slide level2">
+<h2>Reminders</h2>
+<ul>
+<li>We will have a lesson from 10:30 - 11:20.</li>
+<li>Quiz stars at 11:25.</li>
+<li>Bring <strong>one page</strong> (double-sided) of notes.</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
