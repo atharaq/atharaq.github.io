@@ -89,11 +89,11 @@ The idea of a pushdown automata is to use an NFA and add in "stack" memory. **Qu
 
 Informally: as we read 0s, **push** onto the stack. As you read 1s, pop from the stack. If the stack is empty, we accept.
 
-(image)
+<img class="noreverse" src="pda-attempt1.jpeg" />
 
 Does this actually work? No: the $\varepsilon$-transitions mess this up. For example, $001$ is accepted here, but it shouldn't be. So to get around this, we can use a special "start" marker on the stack.
 
-(image)
+<img class="noreverse" src="pda-0n-1n.jpeg" />
 
 ## Example
 
@@ -101,7 +101,7 @@ $\mathcal{L} = \\{ w : w$ is a palindrome $\\}$ over the alphabet $\Sigma = \\{ 
 
 The idea is to use non-determinism to *guess* when you are in the middle of the string. Before the middle of the string, we can "push" onto the stack, and then if we guess the middle correctly, we will be able to pop off the elements in reverse order, checking to see if they match with the input.
 
-(image)
+<img class="noreverse" src="pda-palindrome.jpeg" />
 
 ## Exercise
 
@@ -121,7 +121,7 @@ How would we use the stack to figure out when to transition between these?
   * If you see an $a$ and you can pop the start symbol, pop that, and go to the "more a's" state.
 * In the "more a's" state?
 
-(image)
+<img class="noreverse" src="pda-more-as.jpeg" />
 
 ## Questions
 
