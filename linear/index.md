@@ -19,3 +19,5 @@ layout: default
 * [Lesson 6: Matrix multiplication](lesson6.html)
 * [Lesson 7: Systems of equations](lesson7.html)
 * [Lesson 8: Gaussian Elimination](lesson8.html)
+* [Lesson 9: (More) Gaussian Elimination](lesson9.html)
+* [Lesson 10: Inverse Matrices and Exam 1 Review](lesson10.html)
