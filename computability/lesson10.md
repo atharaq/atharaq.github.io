@@ -1,4 +1,4 @@
-# Computability Lesson 10: Ambiguity and Pushdown
+# Computability Lesson 10: Ambiguity and Pushdown Automata
 {:.no_toc}
 
 1. Table of Contents
