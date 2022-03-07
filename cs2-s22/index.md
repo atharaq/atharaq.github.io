@@ -20,3 +20,4 @@ layout: default
 * [Lesson 7: Methods / Program Design](lesson7.html)
 * [Lesson 8: Method Design and Project 1 Hints](lesson8.html)
 * [Lesson 9: Intro to Classes](lesson9.html)
+* [Lesson 10: Designing Classes + Quiz Review](lesson10.html)
