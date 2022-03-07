@@ -19,3 +19,5 @@ layout: default
 * [Lesson 6: Regular expressions](lesson6.html)
 * [Lesson 7: Non-regular languages](lesson7.html)
 * [Lesson 8: Context-free Grammars](lesson8.html)
+* [Lesson 9: CFGs, formally](lesson9.html)
+* [Lesson 10: Ambiguity + Pushdown Automata](lesson10.html)
