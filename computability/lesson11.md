@@ -34,7 +34,7 @@ Consider the language $\mathcal{L} = \\{ 0^{2^n} : n \in \mathbb{N} \\}$. We saw
 
 We want a TM which recognizes $\mathcal{L}$. We start our computation with a string of 0s on the tape:
 
-(image of the tape)
+<img class="noreverse" src="tape.jpeg" />
 
 We want to check if it has $2^n$ 0s on it, for some $n$. How would we do that?
 
@@ -67,23 +67,23 @@ How would we implement this with a TM? (DFA + tape?)
 
 To do this, we will need to keep track of both "ends" of the tape. One way to do so is to overwrite the first 0 with a "blank" symbol, and then using the "blank" symbols, we can see if we are at the end of the tape.
 
-(Image of what happens to the tape on different computations)
+<img src="tape-configurations.jpeg" class="noreverse" />
 
 So what would the state diagram of this TM look like? We could start with, at the start state, checking to see if there's a blank or a 0. Keep in mind, that firs t0 will need to be replaced with a blank so that we can keep track of the beginning:
 
-(image of the start state, blank -> reject, 0 -> q1)
+<img class="noreverse" src="tm-part1.jpeg" />
 
 At $q_1$, we've seen exactly one zero. If we don't see any more, accept! If we see another one, we can "cross that off", and move to another state.
 
-(image of start -> q_1 -> q_2)
+<img class="noreverse" src="tm-part2.jpeg" />
 
 Now at $q_2$, we have seen two zeros by this point (so we are at an even number), and we've crossed off one. Let's set up a loop which will check for even/odd number of zeros, and cross off half of them:
 
-(image of start -> q_1 -> q_2 -> q_3)
+<img class="noreverse" src="tm-part3.jpeg" />
 
 At $q_3$, we would see an "odd" number of zeros. If we see a blank at the end, that means that there was an odd number, and so we reject.
 
-(image of start -> q_1 -> q_2 -> q_3 -> reject)
+<img class="noreverse" src="tm-part4.jpeg" />
 
 Now we're almost done. We just need to fill in a few more details:
 
@@ -92,7 +92,7 @@ Now we're almost done. We just need to fill in a few more details:
 
 So finally we get this machine:
 
-(final image)
+<img class="noreverse" src="tm-final.jpeg" />
 
 So the upshot is: using the tape, we **are** able to count!
 
@@ -107,27 +107,23 @@ The idea would be to "zig-zag" around the inequality symbol:
 * Go back, write an "x" over the first "a" on the left, and go forward and write an "x" over the first "a" after "<".
 * Keep doing this. If we ever run out of "a"s on the right, reject!
 
-(image of the tape at stage 1)
+<img class="noreverse" src="tape-lessthan.jpeg" />
 
 Then:
 
-(image of the tape after stage 2...)
+<img class="noreverse" src="tape-lessthan2.jpeg" />
 
 So again, step one might look like this:
 
-(image of q_0 -> reject with a blank, or -> q_1 with a)
+<img class="noreverse" src="tm-lt-1.jpeg" />
 
-At $q_1$, skip over everything until we see the "<":
+At $q_1$, skip over everything until we see the "<". Then go to $q_2$, where you skip to the first "a" and replace it with an "x".
 
-(image of q_0 -> q_1, loop, -> q_2 with a <)
+<img class="noreverse" src="tm-lt-2.jpeg" />
 
-At $q_2$, skip over all the "x"s, until you get to an "a", then replace that with an "x". Move left, so that we can go back past the "<", and zig zag:
+Now skip over all the x's, searching back until you see the "<". Transition to $q_4$.
 
-(image of q_0 -> q_1 -> q_2 -> q_3)
-
-Now skip over all the x's, searching back until you see the "<".
-
-(image of q_3 -> q_4).
+<img class="noreverse" src="tm-lt-3.jpeg" />
 
 At this point, I'll skip to the end, but we have a few more things to do:
 
@@ -136,7 +132,7 @@ At this point, I'll skip to the end, but we have a few more things to do:
   * If we never see an "a", then that means we've crossed off everything on the left. Enter a new state ($q_6$) which looks for an "a" on the right, and then accepts if it finds one (rejects if it doesn't!)
   * If we do see an "a", cross it off, and return to $q_1$, which was our original "crossed off one a on the left" state.
 
-(finale image)
+<img class="noreverse" src="tm-lt-final.jpeg" />
 
 **Question**: At a "high level", how might we be able to use the tape to decide if a string is of the form $a^n + a^m = a^{n + m}$? Or of the form $a^{n} \times a^{m} = a^{nm}$?
 
