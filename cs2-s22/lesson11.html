@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2022-03-10">
+  <title>CS2 Lesson 11</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 11</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">10 March 2022</p>
+</section>
+
+<section>
+<section id="last-time" class="title-slide slide level1">
+<h1>Last time</h1>
+<ul>
+<li>Classes are templates for data types.</li>
+<li>Declare a class: name <code>public class MyClass</code> in file MyClass.java</li>
+<li>Declare instance variables.</li>
+<li>Define your constructor(s)</li>
+<li>Define your instance methods, like toString</li>
+</ul>
+<!--
+* 10:30 - 10:40 Last time
+* 10:40 - 11:00 Designing classes example
+* 11:00 - 11:20 Exercise: toString
+* 11:25 - 12:10 Quiz
+-->
+</section>
+<section id="problem" class="slide level2">
+<h2>Problem?</h2>
+<pre ><code class="java">Time time = new Time(13, 75, "Go away!");
+System.out.println(time);</code></pre>
+<ul>
+<li>Is there a way we can get it to not work?</li>
+<li>What happens when you create an ArrayList with a negative size?
+<ul>
+<li>Throws an <code>IllegalArgumentException</code>!</li>
+<li>We can do that too!</li>
+</ul></li>
+</ul>
+</section>
+<section id="error-checking" class="slide level2">
+<h2>Error Checking</h2>
+<pre ><code class="java">public Time(int currentHour, int currentMinute, String amOrPm) {
+    if (currentHour &lt; 1 || currentHour &gt; 12) {
+        throw new IllegalArgumentException("hour must be between 1 and 12");
+    } else {
+        hour = currentHour;
+    }
+    ...
+}</code></pre>
+<ul>
+<li>Yes, this will crash the program.</li>
+<li>Not <code>Time</code>’s problem.</li>
+<li>It’s a main method problem: make sure you validate <strong>before</strong> creating a Time object.</li>
+<li>More on <em>handling</em> exceptions later this semester.</li>
+</ul>
+</section></section>
+<section>
+<section id="magic-numbers" class="title-slide slide level1">
+<h1>Magic Numbers</h1>
+<ul>
+<li>We know that the hour needs to be between 1 and 12 by common sense. But it’s bad practice to use <strong>literals</strong> or “magic numbers”.</li>
+<li>Instead, we should use <strong>constant class variables</strong>, which have <em>names</em> which are easier to understand as we read the code (see: Think Java, 3.4).</li>
+</ul>
+</section>
+<section id="constant-class-variables" class="slide level2">
+<h2>Constant Class Variables</h2>
+<ul>
+<li>A <strong>class variable</strong> is a static variable: created once for the class as a whole (not created when constructors are called).</li>
+<li>To make a variable <strong>constant</strong> (meaning it can’t be changed after it is created), we use the <strong>final</strong> keyword. Here is an example:</li>
+</ul>
+<pre ><code class="java">// convention: constants are UPPER_CASE
+public static final int MIN_HOUR = 1;</code></pre>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Clean up your constructor so that it checks if the hour, minute, and “AM” or “PM” variables are valid. Use constant class variables so that there are no “magic values”.</p>
+</section></section>
+<section>
+<section id="object-oriented-design" class="title-slide slide level1">
+<h1>Object-oriented Design</h1>
+<p>Analogy: grammar. Objects are <strong>nouns</strong>, methods are <strong>verbs</strong>.</p>
+<p>Recall “modular design”: break big problems into smaller components, test each one on its own.</p>
+</section>
+<section id="object-oriented-design-1" class="slide level2">
+<h2>Object-oriented design</h2>
+<ul>
+<li>Break your problem up into <strong>components</strong>.</li>
+<li>Now: components should be the “nouns” of the problem (the <em>things</em> involved).</li>
+<li>Implement each component in its own class.
+<ul>
+<li>Think about the <strong>data</strong> that is required to represent each component (instance variables).</li>
+<li>Think about the <strong>actions</strong> the object should be able to do (instance methods).</li>
+</ul></li>
+</ul>
+</section>
+<section id="example-project-2" class="slide level2">
+<h2>Example: Project 2</h2>
+<ul>
+<li>Course roster / gradebook:</li>
+<li>Courses contain a list of Students.</li>
+<li>Each Student has a <strong>name</strong>, <strong>ID</strong>, and a <strong>grade</strong>.</li>
+<li>For a course:
+<ul>
+<li>add a student to the course</li>
+<li>list all students in the course</li>
+<li>find a student (by name)</li>
+<li>find all students above a particular grade</li>
+</ul></li>
+<li>Main: loop around, give user the above choices, or the option to quit the program.</li>
+</ul>
+</section>
+<section id="design" class="slide level2">
+<h2>Design?</h2>
+<p>What are the nouns here?</p>
+</section>
+<section id="exercise-student-class" class="slide level2">
+<h2>Exercise: Student class</h2>
+<ul>
+<li>Implement the Student class.</li>
+<li>First think about the data needed to represent it.
+<ul>
+<li>Declare the instance variables.</li>
+<li>Create a constructor for the class</li>
+<li>Create a toString method for it so that a Student is outputted in the format: Name (ID): grade</li>
+</ul></li>
+<li><a href="https://replit.com/team/cs2-spring22/Student-class">Finish for homework</a>.
+<ul>
+<li>Run the tests for it!</li>
+</ul></li>
+</ul>
+</section>
+<section id="caveat" class="slide level2">
+<h2>Caveat</h2>
+<p>You will probably need to add to this class later, as you start implementing the methods in the Course class! For example, you may need a getName() method or a getGrade() method.</p>
+</section>
+<section id="course-class-discussion" class="slide level2">
+<h2>Course class discussion</h2>
+<ul>
+<li>What data (instance variables) should the Course class have?</li>
+<li>What instance methods should the Course class have?</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
