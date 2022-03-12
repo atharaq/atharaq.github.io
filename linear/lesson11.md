@@ -134,7 +134,7 @@ How do we compute this area? Again, suppose $A = \begin{pmatrix}a & b \\\ c & d\
 
 <img src="determinant-formula.png" />
 
-Let's come up with a formula the same way we did before. First, the area of the big rectangle is $(a + b) \times (c + d)$ (length times width). Do a little bit of algebra to get $ac + ad + bc + bd$.
+Let's come up with a formula the same way we did before. First, the area of the big rectangle is $(a + b) \times (c + d)$ (length times width). Expand this: $ac + ad + bc + bd$.
 
 Next, we compute the following areas:
 
