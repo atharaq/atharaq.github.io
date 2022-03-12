@@ -70,7 +70,13 @@ As an aside: what is this matrix $A$? It's the function that we get by letting $
 
 ## Extra Credit
 
-**Due Thursday** on Moodle...
+**Due Thursday** on Moodle. Whether you answered this correctly on the exam or not, you may re-do Question 4 for an extra **10 points** on the exam. (It was originally worth 15):
+
+Let $M = \begin{pmatrix}1 & 2 \\\ 3 & 4 \\\ 5 & 6\end{pmatrix}$.
+
+1. Find a vector $\vec{b}$ that is not in the image of $M$. That is, set up an augmented matrix system, reduce, and plug in values for $x$, $y$ and $z$ that make the system inconsistent.
+2. Let $\vec{b}$ be the vector you found in the previous part and $A$ be the function such that $A\begin{pmatrix}1 \\\ 0 \\\ 0\end{pmatrix} = M\binom{1}{0}$, $A\begin{pmatrix}0 \\\ 1 \\\ 0 \end{pmatrix} = M\binom{0}{1}$, and $A\begin{pmatrix}0 \\\ 0 \\\ 1\end{pmatrix} = \vec{b}$. Write the matrix representation for $A$.
+3. Show that $A$ is invertible. What does this mean about the span of the vectors $\begin{pmatrix}1 \\\ 3 \\\ 5\end{pmatrix}, \begin{pmatrix}2 \\\ 4 \\\ 6 \end{pmatrix}$ and $\vec{b}$?
 
 # Areas
 
