@@ -176,16 +176,16 @@ $$
 
 That is: it's just 3 times the area of the original parallelogram. We've shown that this matrix $T$ always rescales parallelograms by a factor of 3!
 
-## Negative Determinants
-
-...
-
-## Zero Determinant
-
-...
-
-## Product of Determinants
-
-...
-
 # Homework
+
+Watch the following video from the Essence of Calculus series:
+
+<div class="youtube-container"><iframe src="https://www.youtube.com/embed/Ip3X9LOh2dk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+Answer the following on Moodle **before class** on Thursday:
+
+1. What does a negative determinant mean (for a 2 x 2 matrix)
+2. What would a determinant of zero mean? (For a 2 x 2 matrix)
+3. What does the determinant of a 3 x 3 matrix mean?
+
+Next time we will go through how to compute determinants for higher dimensional matrices, but I think it's worth making sure we have a conceptual understanding first.
