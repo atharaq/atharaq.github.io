@@ -167,7 +167,8 @@ The area of the the parallelogram whose vertices are at the origin, $T(\vec{v})$
 $$
 \begin{align}
 (2v_1 + v_2)(w_1 + 2w_2) - (v_1 + 2v_2)(2w_1 + w_2) \\
-= (2v_1 w_1 + 4v_1 w_2 + v_2 w_1 + 2 v_2w_2) - (2v_1w_1 + v_1 w_2 + 4 v_2 w_1 + 2 v_2 w_2) \\
+= (2v_1 w_1 + 4v_1 w_2 + v_2 w_1 + 2 v_2w_2) \\
+- (2v_1w_1 + v_1 w_2 + 4 v_2 w_1 + 2 v_2 w_2) \\
 = 3v_1 w_2 - 3 v_2 w_1 \\
 = 3(v_1 w_2 - v_2 w_1)
 \end{align}
