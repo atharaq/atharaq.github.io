@@ -103,7 +103,7 @@ Consider the rectangle with vertices at the origin, $\binom{2}{0}$, $\binom{0}{3
 <img src="area-image-exercise.png" />
 
 <details>
-<summary>Check yoru answers</summary>
+<summary>Check your answers</summary>
 <ul>
 <li>The area of the rectangle is $2 \times 3 = 6$.</li>
 <li>The image of the rectangle is the parallelogram with vertices at the origin, $\binom{6}{2}$, $\binom{3}{6}$, and $\binom{9}{8}$.</li>
@@ -124,8 +124,67 @@ So the area of the parallelogram is $72 - (6 + 6 + 6 + 9 + 9 + 6) = 30$.</li>
 
 ## Determinants
 
+For any 2D shape in the plane, in general, this  $\begin{pmatrix}3 & 1 \\\ 1 & 2\end{pmatrix}$ will re-scale *every* shape by the same factor of 5. This might not be immediately obvious, but it boils down to the idea of linearity. Remember the "Essence of Linear Algebra" videos, and how they depicted linear functions changing the "gridlines" of a plane? That's exactly the image we should have in mind: that the "coordinate grid" is transformed in some way, and there is this one, constant scaling factor that tells you the area of the parallelograms we get in those gridlines. In this case, each of the parallelograms in the gridlines would have an area of 5.
+
+This is not unique to this particular matrix. Every single matrix $A = \begin{pmatrix} a & b \\\ c & d\end{pmatrix}$ will similarly have a scaling factor. We call this scaling factor the **determinant**.
+
+**Definition**: The determinant of a $2 \times 2$ matrix $A$ is the area of the image of the unit square under $A$. That is, it is the area of the parallelogram whose vertices are the origin, $A\binom{1}{0}$, $A\binom{0}{1}$, and $A\binom{1}{1}$.
+
+How do we compute this area? Again, suppose $A = \begin{pmatrix}a & b \\\ c & d\end{pmatrix}$. Then the image of the unit square would be:
+
+<img src="determinant-formula.png" />
+
+Let's come up with a formula the same way we did before. First, the area of the big rectangle is $(a + b) \times (c + d)$ (length times width). Do a little bit of algebra to get $ac + ad + bc + bd$.
+
+Next, we compute the following areas:
+
+1. The top left rectangle: $b \times c$.
+2. The top triangle: $\frac{1}{2}(a \times c)$.
+3. The bottom triangle: $\frac{1}{2}(a \times c)$.
+4. The left triangle: $\frac{1}{2}(b \times d)$.
+5. The right triangle: $\frac{1}{2}(b \times d)$.
+6. The bottom right rectangle: $b \times c$.
+
+Add these up: $bc + \frac{1}{2}(ac) + \frac{1}{2} ac + \frac{1}{2}bd + \frac{1}{2}bd + bc = 2bc + ac + bd$.
+
+Now subtract this from the larger area: $A = (ac + ad + bc + bd) - (2bc + ac + bd)$. The $ac$ and $bd$ terms cancel, and we are left with $ad - bc$. This is the formula for the **determinant**!
+
+$\mathrm{det}(A) = ad - bc$.
+
+**Notation**: We use vertical bars (absolute value notation) to denote the determinant of a matrix.
+
+## Areas of parallelograms
+
+This actually gives us a formula for the area of *any* parallelogram with one corner at the origin. Suppose we have vectors $\vec{v} = \binom{v_1}{v_2}$ and $\vec{w} = \binom{w_1}{w_2}$. Then the area of the parallelogram with vertices at the origin, $\vec{v}$, $\vec{w}$ and $\vec{v} + \vec{w}$ is $v_1 w_2 - v_2 w_1$!
+
+Consider the matrix $T = \begin{pmatrix}2 & 1 \\\ 1 & 2 \end{pmatrix}$. The determinant of $T$ is $2 \times 2 - 1 \times 1 = 3$. I claim that $T$ rescales *every* parallelogram by a factor of $3$ (I said this earlier, but let's do the algebra now to reassure ourselves). That is, let's look at the vectors $T(\vec{v})$, $T(\vec{w})$ and $T(\vec{v} + \vec{w})$, and look at the area of that parallelogram:
+
+* $T(\vec{v}) = \binom{2v_1 + v_2}{v_1 + 2v_2}$.
+* $T(\vec{w}) = \binom{2w_1 + w_2}{w_1 + 2w_2}$.
+
+The area of the the parallelogram whose vertices are at the origin, $T(\vec{v})$, $T(\vec{w})$, and $T(\vec{v}) + T(\vec{w})$ would then be found by the same formula: $(2v_1 + v_2)(w_1 + 2w_2) - (v_1 + 2v_2)(2w_1 + w_2)$. Let's do some algebra:
+
+$$
+\begin{align}
+(2v_1 + v_2)(w_1 + 2w_2) - (v_1 + 2v_2)(2w_1 + w_2) \\
+= (2v_1 w_1 + 4v_1 w_2 + v_2 w_1 + 2 v_2w_2) - (2v_1w_1 + v_1 w_2 + 4 v_2 w_1 + 2 v_2 w_2) \\
+= 3v_1 w_2 - 3 v_2 w_1 \\
+= 3(v_1 w_2 - v_2 w_1)
+\end{align}
+$$
+
+That is: it's just 3 times the area of the original parallelogram. We've shown that this matrix $T$ always rescales parallelograms by a factor of 3!
+
+## Negative Determinants
+
 ...
 
-## Determinant of AB
+## Zero Determinant
+
+...
+
+## Product of Determinants
+
+...
 
 # Homework
