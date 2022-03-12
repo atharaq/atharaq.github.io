@@ -197,6 +197,12 @@ We also need to mark off the symbols that are currently under the read-write hea
 
 We do this by enlarging the alphabet to have these "marked" symbols as well. Then the TM should scan through the tape, keep track of the "marked" symbols, figure out what to do, and then do another scan to update the tape contents.
 
+**Question**: Since the tapes are "infinite", how do we know where to put the "delimeter"? What if we move past what we think is the "edge" of one tape?
+
+In such a case, we would need to add a blank space and shift the contents to the right.
+
+How would we do this? Can you figure out how to implement a "shift" operation on a TM?
+
 # Homework
 
 ...
