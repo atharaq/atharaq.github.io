@@ -21,3 +21,4 @@ layout: default
 * [Lesson 8: Context-free Grammars](lesson8.html)
 * [Lesson 9: CFGs, formally](lesson9.html)
 * [Lesson 10: Ambiguity + Pushdown Automata](lesson10.html)
+* [Lesson 11: Turing Machines (intro)](lesson11.html)

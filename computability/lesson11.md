@@ -1,4 +1,4 @@
-# Computability Lesson 10: Ambiguity and Pushdown Automata
+# Computability Lesson 11: Turing Machines
 {:.no_toc}
 
 1. Table of Contents
