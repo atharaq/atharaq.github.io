@@ -74,9 +74,57 @@ As an aside: what is this matrix $A$? It's the function that we get by letting $
 
 # Areas
 
-(area of parallelogram calculation)
+Let's think about linearity geometrically again. Think about the "unit square", the square with vertices at the origin, $\binom{1}{0}$, $\binom{0}{1}$, and $\binom{1}{1}$. If $T : \mathbb{R}^2 \to \mathbb{R}^2$ is linear, then $T(\binom{1}{0} + \binom{0}{1}) = T\binom{1}{0} + T\binom{0}{1}$. That means that the unit square is mapped to a parallelogram:
+
+(image of T mapping the unit square to a parallelogram)
+
+What is the area of this parallelogram? For example, consider the matrix $M = \begin{pmatrix}3 & 1 \\\ 1 & 2 \end{pmatrix}$. What is the area of the image of the unit square under $M$? In other words, what's the area of the parallelogram whose vertices are the origin, $\binom{3}{1}$, $\binom{1}{2}$, and $\binom{4}{3}$? [See the graph here.](https://sagecell.sagemath.org/?z=eJxlzb8KgzAQBvBd8B1ujHgUbeno7OQThAxRCmawllOS-Pb9SNMidDq-3_0bqKPB7uKi0vrG1BrWLdPVmKosysKj7R_Tvor6dKHhZGkUZmFWZA1KN0yNYfLQ8U8DtIf2Yl-zmzaVco2xXMdvTmsed6jOWz8NJ71sMyQu7tkRfsTFRpy_Mx0gSnZkq97jXDyy&lang=sage&interacts=eJyLjgUAARUAuQ==)
+
+We could use the area of a parallelogram formula from geometry, but instead of trying to remember that, let's just try to figure it out ourselves. This parallelogram sits inside of a 4 x 3 rectangle. We can draw that rectangle, and slice it up into rectangular and triangular regions whose areas we know how to calculate, and then find the area of the parallelogram:
+
+<img src="parallelogram-area-calculation.png" />
+
+To find the area of the parallelogram, we first will need to find the following areas:
+
+1. The area of the big rectangle: this is $4 \times 3 = 12$.
+2. The area of the small rectangle on the top left: this is $1 \times 1 = 1$.
+3. The area of the triangle on top: this is $\frac{1}{2}(3 \times 1) = \frac{3}{2}$.
+4. The area of the triangle on the bottom: $\frac{1}{2}(3 \times 1) = \frac{3}{2}$. (Notice?)
+5. The area of the left triangle: $\frac{1}{2}(2 \times 1) = 1$.
+6. The area of the right triangle: $\frac{1}{2}(2 \times 1) = 1$. (Notice?)
+7. The area of the rectangle on the bottomr right: $1 \times 1 = 1$.
+
+Subtract all those smaller areas from the big rectangle, and we get that the area is $12 - (1 + \frac{3}{2} + \frac{3}{2} + 1 + 1 + 1)$, which is $5$.
+
+## Exercise
+
+Consider the rectangle with vertices at the origin, $\binom{2}{0}$, $\binom{0}{3}$ and $\binom{2}{3}$. What is the area of this rectangle? What is the image of this rectangle? What is the area of the image of this rectangle?
+
+<img src="area-image-exercise.png" />
+
+<details>
+<summary>Check yoru answers</summary>
+<ul>
+<li>The area of the rectangle is $2 \times 3 = 6$.</li>
+<li>The image of the rectangle is the parallelogram with vertices at the origin, $\binom{6}{2}$, $\binom{3}{6}$, and $\binom{9}{8}$.</li>
+<li>To find the area: first take the area of the big rectangle ($9 \times 8 = 72$). Then the following areas are:
+<ol>
+<li>Top rectangle: $3 \times 2 = 6$.</li>
+<li>Top triangle: $\frac{1}{2}(2 \times 6) = 6$.</li>
+<li>Bottom triangle: $\frac{1}{2}(2 \times 6) = 6$.</li>
+<li>Left triangle: $\frac{1}{2}(3 \times 6) = 9$.</li>
+<li>Right triangle: $\frac{1}{2}(3 \times 6) = 9$.</li>
+<li>Bottom rectangle: $3 \times 2 = 6$.</li>
+</ol>
+So the area of the parallelogram is $72 - (6 + 6 + 6 + 9 + 9 + 6) = 30$.</li>
+</ul>
+
+<p>Notice that the area of the parallelogram is 5 times the area of the original rectangle! This is the same amount by which we re-scaled the area of the unit square as well!</p>
+</details>
 
 ## Determinants
+
+...
 
 ## Determinant of AB
 
