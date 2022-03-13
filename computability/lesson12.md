@@ -41,15 +41,17 @@ Convince yourself of two things:
 
 How would the tape look on the string $a + a = aa$?
 
-(image)
+<img class="noreverse" src="tape-a-plus-a-eq-aa.jpeg" />
 
 How would the tape look on $a + a = a$?
 
-(image)
+<img class="noreverse" src="tape-a-plus-a-eq-a.jpeg" />
 
 What about for $a + a = aaa$?
 
-(image)
+<img class="noreverse" src="tape-a-plus-a-eq-aaa.jpeg" />
+
+After this stage, at step 9, we see an uncrossed a on the right side, so we reject.
 
 ## Exercise
 
@@ -158,11 +160,11 @@ If $M$ is a TM, then it automatically satisfies the definition of a "stay-put" T
 
 Conversely, we need to show that given a stay-put TM $M$, we can convert it to a regular TM $M^\prime$ which would recognize (and/or decide) the same language. We can do this, simply, by replacing every transition of the form
 
-(image)
+<img class="noreverse" src="stay-transition.jpeg" />
 
 with:
 
-(image)
+<img class="noreverse" src="stay-simulated.jpeg" />
 
 We would need to do add such a new state for each transition of this form. But since $M$ has finitely many transitions, there would only be finitely many new states we'd need to add to get $M^\prime$. We won't give a full description of this, but this should be enough to convince ourselves of the following facts:
 
@@ -185,15 +187,15 @@ For example, $\delta(q, a, b) = (q^\prime, c, d, L, S)$ means that at state $q$,
 
 **Proof**: The idea is to keep track of both tapes and their read-write head positions. That is:
 
-(image)
+<img class="noreverse" src="two-tapes.jpeg" />
 
 To simulate this with just one tape, write the contents of both tapes on the one tape, separated by some delimeter. We will use the \# character for this purpose:
 
-(image)
+<img class="noreverse" src="two-tapes-concatenated.jpeg" />
 
 We also need to mark off the symbols that are currently under the read-write heads:
 
-(image)
+<img class="noreverse" src="two-tapes-with-rw-heads.jpeg" />
 
 We do this by enlarging the alphabet to have these "marked" symbols as well. Then the TM should scan through the tape, keep track of the "marked" symbols, figure out what to do, and then do another scan to update the tape contents.
 
@@ -214,4 +216,6 @@ Get started on these early and come prepared with questions if you have trouble 
 
 # Presentation 1?
 
-...
+On VoiceThread / Moodle. Due **Sunday** at 11:59 PM.
+
+(Rubric?)
