@@ -22,4 +22,4 @@ layout: default
 * [Lesson 9: Intro to Classes](lesson9.html)
 * [Lesson 10: Designing Classes + Quiz Review](lesson10.html)
 * [Lesson 11: Designing Classes / Quiz 2](lesson11.html)
-* [Lesson 12: Object-oriented Design](lesson12.html)
+* [Lesson 12: Mutability and Immutability](lesson12.html)
