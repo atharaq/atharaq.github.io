@@ -203,10 +203,11 @@ In such a case, we would need to add a blank space and shift the contents to the
 
 How would we do this? Can you figure out how to implement a "shift" operation on a TM?
 
-# Homework
+# Homework + PS3
 
-...
+Two things are posted on Moodle:
 
-# Problem Set 3
+1. Pre-work for Lesson 13 **due Thursday**, before class.
+2. Problem Set 3 **due next Thursday** (3/24) at 11:59 PM.
 
-...
+Get started on these early and come prepared with questions if you have trouble on any of these.
