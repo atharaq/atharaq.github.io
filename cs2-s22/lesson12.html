@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2022-03-14">
+  <title>CS2 Lesson 12</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 12</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">14 March 2022</p>
+</section>
+
+<section>
+<section id="visibility-modifiers" class="title-slide slide level1">
+<h1>Visibility Modifiers</h1>
+<!--
+10:30 - 10:40 Visibility modifiers
+10:40 - 10:55 Object Oriented Design + design discussion
+10:55 - 11:15 Exercise (create GI class + toString)
+11:15 - 11:25 Exercise (add)
+11:25 - 11:45 Exercise (Multiply)
+11:45 - 11:55 Immutability
+11:55 - 12:05 Exercise (make it immutable)
+-->
+<p>Variable declarations in <code>Time</code> class:</p>
+<pre ><code class="java">    public static final int MIN_HOUR = 1;
+    public static final int MAX_HOUR = 12;
+    public static final int MIN_MINUTE = 0;
+    public static final int MAX_MINUTE = 60;
+    public static final String AM = "AM";
+    public static final String PM = "PM";
+
+    private int hour;
+    private int minute;
+    private String amPm;</code></pre>
+<p>Constructor: <code>public Time(...)</code>. Some public / some private?</p>
+</section>
+<section id="public-vs-private" class="slide level2">
+<h2>Public vs private</h2>
+<p>Java has several different <strong>visibility modifiers</strong>:</p>
+<ul>
+<li><strong>public</strong>: this item (variable, method, constructor) can be used in code anywhere</li>
+<li><strong>protected</strong>: …</li>
+<li>default visibility (ie, leave out the words public or private): …</li>
+<li><strong>private</strong>: this item can be used in code only in the same class</li>
+</ul>
+</section>
+<section id="rule-of-thumb" class="slide level2">
+<h2>Rule of thumb</h2>
+<ul>
+<li>Make everything as private as you can.</li>
+<li>Restrict how others use your class.</li>
+<li>That way, you control how they will use it, and can predict / plan for bad behavior.</li>
+</ul>
+</section>
+<section id="bad-example" class="slide level2">
+<h2>Bad Example</h2>
+<pre ><code class="java">Time t = new Time(11, 59, Time.AM); // "11:59 AM"
+t.hour = 53;
+t.minute = -7;
+t.amPm = "Hah! I tricked you!";
+System.out.println(t);</code></pre>
+<ul>
+<li>Got around all of our error-checking!</li>
+<li>What should we do instead?</li>
+</ul>
+</section></section>
+<section>
+<section id="section" class="title-slide slide level1">
+<h1></h1>
+<p><a target="_blank" href="https://upload.wikimedia.org/wikipedia/commons/4/49/%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg"><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg/773px-%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg" alt="Plato and Aristotle in The School of Athens (Raphael)" /></a></p>
+</section>
+<section id="object-oriented-design" class="slide level2">
+<h2>Object Oriented Design</h2>
+<ul>
+<li>Classes are templates for data types</li>
+<li>Represent <strong>data</strong> and <strong>behavior</strong></li>
+<li>Break your problem up into components: the <em>nouns</em> of your problem.</li>
+<li>Implement each component in its own <em>class</em></li>
+<li>Think about the <em>data</em> required to represnt that component</li>
+<li>Think about the <em>actions</em> the object should be able to do.</li>
+</ul>
+</section>
+<section id="design-discussion" class="slide level2">
+<h2>Design discussion</h2>
+<p>A <strong>Gaussian integer</strong> is a complex number of the form <span class="math inline">\(a + bi\)</span>, where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are integers (<span class="math inline">\(i\)</span> is the imaginary number representing a square root of <span class="math inline">\(-1\)</span>). How would you design a Gaussian integer? What <strong>data</strong> is required to represent a Gaussian Integer? What are the <strong>actions</strong> it should be able to do?</p>
+</section>
+<section id="exercise-part-1" class="slide level2">
+<h2>Exercise (Part 1)</h2>
+<p>Create a GaussianInteger class.</p>
+<ul>
+<li>First create a GaussianInteger class and declare your instance variables.</li>
+<li>Create a constructor for that class and a toString method.</li>
+<li>In a separate class, make a main method that instantiates a GaussianInteger object and prints it out.</li>
+</ul>
+</section>
+<section id="exercise-part-2" class="slide level2">
+<h2>Exercise (Part 2)</h2>
+<p>Go back to your GaussianInteger class and create a method to <strong>add</strong> another GaussianInteger object. Test it out in your main method:</p>
+<pre ><code class="java">GaussianInteger g1 = new GaussianInteger(2, 3); // 2 + 3i
+GaussianInteger g2 = new GaussianInteger(3, -5); // 3 + 5i
+System.out.println(g1);
+System.out.println(g2);
+g1.add(g2); // Now g1 should be 5 + -2i
+System.out.println(g1);</code></pre>
+</section>
+<section id="exercise-part-3" class="slide level2">
+<h2>Exercise (Part 3)</h2>
+<p>Now create a method to <strong>multiply</strong> another GaussianInteger object. Test it out in the main method.</p>
+<p><strong>Hint</strong>: If <span class="math inline">\(g1 = a + bi\)</span>, and <span class="math inline">\(g2 = c + di\)</span>, then <span class="math inline">\(g1 \times g2 = (a + bi)(c + di) = (ac - bd) + (ad + bc)i\)</span></p>
+<pre ><code class="java">// test it out in main:
+GaussianInteger g = new GaussianInteger(1, 2); // 1 + 2i
+GaussianInteger x = new GaussianInteger(3, 4); // 3 + 4i
+g.multiply(x); // g should now be -5 + 10i
+System.out.println(g);</code></pre>
+</section></section>
+<section>
+<section id="immutability" class="title-slide slide level1">
+<h1>Immutability</h1>
+<p>Recall: an object is <strong>mutable</strong> if its data (instance variables) can be changed after the object was created. It is <strong>immutable</strong> otherwise. (Strings are immutable; ArrayLists are mutable.)</p>
+</section>
+<section id="our-gaussianinteger" class="slide level2">
+<h2>Our GaussianInteger</h2>
+<p>Was our implementation of GaussianInteger mutable or immutable? Consider the following code:</p>
+<pre ><code class="java">GaussianInteger gi = new GaussianInteger(3, 4);
+int something = SomeLibrary.libraryMethod(gi);
+System.out.println(gi); // what will this output?</code></pre>
+<p>Hope: it should output “3 + 4 i”. Will that always happen? (Even worse: what if SomeLIbrary.libraryMethod spawns a new thread, which runs in parallel…)</p>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p>Benefits of <strong>mutable</strong> objects:</p>
+<ul>
+<li>Flexibility.</li>
+<li>Easier to design</li>
+<li>Sometimes more efficient?</li>
+</ul>
+<p>Benefits of <strong>immutable</strong> objects:</p>
+<ul>
+<li>Safety! The object can be shared without worrying about what other methods / threads do to it.</li>
+<li>Easier to reason about.</li>
+<li>Other benefits require more material that we haven’t covered (yet): handles errors better, easier to parallelize, better to use with <code>Map</code> and <code>Set</code> types, <span class="math inline">\(\ldots\)</span></li>
+</ul>
+</section>
+<section id="immutable-gaussianinteger" class="slide level2">
+<h2>Immutable GaussianInteger</h2>
+<p>To re-design GaussianInteger to be an immutable type, first we can try to ensure that the instance variables can’t be changed: e.g. make them all <code>final</code>! First try that.</p>
+<div class="fragment">
+<p>Any errors? They tell us what we need to change:</p>
+<ul>
+<li><code>add</code> and <code>multiply</code>.</li>
+<li>Instead of making them <code>void</code>, have them return new <code>GaussianInteger</code> objects.</li>
+<li>Now we don’t change our original object!</li>
+</ul>
+</div>
+</section>
+<section id="changing-add-method" class="slide level2">
+<h2>Changing add method</h2>
+<pre ><code class="java">public GaussianInteger add(GaussianInteger other) {
+    GaussianInteger gi = new GaussianInteger(...); // fill this in
+    return gi;
+}</code></pre>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Re-design your GaussianInteger class to be immutable. Test it out with the following main method:</p>
+<pre ><code class="java">GaussianInteger one = new GaussianInteger(1, 0);
+GaussianInteger i = new GaussianInteger(0, 1);
+
+System.out.println(one); // should be 1 + 0i
+System.out.println(i); // should be 0 + 1i
+System.out.println(one.add(i)); // should be 1 + 1i
+System.out.println(one); // should still be 1 + 0i
+System.out.println(i.multiply(i)); // should be -1 + 0i
+System.out.println(i); // should be 0 + 1i</code></pre>
+</section></section>
+<section>
+<section id="homework" class="title-slide slide level1">
+<h1>Homework</h1>
+<ol type="1">
+<li>Finish the Student exercise if you haven’t already. Think about what instance variables the Course class should have. <strong>Be ready to discuss this on Thursday</strong>.</li>
+</ol>
+</section>
+<section id="homework-continued" class="slide level2">
+<h2>Homework (continued)</h2>
+<ol start="2" type="1">
+<li><strong>On Moodle</strong> (due by Thursday’s class): suppose we want to modify our Time class to add a new method <code>isEarlier</code>. This method should check if our “Time” instance is earlier in the day than another Time instance, and return <code>true</code> if it is earlier, or <code>false</code> if it isn’t.
+<ul>
+<li>What should the parameter(s) to this method be?</li>
+<li>What should the return type of this method be?</li>
+</ul></li>
+</ol>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
