@@ -114,18 +114,18 @@ I understand that this is a challenging and stressful time. Please check the [Co
 | ---- | ------ | -------- |
 | 1 (1/31, 2/3) | Introduction and Basic Data Types | Chapters 1 - 2 |
 | 2 (2/7, 2/10) | Input / Output, Control Flow | Chapters 3, 5-6 |
-| 3 (2/14, 2/17) | Arrays and Strings | Chapters 6 - 7 (Project 1 assigned); Quiz 1 |
-| 4 (2/21, 2/24) | Functions / Methods | Chapter 4 |
-| 5 (2/28, 3/3) | Project 1 discussion; Classes | Chapter 9; Quiz 2 |
-| 6 (3/7, 3/10) | Intro to Object Oriented Programming | Chapters 9 - 11 (Project 1 due) |
-| 7 (3/14, 3/17) | Object Oriented Programming, Recursion | Chapter 8 (Project 2 assigned); Quiz 3 |
-| 8 (3/21, 3/24) | Polymorphism and object-oriented design | Chapters 12-14 |
-| 9 (3/28, 3/31) | Debugging and Exception Handling | Appendix D (Project 2 due); Quiz 4 |
-| 10 (4/4, 4/7) | Project 3 Discussion; Algorithms and pseudocode | (Project 3 assigned) Lecture notes (online) |
+| 3 (2/14, 2/17) | Arrays and Strings | Chapters 6 - 7 (Project 1 assigned) |
+| 4 (2/21, 2/24) | Functions / Methods | Chapter 4 (Quiz 1 2/21) |
+| 5 (2/28, 3/3) | Project 1 discussion; Classes | Chapter 9 |
+| 6 (3/7, 3/10) | Intro to Object Oriented Programming | Chapters 9 - 11 (Project 1 due) (Quiz 2 3/10) |
+| 7 (3/14, 3/17) | Object Oriented Programming, Polymorphism | Chapter 8 (Project 2 assigned) |
+| 8 (3/21, 3/24) | Polymorphism and object-oriented design | Chapters 12-14 (Quiz 3 3/24) |
+| 9 (3/28, 3/31) | Debugging and Exception Handling | Appendix D (Project 2 due) |
+| 10 (4/4, 4/7) | Recursion; Project 3 Discussion | (Project 3 assigned) Lecture notes (online); Take-home quiz 4|
 | 11 (**spring break**) | No classes | |
-| 12 (4/18, 4/21) | Searching algorithms | (Project 3 due); Lecture notes; Quiz 5 |
+| 12 (4/18, 4/21) | Algorithms and Pseudocode; Searching algorithms | (Project 3 due); Lecture notes (Quiz 5 4/21) |
 | 13 (4/25, 4/28) | Sorting Algorithms | (Project 4 assigned) |
-| 14 (5/2, 5/5) | Intro to Data Structures | Lecture notes |
+| 14 (5/2, 5/5) | Intro to Data Structures | Lecture notes (Quiz 6 5/5) |
 | 15 (5/9, 5/12) | Review | Project 4 due |
 
 This is very much subject to change.
