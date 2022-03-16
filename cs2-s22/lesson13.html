@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2022-03-17">
+  <title>CS2 Lesson 13</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 13</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">17 March 2022</p>
+</section>
+
+<section>
+<section id="homework" class="title-slide slide level1">
+<h1>Homework</h1>
+<p>Suppose we want to modify our Time class to add a new method <code>isEarlier</code>. This method should check if our “Time” instance is earlier in the day than another Time instance, and return <code>true</code> if it is earlier, or <code>false</code> if it isn’t.</p>
+<ul>
+<li>What should the parameter(s) to this method be?</li>
+<li>What should the return type of this method be?</li>
+</ul>
+</section>
+<section id="isearlier" class="slide level2">
+<h2>isEarlier</h2>
+<pre ><code class="java">public boolean isEarlier(Time other) {
+  if (amPm.equals(AM) && other.amPm.equals(PM)) {
+    return true;
+  } else if (amPm.equals(PM) && other.amPM.equals(AM)) {
+    return false;
+  }
+
+  if (hour &lt; other.hour) {
+    return true;
+  } else if (hour == other.hour && minute &lt; other.minute) {
+    return true;
+  }
+  return false;
+}</code></pre>
+</section></section>
+<section>
+<section id="project-2" class="title-slide slide level1">
+<h1>Project 2</h1>
+<ul>
+<li>Student class: should be done.</li>
+<li>Course class: one week. Write code that tests it out.</li>
+<li>Main class (menu / loop): one week</li>
+</ul>
+</section>
+<section id="course-discussion" class="slide level2">
+<h2>Course Discussion</h2>
+<p>Design this in an <strong>object-oriented</strong> way. (Limit use of “static” keyword!)</p>
+<ul>
+<li>Instance variables for Course class?</li>
+<li>Methods for Course class?
+<ul>
+<li>listAllStudents: return type? parameters?</li>
+<li>add a student: return type? parameters?</li>
+<li>find student by name?</li>
+<li>find all students above grade?</li>
+</ul></li>
+</ul>
+</section>
+<section id="test-it-out" class="slide level2">
+<h2>Test it out</h2>
+<p>As you implement the Course class, write code that tests it out:</p>
+<pre ><code class="java">Course c = new Course();
+Student s = new Student("Georg Cantor", 1, 99);
+Student s2 = new Student("Maryam Mirzakhani", 2, 100);
+c.add(s);
+c.add(s2);
+c.listAllStudents();</code></pre>
+</section></section>
+<section>
+<section id="kinds-of-errors" class="title-slide slide level1">
+<h1>Kinds of errors</h1>
+<ul>
+<li>Compiler errors: syntax errors, type mismatches, etc. These are caught by the compiler.</li>
+<li>Run-time errors: usually Exceptions, but also things like <code>OutOfMemoryError</code>.</li>
+<li>“Bugs” or logic errors: when the program doesn’t do what you wanted it to do. Focus today: these types.</li>
+</ul>
+<p>Examples for today are taken from Bloch and Gafter, <em>Java Puzzlers: Traps, Pitfalls and Corner Cases</em> (2005).</p>
+</section>
+<section id="set-up" class="slide level2">
+<h2>Set-up</h2>
+<ul>
+<li>Can use either Replit or IntelliJ today.</li>
+<li>For IntelliJ:
+<ul>
+<li>Download the LogicErrors.zip file on Moodle.</li>
+<li>Unzip the file, it should create a folder.</li>
+<li>Open IntelliJ: File -&gt; “Open Project” and go to the folder that was just created.</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="example-1-increment" class="title-slide slide level1">
+<h1>Example 1: Increment</h1>
+<pre ><code class="java">int j = 0;
+for (int i = 0; i &lt; 100; i++) {
+    j = j++;
+}
+System.out.println(j);
+</code></pre>
+<ul>
+<li>What do you expect this will output?</li>
+<li>What does it print?</li>
+</ul>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<ul>
+<li>Figure out what happened.</li>
+<li>Put print statements in the for loop to see what the value of <span class="math inline">\(j\)</span> is</li>
+</ul>
+</section>
+<section id="debugger" class="slide level2">
+<h2>Debugger</h2>
+<p>Modern IDEs have built-in tools to help us debug.</p>
+<ul>
+<li>Click on the “side” of line 6 to add a <strong>breakpoint</strong>.</li>
+<li>Use the debugger (on replit: left side menu; on IntelliJ: Run menu -&gt; “Debug…”)</li>
+<li>The program will run until it hits the breakpoint, and then stop and let us continue execution one line at a time.</li>
+<li>The debugger shows us a <strong>memory diagram</strong>, the values of all the variables at a particular moment. What happens to <span class="math inline">\(j\)</span> as <span class="math inline">\(i\)</span> increases?</li>
+</ul>
+</section>
+<section id="wrap-up-example-1" class="slide level2">
+<h2>Wrap-up Example 1</h2>
+<ul>
+<li>Assignment statements also can be used as expressions!</li>
+<li>The value of <code>j++</code> is the value of <span class="math inline">\(j\)</span> <strong>before</strong> the increment.</li>
+<li>The line <code>j = j++;</code> returns the previous value of <span class="math inline">\(j\)</span> and assigns that back to itself.</li>
+</ul>
+<p><strong>Lesson</strong>: Never assign to the same variable more than once in a single expression.</p>
+</section></section>
+<section>
+<section id="intheloop" class="title-slide slide level1">
+<h1>InTheLoop</h1>
+<p>Look at the InTheLoop program:</p>
+<pre ><code class="java">public static final int END = Integer.MAX_VALUE;
+public static final int START = END - 5;
+
+public static void main(String[] args) {
+    int count = 0;
+    for (int i = START; i &lt;= END; i++)
+        count++;
+    System.out.println(count);
+}</code></pre>
+<ul>
+<li>Before running, what do you think will happen?</li>
+<li>Run the program. What happens?</li>
+<li>Use the debugger to figure out what happened.</li>
+</ul>
+</section>
+<section id="example-2-lessons" class="slide level2">
+<h2>Example 2 Lessons</h2>
+<p>Main Lesson for example 2: <strong>be aware of boundary conditions</strong>. Every integer <span class="math inline">\(i\)</span> is less than or equal to <code>Integer.MAX_VALUE</code>, so the condition in the for loop is always true!</p>
+<p>We can fix this by changing the <code>int i = START;</code> to <code>long i = START;</code>.</p>
+<div class="fragment">
+<p>Also, notice anything in IntelliJ?</p>
+</div>
+</section></section>
+<section>
+<section id="animalfarm" class="title-slide slide level1">
+<h1>AnimalFarm</h1>
+<p>Look at the “AnimalFarm” program.</p>
+<pre ><code class="java">final String pig = "length: 10";
+final String dog = "length: " + pig.length();
+System.out.println(pig);
+System.out.println(dog);
+System.out.println("Animals are equal: " + pig == dog);</code></pre>
+<ul>
+<li>Before running, what do you think will happen?</li>
+<li>Run the program. What happens?</li>
+<li>Use the debugger to figure out what happened.</li>
+</ul>
+</section>
+<section id="example-3-lessons" class="slide level2">
+<h2>Example 3 Lessons</h2>
+<p>There are two main lessons here:</p>
+<ol type="1">
+<li>Precedence rules are tricky. <strong>Use parentheses when worried about precedence rules</strong>. It’s not clear that the +’ symbol concatenates two strings first, and then the == symbol checks for equality after, but that’s what happened!</li>
+<li>Reference equality (==) is usually not what you want to use for non-primitive types. <strong>Use the <code>.equals</code> method!</strong></li>
+</ol>
+</section></section>
+<section id="debugging-in-replit" class="title-slide slide level1">
+<h1>Debugging in Replit</h1>
+<p>If you used IntelliJ today:</p>
+<ul>
+<li>There is a debugger on replit.</li>
+<li>It does look a little different (e.g. doesn’t highlight variables when they change)</li>
+<li>But still:
+<ul>
+<li>Can add breakpoints</li>
+<li>Shows the values of variables</li>
+<li>“Steps” through code</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="reminders" class="title-slide slide level1">
+<h1>Reminders</h1>
+<ul>
+<li><strong>Presentation 1</strong> due this Sunday on Moodle / VoiceThread!</li>
+<li>Quiz 3 <strong>3/28</strong> (1.5 weeks) / Review next Thursday</li>
+<li>Project 2 due <strong>3/30</strong> (about two weeks)</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
