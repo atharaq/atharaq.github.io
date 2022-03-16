@@ -103,4 +103,55 @@ Proof?
 
 These two results tell us that NTMs can solve the same exact problems as deterministic TMs.
 
-**Open question**: I mentioned the "Millenium" prize problems earlier in the semester. The question of whether NTMs solve problems *more efficiently* than deterministic TMs is still open! That is: we can think about the notion of computational complexity. If every branch of an NTM's computation halts within $n$ steps, then the "search for an accepting configuration" simulation would halt within $O(2^n)$ steps. Can we do better?
+**Open question**: I mentioned the "Millenium" prize problems earlier in the semester. The question of whether NTMs solve problems *more efficiently* than deterministic TMs is still open! That is: we can think about the notion of computational complexity. If every branch of an NTM's computation halts within $n$ steps, then the "search for an accepting configuration" simulation would halt within $O(2^n)$ steps (do you see why?). Can we do better?
+
+# Enumerators
+
+An **enumerator** is a variant of a TM which does not have an accept or reject state, but just has an *output* state. An enumerator starts with an empty tape. If $E$ is an enumerator, we say $w \in \mathcal{L}(E)$ if $E$ enters the output state with $w$ on its tape. Notice that an enumerator *never halts*! It runs forever. We say $E$ **enumerates** $\mathcal{L}(E)$.
+
+**Theorem**: $\mathcal{L}$ is computably enumerable (c.e.) if and only if it is enumerated by an enumerator.
+
+(Hence the name.)
+
+**Proof**:
+
+There are two things to prove: if $\mathcal{L}$ is c.e., then there is an enumerator which enumerates $\mathcal{L}$, and if $E$ enumerates $\mathcal{L}$, then there is a TM which recognizes it. Let's do this second one first:
+
+Suppose $\mathcal{L} = \mathcal{L}(E)$. Let $M$ be the following TM, described at a "high level":
+
+"On input $w$:
+1. Run $E$.
+2. When $E$ outputs $w^\prime$, compare it with $w$. If $w = w^\prime$, **accept**.
+3. If not, keep going."
+
+Clearly $\mathcal{L}(M) = \mathcal{L}(E)$, since if $w \in \mathcal{L}(E)$, then $M$ accepts $w$, and vice versa.
+
+Now suppose $\mathcal{L}$ is c.e. and $M$ recognizes $\mathcal{L}$. We can design an enumerator for $E$ as follows:
+
+Consider all the strings in $\Sigma^*$. For example, if $\Sigma = \\{0, 1 \\}$, then the strings $\varepsilon, 0, 1, 00, 01, 10, 11, 000, \ldots$ We can list out all the strings in some predefined order. That is, we can list out all the strings of length 0, then all the strings of length 1, etc. (In other words, $\Sigma^*$ is **countably infinite**, so there is a bijection between $\mathbb{N}$ and $\Sigma^*$.)
+
+So suppose $s_1, s_2, s_3, \ldots$ is a list of all the strings in $\Sigma^*$. Then we design $E$ as follows:
+
+"Repeat for $i = 1, 2, 3, \ldots$:
+
+1. Run $M$ on the strings $s_1, s_2, \ldots, s_i$ for $i$ steps. (That is, up until the $i$-th configuration!)
+2. If $M$ accepts any of these, output it."
+
+## Decidability
+
+**Definition**: $\mathcal{L}$ is co-c.e. if $\overline{\mathcal{L}}$ is c.e.
+
+**Theorem**: $\mathcal{L}$ is computable if and only if it is c.e. and co-c.e.
+
+**Proof**:
+
+Suppose $\mathcal{L}$ is computable. Then there is a machine $M$ which decides it. Clearly $M$ recognizes $\mathcal{L}$, so it is c.e. Let $M_2$ be defined as the same TM as $M$, with the accept and reject states swapped. Then $M_2$ recognizes $\overline{\mathcal{L}}$!
+
+Now for the other direction: suppose $\mathcal{L}$ is c.e. and co-c.e. Let $E_1$ enumerate $\mathcal{L}$ and $E_2$ enumerate $\overline{\mathcal{L}}$. We define a decider $D$ for $\mathcal{L}$ as follows:
+
+"On input $w$:
+1. Interleave computations of $E_1$ and $E_2$.
+2. If $E_1$ ever outputs $w$, **accept**.
+3. If $E_2$ ever outputs $w$, **reject**."
+
+**Questions**: Why is this a legitimate description of a TM? What does "interleave computations" here mean? How do we know we are only doing finitely much work at each step?
