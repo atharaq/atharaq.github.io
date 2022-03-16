@@ -41,7 +41,7 @@ This is interesting geometrically, but it also tells us something deep about the
 
 Consider the unit cube:
 
-(picture)
+<a href="https://sagecell.sagemath.org/?z=eJyFk8FugzAMhu-V-g6-ASWbCNwm5dyHQD204G3VWpDSdiR--jkpGVBYhxAm9kd-O9g1vsPe4CU252OjXqQw571RUth-ae9L6pd0X242X119Sd7WK-ALDSj4xura6jiWIhNZkvQRO4pkQo4iNIlwLES2HIDTscGijkuX1QaNz4rtLigHNFW_qPWo9RmzfYaSR8lXw_YB1Xi96Qa269V6VfPxVLcDxkaAFUACKqmiw-mGEb_mKtJYu7dCRR8asYnCmRDqdqiwzAS4ezeqca9123E2jhTA-1ftqdWqkuOMA8TaJrXPGXIMzZieTB8Vh93yZM5wPgbSfyAWsyPFfKoIM8kBLZYKMNMCFhk7lSz-LNIfFz-WNpxg9IgtVWrnmFxoF_9fh2nK-Rs3MGxtcNjeQcHhR8ppjqaolEO_2Gkbyd5Ns-6Szu0Pa-hYcq7Xy2fbxckPFYUQxA==&lang=sage&interacts=eJyLjgUAARUAuQ==" target="_blank"><img src="cube.png" /></a>
 
 The volume is $1 \times 1 \times 1 = 1$.
 
@@ -49,7 +49,7 @@ What is the volume of the image of the unit cube under the following transformat
 
 First: $A = \begin{pmatrix}2 & 0 & 0 \\\ 0 & 1 & 0 \\\ 0 & 0 & 1 \end{pmatrix}$
 
-(picture / link)
+<a href="https://sagecell.sagemath.org/?z=eJyFk81ugzAMx--V-g6-8ZVNBG6Tcu5DVD20kG3VWpBCu8Z--jkpGVBYhxAm9o_87WDX-h32VnexPR8b9SKFPe-tkgL7Jd6X1C_pvkzTr1vdJW_rFfClLSj41tWlNXEsRS7yJOkjOIrkQo4iNIlwLEQ2HIDTsdFlHW9dVqm2Piu2u6Ac0Ez9ouhR9BmzfYaSR8lXw_YBNfpyNQ1s1qv1qubjqa4HHVsBKIAEVFJFh9NVR_xaqMjo2r2VKvowWjdROBPSph0q3OYC3L0b1bg3pr1xNo4UwPtX7ak1qpLjjAPE2jbD5ww5hmZMT2aPisNuRTJnOB8L2T8Qi-FIsZgqwkxyQMulAuy0gEUGp5Lln0X64-LH0oYTjB6xpUpxjsmFdvH_dZimgr9xA8MWgwN7BwWHHymnOZqirRz6BadtJHs3zbpLOrc_LN-xRep7lpzztftsb3HyAzRjESA=&lang=sage&interacts=eJyLjgUAARUAuQ==" target="_blank"><img src="prism-stretched.png" /></a>
 
 Notice that multiplying one row by a scalar re-scales the volume. (This makes sense, right? $V = l \times w \times h$ for a rectangular prism?)
 
@@ -57,11 +57,11 @@ What if we add a scalar multiple of one row to another?
 
 $B = \begin{pmatrix}1 & 0 & 0 \\\ 2 & 1 & 0 \\\ 0 & 0 & 1 \end{pmatrix}$
 
-(picture)
+<a href="https://sagecell.sagemath.org/?z=eJyFk81ugzAMgO-V-g6-8ZdNBHqalHMfouqhBW-r1oKUtmvip5-TkgGFdQhhYn_4D7vGd9gZPMfmdGjUixTmtDNKCtsd7f1I3ZHuxzT9utXn5G25AL7QgIJvrC6tjmMpcpEnSWexA0su5MBCIwvbgmXNBjgeGizreOOyStH4rFhuQ-SAZuoXtR61PmOWz1DyKPlqWD6gGi9X3cB6uVguam5Pdd1jbARYASSgkiraH68Y8WuhIo21eytV9KERmyj0hFC3fYWbXIC7t4Mad1q3N87GkQLYf9UeW60qOcw4QBzbZPY5Q46hCdOR2WPE3luRTBnOx0D2D8TB7CBiMY4Ik5A9Ws4VYMYFzDJ2HLL8s0jfLn7MORxh9IjNVWqnmJwZF_9f-21a8TduYVjaoLCdgoLCr9SKnQ22aCP7ebHjMZKdmibTJZ3aN-s-sVmRum4JcurX82d7i5MfX7gR0A==&lang=sage&interacts=eJyLjgUAARUAuQ==" target="_blank"><img src="add-rows-parallelepiped.png" /></a>
 
 The formula for volume is $Area(base) \times height$. So first we need to find the area of the base. That base is just in the $xy$-plane, it's a parallelogram:
 
-(picture)
+(picture from notes?)
 
 We know the area of a parallelogram with sides at $\binom{1}{2}$ and $\binom{0}{1}$: this is $1 \times 1 - 0 \times 2 = 1$. The height of this shape is $1$, so the volume is $1 \times 1 = 1$.
 
@@ -71,7 +71,7 @@ What if we swap rows?
 
 $C = \begin{pmatrix}0 & 1 & 0 \\\ 1 & 0 & 0 \\\ 0 & 0 & 1 \end{pmatrix}$
 
-(picture / link?)
+<a href="https://sagecell.sagemath.org/?z=eJyFk8FugzAMhu-V-g6-ASWbCNwm5dyHQD204G3VWpDSdiR--jkpGVBYhxAm9kd-O9g1vsPe4CU252OjXqQw571RUth-ae9L6pd0X242X119Sd7WK-ALDSj4xura6jiWIhNZkvQRO4pkQo4iNIlwLES2HIDTscGijkuX1QaNz4rtLigHNFW_qPWo9RmzfYaSR8lXw_YB1Xi96Qa269V6VfPxVLcDxkaAFUACKqmiw-mGEb_mKtJYu7dCRR8asYnCmRDqdqiwzAS4ezeqca9123E2jhTA-1ftqdWqkuOMA8TaJrXPGXIMzZieTB8Vh93yZM5wPgbSfyAWsyPFfKoIM8kBLZYKMNMCFhk7lSz-LNIfFz-WNpxg9IgtVWrnmFxoF_9fh2nK-Rs3MGxtcNjeQcHhR8ppjqaolEO_2Gkbyd5Ns-6Szu0Py3esK1-Qc71ePtsuTn4AFYgQxA==&lang=sage&interacts=eJyLjgUAARUAuQ==" target="_blank"><img src="cube-orientation-change.png" /></a>
 
 We still get a unit cube, but **orientation** changes. Instead of "right" / "forward" / "up" orientation ($\hat{i}$ / $\hat{j}$ / $\hat{k}$), the cube is *oriented* a different way: $\hat{j}$ / $\hat{i}$ / $\hat{k}$. If you remember something about the "right-hand rule" (point your right hand in the direction of the first vector, then curl in the direction of the second), this has a "negative" orientation!
 
@@ -139,13 +139,13 @@ This matrix maps the entire unit cube to the $xy$-plane! That is, the $z$ compon
 
 This is the image of the unit cube under this transformation:
 
-(picture)
+<a href="https://sagecell.sagemath.org/?z=eJyFk19vgjAQwN9N_A59A9puoaB7WNJnP4TxQaHbzBCSqrPXT79rASnCHDFc7-7n_Sl3pfoge6POsTkda_kiuDntjRQcOhVa1XaqbVVKv2_lOXlfLgg-yhBJflRxaXQcC57yNEk6DwSelIvAY0ce9PWeDTpIdaxVXsZbVxVVxleFctdn7lEm7yh4FHzFKJ-h1qPWd4PyAdXqctU12SwXy0WJ11NcDyo2nAAnlpNCyOhQXVWEx0xGWpXulMvoUytVR_2dWKWbocNtyon77YIe91o3N6zGkZxg_KKpGi0LEVbcQ5jbMHjOWMfYCdOR7DHjEC1LpgzWYwj7B8JkEGTMxhnJJOWA5nMNmHEDswyMU-Z_NumvC19zAUeYfcTmOoUpJmbGxX_XYJvW-Ce_MXiAuwl6k72b2r1aY8hgl7ZimBoYD5PozHYyY8KZ_ZW1c8tyCmxNse6MGrZC5Q2VDOWKWoe-nr-aW5z8AkLHF8E=&lang=sage&interacts=eJyLjgUAARUAuQ==" target="_blank"><img src="flattened.png" /></a>
 
 ## Triangular and Diagonal Matrices
 
 As another example, what if our matrix looks like $A = \begin{pmatrix} a_{1, 1} & a_{1, 2} & a_{1, 3} \\\ 0 & a_{2, 2} & a_{2, 3} \\\ 0 & 0 & a_{3, 3} \end{pmatrix}$?
 
-(picture)
+<a href="https://sagecell.sagemath.org/?z=eJyFk81ugzAMgO-V-g6-8ZdNBNTLpJz7EFUPLWRbtRaktF1jP_2clAworEMIY_vDP8Gu9TvsrD7H9nRo1IsU9rSzSgrsVLyr1Kl0V9P061afk7flAvjSFhR86-rSmjiWIhd5knQeHHhyIQceGnnYFzxrdsDx0OiyjjeuqlRbXxXLbcgc0Ez9ouhR9BWzfIaSR8l3w_IBNfpyNQ2sl4vloubjqa57HVsBKIAEVFJF--NVR_xaqMjo2r2VKvowWjdROBPSpu073OQC3L0d9Lgzpr1xNY4UwPGr9tgaVclhxQHi3DbD5ww5hiZMR2aPGftoRTJluB4L2T8QJ8NBxmKcESYpe7Sca8COG5hlcJyy_LNJf1z8mAs4wugRm-sUp5icGRf_X_ttWvE3bmFYYjBgZ6Bg8Cu14mCDLdrIfl5wPEayM9NkuqQz-8PyE1uk9j40ruwyJed8PX-2tzj5AdNqE3k=&lang=sage&interacts=eJyLjgUAARUAuQ==" target="_blank"><img src="triang-matrix.png" /></a>
 
 Again, we would look at the area of the base (which would be $a_{1,2} \times a_{2, 2}$) times the height ($a_{3, 3}$). So the volume is $a_{1, 1} \times a_{2, 2} \times a_{3, 3}$!
 
@@ -261,6 +261,8 @@ Due **Thursday, 3/24** on Moodle:
 3. Let $f : A \to B, g : B \to C, h : C \to D$ be any functions. Show that, for any $x \in A$: $$((h \circ g) \circ f)(x) = (h \circ (g \circ f))(x). $$ Use this to explain how the previous problem could be done much faster, without $\Sigma$ notation.
 4. Let $R_{\theta}$ be the rotation matrix $\begin{pmatrix}\cos(\theta) & -\sin(\theta) \\\ \sin(\theta) & \cos(\theta)\end{pmatrix}$. Determine $\det(R_{\theta})$ and explain what this means geometrically in terms of areas.
 
-# Presentation 2
+# Upcoming
 
-...
+* PS3 due next Thursday.
+* Presentation 2 due **Sunday** March 27.
+* Quiz 2 Monday, March 28.
