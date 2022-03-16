@@ -1,0 +1,89 @@
+# Computability Lesson 13: Variants of Turing Machines
+{:.no_toc}
+
+1. Table of Contents
+{:toc}
+
+# Variants of TMs
+
+## Stay-put Turing Machine
+
+**Definition**: A "stay-put" TM is similar to a TM with the transition function changed to $\delta : Q \times \Gamma \to Q \times \Gamma \times \\{ L, R, S \\}$. If $\delta(q, a) = (q^\prime, b, S)$, then the machine will move from state $q$ to $q^\prime$, write a "b" in the cell the read-write head is pointing to, and keep the read-write head pointing to the same location.
+
+(We would similarly need to modify the definition of computation, but I will omit those details.)
+
+**Theorem**:
+
+1. A language is computably enumerable if and only if it is recognized by a stay-put TM.
+2. A language is computable (decidable) if and only if it is decided by a stay-put TM.
+
+**Proof**:
+
+If $M$ is a TM, then it automatically satisfies the definition of a "stay-put" TM. So, in particular, if a language is c.e., there is a TM which recognizes it, and so there is a stay-put TM which recognizes it. Similarly, if a language is computable, there is a TM which decides it, and so that TM is also a stay-put TM which decides the language.
+
+Conversely, we need to show that given a stay-put TM $M$, we can convert it to a regular TM $M^\prime$ which would recognize (and/or decide) the same language. We can do this, simply, by replacing every transition of the form
+
+<img class="noreverse" src="stay-transition.jpeg" />
+
+with:
+
+<img class="noreverse" src="stay-simulated.jpeg" />
+
+We would need to do add such a new state for each transition of this form. But since $M$ has finitely many transitions, there would only be finitely many new states we'd need to add to get $M^\prime$. We won't give a full description of this, but this should be enough to convince ourselves of the following facts:
+
+* $M$ accepts a string $w$ if and only if $M^\prime$ accepts $w$.
+* $M$ rejects a string $w$ if and only if $M^\prime$ rejects $w$.
+
+This then proves the theorem. (Do you see why? Convince yourself.)
+
+## Other variations
+
+It turns out that this notion of Turing Machine is very robust. They are equivalent to many other notions. We will consider a few variations: multitape TMs, non-deterministic TMs, and enumerators. First, we will look at multitape TMs. Specifically, we will think about TMs which have two tapes (and can move the read-write heads on both of them simultaneously). The argument for general $k$-tape TMs is similar.
+
+## 2-tape TMs
+
+**Definition**: A 2-tape Turing Machine is a TM with two tapes, with the transition function modified to be $\delta : Q \times \Gamma^2 \to Q \times \Gamma^2 \times \\{ L, R, S \\}^2$.
+
+For example, $\delta(q, a, b) = (q^\prime, c, d, L, S)$ means that at state $q$, if we see an $a$ on tape 1 and $b$ on tape 2, we transition to state $q^\prime$, write $c$ on tape 1, $d$ on tape 2, move left on tape 1, and stay put on tape 2.
+
+**Theorem**: Every 2-tape TM has an equivalent 1-tape TM.
+
+**Proof**: The idea is to keep track of both tapes and their read-write head positions. That is:
+
+<img class="noreverse" src="two-tapes.jpeg" />
+
+To simulate this with just one tape, write the contents of both tapes on the one tape, separated by some delimeter. We will use the \# character for this purpose:
+
+<img class="noreverse" src="two-tapes-concatenated.jpeg" />
+
+We also need to mark off the symbols that are currently under the read-write heads:
+
+<img class="noreverse" src="two-tapes-with-rw-heads.jpeg" />
+
+We do this by enlarging the alphabet to have these "marked" symbols as well. Then the TM should scan through the tape, keep track of the "marked" symbols, figure out what to do, and then do another scan to update the tape contents.
+
+**Question**: Since the tapes are "infinite", how do we know where to put the "delimeter"? What if we move past what we think is the "edge" of one tape?
+
+In such a case, we would need to add a blank space and shift the contents to the right.
+
+How would we do this? Can you figure out how to implement a "shift" operation on a TM?
+
+# Nondeterministic TMs
+
+A **nondeterministic Turing Machine** (NTM) is defined as you might expect, with $\delta$  modified so that $\delta : Q \times \Gamma \to \mathcal{P}(Q \times \Gamma \times \\{L, R \\})$. Computation is defined analagously: $N$ accepts a word $w$ if there is a sequence of configurations, starting with the "start" configuration, ending in the "accept" configuration, such that each element in the sequence *can* yield the next element (according to some of the nondeterministic rules).
+
+We should think about computation on an NTM as a "tree" structure. The root would be the "start" configuration, and the child of each node would be the configurations we can get to in one step.
+
+(picture)
+
+**Theorem**: Every nondeterministic TM has an equivalent deterministic TM.
+
+If $N$ is an NTM, the idea for the proof of this result is to simulate $N$ with a deterministic TM that searches the tree of configurations for an accepting configuration. (Problem with this idea?)
+
+We can simulate $N$ using a three-tape machine:
+
+1. **Input tape**: Never change this.
+2. **Simulation tape**: Simulate one branch of $N$'s computation on $w$.
+3. **Address tape**: Use this to figure out which branch of the tree of configurations to check.
+
+We will skip the implementation details for this, but you can read about it in Sipser (3.2).
