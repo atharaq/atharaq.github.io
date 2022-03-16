@@ -86,4 +86,21 @@ We can simulate $N$ using a three-tape machine:
 2. **Simulation tape**: Simulate one branch of $N$'s computation on $w$.
 3. **Address tape**: Use this to figure out which branch of the tree of configurations to check.
 
-We will skip the implementation details for this, but you can read about it in Sipser (3.2).
+The idea is that, on the "address tape", a string "13142" would represent "Take the leftmost branch for the first non-deterministic choice, then the third branch for the second choice, the first (leftmost) branch for the third choice, the fourth branch for the fourth choice, and the second branch for the fifth choice." We simulate computation on $w$ on the simulation tape, using the address tape to help us make the nondeterministic choices. We only go up to the number of choices we have specified, so if the computation does not halt within the first five steps (using those choices), we start over again with the "next" address.
+
+Since, at any given point, there are only finitely many "next" choices one can make, there is a canonical way to enumerate this!
+
+## NTM Deciders
+
+**Definition**: An NTM **decides** a language if every branch of its computation halts.
+
+**Theorem**: A language is decidable if and only if it is decided by an NTM.
+
+Proof? 
+
+* If it is decidable, then it's decided by a deterministic TM. That is automatically an NTM. 
+* And vice versa: if a language is "decided" by an NTM, then the "search for an accepting computation" process will always halt, since there will be no "infinite loops" on any branches.)
+
+These two results tell us that NTMs can solve the same exact problems as deterministic TMs.
+
+**Open question**: I mentioned the "Millenium" prize problems earlier in the semester. The question of whether NTMs solve problems *more efficiently* than deterministic TMs is still open! That is: we can think about the notion of computational complexity. If every branch of an NTM's computation halts within $n$ steps, then the "search for an accepting configuration" simulation would halt within $O(2^n)$ steps. Can we do better?
