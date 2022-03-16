@@ -143,7 +143,7 @@ This is the image of the unit cube under this transformation:
 
 ## Triangular and Diagonal Matrices
 
-As another example, what if our matrix looks like $A = \begin{pmatrix} a_{1, 1} & a_{1, 2} & a_{1, 3} \\\ 0 & a{2, 2} & a_{2, 3} \\\ 0 & 0 & a_{3, 3} \end{pmatrix}$?
+As another example, what if our matrix looks like $A = \begin{pmatrix} a_{1, 1} & a_{1, 2} & a_{1, 3} \\\ 0 & a_{2, 2} & a_{2, 3} \\\ 0 & 0 & a_{3, 3} \end{pmatrix}$?
 
 (picture)
 
@@ -180,7 +180,7 @@ Consider a $2 \times 2$ matrix $A = \begin{pmatrix} a_{1,1} & a_{1, 2} \\\ a_{2,
 Similarly, from $n = 2$ to $n = 3$:
 
 $$
-\left|\begin{matrix} a_{1, 1} & a_{1, 2} & a_{1, 3} \\ a_{2, 1} & a_{2, 2} & a_{2, 3} \\ a_{3, 1} & a_{3, 2} & a_{3, 3} \end{pmatrix} \right| = a_{1, 1} det(A^{(1, 1)}) - a_{2,1} det(A^{(2, 1)}) + a_{3, 1} det(A^{(3, 1)})
+\left|\begin{matrix} a_{1, 1} & a_{1, 2} & a_{1, 3} \\ a_{2, 1} & a_{2, 2} & a_{2, 3} \\ a_{3, 1} & a_{3, 2} & a_{3, 3} \end{matrix} \right| = a_{1, 1} det(A^{(1, 1)}) - a_{2,1} det(A^{(2, 1)}) + a_{3, 1} det(A^{(3, 1)})
 $$
 
 We start at the top left entry, multiply that entry by the determinant of the matrix you get by deleting row 1 and column 1, and then go down, switch signs, and multiply the second entry with the determinant you get by deleting row 2 and column 1, etc.
@@ -224,7 +224,7 @@ For (4): can you see you? If $A$ is invertible, then $AA^{-1} = I$. By property 
 **Important**: We defined the determinant by "going down column 1". But we didn't have to do it that way. Column 1 isn't special. We can go down any column or even across any row, as long as we keep track of plus / minus signs:
 
 $$
-\left|\begin{matrix}+ & - & + & \ldots \\ - & + & - & \ldots \\ + & - & + \\ ldots \\ \vdots & \vdots & \vdots & \vdots \right|
+\left|\begin{matrix}+ & - & + & \ldots \\ - & + & - & \ldots \\ + & - & + \\ ldots \\ \vdots & \vdots & \vdots & \vdots \end{matrix} \right|
 $$
 
 For example, let's compute the following:
@@ -251,7 +251,15 @@ Same answer!
 
 # Problem Set 3
 
-...
+Due **Thursday, 3/24** on Moodle:
+
+1. Let $A = \begin{pmatrix}a_1 & b_1 \\\ a_2 & b_2 \end{pmatrix}$. Assuming $det(A) \neq 0$, show all the steps for the derivation of $A^{-1}$. **Hint**: there are two cases: $a_1 = 0$ and $a_1 \neq 0$. Show both of these cases separately.
+2. Let $A$ be an $m \times n$ matrix with entries $a^i_j$, for $1 \leq i \leq m$ and $1 \leq j \leq n$. (That is: $a^i_j$ is the entry in the $i^{\text{th}}$ row and $j^{\text{th}}$ column.) Let $B$ be an $n \times r$ matrix with entries $b^j_k$, for $1 \leq j \leq n$ and $1 \leq k \leq r$, and let $C$ be an $r \times s$ matrix with entries $c^k_l$, for $1 \leq k \leq r$ and $1 \leq l \leq s$.
+  * What is the entry in the $i^\text{th}$ row and $k^\text{th}$ column of the matrix $AB$? Use $\Sigma$ notation to express this as compactly as possible.
+  * What is the entry in the $j^\text{th}$ row and $l^\text{th}$ column of $BC$?
+  * Show that $A(BC) = (AB)C$. This shows that matrix multiplication is associative.
+3. Let $f : A \to B, g : B \to C, h : C \to D$ be any functions. Show that, for any $x \in A$: $$((h \circ g) \circ f)(x) = (h \circ (g \circ f))(x). $$ Use this to explain how the previous problem could be done much faster, without $\Sigma$ notation.
+4. Let $R_{\theta}$ be the rotation matrix $\begin{pmatrix}\cos(\theta) & -\sin(\theta) \\\ \sin(\theta) & \cos(\theta)\end{pmatrix}$. Determine $\det(R_{\theta})$ and explain what this means geometrically in terms of areas.
 
 # Presentation 2
 
