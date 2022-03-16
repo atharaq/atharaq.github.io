@@ -97,7 +97,7 @@ Now we can define computations.
 **Definition**: Let $M = (Q, \Sigma, \Gamma, \delta, q_0, q_{\text{accept}}, q_{\text{reject}})$ be a TM.
 
 1. On input $w \in \Sigma^*$, the **start configuration** is $(w, 0, q_0)$. (The word $w$ is on the tape, the "read head" is at position 0, and we are in the start state).
-2. An **accepting configuraiton** is any configuration $(u, i, q_{\text{accept}})$ (no matter what $u \in \Gamma^*$ and $i \in \mathbb{N}$ are). Similarly, a **rejecting configuration** is any configuration $(u, i, q_{\text{reject}})$.
+2. An **accepting configuration** is any configuration $(u, i, q_{\text{accept}})$ (no matter what $u \in \Gamma^*$ and $i \in \mathbb{N}$ are). Similarly, a **rejecting configuration** is any configuration $(u, i, q_{\text{reject}})$.
 3. A **halting configuration** is either an accepting or rejecting configuration.
 
 $M$ **accepts** $w$ if there is a sequence of configurations $C_1, \ldots, C_k$, for some $k \in \mathbb{N}$ such that:
@@ -108,7 +108,7 @@ $M$ **accepts** $w$ if there is a sequence of configurations $C_1, \ldots, C_k$,
 
 **Definition**:
 
-1. $\mathcal{L}(M) = \\{ w \in \Sigma^*$ : M$ accepts $w \\}$ is the language **recognized** by $M$.
+1. $\mathcal{L}(M) = \\{ w \in \Sigma^*$ : M accepts $w \\}$ is the language **recognized** by $M$.
 2. If $\mathcal{L}$ is a language and there is $M$ such that $\mathcal{L}(M) = \mathcal{L}$, we call $\mathcal{L}$ **computably enumerable** (c.e.). Historically, the term "recursively enumerable" (or r.e) was also used. The textbook uses the term "Turing recognizable". These all mean the same thing, but I will use the term used by computability theorists.
 
 Suppose $M$ recognizes $\mathcal{L}$. We then know, if $w \in \mathcal{L}$, that $M$ accepts $w$. We do not know, unforunately, that if $w \not \in \mathcal{L}$, that $M$ rejects $w$. That is: given a word, we might not know if the computation is going to finish!
@@ -214,8 +214,3 @@ Two things are posted on Moodle:
 
 Get started on these early and come prepared with questions if you have trouble on any of these.
 
-# Presentation 1?
-
-On VoiceThread / Moodle. Due **Sunday** at 11:59 PM.
-
-(Rubric?)
