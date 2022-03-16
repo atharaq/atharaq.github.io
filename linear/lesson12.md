@@ -119,20 +119,137 @@ So we have the identity matrix. We know that this keeps the unit cube as it is, 
 
 So the volume of the cube under this transformation is -2!
 
+Another example:
+
+$$A = \begin{pmatrix}1 & 2 & 0 \\\ 3 & 4 & 2 \\\ 5 & 6 & 4\end{pmatrix}$$
+
+Start with -3R1 + R2 and -5R1 + R3:
+
+$$\begin{pmatrix}1 & 2 & 0 \\\ 0 & -2 & 2 \\\ 0 & -4 & 4\end{pmatrix}$$
+
+Multiply R2 by $-\frac{1}{2}$:
+
+$$\begin{pmatrix}1 & 2 & 0 \\\ 0 & 1 & 1 \\\ 0 & -4 & 4\end{pmatrix}$$
+
+Now add 4R2 + R3:
+
+$$\begin{pmatrix}1 & 2 & 0 \\\ 0 & 1 & 1 \\\ 0 & 0 & 0\end{pmatrix}$$
+
+This matrix maps the entire unit cube to the $xy$-plane! That is, the $z$ component of every vector is zero! So it maps a 3D cube into a 2D parallelogram! It has no volume!
+
+This is the image of the unit cube under this transformation:
+
+(picture)
+
 ## Triangular and Diagonal Matrices
 
 As another example, what if our matrix looks like $A = \begin{pmatrix} a_{1, 1} & a_{1, 2} & a_{1, 3} \\\ 0 & a{2, 2} & a_{2, 3} \\\ 0 & 0 & a_{3, 3} \end{pmatrix}$?
 
 (picture)
 
-In this case, the volume will just be $a_{1, 1} \times a_{2, 2} \times a_{3, 3}$!
+Again, we would look at the area of the base (which would be $a_{1,2} \times a_{2, 2}$) times the height ($a_{3, 3}$). So the volume is $a_{1, 1} \times a_{2, 2} \times a_{3, 3}$!
 
-**Definition**:
+**Definition**: An $n \times n$ matrix $A = (a_{i, j})$ is called **upper-triangular** if whenever $i > j$, then $a_{i, j} = 0$.
+
+(picture from notes)
+
+(We can similarly define *lower triangular* matrices.)
+
+**Definition**: An $n \times n$ matrix $D = (d_{i, j})$ is called a **diagonal matrix** if whenever $i \neq j$, then $a_{i, j} = 0$.
+
+A diagonal matrix basically rescales a cube into a rectangular prism: the first number on the diagonal tells you how to stretch the "x"-direction, the second number tells you how to stretch the "y"-direction, etc. So that means that the "volume" should be re-scaled by the product of all of those diagonal entries.
 
 # Determinants
 
+The real notion of determinant should generalize the "scaling factors" we've seen in the 2D and 3D cases. For example, it *should* make the determinant of a diagonal matrix equal to just the product of the diagonal entries (similar to the determinant of a triangular matrix). Before we find the formula for the determinant of a general $n \times n$ matrix, we need a definition:
+
+**Definition**: For an $n \times n$ matrix $A = (a_{i, j})$, the **$(i, j)$-minor** $A^{(i, j)}$ is the $(n-1) \times (n - 1)$ matrix with row $i$ and column $j$ deleted.
+
+For example, if $A = \begin{pmatrix}1 & 4 \\\ 0 & 1\end{pmatrix}$, the $(2, 1)$-minor is the $1 \times 1$ matrix $(4)$.
+
+For the matrix $B = \begin{pmatrix}1 & 2 & 5 \\\ 0 & 0 & 7 \\\ 1 & 0 & 0\end{pmatrix}$, the $(3, 2)$-minor $B^{(3, 2)} = \begin{pmatrix}1 & 5 \\\ 0 & 7\end{pmatrix}$.
+
+We then can define the determinant "inductively":
+
+If $A = ( a )$ is a $1 \times 1$ matrix, then $\mathrm{det}(A) = a$.
+
 ## Aside: $n = 1 \implies n = 2$
+
+Consider a $2 \times 2$ matrix $A = \begin{pmatrix} a_{1,1} & a_{1, 2} \\\ a_{2, 1} & a_{2, 2} \end{pmatrix}$. We already know that the determinant is $a_{1, 1} a_{2, 2} - a_{2, 1} a_{1, 2}$. But this is $a_{1, 1} \cdot det(A^{(1, 1)}) - a_{2, 1} \cdot det(A^{(2, 1)})$.
+
+Similarly, from $n = 2$ to $n = 3$:
+
+$$
+\left|\begin{matrix} a_{1, 1} & a_{1, 2} & a_{1, 3} \\ a_{2, 1} & a_{2, 2} & a_{2, 3} \\ a_{3, 1} & a_{3, 2} & a_{3, 3} \end{pmatrix} \right| = a_{1, 1} det(A^{(1, 1)}) - a_{2,1} det(A^{(2, 1)}) + a_{3, 1} det(A^{(3, 1)})
+$$
+
+We start at the top left entry, multiply that entry by the determinant of the matrix you get by deleting row 1 and column 1, and then go down, switch signs, and multiply the second entry with the determinant you get by deleting row 2 and column 1, etc.
+
+Every time we "go down" one row, we switch signs.
 
 ## Inductive Definition
 
+Inductively assume that $det(B)$ is defined for all $(n - 1) \times (n - 1)$ matrices $B$. Let $A = (a_{i, j})$ for $1 \leq i, j \leq n$. Then:
+
+$$
+det(A) = \sum_{i = 1}^{n} (-1)^{i - 1} a_{i, 1} det(A^{(i, 1)})
+$$
+
+For example, let's compute the following determinants:
+
+1. $A = \begin{pmatrix}1 & 2 & 3 \\\ 0 & 1 & 2 \\\ 0 & 0 & 1\end{pmatrix}$.
+2. $B = \begin{pmatrix}1 & 0 & 0 \\\ 2 & 1 & 0 \\\ 3 & 2 & 1\end{pmatrix}$.
+
+$B$ is the **transpose** of $A$: the matrix we get by switching rows with columns.
+
+For $A$: $1 det(\begin{pmatrix}1 & 2 \\\ 0 & 1\end{pmatrix}) - 0 + 0 = 1(1 - 0) = 1$.
+
+For $B$: $1 det(\begin{pmatrix}1 & 0 \\\ 2 & 1\end{pmatrix}) - 2det(\begin{pmatrix}0 & 0 \\\ 2 & 1\end{pmatrix}) + 3det(\begin{pmatrix}0 & 0 \\\ 1 & 0\end{pmatrix})$. But this is just $1(1 \times 1 - 0) - 2(0 - 0) + 3(0 - 0) = 1$.
+
+These two matrices have the same determinant! This is true in general: if $A^T$ is the transpose of $A$, then $det(A) = det(A^T)$!
+
 # Properties
+
+1. $det(AB) = det(A) det(B)$. Can you figure out why? Think about what the matrix $AB$ does to the unit square / cube / etc.
+2. $det(A) = det(A^T)$.
+3. $det(A) = 0$ if and only if $A$ is not invertible (sometimes called "singular")
+   * This happens if and only if the columns are linearly *dependent* (some column is in the span of the others),
+   * This is also true if and only if the *rows* are linearly dependent
+
+## Checkerboard of signs
+
+**Important**: We defined the determinant by "going down column 1". But we didn't have to do it that way. Column 1 isn't special. We can go down any column or even across any row, as long as we keep track of plus / minus signs:
+
+$$
+\left|\begin{matrix}+ & - & + & \ldots \\ - & + & - & \ldots \\ + & - & + \\ ldots \\ \vdots & \vdots & \vdots & \vdots \right|
+$$
+
+For example, let's compute the following:
+
+$$
+\left| \begin{matrix}1 & 0 & 1 \\ 3 & 0 & 0 \\ 0 & 2 & 1\end{matrix} \right|
+$$
+
+We could go down column 1, but actually the computation is easier if we either go down column 2 or across row 2. Let's go across row 2. Using our checkerboard, we know that we need to start with a negative:
+
+$$
+-3 \cdot det(\begin{pmatrix}0 & 1 \\\ 2 & 1\end{pmatrix}) + 0 + 0
+$$
+
+This simplifies the problem, since we only need to look at *one* determinant! Keep going and you'll get $-3(0 - 2) = 6$. The determinant is 6!
+
+Let's check again, going down column 2. Since we have two zeros there, we only need to look at that bottom 2. Looking at our checkerboard, we start with a negative:
+
+$$
+-2 \cdot det(\begin{pmatrix}1 & 1 \\\ 3 & 0 \end{pmatrix}) = -2 \cdot (0 - 3) = 6
+$$
+
+Same answer!
+
+# Problem Set 3
+
+...
+
+# Presentation 2
+
+...
