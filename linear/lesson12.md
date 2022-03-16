@@ -215,6 +215,9 @@ These two matrices have the same determinant! This is true in general: if $A^T$ 
 3. $det(A) = 0$ if and only if $A$ is not invertible (sometimes called "singular")
    * This happens if and only if the columns are linearly *dependent* (some column is in the span of the others),
    * This is also true if and only if the *rows* are linearly dependent
+4. If $A$ is invertible, then $det(A^{-1}) = det(A)^{-1}$ (that is, it's $\frac{1}{det(A)}$!
+
+For (4): can you see you? If $A$ is invertible, then $AA^{-1} = I$. By property (1), $det(AA^{-1}) = det(A) det(A^{-1})$. But since $det(I) = 1$, then $det(A) det(A^{-1}) = 1$. Now divide both sides by $det(A^{-1})$!
 
 ## Checkerboard of signs
 
