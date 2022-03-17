@@ -254,7 +254,7 @@ Same answer!
 Due **Thursday, 3/24** on Moodle:
 
 1. Let $A = \begin{pmatrix}a_1 & b_1 \\\ a_2 & b_2 \end{pmatrix}$. Assuming $det(A) \neq 0$, show all the steps for the derivation of $A^{-1}$. **Hint**: there are two cases: $a_1 = 0$ and $a_1 \neq 0$. Show both of these cases separately.
-2. Let $A$ be an $m \times n$ matrix with entries $a^i_j$, for $1 \leq i \leq m$ and $1 \leq j \leq n$. (That is: $a^i_j$ is the entry in the $i^{\text{th}}$ row and $j^{\text{th}}$ column.) Let $B$ be an $n \times r$ matrix with entries $b^j_k$, for $1 \leq j \leq n$ and $1 \leq k \leq r$, and let $C$ be an $r \times s$ matrix with entries $c^k_l$, for $1 \leq k \leq r$ and $1 \leq l \leq s$.
+2. Let $A$ be an $m \times n$ matrix with entries $a_{i,j}$, for $1 \leq i \leq m$ and $1 \leq j \leq n$. (That is: $a{i,j}$ is the entry in the $i^{\text{th}}$ row and $j^{\text{th}}$ column.) Let $B$ be an $n \times r$ matrix with entries $b{j,k}$, for $1 \leq j \leq n$ and $1 \leq k \leq r$, and let $C$ be an $r \times s$ matrix with entries $c{k,l}$, for $1 \leq k \leq r$ and $1 \leq l \leq s$.
   * What is the entry in the $i^\text{th}$ row and $k^\text{th}$ column of the matrix $AB$? Use $\Sigma$ notation to express this as compactly as possible.
   * What is the entry in the $j^\text{th}$ row and $l^\text{th}$ column of $BC$?
   * Show that $A(BC) = (AB)C$. This shows that matrix multiplication is associative.
