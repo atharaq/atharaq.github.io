@@ -22,3 +22,4 @@ layout: default
 * [Lesson 9: (More) Gaussian Elimination](lesson9.html)
 * [Lesson 10: Inverse Matrices and Exam 1 Review](lesson10.html)
 * [Lesson 11: Exam Recap / Determinants](lesson11.html)
+* [Lesson 12: Determinants generalized](lesson12.html)
