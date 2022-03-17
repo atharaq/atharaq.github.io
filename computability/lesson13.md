@@ -128,9 +128,9 @@ Clearly $\mathcal{L}(M) = \mathcal{L}(E)$, since if $w \in \mathcal{L}(E)$, then
 
 Now suppose $\mathcal{L}$ is c.e. and $M$ recognizes $\mathcal{L}$. We can design an enumerator for $E$ as follows:
 
-Consider all the strings in $\Sigma^*$. For example, if $\Sigma = \\{0, 1 \\}$, then the strings $\varepsilon, 0, 1, 00, 01, 10, 11, 000, \ldots$ We can list out all the strings in some predefined order. That is, we can list out all the strings of length 0, then all the strings of length 1, etc. (In other words, $\Sigma^*$ is **countably infinite**, so there is a bijection between $\mathbb{N}$ and $\Sigma^*$.)
+Consider all the strings in $\Sigma^\*$. For example, if $\Sigma = \\{0, 1 \\}$, then the strings are $\varepsilon, 0, 1, 00, 01, 10, 11, 000, \ldots$ We can list out all the strings in some predefined order. That is, we can list out all the strings of length 0, then all the strings of length 1, etc. (In other words, $\Sigma^\*$ is **countably infinite**, so there is a bijection between $\mathbb{N}$ and $\Sigma^\*$.)
 
-So suppose $s_1, s_2, s_3, \ldots$ is a list of all the strings in $\Sigma^*$. Then we design $E$ as follows:
+So suppose $s_1, s_2, s_3, \ldots$ is a list of all the strings in $\Sigma^\*$. Then we design $E$ as follows:
 
 "Repeat for $i = 1, 2, 3, \ldots$:
 
