@@ -224,7 +224,7 @@ For (4): can you see you? If $A$ is invertible, then $AA^{-1} = I$. By property 
 **Important**: We defined the determinant by "going down column 1". But we didn't have to do it that way. Column 1 isn't special. We can go down any column or even across any row, as long as we keep track of plus / minus signs:
 
 $$
-\left|\begin{matrix}+ & - & + & \ldots \\ - & + & - & \ldots \\ + & - & + \\ ldots \\ \vdots & \vdots & \vdots & \vdots \end{matrix} \right|
+\left|\begin{matrix}+ & - & + & \ldots \\ - & + & - & \ldots \\ + & - & + \\ \ldots \\ \vdots & \vdots & \vdots & \vdots \end{matrix} \right|
 $$
 
 For example, let's compute the following:
