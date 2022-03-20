@@ -55,12 +55,12 @@ b_{n, 1} & b_{n, 2} & \ldots & a_{n, r}
 \end{pmatrix}
 $$
 
-So what happens when we multiply $AB$? Let's look at the first row. We first need to multiply the first row of $A$ by the first column of $B$, and we get $a_{1, 1} b_{1, 1} + a_{1, 2} b_{2, 1} + \ldots + a_{1, n} b_{n, 1}$. That will be the top-left entry of $AB$! In $\Sigma$ notation, this is $\sum_{j = 1}^{n} a_{1, j} b_{j, 1}$, and this would go in position $(1, 1)$ of the matrix $AB$.
+So what happens when we multiply $AB$? Let's look at the first row. We first need to multiply the first row of $A$ by the first column of $B$, and we get $a_{1, 1} b_{1, 1} + a_{1, 2} b_{2, 1} + \ldots + a_{1, n} b_{n, 1}$. That will be the top-left entry of $AB$! In $\Sigma$ notation, this is $\sum\limits_{j = 1}^{n} a_{1, j} b_{j, 1}$, and this would go in position $(1, 1)$ of the matrix $AB$.
 
 What would go in position $(1, 2)$? Still we use the first row of $A$, but now we use the second column of $B$, and we get $a_{1, 1} b_{1, 2} + a_{1, 2} b_{2, 2} + \ldots + a_{1, n} b_{n, 2}$. In other words:
 
-* the $(1, 1)$ entry of $AB$ is $\sum_{j = 1}^{n} a_{1, j} b_{j, 1}$.
-* the $(1, 2)$ entry of $AB$ is $\sum_{j = 1}^{n} a_{1, j} b_{j, 2}$.
+* the $(1, 1)$ entry of $AB$ is $\sum\limits_{j = 1}^{n} a_{1, j} b_{j, 1}$.
+* the $(1, 2)$ entry of $AB$ is $\sum\limits_{j = 1}^{n} a_{1, j} b_{j, 2}$.
 
 What would the $(i, k)$ entry of $AB$ be? Once we have these, we can then multiply by the matrix $C$. The algorithm should be similar: the $(i, l)$ entry would be the the $i$-th row of $AB$ times the $l$-th column of $C$.
 
