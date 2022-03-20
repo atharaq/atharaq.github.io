@@ -8,7 +8,7 @@ Compute the following determinants:
 1. $\left\| \begin{matrix} 1 & 4 & 5 \\\ 0 & 0 & 2 \\\ 1 & 5 & 1 \end{matrix} \right\|$. Remember that this is easier if you use a row or column that has as many zeros as possible, and remember the "checkerboard of signs".
 2. $\left\| \begin{matrix} 2 & 1 \\\ 0 & 3 \end{matrix} \right\|$
 
-##
+## Invariant Subspaces
 
 Let's examine this second matrix a bit more closely. Call this matrix $A$. Its determinant is $6$. That means it re-scales the unit square by a factor of 6. But it doesn't literally stretch the unit square into a $1 \times 6$ rectangle, or even a $2 \times 3$ rectangle. So what is it doing?
 
@@ -55,12 +55,12 @@ b_{n, 1} & b_{n, 2} & \ldots & a_{n, r}
 \end{pmatrix}
 $$
 
-So what happens when we multiply $AB$? Let's look at the first row. We first need to multiply the first row of $A$ by the first column of $B$, and we get $a_{1, 1} b_{1, 1} + a_{1, 2} b_{2, 1} + \ldots + a_{1, n} b_{n, 1}$. That will be the top-left entry of $AB$! In $\Sigma$ notation, this is $\Sum\limits_{j = 1}^{n} a_{1, j} b_{j, 1}$, and this would go in position $(1, 1)$ of the matrix $AB$.
+So what happens when we multiply $AB$? Let's look at the first row. We first need to multiply the first row of $A$ by the first column of $B$, and we get $a_{1, 1} b_{1, 1} + a_{1, 2} b_{2, 1} + \ldots + a_{1, n} b_{n, 1}$. That will be the top-left entry of $AB$! In $\Sigma$ notation, this is $\Sum_{j = 1}^{n} a_{1, j} b_{j, 1}$, and this would go in position $(1, 1)$ of the matrix $AB$.
 
 What would go in position $(1, 2)$? Still we use the first row of $A$, but now we use the second column of $B$, and we get $a_{1, 1} b_{1, 2} + a_{1, 2} b_{2, 2} + \ldots + a_{1, n} b_{n, 2}$. In other words:
 
-* the $(1, 1)$ entry of $AB$ is $\Sum\limits_{j = 1}^{n} a_{1, j} b_{j, 1}$.
-* the $(1, 2)$ entry of $AB$ is $\Sum\limits_{j = 1}^{n} a_{1, j} b_{j, 2}$.
+* the $(1, 1)$ entry of $AB$ is $\Sum_{j = 1}^{n} a_{1, j} b_{j, 1}$.
+* the $(1, 2)$ entry of $AB$ is $\Sum_{j = 1}^{n} a_{1, j} b_{j, 2}$.
 
 What would the $(i, k)$ entry of $AB$ be? Once we have these, we can then multiply by the matrix $C$. The algorithm should be similar: the $(i, l)$ entry would be the the $i$-th row of $AB$ times the $l$-th column of $C$.
 
