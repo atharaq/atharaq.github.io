@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2022-03-21">
+  <title>CS2 Lesson 14</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 14</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">21 March 2022</p>
+</section>
+
+<section>
+<section id="project-2" class="title-slide slide level1">
+<h1>Project 2</h1>
+<ul>
+<li>Student class (done?)</li>
+<li>Course class (finish this week?)</li>
+<li>Main class: <code>while</code> loop
+<ul>
+<li>Output menu of choices (add a student, list all students, etc)</li>
+<li>Get the user’s choice (1 - 5, or a - e if you prefer)</li>
+<li>Take the appropriate action (using the Course object?)</li>
+<li>Exit if the user inputs in choice 5 (quit).</li>
+</ul></li>
+</ul>
+</section>
+<section id="scanner-issue" class="slide level2">
+<h2>Scanner issue</h2>
+<pre ><code class="java">public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter in a number: ");
+    int x = sc.nextInt();
+    System.out.println("Enter in a name: ");
+    String name = sc.nextLine();
+    System.out.println("You entered: " + x + ", " + name);
+}</code></pre>
+<ul>
+<li>What happens when we run this? <a href="https://books.trinket.io/thinkjava2/chapter3.html#sec43">Fix from Chapter 3</a>.</li>
+<li>Will probably run into this when you add a Student
+<ul>
+<li>name (String), id (int), grade (int).</li>
+<li>Make sure after <em>every</em> nextInt in your code, you handle this problem.</li>
+</ul></li>
+</ul>
+</section></section>
+<section id="debugging-in-replit" class="title-slide slide level1">
+<h1>Debugging in Replit</h1>
+<ul>
+<li>There is a debugger on replit.</li>
+<li>It does look a little different (e.g. doesn’t highlight variables when they change)</li>
+<li>But still:
+<ul>
+<li>Can add breakpoints</li>
+<li>Shows the values of variables</li>
+<li>“Steps” through code</li>
+</ul></li>
+</ul>
+</section>
+
+<section>
+<section id="exceptions" class="title-slide slide level1">
+<h1>Exceptions</h1>
+<p>An <strong>exception</strong> is short for “an exceptional event”: anything which disrupts the normal flow of the program’s instructions. When this happens, there are a few steps:</p>
+<ul>
+<li><code>Exception</code> object created.</li>
+<li>JVM looks for an “Exception handler”</li>
+<li>If it doesn’t find one, it crashes.</li>
+</ul>
+</section>
+<section id="exception-object" class="slide level2">
+<h2>Exception Object</h2>
+<ul>
+<li>The method creates an <code>Exception</code> object (perhaps a subclass of <code>Exception</code>) and <code>throws</code> it to the JVM.
+<ul>
+<li>Object includes information:</li>
+<li>Kind of exception thrown</li>
+<li>Where exactly it happened in the program.</li>
+</ul></li>
+</ul>
+<p>(What is a “subclass”? More on this later this week / next week)</p>
+</section>
+<section id="exception-handler" class="slide level2">
+<h2>Exception Handler</h2>
+<ul>
+<li>The JVM looks for something which handles it (a <code>try-catch</code> block).</li>
+<li>It searches <em>backwards</em> from the current method.</li>
+<li>Traces back through the method invocations that occurred up until that point looking for a handler.</li>
+<li>If the JVM never finds a method that handles that particular exception, the JVM will crash.</li>
+</ul>
+</section></section>
+<section>
+<section id="stack-trace" class="title-slide slide level1">
+<h1>Stack Trace</h1>
+<pre ><code class="java">public static void main(String[] args) {
+    ArrayList&lt;Integer&gt; list = null;
+    printSorted(list);
+}
+
+private static void printSorted(List&lt;Integer&gt; list) {
+    Collections.sort(list);
+    for (int num : list) {
+        System.out.println(num);
+    }
+}</code></pre>
+<p>What is printed out?</p>
+</section>
+<section id="stack-trace-1" class="slide level2">
+<h2>Stack Trace</h2>
+<pre ><code >Exception in thread "main" java.lang.NullPointerException
+    at java.base/java.util.Collections.sort(Collections.java:145)
+    at Main.printSorted(Main.java:12)
+    at Main.main(Main.java:8)</code></pre>
+<p>You get some useful information in this error message:</p>
+<ul>
+<li>Exactly the lines of code where the Exception was thrown</li>
+<li>All the methods that had to be invoked in order for that line of code to end up being executed.
+<ul>
+<li>Tells you where the JVM looked for an exception handler (in which order)</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="handling-try-catch" class="title-slide slide level1">
+<h1>Handling: try-catch</h1>
+<p>Mentioned earlier: the JVM will search for an exception handler in the form of a <code>try-catch</code> block. So what exactly does that look like?</p>
+<pre ><code class="java">try {
+    someMethod();
+} catch (SpecificException e) {
+    doSomethingWithTheException(e);
+}</code></pre>
+</section>
+<section id="catching-multiple-exceptions" class="slide level2">
+<h2>Catching multiple exceptions</h2>
+<p>You can catch multiple exceptions:</p>
+<pre ><code class="java">try {
+    someMethod();
+    anotherMethod();
+} catch (SpecificException | AnotherException e) {
+    doSomethingWithTheException(e);
+}</code></pre>
+</section>
+<section id="catch-em-all" class="slide level2">
+<h2>Catch ’em all?</h2>
+<pre ><code class="java">try {
+    ...     
+} catch (FirstException e) {
+    handleFirstException(e);
+} catch (SecondException e) {
+    handleSecondException(e);
+}</code></pre>
+<p>Careful: the JVM looks for the <strong>first</strong> catch clause that matches the Exception thrown.</p>
+<pre ><code class="java">try {
+    ...
+} catch (Exception e) {
+    ...
+} catch (SpecificException e) {
+    System.out.println("You will never see this!");
+}</code></pre>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Every Exception class has a <code>printStackTrace</code> method. Surround the following code with a <code>try-catch</code> block and, in the catch clause, call the <code>printStackTrace</code> method. Run the code and put in some text (not an integer) so that an exception is thrown.</p>
+<pre ><code class="java">Scanner sc = new Scanner(System.in);
+int input = sc.nextInt();</code></pre>
+</section></section>
+<section>
+<section id="finally" class="title-slide slide level1">
+<h1>Finally</h1>
+<ul>
+<li>Often times, there is some code you wish to always run, regardless of whether an exception was thrown.</li>
+<li>For example, this might involve closing resources of some kind.</li>
+<li>This code would go in a <code>finally</code> close.</li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p>From the CopyFile exercise on replit:</p>
+<pre ><code class="java">try {
+    stream = CopyFile.class.getResourceAsStream(FILENAME);
+    out = new FileOutputStream(OUTPUT_FILE);
+    ...
+} catch (IOException e) {
+    e.printStackTrace();
+} finally {
+    if (stream != null) {
+        try {
+            stream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+</section>
+<section id="try-with-resources" class="slide level2">
+<h2>try-with-resources</h2>
+<p>That is actually terrible!</p>
+<ul>
+<li>Trying to make sure we close an InputStream, it might throw an Exception too!</li>
+<li>Needed to handle that!</li>
+<li>Thankfully, there is a better way: try-with-resources</li>
+</ul>
+<pre ><code class="java">try (InputStream stream = CopyFile.class.getResourceAsStream(FILENAME);
+     FileOutputStream out = new FileOutputStream(OUTPUT_FILE)) {
+    ...  
+} catch (IOException e) {
+    e.printStackTrace();
+} // no finally clause needed here</code></pre>
+</section>
+<section id="under-the-hood" class="slide level2">
+<h2>Under the hood</h2>
+<ul>
+<li>Any “resource” must implement the “AutoCloseable” interface</li>
+<li>More on interfaces next week</li>
+<li>But simply put: both InputStream and FileOutputStream have <code>close()</code> methods.</li>
+<li>Java compiler knows this and invokes <code>stream.close();</code> and <code>out.close();</code> after the <code>try</code> block!
+<ul>
+<li>Even if an exception is thrown in the middle!</li>
+</ul></li>
+<li>Can still use <code>finally</code> if needed.</li>
+</ul>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<p><a href="https://replit.com/team/cs2-spring22/Lesson-14-CopyFile-Exercise">On Replit</a>: modify the CopyFile class to use the try-with-resources paradigm.</p>
+<ul>
+<li>When you run the program, you should see a new file: output.jpeg, which should look exactly the same as the original java.jpeg file.</li>
+<li>Note: running the file multiple times will just overwrite that output.jpeg file, so you might not see anything happen more than once.</li>
+<li>In that case, to make sure it’s still working, delete the old “output.jpeg” file, and then run it again.</li>
+</ul>
+</section></section>
+<section>
+<section id="properly-using-exceptions" class="title-slide slide level1">
+<h1>Properly Using Exceptions</h1>
+<ul>
+<li>InputMismatchException (from Scanner), doesn’t need to be surrounded by a try-catch block.</li>
+<li>IOException (in CopyFile), needed to be caught or handled.</li>
+<li>That is: some exceptions are called <strong>checked</strong> and some are <strong>unchecked</strong>.</li>
+</ul>
+</section>
+<section id="checked-vs-unchecked" class="slide level2">
+<h2>Checked vs unchecked</h2>
+<ul>
+<li>Checked exceptions are for conditions that you expect clients to try to recover from. For example: FileNotFoundException!</li>
+<li>Unchecked exceptions are for “logic errors”: ArrayIndexOutOfBoundsException, NullPointerException, etc. These really shouldn’t happen.</li>
+<li><strong>Rule of thumb</strong>: Use Exceptions for exceptional situations: not as fancy if-thens!</li>
+</ul>
+</section></section>
+<section>
+<section id="throwing" class="title-slide slide level1">
+<h1>Throwing</h1>
+<p>As an alternative to a try-catch block: you can simply declare that your method throws the appropriate exception.</p>
+<pre ><code class="java">public static void main(String[] args) throws IOException {
+...
+}</code></pre>
+<p>Often, you don’t want to do this for your main method. But for other methods: it may be the right option!</p>
+</section>
+<section id="throw-them-ourselves" class="slide level2">
+<h2>Throw them ourselves</h2>
+<p>You can also throw (or re-throw) your own exceptions:</p>
+<pre ><code class="java">...
+} catch (IOException e) {
+    // try to handle e
+    ...
+    // if we can't...
+    throw e;
+}</code></pre>
+</section></section>
+<section>
+<section id="some-common-exceptions" class="title-slide slide level1">
+<h1>Some Common Exceptions</h1>
+<p>Your code, outside of a <code>catch</code> block, might need to throw its own Exceptions. You could create your own Exception types (create a new class which extends Exception), but there are often built-in Exception classes that you can use for most situations.</p>
+</section>
+<section id="built-in-exception-classes" class="slide level2">
+<h2>Built-in Exception classes</h2>
+<ul>
+<li>IllegalArgumentException: e.g., if you expect only positive values, but a negative value is passed in</li>
+<li>IllegalStateException: perhaps the object needs to be initialized or is in the middle of updating / shouldn’t be used</li>
+<li>NullPointerException: often thrown automatically</li>
+<li>IndexOutOfBoundsException</li>
+<li>UnsupportedOperationException: for instance, if you implement an interface but you don’t expect certain methods to be invoked on that implementation.</li>
+</ul>
+</section></section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Quiz 3 <strong>3/28</strong> (Next Monday) / Review Thursday</li>
+<li>Review Problems posted tomorrow</li>
+<li>Project 2 due <strong>3/30</strong> (next Wednesday)</li>
+<li>Spring Break 4/11 - 4/15
+<ul>
+<li>Last class before (4/7): asynchronous</li>
+</ul></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
