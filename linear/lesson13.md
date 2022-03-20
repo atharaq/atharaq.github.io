@@ -157,7 +157,7 @@ Consider the set $\mathcal{F} = \\{ f(x) : f : \mathbb{R} \to \mathbb{R}$ is twi
 Can you think of some functions in $\mathcal{F}$?
 
 * $\sin(x) \in \mathcal{F}$, since $(\sin(x))^\prime = \cos(x)$ and $(\cos(x))^\prime = -\sin(x)$.
-* $\cos(x0 \in \mathcal{F}$ since $(\cos(x))^\prime = -\sin(x)$ and $(-\sin(x))^\prime = -\cos(x)$.
+* $\cos(x) \in \mathcal{F}$ since $(\cos(x))^\prime = -\sin(x)$ and $(-\sin(x))^\prime = -\cos(x)$.
 
 Are these all of them? Let's sit on that for a bit.
 
