@@ -136,7 +136,7 @@ We make some obvious definitions, and then use these to extend our vocabulary to
 1. $\mathbb{N}$ (obviously)
 2. $\mathbb{N} \setminus \\{ 0 \\}$
 3. $E = \\{ 0, 2, 4, 6, \ldots \\}$
-4. $O$ = \\{ 1, 3, 5, 7, \ldots \\}$
+4. $O = \\{ 1, 3, 5, 7, \ldots \\}$
 5. $\mathbb{Z}$
 6. $\mathbb{Q}$
 
