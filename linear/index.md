@@ -23,3 +23,4 @@ layout: default
 * [Lesson 10: Inverse Matrices and Exam 1 Review](lesson10.html)
 * [Lesson 11: Exam Recap / Determinants](lesson11.html)
 * [Lesson 12: Determinants generalized](lesson12.html)
+* [Lesson 13: Vector spaces (intro)](lesson13.html)
