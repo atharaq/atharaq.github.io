@@ -1,6 +1,9 @@
 # Linear Lesson 13: Vector Spaces (Introduction)
 {:.no_toc}
 
+1. Table of Contents
+{:toc}
+
 # Warm-up
 
 Compute the following determinants:
