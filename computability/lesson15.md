@@ -10,6 +10,16 @@ Discuss the following with each other: is the function which, on input $a^n$, ou
 
 ## Hilbert's Tenth
 
+David Hilbert, in his famous list of unsolved problems in mathematics in 1900, posed the following question:
+
+> Given a Diophantine equation with any number of unknown quantities and with rational integral numerical coefficients: To devise a process according to which it can be determined in a finite number of operations whether the equation is solvable in rational integers.
+
+That is: given a polynomial in several variables (unknown how many exactly) with integer coefficients, determine if the polynomial has a root. Related to this problem, we can consider the set $HTP = \\{ p(x_1, \ldots, x_n) : p$ is a polynomial with integer coefficients in the variables $x_1, \ldots, x_n$, and there are $a_1, \ldots, a_n \in \mathbb{Z}$ such that $p(a_1, \ldots, a_n) = 0 \\}$.
+
+**Problem**: Show that the set $HTP$ is c.e. by finding an input-output TM $F$ such that the domain of $F$ is $HTP$.
+
+(What's the alphabet? Doesn't really matter so much. Just think about what the partial computable function $F$ should be.)
+
 # Finishing the proof from last time
 
 Now for $2 \implies 3$. Let $F : \mathcal{L} \to \Gamma^\*$ be a partial computable function. Use the fact that $\mathcal{L} \neq \emptyset$, so that there is some specific word $y \in \mathcal{L}$.
@@ -102,7 +112,7 @@ So for any negative integer $y$, $f(-1 - y) = y$, and, moreover, $-1 - y \in \ma
 
 ## $\mathbb{Q}$
 
-Our proof that the integers are countably infinite boils down to this fact: we can list all integers in an *infinite sequence*, such that each integer shows up at some *finite* position (and shows up exactly once). We list the integers as $0, -1, 1, -2, 2, -3, 3, -4, 4, \ldots$ The rule we gave above turns this from an "infinite sequence" into an explicit function $h : \mathbb{N} \to \mathbb{Z}$, but the actual rule is not so important as the fact that there is a way to list these numbers out.
+The fact that the integers are countably infinite boils down to this fact: we can list all integers in an *infinite sequence*, such that each integer shows up at some *finite* position (and shows up exactly once). We list the integers as $0, -1, 1, -2, 2, -3, 3, -4, 4, \ldots$ We could turn this "infinite sequence" into an explicit function $h : \mathbb{N} \to \mathbb{Z}$, but the actual rule is not so important as the fact that there is a way to list these numbers out.
 
 The caveat here that each integers shows up at a finite position is important. The listing $0, 1, 2, 3, \ldots, -1, -2, -3, -4, \ldots$ is not a valid "infinite sequence" in this sense. At which position does $-2$ show up?
 
