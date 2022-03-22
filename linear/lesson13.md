@@ -29,7 +29,7 @@ As we will see later in the semester, often it is nice to try to find the direct
 
 # Problem Set Questions
 
-Let $A$ be an $m \times n$ matrix with entries $a_{i,j}$, for $1 \leq i \leq m$ and $1 \leq j \leq n$. (That is: $a{i,j}$ is the entry in the $i^{\text{th}}$ row and $j^{\text{th}}$ column.) Let $B$ be an $n \times r$ matrix with entries $b_{j,k}$, for $1 \leq j \leq n$ and $1 \leq k \leq r$, and let $C$ be an $r \times s$ matrix with entries $c_{k,l}$, for $1 \leq k \leq r$ and $1 \leq l \leq s$.
+Let $A$ be an $m \times n$ matrix with entries $a_{i,j}$, for $1 \leq i \leq m$ and $1 \leq j \leq n$. (That is: $a_{i,j}$ is the entry in the $i^{\text{th}}$ row and $j^{\text{th}}$ column.) Let $B$ be an $n \times r$ matrix with entries $b_{j,k}$, for $1 \leq j \leq n$ and $1 \leq k \leq r$, and let $C$ be an $r \times s$ matrix with entries $c_{k,l}$, for $1 \leq k \leq r$ and $1 \leq l \leq s$.
   * What is the entry in the $i^\text{th}$ row and $k^\text{th}$ column of the matrix $AB$? Use $\Sigma$ notation to express this as compactly as possible.
   * What is the entry in the $j^\text{th}$ row and $l^\text{th}$ column of $BC$?
   * Show that $A(BC) = (AB)C$. This shows that matrix multiplication is associative.
@@ -51,10 +51,10 @@ And $B$ is:
 
 $$
 \begin{pmatrix}
-b_{1, 1} & b_{1, 2} & \ldots & a_{1, r} \\
-b_{2, 1} & b_{2, 2} & \ldots & a_{2, r} \\
+b_{1, 1} & b_{1, 2} & \ldots & b_{1, r} \\
+b_{2, 1} & b_{2, 2} & \ldots & b_{2, r} \\
 \vdots & \vdots & \ldots & \vdots \\
-b_{n, 1} & b_{n, 2} & \ldots & a_{n, r}
+b_{n, 1} & b_{n, 2} & \ldots & b_{n, r}
 \end{pmatrix}
 $$
 
