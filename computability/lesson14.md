@@ -163,3 +163,11 @@ So we can list them all out, and in that way get a bijection from $\mathbb{N}$ t
 * $f(2) =$ the third TM in our list
 
 etc.
+
+# Upcoming
+
+* PS3 due Thursday.
+* Presentation 1 due **Sunday**, March 27.
+* Take home exam next week, due the following week.
+* Spring break 4/11 - 4/15
+  * Last class before (4/7) will be asynchronous.

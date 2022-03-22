@@ -24,3 +24,4 @@ layout: default
 * [Lesson 11: Designing Classes / Quiz 2](lesson11.html)
 * [Lesson 12: Mutability and Immutability](lesson12.html)
 * [Lesson 13: Debugging](lesson13.html)
+* [Lesson 14: Exceptions](lesson14.html)
