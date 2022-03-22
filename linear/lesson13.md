@@ -1,6 +1,9 @@
 # Linear Lesson 13: Vector Spaces (Introduction)
 {:.no_toc}
 
+1. Table of Contents
+{:toc}
+
 # Warm-up
 
 Compute the following determinants:
@@ -8,7 +11,7 @@ Compute the following determinants:
 1. $\left\| \begin{matrix} 1 & 4 & 5 \\\ 0 & 0 & 2 \\\ 1 & 5 & 1 \end{matrix} \right\|$. Remember that this is easier if you use a row or column that has as many zeros as possible, and remember the "checkerboard of signs".
 2. $\left\| \begin{matrix} 2 & 1 \\\ 0 & 3 \end{matrix} \right\|$
 
-##
+## Invariant Subspaces
 
 Let's examine this second matrix a bit more closely. Call this matrix $A$. Its determinant is $6$. That means it re-scales the unit square by a factor of 6. But it doesn't literally stretch the unit square into a $1 \times 6$ rectangle, or even a $2 \times 3$ rectangle. So what is it doing?
 
@@ -26,7 +29,7 @@ As we will see later in the semester, often it is nice to try to find the direct
 
 # Problem Set Questions
 
-Let $A$ be an $m \times n$ matrix with entries $a_{i,j}$, for $1 \leq i \leq m$ and $1 \leq j \leq n$. (That is: $a{i,j}$ is the entry in the $i^{\text{th}}$ row and $j^{\text{th}}$ column.) Let $B$ be an $n \times r$ matrix with entries $b_{j,k}$, for $1 \leq j \leq n$ and $1 \leq k \leq r$, and let $C$ be an $r \times s$ matrix with entries $c_{k,l}$, for $1 \leq k \leq r$ and $1 \leq l \leq s$.
+Let $A$ be an $m \times n$ matrix with entries $a_{i,j}$, for $1 \leq i \leq m$ and $1 \leq j \leq n$. (That is: $a_{i,j}$ is the entry in the $i^{\text{th}}$ row and $j^{\text{th}}$ column.) Let $B$ be an $n \times r$ matrix with entries $b_{j,k}$, for $1 \leq j \leq n$ and $1 \leq k \leq r$, and let $C$ be an $r \times s$ matrix with entries $c_{k,l}$, for $1 \leq k \leq r$ and $1 \leq l \leq s$.
   * What is the entry in the $i^\text{th}$ row and $k^\text{th}$ column of the matrix $AB$? Use $\Sigma$ notation to express this as compactly as possible.
   * What is the entry in the $j^\text{th}$ row and $l^\text{th}$ column of $BC$?
   * Show that $A(BC) = (AB)C$. This shows that matrix multiplication is associative.
@@ -48,19 +51,19 @@ And $B$ is:
 
 $$
 \begin{pmatrix}
-b_{1, 1} & b_{1, 2} & \ldots & a_{1, r} \\
-b_{2, 1} & b_{2, 2} & \ldots & a_{2, r} \\
+b_{1, 1} & b_{1, 2} & \ldots & b_{1, r} \\
+b_{2, 1} & b_{2, 2} & \ldots & b_{2, r} \\
 \vdots & \vdots & \ldots & \vdots \\
-b_{n, 1} & b_{n, 2} & \ldots & a_{n, r}
+b_{n, 1} & b_{n, 2} & \ldots & b_{n, r}
 \end{pmatrix}
 $$
 
-So what happens when we multiply $AB$? Let's look at the first row. We first need to multiply the first row of $A$ by the first column of $B$, and we get $a_{1, 1} b_{1, 1} + a_{1, 2} b_{2, 1} + \ldots + a_{1, n} b_{n, 1}$. That will be the top-left entry of $AB$! In $\Sigma$ notation, this is $\Sum\limits_{j = 1}^{n} a_{1, j} b_{j, 1}$, and this would go in position $(1, 1)$ of the matrix $AB$.
+So what happens when we multiply $AB$? Let's look at the first row. We first need to multiply the first row of $A$ by the first column of $B$, and we get $a_{1, 1} b_{1, 1} + a_{1, 2} b_{2, 1} + \ldots + a_{1, n} b_{n, 1}$. That will be the top-left entry of $AB$! In $\Sigma$ notation, this is $\sum\limits_{j = 1}^{n} a_{1, j} b_{j, 1}$, and this would go in position $(1, 1)$ of the matrix $AB$.
 
 What would go in position $(1, 2)$? Still we use the first row of $A$, but now we use the second column of $B$, and we get $a_{1, 1} b_{1, 2} + a_{1, 2} b_{2, 2} + \ldots + a_{1, n} b_{n, 2}$. In other words:
 
-* the $(1, 1)$ entry of $AB$ is $\Sum\limits_{j = 1}^{n} a_{1, j} b_{j, 1}$.
-* the $(1, 2)$ entry of $AB$ is $\Sum\limits_{j = 1}^{n} a_{1, j} b_{j, 2}$.
+* the $(1, 1)$ entry of $AB$ is $\sum\limits_{j = 1}^{n} a_{1, j} b_{j, 1}$.
+* the $(1, 2)$ entry of $AB$ is $\sum\limits_{j = 1}^{n} a_{1, j} b_{j, 2}$.
 
 What would the $(i, k)$ entry of $AB$ be? Once we have these, we can then multiply by the matrix $C$. The algorithm should be similar: the $(i, l)$ entry would be the the $i$-th row of $AB$ times the $l$-th column of $C$.
 
@@ -157,7 +160,7 @@ Consider the set $\mathcal{F} = \\{ f(x) : f : \mathbb{R} \to \mathbb{R}$ is twi
 Can you think of some functions in $\mathcal{F}$?
 
 * $\sin(x) \in \mathcal{F}$, since $(\sin(x))^\prime = \cos(x)$ and $(\cos(x))^\prime = -\sin(x)$.
-* $\cos(x0 \in \mathcal{F}$ since $(\cos(x))^\prime = -\sin(x)$ and $(-\sin(x))^\prime = -\cos(x)$.
+* $\cos(x) \in \mathcal{F}$ since $(\cos(x))^\prime = -\sin(x)$ and $(-\sin(x))^\prime = -\cos(x)$.
 
 Are these all of them? Let's sit on that for a bit.
 
