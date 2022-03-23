@@ -20,6 +20,15 @@ That is: given a polynomial in several variables (unknown how many exactly) with
 
 (What's the alphabet? Doesn't really matter so much. Just think about what the partial computable function $F$ should be.)
 
+The question really asked if there is an algorithm which *decides* if a polynomial has a root. That is: is this language decidable? We showed that it's c.e. There is some interesting history to this problem:
+
+* In 1949, Martin Davis did some work on this and conjectured that the "Diophantine sets" (sets of numbers which are defined as solutions to a polynomial equation) and c.e. sets are exactly the same sets.
+* In 1950, independently, Julia Robinson conjectures that exponentiation, factorials, and primes are all Diophantine sets.
+* In the late 50s and early 60s, Davis, Hilary Putnam, and Robinson show that Robinson's conjecture (referred to as "J.R.") implies Davis' conjecture (that all c.e. sets are Diophantine).
+* In 1970, Yuri Matiyasevich proves Robinson's conjecture, thereby proving that all c.e. sets are Diophantine.
+
+How does this relate to Hilbert's Tenth Problem? By this point, it had already been well established that there are c.e. sets which are not decidable! This was proved by Turing himself, from the very birth of computability theory. So by proving that all c.e. sets are Diophantine, this shows that if we take a set which is c.e. but not decidable, it shows that there can be no general algorithm to decide if a number is in a particular Diophantine set.
+
 # Finishing the proof from last time
 
 Now for $2 \implies 3$. Let $F : \mathcal{L} \to \Gamma^\*$ be a partial computable function. Use the fact that $\mathcal{L} \neq \emptyset$, so that there is some specific word $y \in \mathcal{L}$.
