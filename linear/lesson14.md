@@ -69,7 +69,7 @@ What about the set of all polynomials of degree exactly equal to 2? This is not 
 
 We have seen that $\mathcal{P}_2$ is a subspace of $\mathcal{P}$, that $\mathcal{P}$ is a subspace of $C^0(\mathbb{R})$, and that all of these are subspaces of $\mathcal{F}(\mathbb{R})$!
 
-(picture)
+<img src="subspaces.jpeg" />
 
 Often times, to show that a set is a vector space, we see if we can show that it is a subspace of some larger set that we already know is a vector space. That is, it's much easier to show a set is a subspace. This is because if you already know that $V$ is a vector space and $W \subseteq V$, you get some of the properties of vector spaces for free. ($W$ "inherits" some of those from $V$). So you really only need to show:
 
