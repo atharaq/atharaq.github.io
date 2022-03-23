@@ -169,3 +169,9 @@ Let's fix $\Sigma = \\{ a \\}$. Each language $\mathcal{L} \subseteq \Sigma^\*$ 
 That means that the **cardinality** of the set of all languages over $\Sigma^\*$ is the same as the cardinaliyt of the set of all *subsets* of $\mathbb{N}$. In other words, it's the same as the cardinality of $\mathcal{P}(\mathbb{N})$.
 
 We've seen many infinite sets today: all of them can be put in bijection with $\mathbb{N}$. But it turns out that not *every* infinite set is countably infinite! There are **uncountable** infinite sets as well! $\mathcal{P}(\mathbb{N})$ is one example of such an uncountable set. That means: there is no bijection between $\mathbb{N}$ and $\mathcal{P}(\mathbb{N})$!
+
+# Pre-work
+
+On Moodle, I posted a PDF of a section from *Godel, Escher, Bach: an Eternal Golden Braid*. In this section, we see "one half" of a telephone conversation between Achilles and the Tortoise. You may remember the characters of Achilles and the Tortoise from Zeno's paradoxes. In this book, there are several "dialogues" between these characters that illustrate some sort of logic game or puzzle.
+
+Read this section, and on Moodle, give your best guess as to the answers to the "ADAC" and "HE" puzzles. See if you can figure out what this might have to do with the concept of "decidability".
