@@ -114,14 +114,14 @@ But by property (5), $\vec{0} + \vec{0} = \vec{0}$. That means, the left side is
 By property (6), there is a vector $v$ that is the additive inverse of $a \cdot \vec{0}$. Add $v$ to both sides:
 
 $$
-\begin{align}
+\begin{array}{lr}
 v + a \cdot \vec{0} = v + (a \cdot \vec{0} + a \cdot \vec{0}) & \\
 \vec{0} = v + (a \cdot \vec{0} + a \cdot \vec{0}) & \text{By property (6), additive inverses} \\
 \vec{0} = (v + a \cdot \vec{0}) + a \cdot \vec{0} & \text{By property (3), associativity} \\
 \vec{0} = \vec{0} a \cdot \vec{0} & \text{Property (6), additive inverses} \\
 \vec{0} = a \cdot \vec{0} + \vec{0} & \text{Property (4), commutativity} \\
 \vec{0} = a \cdot \vec{0} & \text{Property (5), the zero property}
-\end{align}
+\end{array}
 $$
 
 In other words, we use these different vector space properties over and over again until we can show that $a \cdot \vec{0} = 0$, no matter what $a$ is.
