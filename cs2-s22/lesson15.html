@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2022-03-24">
+  <title>CS2 Lesson 15</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 15</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">24 March 2022</p>
+</section>
+
+<section>
+<section id="interfaces" class="title-slide slide level1">
+<h1>Interfaces</h1>
+<p>An <strong>interface</strong> is an <strong>abstract type</strong>. That is, it just describes behaviors, but it is not actually implemented. You cannot instantiate an interface. This is useful when we are defining methods:</p>
+<pre ><code class="java">public void sort(List&lt;Integer&gt; list) {
+    // don't care how the list is implemented
+    // just that I have a list of integers
+}
+
+public static void main(String[] args) {
+    List&lt;Integer&gt; list1 = new LinkedList&lt;Integer&gt;();
+    List&lt;Integer&gt; list2 = new ArrayList&lt;Integer&gt;();
+    sort(list1);
+    sort(list2);
+}</code></pre>
+</section>
+<section id="different-implementations" class="slide level2">
+<h2>Different Implementations</h2>
+<p><code>ArrayList</code> and <code>LinkedList</code> are two different <em>implementations</em> of the <em>same</em> <code>List</code> interface.</p>
+<ul>
+<li>Both of them implement <code>add</code>, <code>get</code>, and <code>size</code>.</li>
+<li><code>ArrayList</code>: keeps an array, resizes that array when needed.</li>
+<li><code>LinkedList</code>: keeps each item in a “node”, node has a “link” to the next node.
+<ul>
+<li><code>add</code>: create a new node, link from the last node.</li>
+</ul></li>
+</ul>
+</section>
+<section id="implementation-details" class="slide level2">
+<h2>Implementation Details</h2>
+<ul>
+<li>The differences between an <code>ArrayList</code> and <code>LinkedList</code> are <em>internal</em>.</li>
+<li>Externally: we can call <code>list.get(10);</code> or <code>list.add("hello");</code> on either one.</li>
+<li>Those differences are called “implementation details”</li>
+</ul>
+<p>When we write a method, if we don’t care <em>how</em> list is implemented, we can just ask for a <code>List</code> as a parameter.</p>
+</section></section>
+<section>
+<section id="comparable" class="title-slide slide level1">
+<h1><code>Comparable</code></h1>
+<p>The <code>Collections</code> class has a static method <code>sort</code>, which will sort a list for us. It can sort lists of any type – as long as the type implements the <code>Comparable</code> interface. The <code>Comparable</code> interface specifies just one method: <code>compareTo</code>.</p>
+</section>
+<section id="implementing-comparable" class="slide level2">
+<h2>Implementing <code>Comparable</code></h2>
+<p>In order to implement the interface in your class:</p>
+<pre ><code class="java">public class MyClass implements Comparable&lt;MyClass&gt; {
+
+    // instance variables, constructors, and other methods
+
+    public int compareTo(MyClass other) {
+        // return a positive number if this &gt; other
+        // return 0 if this == other
+       // return a negative number if this &lt; other
+    }
+}</code></pre>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>On Replit, implement the “compareTo” method in the <code>Position</code>. Implement it so that:</p>
+<ul>
+<li>A Position on a lower row is “less” than a Position with a higher row</li>
+<li>If two Positions are on the same row, a Position on a lower column (to the left) is “less” than a Position with a higher column</li>
+</ul>
+<p>Try and run the main method after you have implemented it. It should output:</p>
+<p>[(1, 7), (5, 2), (5, 5), (8, 3)]</p>
+</section></section>
+<section>
+<section id="polymorphism" class="title-slide slide level1">
+<h1>Polymorphism</h1>
+<p>The ability for an object to take multiple forms. Example: if we have a method that can calculate the area of a Rectangle, it should work on Squares too!</p>
+<pre ><code class="java">Rectangle r = new Square(5);
+System.out.println(findArea(r));
+//... other code
+
+public int findArea(Rectangle r) {
+    // ...
+}</code></pre>
+</section>
+<section id="introducing-polymorphism" class="slide level2">
+<h2>Introducing Polymorphism</h2>
+<p>Two primary ways of introducing polymorphism in Java:</p>
+<ul>
+<li>Implementing interfaces</li>
+<li>Extending classes (inheritance).
+<ul>
+<li>More on both of these next time!</li>
+</ul></li>
+</ul>
+</section>
+<section id="dynamic-binding" class="slide level2">
+<h2>Dynamic Binding</h2>
+<p>When an object is instantiated, it has a “compile-time” (declared) type and a “run-time type” (the type of the actual object that is instantiated).</p>
+<pre ><code class="java">int width = 5; int height = 5;
+Rectangle r = new Rectangle(width, height);
+Square s = new Square(width);
+Rectangle r2 = new Square(width);</code></pre>
+<p>What are the declared and run-time types of <span class="math inline">\(r\)</span>, <span class="math inline">\(s\)</span>, and <span class="math inline">\(r2\)</span>?</p>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<p>Instantiate a few lists:</p>
+<pre ><code class="java">LinkedList&lt;String&gt; linkedList = new LinkedList&lt;&gt;();
+ArrayList&lt;String&gt; arrayList = new ArrayList&lt;&gt;();
+List&lt;String&gt; abstractList;</code></pre>
+<p>Which of the following assignments are legal?</p>
+<ol type="1">
+<li><code>abstractList = linkedList;</code></li>
+<li><code>abstractList = arrayList;</code></li>
+<li><code>arrayList = abstractList;</code></li>
+<li><code>arrayList = linkedList;</code></li>
+<li><code>linkedList = arrayList;</code></li>
+<li><code>linkedList = abstractList;</code></li>
+</ol>
+</section></section>
+<section id="quiz-review" class="title-slide slide level1">
+<h1>Quiz Review</h1>
+<ul>
+<li>Quiz 3 on Monday.</li>
+<li>45 minutes (11:25 - 12:10) as usual.</li>
+<li>Bring one page of notes (as usual).</li>
+<li>Review problems on Moodle.</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
