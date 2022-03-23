@@ -1,4 +1,4 @@
-# Linear Lesson 14: Vector Spaces (Continued)
+# Linear Lesson 14: Subspaces
 {:.no_toc}
 
 1. Table of Contents
