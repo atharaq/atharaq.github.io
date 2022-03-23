@@ -118,7 +118,7 @@ $$
 v + a \cdot \vec{0} = v + (a \cdot \vec{0} + a \cdot \vec{0}) & \\
 \vec{0} = v + (a \cdot \vec{0} + a \cdot \vec{0}) & \text{By property (6), additive inverses} \\
 \vec{0} = (v + a \cdot \vec{0}) + a \cdot \vec{0} & \text{By property (3), associativity} \\
-\vec{0} = \vec{0} a \cdot \vec{0} & \text{Property (6), additive inverses} \\
+\vec{0} = \vec{0} + a \cdot \vec{0} & \text{Property (6), additive inverses} \\
 \vec{0} = a \cdot \vec{0} + \vec{0} & \text{Property (4), commutativity} \\
 \vec{0} = a \cdot \vec{0} & \text{Property (5), the zero property}
 \end{array}
