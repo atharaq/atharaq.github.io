@@ -24,3 +24,4 @@ layout: default
 * [Lesson 11: Exam Recap / Determinants](lesson11.html)
 * [Lesson 12: Determinants generalized](lesson12.html)
 * [Lesson 13: Vector spaces (intro)](lesson13.html)
+* [Lesson 14: Subspaces](lesson14.html)
