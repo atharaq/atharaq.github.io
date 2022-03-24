@@ -135,3 +135,11 @@ Due **Monday, 4/4** on Moodle:
 1. Let $V$ be a vector space and $\vec{0} \in V$ the zero vector. Prove that, for all $\vec{v} \in V$: $0 \cdot \vec{v} = \vec{0}$.
 2. An infinite *sequence* is a list $x = (x_0, x_1, \ldots)$ (for each $n \in \mathbb{N}$, $x_n$ is a *term* of that sequence), where each $x_n$ is a real number. Two infinite sequences are added term by term: $$x + y = (x_0 + y_0, x_1 + y_1, \ldots).$$ Scalar multiplication can be defined by: $$a \cdot x = (ax_0, ax_1, \ldots)$$ Show that the set of all infinite sequences forms a vector space. (That is: show that it satisfies all 10 properties listed in [the lecture notes for lesson 13](lesson13.html#vector-spaces).)
 3. Let $F = \\{ (x_0, x_1, \ldots) : x_{n+2} = x_{n+1} + x_n \\}$. Show that $F$ is closed under addition and scalar multiplication (as defined in the previous problem).
+
+# Reminders
+
+* Quiz 2 Monday 3/28.
+* PS3 due tonight!
+* PS4 due 4/4.
+* 4/7 is asynchronous
+* Spring break 4/11 - 4/15
