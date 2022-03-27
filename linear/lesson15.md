@@ -156,7 +156,7 @@ Now let's prove that the image is a subspace of $W$. That is, we need to show:
 
 Suppose $w_1$ and $w_2$ are in the image of $T$. That means, by the definition of $T(V)$, that there are vectors $v_1$ and $v_2$ in $V$ such that $T(v_1) = w_1$ and $T(v_2) = w_2$. Can you find a vector in $V$ that is mapped to $w_1 + w_2$? Again, use linearity here.
 
-Similarlyk, suppose $w \in T(V)$ and $\alpha \in \mathbb{R}$. By definition of $T(V)$, there is $v \in V$ such that $T(v) = w$. Then $\alpha \cdot T(v) = \alpha \cdot w$. By linearity, we know that $\alpha \cdot T(v) = T(\alpha \cdot v)$, so that means T(\alpha \cdot v) = \alpha \cdot w$. Since $V$ is a vector space, $\alpha \cdot v \in V$, so $\alpha \cdot w \in T(V)$ by definition.
+Similarlyk, suppose $w \in T(V)$ and $\alpha \in \mathbb{R}$. By definition of $T(V)$, there is $v \in V$ such that $T(v) = w$. Then $\alpha \cdot T(v) = \alpha \cdot w$. By linearity, we know that $\alpha \cdot T(v) = T(\alpha \cdot v)$, so that means $T(\alpha \cdot v) = \alpha \cdot w$. Since $V$ is a vector space, $\alpha \cdot v \in V$, so $\alpha \cdot w \in T(V)$ by definition.
 
 ## Examples
 
