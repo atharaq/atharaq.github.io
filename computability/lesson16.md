@@ -105,6 +105,46 @@ We've seen many infinite sets today: all of them can be put in bijection with $\
 
 So after studying all of these sets, we may be forgiven for thinking that all infinite sets can be put in one to one correspondence with each other. Throughout history, most mathematicians believed this! If a set is infinite, it never ends, so of course you can match it up with another set that doesn't end, right?
 
-But this informal reasoning does not pan out. We have a rigorous definition of a one to one correspondence: a bijection. Is there a set which is "too large" to be put in bijection with the natural numbers $\mathbb{N}$? Let's think about the real numbers $\mathbb{R}$.
+But this informal reasoning does not pan out. We have a rigorous definition of a one to one correspondence: a bijection. Is there a set which is "too large" to be put in bijection with the natural numbers $\mathbb{N}$? It turns out that the real numbers $\mathbb{R}$ is!
 
-Suppose someone tells us that they have figured out a function $f : \mathbb{N} \to \mathbb{R}$ that they claim is a one to one correspondence. Can we be sure? Is it possible to find a number that is not in the range of $f$, showing that they were wrong?
+
+How might we prove that this set is not countable? Before we try to write a real proof, we can check that we don't know of any bijection between $\mathbb{N}$ and $\mathbb{R}$. For example, the function $f : \mathbb{N} \to \mathbb{R}$ given by $f(n) = \sqrt{n}$ is not a bijection: $\pi$ is not in the image of $f$.
+
+But we need something stronger than just "Every function I've looked at is not a bijection." We need to show that there is **no** bijection $f : \mathbb{N} \to \mathbb{R}$. This is saying: "I can prove that, for every single function $f : \mathbb{N} \to \mathbb{R}$, something goes wrong."
+
+That is, if I looked at a few functions, and showed that they weren't bijections, that's not enough. Maybe the square root example we thought of just wasn't clever enough. Perhaps we just weren't clever enough in coming up with the rule, like what happened with $\mathbb{Q}$? If we really want to prove that there is no bijection, we have to give an argument that works for every function $f : \mathbb{N} \to \mathbb{R}$.
+
+That is, given a function $f : \mathbb{N} \to \mathbb{R}$, we have to show that $f$ is not a bijection. In fact, what we will show is that $f$ is not a surjection: it's not onto. We will argue in a very general way, so that this argument can be applied to every function from $\mathbb{N}$ to $\mathbb{R}$, thereby showing there is no surjection from $\mathbb{N}$ to $\mathbb{R}$.
+
+The idea will be to find a real number $r$ which is different from $f(0)$, different from $f(1)$, different from $f(2)$, etc. This was **Cantor's Diagonal Argument**: if you list out the numbers $f(0), f(1)$ etc in a vertical table, you can find a real number that's not on that list by picking a number whose $n$-th digit after the decimal place is different from that of $f(n)$. To make this rule concrete, let's say that our number $r$ is defined by the following rule: if the $n$-th digit of $f(n)$ is equal to $1$, then the $n$-th digit of $r$ will be 2. Otherwise, the $n$-th digit of $r$ will be 1.
+
+What does that mean? Let's look at an example. Suppose $f$ is given by the following table:
+
+$$
+\begin{align}
+f(0) &= 0.131569108 \ldots \\
+f(1) &= 2.718281828 \ldots \\
+f(2) &= 3.141592653 \ldots \\
+f(3) &= 1.741213562 \ldots \\
+f(4) &= 2.618128176 \ldots \\
+\vdots
+\end{align}
+$$
+
+Let's look at the diagonal digits here:
+
+$$
+\begin{align}
+f(0) &= \mathbf{0}.131569108 \ldots \\
+f(1) &= 2.\mathbf{7}18281828 \ldots \\
+f(2) &= 3.1\mathbf{4}1592653 \ldots \\
+f(3) &= 1.74\mathbf{1}213562 \ldots \\
+f(4) &= 2.618\mathbf{1}28176 \ldots \\
+\vdots
+\end{align}
+$$
+
+If we apply the diagonal argument, we end up with a number $r$ that starts off as $1.1122\ldots$. We know that this number we end up with cannot be on this list! That's because the number won't be equal to $f(n)$ for any $n$: at the $n$-th place after the decimal, $f(n)$ and $r$ are different!
+
+This is a subtle argument: for each $f$, there is a *different* $r$ that we can find that is not in the image of $f$. So there is no way for a function $f : \mathbb{N} \to \mathbb{R}$ to be a surjection. In terms of cardinality, this means $\|\mathbb{R}\| \neq \aleph_0$.
+
