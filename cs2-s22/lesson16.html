@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2022-03-28">
+  <title>CS2 Lesson 16</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 16</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">28 March 2022</p>
+</section>
+
+<section>
+<section id="project-2" class="title-slide slide level1">
+<h1>Project 2</h1>
+<p>Course class:</p>
+<ul>
+<li>Nothing should be static</li>
+<li>add</li>
+<li>listAllStudents</li>
+<li>findStudentByName</li>
+<li>findAllStudentsAboveGrade</li>
+</ul>
+</section>
+<section id="library" class="slide level2">
+<h2>Library</h2>
+<p>Which <code>add</code> method looks more “object-oriented”?</p>
+<ol type="1">
+<li><p>Using <code>Student</code> as a parameter:</p>
+<pre ><code class="java">  public void add(Student s) {
+
+  }</code></pre></li>
+<li><p>Using the name, id, and grade as parameters:</p>
+<pre ><code class="java">  public void add(String name, int id, int grade) {
+
+  }</code></pre></li>
+</ol>
+</section>
+<section id="find" class="slide level2">
+<h2>Find</h2>
+<ul>
+<li>find by name: one student with that name.
+<ul>
+<li>for loop.
+<ul>
+<li><code>print(i + ": " + student)</code></li>
+<li><code>return</code></li>
+</ul></li>
+</ul></li>
+<li>find <strong>all</strong> above grade:
+<ul>
+<li>look at each student in the list</li>
+<li>if the grade is above the given parameter</li>
+<li><code>print(i + ": " + student)</code> but don’t return!</li>
+<li>If no student is above?</li>
+</ul></li>
+</ul>
+</section>
+<section id="main" class="slide level2">
+<h2>Main</h2>
+<pre ><code class="java">public static void main(String[] args) {
+    while (something) {
+        printMenu()
+        getChoice()
+        if (choice == 1) {
+            addAStudent()
+        } else if (choice == 2) {
+            listAllStudents()
+        } else if...
+    }
+}</code></pre>
+<ul>
+<li>Can have several static methods to support it.</li>
+</ul>
+</section></section>
+<section id="polymorphism" class="title-slide slide level1">
+<h1>Polymorphism</h1>
+<p>Last time:</p>
+<ul>
+<li>Difference between declared type (compile-time) and run-time type.</li>
+<li>Implemented interfaces.</li>
+</ul>
+</section>
+
+<section>
+<section id="polymorphism-using-interfaces" class="title-slide slide level1">
+<h1>Polymorphism using interfaces</h1>
+<p><strong>Dynamic binding</strong>:</p>
+<ul>
+<li>When a method is invoked, the “run-time” type’s method is invoked, not the “compile-time” type.</li>
+<li>However: we can only invoke those methods which are declared on the “compile-time” type!</li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<pre ><code class="java">LinkedList&lt;String&gt; list = new LinkedList&lt;String&gt;();
+list.addFirst("hello");
+list.addFirst("ok");
+
+List&lt;String&gt; abstractList = new LinkedList&lt;String&gt;();
+abstractList.addFirst("hello"); // doesn't work!</code></pre>
+<ul>
+<li><code>addFirst</code> is a method declared in the <code>LinkedList</code> class</li>
+<li>adds an element at the beginning of the list (creates a new node, links to the previous beginning)</li>
+<li>This is not something that all lists can do.</li>
+<li>How would this work on an ArrayList?</li>
+<li>It is specific to this <em>implementation</em>.</li>
+</ul>
+</section>
+<section id="paradigm-code-to-interfaces-not-implementations" class="slide level2">
+<h2>Paradigm: Code to interfaces, not implementations!</h2>
+<p>When you design classes/methods: don’t worry about the implementations of the parameters that are passed in. Just worry about what they can <em>do</em>.</p>
+</section>
+<section id="benefits-of-coding-to-interfaces" class="slide level2">
+<h2>Benefits of coding to interfaces</h2>
+<ol type="1">
+<li><strong>Testability</strong>. We can quickly implement a “dummy” class which does nothing, and pass that in as an implementation to test out our method.</li>
+<li><strong>Robustness</strong>. Our methods/classes do not rely upon implementation details, which may change in future versions of the code.</li>
+</ol>
+</section>
+<section id="paradigm" class="slide level2">
+<h2>Paradigm</h2>
+<p>When <strong>designing</strong> methods/classes: plan for the most <strong>general</strong> usage. When <strong>invoking</strong> methods/classes: provide the most specific implementation. (Be generous in what you accept, conservative in what you send out.)</p>
+</section></section>
+<section>
+<section id="inheritance" class="title-slide slide level1">
+<h1>Inheritance</h1>
+<p><strong>Inheritance</strong>: to make one class inherit from another, we use the <code>extends</code> keyword.</p>
+<pre ><code class="java">public class Square extends Rectangle {</code></pre>
+<ul>
+<li><code>Square extends Rectangle</code> means every <code>Square</code> is a <code>Rectangle</code>.</li>
+<li>It <strong>does not</strong> mean that every Rectangle is a Square!</li>
+<li>This means that every Square object can invoke methods written inside the Rectangle class – but not vice versa!</li>
+</ul>
+</section>
+<section id="compile-time-vs-run-time" class="slide level2">
+<h2>Compile-time vs run-time</h2>
+<p>If the <em>compile-time</em> type of an object is Rectangle:</p>
+<ul>
+<li>You can only invoke methods declared in the Rectangle class.</li>
+<li>But the actual method that is invoked is based upon the <em>run-time</em> class!
+<ul>
+<li>That is: the code that is run might be in <code>Square</code>!</li>
+</ul></li>
+</ul>
+</section>
+<section id="example-1" class="slide level2">
+<h2>Example</h2>
+<p><a href="https://replit.com/team/cs2-spring22/Lesson-16">On Replit</a></p>
+<pre ><code class="java">public class Square extends Rectangle {
+    private int sideLength;
+
+    public Square(int side) {
+        super(side, side);
+        System.out.println("Constructing a square with side length " + side);
+        sideLength = side;
+    }
+}</code></pre>
+</section>
+<section id="constructors" class="slide level2">
+<h2>Constructors</h2>
+<ul>
+<li>The constructor for <code>Square</code> <strong>must</strong> invoke the constructor for its “superclass” (Rectangle).</li>
+<li>It does this by calling <code>super</code></li>
+<li>Notice that when we run <code>Main</code>, the print statement inside Rectangle happens twice:
+<ul>
+<li>Once for the Rectangle object we create</li>
+<li>Once for the Square object!</li>
+</ul></li>
+</ul>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<ol type="1">
+<li>In the <code>Rectangle</code> class, implement the <code>getArea</code> method, and then uncomment the <code>printAllAreas(rectangles);</code> line inside <code>Main</code>.</li>
+<li>Run the <code>Main</code>. How does this correctly compute the areas even for the Square object?</li>
+<li>Uncomment the <code>System.out.println</code> statement inside <code>main</code>. What error do you get? Why?</li>
+</ol>
+</section>
+<section id="exercise-part-2" class="slide level2">
+<h2>Exercise (Part 2)</h2>
+<ol start="4" type="1">
+<li>Uncomment the <code>printAllShapes(rectangles);</code> line inside <code>Main</code>. Run it once and take a look at the output. Then implement the <code>toString</code> method inside the <code>Square</code> class. When a Square with side length <span class="math inline">\(x\)</span> is output, it should print out “Square with side length <span class="math inline">\(x\)</span>”. Run the <code>Main</code> again and see if the output changes. (It should!) Why does it change?</li>
+</ol>
+</section></section>
+<section>
+<section id="object-class" class="title-slide slide level1">
+<h1><code>Object</code> class</h1>
+<p>Every class inherits from the <code>Object</code> class. This provides default implementations of a few commonly used methods:</p>
+<ul>
+<li>toString: used when we call <code>System.out.println</code></li>
+<li>equals: default implementation checks if two objects refer to the same location in memory</li>
+<li>getClass: returns the run-time class of an Object. (cannot be overridden)</li>
+</ul>
+</section>
+<section id="tostring" class="slide level2">
+<h2>toString</h2>
+<ul>
+<li>Under the hood: <code>println</code> is defined on all Objects</li>
+<li><code>println</code> calls a method (which calls another, which, eventually) which calls the toString method on the Object.</li>
+<li>If we <em>override</em> the toString method, it will use ours!</li>
+</ul>
+</section>
+<section id="class-hierarchies" class="slide level2">
+<h2>Class Hierarchies</h2>
+<ul>
+<li>Every class, except Object, has exactly one direct <strong>superclass</strong>.</li>
+<li>In our example:
+<ul>
+<li>The superclass of Square is Rectangle.</li>
+<li>The superclass of Rectangle is Object.</li>
+</ul></li>
+<li>Notice that in Rectangle’s constructor, we don’t have to explicitly invoke <code>super</code>.</li>
+<li><code>Object</code> has a default (no-argument) constructor, which is automatically invoked (unless otherwise specified).</li>
+</ul>
+</section></section>
+<section id="reading" class="title-slide slide level1">
+<h1>Reading</h1>
+<ul>
+<li>Read chapter 14 (extending classes).</li>
+<li>Project 2 due Wednesday!</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
