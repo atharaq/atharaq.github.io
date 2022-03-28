@@ -75,13 +75,13 @@ Before we do this, we will prove the following simple result about linear maps: 
 
 **Proof**: We will prove this in a similar manner to the proof we did last week. Since $\vec{0}_V + \vec{0}_V = \vec{0}_V$, we know that $L(\vec{0}_V + \vec{0}_V) = L(\vec{0}_V)$. By linearity, the left side is equal to $L(\vec{0}_V) + L(\vec{0}_V)$. That is: $L(\vec{0}_V) + L(\vec{0}_V) = L(\vec{0}_V)$. Now we will subtract $L(\vec{0}_V)$ from both sides. Since subtraction isn't defined, we use additive inverses: there is some vector $w \in W$ such that $L(\vec{0}_V) + w = \vec{0}_W$. We add that to both sides:
 
-$$ (L(\vec{0}_V) + L(\vec{0}_V)) + w = L(\vec{0}_V + w$$
+$$ (L(\vec{0}_V) + L(\vec{0}_V)) + w = L(\vec{0}_V) + w$$
 
 By associativity, we can regroup on the left as $L(\vec{0}_V) + (L(\vec{0}_V) + w)$. Now $L(\vec{0}_V) + w$ can be replaced by $\vec{0}_W$ on both sides, obtaining:
 
 $$ L(\vec{0}_V) + \vec{0}_W = \vec{0}_W $$
 
-Since $\vec{0}_W$ is the zero vector in $W$, then $L(\vec{0}_V) + \vec{0}_W = L(\vec{0}_W)$. So finally we have $L(\vec{0}_V) = \vec{0}_W$, completing our proof.
+Since $\vec{0}_W$ is the zero vector in $W$, then $L(\vec{0}_V) + \vec{0}_W = L(\vec{0}_V)$. So finally we have $L(\vec{0}_V) = \vec{0}_W$, completing our proof.
 
 ## Matrices
 
