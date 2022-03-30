@@ -146,6 +146,8 @@ To see this:
 2. Let $a_1 \cdot \vec{v_1} + b_1 \vec{v_2} \in W$ and $a_2 \cdot \vec{v_1} + b_2 \cdot \vec{v_2} \in W$. Can you explain why their sum is in $W$?
 3. Can you see which scalars $a$ and $b$ we can use to show that $\vec{0} \in W$? (That is, which $a$ and $b$ are such that $a \cdot \vec{v_1} + b \cdot \vec{v_2} = \vec{0}$, no matter what $\vec{v_1}$ and $\vec{v_2}$?)
 
+In other words, the set $W = \\{ \begin{pmatrix}a \\\ a \\\ 0 \end{pmatrix} + \begin{pmatrix}0 \\\ b \\\ b \end{pmatrix} : a, b \in \mathbb{R} \\}$ is a subspace. We can also write this as $W = \\{ \begin{pmatrix} a \\\ a + b \\\ b \end{pmatrix} \\}$.
+
 ## Generality
 
 What we have seen is this: since subspaces have to be closed under scalar multiplications and vector additions, if $W$ is a subspace and we have some vectors $v_1, v_2, \ldots, v_n \in W$, then **all linear combinations** of $v_1, v_2, \ldots, v_n$ must be in $W$! Recall, how do we define linear combinations?
