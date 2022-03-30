@@ -124,7 +124,7 @@ In fact, we need *every* scalar multiple of $\binom{1}{1}$. These look like $\bi
 
 1. Is $b \cdot (\binom{a}{a})$ in the set? Yes, since $b \cdot \binom{a}{a} = \binom{ab}{ab}$, and $ab \in \mathbb{R}$.
 2. Is $\binom{a}{a} + \binom{b}{b}$ in this set? Yes, since this sum is $\binom{a + b}{a + b}$, and $a + b \in \mathbb{R}$.
-3. Is \vec{0}$ is this set? Yes, since we can let $a = 0$.
+3. Is $\vec{0}$ in this set? Yes, since we can let $a = 0$.
 
 What does this set look like?
 
