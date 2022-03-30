@@ -146,7 +146,7 @@ To see this:
 2. Let $a_1 \cdot \vec{v_1} + b_1 \vec{v_2} \in W$ and $a_2 \cdot \vec{v_1} + b_2 \cdot \vec{v_2} \in W$. Can you explain why their sum is in $W$?
 3. Can you see which scalars $a$ and $b$ we can use to show that $\vec{0} \in W$? (That is, which $a$ and $b$ are such that $a \cdot \vec{v_1} + b \cdot \vec{v_2} = \vec{0}$, no matter what $\vec{v_1}$ and $\vec{v_2}$?)
 
-In other words, the set $W = \\{ \begin{pmatrix}a \\\ a \\\ 0 \end{pmatrix} + \begin{pmatrix}0 \\\ b \\\ b \end{pmatrix} : a, b \in \mathbb{R} \\}$ is a subspace. We can also write this as $W = \\{ \begin{pmatrix} a \\\ a + b \\\ b \end{pmatrix} \\}$.
+In other words, the set $W = \\{ \begin{pmatrix}a \\\ a \\\ 0 \end{pmatrix} + \begin{pmatrix}0 \\\ b \\\ b \end{pmatrix} : a, b \in \mathbb{R} \\}$ is a subspace. We can also write this as $W = \\{ \begin{pmatrix} a \\\ a + b \\\ b \end{pmatrix} : a, b, \in \mathbb{R} \\}$.
 
 ## Generality
 
