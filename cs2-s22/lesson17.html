@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2022-03-31">
+  <title>CS2 Lesson 17</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 17</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">31 March 2022</p>
+</section>
+
+<section>
+<section id="object-class" class="title-slide slide level1">
+<h1><code>Object</code> class</h1>
+<p>Every class inherits from the <code>Object</code> class. This provides default implementations of a few commonly used methods:</p>
+<ul>
+<li>toString: used when we call <code>System.out.println</code></li>
+<li>equals: default implementation checks if two objects refer to the same location in memory</li>
+<li>getClass: returns the run-time class of an Object. (cannot be overridden)</li>
+</ul>
+</section>
+<section id="tostring" class="slide level2">
+<h2>toString</h2>
+<ul>
+<li>Under the hood: <code>println</code> is defined on all Objects</li>
+<li><code>println</code> calls a method (which calls another, which, eventually) which calls the toString method on the Object.</li>
+<li>If we <em>override</em> the toString method, it will use ours!</li>
+</ul>
+</section>
+<section id="class-hierarchies" class="slide level2">
+<h2>Class Hierarchies</h2>
+<ul>
+<li>Every class, except Object, has exactly one direct <strong>superclass</strong>.</li>
+<li>In our example:
+<ul>
+<li>The superclass of Square is Rectangle.</li>
+<li>The superclass of Rectangle is Object.</li>
+</ul></li>
+<li>Notice that in Rectangle’s constructor, we don’t have to explicitly invoke <code>super</code>.</li>
+<li><code>Object</code> has a default (no-argument) constructor, which is automatically invoked (unless otherwise specified).</li>
+</ul>
+</section></section>
+<section>
+<section id="vocabulary" class="title-slide slide level1">
+<h1>Vocabulary</h1>
+<ul>
+<li><strong>method overriding</strong></li>
+<li><strong>abstraction</strong></li>
+<li><strong>implementation</strong></li>
+<li><strong>polymorphism</strong></li>
+<li><strong>base class</strong> / <strong>parent class</strong></li>
+<li><strong>derived class</strong> / <strong>child class</strong></li>
+</ul>
+</section>
+<section id="implementing-vs-extending" class="slide level2">
+<h2>Implementing vs extending</h2>
+<p>Interfaces:</p>
+<ul>
+<li>A class can implement multiple interfaces.</li>
+<li>(Prior to Java 8) interfaces do not provide implementations, just declarations.</li>
+<li>Interfaces do not provide any instance variables.</li>
+<li>Interfaces describe a contract: they guarantee that implementing classes will have certain methods.</li>
+</ul>
+</section>
+<section id="implementing-vs-extending-1" class="slide level2">
+<h2>Implementing vs extending</h2>
+<p>Extending classes:</p>
+<ul>
+<li>A class can extend exactly one other class.</li>
+<li>Classes “inherit” all members (variables, methods) from their parent class – but can only see the <code>public</code> or <code>protected</code> members!</li>
+<li>Used when one type is a more specialized version of a another type.</li>
+</ul>
+</section>
+<section id="class-relationships" class="slide level2">
+<h2>Class relationships</h2>
+<p>Two main types of class relationships:</p>
+<ul>
+<li><strong>Inheritance</strong>, also known as an “is-a” relationship.</li>
+<li><strong>Composition</strong>, also known as a “has-a” relationship.</li>
+</ul>
+</section>
+<section id="inheritance" class="slide level2">
+<h2>Inheritance</h2>
+<ul>
+<li>If <code>Employee</code> and <code>Person</code> are two different classes, and <code>Employee</code> inherits from <code>Person</code>, we say that every <code>Employee</code> <strong>is a</strong> <code>Person</code>.</li>
+<li>Liskov’s Substitution Principle: If <span class="math inline">\(S\)</span> is a subtype of <span class="math inline">\(T\)</span>, then any object of type <span class="math inline">\(T\)</span> in a program can be replaced with an object of type <span class="math inline">\(S\)</span> without breaking the program.</li>
+</ul>
+</section>
+<section id="composition" class="slide level2">
+<h2>Composition</h2>
+<p><strong>Composition</strong> is referred to as a “has-a” relationship. That is: a <code>Driver</code> is <strong>not</strong> a <code>Vehicle</code>, but a <code>Driver</code> does <strong>have a</strong> <code>Vehicle</code>. Usually implemented by making the <code>Vehicle</code> be an instance variable of the <code>Driver</code> class.</p>
+</section></section>
+<section>
+<section id="case-study-averager" class="title-slide slide level1">
+<h1>Case Study: Averager</h1>
+<p>Look at the Averager class on Replit.</p>
+<ul>
+<li>What does the Averager class do?</li>
+<li>Is the Averager class designed in an “object-oriented” way?</li>
+<li>How many jobs is the <code>average</code> method responsible for?</li>
+</ul>
+</section>
+<section id="single-responsibility-principle" class="slide level2">
+<h2>Single Responsibility Principle</h2>
+<p>“There should never be more than one reason for a class to change.”"</p>
+<p><img width="20%" src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Robert_Cecil_Martin.png?20150303143316" /><br />
+Robert Martin, aka “Uncle Bob”, author of <em>Agile Software Development: Principles, Patterns, and Practices</em> (2001)</p>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Break up the Averager class into separate components.</p>
+<ul>
+<li>an <code>Input</code> class which has a method that returns a <code>List&lt;Integer&gt;</code></li>
+<li>the <code>Averager</code> class (which requires a <code>List&lt;Integer&gt;</code> as a constructor parameter), and returns the average in a method</li>
+<li>a Main component which instantiates an Input object, and Averager object, and outputs the average</li>
+</ul>
+</section></section>
+<section>
+<section id="more-abstraction" class="title-slide slide level1">
+<h1>More abstraction</h1>
+<p>Let’s focus on input for a little bit.</p>
+<ul>
+<li>In real-world systems, what are some of the ways in which “input” to a program is found?</li>
+<li>What is the purpose of the Input class? Specifically, what is it needed for?</li>
+</ul>
+<p>Often, our components should depend upon abstractions, rather than concrete implementations. How do we think about the Input component more abstractly?</p>
+</section>
+<section id="input-component" class="slide level2">
+<h2>Input component</h2>
+<ul>
+<li>The Input component <strong>provides a list of integers</strong>.</li>
+<li>This is an abstract goal: think of it as an “Integer List Provider”.</li>
+<li>Other ways that one can provide a list of integers?
+<ul>
+<li>Hard-code it (for testing)?</li>
+<li>Read from a file?</li>
+<li>Load from a database?</li>
+</ul></li>
+</ul>
+</section>
+<section id="refactoring" class="slide level2">
+<h2>Refactoring</h2>
+<p>Let’s introduce an <strong>abstraction</strong>, and <strong>refactor</strong> our code to use that abstraction.</p>
+<ul>
+<li>Create an IntegerListProvider interface.</li>
+<li>Refactor the Input class implement that interface.</li>
+<li>Make an Output component which depends on an IntegerListProvider interface</li>
+<li>Change the main method to use these different components.</li>
+</ul>
+</section>
+<section id="if-time" class="slide level2">
+<h2>If time</h2>
+<p>If there’s time, we can see how using an interface allows us to test out different components independently:</p>
+<ul>
+<li>Test out the Output and Averager components without needing input.</li>
+<li>Create an “dummy” class that implements the “IntegerListProvider” interface and just returns a hardcoded list for testing.</li>
+<li>Use that class to test out the Output and Averager components</li>
+</ul>
+</section>
+<section id="effective-java" class="slide level2">
+<h2>Effective Java</h2>
+<p>Item 18: “Favor composition over inheritance”.</p>
+<p>“Unlike method invocation, inheritance violates encapsulation [Snyder86]. In other words, a subclass depends on the implementation details of its superclass for its proper function. The superclass’s implementation may change from release to release, and if it does, the subclass may break, even though its code has not been touched.”</p>
+</section>
+<section id="effective-java-1" class="slide level2">
+<h2>Effective Java</h2>
+<p>“Inheritance is appropriate only in circumstances where the subclass really is a subtype of the superclass. In other words, a class B should extend a class A only if an”is-a" relationship exists between the two classes. . . it is often the case that B should contain a private instance of A and expose a different API: A is not an essential part of B, merely a detail of its implementation."</p>
+<p>(Joshua Bloch, <em>Effective Java</em> (2018))</p>
+</section></section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Project 3 description will be posted this weekend.</li>
+<li>Start brainstorming! You will need to think about:
+<ul>
+<li>What components do we need?</li>
+<li>What abstract interfaces?</li>
+<li>How do we build the larger components out of smaller ones?</li>
+</ul></li>
+<li>We will discuss this on Monday, and I will provide some hints in the asynchronous lesson on Thursday as well.</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
