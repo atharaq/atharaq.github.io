@@ -26,3 +26,5 @@ layout: default
 * [Lesson 13: Variants of TMs](lesson13.html)
 * [Lesson 14: Enumerators and Input-Output](lesson14.html)
 * [Lesson 15: Cardinality](lesson15.html)
+* [Lesson 16: Set Theory and Cardinality](lesson16.html)
+* [Lesson 17: Uncountability](lesson17.html)
