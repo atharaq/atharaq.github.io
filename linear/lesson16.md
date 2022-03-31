@@ -128,7 +128,7 @@ In fact, we need *every* scalar multiple of $\binom{1}{1}$. These look like $\bi
 
 What does this set look like?
 
-(image?)
+<img src="image-of-A.jpeg" />
 
 ## Two vectors
 
