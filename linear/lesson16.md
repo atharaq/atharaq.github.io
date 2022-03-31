@@ -1,4 +1,8 @@
 # Linear Lesson 16: More on Linear Transformations
+{:.no_toc}
+
+1. Table of Contents
+{:toc}
 
 # Warm up
 
