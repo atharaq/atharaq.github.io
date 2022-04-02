@@ -29,6 +29,8 @@ Either way we arrive at some sort of contradiction, and so no such $M$ can exist
 
 # $A_{TM}$
 
+(video 1)
+
 Consider the language $A_{TM} = \\{ \langle M, w \rangle : M$ accepts $w \\}$. This is the **acceptance problem**. I claim that this language is c.e. but not decidable!
 
 ## $A_{TM}$ is c.e.!
@@ -64,6 +66,8 @@ That is, $X$ accepts $\langle M \rangle$ if and only of $D$ rejects $\langle M, 
 
 ## $E_{TM}$
 
+(video 2)
+
 Consider the **emptiness problem**: $E_{TM} = \\{ \langle M \rangle : \mathcal{L}(M) = \emptyset \\}$. This is the set of those Turing Machines which do not recognize anything.
 
 **Theorem**: $E_{TM}$ is undecidable.
@@ -89,6 +93,8 @@ Then if $D$ decides if $\mathcal{L}(M^\prime) = \emptyset$, $A$ will be able to 
 
 # Reductions
 
+(video 3)
+
 Our general strategy for these examples has been to *reduce* one problem to another. We show that one problem $\mathcal{L}_1$ is "easier than (or at least as easy as)" another problem $\mathcal{L}_2$. If we already know that $\mathcal{L}_1$ is not decidable, then $\mathcal{L}_2$ would also be decidable.
 
 **Definition**: An *oracle* for a problem $\mathcal{L}$ is a function $O : \Sigma^{\*} \to \{ YES, NO \}$ such that $O(w) = YES$ iff $w \in \mathcal{L}$, and $O(w) = NO$ iff $w \not \in \mathcal{L}$. An *oracle Turing Machine* is a regular Turing Machine augmented with an oracle.
@@ -98,13 +104,87 @@ The idea of this definition is to formalize the results from the previous sectio
 **Definition**: Let $\mathcal{L}_1$ and $\mathcal{L}_2$ be languages. Then:
 
 1. $\mathcal{L}_1$ is **Turing-reducible** to $\mathcal{L}_2$ if, given an oracle for $\mathcal{L}_2$, we can decide $\mathcal{L}_1$. We write $\mathcal{L}_1 \leq_{T} \mathcal{L}_2$.
-2. $\mathcal{L}_1$ is **Turing-equivalent** to $\mtahcal{L}_2$ if $\mathcal{L}_1 \leq_T \mathcal{L}_2$ and $\mathcal{L}_2 \leq_T \mathcal{L}_1$. We write $\mathcal{L}_1 \equiv_T \mathcal{L}_2$.
+2. $\mathcal{L}_1$ is **Turing-equivalent** to $\mtahcal{L}_2$ if $\mathcal{L}_1 \leq_T \mathcal{L}_2$ and $\mathcal{L}_2 \leq_T \mathcal{L}_1$. We write $\mathcal{L}_1 \equiv_T \mathcal{L}_2$$.
+
+So far we have seen:
+
+* $A_{TM} \leq_T E_{TM}$
+* $E_{TM} \leq_T EQ_{TM}$
+* $X_{TM} \leq_T A_{TM}$
+
+All of these were Turing reductions, we just didn't use the term at the time! Note that $\leq_T$ is transitive, so, for example, $A_{TM} \leq_T EQ_{TM}$. To see this: notice that given an oracle for $EQ_{TM}$, we can decide $E_{TM}$. And then given a decider for $E_{TM}$, we can decide $A_{TM}$.
+
+We can also prove this more directly. Consider the following oracle TM $A$ which uses an oracle for $EQ_{TM}$:
+
+"On input $\langle M, w \rangle:
+
+1. Construct $M_1$ which accepts everything.
+2. Construct $M_2$, which, on input $x$, does the following:
+   * If $x \neq w$, accept.
+   * If $x = w$, run $M$ on $w$. If $M$ accepts, accept.
+3. Check if $\langle M_1, M_2 \rangle \in EQ_{TM}$. If so, **accept**. Otherwise, **reject**."
 
 ## Exercise
 
+Show that $A_{TM} \equiv_T \overline{A_{TM}}$. (This is actually easy!) Conclude the following:
+
+**Theorem**: There are c.e. languages which are Turing-equivalent to languages that are *not* c.e.
+
+## Harder exercise
+
+Show that $REG_{TM} = \\{ \langle M \rangle : \mathcal{L}(M)$ is regular $\\}$ is undecidable.
+
+Hint: try to decide $A_{TM}$. On input $\langle M, w \rangle, construct a TM $M^\prime$ such that $\mathcal{L}(M^\prime) = \\{ a^n b^n : n \in \mathbb{N} \\}$ if $M$ does not accept $w$, and $\mathcal{L}(M^\prime) = \Sigma^{\*}$ if $M$ does accept $w$.
+
 ## EQ vs TOT
 
+Recall that $EQ_{TM} = \\{ \langle M_1, M_2 \rangle : \mathcal{L}(M_1) = \mathcal{L}(M_2) \\}$. Consider the language $TOT = \\{ \langle F \rangle : F$ is a total computable function $\\}$.
+
+**Exercise**: Show that $TOT \leq_T EQ_{TM}$.
+
+Hint: Given $\langle F \rangle$, construct two TMs. One of them, $M_1$ should accept everything. What should the other, $M_2$ do? We want to be sure that if $M_1$ and $M_2$ have the same language, then $F$ should be a total function. But if $F$ ever does not halt on some input $w$, then the language of $M_2$ should not be everything.
+
+See the solution in the video below...
+
+(video 4)
+
 # m-reductions
+
+(video 5)
+
+Turing reducibility helps us determine if a language is undecidable. But we need a more fine-grained relation to show that a language is not c.e. or to show that language is not co-c.e.
+
+**Definition**: $\mathcal{L}_1$ is $m$-reducible to $\mathcal{L}_2$, denoted $\mathcal{L}_1 \leq_m \mathcal{L}_2$, if there is a total computable $f : \Sigma^{\*} \to \Sigma^{\*}$ such that for each $w \in \Sigma^{*}$, $w \in \mathcal{L}_1$ if and only if $f(w) \in \mathcal{L}_2$. This relation is sometimes referred to as "many-one reducibility".
+
+**Theorem**: Let $\mathcal{L}_1$ and $\mathcal{L}_2$ be languages.
+
+1. If $\mathcal{L}_1 \leq_m \mathcal{L}_2$ and $\mathcal{L}_2$ is c.e., then $\mathcal{L}_1$ is c.e.
+2. If $\mathcal{L}1 \leq_m \mathal{L}_2$ and $\mathcal{L}_1$ is not c.e., then $\mathcal{L}_2$ is not c.e.
+3. $\mathcal{L}_1 \leq_m \mathcal{L}_2$ if and only if $\overline{\mathcal{L}_1} \leq_m \overline{\mathcal{L}_2}$.
+
+**Proof**:
+
+To prove (1), Let $M_2$ recognize $\mathcal{L}_2$ and $f : \Sigma^{\*} \to \Sigma^{\*}$ be the reduction. Then we can recognize $\mathcal{L}_1$ as follows:
+
+"On input $w$:
+1. Compute $f(w)$.
+2. Run $M_2$ on $f(w)$. Output whatever $M_2$ outputs (accept or reject)."
+
+To prove (2), just notice that this is the contrapositive of (1); every "if p then q" statement is logically equivalent to "if not q then not p". So "If $\mathcal{L}_2$ is c.e, then $\mathcal{L}_1$ is c.e." is equivalent to "If $\mathcal{L}_1$ is not c.e., then $\mathcal{L}_2$ is not c.e."
+
+For (3), look at the following picture:
+
+(picture)
+
+Suppose $f$ is the reduction. Let $w \in \overline{\mathcal{L}_1}$. Then $w \not \in \mathcal{L}_1$, so $f(w) \not \in \mathcal{L}_2$, but that means that $f(w) \in \overline{\mathcal{L}_2}$. Similarly, if $w \not \in \overline{\mathcal{L}_1}$, then $w \in \mathcal{L}_1$, so $f(w) \in \mathcal{L}_2$, which means $f(w) \not \in \overline{\mathcal{L}_2}$.
+
+## Example: $EQ_{TM}$ is not c.e.
+
+(video 6)
+
+**Theorem**: $EQ_{TM}$ is not c.e.
+
+**Proof**:
 
 ## Strategy
 
