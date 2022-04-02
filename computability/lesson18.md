@@ -159,7 +159,7 @@ Turing reducibility helps us determine if a language is undecidable. But we need
 **Theorem**: Let $\mathcal{L}_1$ and $\mathcal{L}_2$ be languages.
 
 1. If $\mathcal{L}_1 \leq_m \mathcal{L}_2$ and $\mathcal{L}_2$ is c.e., then $\mathcal{L}_1$ is c.e.
-2. If $\mathcal{L}1 \leq_m \mathal{L}_2$ and $\mathcal{L}_1$ is not c.e., then $\mathcal{L}_2$ is not c.e.
+2. If $\mathcal{L}_1 \leq_m \mathal{L}_2$ and $\mathcal{L}_1$ is not c.e., then $\mathcal{L}_2$ is not c.e.
 3. $\mathcal{L}_1 \leq_m \mathcal{L}_2$ if and only if $\overline{\mathcal{L}_1} \leq_m \overline{\mathcal{L}_2}$.
 
 **Proof**:
@@ -184,10 +184,103 @@ Suppose $f$ is the reduction. Let $w \in \overline{\mathcal{L}_1}$. Then $w \not
 
 **Theorem**: $EQ_{TM}$ is not c.e.
 
-**Proof**:
+**Proof**: Recall that $A_{TM}$ is c.e. but not decidable. That means that $\overline{A_{TM}}$ is not c.e.; if it were. then $A_{TM}$ would be c.e. and co-c.e., which means it would be decidable.
+
+Using the Theorem, we can show that $EQ_{TM}$ is not c.e. by showing that $\overline{A_{TM}} \leq_m EQ_{TM}$. This is equivalent (part 3 of the theorem) to showing that $A_{TM} \leq_m \overline{EQ_{TM}}$. Let $F$ be the following function:
+
+"On input $\langle M, w \rangle:
+1. Construct $M_1$ which rejects everything.
+2. Construct $M_2$ which, on any input $x$, ignores $x$ and runs $M$ on $w$. If $M$ accepts $w$, $M_2$ accepts $x$.
+3. Output $\langle M_1, M_2 \rangle$."
+
+Then, given $\langle M, w \rangle$:
+
+* If $\langle M, w \in A_{TM}$, $F$ outputs a pair $\langle M_1, M_2 \rangle$ where $\mathcal{L}(M_1) = \emptyset$ and $\mathcal{L}(M_2) = \Sigma^{\*}$, so $\langle M_1, M_2 \rangle \not \in EQ_{TM}$.
+* If $\langle M, w \not \in A_{TM}$, $F$ outputs $\langle M_1, M_2 \rangle$ where $\mathcal{L}(M_1) = \mathcal{L}(M_2) = \emptyset$, so $\langle M_1, M_2 \rangle \in EQ_{TM}$.
+
+That is, $F$ is a reduction from $A_{TM}$ to $\overline{EQ_{TM}}$!
+
+**Exercise**: Show that $EQ_{TM}$ is **not** co-c.e.
+
+That is, show that $\overline{EQ_{TM}}$ is not c.e. To see this, we need a reduction $\overline{A_{TM}} \leq_m \overline{EQ_{TM}}$. By the third part of the theorem, this means we need a reduction $A_{TM} \leq_m EQ_{TM}$.
+
+Hint: for the function $F$, make a small modification to $M_1$, so that if $\langle M, w \rangle \in A_{TM}$, then $\langle M_1, M_2 \rangle \in EQ_{TM}$, and vice versa.
 
 ## Strategy
 
+These two results (the theorem we proved and the exercise) show that $EQ_{TM}$ is neither c.e. nor co-c.e. So that means there are languages which are neither. (We should have known this already, from cardinality arguments, but this is a more explicit proof.)
+
+In general, to show a language is not c.e. or not co-c.e., we can show reductions from $A_{TM}$:
+
+* $\mathcal{L}$ is not c.e. if $A_{TM} \leq_m \overline{\mathcal{L}}$, and
+* $\mathcal{L}$ is not co-c.e. if $A_{TM} \leq_m \mathcal{L}$, and
+
+If we can find both kinds of reductions, then $\mathcal{L}$ is neither c.e. nor co-c.e. If $\mathcal{L}$ is not decidable, then we should be able to find at least one of these reductions.
+
 ## Example
 
+(video 7)
+
+Consider $E_{TM} = \\{ \langle M \rangle : \mathcal{L}(M) = \emptyset \\}$. Is it c.e., co-c.e., both, or neither? (It certainly cannot be both, as we proved, earlier, that it's not decidable.)
+
+Let's look for a reduction from $A_{TM}$ to either $E_{TM}$ or $\overline{E_{TM}}$. We've seen a Turing reduction for these before, and it turns out to be similar.
+
+Let $F$ be the following function:
+
+"On input $\langle M, w \rangle:
+1. Construct $M^\prime$: on input $x$:
+   * if $x \neq w$, reject.
+   * if $x = w$, run $M$ on $w$ and output what $M$ does.
+2. Output $\langle M^\prime \rangle$."
+
+Then notice that if $\langle M, w \rangle \in A_{TM}$, $\mathcal{L}(M^\prime) \neq \emptyset$, but if $\langle M, w \rangle \not \in A_{TM}$, then $\mathcal{L}(M^\prime) = \emptyset$. So this is a reduction $A_{TM} \leq_m \overline{E_{TM}}$, showing that $E_{TM}$ is not c.e.!
+
+Is there a reduction $A_{TM} \leq_m E_{TM}$? In fact: there isn't! Consider the following TM $T$, which I claim recognizes $E_{TM}$:
+
+"On input $\langle M \rangle$,  
+For each $i = 0, 1, 2, \ldots$:  
+Simulate $M$ on the first $i$ strings for $i$ steps.  If $M$ ever accepts, **accept**."
+
+Do you see why, for each TM $M$, $T$ accepts $\langle M \rangle$ if and only if $\mathcal{L}(M) \neq \emptyset$?
+
 ## TOT
+
+(video 8)
+
+Recall $TOT = \\{ \langle F \rangle : F$ is a total computable function $\\}$.
+
+**Theorem**: $TOT$ is neither c.e. nor co-c.e.
+
+**Proof**:
+
+First, we show a reduction from $A_{TM}$ to $TOT$:
+
+"On input $\langle M, w \rangle$:
+
+1. Construct $G$, which, on input $x$:
+   * If $x \neq w$, **halt** and output 0.
+   * If $x = w$, run $M$ on input $w$. If $M$ accepts, **halt** and output 0. If $M$ rejects $w$, loop forever (don't output anything).
+2. Output $\langle G \rangle$."
+
+Then notice that $G$ halts on all inputs other than $w$, and $G$ halts on $w$ if and only if $M$ accepts $w$. In other words, $G$ is total if and only if $M$ accepts $w$. So this is a reduction $A_{TM} \leq_m TOT$, showing that $TOT$ is not co-c.e.
+
+Now let's find a reduction $A_{TM} \leq_m \overline{TOT}$. This is trickier. Given $\langle M, w \rangle$, we want a function $G$ which will halt on all outputs if and only if $M$ does not accept $w$. If $M$ does accept $w$, then $G$ should loop forever at some point.
+
+The first part seems suspicious. How could $G$ possibly know if $M$ is never going to accept $w$? The point is that $G$ doesn't. $G$ can halt on *some* outputs, thinking that $M$ is not going to accept, and then if it ever figures out that $M$ does accept $w$, $G$ can change its mind and enter an infinite loop!
+
+The idea is that $G$ should use its input as a way to bound the length of the computation it runs $M$ for. In other words, if $G$ takes in input $a^n$, $G$ should run $M$ on $w$ for $n$ steps. Since that's finite, $G$ can then check if $M$ has accepted by then. If it hasn't, $G$ will guess that $M$ is not going to accept, and so $G$ will halt. If $M$ ever does accept $w$, then for some $n$, there will be an input $a^n$ where $G$ knows that $M$ is accepting $w$, so $G$ should not halt on that input.
+
+That is:
+
+"On input $\langle M, w \rangle:
+
+1. Construct $G$, which, on input $a^n$:
+   * Run $M$ on $w$ for $n$ steps.
+   * If $M$ accepts $w$ within that many steps, loop forever.
+   * If $M$ does not accept $w$ within that many steps, **halt** and output 0.
+2. Output $\langle G \rangle$."
+
+Now we have exactly what we wanted:
+
+* If $M$ accepts $w$, then it will do so in $n$ steps for some $n$. Then $G$ will loop forever on $a^n$, so $G$ is not a total function.
+* If $M$ does not accept $w$, then for each $n$, $G(a^n) = 0$, so $G$ is total!
