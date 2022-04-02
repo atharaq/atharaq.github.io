@@ -1,4 +1,4 @@
-# Lesson 18: Undecidability
+# Lesson 18: Undecidability and reductions
 {:.no_toc}
 
 1. Table of Contents
@@ -57,7 +57,7 @@ It turns out that we don't, in fact, need infinitely many states to do all of th
 
 **Proof**: Assume by way of contradiction ([BWOC](https://pbs.twimg.com/media/EwH-hipXcAUM2M3?format=png&name=small)) that $A_{TM}$ is decidable and $D$ is a decider for it. Then we can decide $X_{TM}$ as follows. Let $X$ be the following machine:
 
-"On input $\langle M \rangle:
+"On input $\langle M \rangle$:
 1. Run $D$ on $\langle M, \langle M \rangle \rangle$.
 2. If $D$ accepts, reject.
 3. If $D$ rejects, accept."
@@ -103,8 +103,8 @@ The idea of this definition is to formalize the results from the previous sectio
 
 **Definition**: Let $\mathcal{L}_1$ and $\mathcal{L}_2$ be languages. Then:
 
-1. $\mathcal{L}_1$ is **Turing-reducible** to $\mathcal{L}_2$ if, given an oracle for $\mathcal{L}_2$, we can decide $\mathcal{L}_1$. We write $\mathcal{L}_1 \leq_{T} \mathcal{L}_2$.
-2. $\mathcal{L}_1$ is **Turing-equivalent** to $\mtahcal{L}_2$ if $\mathcal{L}_1 \leq_T \mathcal{L}_2$ and $\mathcal{L}_2 \leq_T \mathcal{L}_1$. We write $\mathcal{L}_1 \equiv_T \mathcal{L}_2$$.
+1. $\mathcal{L}\_1$ is **Turing-reducible** to $\mathcal{L}\_2$ if, given an oracle for $\mathcal{L}\_2$, we can decide $\mathcal{L}\_1$. We write $\mathcal{L}\_1 \leq\_{T} \mathcal{L}\_2$.
+2. $\mathcal{L}_1$ is **Turing-equivalent** to $\mathcal{L}\_2$ if $\mathcal{L}_1 \leq_T \mathcal{L}_2$ and $\mathcal{L}_2 \leq_T \mathcal{L}_1$. We write $\mathcal{L}_1 \equiv_T \mathcal{L}_2$.
 
 So far we have seen:
 
@@ -116,7 +116,7 @@ All of these were Turing reductions, we just didn't use the term at the time! No
 
 We can also prove this more directly. Consider the following oracle TM $A$ which uses an oracle for $EQ_{TM}$:
 
-"On input $\langle M, w \rangle:
+"On input $\langle M, w \rangle$:
 
 1. Construct $M_1$ which accepts everything.
 2. Construct $M_2$, which, on input $x$, does the following:
@@ -134,7 +134,7 @@ Show that $A_{TM} \equiv_T \overline{A_{TM}}$. (This is actually easy!) Conclude
 
 Show that $REG_{TM} = \\{ \langle M \rangle : \mathcal{L}(M)$ is regular $\\}$ is undecidable.
 
-Hint: try to decide $A_{TM}$. On input $\langle M, w \rangle, construct a TM $M^\prime$ such that $\mathcal{L}(M^\prime) = \\{ a^n b^n : n \in \mathbb{N} \\}$ if $M$ does not accept $w$, and $\mathcal{L}(M^\prime) = \Sigma^{\*}$ if $M$ does accept $w$.
+Hint: try to decide $A_{TM}$. On input $\langle M, w \rangle$, construct a TM $M^\prime$ such that $\mathcal{L}(M^\prime) = \\{ a^n b^n : n \in \mathbb{N} \\}$ if $M$ does not accept $w$, and $\mathcal{L}(M^\prime) = \Sigma^{\*}$ if $M$ does accept $w$.
 
 ## EQ vs TOT
 
@@ -159,7 +159,7 @@ Turing reducibility helps us determine if a language is undecidable. But we need
 **Theorem**: Let $\mathcal{L}_1$ and $\mathcal{L}_2$ be languages.
 
 1. If $\mathcal{L}_1 \leq_m \mathcal{L}_2$ and $\mathcal{L}_2$ is c.e., then $\mathcal{L}_1$ is c.e.
-2. If $\mathcal{L}_1 \leq_m \mathal{L}_2$ and $\mathcal{L}_1$ is not c.e., then $\mathcal{L}_2$ is not c.e.
+2. If $\mathcal{L}_1 \leq_m \mathcal{L}_2$ and $\mathcal{L}_1$ is not c.e., then $\mathcal{L}_2$ is not c.e.
 3. $\mathcal{L}_1 \leq_m \mathcal{L}_2$ if and only if $\overline{\mathcal{L}_1} \leq_m \overline{\mathcal{L}_2}$.
 
 **Proof**:
@@ -272,7 +272,7 @@ The idea is that $G$ should use its input as a way to bound the length of the co
 
 That is:
 
-"On input $\langle M, w \rangle:
+"On input $\langle M, w \rangle$:
 
 1. Construct $G$, which, on input $a^n$:
    * Run $M$ on $w$ for $n$ steps.
