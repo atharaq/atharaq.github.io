@@ -27,3 +27,4 @@ layout: default
 * [Lesson 14: Subspaces](lesson14.html)
 * [Lesson 15: Linear Transformations](lesson15.html)
 * [Lesson 16: More on linear transformations](lesson16.html)
+* [Lesson 17: Linear combinations and spans](lesson17.html)
