@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2022-04-04">
+  <title>CS2 Lesson 18</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 18</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">4 April 2022</p>
+</section>
+
+<section>
+<section id="coingame" class="title-slide slide level1">
+<h1>CoinGame</h1>
+<p>On <a href="https://replit.com/team/cs2-spring22/Coin-Game">Replit</a>: simple coin flipping game for two players.</p>
+<ul>
+<li>Not object-oriented!</li>
+<li>Some changes may be hard!</li>
+</ul>
+</section>
+<section id="coingame-1" class="slide level2">
+<h2>CoinGame</h2>
+<p>Simple coin flipping game for two players. It works as follows:</p>
+<ol type="1">
+<li>First, a coin is flipped 9 times.</li>
+<li>A human player is then prompted to guess the number of heads.</li>
+<li>A computer player guesses a random number of heads (from 0 - 9).</li>
+<li>A winner is declared, based on whoever is closer to the real number.</li>
+</ol>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<ol type="1">
+<li>Change the game so that the user can enter in the number of times we will flip the coin.</li>
+<li>Change the game so that the user can choose who guesses first (the human or the computer player).</li>
+</ol>
+<p>(Surprisingly, one of these changes is much harder than the other.)</p>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<ol start="3" type="1">
+<li>Come up with another strategy for the computer player. Change the game so that the user can select between the two strategies (Random / other strategy).</li>
+<li>Change the game to allow for multiple ways to play: Human vs Human, Computer vs Computer, etc. Allowing all possible strategies for computer players as well.</li>
+</ol>
+<p>You must complete these changes for <strong>homework</strong>. It will be due on <strong>Thursday</strong> 4/7 at 11:59 PM.</p>
+</section></section>
+<section>
+<section id="project-3-discussion" class="title-slide slide level1">
+<h1>Project 3 Discussion</h1>
+<p>Game:</p>
+<ul>
+<li>Pick a random number from 3 to 7 for the rows</li>
+<li>First row: 3 stones.</li>
+<li>Each row after that: one more than the previous.</li>
+</ul>
+</section>
+<section id="gameplay" class="slide level2">
+<h2>Gameplay</h2>
+<ol type="1">
+<li>Player one picks a row, and takes some stones from that row (<strong>only</strong> that row).</li>
+<li>Player two picks a row, and takes some stones from that row.</li>
+<li>Play continues like this until there are no stones left.</li>
+<li>The person who takes the last stone wins!</li>
+</ol>
+</section>
+<section id="lets-play-it" class="slide level2">
+<h2>Let’s play it!</h2>
+<p>Let’s play this on the blackboard?</p>
+<ul>
+<li>Row 0: * * *</li>
+<li>Row 1: * * * *</li>
+<li>Row 2: * * * * *</li>
+<li>Row 3: * * * * * *</li>
+</ul>
+</section>
+<section id="design-hints" class="slide level2">
+<h2>Design Hints</h2>
+<ul>
+<li>Your design should support multiple player types, and all ways to play. Similar to the coin game.</li>
+<li>Object-oriented concepts will help!
+<ul>
+<li>If the Game depends on abstract player types, can easily “swap out” different strategies.</li>
+</ul></li>
+</ul>
+</section>
+<section id="getting-started" class="slide level2">
+<h2>Getting Started</h2>
+<ul>
+<li>Make a Player interface</li>
+<li>Implement a Human Player and a Simple Player.</li>
+<li>See if you can implement a Game with just these player types.</li>
+<li>If your Game component relies on the Player interface correctly, you should be able to support four ways of playing:
+<ul>
+<li>Human vs Simple</li>
+<li>Simple vs Human</li>
+<li>Human vs Human</li>
+<li>Simple vs Simple</li>
+</ul></li>
+</ul>
+</section>
+<section id="time-management" class="slide level2">
+<h2>Time Management</h2>
+<ul>
+<li>Probably the most challenging project</li>
+<li>Get started now.</li>
+<li>What can you do now? (Player interface, Human Player, Simple Player)<br />
+</li>
+<li>Design the main game with just these players (object-oriented so it’s flexible / easy to change)</li>
+<li>Due in 20 days. Use your time wisely!</li>
+</ul>
+</section>
+<section id="grading" class="slide level2">
+<h2>Grading</h2>
+<ul>
+<li>25 points if your submission <strong>compiles</strong> without any errors</li>
+<li>25 points for <strong>functionality</strong>:
+<ul>
+<li>Three player types should be available: Simple Computer, Smarter Computer, and Human Player</li>
+<li>All 9 versions of the game (Human vs Simple, Human vs Smarter, Human vs Human, etc) should be allowed</li>
+<li>You must correctly determine the winner in all cases.</li>
+</ul></li>
+</ul>
+</section>
+<section id="grading-continued" class="slide level2">
+<h2>Grading (continued)</h2>
+<ul>
+<li>30%: <strong>object-oriented design / style</strong>
+<ul>
+<li>Code is “lightly coupled”, independent testable components</li>
+<li>Limit static methods as much as possible</li>
+<li>Normal style rules apply: indentation, good variable names, comments, etc.</li>
+</ul></li>
+</ul>
+</section>
+<section id="grading-continued-1" class="slide level2">
+<h2>Grading (continued)</h2>
+<ul>
+<li>20%: <strong>documentation</strong>
+<ul>
+<li>Explain how the various components are implemented</li>
+<li>If you use inheritance, explain why; if you use interfaces, explain why. etc</li>
+<li>Clearly document the “Smarter” strategy (either in a text file, or in the comments at the top of the Smarter class)</li>
+</ul></li>
+</ul>
+</section></section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Quiz 4 (take home) will be posted Thursday. Due Monday after spring break.</li>
+<li>An asynchronous lesson will also be posted by Thursday.</li>
+<li>Project 3 is due in 3 weeks. Get started early!</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
