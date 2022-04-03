@@ -8,6 +8,12 @@
 
 Sipser 5.1, 5.3 (skip 5.2), 6.3
 
+# Suggestion
+
+This "asynchronous" lesson consists of notes and videos. In terms of class time, this should be the equivalent of two days of class. So I suggest that you think of everyting up until the section [EQ vs TOT](#eq-vs-tot) as the first "lesson", and everything after that as the "second" lesson.
+
+You may wish to break it up into even smaller parts so each section is more digestible. But I definitely suggest taking a break between the first set on "Turing reductions" and the second set on "m-reductions".
+
 # Last time
 
 Last time we saw:
@@ -29,7 +35,9 @@ Either way we arrive at some sort of contradiction, and so no such $M$ can exist
 
 # $A_{TM}$
 
-(video 1)
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/PUc4EzjJRCM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Consider the language $A_{TM} = \\{ \langle M, w \rangle : M$ accepts $w \\}$. This is the **acceptance problem**. I claim that this language is c.e. but not decidable!
 
@@ -66,7 +74,9 @@ That is, $X$ accepts $\langle M \rangle$ if and only of $D$ rejects $\langle M, 
 
 ## $E_{TM}$
 
-(video 2)
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/k7BazjiJNYo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Consider the **emptiness problem**: $E_{TM} = \\{ \langle M \rangle : \mathcal{L}(M) = \emptyset \\}$. This is the set of those Turing Machines which do not recognize anything.
 
@@ -93,7 +103,9 @@ Then if $D$ decides if $\mathcal{L}(M^\prime) = \emptyset$, $A$ will be able to 
 
 # Reductions
 
-(video 3)
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/8k-F4xU63e4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Our general strategy for these examples has been to *reduce* one problem to another. We show that one problem $\mathcal{L}_1$ is "easier than (or at least as easy as)" another problem $\mathcal{L}_2$. If we already know that $\mathcal{L}_1$ is not decidable, then $\mathcal{L}_2$ would also be decidable.
 
@@ -144,13 +156,17 @@ Recall that $EQ_{TM} = \\{ \langle M_1, M_2 \rangle : \mathcal{L}(M_1) = \mathca
 
 Hint: Given $\langle F \rangle$, construct two TMs. One of them, $M_1$ should accept everything. What should the other, $M_2$ do? We want to be sure that if $M_1$ and $M_2$ have the same language, then $F$ should be a total function. But if $F$ ever does not halt on some input $w$, then the language of $M_2$ should not be everything.
 
-See the solution in the video below...
+See the solution in the video below:
 
-(video 4)
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/FQi1Bu7jUnY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 # m-reductions
 
-(video 5)
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/L8A0hIYWFuA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Turing reducibility helps us determine if a language is undecidable. But we need a more fine-grained relation to show that a language is not c.e. or to show that language is not co-c.e.
 
@@ -174,13 +190,15 @@ To prove (2), just notice that this is the contrapositive of (1); every "if p th
 
 For (3), look at the following picture:
 
-(picture)
+<img class="noreverse" src="m-reduction.jpeg" />
 
 Suppose $f$ is the reduction. Let $w \in \overline{\mathcal{L}_1}$. Then $w \not \in \mathcal{L}_1$, so $f(w) \not \in \mathcal{L}_2$, but that means that $f(w) \in \overline{\mathcal{L}_2}$. Similarly, if $w \not \in \overline{\mathcal{L}_1}$, then $w \in \mathcal{L}_1$, so $f(w) \in \mathcal{L}_2$, which means $f(w) \not \in \overline{\mathcal{L}_2}$.
 
 ## Example: $EQ_{TM}$ is not c.e.
 
-(video 6)
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/8D4fRbsyJew" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 **Theorem**: $EQ_{TM}$ is not c.e.
 
@@ -219,7 +237,9 @@ If we can find both kinds of reductions, then $\mathcal{L}$ is neither c.e. nor 
 
 ## Example
 
-(video 7)
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/Zzl7kIkcZHA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Consider $E_{TM} = \\{ \langle M \rangle : \mathcal{L}(M) = \emptyset \\}$. Is it c.e., co-c.e., both, or neither? (It certainly cannot be both, as we proved, earlier, that it's not decidable.)
 
@@ -227,7 +247,7 @@ Let's look for a reduction from $A_{TM}$ to either $E_{TM}$ or $\overline{E_{TM}
 
 Let $F$ be the following function:
 
-"On input $\langle M, w \rangle:
+"On input $\langle M, w \rangle$:
 1. Construct $M^\prime$: on input $x$:
    * if $x \neq w$, reject.
    * if $x = w$, run $M$ on $w$ and output what $M$ does.
@@ -245,7 +265,9 @@ Do you see why, for each TM $M$, $T$ accepts $\langle M \rangle$ if and only if 
 
 ## TOT
 
-(video 8)
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/zz-XVzL9Mng" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Recall $TOT = \\{ \langle F \rangle : F$ is a total computable function $\\}$.
 
