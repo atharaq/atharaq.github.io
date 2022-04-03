@@ -28,3 +28,4 @@ layout: default
 * [Lesson 15: Cardinality](lesson15.html)
 * [Lesson 16: Set Theory and Cardinality](lesson16.html)
 * [Lesson 17: Uncountability](lesson17.html)
+* [Lesson 18: Undecidability and reductions](lesson18.html)
