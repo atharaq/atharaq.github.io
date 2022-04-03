@@ -6,7 +6,27 @@
 
 # Last time
 
+We looked at the function $A = \begin{pmatrix}0 & 1 & 0 \\\ 0 & 0 & 1 \end{pmatrix}$. We saw that its kernel is the set $\\{ \begin{pmatrix} x \\\ 0 \\\ 0 \end{pmatrix} : x \in \mathbb{R} \\}$ and its image, $A(\mathbb{R}^3) = \\{ \binom{x}{y} : x \in \mathbb{R}, y \in \mathbb{R} \\}$. In other words, $A(\mathbb{R}^3) = \mathbb{R}^2$.
+
+The kernel is a line (one dimensional) and the image is a plane (2D). It's not a coincidence that the *domain* of $A$ is three-dimensional! We will see a major theorem in the course that relates the dimensions of the kernel, the image, and the domain of a linear function. We won't study this today, but just as an idea: out of the three dimensions of $\mathbb{R}^3$, one dimension, the $x$-axis, is sent to $\vec{0}$. The other two dimension are then mapped to $\mathbb{R}^2$.
+
 ## Image is a subspace
+
+Last time we stated the theorem: for any linear transformation between vector spaces $L : V \to W$, $ker(L)$ is a subspace of $V$ and $L(V)$ is a subspace of $W$. I gave a hint about why $ker(L)$ is a subspace, but let's look at the image.
+
+What do we need to show?
+
+*Closure under vector addition*: Suppose $w_1 \in L(V)$ and $w_2 \in L(V)$. How can we be sure that $w_1 + w_2 \in L(V)$?
+
+What do we know about $w_1$ and $w_2$? Since they are in $L(V)$, that means there are $v_1$ and $v_2 \in V$ such that $L(v_1) = w_1$ and $L(v_2) = w_2$. To show $w_1 + w_2 \in L(V)$, we need to find some $v \in V$ such that $L(v) = w_1 + w_2$. Can you figure out what the correct $v$ would be?
+
+*Closure under scalar multiplication*: Similarly suppose $w \in L(V)$ and $a \in \mathbb{R}$ is a scalar. Then there is $v \in V$ such that $L(v) = w$.
+
+**Claim**: $L(a \cdot v) = a \cdot w$. To see this, just use linearity, so that $L(a \cdot v) = a \cdot L(v)$, and since $L(v) = w$, this is $a \cdot w$. Therefore $a \cdot w \in L(V)$!
+
+*Zero vector*: Since $L(\vec{0}\_V) = \vec{0}\_W$, we know that $\vec{0}\_W \in L(V)$.
+
+So the image $L(V)$ is a subspace of $W$!
 
 # Spans
 
@@ -103,7 +123,7 @@ The issue is that the three vectors are not **independent**. One can write one v
 
 In general, if we have vectors $v_1, \ldots, v_n$ in a vector space, we might want to say that they are independent if none of them is in the span of the others. This is the right idea, but it's not the easiest notion to formalize into a definition. Instead we will use the following idea:
 
-Suppose $v_1, v_2, v_3$ are *dependent*. One of them can be written as a linear combination of the others. We're not sure which one, but either: $v_1 = a_2_v + a_3 v_3$, or $v_2 = a_1 v_1 + a_3 v_3$, or $v_3 = a_1 v_1 + a_2 v_2$. In other words, one of the following is true:
+Suppose $v_1, v_2, v_3$ are *dependent*. One of them can be written as a linear combination of the others. We're not sure which one, but either: $v_1 = a_2v_2 + a_3 v_3$, or $v_2 = a_1 v_1 + a_3 v_3$, or $v_3 = a_1 v_1 + a_2 v_2$. In other words, one of the following is true:
 
 * $-1 v_1 + a_2 v_2 + a_3 v_3 = \vec{0}$,
 * $a_1 v_1 + (-1)v_2 + a_3 v_3 = \vec{0}$, or
