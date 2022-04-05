@@ -6,7 +6,9 @@
 
 # Mathematical Structures
 
-(video)
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/tWuj7FnIyw8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 > Mathematics is the art of giving the same name to different things. (Henri Poincaré)
 
@@ -45,11 +47,15 @@ $$
 
 Do you see how these are the same, structurally?
 
-(picture)
+<img class="noreverse" src="isomorphic-structures.jpeg" />
 
 This semester, we are focusing on one particular class of structures: vector spaces. We have seen that there are many different kinds of vector spaces. But they are all structurally similar, and in fact, if they have the same *dimension*, they will end up having the exact same structural properties. The structure of a vector space is entirely dependent on its dimension!
 
 # Independence and bases
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/P3K0zyF9tvY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Last time we saw the following definition:
 
@@ -123,6 +129,10 @@ Again, we assume, for every $x$, that $a + bx + cx^2 = 0$. Then plug in:
 
 ## Uniqueness
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/quluSlpuFJ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 Suppose $V$ is a vector space and $v_1, \ldots, v_n$ spans $V$. Then every vector $v \in V$ can be written as a linear combination of $v_1, \ldots, v_n$. You can think of this as a way of *decomposing* $v$ into these $n$ components.
 
 **Question**: Is there always a **unique** way to write $v$ as this kind of a linear combination? In other words, does $v$ always have one and only one decomposition into the $v_1, \ldots, v_n$ components?
@@ -173,6 +183,10 @@ But this just means that $a_1 \binom{1}{1} + a_2 \binom{1}{-1} + a_3 \binom{3}{5
 
 # Dimension
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/MaY13aK_zCo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 **Definition**: A vector space $V$ is **finite dimensional** if it is spanned by a finite set of vectors. $V$ is **infinite dimensional** if no finite set spans $V$.
 
 The main theorem about dimension is the following:
@@ -204,4 +218,4 @@ Notice that $\\{1, x, x^2 \\}$ is a basis for $\mathcal{P}_2$, so its dimension 
 
 ## Reading
 
-# Problems to think about
+Please read the "Basis and dimension" handout on Moodle. It goes through several results we need in order to prove the main theorem about dimension above.
