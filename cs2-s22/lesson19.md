@@ -17,7 +17,15 @@
     * Change to the other player's turn.
   * After there are no more stones left: check who took the last one, and declare a winner.
 
+# Reading
+
+Read [Chapter 8](https://books.trinket.io/thinkjava2/chapter8.html) on recursive methods. Going through the textbook on this section is extremely helpful for understanding this topic! This is a challenging topic, so please do take a close look at the examples below / on replit, as well as the explanations from the textbook.
+
 # Recursion
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/96pE-Px0d80" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 <a href="https://www.google.com/search?q=recursion" target="_blank"><img src="recursion.PNG" alt="What happens if you google 'recursion'" /></a>
 
@@ -57,6 +65,10 @@ A method which invokes itself is called **recursive**. The `add` method invokes 
 
 # Leap of Faith
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/FNeW6vXSFFw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 Remember the idea of "modular design":
 
 * Break up a large problem into smaller components.
@@ -93,6 +105,10 @@ Implement a recursive Fibonacci method. Remember:
 You do not need to submit this, but you should attempt to complete this in the replit space.
 
 # Sum the digits
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/JpFhm06sR-4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 **Problem**: Given a (positive) integer, add up its digits.
 
@@ -142,7 +158,3 @@ public static void printAfterRecursion(ArrayList<String> list, int i) {
 **Exercise**: What do you think that each of these methods prints out if you call them with the list ["a", "b", "c", "d", "e"], and $i = 0$? Predict what you think each method will do. Then run the RecursivePrints code (on Replit) and see what each one actually does, and see if your prediction was right. Can you explain what's going on?
 
 **Record your response on Moodle.**
-
-# Reading
-
-Read [Chapter 8](https://books.trinket.io/thinkjava2/chapter8.html) on recursive methods.
