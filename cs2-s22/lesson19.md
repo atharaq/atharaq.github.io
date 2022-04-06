@@ -33,7 +33,7 @@ Read [Chapter 8](https://books.trinket.io/thinkjava2/chapter8.html) on recursive
 
 ## Example
 
-Look at the RecursionExample code on replit:
+Look at the RecursionExample code [on replit](https://replit.com/team/cs2-spring22/Lesson-19-Part-1):
 
 ```java
 public static int add(int x, int y) {
@@ -102,7 +102,7 @@ Implement a recursive Fibonacci method. Remember:
 * `fib(n)` should return `fib(n-1) + fib(n-2)` if $n > 1$. (This is your recursive step!)
 * For the purposes of this method, if $n < 0$, return $-1$
 
-You do not need to submit this, but you should attempt to complete this in the replit space.
+You do not need to submit this, but you should attempt to complete this in the [replit space](https://replit.com/team/cs2-spring22/Lesson-19-Part-1).
 
 # Sum the digits
 
@@ -133,7 +133,7 @@ public static int sumDigits(int num) {
 }
 ```
 
-Implement this in the `sumDigits` method on replit.
+Implement this in the `sumDigits` method [on replit](https://replit.com/team/cs2-spring22/Lesson-19-Part-2).
 
 # Recursive Prints
 
@@ -155,6 +155,6 @@ public static void printAfterRecursion(ArrayList<String> list, int i) {
 }
 ```
 
-**Exercise**: What do you think that each of these methods prints out if you call them with the list ["a", "b", "c", "d", "e"], and $i = 0$? Predict what you think each method will do. Then run the RecursivePrints code (on Replit) and see what each one actually does, and see if your prediction was right. Can you explain what's going on?
+**Exercise**: What do you think that each of these methods prints out if you call them with the list ["a", "b", "c", "d", "e"], and $i = 0$? Predict what you think each method will do. Then run the RecursivePrints code ([on Replit](https://replit.com/team/cs2-spring22/Lesson-19-Part-2)) and see what each one actually does, and see if your prediction was right. Can you explain what's going on?
 
 **Record your response on Moodle.**
