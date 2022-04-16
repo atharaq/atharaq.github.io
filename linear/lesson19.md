@@ -2,6 +2,7 @@
 {:.no_toc}
 
 1. Table of Contents
+{:toc}
 
 # Take Home Exam Questions
 
