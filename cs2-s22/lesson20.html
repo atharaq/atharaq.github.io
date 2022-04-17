@@ -123,8 +123,8 @@ public static void printAfterRecursion(ArrayList&lt;String&gt; list, int i) {
 <h1>Algorithm</h1>
 <ol type="1">
 <li><strong>Base case:</strong> if <span class="math inline">\(n = 0\)</span>, there is nothing to do!</li>
-<li><em>Recursively</em> move the first <span class="math inline">\(n - 1\)</span> disks from peg <span class="math inline">\(1\)</span> to peg <span class="math inline">\(3\)</span>.</li>
-<li>Move the bottom disk from peg <span class="math inline">\(1\)</span> to peg <span class="math inline">\(2\)</span>.</li>
+<li><em>Recursively</em> move the first <span class="math inline">\(n - 1\)</span> disks from peg <span class="math inline">\(1\)</span> to peg <span class="math inline">\(3\)</span>. (the <em>spare</em> peg)</li>
+<li>Move the bottom disk from peg <span class="math inline">\(1\)</span> to peg <span class="math inline">\(2\)</span>. (the <em>target</em> peg)</li>
 <li><em>Recursively</em> (again) move the <span class="math inline">\(n - 1\)</span> disks from peg <span class="math inline">\(3\)</span> to peg <span class="math inline">\(2\)</span>.</li>
 </ol>
 </section>
