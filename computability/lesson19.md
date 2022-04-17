@@ -10,11 +10,11 @@ From the exam: $H = \\{ \langle M \rangle : M $ halts on input $\langle M \rangl
 
 Show $H$ is c.e. by showing $H \leq_m A_{TM}$:
 
-F: "On input $\langle M \rangle:  
+F: "On input $\langle M \rangle$:  
 1. Construct TM $A$:   
 'On input $x$:  
-1. Run $M$ on $\langle M \rangle$. Ignore its output.
-2. If we get here, accept.'
+  * Run $M$ on $\langle M \rangle$. Ignore its output.
+  * If we get here, accept.'
 2. Output $\langle A, \langle M \rangle \rangle$."
 
 If $\langle M \rangle \in H$, then $A$ accepts all inputs. If $\langle M \rangle \not \in H$, $A$ loops forever on all inputs. Hnece, $\langle M \rangle \in H \leftrightarrow F(\langle M \rangle) \in A_{TM}$.
@@ -24,16 +24,16 @@ Next we can show that $H$ is not co-c.e. by showing $A_{TM} \leq_m H$:
 F: "On input $\langle M, w \rangle$:
 1. Construct $M^\prime$:  
   'On input $x$:  
-  1. Run $M$ on $w$.
-  2. If $M$ accepts, accept.
-  3. If $M$ rejects, enter an infinite loop.'
+  * Run $M$ on $w$.
+  * If $M$ accepts, accept.
+  * If $M$ rejects, enter an infinite loop.'
 2. Output $\langle M^\prime \rangle$."
 
 Then if $M$ accepts $w$, $M^\prime$ halts and accepts all inputs. If $M$ does not accept $w$, then $M^\prime$ will loop forever. Therefore $\langle M, w \rangle \in A_{TM} \leftrightarrow M^\prime \in H$.
 
 Since $H$ is not co-c.e., it cannot be decidable, as decidable languages are both c.e. and co-c.e.!
 
-In fact, what we showed is that $H \leq_m A_{TM} \leq_m H$, which means that $H$ and $A_{TM}$ are "$m$-equivalent" in a sense.
+In fact, what we showed is that $H \leq_m A_{TM} \leq_m H$, which means that $H$ and $A_{TM}$ are "$m$-equivalent".
 
 # Logic / Quantifiers
 
