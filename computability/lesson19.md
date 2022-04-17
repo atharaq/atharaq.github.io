@@ -91,7 +91,7 @@ The goal of complexity theory is to attempt to classify problems by how hard the
 
 A **graph** is given by a set of vertices $V$ and a set of edges $E \subseteq V \times V$ (the edges are ordered pairs). Graphs can be *directed* or *undirected*; if a graph is *undirected*, then if there is an edge from $v$ to $w$, we also have an edge from $w$ to $v$ (ie, the edge relation is symmetric). Two graphs $G_1 = (V_1, E_1)$ and $G_2 = (V_2, E_2)$ are called **isomorphic** if there is a bijection $f : V_1 \to V_2$ such athat for all vertices $v, w \in V_1$, there is an edge $(v, w) \in E_1$ if and only if there is an edge $(f(v), f(w)) \in E_2$.
 
-(picture)
+<img class="noreverse" src="graph.jpeg" />
 
 Claim: the function $f$ which maps:
 
