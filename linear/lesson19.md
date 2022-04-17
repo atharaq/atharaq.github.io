@@ -70,7 +70,7 @@ Consider $V = \mathcal{P}_2$, the vector space of polynomials of degree $\leq 2$
 
 Consider the set $S = \\{ x + 1, x + 2 \\}$. It's not hard to see that these are independent (check this yourself!). How do we extend this to a basis? Check to see which, if any, of the elements of $B$ are missing from the span of $S$!
 
-* $1: We can write $1$ as $1 \cdot (x + 2) - 1 \cdot (x + 1)$, so $1 \in Span(S)$.
+* $1$: We can write $1$ as $1 \cdot (x + 2) - 1 \cdot (x + 1)$, so $1 \in Span(S)$.
 * $x$: We can write $x$ as $2 \cdot (x + 1) - 1 \cdot (x + 2)$, so $x \in Span(S)$.
 * $x^2$: $a \cdot (x + 1) + b \cdot (x + 2) = (a + b)x + (a + 2b)$. This is never going to be a quadratic, so $x^2$ is not in the span!
 
