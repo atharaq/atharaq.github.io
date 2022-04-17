@@ -206,7 +206,7 @@ Suppose $f$ is the reduction. Let $w \in \overline{\mathcal{L}_1}$. Then $w \not
 
 Using the Theorem, we can show that $EQ_{TM}$ is not c.e. by showing that $\overline{A_{TM}} \leq_m EQ_{TM}$. This is equivalent (part 3 of the theorem) to showing that $A_{TM} \leq_m \overline{EQ_{TM}}$. Let $F$ be the following function:
 
-"On input $\langle M, w \rangle:
+"On input $\langle M, w \rangle$:
 1. Construct $M_1$ which rejects everything.
 2. Construct $M_2$ which, on any input $x$, ignores $x$ and runs $M$ on $w$. If $M$ accepts $w$, $M_2$ accepts $x$.
 3. Output $\langle M_1, M_2 \rangle$."
@@ -255,7 +255,7 @@ Let $F$ be the following function:
 
 Then notice that if $\langle M, w \rangle \in A_{TM}$, $\mathcal{L}(M^\prime) \neq \emptyset$, but if $\langle M, w \rangle \not \in A_{TM}$, then $\mathcal{L}(M^\prime) = \emptyset$. So this is a reduction $A_{TM} \leq_m \overline{E_{TM}}$, showing that $E_{TM}$ is not c.e.!
 
-Is there a reduction $A_{TM} \leq_m E_{TM}$? In fact: there isn't! Consider the following TM $T$, which I claim recognizes $E_{TM}$:
+Is there a reduction $A_{TM} \leq_m E_{TM}$? In fact: there isn't! Consider the following TM $T$, which I claim recognizes $\overline{E_{TM}}$:
 
 "On input $\langle M \rangle$,  
 For each $i = 0, 1, 2, \ldots$:  
