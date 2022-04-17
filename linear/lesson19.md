@@ -175,4 +175,5 @@ Multiplying, we see that $a_1 = 0$, $a_2 = 0$, and $a_3 = 0$, while $a_4$ is a f
   * Used in computer science to study the running time of recursive algorithms.
   * Also comes up in number theory
 * For an $L : V \to V$, what is the "correct" basis to use? Is there a basis that makes the matrix $M(L)$ a diagonal matrix?
+* **Presentation 3**: Friday, April 29.
 * Final Project Groups / Topics
