@@ -29,3 +29,4 @@ layout: default
 * [Lesson 16: Polymorphism II](lesson16.html)
 * [Lesson 17: Polymorphism III](lesson17.html)
 * [Lesson 18: CoinGame and Project 3](lesson18.html)
+* [Lesson 19: Recursion](lesson19.html)

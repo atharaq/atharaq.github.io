@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2022-04-18">
+  <title>CS2 Lesson 20</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 20</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">18 April 2022</p>
+</section>
+
+<section>
+<section id="project-3" class="title-slide slide level1">
+<h1>Project 3</h1>
+<p>Main (pseudocode):</p>
+<pre ><code class="java">Player one = createPlayerBasedOnUserChoice();
+Player two = createPlayerBasedOnUserChoice();
+Random r = new Random();
+int numRows = r.nextInt(3, 8);
+Game g = new Game(one, two, numRows);
+g.play();</code></pre>
+</section>
+<section id="game" class="slide level2">
+<h2>Game</h2>
+<ul>
+<li>Array or ArrayList of integers for the rows / stones.</li>
+<li>Initially it’s player one’s turn</li>
+<li>While there are any stones left:
+<ul>
+<li>Ask current player for the row (parameter?).</li>
+<li>Ask current player for number of stones to take (parameter?).</li>
+<li>Subtract that amount from the right part of the array.</li>
+<li>Change who the “current player” is.</li>
+</ul></li>
+<li>After while loop: figure out who the previous player was, and declare them the winner.</li>
+</ul>
+</section>
+<section id="simple-strategy" class="slide level2">
+<h2>Simple Strategy</h2>
+<p>How do you find the first row with anything in it?</p>
+<pre ><code class="java">public int pickRow(int[] board) {
+  // what do I do?
+}</code></pre>
+</section></section>
+<section id="quiz-4" class="title-slide slide level1">
+<h1>Quiz 4</h1>
+<p><strong>Due tonight</strong>. Questions?</p>
+</section>
+
+<section id="recursion" class="title-slide slide level1">
+<h1>Recursion</h1>
+<pre ><code class="java">public static void printBeforeRecursion(ArrayList&lt;String&gt; list, int i) {
+  if (i == list.size()) {
+      return;
+  }
+  System.out.println(list.get(i));
+  printBeforeRecursion(list, i+1);
+}
+
+public static void printAfterRecursion(ArrayList&lt;String&gt; list, int i) {
+  if (i == list.size()) {
+      return;
+  }
+  printAfterRecursion(list, i+1);
+  System.out.println(list.get(i));
+}</code></pre>
+<p>list = [a, b, c, d, e], i = 0?</p>
+</section>
+
+<section>
+<section id="towers-of-hanoi" class="title-slide slide level1">
+<h1>Towers of Hanoi</h1>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Tower_of_Hanoi.jpeg" /></p>
+</section>
+<section id="towers-of-hanoi-1" class="slide level2">
+<h2>Towers of Hanoi</h2>
+<p><strong>Towers of Hanoi</strong> is a game played with 3 pegs and <span class="math inline">\(n\)</span> disks (for some integer <span class="math inline">\(n &gt; 0\)</span>). The rules are:</p>
+<ul>
+<li>The goal is to move all the disks from one peg to another.</li>
+<li>No bigger disk can be placed on top of a smaller disk.</li>
+</ul>
+</section>
+<section id="play-it" class="slide level2">
+<h2>Play it!</h2>
+<p><a href="https://www.mathsisfun.com/games/towerofhanoi.html">Play the game!</a></p>
+<ul>
+<li>Play the game with 3 disks. See if you can win in the minimum number of moves.</li>
+<li>Then play again with 4 disks. Figure out the pattern / find a solution.</li>
+</ul>
+</section>
+<section id="discuss-in-pairs" class="slide level2">
+<h2>Discuss in pairs:</h2>
+<ol type="1">
+<li>Come up with a recursive algorithm to solve this game.</li>
+<li>How did they figure out the minimum number of moves needed? Does your algorithm end up giving that minimum?</li>
+</ol>
+</section></section>
+<section>
+<section id="algorithm" class="title-slide slide level1">
+<h1>Algorithm</h1>
+<ol type="1">
+<li><strong>Base case:</strong> if <span class="math inline">\(n = 0\)</span>, there is nothing to do!</li>
+<li><em>Recursively</em> move the first <span class="math inline">\(n - 1\)</span> disks from peg <span class="math inline">\(1\)</span> to peg <span class="math inline">\(3\)</span>.</li>
+<li>Move the bottom disk from peg <span class="math inline">\(1\)</span> to peg <span class="math inline">\(2\)</span>.</li>
+<li><em>Recursively</em> (again) move the <span class="math inline">\(n - 1\)</span> disks from peg <span class="math inline">\(3\)</span> to peg <span class="math inline">\(2\)</span>.</li>
+</ol>
+</section>
+<section id="steps" class="slide level2">
+<h2>Steps</h2>
+<ul>
+<li>To solve the problem for <span class="math inline">\(n\)</span> disks, you have to solve the problem for <span class="math inline">\(n - 1\)</span> disks <strong>twice</strong>, and add one extra step!</li>
+<li>If <span class="math inline">\(S(n)\)</span> is a function representing the number of steps in the solution for <span class="math inline">\(n\)</span> disks, then <span class="math inline">\(S(n) = 2S(n - 1) + 1\)</span>.</li>
+<li>If <span class="math inline">\(S(0) = 0\)</span>, what is <span class="math inline">\(S(1)\)</span>? <span class="math inline">\(S(2)\)</span>? <span class="math inline">\(S(3)\)</span>? <span class="math inline">\(S(4)\)</span>? See a pattern?</li>
+</ul>
+<div class="fragment">
+<p>Think in terms of powers of 2. Can you find a formula?</p>
+</div>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Look at the TowersOfHanoi class on replit. Fill in the gaps in the <code>solve</code> method. (You can use the <code>moveDisk</code> method which I implemented for you; you can also call <code>printPegs</code> after you have moved the disk to see what the state of the game looks like at each step.)</p>
+<ul>
+<li>What do you do in the base case?</li>
+<li>What are the recursive steps?</li>
+</ul>
+</section>
+<section id="hints" class="slide level2">
+<h2>Hints</h2>
+<p>Base case: just return.</p>
+<ol type="1">
+<li>Recursively use <code>solve</code> to move <span class="math inline">\(numDisks - 1\)</span> from the “from” peg to the “spare” peg.</li>
+<li>Move the last disk from the “from” peg to the “to” peg. (use <code>moveDisk</code>)</li>
+<li>Use <code>printPegs</code> to show what the pegs look like after these steps.</li>
+<li>Recursively use <code>solve</code> to move <span class="math inline">\(numDisks - 1\)</span> from the “spare” peg to the “from” peg.</li>
+</ol>
+</section></section>
+<section>
+<section id="coming-up" class="title-slide slide level1">
+<h1>Coming up</h1>
+<ul>
+<li>Algorithms and pseudocode</li>
+<li><strong>algorithm</strong>: a precise list of instructions for solving a general problem.</li>
+<li>Many ways to describe algorithms: English, Java/Python/C++ code, pseudocode.</li>
+</ul>
+</section>
+<section id="describing-algorithms" class="slide level2">
+<h2>Describing algorithms</h2>
+<p>For example, the algorithm which finds the maximum number in a list of numbers:</p>
+<ul>
+<li>English: “Set the max equal to the first number. For each of the rest of the numbers in the list, compare it to the previous max. If the number is greater than the max, update the max to that number.”</li>
+<li>Java/Python/C++ code that implements that algorithm.</li>
+<li>“Pseudocode”: somewhere in-between natural language and a high level programming language.</li>
+</ul>
+</section>
+<section id="sequential-search-algorithm" class="slide level2">
+<h2>Sequential Search Algorithm</h2>
+<p><strong>Problem</strong>: Given a list <span class="math inline">\(l\)</span> and an object we are looking for <span class="math inline">\(o\)</span>, find it in the list. Return <span class="math inline">\(i\)</span> if <span class="math inline">\(l_i == o\)</span>, and return <span class="math inline">\(-1\)</span> if <span class="math inline">\(o\)</span> is not in the list.</p>
+<p>Try to do the following:</p>
+<ol type="1">
+<li>On paper, describe an algorithm in English to solve this problem.</li>
+<li>On paper, describe this same algorithm in pseudocode.</li>
+</ol>
+</section>
+<section id="next-time" class="slide level2">
+<h2>Next time</h2>
+<ul>
+<li>Analyzing algorithms: how many steps does it take to run on input of size <span class="math inline">\(n\)</span>?</li>
+<li>Comparing functions: which algorithms have “better” running times?</li>
+<li>Big Oh Notation</li>
+<li>Coming up:
+<ul>
+<li>Binary Search</li>
+<li>Sorting Algorithms</li>
+</ul></li>
+</ul>
+</section>
+<section id="quiz-5" class="slide level2">
+<h2>Quiz 5</h2>
+<ul>
+<li>Take home quiz 4 due <strong>tonight</strong>.</li>
+<li>Quiz 5: next <strong>Monday</strong>, 4/25. (11:25 - 12:10)</li>
+<li>Topics: similar to quiz 4, plus recursion.</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
