@@ -39,7 +39,7 @@
 <pre ><code class="java">Player one = createPlayerBasedOnUserChoice();
 Player two = createPlayerBasedOnUserChoice();
 Random r = new Random();
-int numRows = r.nextInt(3, 8);
+int numRows = r.nextInt(5) + 3;
 Game g = new Game(one, two, numRows);
 g.play();</code></pre>
 </section>
