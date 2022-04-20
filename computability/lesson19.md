@@ -1,4 +1,4 @@
-# Lesson 18: Reductions, Quantifiers, and Intro to Complexity
+# Lesson 19: Reductions, Quantifiers, and Intro to Complexity
 {:.no_toc}
 
 1. Table of Contents

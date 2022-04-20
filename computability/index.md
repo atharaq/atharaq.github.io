@@ -29,3 +29,5 @@ layout: default
 * [Lesson 16: Set Theory and Cardinality](lesson16.html)
 * [Lesson 17: Uncountability](lesson17.html)
 * [Lesson 18: Undecidability and reductions](lesson18.html)
+* [Lesson 19: Logic / Quantifiers and intro to complexity theory](lesson19.html)
+* [Lesson 20: Complexity Theory](lesson20.html)
