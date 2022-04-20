@@ -31,23 +31,43 @@ Since $T\binom{2}{1} = \binom{2}{1}$, and $\binom{2}{1} = 2 \binom{1}{0} + 1 \bi
 
 What if we went the other way around? If $I : \mathbb{R}^2 \to \mathbb{R}^2$ is the identity function, with "input basis" $\binom{1}{0}, \binom{0}{1}$, and "output basis" $\binom{2}{1}, \binom{-1}{1}$, how would we figure out the matrix representation here? $I\binom{1}{0} = \binom{1}{0}$, but how do we express $\binom{1}{0}$ in terms of $\binom{2}{1}$ and $\binom{-1}{1}$?
 
-This is exactly the idea behind the **change of basis** matrix. In fact, what we need to do is take the matrix for $T$ above, and invert it (because we are literally just going the other way around)! 
+This is exactly the idea behind the **change of basis** matrix. In fact, what we need to do is take the matrix for $T$ above, and invert it (because we are literally just going the other way around)!
 
 **Exercise**: Find the inverse of $M(T) = \begin{pmatrix}2 & -1 \\\ 1 & 1 \end{pmatrix}$.
 
-## Change of Basis
+## Diagonal Matrix Representations
 
 Suppose $L : \mathbb{R}^2 \to \mathbb{R}^2$ is a linear function given by $L\binom{2}{1} = 2\binom{2}{1}$ and $L\binom{-1}{1} = \frac{1}{2}\binom{-1}{1}$. What is the matrix representation of $L$?
 
-This is kind of a trick question: it depends on what "input" and "output" basis sets we use for $\mathbb{R}^2$. Suppose we use the basis $\binom{2}{1}, \binom{-1}{1}$. Then our matrix representation is $M(L) = \begin{pmatrix}2 & 0 \\\ 0 & \frac{1}{2} \end{pmatrix}$. This matrix is quite nice to work with:
+This is kind of a trick question: it depends on what "input" and "output" basis sets we use for $\mathbb{R}^2$. Suppose we use the basis $v_1 = \binom{2}{1}, v_2 = \binom{-1}{1}$. Then our matrix representation is $M(L) = \begin{pmatrix}2 & 0 \\\ 0 & \frac{1}{2} \end{pmatrix}$. This matrix is quite nice to work with:
 
 1. What is $(M(L))^2$?
 2. What is $(M(L))^3$?
 3. What is $det(M(L))$?
 
-These questions are all fairly easy to answer because it's a diagonal matrix.
+These questions are all fairly easy to answer because it's a diagonal matrix. That is, computing with $M(L)$ is easy once we have written our vectors according to the basis $v_1, v_2$. Consider $v = \binom{0}{1}$ using the standard basis. First, let's re-write $v$ in terms of $\binom{2}{1}$ and $\binom{-1}{1}$:
 
-Most of the time, unfortuantely, we are given matrices that use the standard basis. So what if we used the standard basis? Then we'd need to *change coordinates* so that we could figure out what $L\binom{1}{0}$ is and what $L\binom{0}{1}$ is.
+$$
+\binom{0}{1} = \frac{1}{3} \binom{2}{1} + \frac{2}{3} \binom{-1}{1}
+$$
+
+Since $L(v_1)) = 2v_1$ and $L(v_2) = \frac{1}{2}v_2$, and $L$ is linear, that means
+
+$$
+L(\frac{1}{3}v_1 + \frac{2}{3}v_2) = \frac{2}{3}v_1 + \frac{1}{3}v_2.
+$$
+
+What is $L(L(v))$? Again, using the decomposition into $v_1$ and $v_2$, we get $L(L(v)) = L(L(\frac{1}{3}v_1 + \frac{2}{3}v_2)) = L(\frac{2}{3}v_1 + \frac{1}{3}v_2) = \frac{4}{3}v_1 + \frac{1}{6} v_2$.
+
+What about $L^3(v)$? $L^4(v)$? etc? What happens to $L^n(v)$ as $n \rightarrow \infty$?
+
+<img src="many-iterations.png" />
+
+So if there is a way to express a linear map as a diagonal matrix, we can apply this kind of analysis to think about long-term behavior. This can be useful when making predictions; that is, if some kind of data changes linearly over time, and we know the state of the data now, we can predict what will happen in the future.
+
+## Change of Basis
+
+Most of the time, unfortunately, we are given matrices that use the standard basis. So what if we used the standard basis? Then we'd need to *change coordinates* so that we could figure out what $L\binom{1}{0}$ is and what $L\binom{0}{1}$ is.
 
 **Definition**: Let $V$ be a vector space, $\dim(V) = n$, and $B_1 = \\{ b_1, \ldots, b_n \\}$, $B_2 = \\{ v_1, \ldots, v_n \\}$ are two bases. Then there are *change of basis matrices* ($n \times n$) $A$ and $A^{-1}$ which convert between vectors $v$ written as linear combinations of $b_1, \ldots, b_n$ and its description as a linear combination of the vectors $v_1, \ldots, v_n$.
 
@@ -55,7 +75,7 @@ In other words, this is actually the matrix representation of the identity map $
 
 How do we find these matrix representations? If one of our bases is a standard basis, then it's usually fairly easy. Let's look at an example:
 
-**Example**: In $\mathbb{R}^2$, let $B_1 = \\{ \binom{1}{1}, \binom{1}{-1} \\}$ and let $B_2$ be the standard basis. 
+**Example**: In $\mathbb{R}^2$, let $B_1 = \\{ \binom{1}{1}, \binom{1}{-1} \\}$ and let $B_2$ be the standard basis.
 
 (picture)
 
