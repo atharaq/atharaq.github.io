@@ -23,7 +23,7 @@ Recall: $L : V \to W$, $V$ has basis $v_1, \ldots, v_n$, $W$ has basis $w_1, \ld
 
 Then the matrix representation of $L$, $M(L)$, is:
 
-(picture)
+<img src="matrix-generalized.png" />
 
 We've seen that there are lots of different bases for the same vector spaces. Let's look at $\mathbb{R}^2$ and use the basis $B = \\{ \binom{2}{1}, \binom{-1}{1} \\}$ for our "inputs", and the standard basis $\binom{1}{0}$ and $\binom{0}{1}$ for our "outputs". Suppose $T(v) = v$ is the identity function. What is the matrix representation of $T$?
 
@@ -77,7 +77,7 @@ How do we find these matrix representations? If one of our bases is a standard b
 
 **Example**: In $\mathbb{R}^2$, let $B_1 = \\{ \binom{1}{1}, \binom{1}{-1} \\}$ and let $B_2$ be the standard basis.
 
-(picture)
+<img src="two-bases.png" />
 
 Then the change of basis matrix to go from vectors $\binom{a}{b}$ using $B_1$ coordinates to $\binom{x}{y}$ using $B_2$ coordinates is $A = \begin{pmatrix}1 & 1 \\\ 1 & -1 \end{pmatrix}$. That is, $\binom{3}{4}$, using the basis $B_1$, really means $3 \binom{1}{1} + 4 \binom{1}{-1}$. Using the change of basis matrix, that becomes
 
@@ -93,8 +93,10 @@ $$
 \begin{pmatrix}\frac{1}{2} & \frac{1}{2} \\ \frac{1}{2} & -\frac{1}{2} \end{pmatrix} \begin{pmatrix}2 \\ -3 \end{pmatrix} = \begin{pmatrix} -\frac{1}{2} \\ \frac{5}{2} \end{pmatrix}
 $$
 
-(Double check that $-\frac{1}{2} \binom{1}{1} + \frac{5}{2} \binom{1}{-1} = \binom{2}{-3}$)
+**Exercise**: Double check that $-\frac{1}{2} \binom{1}{1} + \frac{5}{2} \binom{1}{-1} = \binom{2}{-3}$.
 
-(picture)
+<img src="vector-using-alternate-base.png" />
 
 # Problem Set 5
+
+Problem Set 5 will be posted on Moodle by tonight, and will be due **Monday, May 1**.
