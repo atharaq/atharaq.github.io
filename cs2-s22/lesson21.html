@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <meta name="dcterms.date" content="2022-04-21">
+  <title>CS2 Lesson 21</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//plugin/highlight/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 21</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">21 April 2022</p>
+</section>
+
+<section id="project-3" class="title-slide slide level1">
+<h1>Project 3</h1>
+<p>Swapping turns?</p>
+<pre ><code >Player current = one;
+while (game is still going)
+  row = current.pickRow(...)
+  numStones = current.takeStones(...)
+  board[row] -= numStones // ArrayList version?
+  // swap player?
+  if (current == one)
+    current = two
+  else
+    current = one</code></pre>
+<p>Can instead do the swap at the beginning of the loop.</p>
+</section>
+
+<section>
+<section id="algorithms" class="title-slide slide level1">
+<h1>Algorithms</h1>
+<ul>
+<li><strong>algorithm</strong>: a precise list of instructions for solving a general problem.</li>
+<li>Many ways to describe algorithms: English, Java/Python/C++ code, <em>pseudocode</em>.</li>
+</ul>
+</section>
+<section id="describing-algorithms" class="slide level2">
+<h2>Describing algorithms</h2>
+<p>For example, the algorithm which finds the maximum number in a list of numbers:</p>
+<ul>
+<li>English: “Set the max equal to the first number. For each of the rest of the numbers in the list, compare it to the previous max. If the number is greater than the max, update the max to that number.”</li>
+<li>Java/Python/C++ code that implements that algorithm.</li>
+<li>“Pseudocode”: somewhere in-between natural language and a high level programming language.</li>
+</ul>
+</section>
+<section id="sequential-search-algorithm" class="slide level2">
+<h2>Sequential Search Algorithm</h2>
+<p><strong>Problem</strong>: Given a list <span class="math inline">\(l\)</span> and an object we are looking for <span class="math inline">\(o\)</span>, find it in the list. Return <span class="math inline">\(i\)</span> if <span class="math inline">\(l_i == o\)</span>, and return <span class="math inline">\(-1\)</span> if <span class="math inline">\(o\)</span> is not in the list.</p>
+<p>Try to do the following:</p>
+<ol type="1">
+<li>On paper, describe an algorithm in English to solve this problem.</li>
+<li>On paper, describe this same algorithm in pseudocode.</li>
+</ol>
+</section>
+<section id="pseudocode" class="slide level2">
+<h2>Pseudocode</h2>
+<pre ><code >procedure find(list l, object o):
+    for i = 0 to l.size()
+        if l[i] = o
+            return i
+    return -1</code></pre>
+</section>
+<section id="syntax" class="slide level2">
+<h2>Syntax</h2>
+<ul>
+<li>No generally accepted syntax for pseudocode.</li>
+<li>Not a real langauge / no compiler.</li>
+<li>Just describe the idea of the algorithm precisely.</li>
+</ul>
+<ol type="1">
+<li>Variables and assignments</li>
+<li>Comparisons and if-else statements</li>
+<li>For and while loops</li>
+<li>Functions / subroutines</li>
+<li>Arrays and other data structures (like lists)</li>
+</ol>
+<p>Don’t worry so much about syntax rules like semicolons or { / }. These are specific to the Java language.</p>
+</section></section>
+<section>
+<section id="analysis-of-algorithms" class="title-slide slide level1">
+<h1>Analysis of Algorithms</h1>
+<p><strong>Question</strong>: What’s the difference between an <strong>algorithm</strong> and its <strong>implementation</strong> in code?</p>
+</section>
+<section id="analysis-of-algoirthms" class="slide level2">
+<h2>Analysis of Algoirthms</h2>
+<ul>
+<li>
+We analyze algorithms without worrying about hardware or language specific details.
+</li>
+<li class="fragment">
+Focus on the number of steps it takes for an algorithm to run on any input of a specified size.
+</li>
+<li class="fragment">
+Ideally, try to describe this using a mathematical function.
+</li>
+</ul>
+</section>
+<section id="running-time" class="slide level2">
+<h2>Running Time</h2>
+<p>The running time of an algorithm is the function <span class="math inline">\(t(n)\)</span> which, for each <span class="math inline">\(n\)</span>, gives the maximum number of steps required for the algorithm to run on any input of size <span class="math inline">\(n\)</span>.</p>
+<p>Recall the “find” algorithm:</p>
+<pre ><code >procedure find(list l, object o):
+    for i = 0 to l.size()
+        if l[i] == o
+            return i
+    return -1</code></pre>
+</section>
+<section id="comparing-functions" class="slide level2">
+<h2>Comparing Functions</h2>
+<p>Worst / averge case of <code>find</code>:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Size of list</th>
+<th style="text-align: right;">Worst Case</th>
+<th style="text-align: right;">Average Case</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">100</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Often: don’t care exactly about <span class="math inline">\(t(n)\)</span>, just what it’s <em>proportional</em> to.</li>
+<li>Both worst and average case: proportional to <span class="math inline">\(n\)</span> (linear).</li>
+</ul>
+</section></section>
+<section>
+<section id="string-concatenation" class="title-slide slide level1">
+<h1>String concatenation</h1>
+<p>Determine what the following algorithm does:</p>
+<pre ><code >procedure create(int n)
+    String s = ""
+    for i = 1 to n
+        s += "1"
+    return s</code></pre>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Recall: how does the += operator on <strong>immutable</strong> Strings? Fill in the following table for the number of steps for the <code>create</code> method:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;"><span class="math inline">\(n\)</span></th>
+<th style="text-align: right;">Number of steps</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;"> </td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="analysis" class="slide level2">
+<h2>Analysis</h2>
+<ul>
+<li>The <span class="math inline">\(n\)</span>-fold concatenation ends up taking <span class="math inline">\(1 + 2 + \ldots + n\)</span> steps to create a string of <span class="math inline">\(n\)</span> 1’s.</li>
+<li>(<strong>Tip</strong>: use a <code>StringBuilder</code> instead of a String to do things like this).</li>
+<li>Exercise: find a formula for <span class="math inline">\(1 + 2 + 3 + \ldots + n\)</span>.</li>
+</ul>
+</section>
+<section id="big-oh" class="slide level2">
+<h2>Big Oh</h2>
+<ul>
+<li><span class="math inline">\(1 + 2 + \ldots + n = n(n+1) / 2 = \frac{n^2 + n}{2}\)</span>.</li>
+<li>For large <span class="math inline">\(n\)</span>, roughly proportional to <span class="math inline">\(n^2\)</span>: the <span class="math inline">\(n^2\)</span> term dominates.</li>
+<li>Formalize: “Big Oh” notation.</li>
+<li>This algorithm takes <span class="math inline">\(O(n^2)\)</span> steps.</li>
+</ul>
+</section></section>
+<section>
+<section id="arraylist-add" class="title-slide slide level1">
+<h1>ArrayList add</h1>
+<ul>
+<li><code>ArrayList</code> class: dynamic list implementation based on an array</li>
+<li>Arrays, in Java, have fixed sizes.</li>
+<li>Under the hood: when it runs out of space, ArrayList creates new, larger array, copies the old elements over, and then adds the new element at the correct position.</li>
+</ul>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<p><strong>Exercise</strong>: write pseudocode for the following two versions of the “add” algorithm.</p>
+<ol type="1">
+<li>When you create a new array, make it be exactly <span class="math inline">\(1\)</span> element larger.</li>
+<li>When you create a new array, make it be twice the size as the original array.</li>
+</ol>
+</section>
+<section id="analysis-1" class="slide level2">
+<h2>Analysis</h2>
+<ul>
+<li>Analyze the two “add” algorithms. If we start with an ArrayList of size <span class="math inline">\(10\)</span>, how many steps are taken in each algorithm when we add <span class="math inline">\(10\)</span> new elements? What if we add <span class="math inline">\(100\)</span> new elements?</li>
+<li>How many steps does it take to add in <span class="math inline">\(N\)</span> new elements in each of the algorithms? (In terms of “Big Oh”)</li>
+<li>Based on the above, on average, how many steps does it take to add in 1 new element in each of the algorithms (in terms of “Big Oh”)?</li>
+</ul>
+</section></section>
+<section>
+<section id="reminders" class="title-slide slide level1">
+<h1>Reminders</h1>
+<ul>
+<li>Project 3 due Sunday night
+<ul>
+<li>48 hours grace time (if you haven’t used it)?</li>
+</ul></li>
+<li>Quiz 5 on Monday (11:25 - 12:10)
+<ul>
+<li>Be able to answer anything from Quiz 4</li>
+<li>Be able to read recursive code.</li>
+<li>Chapter 8, plus next slide!</li>
+</ul></li>
+</ul>
+</section>
+<section id="recursion-problem" class="slide level2">
+<h2>Recursion Problem</h2>
+<pre ><code class="java">public static void rra(int[] list, int start, int end) {
+  if (start &gt;= end) {
+    return;
+  }
+  int tmp = list[start];
+  list[start] = list[end];
+  list[end] = tmp;
+  // recursion!
+  rra(list, start+1, end-1);
+}</code></pre>
+<ul>
+<li>Suppose list = [0, 1, 2, 3, 4, 5, 6, 7, 8].</li>
+<li>rra(list, 0, 4)? What happens to <span class="math inline">\(list\)</span>?</li>
+<li>rra(list, 0, 8)? What happens to <span class="math inline">\(list\)</span>?</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/highlight/highlight.js"></script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

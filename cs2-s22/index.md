@@ -30,3 +30,5 @@ layout: default
 * [Lesson 17: Polymorphism III](lesson17.html)
 * [Lesson 18: CoinGame and Project 3](lesson18.html)
 * [Lesson 19: Recursion](lesson19.html)
+* [Lesson 20: Recursion (again)](lesson20.html)
+* [Lesson 21: Algorithms and Pseudocode](lesson21.html)
