@@ -99,4 +99,4 @@ $$
 
 # Problem Set 5
 
-Problem Set 5 will be posted on Moodle by tonight, and will be due **Monday, May 1**.
+Problem Set 5 will be posted on Moodle by tonight, and will be due **Monday, May 2**.
