@@ -87,7 +87,7 @@ $$
 
 If we had a vector $\binom{2}{-3}$ in standard coordinates, what would it look like in $B_1$ coordinates? In order to figure this out, we have to invert the matrix!
 
-The inverse of $A$ is $\begin{pmatrix}\frac{1}{2} & \frac{1}{2} \\ \frac{1}{2} & -\frac{1}{2} \end{pmatrix}$ (there's a trick for inverting 2x2 matrices), so that means $\binom{2}{-3}$, in $B_1$ coordinates, is
+The inverse of $A$ is $\begin{pmatrix}\frac{1}{2} & \frac{1}{2} \\\ \frac{1}{2} & -\frac{1}{2} \end{pmatrix}$ (there's a trick for inverting 2x2 matrices), so that means $\binom{2}{-3}$, in $B_1$ coordinates, is
 
 $$
 \begin{pmatrix}\frac{1}{2} & \frac{1}{2} \\ \frac{1}{2} & -\frac{1}{2} \end{pmatrix} \begin{pmatrix}2 \\ -3 \end{pmatrix} = \begin{pmatrix} -\frac{1}{2} \\ \frac{5}{2} \end{pmatrix}
