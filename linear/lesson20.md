@@ -82,7 +82,7 @@ How do we find these matrix representations? If one of our bases is a standard b
 Then the change of basis matrix to go from vectors $\binom{a}{b}$ using $B_1$ coordinates to $\binom{x}{y}$ using $B_2$ coordinates is $A = \begin{pmatrix}1 & 1 \\\ 1 & -1 \end{pmatrix}$. That is, $\binom{3}{4}$, using the basis $B_1$, really means $3 \binom{1}{1} + 4 \binom{1}{-1}$. Using the change of basis matrix, that becomes
 
 $$
-\begin{pmatrix}1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix}3 \\ 4 \end{pmatrx} = \begin{pmatrix}7 \\ -1 \end{pmatrix}
+\begin{pmatrix}1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix}3 \\ 4 \end{pmatrix} = \begin{pmatrix}7 \\ -1 \end{pmatrix}
 $$
 
 If we had a vector $\binom{2}{-3}$ in standard coordinates, what would it look like in $B_1$ coordinates? In order to figure this out, we have to invert the matrix!
