@@ -30,3 +30,4 @@ layout: default
 * [Lesson 17: Linear combinations and spans](lesson17.html)
 * [Lesson 18: Linear independence, bases, and dimension](lesson18.html)
 * [Lesson 19: Bases, Matrix Representations](lesson19.html)
+* [Lesson 20: Change of basis](lesson20.html)
