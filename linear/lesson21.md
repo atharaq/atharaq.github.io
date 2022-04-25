@@ -6,7 +6,7 @@
 
 For today's lesson, we will do one short example, which I will ask you to answer short response / fill in the blank questions to help check your knowledge of vector spaces and linear maps. You will record your responses on Moodle.
 
-Consider the vector space $\mathbb{R}^\mathbb{N} = \\{ (x_0, x_1, \ldots) : x_n \in \mathbb{R}$ for all $n \in \mathbb{N} \\}$. This is the vector space of all infinite sequences that we studied in one of our problem sets. This vector space is useful to solving **linear recurrence relations**.
+Consider the vector space $\mathbb{R}^\mathbb{N} = \\{ (x_0, x_1, \ldots) : x_n \in \mathbb{R}$ for all $n \in \mathbb{N} \\}$. This is the vector space of all infinite sequences that we studied in one of our problem sets. This vector space is useful for solving **linear recurrence relations**.
 
 Today we will look at one specific example of a recurrence relation: $x_{N+2} = 3x_{N+1} - 2x_N$. A *solution* to this relation is an infinite sequence $(x_0, x_1, x_2, \ldots)$ such that for each $n \in \mathbb{N}$, $x_{n+2} = 3x_{n+1} - 2x_n$. Notice that for a solution to this recurrence relation, if we know $x_0$ and $x_1$, then plugging in $n = 0$ we get that $x_2 = 3x_1 - 2x_0$, and can compute $x_2$. Similarly:
 
