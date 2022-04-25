@@ -14,7 +14,7 @@ Today we will look at one specific example of a recurrence relation: $x_{N+2} = 
 * Since $x_4 = 3x_3 - 2x_2$, after we've computed $x_3$ we can compute $x_4$.
 * Etc.
 
-**Exercise 1** (Respond on Moodle) Suppose $x_0 = 0$ and $x_2 = 1$, and for each $n$, $x_{n+2} = 3x_{n+1} - 2x_n$. Compute $x_3, x_4,$ and $x_5$.
+**Exercise 1** (Respond on Moodle) Suppose $x_0 = 0$ and $x_1 = 1$, and for each $n$, $x_{n+2} = 3x_{n+1} - 2x_n$. Compute $x_2, x_3,$ and $x_4$.
 
 Consider the function $L : \mathbb{R}^\mathbb{N} \to \mathbb{R}^\mathbb{N}$ given by $L( (x_0, x_1, x_2,\ldots)) = (x_2 - 3x_1 + 2x_0, x_3 - 3x_2 + 2x_1, \ldots )$. This is, if $x (x_0, x_1, \ldots)$, then $L(x)$ is the sequence $y = (y_0, y_1, \ldots)$ whose $n$-th term $y_n = x_{n+2} - 3x_{n+1} + 2x_n$.
 
