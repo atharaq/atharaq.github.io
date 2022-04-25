@@ -8,7 +8,7 @@
 
 For this lesson, you will be working on this Guessing Game / Finder activity. You'll be going through the following steps for today:
 
-0. Open Lesson 22 on Replit. 
+0. Open [Lesson 22 on Replit](https://replit.com/team/cs2-spring22/Lesson-22). 
 1. Run Main. This is a guessing game where you guess a number between 0 and 1022 (inclusive). You should be able to guess the number **within at most 10 guesses**. Find a good strategy for this!
 2. Determine the algorithm used for (1). Then see if you can use that same idea to find an algorithm to find a number in a **sorted list**.
 3. Determine the running time of this "find" method.
