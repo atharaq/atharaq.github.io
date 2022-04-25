@@ -18,7 +18,7 @@ Today we will look at one specific example of a recurrence relation: $x_{N+2} = 
 
 Consider the function $L : \mathbb{R}^\mathbb{N} \to \mathbb{R}^\mathbb{N}$ given by $L( (x_0, x_1, x_2,\ldots)) = (x_2 - 3x_1 + 2x_0, x_3 - 3x_2 + 2x_1, \ldots )$. This is, if $x (x_0, x_1, \ldots)$, then $L(x)$ is the sequence $y = (y_0, y_1, \ldots)$ whose $n$-th term $y_n = x_{n+2} - 3x_{n+1} + 2x_n$.
 
-Exercise: (No need to submit this, but do it to make sure you are able to). Prove that $L$ is linear. That is, $L(x + y) = L(x) + L(y)$ and L(a \cdot x) = a \cdot L(x)$.
+Exercise: (No need to submit this, but do it to make sure you are able to). Prove that $L$ is linear. That is, $L(x + y) = L(x) + L(y)$ and $L(a \cdot x) = a \cdot L(x)$.
 
 **Exercise 2**: (Respond on Modle) Since $L$ is linear, the set $K = \\{ x \in \mathbb{R}^\mathbb{N} : L(x) = \vec{0} \\}$, called the (fill in the blank \#1) of $L$, is a (fill in the blank \#2) of $\mathbb{R}^\mathbb{N}$.
 
