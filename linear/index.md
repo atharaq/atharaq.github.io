@@ -31,3 +31,4 @@ layout: default
 * [Lesson 18: Linear independence, bases, and dimension](lesson18.html)
 * [Lesson 19: Bases, Matrix Representations](lesson19.html)
 * [Lesson 20: Change of basis](lesson20.html)
+* [Lesson 21: Homogeneous Linear Recurrence Relations](lesson21.html)
