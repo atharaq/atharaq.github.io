@@ -33,3 +33,5 @@ layout: default
 * [Lesson 20: Recursion (again)](lesson20.html)
 * [Lesson 21: Algorithms and Pseudocode](lesson21.html)
 * [Lesson 22: Searching](lesson22.html)
+* [Lesson 23: Sorting Algorithms](lesson23.html)
+* [Lesson 24: Merge sort](lesson24.pdf) This is an old PDF version of these notes. If you need an HTML version for any reason, please let me now!
