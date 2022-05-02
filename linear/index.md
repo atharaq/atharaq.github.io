@@ -32,3 +32,5 @@ layout: default
 * [Lesson 19: Bases, Matrix Representations](lesson19.html)
 * [Lesson 20: Change of basis](lesson20.html)
 * [Lesson 21: Homogeneous Linear Recurrence Relations](lesson21.html)
+* [Lesson 22: Linear Recurrence Relations + Eigenvalues](lesson22.html)
+* [Lesson 23: Review + Eigenvectors / eigenvalues](lesson23.html)
