@@ -6,6 +6,7 @@
 
 # Reminders / Upcoming
 
+* Presentation 3 due this Sunday.
 * Final Project:
   * Topics: ASAP!
   * Presentation: Thursday, 5/12. (about 10 minutes, no more than 15)

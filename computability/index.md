@@ -31,3 +31,7 @@ layout: default
 * [Lesson 18: Undecidability and reductions](lesson18.html)
 * [Lesson 19: Logic / Quantifiers and intro to complexity theory](lesson19.html)
 * [Lesson 20: Complexity Theory](lesson20.html)
+* Lesson 21 was to meet with your groups and discuss your topics.
+* [Lesson 22: NP-Completeness](lesson22.html)
+* Lesson 23 was a recap of NP-Completeness as well as some discussion of other NP-complete problems. See the recording on Moodle.
+* [Lesson 24: Decision / search problems and Turing Jumps](lesson24.html)
