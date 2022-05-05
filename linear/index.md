@@ -34,3 +34,4 @@ layout: default
 * [Lesson 21: Homogeneous Linear Recurrence Relations](lesson21.html)
 * [Lesson 22: Linear Recurrence Relations + Eigenvalues](lesson22.html)
 * [Lesson 23: Review + Eigenvectors / eigenvalues](lesson23.html)
+* [Lesson 24: Eigenspaces and Diagonalization](lesson24.html)
