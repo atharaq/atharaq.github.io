@@ -23,7 +23,7 @@ Notice that if $L(v) = \lambda v$, then by linearity, $L(2v) = 2 L(v) = 2 (\lamb
 
 **Theorem**: Suppose $L : V \to V$ is linear and $\lambda$ is an eigenvalue. Then the set $\\{ v \in V : L(v) = \lambda v \\}$ is a subspace of $V$.
 
-**Proof**: Clearly $L(\vec{0}) = \lamda \cdot \vec{0}$ for any $\lambda$, since $\lamda \cdot \vec{0} = \vec{0}$.
+**Proof**: Clearly $L(\vec{0}) = \lambda \cdot \vec{0}$ for any $\lambda$, since $\lambda \cdot \vec{0} = \vec{0}$.
 
 Suppose $L(v) = \lambda v$ and $a$ is a scalar. Then we use the same argument we just used above: by linearity, $L(a \cdot v) = a L(v) = a (\lambda v)$. But this is just $\lambda \cdot (av)$, so $av$ is an eigenvector with eigenvalue $\lambda$.
 
@@ -51,7 +51,7 @@ The idea:
 
 Proof idea: The $X$ and $X^{-1}$ are "change of basis matrices". Use them to change between the bases used in $A$ vs the bases used in $B$.
 
-Suppose $A = X^{-1} B X$ for some $X$. First we show that if $A(v) = \lambda v$, then there is $w$ such that $Bw = \lambda w$. In fact, $w$ will just be $X(v)$. *Exercise*: Show that $B(w) = \lamda w$. Use the fact that $A = X^{-1} B X$ means that $XA(v) = BX(v)$ for all $v$. So $B(w) = B(X(v)) = BX(v) = XA(v)$. Then use the fact that $v$ is an eigenvector of $A$.
+Suppose $A = X^{-1} B X$ for some $X$. First we show that if $A(v) = \lambda v$, then there is $w$ such that $Bw = \lambda w$. In fact, $w$ will just be $X(v)$. *Exercise*: Show that $B(w) = \lambda w$. Use the fact that $A = X^{-1} B X$ means that $XA(v) = BX(v)$ for all $v$. So $B(w) = B(X(v)) = BX(v) = XA(v)$. Then use the fact that $v$ is an eigenvector of $A$.
 
 Now vice versa: if $B(v) = \lambda v$, let $w = X^{-1}(v)$ and then show that $A(w) = \lambda w$.
 
@@ -70,13 +70,13 @@ Now let's determine the eigenspaces for each of these eigenvalues:
 $\lambda = -3$: We look for the kernel of $A + 3I$: $\begin{pmatrix}10 & -10 \\\ 5 & -5 \end{pmatrix}$. That is, we solve
 
 $$
-\left(\begin{matrix}10 & -10 \\ 5 & -5 \right| \: \left. \:\begin{matrix} 0  \\ 0 \end{matrix}\right)
+\left(\begin{matrix}10 & -10 \\ 5 & -5 \end{matrix}\right| \: \left. \:\begin{matrix} 0  \\ 0 \end{matrix}\right)
 $$
 
 In RREF:
 
 $$
-\left(\begin{matrix}1 & -1 \\ 0 & 0 \right| \: \left. \:\begin{matrix} 0  \\ 0 \end{matrix}\right)
+\left(\begin{matrix}1 & -1 \\ 0 & 0 \end{matrix} \right| \: \left. \:\begin{matrix} 0  \\ 0 \end{matrix}\right)
 $$
 
 That is, we look for the solutions to $x - y = 0$, which is just $x = y$. So the eigenspace is $\\{ \binom{x}{x} : x \in \mathbb{R} \\}$, which is spanned by $v_1 = \binom{1}{1}$. Notice that $A\binom{1}{1} = \binom{-3}{-3} = -3 \binom{1}{1}$.
@@ -84,13 +84,13 @@ That is, we look for the solutions to $x - y = 0$, which is just $x = y$. So the
 For $\lambda = 2$, we look for the solutions to:
 
 $$
-\left(\begin{matrix}5 & -10 \\ 5 & -10 \right| \: \left. \:\begin{matrix} 0  \\ 0 \end{matrix}\right)
+\left(\begin{matrix}5 & -10 \\ 5 & -10\end{matrix} \right| \: \left. \:\begin{matrix} 0  \\ 0 \end{matrix}\right)
 $$
 
 In RREF:
 
 $$
-\left(\begin{matrix}1 & -2 \\ 0 & 0 \right| \: \left. \:\begin{matrix} 0  \\ 0 \end{matrix}\right)
+\left(\begin{matrix}1 & -2 \\ 0 & 0 \end{matrix} \right| \: \left. \:\begin{matrix} 0  \\ 0 \end{matrix}\right)
 $$
 
 This gives us the equation $x - 2y = 0$, or $x = 2y$. So our eigenspace is the set $\\{ \binom{2y}{y} : y \in \mathbb{R} \\}$, so for example, the vector $v_2 = \binom{2}{1}$ spans it. Again, notice that $A(v_2) = \binom{4}{2} = 2v_2$.
@@ -122,7 +122,7 @@ That is, there is only one eigenvalue, $\lambda = 1$. We say that $\lambda = 1$ 
 What is the geometric multiplicity of $\lambda = 1$? Check: what's the kernel of $\begin{pmatrix}1 & -1 \\\ 1 & -1 \end{pmatrix}$? In RREF:
 
 $$
-\left(\begin{matrix}1 & -1 \\ 0 & 0 \right| \: \left. \:\begin{matrix} 0  \\ 0 \end{matrix}\right)
+\left(\begin{matrix}1 & -1 \\ 0 & 0 \end{matrix} \right| \: \left. \:\begin{matrix} 0  \\ 0 \end{matrix}\right)
 $$
 
 That is, the solutions to this are the solutions to $x - y = 0$. In other words, the set of all solutions is the set $\\{ \binom{x}{x} : x \in \mathbb{R} \\}$, which is a one-dimensional space spanned by the vector $\binom{1}{1}$. That is, the geometric multiplicity doesn't match the algebraic multiplicity!
