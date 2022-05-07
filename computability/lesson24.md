@@ -42,7 +42,7 @@ A $k$-clique is a set $C \subseteq V$ of vertices such that $\|C\| = k$ and all 
 * $H = \\{ e : f_e(e)$ halts $\\}$ is not computable.
 * Given a set $A \subseteq \mathbb{N}$, can define $A$-computability: a function $f$ is $A$-computable if, given access to an oracle for $A$, we can compute $f$.
 * $\chi_X$ is $H$-computable.
-* Universal "oracle-TM$" $\Phi$, similar to the "universal TM" $f$ above.
+* Universal "oracle-TM" $\Phi$, similar to the "universal TM" $f$ above.
 * Turing jump of $A$ is the "halting problem relativized to $A$":
   * The set of all those codes of $A$-oracle TMs (ie TMs which have access to an oracle for $A$) which halt on their own input.
   * $\\{ e : \Phi^A_e(e)$ halts $\\}$.
