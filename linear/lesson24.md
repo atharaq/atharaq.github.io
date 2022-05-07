@@ -29,7 +29,8 @@ Suppose $L(v) = \lambda v$ and $a$ is a scalar. Then we use the same argument we
 
 Now to show closure under addition: suppose $L(v_1) = \lambda v_1$ and $L(v_2) = \lambda v_2$. What is $L(v_1 + v_2)$? Can you show that this is equal to $\lambda (v_1 + v_2)$?
 
-**Definition**: Let $L : V \to V$ be linear and $\lambda$ an eigenvalue. The set $\\{ v \in V : L(v) = \lambda v \\}$ is called the **eigenspace** of $L$.
+**Definition**: Let $L : V \to V$ be linear and $\lambda$ an eigenvalue.  
+1. The set $\\{ v \in V : L(v) = \lambda v \\}$ is called the **eigenspace** of $L$.
 2. The dimension of the eigenspace corresponding to $\lambda$ is called the **geometric multiplicity** of $\lambda$.
 
 Suppose $\dim(V) = n$. Recall that the reason we care about eigenvectors / eigenvalues is that we want to represent $L$ as a diagonal matrix. If we represent $L$ using the standard basis, it might not be a diagonal matrix, but the idea is that if we can find $n$ linearly independent eigenvectors, then those $n$ can be the basis we use.
