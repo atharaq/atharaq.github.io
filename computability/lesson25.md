@@ -6,7 +6,7 @@
 
 # Upcoming
 
-* Problem Set 5 will be posted tomorrow and will be due Monday, May 16 (during finals week)
+* Problem Set 5 due Monday, May 16 
 * Final Projects:
   * Presentation: Thursday, 5/12. (about 15 minutes)
   * Paper: Thursday, 5/19. (about 5-10 pages)
