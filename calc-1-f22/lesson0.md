@@ -1,9 +1,8 @@
----
-title: Calculus I Lesson 0
-author: Athar Abdul-Quader
-date: Fall 2020
-lang: en-US
----
+# Calculus I Lesson 0: Welcome!
+{:.no_toc}
+
+1. Table of Contents
+{:toc}
 
 ![Francis Su, Mathematics For Human Flourishing](math4hf.jpg)\
 
