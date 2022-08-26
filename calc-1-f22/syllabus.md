@@ -9,7 +9,7 @@ Fall 2022
 **Location**: Natural Sciences 3001  
 **Instructor**: Professor Abdul-Quader (or just "Athar")  
 **Email**: athar.abdulquader AT purchase DOT edu  
-**Office Hours**: Mondays and Thursdays, 9:30 - 10:30 NSB 3003
+**Office Hours**: Mondays and Thursdays, 9:30 - 10:30 NSB 3003  
 **Learning Assistant**: TBD
 
 ## Course Description
@@ -51,9 +51,12 @@ For written homework assignments, students will need to use either a scanner app
 
 ### DeltaMath Online Homework
 
-...
+We will be using the free website **​DeltaMath​** for online homework. To access this software, you can [create a free student account using this link](https://www.deltamath.com/students?code=VZ3Z-2MV9). If the above link does not work, use the following steps:
 
-...
+1. Go to [​www.deltamath.com](https://www.deltamath.com)
+2. Click “For students" and then "Register".
+3. Enter Teacher Code ​**357935​**.
+4. Select MAT 1500 Fall 2022 for “Class” and register using your **purchase.edu** email address please!
 
 ## Calculator Policy
 
@@ -64,8 +67,6 @@ A graphing calculator is required for this course. You are welcome to use online
 ...
 
 ## Grading Policy
-
-update
 
 * 40% Homework and quizzes
   * **Note**: This includes online homework, written homework, and quizzes
