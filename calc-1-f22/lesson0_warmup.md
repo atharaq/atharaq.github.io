@@ -1,10 +1,4 @@
----
-title: Calculus I Warm Up
-author: Athar Abdul-Quader
-date: Fall 2020
-lang: en-US
-css: 'http://spratt.github.io/Computer-Modern/cmserif.css'
----
+# Calculus I Lesson 0 Warm Up
 
 # Violent Crime and Incarceration
 
