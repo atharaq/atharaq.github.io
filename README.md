@@ -1,10 +1,9 @@
 # Professor Abdul-Quader's Lecture Notes
 
-Lecture Notes for Spring 2022 Courses:
+Lecture Notes for Fall 2022 Courses:
 
-* [Computer Science II](cs2-s22)
-* [Linear Algebra](linear) 
-* [Computability](computability)
+* [Calculus I](calc-1-f22)
+* [Topics in Advanced Computing](topics-cs)
 
 Old lecture notes can still be found at their respective sites. Contact me if you need access to them.
 
