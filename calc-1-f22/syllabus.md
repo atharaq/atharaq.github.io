@@ -49,24 +49,16 @@ For written homework assignments, students will need to use either a scanner app
 * Genius Scan (Android / iOS)
 * CamScanner (Android / iOS)
 
-### DeltaMath Online Homework
+## DeltaMath Online Homework
 
 We will be using the free website **​DeltaMath​** for online homework. To access this software, you can [create a free student account using this link](https://www.deltamath.com/students?code=VZ3Z-2MV9). If the above link does not work, use the following steps:
 
 1. Go to [​www.deltamath.com](https://www.deltamath.com)
 2. Click “For students" and then "Register".
 3. Enter Teacher Code ​**357935​**.
-4. Select MAT 1500 Fall 2022 for “Class” and register using your **purchase.edu** email address please!
+4. Select MAT 1500 Fall 2022 for “Class” and register using your **purchase.edu** email address please!\
 
-## Calculator Policy
-
-A graphing calculator is required for this course. You are welcome to use online calculators like [Desmos](https://www.desmos.com). If you would like an actual calculator, I recommend getting a TI-83+ or TI-84+. Unless otherwise specified, calculators are allowed for all assignments, including exams and quizzes.
-
-## Attendance
-
-...
-
-## Grading Policy
+## Grading Rubric
 
 * 40% Homework and quizzes
   * **Note**: This includes online homework, written homework, and quizzes
@@ -81,9 +73,19 @@ A graphing calculator is required for this course. You are welcome to use online
   * 4% First draft (**11/21**)
   * 5% Final paper (**12/12**)
 
+## Calculator Policy
+
+A graphing calculator is required for this course. You are welcome to use online calculators like [Desmos](https://www.desmos.com). If you would like an actual calculator, I recommend getting a TI-83+ or TI-84+. Unless otherwise specified, calculators are allowed for all assignments, including exams and quizzes.
+
+## Attendance
+
+I understand that there may be times you miss a class due to emergencies, illnesses, and other reasons. For this reason, I post the lecture notes online and on Moodle. If you miss a class, be sure to submit any work that was due that day, find out what work you missed, and catch yourself up. You can use my office hours, the LA's office hours, and the tutoring center to help catch you up.
+
 ## Late Homework Policy
 
-Being absent the day that homework is assigned, or the day that it is due, is not an excuse for being late with your homework. If you miss a class, you are expected to email any work that is due that day. I reserve the right to not accept homework assignments late, or to penalize such submissions. In the past, I have given a 50% penalty for late homework assignments.
+Mathematics is extremely cumulative, and so it is important to stay on top of your work when it is assigned. If you miss a class or fall behind, you still need to stay on top of the work that was covered. Do your best to stay current with the work, using all the resources at your disposal to help you.
+
+If, due to emergencies or illnesses, you require some flexibility, you can reach out to me and we can discuss what you can do to make things up. However, if you fall behind on work and submit work late, I will have less time to actually look at it, grade it and provide meaningful feedback. If work is submitted too late, I reserve the right to simply give it a zero and move on if I do not have time to look at it.
 
 ## Collaboration Policy
 
@@ -91,17 +93,23 @@ You are encouraged to discuss homework assignments and projects with other stude
 
 ## Office of Disabilities
 
-The Office of Disability Resources collaborates directly with students who identify documented disabilities to create accommodation plans, including testing accommodations, in order for students to access course content and validly demonstrate learning. For those students who may require accommodations, please call or email the Office of Disability Resources, (914) 251- 6035, odr@purchase.edu
+It is my goal that this class be an accessible and welcoming experience for all students, including those with disabilities. You are welcome to talk to me at any point in the semester about course design concerns, but it is always best if we can talk as soon as possible about the need for any modifications. The Office of Disability Resources collaborates directly with students who identify documented disabilities to create accommodation plans, including testing accommodations, in order for students to access course content and validly demonstrate learning. For those students who may require accommodations, please call or email the Office of Disability Resources, (914) 251-6035, [odr@purchase.edu](mailto:odr@purchase.edu).
 
 ## Tutoring
 
-Tutoring is available from the Einstein Corner. Students can make appointments via the Starfish platform. [More information here.](https://www.purchase.edu/academics/school-of-natural-social-sciences/academic-support/)
+Tutoring for this course is available from the Einstein Corner. Students can make appointments via the Starfish platform. [More information here.](https://www.purchase.edu/academics/school-of-natural-social-sciences/academic-support/)
 
-## Mental Health
+## COMMUNITY HEALTH DURING COVID-19:
 
-update
+To ensure that each of us has a healthy and safe learning experience, all students are required to remain informed and follow Purchase College Policy and/or any departmental, local, state, or federal laws, rules, or regulations for attending classes on campus and in a remote learning environment.
 
-Please check the [Counseling Center's website](https://www.purchase.edu/counseling-center/index.php) to learn about the various services that the Counseling Center has to offer, including remote counseling, emergency resources, hotlines, and referrals. Take care of your mental health!
+Within courses that involve in-person contact, all students, faculty members, staff, and visitors are required to adhere to the expectations outlined on the [College’s COVID-19 website](https://www.purchase.edu/covid-19-updates-and-plans/). Failure to comply with requirements (e.g. wearing masks, maintaining social distancing where applicable) will result in the request to leave the classroom for that in-person class session. Students may also be referred to the [Office of Community Standards](https://www.purchase.edu/offices/community-standards/).
+
+Do not enter campus buildings if you test positive for or are experiencing any symptoms of COVID-19. Contact your faculty and [Health Services](https://www.purchase.edu/offices/health-services/index.php) if you need to miss class because of COVID-19 symptoms or a positive COVID-19 test result. The conservatory/school will address on a case by case basis student absences due to COVID-19, while awaiting test results, or during quarantine.
+
+## Wellness and Mental Health
+
+Purchase College has many resources to support our students' wellness and mental health. Please take a look at the [Health and Wellness website](https://www.purchase.edu/campus-life/health-and-wellness/) for more information. In particular, check the [Counseling Center's website](https://www.purchase.edu/counseling-center/) to learn about the various services that the Counseling Center has to offer, including remote counseling, emergency resources, hotlines, and referrals. Take care of your mental health!
 
 ## Course Outline (Tentative)
 

@@ -4,7 +4,7 @@
 1. Table of Contents
 {:toc}
 
-![Francis Su, Mathematics For Human Flourishing](math4hf.jpg)\
+![Francis Su, Mathematics For Human Flourishing](math4hf.jpg)
 
 > To miss out on mathematics is to live without an opportunity to play with beautiful ideas and see the world in a new light. To grasp mathematical beauty is a unique and sublime experience that everyone should demand. All of us—no matter who you are or where you’re from—can cultivate mathematical affection.
 
@@ -18,9 +18,9 @@ Mondays and Thursdays, 9:30 AM
 * Don't feel like you're on your own in this class.
 * Be in touch with me often
 
-## Studying
+## Studying / workload
 
-* Traditional (4 credits): 4 hours in class, 8 hours out of class (individual studying)
+* 4 credits: 4 hours in class, 8 hours out of class (individual studying, homework, etc)
 * Lecture videos, reading notes, textbook all help, **but most importantly**: do lots of practice problems.
 
 ## Study groups
@@ -37,13 +37,11 @@ Mondays and Thursdays, 9:30 AM
 
 The syllabus, posted on Moodle, lists out the grading scheme. Pay attention to this breakdown: there will be many different forms of assessing your work:
 
-<!--
-* Homework and quizzes (40\%)
-* Lesson "check-ins" (10\%)
-* Exams: 3 x 5\%, plus final exam 10\%
-* Problem presentations (2 x 5\%)
-* Final paper (15\%)
--->
+* Homework and quizzes (40%) 40% Homework and quizzes
+* Classwork / participation / group work (10%)
+* Exams: 3 x 5%, plus final exam (10%)
+* Problem presentation (2 x 5%)
+* Final paper (15%)
 
 # Warm-up
 
@@ -70,7 +68,9 @@ Other ways?
 
 Most functions **cannot** be described efficiently.
 
-<iframe src="https://www.desmos.com/calculator/lcyzjynpms?embed" width="250px" height="250px" style="border: 1px solid #ccc" frameborder=0></iframe>
+<div class="desmos-container">
+<iframe src="https://www.desmos.com/calculator/lcyzjynpms?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
+</div>
 
 ...but it's usually easier if we do have some formula.
 
@@ -107,7 +107,7 @@ $y = x^4$
 $y = x^3 - x$
 
 <div class="desmos-container">
-<iframe src="https://www.desmos.com/calculator/om8utcfpfr?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder=0></iframe>
+<iframe src="https://www.desmos.com/calculator/om8utcfpfr?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
 </div>
 
 ## "Hole"
@@ -115,7 +115,7 @@ $y = x^3 - x$
 $y = \frac{x^2-1}{x-1}$
 
 <div class="desmos-container">
-<iframe src="https://www.desmos.com/calculator/wsh1jiaz7n?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder=0></iframe>
+<iframe src="https://www.desmos.com/calculator/wsh1jiaz7n?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
 </div>
 
 ## Asymptote
@@ -123,7 +123,7 @@ $y = \frac{x^2-1}{x-1}$
 $y = \frac{x^2+1}{x-1}$
 
 <div class="desmos-container">
-<iframe src="https://www.desmos.com/calculator/edub0hl7zv?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder=0></iframe>
+<iframe src="https://www.desmos.com/calculator/edub0hl7zv?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
 </div>
 
 # Classes of Functions
