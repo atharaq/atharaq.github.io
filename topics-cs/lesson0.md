@@ -89,3 +89,4 @@ Pick **any** CS topic. We've seen the possible list above and [on the syllabus](
 1. What is an algorithm?
 2. How do we understand the "running time" of an algorithm?
 3. What is the difference between an algorithm and its various implementations?
+4. Suppose we have an algorithm to solve a problem. Does its efficiency depend on the hardware that we run on? Should it?
