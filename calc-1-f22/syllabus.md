@@ -21,7 +21,7 @@ The basic concepts of the differential and integral calculus. Focus is on the ap
 
 In parentheses below, you can see how the course learning outcomes map to the [Mathematics / CS Program Learning Outcomes](https://www.purchase.edu/academics/mathematics-computer-science/about-the-program/program-learning-outcomes/).
 
-Upon completion of this course, students should be able to…
+Upon completion of this course, students should be able to...
 
 * Understand the concept of a function, and how functions are used to relate quantitative variables (PLO 1, 2)
 * Describe functions visually, verbally, algebraically, and numerically (PLO 1, 2)

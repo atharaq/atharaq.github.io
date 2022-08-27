@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# MAT 1500: Calculus I
+# MAT 4230: Topics in Advanced Computing
 
 ## Resources
 
@@ -10,4 +10,4 @@ layout: default
 
 ## Lecture Notes
 
-* [Lesson 0: Welcome to the course!](lesson0.html)
+* [Lesson 0: Course intro](lesson0.html)
