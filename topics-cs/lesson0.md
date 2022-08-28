@@ -130,7 +130,7 @@ So it looks like for each bit in $b$, we have a corresponding row that we need t
 * $11111101 \times 2^5 = 1111110100000$
 * $11111101 \times 2^4 = 111111010000$
 
-Then we add those three numbers together: $$11111101000000 + 1111110100000 + 111111010000:$$
+Then we add those three numbers together: 11111101000000 + 1111110100000 + 111111010000:
 
 <img src="images/optimized_binary_mult.jpeg" alt="Multiplying 11111101 x 1110000 in binary using an optimization" />
 
