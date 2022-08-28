@@ -122,7 +122,7 @@ So in general, this algorithm will take $T(n) = 2^n - 1$ additions (assuming we 
 
 Certainly: we all use it all the time. We never multiply numbers by doing repeated addiiton. Instead we do "grade school" long multiplication. So let's multiply $11111101 \times 1110000$ using long multiplication and figure out how many steps this takes:
 
-<img src="images/binary_mult.jpeg" alt="Multiplying 11111101 x 1110000 in binary" />
+<img class="noreverse" src="images/binary_mult.jpeg" alt="Multiplying 11111101 x 1110000 in binary" />
 
 So it looks like for each bit in $b$, we have a corresponding row that we need to write down. That row always ends up either being all zeros, or just $11111101$ with a bunch of zeros (represented by blanks) after it. If we forget about the rows that are just zeros, we have a simpler way of multiplying the numbers. In binary, $1110000$ means $2^6 + 2^5 + 2^4$. So to multiply $11111101 \times 1110000$, we just need 3 multiplications:
 
@@ -132,7 +132,7 @@ So it looks like for each bit in $b$, we have a corresponding row that we need t
 
 Then we add those three numbers together: 11111101000000 + 1111110100000 + 111111010000:
 
-<img src="images/optimized_binary_mult.jpeg" alt="Multiplying 11111101 x 1110000 in binary using an optimization" />
+<img class="noreverse" src="images/optimized_binary_mult.jpeg" alt="Multiplying 11111101 x 1110000 in binary using an optimization" />
 
 This actually still required $6$ additions, we just didn't write all of them down since many of them were just adding 0. So let's generalize: suppose $a$ and $b$ both have $n$-bits. For each bit in $b$, we write down either $a$ with some extra zeros, or just $0$. Then we add together all of those numbers.
 
