@@ -56,7 +56,7 @@ We will be using the free website **​DeltaMath​** for online homework. To ac
 1. Go to [​www.deltamath.com](https://www.deltamath.com)
 2. Click “For students" and then "Register".
 3. Enter Teacher Code ​**357935​**.
-4. Select MAT 1500 Fall 2022 for “Class” and register using your **purchase.edu** email address please!\
+4. Select MAT 1500 Fall 2022 for “Class” and register using your **purchase.edu** email address please!
 
 ## Grading Rubric
 
@@ -67,7 +67,7 @@ We will be using the free website **​DeltaMath​** for online homework. To ac
 * 10% Problem Presentations (2 **short** explanations of a homework / exam / other challenging problem, submitted online)
 * 15% Mid-semester exams (3 exams during the semester, all open-book / notes / untimed)
 * 10% Final Exam (open-book / notes / untimed)
-* 15% FInal Paper
+* 15% Final Paper
   * 2% Topic statement (**10/17**)
   * 4% Initial reserach notes / outline (**10/31**)
   * 4% First draft (**11/21**)
