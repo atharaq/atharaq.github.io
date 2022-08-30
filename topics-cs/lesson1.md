@@ -78,7 +78,8 @@ In fact, we can prove the following: for every $n \geq 10$, $n^3 \leq 2^n$. How 
 $$
 \begin{align}
 \lim_{n \rightarrow \infty} \frac{n^3}{2^n} &= \lim_{n \rightarrow \infty} \frac{3n^2}{\ln(2) 2^n} \\
-&= \lim_{n \rightarrow \infty} \frac{6n}{\ln(2)\ln(2) 2^n} = \lim_{n \rightarrow \infty} \frac{6}{\ln(2)\ln(2)\ln(2) 2^n}\\
+&= \lim_{n \rightarrow \infty} \frac{6n}{\ln(2)\ln(2) 2^n} \\
+&= \lim_{n \rightarrow \infty} \frac{6}{\ln(2)\ln(2)\ln(2) 2^n}\\
 &= 0
 \end{align}
 $$
