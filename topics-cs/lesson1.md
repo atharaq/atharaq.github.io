@@ -51,7 +51,7 @@ The graph above has many cycles. In particular, A-B-C-D-E-F-A is a cycle.
 
 # Big Oh
 
-**Definition**: Let $f : \mathbb{N} \to \mathbb{R}$ and $g : \mathbb{N} \to \mathbb{R}$. We say $f \in O(g)$, or, abusing notation, $f(x) = O(g(x))$, if there is $N \in \mathbb{N}$ and a positive real number $k$ such that for all $n \geq N$, $$|f(n)| \leq k \cdot |g(n)|.$$
+**Definition**: Let $f : \mathbb{N} \to \mathbb{R}$ and $g : \mathbb{N} \to \mathbb{R}$. We say $f \in O(g)$, or, abusing notation, $f(x) = O(g(x))$, if there is $N \in \mathbb{N}$ and a positive real number $k$ such that for all $n \geq N$, $$\|f(n)\| \leq k \cdot \|g(n)\|.$$
 
 The idea here is that $f$ is asymptotically bounded by a constant multiple of $g$. In other words, $\frac{f}{g}$ is eventually bounded above. In the below graph, we have $f(n) = 12n^2 + 2n + 3$, and $g(n) = n^2$. The dashed line graph is $15 \cdot g(n)$. Near $n = 0$, the graphs are all pretty small, but as $n$ gets larger, eventually the dashed dominates. That shows that $f(n) = O(n^2)$.
 
@@ -59,18 +59,21 @@ The idea here is that $f$ is asymptotically bounded by a constant multiple of $g
 <iframe src="https://www.desmos.com/calculator/d8iqylvkkq?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
 </div>
 
-## Example 1
+## Example
 
-$f(n) = n^3$, $g(n) = 2^n$. Claim: $n^3 = O(2^n)$.
+Suppose $f(n) = n^3$ and $g(n) = 2^n$. Show that $n^3 = O(2^n)$.
+
+We can first plug in a few values and check.
 
 * $f(0) = 0, g(0) = 1$
 * $f(1) = 1, g(1) = 2$
 * $f(2) = 8, g(2) = 4$
 * $f(3) = 27, g(3) = 8$
-* $\vdots$
-* $f(10) = 1000, g(10) = 1024$. Aha!
+* $f(4) = 64, g(4) = 16$,
 
-$\forall n \geq 10 (n^3 \leq 2^n)$ Proof? Really what we want to show is: $\lim\limits_{n \rightarrow \infty} \frac{n^3}{2^n} = 0$. How? Use l'Hopital's rule!
+So for the last few values we checked, $f(n) > g(n)$. But eventually, we get to $f(10) = 1000$ and $g(10) = 1024$.
+
+In fact, we can prove the following: for every $n \geq 10$, $n^3 \leq 2^n$. How would we show this? It's not obvious at all. What we really want to show is: $\lim\limits_{n \rightarrow \infty} \frac{n^3}{2^n} = 0$. How? Use l'Hopital's rule!
 
 $$
 \begin{align}
