@@ -10,7 +10,7 @@ Fall 2022
 **Instructor**: Professor Abdul-Quader (or just "Athar")  
 **Email**: athar.abdulquader AT purchase DOT edu  
 **Office Hours**: Mondays and Thursdays, 9:30 - 10:30 NSB 3003  
-**Learning Assistant**: TBD
+**Learning Assistant**: Chumba Kiplagat (chumba.kiplagat AT purchase DOT edu)  
 
 ## Course Description
 

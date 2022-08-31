@@ -10,8 +10,7 @@ Give examples of the following:
 
 1. A function which is bounded above (does not go off to positive $\infty$).
 2. A function which has a horizontal asymptote.
-3. A function which is bounded below, but does not reach its smallest value
-4. A function which is bounded above and below
+3. A function which is bounded below, but does not reach its smallest value.
 
 <details>
 <summary>Possible answers: you may have found many other examples!</summary>
@@ -19,9 +18,21 @@ Give examples of the following:
 <li>$f(x) = 1 - x^2$</li>
 <li>$g(x) = \dfrac{x+1}{x-1}$ has a horizontal asymptote: $y = 1$</li>
 <li>$h(x) = e^x$</li>
-<li>$k(x) = \sin(x)$</li>
 </ol>
 </details>
+
+# HW Discussion / reminders
+
+* Discuss HW 1 responses:
+  1. Write a paragraph describing what you think the main ideas of calculus are. (It's completely okay if you have no idea, but hopefully the activities we did during class may have sparked some thought in your head.)
+  2. Essence of Calculus Video 1.
+  3. After having watched the video, what changed about your thoughts about calculus? Can you think of how the concepts of calculus might be useful in studying real issues in society (be those social problems, scientific problems, or something in your intended career)?
+* Attendance.
+* Reminder about office hours, introduce Learning Assistant.
+* Reminder about lecture notes.
+* **No class on Monday, 9/5** (Labor Day).
+* Next Thursday, 9/8 is **asynchronous**. You will not come to class, but you will work on the material at your own pace.
+* Office hours next week will be over Zoom. More info will be posted on Moodle.
 
 # More types of Functions
 
