@@ -60,10 +60,6 @@ For complexity theory, we will use [Arora and Barak, *Computational Complexity: 
 
 For your own topics, you will need to find your own materials. I am happy to assist you in office hours in your search for materials. For some of these topics, I can loan you a textbook for the semester, while for others I can suggest materials that we find online.
 
-## Required software
-
-
-
 ## Grading Rubric
 
 * 50%: Problem Sets on complexity theory (3-5 assignments)
