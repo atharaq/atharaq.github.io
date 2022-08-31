@@ -110,7 +110,7 @@ As per the [Essence of Calculus](https://www.youtube.com/watch?v=WUvTyaaNkzM) vi
 
 We asked several interesting questions on day one: how do quantities change over time? How *fast* do they change? Is the climate getting warmer? Is climate change *accelerating*? How can we *slow down* climate change?
 
-We have seen discussion about change and accumulation in the news quite often. On March 27, [Governor Cuomo said](https://www.cnbc.com/2020/03/27/new-york-gov-andrew-cuomo-extends-school-closures-as-coronavirus-cases-rise.html):
+We have seen discussion about change and accumulation in the news quite often. On March 27, 2020, [then-Governor Andrew Cuomo said](https://www.cnbc.com/2020/03/27/new-york-gov-andrew-cuomo-extends-school-closures-as-coronavirus-cases-rise.html):
 
 > “The rate of increase is slowing. But the number of cases are still going up.”
 
