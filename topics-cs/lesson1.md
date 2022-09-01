@@ -51,7 +51,7 @@ The graph above has many cycles. In particular, A-B-C-D-E-F-A is a cycle.
 
 # Big Oh
 
-**Definition**: Let $f : \mathbb{N} \to \mathbb{R}$ and $g : \mathbb{N} \to \mathbb{R}$. We say $f \in O(g)$, or, abusing notation, $f(x) = O(g(x))$, if there is $N \in \mathbb{N}$ and a positive real number $k$ such that for all $n \geq N$, $$\|f(n)\| \leq k \cdot \|g(n)\|.$$
+**Definition**: Let $f : \mathbb{N} \to \mathbb{R}$ and $g : \mathbb{N} \to \mathbb{R}$. We say $f \in O(g)$, or, abusing notation, $f(x) = O(g(x))$, if there is $N \in \mathbb{N}$ and a positive real number $k$ such that for all $n \geq N$, $\|f(n)\| \leq k \cdot \|g(n)\|.$
 
 The idea here is that $f$ is asymptotically bounded by a constant multiple of $g$. In other words, $\frac{f}{g}$ is eventually bounded above. In the below graph, we have $f(n) = 12n^2 + 2n + 3$, and $g(n) = n^2$. The dashed line graph is $15 \cdot g(n)$. Near $n = 0$, the graphs are all pretty small, but as $n$ gets larger, eventually the dashed dominates. That shows that $f(n) = O(n^2)$.
 
