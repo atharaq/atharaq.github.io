@@ -1,4 +1,4 @@
-# Topics in Advanced Computing Lesson 1: Running Times and Big Oh
+# Topics in Advanced Computing Lesson 1: Big Oh
 {:.no_toc}
 
 1. Table of Contents
