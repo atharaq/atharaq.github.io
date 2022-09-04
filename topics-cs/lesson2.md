@@ -6,8 +6,6 @@
 
 # Graph Theory Problem
 
-(video?)
-
 **Exercise**: Given a graph $G$ with vertices $V$ and edges $E$, determine if $G$ has a cycle (of any length).
 
 1. How do we represent $G$?
@@ -48,6 +46,10 @@ v_4 & 0 & 1 & 0 & 0
 $$
 
 ## Solution
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/DuefiU9X6MQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 At the very end of class, we started thinking about this problem. One way to look for a cycle is to just start going through the graph and see if we end up hitting a cycle. When we try to specify our algorithm, the main issue we run into right away is determining how to pick the next vertex to check. One can use either a **breadth-first** or a **depth-first** strategy to pick vertices in this case.
 
@@ -106,7 +108,11 @@ function depth-first(int vertex, boolean[] visited, int parent) {
 
 # Big Oh
 
-(video? some notation?)
+The following video is from my Fall 2020 Discrete Mathematics course in which I gave a lesson on Big Oh notation. In this video, I use notation from logic that was developed in that course. So if you see $\forall n \in \mathbb{N}$, that means "For all natural nubmers $n$...", and if you see "$\exists N \in \mathbb{N}$", that means "There is a natural number $N$..."
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/hm3zxd8s254" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 **Definition**: Let $f : \mathbb{N} \to \mathbb{R}$ and $g : \mathbb{N} \to \mathbb{R}$. We say $f \in O(g)$, or, abusing notation, $f(x) = O(g(x))$, if there is $N \in \mathbb{N}$ and a positive real number $k$ such that for all $n \geq N$, $\|f(n)\| \leq k \cdot \|g(n)\|.$
 
