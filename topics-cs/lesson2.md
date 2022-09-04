@@ -14,6 +14,92 @@
 2. Can you come up with an algorithm that checkes if $G$ has a cycle?
 3. What is the running time of your algorithm?
 
+## Representations of graphs
+
+As mentioned last time, a **graph** consists of a set of vertices and edges. So we need to represent these two sets. The vertices are usually referred to as integers $0$ through $N - 1$, where $N$ is the number of vertices in the graph. For the edges, there are several options for representing them, but the two main ways are:
+
+* **Adjacency lists**: For each vertex in the graph, keep track of a list of the vertices that it shares an edge with. That is, we have to keep track of $N$ lists (each list could be an array, ArrayList, LinkedList, or some other list structure available in your favorite programming language).
+* **Adjacency matrix**: Keep track of an $N \times N$ matrix of $0$s and $1$s (a boolean matrix). If there is an edge between vertex $i$ and vertex $j$, put **true** (or $1$) in $matrix[i][j]$. Otherwise put **false** in that position.
+
+**Example**:
+
+Consider the following graph:
+
+<img class="noreverse" src="images/star_graph.png" alt="Graph with vertices v1, v2, v3, v4. v1 is connected to v2, v3 is connected to v2, and v4 is connected to v2. There are no other edges." />
+
+**Adjacency list**:
+
+* $v_1$: $v_2$
+* $v_2$: $v_1, v_3, v_4$
+* $v_3$: $v_2$
+* $v_4$: $v_3$
+
+**Adjacency matrix**:
+
+$$
+\begin{array}{c|c|c|c|c}
+& v_1 & v_2 & v_3 & v_4 \\
+\hline
+v_1 & 0 & 1 & 0 & 0 \\
+v_2 & 1 & 0 & 1 & 1 \\
+v_3 & 0 & 1 & 0 & 0 \\
+v_4 & 0 & 1 & 0 & 0
+\end{array}
+$$
+
+## Solution
+
+At the very end of class, we started thinking about this problem. One way to look for a cycle is to just start going through the graph and see if we end up hitting a cycle. When we try to specify our algorithm, the main issue we run into right away is determining how to pick the next vertex to check. One can use either a **breadth-first** or a **depth-first** strategy to pick vertices in this case.
+
+* **Breadth-first**: after visiting a vertex, visit all of its neighbors first.
+* **Depth-first**: after visiting a vertex, go down *one path* as far as you can first.
+
+There are times when you would prefer one over the other. In this case, there are valid solutions using both of these strategies, but we will describe the **depth-first** solution. The idea is to keep track of which nodes we have visited.
+
+* Start at some node, and mark it as visited.
+* Pick a neighbor. If we've seen it before, then we've hit a cycle, so return true!
+* If we haven't seen it before, recursively "visit" it and continue.
+
+```
+function check-for-cycle() {
+  // initialize visited array
+  for (int i = 0; i < N; i++) {
+    if (!visited[i]) {
+      if (depth-first(i, visited, -1)) {
+        return true
+      }
+    }
+  }
+  return false
+}
+
+function depth-first(int vertex, boolean[] visited, int parent) {
+  // mark vertex as visited
+  visited[vertex] = true
+
+  // for each of its neighbors:
+  for (int next : adjacencyList[vertex]) {
+    if (!visited[next]) {
+      // if you have not visited next yet,
+      // run DFS on it.
+      // if it finds a cycle, return true
+      if (depth-first(next, visited, vertex)) {
+        return true
+      }
+    } else if (next != parent) {
+      // if we visited it already
+      // and it's not our parent node
+      // then we found a cycle!
+      return true
+    }
+  }
+  // if we never find a cycle:
+  return false
+}
+```
+
+**Exercise**: Determine the running time here, supposing that the graph has $N$ vertices. (It may have up to $O(N^2)$ edges.)
+
 # Big Oh Activity
 
 (Desmos activity)
@@ -73,4 +159,5 @@ In general, we often will use "simple" functions like $n$, $\log(n)$, $n^2$, $n^
 
 # Reminders
 
-...
+* Pick a topic / email it to me by **Friday, September 9**.
+* Read sections 1.2 - 1.5 from the textbook (mentioned last time).
