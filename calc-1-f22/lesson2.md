@@ -4,6 +4,12 @@
 1. Table of Contents
 {:toc}
 
+In this lesson, you will:
+
+1. Read through the notes on inverse functions, logarithms, and derivatives.
+2. Complete the Desmos activity.
+3. Follow along the video and notes on limits.
+
 # Inverses
 
 You should be familliar with the concept of inverse functions. The basic notion is that if $y = f(x)$, then the inverse function (if it exists) is the function which swaps $x$ and $y$. We write that as $f^{-1}$: so if $y = f(x)$, then $x = f^{-1}(y)$.
@@ -35,7 +41,7 @@ Students often have trouble computing logarithms. This is because logarithms are
 
 We use this same intuition to figure out inverse trig functions. For example, $\arcsin(1) = \pi/2$, because $\sin(\pi/2) = 1$. Similar to the parabola above, trig functions do not have inverses unless we restrict the domain of the functions. [Review the restricted domains of inverse trigonometric functions in the textbook](https://openstax.org/books/calculus-volume-1/pages/1-4-inverse-functions#fs-id1170572141300).
 
-## Derivatives: Rates of Change
+# Derivatives: Rates of Change
 
 To discuss the notion of "rate of change" more precisely, let's talk about a specific example. Let's say we drop a ball from a height of 45 meters. Its height (in meters), $t$ seconds later, is (roughly) given by the equation
 
@@ -93,6 +99,10 @@ What do you think a good definition of a tangent line is? What do you think is t
 Before reading the rest of these notes, please go through this [interactive activity on Desmos](https://student.desmos.com/join/kfm243). Please use your **real name** for **attendance purposes**, though I can/will make all responses anonymous.
 
 # Wrap up
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/RII-2bmUovg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Let $f(x)$ be a function. Then ${\displaystyle\lim_{x \rightarrow a}} f(x)$ is read "the limit as x approaches a of $f(x)$". We've seen a few things already:
 
