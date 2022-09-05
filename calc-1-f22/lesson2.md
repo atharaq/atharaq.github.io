@@ -96,7 +96,7 @@ What do you think a good definition of a tangent line is? What do you think is t
 
 # Desmos Activity
 
-Before reading the rest of these notes, please go through this [interactive activity on Desmos](https://student.desmos.com/join/kfm243). Please use your **real name** for **attendance purposes**, though I can/will make all responses anonymous.
+Before reading the rest of these notes, please go through this [interactive activity on Desmos](https://student.desmos.com/join/v992cp). Please use your **real name** for **attendance purposes**, though I can/will make all responses anonymous.
 
 # Wrap up
 
@@ -127,3 +127,8 @@ For the following functions, find the left-hand, right-hand, and two-sided limit
 
 1. Find ${\displaystyle \lim_{x \rightarrow 0^-}} f(x)$, ${\displaystyle \lim_{x \rightarrow 0^+}} f(x)$, and ${\displaystyle \lim_{x \rightarrow 0}} f(x)$ for $$f(x) = \begin{cases} -x &\mbox{if } x < 0 \\ 2x &\mbox{if } x \geq 0 \end{cases}$$.
 2. Find ${\displaystyle \lim_{x \rightarrow 1^-}} g(x)$, ${\displaystyle\lim_{x \rightarrow 1^+}} g(x)$, and ${\displaystyle\lim_{x \rightarrow 1}} g(x)$ for $$g(x) = \begin{cases} 0 &\mbox{if } x = 1 \\ 1 &\mbox{if } x \neq 1 \end{cases}$$.
+
+# Homework
+
+* Complete the Desmos activity for your classwork / attendance grade for today.
+* Complete the **DeltaMath** homework assignment by **next Thursday, 9/15**.
