@@ -104,7 +104,7 @@ function depth-first(int vertex, boolean[] visited, int parent) {
 
 # Big Oh Activity
 
-(Desmos activity)
+Before reading the rest of these notes, please go through this [interactive activity on Desmos](https://student.desmos.com/join/xtnw5e). Please use your **real name** for **attendance purposes**, though I can/will make all responses anonymous.
 
 # Big Oh
 
@@ -165,5 +165,6 @@ In general, we often will use "simple" functions like $n$, $\log(n)$, $n^2$, $n^
 
 # Reminders
 
+* Complete the Desmos activity for classwork / attendance purposes for today. I will check this before our next class.
 * Pick a topic / email it to me by **Friday, September 9**.
 * Read sections 1.2 - 1.5 from the textbook (mentioned last time).
