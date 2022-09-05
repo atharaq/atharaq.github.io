@@ -29,6 +29,8 @@ In this case, we *restrict the domain*:
 
 Now notice that for $x \geq 0$, if $y = x^2$, then $x = \sqrt{y}$. Of course we know this intuitively: the square root function is the inverse of the squaring function, but only for positive numbers.
 
+<div class="desmos-container"><iframe src="https://www.desmos.com/calculator/ipu0rmy1om?embed" style="border: 1px solid #ccc" frameborder=0></iframe></div>
+
 ## Logarithms are Inverses
 
 Students often have trouble computing logarithms. This is because logarithms are inverse functions. We determine the value of $\log_b(x)$ by asking the question: "What power do I need to raise $b$ to, in order to get $x$?" Some examples:
