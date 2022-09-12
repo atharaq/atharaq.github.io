@@ -13,3 +13,4 @@ layout: default
 * [Lesson 0: Welcome to the course!](lesson0.html)
 * [Lesson 1: Review of functions and the main ideas of calculus](lesson1.html)
 * [Lesson 2: Inverses, Derivatives, and Intro to Limits](lesson2.html)
+* [Lesson 3: More on Limits](lesson3.html)
