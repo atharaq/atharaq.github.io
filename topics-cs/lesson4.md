@@ -54,18 +54,63 @@ Given $n$-bit natural numbers $a$, $b$ and $c$ as inputs, determine if there are
 
 ## NP
 
+**Defintiion**: Let $T : \mathbb{N} \to \mathbb{N}$ be a function. Then $NTIME(T(n))$ is the collection of all problems that are solvable by a non-deterministic Turing machine in $O(T(n))$-time.
+
+**Definition**: The class $NP$ is defined as $$NP = \bigcup\limits_{k} DTIME(n^k).$$ This is the class of all problems that are solvable in **nondeterministic polynomial time**.
+
 # Verifiers
 
+As we've seen, nondeterminism is tricky to think about. We describe an alternate definition of the class $NP$ using **verifiers**.
+
+**Definition**: Let $X$ be a problem and $V$ a Turing Machine which accepts two inputs. $V$ is called a **verifier** for $X$ if for each $x \in \\{ 0, 1 \\}^*$, both of the following are true:
+* $x \in X$ if and only if there is (at least one) $c \in \\{0, 1 \\}^*$ such that when initialized with inputs $(x, c)$, $V$ halts and outputs 1, and,
+* if $x \not \in X$, then for every $c \in \\{ 0, 1 \\}^*$, when $V$ is initialized with inputs $(x, c)$, $V$ halts and outputs 0.
+
+The idea is that $c$ is a *certificate*. The verifier $V$ doesn't have to actually solve the problem posed by input $x$, but it should just verify that $c$ witnesses a solution to $x$. If this is a little vague, then consider the following example for the "composites" problem before.
+
+## Example
+
+Consider the following verifier $V$ for checking if a number is composite:
+
+"On input $(x, c)$, where $x$ has length $n$:
+1. First check if $c = x$ or if $c = 1$. If so, write a 0 on the output tape and halt. Otherwise, continue to step 3.
+3. Check if $x$ is a multiple of $c$.
+4. If $x$ is a multiple of $c$, write a $1$ on the output tape and halt.
+5. Otherwise, write a $0$ on the output tape and halt."
+
+For example, if $x = 100$, we can let $c = 10$, so $V$ will halt and output 1. But if $x = 7$, no matter which $c$ we pick, $V$ will halt and output 0 because $7$ is prime. Notice that this is basically the same as the "nondeterministic" algorithm above, except without the first $n$ guesses.
+
 ## Theorem
 
-* If a problem is in NP, then it can be verified in polynomial time.
+**Theorem 1**: A problem $X$ is in $NP$ if and only if it has a verifier which runs in polynomial time.
 
-## Theorem
+This is an "if and only if" statement, and so it has two directions: If $X$ has a polynomial time NTM $N$, then it has a has a polynomial time verifier $V$, and vice versa.
 
-* $NP \subseteq EXP$
+Suppose $N$ is a polynomial-time NTM for a problem $X$. Since $N$ is a polynomial time NTM, that means that no matter which nondeterministic choices $N$ makes, its running time is still polynomial. Morever, if $x \in X$, that means that when $N$ runs on input $x$, there is at least one sequence $\vec{v}$ of nondeterministic choices such that $N$ halts in polynomial time on $x$ and outputs 1.
+
+So a verifier for $X$ would work as follows. Use the sequence $\vec{v}$ as your "certificate".
+
+"On input $(x, \vec{v})$:  
+1. Simulate $N$ on $x$ using $\vec{v}$ to determine which nondeterministic choices to make.
+2. Output whatever $N$ outputs.
+
+**Exercise**: Why does this $V$ run in polynomial time?
+
+Now we show the reverse direction. First we do a warm-up:
+
+**Theorem**: Suppose $V$ is a polynomial-time verifier for $X$, and so its running time is $O(n^k)$ for some $k$. Then for each $x \in X$, the certificate $c$ which works (so that $V$ outputs 1 on input $(x, c)$) must have length at most $n^k$.
+
+Based on this, if we have a verifier $V$ for $X$ that runs in time $O(n^k)$, an NTM for $X$ might work as follows:
+
+"On input $x$:  
+1. Non-deterministically guess a string $c$ of length at most $n^k$.
+2. Run $V$ on input $(x, c)$, and output whatever it outputs.
+
+**Exercise**: Why does this non-deterministic algorithm work? Why does it run in $O(n^k)$ steps?
 
 # Coming up
 
+* $NP \subseteq EXP$
 * Readings: 2.1 - 2.3
 * Reductions and NP-completeness
 * EXP and NEXP
