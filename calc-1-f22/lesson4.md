@@ -11,13 +11,13 @@ Compute ${\displaystyle \lim_{x\rightarrow 0}} \sin(\frac{1}{x})$. Can pick smal
 Make a table:
 
 $$
-\begin{tabular}{cc}
+\begin{array}{cc}
 x & \sin(\frac{1}{x}) \\
 \hline
 .001 &  \\
 .0001 & \\
 .00001 & \\
-\end{tabular}
+\end{array}
 $$
 
 What is happening? Take a look at the graph (use Desmos or a graphing calculator).
