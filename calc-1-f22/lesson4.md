@@ -38,6 +38,10 @@ Use reciprocals of ones we know. So: $x = \frac{2}{\pi}$, $\frac{2}{99999\pi}$, 
 
 # Limit of $\sin(\frac{1}{x})$
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/w7jF6VFRdcE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 This section is meant to be read alongside [Example 2.7](https://openstax.org/books/calculus-volume-1/pages/2-2-the-limit-of-a-function#fs-id1170572342287) from the textbook. The problem is to compute ${\displaystyle \lim_{x\rightarrow 0}} \sin(\frac{1}{x})$. To see what happens as $x \rightarrow 0$, the textbook computes values of $x$ that are getting smaller and smaller (closer to 0). The table shows that the $y$-values do not seem to converge to one, single real number as we make $x$ smaller and smaller.
 
 The textbook then goes through another line of reasoning to show that we can pick specific points where we can calculate the $y$-values directly. Let's look at the unit circle:
@@ -55,6 +59,10 @@ But wait: why does the textbook tell us to plug in $\frac{2}{\pi}$, $\frac{2}{3\
 Moreover, if we look at the pattern of numbers $\frac{2}{\pi}, \frac{2}{3\pi}, \frac{2}{5\pi}$, we see that those numbers get smaller and smaller. That is, those $x$-values approach $0$. But then, plugging in to $\sin(\frac{1}{x})$ gives us $y$-values which repeat the pattern $1, -1, 1, -1$. In other words, the graph of $y = \sin(\frac{1}{x})$ spikes up to positive 1, and down to negative 1, repeatedly, as $x \rightarrow 0$. In fact, it spikes up and down **infinitely often** as $x \rightarrow 0$!
 
 # Limits of $e^{\frac{1}{x}}$
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/GPAYs06OMQM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Let's go through a similar example from a different perspective. I want to study the graph of $e^\frac{1}{x}$ as $x \rightarrow 0$. Before we do so, we should really know how both the functions $f(x) = e^x$ and $g(x) = \frac{1}{x}$ behave.
 
@@ -83,6 +91,10 @@ As you can see, as we approach 0 from the left, the graph approaches 0, while as
 
 # Squeeze Theorem
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/ziwR2xsm8W4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 <div class="desmos-container"><iframe src="https://www.desmos.com/calculator/zbyqngowxg?embed" style="border: 1px solid #ccc" frameborder=0></iframe></div>
 
 This graph shows three functions: one plotted in as a solid curve, and two plotted as dotted lines. Notice that the solid curve is always in between the other two functions. Algebraically, this can be expressed by a compound inequality: if $f(x)$ is the solid curve and $g(x)$ and $h(x)$ are the dotted lines, then we write $g(x) \leq f(x) \leq h(x)$ for every $x$ (at least, near $x = 0$).
@@ -106,6 +118,10 @@ As a hint: use the Squeeze Theorem. See if you can find two functions $g(x)$ and
 
 ## Example
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/psgSvWbRUPI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 In this example, we will follow along [Figure 2.30 in the textbook](https://openstax.org/books/calculus-volume-1/pages/2-3-the-limit-laws#CNX_Calc_Figure_02_03_008) as we try to compute ${\displaystyle \lim_{\theta \rightarrow 0}} \frac{\sin{\theta}}{\theta}$. This limit will be important when we try to compute derivatives of trigonometric functions in the next couple of weeks.
 
 First, let's try to understand what [Figure 2.30](https://openstax.org/books/calculus-volume-1/pages/2-3-the-limit-laws#CNX_Calc_Figure_02_03_008) shows. How did they recognize that the height of the smaller triangle is $\sin(\theta)$, the arc has length $\theta$, and the height of the larger triangle is $\tan(\theta)$?
@@ -123,6 +139,10 @@ $$\cos(\theta) \leq \frac{\sin(\theta)}{\theta} \leq 1$$
 This is all we need to use the Squeeze Theorem, since, as $\theta \rightarrow 0$, $\cos(\theta) \rightarrow 1$! That tells us that ${\displaystyle \lim_{\theta \rightarrow 0}} \frac{\sin(\theta)}{\theta} = 1$!
 
 # Continuity
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/EfHIgcT5s0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 What does it mean for a function to be continuous at a point $x = a$? You may have heard the intuitive notion that "we can draw the graph of the function without picking up our pen." This brings up the idea that there are no sudden "jumps" at that point. In mathematics, though, we do not rely just on intuition: we use that intuition as motivation for definitions. So how can we make the definition of continuitiy more precise? If we want to be able to draw the graph without picking up our pen, that means that as we get close to the $x$-value $x = a$, the graph gets closer to the $y$-value $y = f(a)$. That is:
 
@@ -187,6 +207,10 @@ Over the years, mathematicians have settled on this definition as a result of st
 This is a subtle point, and I don't necessarily expect you to think deeply about all of this, but just note that continuity of a function does **not** actually mean that you can draw the graph of the function without picking up your pen. It just means the definition we gave: that at each point in the domain, limits exist and are equal to the value of the function.
 
 # Intermediate Value Theorem
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/QoHrvA1f1tM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Before we state the most important result about continuous functions, let's first mention a couple pieces of notation. Recall **interval notation**: the open interval $(a, b)$ refers to the set of all $x$ values such that $a < x < b$. The closed interval $[a, b]$ refers to all $x$ such that $a \leq x \leq b$. For a function $f(x)$, if we say $f$ is continuous on $(a, b)$, it means that $f$ is defined on the interval $(a, b)$, not necessarily at the endpoints, and that $f$ is continuous at each point inside. If we say $f$ is continuous on a closed interval $[a, b]$, that means the following:
 
