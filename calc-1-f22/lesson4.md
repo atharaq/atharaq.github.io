@@ -11,12 +11,24 @@ Compute ${\displaystyle \lim_{x\rightarrow 0}} \sin(\frac{1}{x})$. Can pick smal
 Make a table:
 
 $$
-\begin{array}{cc}
+\begin{array}{c|c}
 x & \sin(\frac{1}{x}) \\
 \hline
 .001 &  \\
 .0001 & \\
 .00001 & \\
+\end{array}
+$$
+
+Don't forget about negatives! Make a table for those also:
+
+$$
+\begin{array}{c|c}
+x & \sin(\frac{1}{x}) \\
+\hline
+-.001 &  \\
+-.0001 & \\
+-.00001 & \\
 \end{array}
 $$
 
@@ -31,10 +43,10 @@ What is happening? Take a look at the graph (use Desmos or a graphing calculator
 What is going on?
 
 ## Smarter values to pick?
-* Smarter values of $x$ to use? I know what $\sin(\pi/2)$ is.
-* What $x$ value is that, for $y = \sin(\frac{1}{x})$?
 
-Use reciprocals of ones we know. So: $x = \frac{2}{\pi}$, $\frac{2}{99999\pi}$, etc.
+* Smarter values of $x$ to use? I know what $\sin(\pi/2)$ is.
+* So look at its *reciprocal*: $x = \frac{2}{\pi}$, since we want $\sin(\frac{1}{x})$ (sine of the reciprocal of $x$).
+* That is: Use reciprocals of ones we know. So: $x = \frac{2}{\pi}$, $\frac{2}{99999\pi}$, etc.
 
 # Limit of $\sin(\frac{1}{x})$
 
@@ -202,7 +214,7 @@ Now this is of course strange: shouldn't we "fix" this definition? We can try to
 
 This function is continuous at every point from $x = -1$ to $x = 1$, and is not defined anywhere else. Should we exclude that from being continuous?
 
-Over the years, mathematicians have settled on this definition as a result of studying, carefully, what makes functions like $\frac{1}{x}$ different from functions like $\sqrt{1 - x^2}$. It turns out that both have the same "continuity" properties everywhere they are defined: if you want to zoom in on one, individual point, you could that *part* of the graph without picking up your pen. The issue is with the **domains**: we rarely think about the domains of the function, but it turns out that to say "you can draw the graph of $f(x)$ without picking up your pen", you are **not** just talking about continuity. You are also saying that your domain is connected (it doesn't have a hole in it): a property that has nothing to do with functions.
+Over the years, mathematicians have settled on this definition as a result of studying, carefully, what makes functions like $\frac{1}{x}$ different from functions like $\sqrt{1 - x^2}$. It turns out that both have the same "continuity" properties everywhere they are defined: if you want to zoom in on one, individual point, you could draw that *part* of the graph without picking up your pen. The issue is with the **domains**: we rarely think about the domains of the function, but it turns out that to say "you can draw the graph of $f(x)$ without picking up your pen", you are **not** just talking about continuity. You are also saying that your domain is connected (it doesn't have a hole in it): a property that has nothing to do with functions.
 
 This is a subtle point, and I don't necessarily expect you to think deeply about all of this, but just note that continuity of a function does **not** actually mean that you can draw the graph of the function without picking up your pen. It just means the definition we gave: that at each point in the domain, limits exist and are equal to the value of the function.
 
@@ -231,6 +243,6 @@ Let's look at the function $g(x) = \cos(x) - x$. Does this function ever equal 0
 
 # Reminders / Homework
 
-* DeltaMath HW 3 Limits due **tonight**
+* DeltaMath HW 3 Limits due **tonight**.
 * Written Homework 3 due **Monday** in class!
 * DeltaMath HW 4 "More Limits" due **next Thursday** 9/22.
