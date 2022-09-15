@@ -14,3 +14,4 @@ layout: default
 * [Lesson 1: Big Oh](lesson1.html)
 * [Lesson 2: Big Oh](lesson2.html)
 * [Lesson 3: Computability](lesson3.html)
+* [Lesson 4: Nondeterminism / NP](lesson4.html)

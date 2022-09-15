@@ -14,3 +14,4 @@ layout: default
 * [Lesson 1: Review of functions and the main ideas of calculus](lesson1.html)
 * [Lesson 2: Inverses, Derivatives, and Intro to Limits](lesson2.html)
 * [Lesson 3: More on Limits](lesson3.html)
+* [Lesson 4: Squeeze Theorem / Continuity](lesson4.html)
