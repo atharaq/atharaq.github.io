@@ -1,4 +1,4 @@
-# Topics in Advanced Computing Lesson 4: Nnondeterminism and NP
+# Topics in Advanced Computing Lesson 4: Nondeterminism and NP
 {:.no_toc}
 
 1. Table of Contents
