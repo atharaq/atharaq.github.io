@@ -264,3 +264,10 @@ As before, write your work neatly on paper and **staple** all the pages together
 * Section 3.2 \#58, 66, 94
 
 Please also note that there is a homework on DeltaMath due **Thursday, 9/22** at 11:59 PM.
+
+## Upcoming
+
+* Quiz 1 on Thursday.
+  * In-class, 15 minutes.
+  * After it's graded, you can make it up for full credit for homework.
+* Exam 1: given next **Thursday, 9/29**, due **Monday, 10/3**.
