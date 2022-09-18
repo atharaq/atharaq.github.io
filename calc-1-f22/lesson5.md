@@ -10,22 +10,22 @@ In small groups, answer the following:
 
 1. Let $g(x)$ be defined by
 $$
-\begin{align*}
+\begin{align}
 g(x) =
 \begin{cases}
 \sqrt{25 - x^2} & \text{if $-5 \leq x \leq -4$} \\
 x + 7 & \text{if $x > -4$}
 \end{cases}
-\end{align*}
+\end{align}
 $$ Is $g$ continuous at $x = -4$? Use the definition of continuity to explain your answer.
 2. Find the value of $a$ such that the following function is continuous at each point in its domain:
-\begin{align*}
+\begin{align}
 f(x) =
 \begin{cases}
 x - 2 & \text{if $x < 2$} \\
 x^2 - 4x + a & \text{if $x \geq 2$}
 \end{cases}
-\end{align*}
+\end{align}
 3. Compute ${\displaystyle \lim_{x \rightarrow \pi} \frac{\sin(x)}{x}}$.
 
 # Intermediate Value Theorem
