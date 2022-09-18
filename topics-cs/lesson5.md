@@ -4,6 +4,17 @@
 1. Table of Contents
 {:toc}
 
+# Presentation 1
+
+We will start presentation 1 next week. We need volunteers to speak:
+
+* 9/26 (3 students)
+* 9/29 (3 students)
+* 10/3 (2 students)
+* 10/7 (2 students)
+
+# Problem Set Questions?
+
 # Verifiers
 
 As we've seen, nondeterminism is tricky to think about. We describe an alternate definition of the class $NP$ using **verifiers**.
@@ -24,7 +35,7 @@ Consider the following verifier $V$ for checking if a number is composite:
 4. If $x$ is a multiple of $c$, write a $1$ on the output tape and halt.
 5. Otherwise, write a $0$ on the output tape and halt."
 
-For example, if $x = 100$, we can let $c = 10$, so $V$ will halt and output 1. But if $x = 7$, no matter which $c$ we pick, $V$ will halt and output 0 because $7$ is prime. Notice that this is basically the same as the "nondeterministic" algorithm above, except without the first $n$ guesses.
+For example, if $x = 100$, we can let $c = 10$, so $V$ will halt and output 1. But if $x = 7$, no matter which $c$ we pick, $V$ will halt and output 0 because $7$ is prime. Notice that this is basically the same as the "nondeterministic" algorithm from last time, except without the first $n$ guesses.
 
 ## Theorem
 
@@ -137,7 +148,7 @@ For example: let $\phi = (p_1 \vee p_2 \vee \lnot p_3) \wedge (\lnot p_1 \vee \l
 * $\phi(0, 0, 0)$ is true, since "FALSE or FALSE or not FALSE" is true, and "not FALSE or not FALSE or not FALSE" is also true.
 * $\phi(1, 1, 1)$ is false, since the second conjunct is "not TRUE or not TRUE or not TRUE", which is false.
 
-A formula $\phI$ is called **satisfiable** if there is an assignment $z$ to $\phi$ such that $\phi(z)$ evaluates to true.
+A formula $\phi$ is called **satisfiable** if there is an assignment $z$ to $\phi$ such that $\phi(z)$ evaluates to true.
 
 **Definition**: A formula is is **conjunctive normal form** (CNF) is it is a conjunction of disjunctions.
 

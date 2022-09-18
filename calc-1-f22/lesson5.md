@@ -19,6 +19,7 @@ x + 7 & \text{if $x > -4$}
 \end{align}
 $$ Is $g$ continuous at $x = -4$? Use the definition of continuity to explain your answer.
 2. Find the value of $a$ such that the following function is continuous at each point in its domain:
+$$
 \begin{align}
 f(x) =
 \begin{cases}
@@ -26,6 +27,7 @@ x - 2 & \text{if $x < 2$} \\
 x^2 - 4x + a & \text{if $x \geq 2$}
 \end{cases}
 \end{align}
+$$
 3. Compute ${\displaystyle \lim_{x \rightarrow \pi} \frac{\sin(x)}{x}}$.
 
 # Intermediate Value Theorem
