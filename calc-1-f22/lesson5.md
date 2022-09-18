@@ -13,17 +13,17 @@ $$
 \begin{align}
 g(x) =
 \begin{cases}
-\sqrt{25 - x^2} & \text{if $-5 \leq x \leq -4$} \\
+\sqrt{25 - x^2} & \text{if $-5 \leq x \leq -4$} \\\
 x + 7 & \text{if $x > -4$}
 \end{cases}
-\end{align}
+\end{align}. 
 $$ Is $g$ continuous at $x = -4$? Use the definition of continuity to explain your answer.
 2. Find the value of $a$ such that the following function is continuous at each point in its domain:
 $$
 \begin{align}
 f(x) =
 \begin{cases}
-x - 2 & \text{if $x < 2$} \\
+x - 2 & \text{if $x < 2$} \\\
 x^2 - 4x + a & \text{if $x \geq 2$}
 \end{cases}
 \end{align}
