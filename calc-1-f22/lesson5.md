@@ -66,7 +66,7 @@ What is $2^{3.5}?$ How do we evaluate decimals in exponents? We write it as a fr
 
 # Derivatives Intro
 
-Recall that one of the primary themes of calculus is the notion of change. In particular: the question of "How fast is a graph of a function changing at a particular point?" This is the meaning of the work **derivative**.
+Recall that one of the primary themes of calculus is the notion of change. In particular: the question of "How fast is a graph of a function changing at a particular point?" This is the meaning of the word **derivative**.
 
 The derivative of a function $f(x)$ at a point $x = a$ is the slope of the line tangent to the graph of $f(x)$ at $x = a$. It represents the answer to the question above: how fast is this function changing at $x = a$? We can also rephrase this: how *sensitive* are the $y$-values to small changes in $x$-values near $x = a$?
 

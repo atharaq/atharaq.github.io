@@ -15,3 +15,4 @@ layout: default
 * [Lesson 2: Big Oh](lesson2.html)
 * [Lesson 3: Computability](lesson3.html)
 * [Lesson 4: Nondeterminism / NP](lesson4.html)
+* [Lesson 5: Verifiers / Reductions](lesson5.html)
