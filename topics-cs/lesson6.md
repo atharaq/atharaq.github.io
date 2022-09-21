@@ -82,7 +82,7 @@ If we are able to successfully come up with these inequalities, then any solutio
 So how we do we express these two conditions as inequalities?
 
 1. For each edge $(v, w) \in E$, we put the inequality $x_v + x_w \geq 1$ in our system. (Notice that if $x_v$ and $x_w$ are both either 0 or 1, then the only way for this inequality to fail to hold is if $x_v = x_w = 0$; this is what we're trying to avoid.)
-2. Lastly, add in the inequality $\Sum\limits_{v \in V} x_v \leq k$. Again, since each of the variables is either 0 or 1, the only way to get higher than $k$ is if more than $k$ of them are set equal to 1.
+2. Lastly, add in the inequality $\sum\limits_{v \in V} x_v \leq k$. Again, since each of the variables is either 0 or 1, the only way to get higher than $k$ is if more than $k$ of them are set equal to 1.
 
 This means that if one can solve the integer programming problem in polynomial time, then one can also solve the vertex cover problem in polynomial time!
 
