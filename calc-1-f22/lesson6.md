@@ -186,7 +186,7 @@ The $\dfrac{dy}{dx}$ notation is meant to evoke the "average rate of change" $\d
 
 # Product Rule
 
-We have seen a few examples of derivatives already, and also learned the sum and constant multiple rules. Today we will learn the product rule and power rules. Let's review an important example first: the derivative of $x^2$ is $2x$. We figured this out by looking at  In this video, I take a geometric look at this derivative.
+We have seen a few examples of derivatives already, and also learned the sum and constant multiple rules. Today we will learn the product rule and power rules. Let's review an important example first: the derivative of $x^2$ is $2x$. We figured this out by looking at the definition of the derivative. In this video, I take a geometric look at this derivative.
 
 <div class="youtube-container">
 <iframe src="https://www.youtube.com/embed/K6-AIFxqb-A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
