@@ -16,3 +16,4 @@ layout: default
 * [Lesson 3: Computability](lesson3.html)
 * [Lesson 4: Nondeterminism / NP](lesson4.html)
 * [Lesson 5: Verifiers / Reductions](lesson5.html)
+* [Lesson 6: Reductions](lesson6.html)
