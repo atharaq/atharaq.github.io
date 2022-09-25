@@ -189,7 +189,9 @@ $x - 1$ is differentiable, its derivative is $1$ near $x = 2$. Differentiable fu
 
 ## Graph
 
-<iframe src="https://www.desmos.com/calculator/ark01rjrv4?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder=0></iframe>
+<div class="desmos-container">
+<iframe src="https://www.desmos.com/calculator/ark01rjrv4?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
+</div>
 
 # Upcoming
 
