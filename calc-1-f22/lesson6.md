@@ -20,7 +20,7 @@ As $b \rightarrow a$, the secant line approaches the line tangent to graph at $x
 
 With our knowledge of limits, we can define the derivative as a limit. The derivative of $f(x)$ at $x = a$ is denoted $f^\prime(a)$. The definition is given by this limit:
 
-$$f^\prime(x) = \lim_{x\rightarrow a} \frac{f(x)-f(a)}{x-a}$$
+$$f^\prime(a) = \lim_{x\rightarrow a} \frac{f(x)-f(a)}{x-a}$$
 
 ## Exercise
 
