@@ -17,3 +17,4 @@ layout: default
 * [Lesson 4: Squeeze Theorem / Continuity](lesson4.html)
 * [Lesson 5: IVT / Derivatives Intro](lesson5.html)
 * [Lesson 6: Basic Derivatives](lesson6.html)
+* [Lesson 7: Derivative Rules](lesson7.html)
