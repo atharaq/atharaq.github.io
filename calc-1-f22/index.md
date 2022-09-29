@@ -18,3 +18,4 @@ layout: default
 * [Lesson 5: IVT / Derivatives Intro](lesson5.html)
 * [Lesson 6: Basic Derivatives](lesson6.html)
 * [Lesson 7: Derivative Rules](lesson7.html)
+* [Lesson 8: Differentiability and Continuity](lesson8.html)
