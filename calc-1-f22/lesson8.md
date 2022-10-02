@@ -63,7 +63,7 @@ $x^2 - 1$ is differentiable at $x = 0$. Therefore it is also continuous.
 
 Answer: **Both**
 
-## x = 1
+## x = 1 Differentiable?
 
 Need to check left and right hand limits of
 
@@ -75,7 +75,7 @@ From the left: $\dfrac{(x^2 - 1) - 0}{x - 1} \rightarrow x + 1 \rightarrow 2$.
 
 From the right: $\dfrac{x -1 - 0}{x - 1} \rightarrow 1$. Not differentiable
 
-## x = 1
+## x = 1 Continuous?
 
 Now we check if $f(x)$ is continuous at $x = 1$:
 
