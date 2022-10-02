@@ -9,7 +9,7 @@
 Consider the graph of $y = \sin(x)$.
 
 <div class="desmos-container">
-<iframe src="https://www.desmos.com/calculator/brb24ruhaw?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
+<iframe src="https://www.desmos.com/calculator/aezemybd2y?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
 </div>
 
 1. At what points is $y^\prime = 0$?
