@@ -156,7 +156,7 @@ Recall: point-slope form: $y - y_0 = m(x - x_0)$
 * Point: $(x_0, y_0)$ is $(x, f(x))$
 * Slope: $m = f^\prime(x)$
 
-So how do we find the equation? First find the point. Since we're looking at $x = 1$, we plug in to find $$y = 1^3 - 2(1) = -1$, so the point is $(1, -1)$.
+So how do we find the equation? First find the point. Since we're looking at $x = 1$, we plug in to find $y = 1^3 - 2(1) = -1$, so the point is $(1, -1)$.
 
 Now let's find the slope by taking the derivative. We want the slope at $x = 1$, so we look for $f^\prime(1)$. First find the derivative: $y^\prime = 3x^2 - 2$. At $x = 1$: $3(1)^2 - 2 = 1$.
 
