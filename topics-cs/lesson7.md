@@ -63,7 +63,12 @@ The formula is a conjunction of several clauses.
 
 So then, for each cell $0 \leq i < p(n)$, step $0 \leq j < p(n)$, state $q$ and symbol $a$, we need the following clause:
 
-$$(H_{i, j} \wedge Q_{q, j} \wedge T_{i, j, a}) \rightarrow \bigvee\limits_{(q^\prime, a^\prime, d) \in \delta(q, a)} (H_{i + d, j+1} \wedge Q_{q^\prime, j + 1} \wedge T_{i + d, j + 1, a^\prime})$$
+$$
+\begin{align}
+(H_{i, j} \wedge Q_{q, j} \wedge T_{i, j, a}) \rightarrow \\
+\bigvee\limits_{(q^\prime, a^\prime, d) \in \delta(q, a)} (H_{i + d, j+1} \wedge Q_{q^\prime, j + 1} \wedge T_{i + d, j + 1, a^\prime})
+\end{align}
+$$
 
 This asserts that if at step $j$, $N$ is in state $q$, the read-write head is in position $i$, and an $a$ is written on the tape, then at least one of the possible "next moves" happens.
 
