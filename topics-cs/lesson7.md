@@ -112,7 +112,13 @@ Suppose $\phi(p_1, \ldots, p_n)$ is a formula with $n$ variables and $m$ clauses
 
 We put edges between all vertices except if they are in the same triple (if they correspond to two literals from the same clause), or if they are contradictory (if one corresponds to $p$ and one to $\lnot p$, for some variable $p$).
 
-For example, if we start with the formula $$(p_1 \vee p_2 \vee \lnot p_3) \wedge (\lnot p_1 \vee \lnot p_2 \vee \lnot p_3) \wedge (p_1 \vee p_1 \vee \lnot p_2)$$ we get a graph with 9 vertices (3 triples). A satisfying assignment for $\phi$ would correspond to a 3-clique in this graph.
+For example, if we start with the formula
+$$
+\begin{align}
+(p_1 \vee p_2 \vee \lnot p_3) \wedge (\lnot p_1 \vee \lnot p_2 \vee \lnot p_3) \\
+\wedge (p_1 \vee p_1 \vee \lnot p_2),
+\end{align}
+$$ we get a graph with 9 vertices (3 triples). A satisfying assignment for $\phi$ would correspond to a 3-clique in this graph.
 
 <img class="noreverse" src="images/reduction.jpeg" alt="Example of a formula and the corresponding graph" />
 
