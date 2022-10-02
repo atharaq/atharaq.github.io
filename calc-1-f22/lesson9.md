@@ -31,7 +31,7 @@ First watch this video, where I go through the derivatives of $\sin(x)$ and $\co
 * $(\sin(x))^\prime = \cos(x)$
 * $(\cos(x))^\prime = -\sin(x)$
 
-**Proof**: We will only look at the derivative of $\sin(x)$ here, but the idea is the same for the derivative of $\cos(x)$. Use the definition of the derivative: We look at the limit as $h \rightarrow 0$ of $\dfrac{}\sin(x + h) - \sin(x)}{h}$. Use angle sum formula so that $\sin(x + h) = \sin(x)\cos(h) + \cos(x) \sin(h)$. Then we get:
+**Proof**: We will only look at the derivative of $\sin(x)$ here, but the idea is the same for the derivative of $\cos(x)$. Use the definition of the derivative: We look at the limit as $h \rightarrow 0$ of $\dfrac{\sin(x + h) - \sin(x)}{h}$. Use angle sum formula so that $\sin(x + h) = \sin(x)\cos(h) + \cos(x) \sin(h)$. Then we get:
 
 $$
 \frac{\sin(x)\cos(h) + \cos(x)\sin(h) - \sin(x)}{h}
