@@ -10,7 +10,7 @@ Use the quotient rule to find the derivatives of the following functions:
 
 1. $f(x) = \frac{1}{x}$.
 2. $g(x) = \frac{1}{x^2}$.
-3. $\sec(x)$. Recall that $\sec(x) = \frac{1}{\cos(x}}$.
+3. $\sec(x)$. Recall that $\sec(x) = \frac{1}{\cos(x)}$.
 
 # Final Paper
 
