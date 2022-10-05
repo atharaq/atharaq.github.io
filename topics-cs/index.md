@@ -17,3 +17,4 @@ layout: default
 * [Lesson 4: Nondeterminism / NP](lesson4.html)
 * [Lesson 5: Verifiers / Reductions](lesson5.html)
 * [Lesson 6: Reductions](lesson6.html)
+* [Lesson 7: The Cook-Levin Theorem](lesson7.html)
