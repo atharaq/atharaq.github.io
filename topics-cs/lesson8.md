@@ -95,7 +95,7 @@ The **integer factoring** problem asks: given inputs $x$ and $y$ (positive integ
 
 1. Show that $\leq_P$ is *transitive*: that is, suppose $A \leq_P B$ and $B \leq_P C$ (that is, that $A$ is polynomial-time reducible to $B$, and $B$ is polynomial-time reducible to $C$). Show that $A \leq_P C$.
 2. Suppose $A$ is NP-complete and $A \leq_P B$. Explain why this means that $B$ is NP-complete. (Hint: Use question 1.)
-3. Assume that $P \neq NP$ for this problem. Suppose $A$ is NP-complete. If $B \leq_P A$, is $B$ necessarily NP-complete?
+3. Assume that $P \neq NP$ for this problem. Suppose $A$ is NP-complete. If $B \leq_P A$, is $B$ necessarily NP-complete? If so, explain why (give a proof), and if not, give an example of a problem $A$ that would not be NP-complete but might be reducible to $B$.
 4. Show that $SAT \in NP$ by giving a verifier algorithm for SAT. Make sure to explain the following:
    * What is the certificate?
    * What is your verifier algorithm?
