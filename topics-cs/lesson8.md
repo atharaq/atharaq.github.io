@@ -100,3 +100,14 @@ The **integer factoring** problem asks: given inputs $x$ and $y$ (positive integ
    * What is the certificate?
    * What is your verifier algorithm?
    * Why does your verifier run in polynomial time (in terms of the length of your input)?
+
+# Upcoming
+
+* PS2 due 10/20
+* Presentation 2: 10/24 through 11/3
+* Midterm Paper: 11/10?
+
+Upcoming material:
+
+* co-NP, EXP, NEXP (sections 2.6 - 2.7)
+* Diagonalization (chapter 3)
