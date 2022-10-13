@@ -18,3 +18,5 @@ layout: default
 * [Lesson 5: Verifiers / Reductions](lesson5.html)
 * [Lesson 6: Reductions](lesson6.html)
 * [Lesson 7: The Cook-Levin Theorem](lesson7.html)
+* [Lesson 8: co-NP](lesson8.html)
+* [Lesson 9: EXP, NEXP](lesson9.html)
