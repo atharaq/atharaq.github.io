@@ -34,7 +34,7 @@ Or simplifying a little bit: $18x(3x^2+1)^2$.
 
 **222**: $y = \sin^5(x)$. I usually would write this as $y = (\sin(x))^5$. So let $u = \sin(x)$ and $y = u^5$. Then $y^\prime = 5u^4 u^\prime$, or $5(\sin(x))^4 \cos(x)$.
 
-On your own: go through the rest of the exercises 220 to 227. Post on Piazza if you get stuck on any of these!
+On your own: go through the rest of the exercises 220 to 227. Ask in class or in office hours if you have trouble with them.
 
 # Implicit Differentiation
 
@@ -123,7 +123,7 @@ Before we answer this, it's worth mentioning: do we really know what the **basic
 
 We usually think of addition as repeated counting: $5 + 7 = 12$, because if we had $5$ apples on one side and $7$ apples on another, then we have $12$ apples total. But of course, there is no notion of $\sqrt{2}$ apples. What does $2 + \sqrt{2}$ mean? It's really about **measurement**, rather than counting: "slide the number line over by a length of $\sqrt{2}$."
 
-Similarly, multiplication is usually thought of as repeated addition. $2 \times 3$ means $2$ groups of $3$. What does $\pi \times 3$ mean? $\pi$ groups of $3? Again, we need to re-think this notion slightly: instead of making groups, we **re-scale**: multiplying by $\pi$ means we stretch out the number line until the tick marks are spaced apart by a length of $\pi$.
+Similarly, multiplication is usually thought of as repeated addition. $2 \times 3$ means $2$ groups of $3$. What does $\pi \times 3$ mean? $\pi$ groups of 3? Again, we need to re-think this notion slightly: instead of making groups, we **re-scale**: multiplying by $\pi$ means we stretch out the number line until the tick marks are spaced apart by a length of $\pi$.
 
 In a sense our operations are **transformations** of the number line by sliding (addition) or stretching/shrinking (multiplication).
 
