@@ -1,4 +1,4 @@
-# Topics in Advanced Computing Lesson 9: The Time Hierarchy Theorem
+# Topics in Advanced Computing Lesson 10: The Time Hierarchy Theorem
 {:.no_toc}
 
 1. Table of Contents
