@@ -62,8 +62,37 @@ This technique is called **diagonalization**. $D$ is a kind of "diagonal" machin
 
 **Corollary**: $P \neq EXP$.
 
-Can anyone explain why?
+Can you explain why?
 
 # Space Complexity
 
-...
+**Definition**: A machine $M$ has **space complexity** $f(n)$ if, whenever $x$ is an input of length $n$, $M$ uses no more than $f(n)$ cells on its tape during its computation on $x$. The complexity class $SPACE(f(n))$ is the set of those problems $X$ which can be solved by a Turing Machine $M$ which has space complexity $O(f(n))$.
+
+A function $f : \mathbb{N} \to \mathbb{N}$ is called **space constructible** if there is a machine $M$ which, on input $1^n$, computes $f(n)$ in space $O(f(n))$.
+
+**Theorem**: (The Space Hierarchy Theorem) Let $f(n)$ and $g(n)$ be functions such that $f(n) = o(g(n))$. Then $SPACE(f(n)) \neq SPACE(g(n))$.
+
+That is, we can show that there is a problem in $SPACE(g(n))$ that is not in $SPACE(f(n))$. The proof uses the same "diagonalization" idea as above, so we will omit it for now.
+
+## Space Complexity Classes
+
+We can similarly define *nondeterministic space complexity*: a nondeterministic machine $N$ has space complexity $f(n)$ if, on input $x$ of length $n$, no matter which nondeterministic choices $N$ makes during its computation on $x$, $N$ uses no more than $f(n)$ cells on its tape during the computation on $x$. The class $NSPACE(f(n))$ is the set of those problems $X$ which can be solved by a nondeterministic TM $N$ which has space complexity $O(f(n))$.
+
+**Definition**: We define the following space complexity classes:
+
+* $PSPACE = \cup_{k > 0} SPACE(n^k)$
+* $NPSPACE = \cup_{k > 0} NSPACE(n^k)$
+* $L = SPACE(\log n)$ (the class of problems solvable with logarithmic space)
+* $NL = NSPACE(\log n)$
+
+Space complexity and time complexity are closely related. For example, clearly $P \subseteq PSPACE$ and $NP \subseteq NPSPACE$. Less obviously, $NP \subseteq PSPACE$ and $PSPACE \subseteq EXP$.
+
+**Theorem**: $NP \subseteq PSPACE$.
+
+**Proof**: Suppose $X \in NP$ and $V$ is a verifier for $X$ which has running time $p(n)$. We construct a TM $M$ which solves $X$ that has polynomial space complexity:
+
+"On input $x$ of length $n$:  
+1. For each $c$ of length at most $p(n)$, run $V(x, c)$.
+   * If $V(x, c) = 1$, halt and output 1.
+   * Otherwise, replace $c$ with the next possible certificate.
+2. If we have looked at all possible certificates, output 0."
