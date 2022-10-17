@@ -54,7 +54,7 @@ $$2^y \ln(2) y^\prime = 1$$
 
 Solve for $y^\prime$: $y^\prime = \dfrac{1}{2^y \ln(2)} = \dfrac{1}{x \ln(2)}$, using the fact that $2^y = x$.
 
-Can you guess the general pattern for the derivative of $y = \log_b(x)$? Try to follow the same steps to find the derivative of $y = \log_10(x)$. The textbook goes over this in [Section 3.9](https://openstax.org/books/calculus-volume-1/pages/3-9-derivatives-of-exponential-and-logarithmic-functions), Theorem 3.16.
+Can you guess the general pattern for the derivative of $y = \log_b(x)$? Try to follow the same steps to find the derivative of $y = \log_{10}(x)$. The textbook goes over this in [Section 3.9](https://openstax.org/books/calculus-volume-1/pages/3-9-derivatives-of-exponential-and-logarithmic-functions), Theorem 3.16.
 
 # Power Rule, generalized.
 
