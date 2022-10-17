@@ -23,3 +23,4 @@ layout: default
 * [Lesson 10: Chain Rule](lesson10.html)
 * [Lesson 11: Implicit Differentiation](lesson11.html)
 * [Lesson 12: Exponential Functions](lesson12.html)
+* [Lesson 13: Logarithmic Differentiation](lesson13.html)
