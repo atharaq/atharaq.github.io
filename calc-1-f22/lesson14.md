@@ -154,7 +154,9 @@ How can you tell when a point is a local min or local max?
 
 # Upcoming
 
-* Quiz on Monday!
+* Quiz on Monday
+* DeltaMath due Monday
 * Homework 6, due next Thursday:
    * Section 3.9 #332, 334, 343
    * Section 4.1 #12, 13
+* Problem Presentation due next Friday
