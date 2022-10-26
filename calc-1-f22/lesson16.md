@@ -176,4 +176,4 @@ Take a look at exercises 211-217 and 224-230 from [Section 4.5](https://openstax
 * DeltaMath due next **Thursday**
 * Initial notes / outline due **Tuesday**
 
-Next week:
+**For next week only,** we will meet in smaller groups to review for the exam and go over similar / practice problems. Please respond to the [survey](https://docs.google.com/forms/d/e/1FAIpQLSfDTXZ3AI6ay6zepY_u5YT8tkEAeq6lKW2OYwgz9zzTpCrWlg/viewform?usp=sf_link) if you have not already, and look out for the schedule that I will post on Moodle.
