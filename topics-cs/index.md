@@ -22,3 +22,4 @@ layout: default
 * [Lesson 9: EXP, NEXP](lesson9.html)
 * [Lesson 10: Time Hierarchy Theorem](lesson10.html)
 * [Lesson 11: PSPACE](lesson11.html)
+* [Lesson 12: PSPACE-completeness](lesson12.html)
