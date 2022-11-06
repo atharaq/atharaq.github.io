@@ -24,3 +24,4 @@ layout: default
 * [Lesson 11: PSPACE](lesson11.html)
 * [Lesson 12: PSPACE-completeness](lesson12.html)
 * [Lesson 13: Geography Game](lesson13.html)
+* [Lesson 14: Oracles](lesson14.html)

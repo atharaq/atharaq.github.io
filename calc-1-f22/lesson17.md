@@ -76,7 +76,7 @@ Set that equal to 0 and solve:
 * $64x^2 = 9x^2 + 36$, or $55x^2 = 36$
 * $x = \pm \sqrt{\frac{36}{55}}$
 
-Since negatives don't make sense, we get: T(\sqrt{\frac{36}{55}}) \approx 1.368$ hours. About 1 hour and 22 minutes.
+Since negatives don't make sense, we get: $T(\sqrt{\frac{36}{55}}) \approx 1.368$ hours. About 1 hour and 22 minutes.
 
 This is shorter than the endpoints! (We already checked those). So this is the absolute minimum of $T(x)$ on this interval!
 

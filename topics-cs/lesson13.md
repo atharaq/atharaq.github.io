@@ -1,4 +1,4 @@
-# Topics in Advanced Computing Lesson 12: PSPACE-completeness
+# Topics in Advanced Computing Lesson 13: Geography Game
 {:.no_toc}
 
 1. Table of Contents
