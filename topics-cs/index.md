@@ -25,3 +25,4 @@ layout: default
 * [Lesson 12: PSPACE-completeness](lesson12.html)
 * [Lesson 13: Geography Game](lesson13.html)
 * [Lesson 14: Oracles](lesson14.html)
+* [Lesson 15: Polynomial Hierarchy](lesson15.html)

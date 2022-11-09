@@ -28,3 +28,4 @@ layout: default
 * [Lesson 15: Optimization and Linear Approximation](lesson15.html)
 * [Lesson 16: Mean Value Theorem](lesson16.html)
 * [Lesson 17: Applied Optimization](lesson17.html)
+* [Lesson 18: Limits at Infinity](lesson18.html)
