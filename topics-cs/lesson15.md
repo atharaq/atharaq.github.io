@@ -47,7 +47,7 @@ Remember that $x \in Y$ if and only if $f(x) \in X$. Since $V$ is a verifier for
 
 Moreover, if $V$ runs in polynomial time $p(n)$, and $f(x)$ runs in polynomial time $q(n)$, then the above algorithm runs in $q(n) + p(q(n))$ steps, which is $O(p(q(n)))$, which is still polynomial time.
 
-**Theorem 2**: If $PH = PSPACE$, then there is a level $n$ such that $PH = PSPACE = \Sigma^P_n$.
+**Theorem 2**: If $PH = PSPACE$, then there is a level $n$ such that $PH = \Sigma^P_n$.
 
 **Proof**: If $PSPACE = PH$, then the Formula Game is in $PH$ somwhere. Suppose this problem is in $\Sigma^P_n$. Since this problem is $PSPACE$-complete, then any problem in $PSPACE$ (and therefore any problem in $PH$) is reducible to this game. By the above lemma, each problem in $PH$ then is in $\Sigma^P_n$!
 
@@ -68,3 +68,10 @@ Next time we will look at an example of a randomized algorithm which checks if a
 In other words, this algorithm *might* be wrong, but if it is, it's not wrong often. So *most likely*, the algorithm will output the correct answer!
 
 # Problem Set 3
+
+1. Consider the formula $\phi = \exists x_1 \forall x_2 \exists x_3 \forall x_4 [(x_1 \vee x_2 \vee \lnot x_3) \wedge (\lnot x_1 \vee \lnot x_2 \vee x_4) \wedge (\lnot x_2 \vee \lnot x_3 \vee \lnot x_4)]$.
+   * Draw the resulting directed graph $G$ obtained by the reduction from the formula game to the geography game.
+   * Show that $\exists$ has a winning strategy in the formula game for this $\phi$.
+2. Recall that the vertex cover problem is NP-complete. The vertex cover problem asked: given a graph $G$ and a number $k$, is there a subset $S$ of its vertices of size $k$ such that every edge has at least one vertex in $S$? Consider the following modification problem: given a graph $G$ and a number $k$, is there a subset $S$ of size $k$ such that $S$ is a vertex cover for $G$, but no set smaller than $S$ is a vertex cover for $G$? Show that you can solve this problem in polynomial time using an oracle for the vertex cover problem.
+3. Show that if $P = NP$, then $P = PH$.
+4. Show that if $NP = coNP$, then $NP = PH$.
