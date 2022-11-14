@@ -26,3 +26,4 @@ layout: default
 * [Lesson 13: Geography Game](lesson13.html)
 * [Lesson 14: Oracles](lesson14.html)
 * [Lesson 15: Polynomial Hierarchy](lesson15.html)
+* [Lesson 16: Randomized algorithms](lesson16.html)
