@@ -109,7 +109,7 @@ By the theorem, if $x$ is prime, then $Pr[M(x) = 1] = 1$, and if not, $Pr[M(x) =
 
 Let's think about this for $n = 99$, so $n - 1 = 48 = 2 \times 49$, and $a = 2$. How would we compute $2^{49}$ **mod** 99 quickly?
 
-We compute $2$, $2^2$, $2^4$, $2^8$, $2^{16}$, and $2^{32}$, modulo 99! Then we use the fact that 49 = 32 + 16 + 1, so $2^{49} = 2^32 \times 2^16 \times 2^1$.
+We compute $2$, $2^2$, $2^4$, $2^8$, $2^{16}$, and $2^{32}$, modulo 99! Then we use the fact that 49 = 32 + 16 + 1, so $2^{49} = 2^{32} \times 2^{16} \times 2^1$.
 
 (2, 4, 16, 58, 97, 4)
 
