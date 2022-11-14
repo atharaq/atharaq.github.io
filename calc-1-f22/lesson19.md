@@ -89,7 +89,7 @@ What about $e^{2x}$? Can you figure out what an antiderivative of $e^{2x}$ is? N
 
 # Practice Problems
 
-I hope that you understand the main ideas here, but please make sure to practice this skill as much as possible. Take a look at [Section 4.10](https://openstax.org/books/calculus-volume-1/pages/4-10-antiderivatives), exercises 465-467, 470-473, and 496-498. In addition, there is a DeltaMath assignment on this topic due **next Monday** 11/23.
+I hope that you understand the main ideas here, but please make sure to practice this skill as much as possible. Take a look at [Section 4.10](https://openstax.org/books/calculus-volume-1/pages/4-10-antiderivatives), exercises 465-467, 470-473, and 496-498. In addition, there is a DeltaMath assignment on this topic due **next Monday** 11/21.
 
 # Preview: Areas under Curves
 
