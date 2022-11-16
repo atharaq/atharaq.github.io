@@ -30,3 +30,4 @@ layout: default
 * [Lesson 17: Applied Optimization](lesson17.html)
 * [Lesson 18: Limits at Infinity](lesson18.html)
 * [Lesson 19: Antiderivatives](lesson19.html)
+* [Lesson 20: Definite Integrals](lesson20.html)

@@ -50,7 +50,7 @@ In order to understand the probabilistic algorithm, we need to study some number
 
 **Lemma**: $a \equiv b$ (mod $n$) if and only if there is an integer $r$ such that $0 \leq r < n$ and integers $q_1$ and $q_2$ such that $a = q_1 n + r$ and $b = q_2 n + r$.
 
-The idea behind this lemma is that $r$ is the remainder upon dividing $a$ or $b$ by $n$, and $q_1$ and $q_2$ are the quotients when dividing $a$ or $b$ by $n$. Then $a \equiv b$ (mod $n$)$ means that $a$ and $b$ have the same remainder when dividing by $n$. We refer to the operation of finding the remainder after dividing by $n$ as the **mod** operation: that is, $a \mathbf{mod} n$ is the remainder $r$ when we divide $a$ by $n$.
+The idea behind this lemma is that $r$ is the remainder upon dividing $a$ or $b$ by $n$, and $q_1$ and $q_2$ are the quotients when dividing $a$ or $b$ by $n$. Then $a \equiv b$ (mod $n$) means that $a$ and $b$ have the same remainder when dividing by $n$. We refer to the operation of finding the remainder after dividing by $n$ as the **mod** operation: that is, $a \mathbf{mod} n$ is the remainder $r$ when we divide $a$ by $n$.
 
 **Theorem**: (Fermat's Little Theorem) Suppose $n$ is a prime number and $a$ is any positive integer. Then $a^n \equiv a$ (mod $n$). Moreover, if $0 \leq a < n$, then $a^{n - 1} \equiv 1$ (mod $n$).
 
