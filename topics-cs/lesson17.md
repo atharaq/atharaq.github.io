@@ -69,7 +69,7 @@ Note: what did the primality algorithm show? We actually saw that $PRIMES \in BP
 **Questions**:
 
 1. RP vs BPP?
-2. RP vs BPP?
+2. RP vs NP?
 
 # Interactive Proofs
 
