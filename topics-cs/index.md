@@ -27,3 +27,4 @@ layout: default
 * [Lesson 14: Oracles](lesson14.html)
 * [Lesson 15: Polynomial Hierarchy](lesson15.html)
 * [Lesson 16: Randomized algorithms](lesson16.html)
+* [Lesson 17: BPP](lesson17.html)
