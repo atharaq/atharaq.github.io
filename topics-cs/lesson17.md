@@ -10,7 +10,7 @@
 
 M: "On input $n$:
 1. If $n = 2$, output 1.
-2. If $n = 0, 1$ or n > 2$ and is even, output 0.
+2. If $n = 0, 1$ or $n > 2$ and is even, output 0.
 3. Otherewise, let $s$ and $d$ be such that $n - 1 = 2^s \cdot d$ and $d$ is odd.
 4. Pick $a$ randomly between $2, \ldots, n - 2$:
 5. Let $x = a^d$ **mod** $n$. For each $i = 0, \ldots, s - 1$:
@@ -72,6 +72,35 @@ Note: what did the primality algorithm show? We actually saw that $PRIMES \in BP
 2. RP vs BPP?
 
 # Interactive Proofs
+
+One can think of the notion of a mathematical proof as analogous to the role of a verifier in the **NP** definition. That is: a *proof* of some theorem is a finite string that one can *verify*. We can generalize this idea: suppose we have two players, a *prover* and a *verifier*. The verifier is able to ask the prover finitely many questions (usually there is some fixed bound $k$), the prover responds each time, and then, finally at the end, the verifier outputs TRUE or FALSE.
+
+We usually insist on the following:
+
+* The prover has **unlimited** computational power, but might not be telling the truth.
+* The verifier has some bounded computational power (perhaps we insist that the verifier runs in polynomial time, or probabilistic polynomial time), but is always honest.
+
+In what sense is this a proof system? Essentially, we say that a language $X$ has a "proof system" if there is a verifier We need two properties:
+
+* **Completeness**: if $x \in L$, then any honest "prover" can convince the verifier that $x \in L$, and
+* **Soundness**: if $x \not \in L$, then no "prover" (honest or not) can convince the verifier that $x \in L$.
+
+The words "convince" here often refers to some sort of probability, so it suggests having some sort of probabilistic verifier.
+
+## Example
+
+Recall the problem of checking if two graphs are isomorphic. We have seen before that this problem is in **NP**: the certificate would just be the isomorphism. The complement is in **coNP**; we don't exactly have a quick way of determining if two graphs are *not* isomorphic. But if we allow interaction, we do!
+
+Here is the protocol. Suppose we are given two graphs $G_1$ and $G_2$. Both $V$ and $P$ can see them. I'll refer to $V$ as the verifier, and $P$ as the prover.
+
+* $V$ picks between $G_1$ and $G_2$ randomly (call the graph it picks $G$).
+* $V$ then randomly renames the vertices of $G$ to get a new graph $H$ (which is isomorphic to $G$). $V$ sends $H$ to $P$.
+* $P$ determines if $H$ came from $G_1$ or from $G_2$. It responds with 1 or 2 accordingly.
+* $V$ then verifies that $P$'s response matches with the graph it originally chose.
+
+Notice that if $G_1 \not \cong G_2$, then there is a prover which knows this, and so such a prover would be able to tell, immediately, which of $G_1$ or $G_2$ is used to create $H$ each time. In other words, if $G_1 \not \cong G_2$, then the probability of the verifier saying that they are not isomorphic, in this protocol, is exactly 1. But if they are isomorphic, then the best any prover can do is just guess: any $H$ which $V$ could send could theoretically come from either $G_1$ or from $G_2$, so the probability that $V$ would say that they are not isomoprhic is at most $\frac{1}{2}$. If we repeat this protocol enough times, we can reduce this probability to $\frac{1}{4}$ (or even $\frac{1}{2^k}$ if we wish).
+
+In other words, an honest prover can convince us that two graphs that are not isomorphic are, in fact, not isomorphic, and no prover can consistently convince us that two isomorphic graphs are not isomorphic.
 
 # Reminders
 
