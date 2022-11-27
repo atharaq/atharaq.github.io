@@ -28,4 +28,5 @@ layout: default
 * [Lesson 15: Polynomial Hierarchy](lesson15.html)
 * [Lesson 16: Randomized algorithms](lesson16.html)
 * [Lesson 17: BPP](lesson17.html)
-* [Guest Lecture: Demystifying the Technical Interview](Demystifying the Technical Interview.pptx) 
+* [Guest Lecture: Demystifying the Technical Interview](Demystifying the Technical Interview.pptx)
+* [Lesson 18: Interactive Proofs](lesson18.html)
