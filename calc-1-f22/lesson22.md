@@ -139,6 +139,6 @@ Next time, we will look at using substitution with definite integrals.
 
 # Upcoming
 
-* DeltaMath due **Thursday**.
-* Exam 3 given out tomorrow, due **next Monday**.
+* DeltaMath due **Monday**.
+* Exam 3 given out later this week, due **next Thursday**.
 * Final paper due in two weeks.

@@ -84,7 +84,7 @@ We will skip the details of this proof (I will leave it to you to look at the te
 1. Let $q \in (.5, 1)$ be any real number. Consider the variant of BPP called $BPP_q$, defined to be the class of all problems $X$ for which there is a probabilistic TM $P$ such that if $x \in X$, then $Pr(P(x) = 1) \geq q$, and if $x \not \in X$, then $Pr(P(x) = 1) \leq 1 - q$. Show that $BPP = BPP_q$.
 2. Let $n = 209$ and $a = 15$. Then $n - 1 = 208 = 13 \times 2^4$
    * Compute $15^1$, $15^2$, $15^4$, and $15^8$ mod 209.
-   * Compute $15^13 = 15^1 \times 15^4 \times 15^8$ mod 209.
+   * Compute $15^{13} = 15^1 \times 15^4 \times 15^8$ mod 209.
    * Continue through the rest of the steps of the Miller-Rabin algorithm for $n = 209$ and $a = 15$. Does this output prime or composite?
 3. A **quadratic residue** mod $n$ is a number $x$ such that there is some $z$ such that $x \equiv z^2$ (mod $n$). Consider the following protocol that proves whether $x$ is a quadratic residue modulo $n$.
    * On input $x$ and $n$, $V$ asks $P$ for some (random) quadratic residue $y$ (so $P$ knows that there is a $v$ such that $y \equiv v^2$ (mod $n$); $V$ does not know $v$).
