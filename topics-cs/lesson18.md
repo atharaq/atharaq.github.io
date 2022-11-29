@@ -91,6 +91,5 @@ We will skip the details of this proof (I will leave it to you to look at the te
    * $V$ randomly chooses 0 or 1 and sends it to $P$. Call this number $i$.
    * $P$ computes $w = z^i v$ (mod $n$), where $z$ is such that $z^2 \equiv x$ (mod $n$), and then sends $w$ to $V$.
    * $V$ checks if $w^2 \equiv x^i y$ (mod $n$) and outputs 1 or 0 in that case.
-
-Show that if $x$ is a quadratic residue, then $V$ always outputs 1.
+Show that if $x$ is a quadratic residue, then $V$ always outputs 1 (assuming $P$ is honest).
 4. Pick your favorite (most interesting) open problem from this semester. State the problem, explain what it means, and explain why you think it's interesting. Alternatively: pick one concept from this semester that you thought was interesting, explain it in detail and explain what you thought was interesting about it.
