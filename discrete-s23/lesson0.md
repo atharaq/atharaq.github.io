@@ -72,16 +72,6 @@ You are strongly encouraged to form study groups. This course will be challengin
 ## Workload
 {: .no_toc}
 
-* 30%: Problem Sets (5-7 problem sets)
-* 10%: Exit Tickets
-* 20% (10% x 2): Mid-semester Exams (possibly take-home)
-* 20%: Final Exam (possibly take home)
-* 10%: Problem Presentations (in-class)
-* 10%: Final Project
-  * 5% Presentation
-  * 5% Paper
-
-
 * 2 mid-semester exams (10% each, take home?)
 * 1 final exam (20%, take home?)
 * Exit Tickets (10%)
