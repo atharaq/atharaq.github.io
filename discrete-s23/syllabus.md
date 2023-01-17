@@ -3,7 +3,7 @@
 MAT 3120
 
 4 credits  
-Fall 2022
+Spring 2023
 
 **Meeting Times**: Mondays and Thursdays, 4:30 - 6:10  
 **Location**: Natural Sciences 3001  
