@@ -199,5 +199,15 @@ These first two are essential: you **must** check these out.
 
 1. Get set up using LaTeX (either method).
 2. Download the exit0.tex file on Moodle. Edit it, replace the sections for your name, year and major.
-3. In the rest of the document, re-write the following argument that ....
+3. In the rest of the document, re-write the following argument that if $a$ is even and $b$ is a multiple of $a$, then $b$ is also even:
+
+$$
+\begin{align}
+a = 2k \\
+b = na = n(2k) = 2(nk) \\
+b = 2x, x = nk \\
+b \text{ is even!}
+\end{align}
+$$
+
 4. Compile the document to a PDF and upload the PDF to Moodle.
