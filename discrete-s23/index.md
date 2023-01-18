@@ -9,6 +9,8 @@ lang: en-US
 ## Resources
 
 * [Syllabus](syllabus.html)
+* [Discrete Mathematics: An Open Introduction](https://discrete.openmathbooks.org/)
+* [Combinatorics Through Guided Discovery](https://bogart.openmathbooks.org/)
 
 ## Lecture Notes
 

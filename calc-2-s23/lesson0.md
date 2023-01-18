@@ -167,6 +167,7 @@ That is, we look for $x$ such that $2^x = 8$. Since $2^3 = 8$, this means $x = 3
 <li>The definite integral from $a$ to $b$ measures the area under the curve $y = f(x)$ from $x = a$ to $x = b$.</li>
 <li>We compute this using the Fundamental Theorem of Calculus: find an antiderivative $F(x)$ of $f(x)$, and then plug in $F(b) - F(a)$.</li>
 <li>The idea is that if $f(x) = F^\prime(x)$, then $f(x)$ is like a small change in $F(x)$. Then, the integral is "adding up all the small changes". If you add up a bunch of small changes, you just get the overall change.</li>
+</ol>
 </details>
 
 # Written Homework
