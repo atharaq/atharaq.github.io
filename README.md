@@ -1,9 +1,10 @@
 # Professor Abdul-Quader's Lecture Notes
 
-Lecture Notes for Fall 2022 Courses:
+Lecture Notes for Spring 2023 Courses:
 
-* [Calculus I](calc-1-f22)
-* [Topics in Advanced Computing](topics-cs)
+* [Calculus II](calc-2-s23)
+* [Computer Science II](cs2-s23)
+* [Discrete Mathematics](discrete-s23)
 
 Old lecture notes can still be found at their respective sites. Contact me if you need access to them.
 
