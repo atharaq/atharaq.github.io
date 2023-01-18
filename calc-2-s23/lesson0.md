@@ -75,13 +75,99 @@ Which of the following graphs are graphs of functions? Why?
 <iframe src="https://www.desmos.com/calculator/eqd7naoskv?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
 </div>
 
-What, exactly, is a function?
+What, exactly, is a function? (Something that passes the **vertical line test**.)
 
 ## Inverses
 
+**Exercise**: Which of the following have inverses?
+
+<div class="desmos-container">
+<iframe src="https://www.desmos.com/calculator/13hc7t2edp?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
+</div>
+
+<div class="desmos-container">
+<iframe src="https://www.desmos.com/calculator/37cvqrb4w8?embed" style="border: 1px solid #ccc" frameborder=0></iframe></div>
+
+<div class="desmos-container">
+<iframe src="https://www.desmos.com/calculator/fdmlvszcch?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
+</div>
+
+<div class="desmos-container">
+<iframe src="https://www.desmos.com/calculator/z69hwucmtl?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
+</div>
+
+A function has an inverse if it is **one to one**. That is, if it passes the **horizontal line test**. If $f(x)$ has an inverse, we denote that function $f^{-1}(x)$. Then:
+
+* $f(x) = y$ means $f^{-1}(y) = x$,
+* $f^{-1}(f(x)) = x$, and,
+* $f(f^{-1}(x)) = x$.
+
+**Exercise**: Consider the following graph:
+
+<div class="desmos-container">
+
+</div>
+
+That is, we can see that:
+
+* $f(-2) = 0$,
+* $f(0) = -2$, and,
+* $f(3) = 2$.
+
+Find:
+
+1. $f^{-1}(-2)$.
+2. $f^{-1}(0)$.
+3. $f^{-1}(2)$.
+
+In general, we might not know how to *compute* the inverse function, just that it exists. Instead, if we know $f(x)$ and we want to know, say, $f^{-1}(25)$, look for an $x$-value so that $f(x) = 25$.
+
+**Example**: Let $f(x) = 2^x$. Find $f^{-1}(8)$.
+
+That is, we look for $x$ such that $2^x = 8$. Since $2^3 = 8$, this means $x = 3$; that is, $f^{-1}(8) = 3$.
+
+(Question: what function is $f^{-1}(x)$ here?)
+
 # Derivatives
 
-## Fundamental Theorem of Calculus
+**Exercise**: Consider the following graph of a function $g(x)$:
+
+<div class="desmos-container">
+<iframe src="https://www.desmos.com/calculator/37cvqrb4w8?embed" style="border: 1px solid #ccc" frameborder=0></iframe></div>
+</div>
+
+1. What is $g^\prime(0)$?
+2. Is $g^\prime(1)$ positive or negative?
+3. What about $g^\prime(-2)$?
+
+**Exercise**: With a partner:
+
+1. Share your best explanations (in English) with each other of what the derivative means.
+2. In physics, what is the derivative of velocity known as? What does that actually mean?
+3. Suppose $v(t)$ is your velocity at time $t$. If you are slowing down at time $t$, what does that mean for $v^\prime(t)$?
+4. If $v^\prime(t) = 0$, what does that tell you about your velocity at time $t$?
+
+## Antiderivatives
+
+1. What is an antiderivative?
+2. Can a function have more than one antiderivative? Give an example?
+3. Find antiderivatives of the following:
+   * $f(x) = x + 1$.
+   * $g(x) = e^x$.
+
+## Definite Integrals
+
+1. What is meant by $\int\limits_a^b f(x) dx$?
+2. How do we compute this?
+3. Why is there a relationship between this quantity (the definite integral) and antiderivatives?
+
+<details>
+<summary>Possible answers</summary>
+<ol>
+<li>The definite integral from $a$ to $b$ measures the area under the curve $y = f(x)$ from $x = a$ to $x = b$.</li>
+<li>We compute this using the Fundamental Theorem of Calculus: find an antiderivative $F(x)$ of $f(x)$, and then plug in $F(b) - F(a)$.</li>
+<li>The idea is that if $f(x) = F^\prime(x)$, then $f(x)$ is like a small change in $F(x)$. Then, the integral is "adding up all the small changes". If you add up a bunch of small changes, you just get the overall change.</li>
+</details>
 
 # Written Homework
 

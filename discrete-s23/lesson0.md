@@ -72,14 +72,12 @@ You are strongly encouraged to form study groups. This course will be challengin
 ## Workload
 {: .no_toc}
 
+* 5-7 Problem Sets (roughly 2-3 weeks) (30%)
+* Exit Tickets (10%): short assignments to make sure you are following along with the lessons.
 * 2 mid-semester exams (10% each, take home?)
 * 1 final exam (20%, take home?)
-* Exit Tickets (10%)
-  * These are short assignments to make sure you are following along with the lessons.
-* 5-7 Problem Sets (roughly 2-3 weeks) (30%)
 * 10% Problem Presentations: two short (~5 minutes) explanations of a challenging problem. Done **in-class**, around the time of exam 1 and exam 2.
-* 20% Final Project
-  * Possibly group project. You will research a topic not covered in our coursework, present it in our final meeting of the course, and write a paper about it.
+* 10% Final Project: group project. research a topic not covered in our coursework, present it in our final meeting of the course, and write a paper about it.
 
 # Mathematical writing
 
