@@ -30,7 +30,7 @@ Topics for discussion:
 
 # Prerequisite material
 
-I expect that most of you have learned about integrals already in Calculus I. Indeed, I covered integration in [lessons 18-21](https://atharaq.github.io/calc-1/) of my Calc I course last semester. You are free to look at those notes and videos if you ever need a refresher. Of course, I'm sure that there are some things that students may have forgotten in the meantime. Coming in, I expect you to know the following:
+I expect that most of you have learned about integrals already in Calculus I. Indeed, I covered integration in [lessons 20-23](https://atharaq.github.io/calc-1-f22/) of my Calc I course last semester. You are free to look at those notes and videos if you ever need a refresher. Of course, I'm sure that there are some things that students may have forgotten in the meantime. Coming in, I expect you to know the following:
 
 * The geometric meaning and the limit definition of the "definite integral".
 * The relationship between derivatives and definite integrals (the "Fundamental Theorem of Calculus").
@@ -43,7 +43,7 @@ I expect that most of you have learned about integrals already in Calculus I. In
   * An antiderivative of $\frac{1}{x}$ is $\ln\|x\|$, since the derivative of $\ln\|x\|$ is $\frac{1}{x}$.
   * [Many more in our textbook!](https://openstax.org/books/calculus-volume-2/pages/a-table-of-integrals)
 
-Ideally, you would also have been introduced to the technique of **integration by substitution**. I know that this is not always covered in every Calculus I course, and so I will talk a bit about it on Thursday.
+Ideally, you would also have been introduced to the technique of **integration by substitution**. I know that this is not always covered in every Calculus I course, and so I will talk a bit about it on Monday.
 
 ## Resources
 
