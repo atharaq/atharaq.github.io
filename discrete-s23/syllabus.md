@@ -93,21 +93,21 @@ Purchase College has many resources to support our students' wellness and mental
 
 | Week | Topics | Readings |
 | ---- | ------ | -------- |
-| 1 (1/19) | Mathematical writing, LaTeX | |
+| 1 (1/19) | Mathematical writing, LaTeX | D:AOI |
 | 2 (1/23, 1/26) | Propositional Logic, Proof writing | D:AOI Ch. 0 |
-| 3 (1/30, 2/2) | Counting / Arrangements, Functions, Set Theory | CTGD Ch. 1 |
-| 4 (2/6, 2/9) | Set Theory, Functions, Cardinality | |
-| 5 (2/13, 2/16) | Predicates / Quantifiers, Induction| |
-| 6 (2/20, 2/23) | Induction, **Exam 1** | |
-| 7 (2/27, 3/2) | Presentations, Number Theory, Modular Arithmetic | |
-| 8 (3/6, 3/9) | Presentations,  Binary, Octal, Hexadecimal | |
-| 9 (3/13, 3/16) | Recurrences, **Exam 2** | |
-| 10 (3/20, 3/23) | **Spring Break**  | |
-| 11 (3/27, 3/30) | Relations, Partial orders, Equivalence relations | |
-| 12 (4/3, 4/6) | Presentations, intro to Graph Theory | |
-| 13 (4/10, 4/13) | Presentations, Graph isomorphisms | |
-| 14 (4/17, 4/20) | Graph connectivity and planarity| |
-| 15 (4/24, 4/27) | Graph colorings, trees | |
-| 16 (5/1) | Presentations | |
+| 3 (1/30, 2/2) | Counting / Arrangements, Functions, Set Theory | CTGD Ch. 1, D:AOI Ch. 0, 1 |
+| 4 (2/6, 2/9) | Set Theory, Functions, Cardinality | D: AOI Ch. 3, CTGD Appendix|
+| 5 (2/13, 2/16) | Predicates / Quantifiers, Induction | D:AOI Ch. 3, CTGD Ch.2 / Appendix |
+| 6 (2/20, 2/23) | Induction, **Exam 1** | D:AOI Ch. 3, CTGD Ch. 2 / Appendix |
+| 7 (2/27, 3/2) | Presentations, Number Theory, Modular Arithmetic | D:AOI Ch. 2, CTGD Ch. 2 |
+| 8 (3/6, 3/9) | Presentations,  Binary, Octal, Hexadecimal | D:AOI Ch. 2, CTGD Ch. 2 |
+| 9 (3/13, 3/16) | Recurrences, **Exam 2** | D:AOI Ch. 2, CTGD Ch. 2 |
+| (3/20, 3/23) | **Spring Break**  | |
+| 10 (3/27, 3/30) | Relations, Partial orders, Equivalence relations | D:AOI Ch. 2, CTGD Ch.2 / Appendix |
+| 11 (4/3, 4/6) | Presentations, intro to Graph Theory | CTGD Ch.2, D:AOI Ch. 4 |
+| 12 (4/10, 4/13) | Presentations, Graph isomorphisms | D:AOI Ch. 4|
+| 13 (4/17, 4/20) | Graph connectivity and planarity| D:AOI Ch. 4 |
+| 14 (4/24, 4/27) | Graph colorings, trees | D:AOI Ch. 4 |
+| 15 (5/1) | Presentations | |
 
 This is very much subject to change.
