@@ -105,7 +105,7 @@ A function has an inverse if it is **one to one**. That is, if it passes the **h
 **Exercise**: Consider the following graph:
 
 <div class="desmos-container">
-<iframe src="https://www.desmos.com/calculator/fixno1sffu?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
+<iframe src="https://www.desmos.com/calculator/7v7vh9zv8y?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
 </div>
 
 That is, we can see that:
@@ -133,7 +133,7 @@ That is, we look for $x$ such that $2^x = 8$. Since $2^3 = 8$, this means $x = 3
 **Exercise**: Consider the following graph of a function $g(x)$:
 
 <div class="desmos-container">
-<iframe src="https://www.desmos.com/calculator/37cvqrb4w8?embed" style="border: 1px solid #ccc" frameborder=0></iframe></div>
+<iframe src="https://www.desmos.com/calculator/37cvqrb4w8?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
 </div>
 
 1. What is $g^\prime(0)$?
