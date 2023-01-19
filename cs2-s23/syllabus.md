@@ -5,13 +5,14 @@ MAT 1540
 4 credits  
 Spring 2023
 
+**Meeting Times**: Mondays and Thursdays, 12:30 - 2:10  
+**Location**: Natural Sciences 1013  
 **Instructor**: Professor Abdul-Quader (or just "Athar")  
 **Email**: athar.abdulquader AT purchase DOT edu  
 **Office Hours**:  Mondays and Thursdays, 2:45 - 4:15 NSB 3003   
 **Learning Assistant**:  
-  * Rachel Molina (rachel.molina AT purchase DOT edu)  
-**Meeting Times**: Mondays and Thursdays, 12:30 - 2:10  
-**Location**: Natural Sciences 1013  
+  * Rachel Molina (rachel.molina AT purchase DOT edu)
+  * Rachel's office hours will be posted on Moodle.
 
 ## Course Description
 
