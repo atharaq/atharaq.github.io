@@ -105,7 +105,8 @@ A function has an inverse if it is **one to one**. That is, if it passes the **h
 **Exercise**: Consider the following graph:
 
 <div class="desmos-container">
-<iframe src="https://www.desmos.com/calculator/jynsbcq9tj?embed" style="border: 1px solid #ccc" frameborder=0></iframe></div>
+<iframe src="https://www.desmos.com/calculator/fixno1sffu?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
+</div>
 
 That is, we can see that:
 
