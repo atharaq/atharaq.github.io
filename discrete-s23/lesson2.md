@@ -240,3 +240,18 @@ Team 3's games
 What do we notice here? I bolded games that were already accounted for. In particular, every game shows up *twice*! That makes sense: there are two teams playing in each game.
 
 In general, if there are $n$ teams, each playing $n - 1$ other teams, then there are **not** $n \times (n - 1)$ games, because again, each game would appear twice if we listed out all $n - 1$ games for each team. So what is the correct formula?
+
+# Exit Ticket 2
+
+Due Monday, 1/30 (see .tex file on Moodle)
+
+1. In this problem, rather than ask you to prove a statement, I just want you to think about how you would go about writing a proof. State clearly what definitions you would use, what hypotheses/assumptions you would make, and whether you would use a direct proof or a proof by contradiction.
+
+   **Theorem**: Let $n$ be an integer. If $n^2$ is an even number, then $n$ is even.
+2. You are on an island where everyone is either a knight (who always tells the truth) or a knave (who always lies). You meet two people, A and B. A says “We are both knaves.” Determine the identities of A and B. (For this problem, you can either use a truth table, or reason intuitively.)
+3. Work through problem 2 of \textit{Combinatorics Through Guided Discovery} section 1.2: Some number $n$ of schools are going to send their baseball teams to a tournament. Each team must play each other team exactly once. Think of the teams as being numbered $1$ through $n$:
+   * How many games does team 1 have to play in?
+	 * How many games, other than the one with team 1, does team two have to play in?
+	 * How many games, other than those with the first $i - 1$ teams, does team $i$ have to play in?
+	 * In terms of your answers to the previous parts of the problem, what is the total number of games played?
+   Can you find a formula for the total number, using the``adding numbers in two ways" trick we used in the video?
