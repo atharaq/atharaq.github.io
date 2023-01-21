@@ -13,6 +13,13 @@
 
 # Integration by Substitution
 
+The notes below are a **very brief review**. If you have never encountered integration by substitution before, you may wish to look at the following:
+
+* [Fall 2022, Calculus 1, Lesson 22](https://atharaq.github.io/calc-1-f22/lesson22.html#integration-by-substitution)
+* [Fall 2022, Calculus 1, Lesson 23](https://atharaq.github.io/calc-1-f22/lesson23.html)
+
+Those notes come with embedded videos where I go over some problems and provide more depth in my explanations.
+
 Recall: **chain rule**
 
 * Suppose $h(x) = f(g(x))$.
