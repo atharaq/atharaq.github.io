@@ -249,7 +249,7 @@ Due Monday, 1/30 (see .tex file on Moodle)
 
    **Theorem**: Let $n$ be an integer. If $n^2$ is an even number, then $n$ is even.
 2. You are on an island where everyone is either a knight (who always tells the truth) or a knave (who always lies). You meet two people, A and B. A says “We are both knaves.” Determine the identities of A and B. (For this problem, you can either use a truth table, or reason intuitively.)
-3. Work through problem 2 of \textit{Combinatorics Through Guided Discovery} section 1.2: Some number $n$ of schools are going to send their baseball teams to a tournament. Each team must play each other team exactly once. Think of the teams as being numbered $1$ through $n$:
+3. Work through problem 2 of [Combinatorics Through Guided Discovery section 1.2](https://bogart.openmathbooks.org/ctgd/s1-2-basics.html): Some number $n$ of schools are going to send their baseball teams to a tournament. Each team must play each other team exactly once. Think of the teams as being numbered $1$ through $n$:
    * How many games does team 1 have to play in?
 	 * How many games, other than the one with team 1, does team two have to play in?
 	 * How many games, other than those with the first $i - 1$ teams, does team $i$ have to play in?
