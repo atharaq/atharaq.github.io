@@ -56,7 +56,7 @@ For the following exercises, make an appropriate u-substitution and compute the 
 
 
 <details>
-<summary>Solutions</sumamry>
+<summary>Solutions</summary>
 <ol>
 <li>$\int (\sin(x))^2 \cos(x) dx = \frac{(\sin(x))^3}{3} + C$</li>
 <li>$\int \sin(x) (\cos(x))^2 dx = -\frac{(\cos(x))^3}{3} + C$</li>
