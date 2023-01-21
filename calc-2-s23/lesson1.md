@@ -127,3 +127,9 @@ Use any method:
 # MyOpenMath HW
 
 Questions from the online homework? Recall that this homework is due **Thursday**, 1/26 at 11:59 PM.
+
+# Textbook
+
+Section 1.5: 254, 262-270, 272, 276.
+
+**Hand in** (at the end of class): 254, 272.
