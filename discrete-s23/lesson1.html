@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>Discrete Math Lesson 1</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Discrete Math Lesson 1</h1>
+  <p class="author">Professor Abdul-Quader</p>
+</section>
+
+<section id="lesson-0-questions" class="title-slide slide level1">
+<h1>Lesson 0 Questions?</h1>
+<p>Exit Ticket 0?</p>
+<ul>
+<li>Mathematical Writing</li>
+<li>LaTeX</li>
+</ul>
+</section>
+
+<section>
+<section id="semantics-vs-syntax" class="title-slide slide level1">
+<h1>Semantics vs Syntax</h1>
+<p>Our first topic in the course: propositional logic.</p>
+<ul>
+<li>Formalize the notion of “validity”</li>
+<li>Validity of an argument is based on <strong>syntax</strong>: the form of the argument</li>
+<li><em>Truth</em> is a <em>semantic</em> notion: it’s based on the meaning of the terms.</li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<ul>
+<li>If it is raining, I will bring an umbrella.</li>
+<li>It is raining.</li>
+<li>Therefore I will bring an umbrella.</li>
+</ul>
+<p>This argument is valid.</p>
+</section>
+<section id="non-example" class="slide level2">
+<h2>Non-example</h2>
+<ul>
+<li>If it is raining, I will bring an umbrella.</li>
+<li>I will bring an umbrella.</li>
+<li>Therefore it is raining.</li>
+</ul>
+<p>This argument is not valid!</p>
+</section></section>
+<section>
+<section id="propositional-logic" class="title-slide slide level1">
+<h1>Propositional Logic</h1>
+<p>To analyze the syntactical form of an argument, we use <strong>propositional variables</strong>.</p>
+<p>In algebra, a variable represents a number. In logic, a propositional variable represents <em>the truth value of a statement</em>: that is, either true (T) or false (F).</p>
+</section>
+<section id="validity" class="slide level2">
+<h2>Validity</h2>
+<ul>
+<li>P: “It is raining.”</li>
+<li>Q: “I will bring an umbrella.”</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>Example 1:</p>
+<ul>
+<li>If P, then Q.</li>
+<li><span class="math inline">\(P\)</span>.</li>
+<li>Therefore, Q.</li>
+</ul>
+</div><div class="column" style="width:20%;">
+
+</div><div class="column" style="width:40%;">
+<p>Example 2:</p>
+<ul>
+<li>If P, then Q.</li>
+<li><span class="math inline">\(Q\)</span>.</li>
+<li>Therefore, P.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="difference" class="slide level2">
+<h2>Difference?</h2>
+<ul>
+<li>Forget the meaning of the variables</li>
+<li>It’s possible for “If P, then Q” to be true, and “Q” to be true, but “P” to be false!</li>
+<li>Need to analyze the syntactical form.</li>
+<li>Need to know the <strong>propositional connectives</strong>.</li>
+<li>Hence: truth tables.
+<ul>
+<li>Shows the truth value (T or F) of an expression, based on the values of the variables.</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="truth-tables" class="title-slide slide level1">
+<h1>Truth Tables</h1>
+<ul>
+<li>One row for each possible assignment of truth values to the variables.</li>
+<li>One variable: two rows (T or F). (HW: How many rows for <span class="math inline">\(n\)</span> variables?)</li>
+</ul>
+<p><strong>Example</strong>: <span class="math inline">\(\lnot P\)</span> (“not P”, or “P is not true”). <span class="math display">\[
+\begin{array}{c | c}
+p &amp; \lnot p \\
+\hline
+\text{T} &amp; \text{F} \\
+\text{F} &amp; \text{T}
+\end{array}
+\]</span></p>
+</section>
+<section id="example-validity-of-double-negation" class="slide level2">
+<h2>Example: Validity of double negation</h2>
+<ul>
+<li>not not P</li>
+<li>Therefore P</li>
+</ul>
+<p>Truth table:</p>
+<p><span class="math display">\[
+\begin{array}{c | c | c}
+p &amp; \lnot p &amp; \lnot \lnot p \\
+\hline
+\text{T} &amp; \text{F} &amp; \text{T} \\
+\text{F} &amp; \text{T} &amp; \text{F}
+\end{array}
+\]</span></p>
+<ul>
+<li>Validity: whenever premises are true, conclusion is.</li>
+<li>Where is premise true?</li>
+</ul>
+</section></section>
+<section>
+<section id="and-or" class="title-slide slide level1">
+<h1>and / or</h1>
+<ul>
+<li>P <span class="math inline">\(\wedge\)</span> Q: “P and Q are both true”</li>
+<li>P <span class="math inline">\(\vee\)</span> Q: “P or Q is true”.
+<ul>
+<li><strong>Inclusive</strong> or: P or Q or both are true.</li>
+</ul></li>
+<li>Programming example:
+<pre class="java"><code>if (x >= 1 && x <= 8 ) {
+  print("x is a valid row on a chessboard")
+}
+if (x >= 1 || x <= 8) {
+  print("This will always print.")
+}</code></pre></li>
+</ul>
+</section>
+<section id="truth-tables-1" class="slide level2">
+<h2>Truth Tables</h2>
+<p>Exercise: Make truth tables for P <span class="math inline">\(\wedge\)</span> Q and P <span class="math inline">\(\vee\)</span> Q.</p>
+<p>Question: How many rows?</p>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><span class="math display">\[
+\begin{array}{c | c | c }
+p &amp; q &amp; p \wedge q \\
+\hline
+\text{T} &amp; \text{T} \\
+\text{T} &amp; \text{F} \\
+\text{F} &amp; \text{T} \\
+\text{F} &amp; \text{F}
+\end{array}
+\]</span></p>
+</div><div class="column" style="width:20%;">
+
+</div><div class="column" style="width:40%;">
+<p><span class="math display">\[
+\begin{array}{c | c | c }
+p &amp; q &amp; p \vee q \\
+\hline
+\text{T} &amp; \text{T} \\
+\text{T} &amp; \text{F} \\
+\text{F} &amp; \text{T} \\
+\text{F} &amp; \text{F}
+\end{array}
+\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="truth-tables-2" class="slide level2">
+<h2>Truth tables</h2>
+<p>Exercise: Make truth tables for P <span class="math inline">\(\wedge\)</span> Q and P <span class="math inline">\(\vee\)</span> Q.</p>
+<p>Question: How many rows?</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><span class="math display">\[
+\begin{array}{c | c | c }
+p &amp; q &amp; p \wedge q \\
+\hline
+\text{T} &amp; \text{T} &amp; \text{T} \\
+\text{T} &amp; \text{F} &amp; \text{F} \\
+\text{F} &amp; \text{T} &amp; \text{F} \\
+\text{F} &amp; \text{F} &amp; \text{F}
+\end{array}
+\]</span></p>
+</div><div class="column" style="width:20%;">
+
+</div><div class="column" style="width:40%;">
+<p><span class="math display">\[
+\begin{array}{c | c | c }
+p &amp; q &amp; p \vee q \\
+\hline
+\text{T} &amp; \text{T} &amp; \text{T} \\
+\text{T} &amp; \text{F} &amp; \text{T} \\
+\text{F} &amp; \text{T} &amp; \text{T} \\
+\text{F} &amp; \text{F} &amp; \text{F}
+\end{array}
+\]</span></p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="exercise" class="title-slide slide level1">
+<h1>Exercise</h1>
+<p>Complete truth tables for <span class="math inline">\(\lnot p \wedge \lnot q\)</span> and for <span class="math inline">\(\lnot (p \wedge q)\)</span>.</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><span class="math display">\[
+\begin{array}{c | c | c | c | c }
+p &amp; q &amp; \lnot p &amp; \lnot q &amp; \lnot p \wedge \lnot q \\
+\hline
+\text{T} &amp; \text{T} \\
+\text{T} &amp; \text{F} \\
+\text{F} &amp; \text{T} \\
+\text{F} &amp; \text{F}
+\end{array}
+\]</span></p>
+</div><div class="column" style="width:30%;">
+
+</div><div class="column" style="width:30%;">
+<p><span class="math display">\[
+\begin{array}{c | c | c | c | c }
+p &amp; q &amp; p \wedge q &amp; \lnot (p \wedge q) \\
+\hline
+\text{T} &amp; \text{T} \\
+\text{T} &amp; \text{F} \\
+\text{F} &amp; \text{T} \\
+\text{F} &amp; \text{F}
+\end{array}
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="solution-1" class="slide level2">
+<h2>Solution 1</h2>
+<p><span class="math display">\[
+\begin{array}{c | c | c | c | c }
+p &amp; q &amp; \lnot p &amp; \lnot q &amp; \lnot p \wedge \lnot q \\
+\hline
+\text{T} &amp; \text{T} &amp; \text{F} &amp; \text{F} &amp; \text{F} \\
+\text{T} &amp; \text{F} &amp; \text{F} &amp; \text{T} &amp; \text{F} \\
+\text{F} &amp; \text{T} &amp; \text{T} &amp; \text{F} &amp; \text{F} \\
+\text{F} &amp; \text{F} &amp; \text{T} &amp; \text{T} &amp; \text{T}
+\end{array}
+\]</span></p>
+</section>
+<section id="solution-2" class="slide level2">
+<h2>Solution 2</h2>
+<p><span class="math display">\[
+\begin{array}{c | c | c | c | c }
+p &amp; q &amp; p \wedge q &amp; \lnot (p \wedge q) \\
+\hline
+\text{T} &amp; \text{T} &amp; \text{T} &amp; \text{F} \\
+\text{T} &amp; \text{F} &amp; \text{F} &amp; \text{T} \\
+\text{F} &amp; \text{T} &amp; \text{F} &amp; \text{T} \\
+\text{F} &amp; \text{F} &amp; \text{F} &amp; \text{T}
+\end{array}
+\]</span></p>
+</section>
+<section id="coda" class="slide level2">
+<h2>Coda</h2>
+<p>Are the following two statements logically equivalent for all integers <span class="math inline">\(x\)</span>?</p>
+<ul>
+<li>“It is false that <span class="math inline">\(x\)</span> is <strong>both</strong> an even number and is greater than 7.”</li>
+<li>“x is an odd number less than or equal to 7.”</li>
+</ul>
+<p>In other words: is “NOT (even AND greater than 7)” equivalent to “not even AND not greater than 7”?</p>
+</section></section>
+<section id="de-morgans-laws" class="title-slide slide level1">
+<h1>De Morgan’s Laws</h1>
+<p>Notice:</p>
+<ul>
+<li>p <span class="math inline">\(\vee\)</span> q: “at least one of p or q is true”.</li>
+<li><span class="math inline">\(\lnot\)</span> (p <span class="math inline">\(\wedge\)</span> q): “at least one is false”.</li>
+</ul>
+<p><strong>De Morgan’s Laws</strong>: (Homework: prove these!)</p>
+<ol type="1">
+<li>The truth values of <span class="math inline">\(\lnot (p \wedge q)\)</span> and <span class="math inline">\(\lnot p \vee \lnot q\)</span> are the same.</li>
+<li>The truth values of <span class="math inline">\(\lnot (p \vee q)\)</span> and <span class="math inline">\(\lnot p \wedge \lnot q\)</span> are the same.</li>
+</ol>
+</section>
+
+<section>
+<section id="conditionals" class="title-slide slide level1">
+<h1>Conditionals</h1>
+<ul>
+<li><strong>Material conditional</strong>, or <strong>implication</strong></li>
+<li>p <span class="math inline">\(\rightarrow\)</span> q: “If p, then q”, or “p <em>implies</em> q”.</li>
+</ul>
+<p><span class="math display">\[
+\begin{array}{c | c | c}
+p &amp; q &amp; p \rightarrow q \\
+\hline
+\text{T} &amp; \text{T} &amp; \text{T} \\
+\text{T} &amp; \text{F} &amp; \text{F} \\
+\text{F} &amp; \text{T} &amp; \text{T} \\
+\text{F} &amp; \text{F} &amp; \text{T}
+\end{array}
+\]</span></p>
+</section>
+<section id="examples" class="slide level2">
+<h2>Examples</h2>
+<p>Example 1:</p>
+<ul>
+<li>Parent: “If you clean your room I will give you ice cream.”</li>
+<li>Child: <em>cleans room</em></li>
+<li>Parent <strong>must</strong> give ice cream in order to not be a liar.</li>
+</ul>
+<p>Example 2:</p>
+<ul>
+<li>Parent: “If you get a 100 on your algebra regents exam I will buy you a Playstation 5.”</li>
+<li>Child: <em>gets a 99.</em></li>
+<li>Parent: kinda want to buy a PS5 anyway. (Not lying!)</li>
+</ul>
+</section>
+<section id="mathematical-examples" class="slide level2">
+<h2>Mathematical Examples</h2>
+<ul>
+<li>Real motivation for defining conditionals this way:</li>
+<li>“If <span class="math inline">\(x &gt; 5\)</span> then <span class="math inline">\(x &gt; 3\)</span>”.</li>
+<li>Surely that is true.</li>
+<li>Technically does not have a truth value
+<ul>
+<li>it is a <em>formula</em>, not a statement</li>
+<li>need to plug in for <span class="math inline">\(x\)</span>.</li>
+</ul></li>
+<li>x = 4: “If 4 &gt; 5, then 4 &gt; 3”. Is this true?</li>
+<li>“Every number greater than 5 is also greater than 3.” Clearly true.</li>
+</ul>
+</section></section>
+<section>
+<section id="biconditionals" class="title-slide slide level1">
+<h1>Biconditionals</h1>
+<ul>
+<li>p <span class="math inline">\(\leftrightarrow\)</span> q: “p if and only if q”</li>
+<li>“p is necessary and sufficient for q”</li>
+<li>“If p, then q, and if q, then p.”</li>
+<li>“p and q have the same truth value”.</li>
+</ul>
+</section>
+<section id="truth-table" class="slide level2">
+<h2>Truth Table</h2>
+<p><span class="math display">\[
+\begin{array}{c | c | c}
+p &amp; q &amp; p \leftrightarrow q \\
+\hline
+\text{T} &amp; \text{T} &amp; \text{T} \\
+\text{T} &amp; \text{F} &amp; \text{F} \\
+\text{F} &amp; \text{T} &amp; \text{F} \\
+\text{F} &amp; \text{F} &amp; \text{T}
+\end{array}
+\]</span></p>
+</section></section>
+<section>
+<section id="propaganda" class="title-slide slide level1">
+<h1>Propaganda</h1>
+<ul>
+<li>Rules given today: <em>classical</em> logic.</li>
+<li>Who defines the rules for truth?</li>
+<li>There are <em>non-classical</em> logics:
+<ul>
+<li>denying excluded middle / double negation</li>
+<li>relevance logics (conditionals)</li>
+<li>many others</li>
+<li>Useful for studying different domains.</li>
+</ul></li>
+</ul>
+</section>
+<section id="constructivism" class="slide level2">
+<h2>Constructivism</h2>
+<ul>
+<li>Classical mathematicians: every precisely defined mathematical statement is either true or false.</li>
+<li>Constructivist mathematics: statements are only true when we can construct a proof of it (“there is an algorithm which proves <span class="math inline">\(p\)</span>”)
+<ul>
+<li>only false when a construction can be given that disproves it</li>
+<li>a “conjecture” (that has not yet been proven)? Neither true nor false</li>
+</ul></li>
+</ul>
+</section>
+<section id="constructivism-double-negation" class="slide level2">
+<h2>Constructivism / Double Negation</h2>
+<ul>
+<li><span class="math inline">\(\lnot p\)</span> is true if you can construct a refutation of <span class="math inline">\(p\)</span> (if you can disprove <span class="math inline">\(p\)</span>).</li>
+<li><span class="math inline">\(\lnot \lnot p\)</span> is true if you can construct a refutation of the statement that you cannot disprove <span class="math inline">\(p\)</span>.</li>
+<li>If you can prove that you cannot disprove <span class="math inline">\(p\)</span>, is that a proof of <span class="math inline">\(p\)</span>?
+<ul>
+<li>Classically, yes</li>
+<li><em>Constructively</em>, no. It does not give you a construction of an actual proof of <span class="math inline">\(p\)</span>!</li>
+</ul></li>
+<li>Law of Excluded Middle: <span class="math inline">\(p \vee \lnot p\)</span>?</li>
+</ul>
+</section></section>
+<section>
+<section id="exit-ticket-1" class="title-slide slide level1">
+<h1>Exit Ticket 1</h1>
+<ol type="1">
+<li>Make a truth table for <span class="math inline">\(q \rightarrow p\)</span>. This is called the <em>converse</em> of <span class="math inline">\(p \rightarrow q\)</span>.</li>
+</ol>
+<p><span class="math display">\[
+\begin{array}{c | c | c}
+p &amp; q &amp; q \rightarrow p \\
+\hline
+\text{T} &amp; \text{T} &amp; \\
+\text{T} &amp; \text{F} &amp; \\
+\text{F} &amp; \text{T} &amp; \\
+\text{F} &amp; \text{F} &amp;
+\end{array}
+\]</span></p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<ol start="2" type="1">
+<li>The <em>inverse</em> of <span class="math inline">\(p \rightarrow q\)</span> is <span class="math inline">\(\lnot p \rightarrow \lnot q\)</span>. The <em>contrapositive</em> of <span class="math inline">\(p \rightarrow q\)</span> is <span class="math inline">\(\lnot q \rightarrow \lnot p\)</span>. Suppose <span class="math inline">\(p\)</span> is the statement “I study for the Discrete Mathematics exam” and <span class="math inline">\(q\)</span> is the statement “I score a 100% on the Discrete Mathematics exam.” Then, in English, <span class="math inline">\(p \rightarrow q\)</span> means “If I study for the Discrete Mathematics exam, then I score a 100% on the Discrete Mathematics exam.”</li>
+</ol>
+<p>Determine what the following statements represent in English:</p>
+<ul>
+<li>the converse: <span class="math inline">\(q \rightarrow p\)</span></li>
+<li>the inverse: <span class="math inline">\(\lnot p \rightarrow \lnot q\)</span></li>
+<li>the contrapositive: <span class="math inline">\(\lnot q \rightarrow \lnot p\)</span></li>
+</ul>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<ol start="3" type="1">
+<li>A <strong>tautology</strong> is a statement that is always true. Show that <span class="math inline">\(p \vee \lnot p\)</span> is a tautology (by making a truth table).</li>
+</ol>
+<p><strong>Note</strong>: the assertion that <span class="math inline">\(p \vee \lnot p\)</span> is always true is referred to as the “Law of Excluded Middle”. This means that there is no “middle ground” for truth values: every statement is either true or false.</p>
+</section>
+<section id="lastly" class="slide level2">
+<h2>Lastly</h2>
+<p>In addition to the exit ticket above, go through <a href="lesson2.html">the notes for lesson 2</a>. There are five videos embedded in these notes to help you pace yourself:</p>
+<ol type="1">
+<li>Proof writing / direct proofs.</li>
+<li>Proof by contradiction.</li>
+<li>Satisfiability</li>
+<li>Algorithms and P vs NP</li>
+<li>Intro to counting principles</li>
+</ol>
+<p>There will be an exit ticket for lesson 2, due next Monday. We will go over it in class on Thursday.</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
