@@ -15,3 +15,5 @@ lang: en-US
 ## Lecture Notes
 
 * [Lesson 0: Mathematical Writing, LaTeX](lesson0.html)
+* [Lesson 1: Propositional Logic](lesson1.html)
+* [Lesson 2: Proof Writing, Satisfiability, Intro to Counting Principles](lesson2.html)
