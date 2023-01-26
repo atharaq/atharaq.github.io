@@ -13,3 +13,4 @@ layout: default
 
 * [Lesson 0: Intro to course](lesson0.html)
 * [Lesson 1: Substition](lesson1.html)  
+* [Lesson 2: Exponential / Logarithmic Functions](lesson2.html)
