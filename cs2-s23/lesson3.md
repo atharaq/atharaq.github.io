@@ -84,6 +84,8 @@ Try this out and see what happens when you input yes. Why does == not work for S
 
 Write a program which asks the user to input an integer from 1 to 10 (inclusive). If they input something that is not an integer, you should output an angry message and end the program (hint: look at this [Example Program](https://books.trinket.io/thinkjava2/chapter5.html#sec68) from the text). If they input an integer that is not in that range, you should remind them that you asked for the number to be between 1 and 10. If they do input a number in that range, you should congratulate them on following directions.
 
+Check the instructions [on replit](https://replit.com/team/cs2-spring-23/Input-1-to-10). The output has to be in a specific form based on the input in order to pass the test cases that I created for this assignment.
+
 ## Reminder
 
 <div class="youtube-container">
@@ -154,7 +156,8 @@ This exercise is not on Replit, but please work on this so we can discuss it tog
 ## Exercise (Submit on Replit)
 
 Write a program which asks the user to input a positive integer. Check that the input is valid (using **hasNextInt**) and that it is positive. If the number is positive, determine if it is a perfect square.
-Do this **without** using the built-in Math libraries. Think for a bit first about how you might try to figure this one out. Describe your method on paper, in words or in pseudocode first, before you write the code.
+
+Do this **without** using the built-in Math libraries. Think for a bit first about how you might try to figure this one out. Describe your method on paper, in words or in pseudocode first, before you write the code. [Submit this program on replit](https://replit.com/team/cs2-spring-23/Perfect-Square).
 
 Some problem solving tips:
 
