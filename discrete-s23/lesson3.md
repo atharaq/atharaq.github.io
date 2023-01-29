@@ -1,6 +1,6 @@
 # Discrete Mathematics Lesson 3
 
-We will continue to work through some of the problems in [Combinatorics Through Guided Discovery, 1.2](http://bogart.openmathbooks.org/ctgd/s1-2-basics.html).
+We will continue to work through some of the problems in [Combinatorics Through Guided Discovery, 1.2](http://bogart.openmathbooks.org/ctgd/s1-2-basics.html).  Go through the notes from [last week on problems 1 and 2](https://atharaq.github.io/discrete-s23/lesson2.html#intro-to-counting--arrangement-problems) first, if you did not already.
 
 ## Problems 3 - 5
 
@@ -18,6 +18,10 @@ Work through these on your own. Check your answers below.
 </details>
 
 ## Problem 6
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/NOJCd11767Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
 There are two questions here: first, how many possible ice cream cones are there? This part allows for the choice of chocolate / chocolate / chocolate.
 
@@ -46,6 +50,10 @@ There are $12 \times 11 \times 10 = 1320$ available cones with three different f
 
 ## Problem 8(a)
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/9xE4gBqMKpg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
 (Ignore part (b) for now.) This is similar to the second part of question 6, but not quite the same: in that question, ordering an ice cream with chocolate-vanilla-strawberry scoops was different from an ice cream with strawberry-vanilla-chocolate. In this problem, buying a pint of chocolate, a pint of vanilla, and a pint of strawberry is the same as buying those three flavors in any order.
 
 Let's think about this for a smaller number of flavors first, and then you can try out the larger case on your own. Let's say we have 5 flavors to choose from, and we want to buy 3 different pints of ice cream. The first thing we can do is ask, similar to question 6, if we did care about the order in which we bought the flavors, how many ways can we list out those three flavors? There are 5 choices for the first flavor, 4 choices for the second, and 3 for the third, so there are 60 ways to list out 3 flavors.
@@ -63,6 +71,10 @@ There are $\dfrac{12 \times 11 \times 10}{3 \times 2 \times 1} = 144$ ways we ca
 </details>
 
 # Big Ideas
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/AXornWZ8MRY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
 The problems we worked through help motivate a number of the counting concepts / rules we will deal with. The first is the **multiplicative property**: if we make two choices, with $m$ possible first choices, and, for each way of making that first choice, there are $n$ possible second choices, then there are $mn$ ways in which we can make the two choices.
 
@@ -105,6 +117,10 @@ Let's flip the script, however. Instead of defining factorials this way as some 
 Later on we will prove the *equivalence* of these definitions: that is, for any $n \geq 0$, the number of arrangements of a collection of $n$ distinct objects is equal to the previously given recursive formula. (This is strange in the case of $n = 0$, as it's not clear what an arrangement of 0 objects is, but we will have to define things precisely first to make sense of it.)
 
 ### Generalization: Functions
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/Bv4A1NnCOHw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
 Much of the discussion about permutations and $k$-permutations can be discussed in the language of functions. I will assume that we know what a function is for now (later on, we will consider a more rigorous, set-theoretic definition of the term).
 
@@ -169,6 +185,10 @@ $\binom{n}{k}$ is sometimes referred to as the "binomial coefficient" because th
 
 # Formalizing Everything: Set Theory
 
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/v5ja_AkykxM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
 Next time we will start studying set theory. Set theory is a relatively recent branch of mathematics which came about as a result of a program to try to formalize all of mathematics. Many of the notions we have already seen can be formalized in the language of set theory.
 
 A set is just a collection of objects. These objects can be *anything*, including other sets. We will go over notation and basic set operations later, but for now I thought it'd be interesting to talk about how some of the questions we studied here can be thought of in terms of sets:
@@ -188,3 +208,7 @@ Next time we will start studying questions about sets:
 * How do we compare the sizes of infinite sets? (Wait, what does this even mean?)
 
 There are lots of questions that we likely will not touch on that would make great opportunities for students who are interested in learning more about set theory to study on their own. For example, we will not talk about the difference between "naive" and "axiomatic" set theory, nor will we study how to formalize everything, including the notion of numbers themselves, in the language of set theory.
+
+# Problem Set 1
+
+Check out Problem Set 1 on Moodle. It is due **next Monday**, February 6 at 11:59 PM on Moodle.
