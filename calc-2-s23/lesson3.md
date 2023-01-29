@@ -26,6 +26,8 @@ This is covered in the excellent 3Blue1Brown video on Implicit Differentiation. 
   <iframe src="https://www.youtube.com/embed/qb40J4N1fa4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
+**Exercise**: Knowing that $\tan(x) = \frac{\sin(x)}{\cos(x)}$, can you find an antiderivative $\int \tan(x) \dx$? Hint: use substitution. The natural log will show up here!
+
 # Inverse Trig
 
 <div class="youtube-container">
