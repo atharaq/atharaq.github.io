@@ -80,7 +80,7 @@ if (word.equals("yes")) {
 
 Try this out and see what happens when you input yes. Why does == not work for Strings? We'll see this a bit more in the next couple of chapters.
 
-## Exercise (Submit on CodingRooms)
+## Exercise (Submit on Replit)
 
 Write a program which asks the user to input an integer from 1 to 10 (inclusive). If they input something that is not an integer, you should output an angry message and end the program (hint: look at this [Example Program](https://books.trinket.io/thinkjava2/chapter5.html#sec68) from the text). If they input an integer that is not in that range, you should remind them that you asked for the number to be between 1 and 10. If they do input a number in that range, you should congratulate them on following directions.
 
@@ -149,9 +149,9 @@ for (int i = 0; i < input; i++) {
 
 Write a program which asks the user to input a positive integer $N$. For the purposes of this, don't worry so much about checking the input, just assume the user puts in a positive integer. Then ask the user to input in $N$ more integers, and then output the sum of all of those numbers. For example, if the user first types in 3, then ask the user to type in 3 more numbers. If they then input 1, 5, and -23, then output -17.
 
-This exercise is not on CodingRooms, but please work on this so we can discuss it together on Monday.
+This exercise is not on Replit, but please work on this so we can discuss it together next week.
 
-## Exercise (Submit on CodingRooms)
+## Exercise (Submit on Replit)
 
 Write a program which asks the user to input a positive integer. Check that the input is valid (using **hasNextInt**) and that it is positive. If the number is positive, determine if it is a perfect square.
 Do this **without** using the built-in Math libraries. Think for a bit first about how you might try to figure this one out. Describe your method on paper, in words or in pseudocode first, before you write the code.
