@@ -1,4 +1,4 @@
-# Calculus II Lesson 2: Logarithmic Functions and Inverse Trig Functions
+# Calculus II Lesson 3: Logarithmic Functions and Inverse Trig Functions
 {: .no_toc}
 
 1. Table of Contents
