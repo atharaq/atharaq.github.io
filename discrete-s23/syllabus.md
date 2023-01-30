@@ -42,7 +42,7 @@ In addition, lecture notes will be posted on the course website (and linked to o
 
 ## Required Software
 
-You will be required to use the LaTeX typesetting system to type your homework assignments. Details and instructions will be provided on the first lesson. You have the option of either creating a free account on [Overleaf](https://www.overleaf.com/), or downloading a LaTeX distribution and editor on your personal computer / laptop.
+You will be required to use the LaTeX typesetting system to type your homework assignments. Details and instructions will be provided on the first lesson. You have the option of either creating a free account on [Overleaf](https://www.overleaf.com?r=c1af9661&rm=d&rs=b), or downloading a LaTeX distribution and editor on your personal computer / laptop.
 
 ## Grading Rubric
 
