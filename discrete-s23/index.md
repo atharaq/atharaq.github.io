@@ -17,3 +17,4 @@ lang: en-US
 * [Lesson 0: Mathematical Writing, LaTeX](lesson0.html)
 * [Lesson 1: Propositional Logic](lesson1.html)
 * [Lesson 2: Proof Writing, Satisfiability, Intro to Counting Principles](lesson2.html)
+* [Lesson 3: Counting Principles](lesson3.html)

@@ -14,3 +14,4 @@ layout: default
 * [Lesson 0: What is computer science?](lesson0.html)
 * [Lesson 1: Variables / Data Types](lesson1.html)
 * [Lesson 2: Input / Output](lesson2.html)
+* [Lesson 3: Conditionals / Loops](lesson3.html)
