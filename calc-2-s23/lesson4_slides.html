@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>Calc II Lesson 4</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Calc II Lesson 4</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">L4 Integration by Parts / Trig Integrals</p>
+</section>
+
+<section>
+<section id="questions" class="title-slide slide level1">
+<h1>Questions?</h1>
+<p>So far:</p>
+<ul>
+<li>FTC / Integration</li>
+<li>Substitution</li>
+<li>Inverse Trig Functions</li>
+</ul>
+</section>
+<section id="reminders" class="slide level2">
+<h2>Reminders</h2>
+<ul>
+<li>MyOpenMath Homework due <strong>tomorrow</strong>.</li>
+<li>Written homework due <strong>Monday</strong> in class.</li>
+<li>Quiz on Monday!</li>
+</ul>
+</section></section>
+<section>
+<section id="integration-by-parts" class="title-slide slide level1">
+<h1>Integration by Parts</h1>
+<ul>
+<li>Substitution: “Reverse chain rule”</li>
+<li>Integration by parts: “Reverse product rule”</li>
+</ul>
+<p><span class="math display">\[(fg)^\prime = f^\prime g + fg^\prime\]</span></p>
+<p>Reverse? <span class="math inline">\(\int f^\prime(x)g(x) dx + \int f(x) g^\prime(x) dx = f(x) g(x) + C\)</span></p>
+</section>
+<section id="reverse-product-rule" class="slide level2">
+<h2>Reverse product rule</h2>
+<p><span class="math display">\[\int f^\prime(x)g(x) dx + \int f(x) g^\prime(x) dx = f(x) g(x) + C\]</span></p>
+<p>Or:</p>
+<p><span class="math display">\[\int f(x) g^\prime(x) dx = f(x) g(x) - \int f^\prime(x) g(x) dx + C\]</span></p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p>Substitute:</p>
+<ul>
+<li><span class="math inline">\(u = f(x)\)</span>, <span class="math inline">\(du = f^\prime(x) dx\)</span></li>
+<li><span class="math inline">\(v = g(x)\)</span>, <span class="math inline">\(dv = g^\prime(x) dx\)</span></li>
+</ul>
+<p>Then:</p>
+<p><span class="math display">\[\int u dv = uv - \int v du\]</span></p>
+<p><strong>Integration by parts formula</strong>!</p>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p><span class="math inline">\(\int x e^x dx\)</span>. Must pick <span class="math inline">\(u\)</span> and <span class="math inline">\(dv\)</span>.</p>
+<ul>
+<li>Let <span class="math inline">\(u = x\)</span>, <span class="math inline">\(dv = e^x dx\)</span>.</li>
+<li>Then <span class="math inline">\(du = dx\)</span>, <span class="math inline">\(v = e^x\)</span></li>
+<li><span class="math inline">\(uv - \int v du = xe^x - \int e^x dx\)</span></li>
+<li>Or just <span class="math inline">\(xe^x - e^x + C\)</span></li>
+</ul>
+<p>Q: What if we chose <span class="math inline">\(u = e^x\)</span>, <span class="math inline">\(dv = x dx\)</span>?</p>
+</section>
+<section id="hmm" class="slide level2">
+<h2>Hmm…</h2>
+<ul>
+<li><span class="math inline">\(u = e^x\)</span>, <span class="math inline">\(dv = x dx\)</span></li>
+<li><span class="math inline">\(du = e^x dx\)</span>, <span class="math inline">\(v = \frac{x^2}{2}\)</span></li>
+<li><span class="math inline">\(uv - \int vdu = \frac{x^2}{2} e^x - \int \frac{x^2}{2} e^x dx\)</span></li>
+<li>More complicated than original problem!</li>
+<li>Pick <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> carefully!</li>
+</ul>
+</section></section>
+<section>
+<section id="guidance" class="title-slide slide level1">
+<h1>Guidance</h1>
+<ul>
+<li>Picking <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> takes some intuition.</li>
+<li>Generally:
+<ul>
+<li><span class="math inline">\(u\)</span> should be easy to differentiate.</li>
+<li><span class="math inline">\(du\)</span> should be simpler than <span class="math inline">\(u\)</span></li>
+<li><span class="math inline">\(dv\)</span> should be easy to integrate</li>
+<li><span class="math inline">\(v\)</span> should not be much more complicated than <span class="math inline">\(u\)</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="more-guidance" class="slide level2">
+<h2>More guidance</h2>
+<ul>
+<li>For <span class="math inline">\(u\)</span>, prefer:
+<ul>
+<li>logarithms (<span class="math inline">\((\ln|x|)^\prime = \frac{1}{x}\)</span>)</li>
+<li>inverse trig functions</li>
+<li>polynomials / algebraic functions</li>
+</ul></li>
+<li>For <span class="math inline">\(dv\)</span>:
+<ul>
+<li>trig (sin / cos)</li>
+<li>exponential functions</li>
+</ul></li>
+</ul>
+<p>For <span class="math inline">\(u\)</span>: LIPET. Logs &gt; Inverse Trig &gt; Polynomials &gt; Exponentials &gt; Trig.</p>
+</section>
+<section id="exercises" class="slide level2">
+<h2>Exercises</h2>
+<ol type="1">
+<li><span class="math inline">\(\int x \ln(x) dx\)</span></li>
+<li><span class="math inline">\(\int \frac{\ln(x)}{x^2} dx\)</span></li>
+</ol>
+</section>
+<section id="solution-1" class="slide level2">
+<h2>Solution (1)</h2>
+<p><span class="math display">\[\int x \ln(x) dx\]</span></p>
+<ul>
+<li>Let <span class="math inline">\(u = \ln(x)\)</span>, <span class="math inline">\(dv = x dx\)</span></li>
+<li><span class="math inline">\(du = \frac{1}{x} dx\)</span>, <span class="math inline">\(v = \frac{x^2}{2}\)</span></li>
+<li><span class="math inline">\(uv - \int v du = \frac{x^2}{2} \ln(x) - \int \frac{x}{2} dx\)</span></li>
+<li>Or <span class="math inline">\(\frac{x^2}{2}\ln(x) - \frac{x^2}{4} + C\)</span></li>
+</ul>
+</section>
+<section id="solution-2" class="slide level2">
+<h2>Solution (2)</h2>
+<p><span class="math display">\[\int \frac{\ln(x)}{x^2} dx\]</span></p>
+<ul>
+<li><span class="math inline">\(u = \ln(x)\)</span>, <span class="math inline">\(dv = \frac{dx}{x^2}\)</span></li>
+<li><span class="math inline">\(du = \frac{1}{x} dx\)</span>, <span class="math inline">\(v = -\frac{1}{x}\)</span></li>
+<li><span class="math inline">\(-\frac{\ln(x)}{x} - \int -\frac{1}{x^2} dx\)</span>, or</li>
+<li><span class="math inline">\(-\frac{\ln(x)}{x} + \int \frac{1}{x^2} dx\)</span></li>
+<li>Final answer: <span class="math inline">\(-\frac{\ln(x)}{x} - \frac{1}{x} + C\)</span></li>
+</ul>
+</section></section>
+<section id="rest" class="title-slide slide level1">
+<h1>Rest</h1>
+<p>On your own, take a look at the rest of today’s notes / videos. This covers:</p>
+<ul>
+<li>Harder integration by parts examples.</li>
+<li>Integrals of powers of trig functions (like <span class="math inline">\(\sin^2(x)\)</span> or <span class="math inline">\(\cos^4(x)\)</span>).</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
