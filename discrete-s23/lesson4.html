@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>Discrete Math Lesson 4</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Discrete Math Lesson 4</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">L4 Set Theory</p>
+</section>
+
+<section id="warm-up" class="title-slide slide level1">
+<h1>Warm Up</h1>
+<p>If we flip a coin 6 times, there are 64 different outcomes. (Why?)</p>
+<p>One outcome: Heads, Tails, Heads, Tails, Heads, Tails</p>
+<p>In how many of these outcomes do we end up with <strong>exactly</strong> three “Heads”?</p>
+</section>
+
+<section id="review-questions" class="title-slide slide level1">
+<h1>Review / Questions</h1>
+<ul>
+<li>Logic</li>
+<li>Counting Principles
+<ul>
+<li>Multiplicative principle</li>
+<li>Factorials: <span class="math inline">\(n! = 1 \times 2 \times \ldots \times (n-1) \times n\)</span></li>
+<li>Permutations: <span class="math inline">\(\dfrac{n!}{(n-k)!}\)</span></li>
+<li>Combinations / binomial coefficients: <span class="math inline">\(\dfrac{n!}{k!(n-k)!}\)</span></li>
+</ul></li>
+<li>Problem Set questions?</li>
+</ul>
+</section>
+
+<section>
+<section id="set-theory" class="title-slide slide level1">
+<h1>Set Theory</h1>
+<div class="columns">
+<div class="column" style="width:80%;">
+<blockquote>
+<p>By a “set”, we mean any collection into a whole, <span class="math inline">\(M\)</span>, of definite and separate objects of our intuition or of our thought. These objects are called the “elements” of <span class="math inline">\(M\)</span>.</p>
+</blockquote>
+<p>Georg Cantor (1895)</p>
+</div><div class="column" style="width:20%;">
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Georg_Cantor_%28Porträt%29.jpg/177px-Georg_Cantor_%28Porträt%29.jpg" alt="Portrait of Georg Cantor" /><br />
+</p>
+</div>
+</div>
+</section>
+<section id="history" class="slide level2">
+<h2>History</h2>
+<ul>
+<li>1800s: formalizing calculus (Cauchy, Bolzano, Weierstrass)</li>
+<li>1879 (Cantor): the real numbers are <strong>uncountable</strong></li>
+<li>1900: Hilbert’s Program: Formalize all of mathematics</li>
+<li>1901: Russell’s paradox. “Naive” set theory is contradictory!</li>
+<li>1908-1920s: development of axiomatic set theory</li>
+<li>1930s: Godel’s Incompleteness</li>
+<li>1950s: Independence of Continuum Hypothesis</li>
+</ul>
+</section>
+<section id="notation" class="slide level2">
+<h2>Notation</h2>
+<p>A <strong>set</strong> is an unordered collection of distinct objects.</p>
+<ul>
+<li><span class="math inline">\(\{ 1, 2, 3 \}\)</span> is the set of 3 elements: 1, 2, and 3.</li>
+<li><span class="math inline">\(\{ 2, 1 \} = \{ 1, 2 \}\)</span>: sets are determined by their elements (not ordered tuples)</li>
+<li><span class="math inline">\(\{1, 1, 1 \} = \{ 1 \}\)</span>: sets are determined by their elements (not multisets)</li>
+<li><span class="math inline">\(\{ x : x\)</span> is a prime number <span class="math inline">\(\}\)</span>: “The set of all <span class="math inline">\(x\)</span> such that <span class="math inline">\(x\)</span> is a prime number.”</li>
+</ul>
+<p>Ontology: all mathematical objects are sets. Groups, rings, fields, vector spaces, topological spaces, etc.</p>
+</section>
+<section id="notation-1" class="slide level2">
+<h2>Notation</h2>
+<p>If <span class="math inline">\(X\)</span> is a set:</p>
+<ul>
+<li><span class="math inline">\(a \in X\)</span> means “<span class="math inline">\(a\)</span> is an element of the set <span class="math inline">\(X\)</span>”</li>
+<li><span class="math inline">\(a \not \in X\)</span> means “<span class="math inline">\(a\)</span> is not an element of the set <span class="math inline">\(X\)</span>”</li>
+</ul>
+<p>Example: let <span class="math inline">\(X = \{\)</span> “red”, “blue”, <span class="math inline">\(13 \}\)</span>. Then <span class="math inline">\(1 \not \in X\)</span>, but “red” <span class="math inline">\(\in X\)</span>.</p>
+</section>
+<section id="common-examples" class="slide level2">
+<h2>Common examples</h2>
+<ul>
+<li><span class="math inline">\(\emptyset\)</span>: the set containing no elements</li>
+<li><span class="math inline">\(\mathbb{N} = \{ 0, 1, 2, \ldots \}\)</span>: the set of natural numbers</li>
+<li><span class="math inline">\(\mathbb{Z} = \{ \ldots, -2, -1, 0, 1, 2, \ldots \}\)</span>: the set of integers</li>
+<li><span class="math inline">\(\mathbb{Q} = \{ \frac{m}{n} : m, n \in \mathbb{Z}\)</span> and <span class="math inline">\(n \neq 0 \}\)</span></li>
+<li><span class="math inline">\(\mathbb{R}\)</span> Hmm…</li>
+<li><span class="math inline">\(\mathbb{C} = \{ a + bi : a, b \in \mathbb{R} \}\)</span></li>
+</ul>
+<p><span class="math inline">\(\mathbb{N}, \mathbb{Z}, \mathbb{Q}, \mathbb{R}, \mathbb{C}\)</span> are infinite sets. We will usually work with finite sets, but the real power of set theory is the ability to reason, meaningfully, about infinite sets.</p>
+</section></section>
+<section>
+<section id="operations" class="title-slide slide level1">
+<h1>Operations</h1>
+<ul>
+<li>Unions: <span class="math inline">\(A \cup B = \{ x : x \in A\)</span> or <span class="math inline">\(x \in B \}\)</span></li>
+<li>Intersections: <span class="math inline">\(A \cap B = \{ x : x \in A\)</span> and <span class="math inline">\(x \in B \}\)</span></li>
+<li>Set Difference: <span class="math inline">\(A \setminus B = \{ x : x \in A\)</span> and <span class="math inline">\(x \not \in B \}\)</span></li>
+<li>Cartesian Product: <span class="math inline">\(A \times B = \{ (x, y) : x \in A\)</span> and <span class="math inline">\(y \in B \}\)</span></li>
+</ul>
+</section>
+<section id="venn-diagram-union" class="slide level2">
+<h2>Venn Diagram: Union</h2>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Venn0111.svg/640px-Venn0111.svg.png" title="Venn Diagram showing the union of two sets" alt="Venn Diagram showing the union of two sets" /><br />
+</p>
+</section>
+<section id="venn-diagram-intersection" class="slide level2">
+<h2>Venn Diagram: Intersection</h2>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Venn0001.svg/640px-Venn0001.svg.png" title="Venn Diagram showing the intersection of two sets" alt="Venn Diagram showing the intersection of two sets" /><br />
+</p>
+</section>
+<section id="venn-diagram-set-difference" class="slide level2">
+<h2>Venn Diagram: Set Difference</h2>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Venn0100.svg/640px-Venn0100.svg.png" title="Venn Diagram showing the set difference operation" alt="Venn Diagram showing the set difference operatino" /><br />
+</p>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Let <span class="math inline">\(A = \{ 1, 2, 3, 4, 5 \}\)</span> and <span class="math inline">\(B = \{ 2, 4, 6, 8, 10 \}\)</span>. Determine the following:</p>
+<ol type="1">
+<li><span class="math inline">\(A \cap B\)</span></li>
+<li><span class="math inline">\(A \cup B\)</span></li>
+<li><span class="math inline">\(A \setminus B\)</span></li>
+<li><span class="math inline">\(B \setminus A\)</span></li>
+</ol>
+</section>
+<section id="exercise-solutions" class="slide level2">
+<h2>Exercise (Solutions)</h2>
+<p>Let <span class="math inline">\(A = \{ 1, 2, 3, 4, 5 \}\)</span> and <span class="math inline">\(B = \{ 2, 4, 6, 8, 10 \}\)</span>. Determine the following:</p>
+<ol type="1">
+<li><span class="math inline">\(A \cap B = \{ 2, 4 \}\)</span></li>
+<li><span class="math inline">\(A \cup B = \{ 1, 2, 3, 4, 5, 6, 8, 10 \}\)</span></li>
+<li><span class="math inline">\(A \setminus B = \{ 1, 3, 5 \}\)</span></li>
+<li><span class="math inline">\(B \setminus A = \{ 6, 8, 10 \}\)</span></li>
+</ol>
+<p>Question: how do the sizes of <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(A \cup B\)</span>, <span class="math inline">\(A \cap B\)</span> all relate?</p>
+</section></section>
+<section>
+<section id="subsets" class="title-slide slide level1">
+<h1>Subsets</h1>
+<p><strong>Definition</strong>: Let <span class="math inline">\(A\)</span> be a set. Then <span class="math inline">\(X \subseteq A\)</span>, read “<span class="math inline">\(X\)</span> is a <strong>subset</strong> of <span class="math inline">\(A\)</span>”, or “<span class="math inline">\(X\)</span> is <em>contained</em> in <span class="math inline">\(A\)</span>”, means that every element of <span class="math inline">\(X\)</span> is also an element of <span class="math inline">\(A\)</span>.</p>
+<ul>
+<li><span class="math inline">\(\mathbb{N} \subseteq \mathbb{Z}\)</span></li>
+<li><span class="math inline">\(\{ a, b \} \subseteq \{ a, b, c \}\)</span></li>
+<li><span class="math inline">\(\{ a, b, c \} \not \subseteq \{ a, b \}\)</span>: <span class="math inline">\(c\)</span> is a <em>counterexample</em>.</li>
+</ul>
+<p>Every set is a subset of itself: <span class="math inline">\(A \subseteq A\)</span> for every single set <span class="math inline">\(A\)</span>. Why?</p>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<p>Let <span class="math inline">\(A = \{ x \in \mathbb{Z} : x^2 &lt; 9 \}\)</span> and <span class="math inline">\(B = \{ x \in \mathbb{Z} : x &lt; 3 \}\)</span></p>
+<ol type="1">
+<li>Is <span class="math inline">\(A \subseteq B\)</span>? Give a proof or find a counterexample.</li>
+<li>Is <span class="math inline">\(B \subseteq A\)</span>? Give a proof or find a counterexample.</li>
+</ol>
+</section>
+<section id="exercise-solution" class="slide level2">
+<h2>Exercise (Solution)</h2>
+<p>Let <span class="math inline">\(A = \{ x \in \mathbb{Z} : x^2 &lt; 9 \}\)</span> and <span class="math inline">\(B = \{ x \in \mathbb{Z} : x &lt; 3 \}\)</span></p>
+<ol type="1">
+<li><span class="math inline">\(A \subseteq B\)</span>. <span class="math inline">\(A\)</span> is a finite set: <span class="math inline">\(A = \{ -2, -1, 0, 1, 2 \}\)</span>. Each one of those is smaller than <span class="math inline">\(3\)</span>, and so each element of <span class="math inline">\(A\)</span> is also an element of <span class="math inline">\(B\)</span>.</li>
+<li><span class="math inline">\(B\)</span> is not a subset of <span class="math inline">\(A\)</span>: <span class="math inline">\(-3 \in B\)</span>, since <span class="math inline">\(-3 &lt; 3\)</span>. But <span class="math inline">\((-3)^2 = 9\)</span>, so <span class="math inline">\(-3 \not \in A\)</span>.</li>
+</ol>
+</section>
+<section id="empty-set" class="slide level2">
+<h2>Empty Set</h2>
+<p>Question: <span class="math inline">\(\emptyset \subseteq \{ 1, 2, 3 \}\)</span>?</p>
+<ul>
+<li><span class="math inline">\(A \subseteq B\)</span> means “Every element of <span class="math inline">\(A\)</span> is an element of <span class="math inline">\(B\)</span>”.</li>
+<li>Is it possible for that to not be true?</li>
+<li>“Not every element of <span class="math inline">\(\emptyset\)</span> is an element of <span class="math inline">\(\{1, 2, 3 \}\)</span>”?</li>
+</ul>
+<div class="fragment">
+<p>Translation: “there is at least one element of <span class="math inline">\(\emptyset\)</span> that’s not an element of <span class="math inline">\(\{1, 2, 3\}\)</span>”. Not true!</p>
+<p><strong>Theorem</strong>: For any set <span class="math inline">\(X\)</span>, <span class="math inline">\(\emptyset \subseteq X\)</span>.</p>
+</div>
+</section>
+<section id="proof-strategy" class="slide level2">
+<h2>Proof strategy</h2>
+<p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be sets. Show that <span class="math inline">\(B \subseteq A \cup B\)</span>.</p>
+<p>What do we need to prove here? “Every element of B is in the union of A and B.” This is of course true, but we can actually write a proof.</p>
+<p>Strategy: take an arbitrary element of <span class="math inline">\(B\)</span>, and show that it is either in <span class="math inline">\(A\)</span> or in <span class="math inline">\(B\)</span>. That would show “Every element of <span class="math inline">\(B\)</span> is in <span class="math inline">\(A \cup B\)</span>” is true.</p>
+</section>
+<section id="proof" class="slide level2">
+<h2>Proof</h2>
+<p>Let <span class="math inline">\(x \in B\)</span>. We show that <span class="math inline">\(x \in A \cup B\)</span>. That is, we show that “either <span class="math inline">\(x \in A\)</span> or <span class="math inline">\(x \in B\)</span>” is a true statement. Problem set 1: how do we prove an “or” statement? It’s equivalent to “If <span class="math inline">\(x \not \in A\)</span>, then <span class="math inline">\(x \in B\)</span>.”</p>
+<p>Assume <span class="math inline">\(x \not \in A\)</span>. Show that <span class="math inline">\(x \in B\)</span>. We already did: the first line said <span class="math inline">\(x \in B\)</span>. Thereore we are done: we have shown that any element of <span class="math inline">\(B\)</span> is either an element of <span class="math inline">\(A\)</span> or of <span class="math inline">\(B\)</span>. That is, we have shown that <span class="math inline">\(B \subseteq A \cup B\)</span>.</p>
+</section>
+<section id="exercise-2" class="slide level2">
+<h2>Exercise</h2>
+<p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be sets. Show that <span class="math inline">\(A \cap B \subseteq A \cup B\)</span>.</p>
+<div class="fragment">
+<p><em>Proof</em>: Let <span class="math inline">\(x \in A \cap B\)</span>. This means that, by definition, <span class="math inline">\(x \in A\)</span> and <span class="math inline">\(x \in B\)</span>. Since an “or” statement is true if at least one of the disjuncts is true, then since <span class="math inline">\(x \in A\)</span> is true, the statement that “<span class="math inline">\(x \in A\)</span> or <span class="math inline">\(x \in B\)</span>” is true. Therefore <span class="math inline">\(x \in A \cup B\)</span>, since that’s the definition of the union.</p>
+</div>
+</section>
+<section id="equality-of-sets" class="slide level2">
+<h2>Equality of Sets</h2>
+<p>One way to show that two sets are equal: <span class="math inline">\(A = B\)</span> means <span class="math inline">\(A \subseteq B\)</span> <strong>and</strong> <span class="math inline">\(B \subseteq A\)</span>.</p>
+<p>Why does this mean the same thing? <span class="math inline">\(A = B\)</span> means “<span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have the same elements.” That is true only when the elements of <span class="math inline">\(A\)</span> are also elements of <span class="math inline">\(B\)</span>, and vice versa.</p>
+</section>
+<section id="set-equality-example" class="slide level2">
+<h2>Set Equality Example</h2>
+<p>Show that <span class="math inline">\(A = \{ 2n : n \in \mathbb{Z} \}\)</span> and <span class="math inline">\(B = \{ 2n + 2 : n \in \mathbb{Z} \}\)</span> are equal.</p>
+<p><span class="math display">\[A \subseteq B\]</span></p>
+<p>Let <span class="math inline">\(x \in A\)</span>. That means that there is <span class="math inline">\(n \in \mathbb{Z}\)</span> such that <span class="math inline">\(x = 2n\)</span>. We show that there is some <span class="math inline">\(m \in \mathbb{Z}\)</span> such that <span class="math inline">\(x = 2m + 2\)</span>. Since <span class="math inline">\(x = 2n\)</span>, then <span class="math inline">\(x - 2 = 2n - 2\)</span>. Let <span class="math inline">\(m = n - 1\)</span>, so that <span class="math inline">\(2m = 2n - 2\)</span>. Adding 2 to both sides of the equation <span class="math inline">\(x - 2 = 2m\)</span> gives us <span class="math inline">\(x = 2m + 2\)</span>, and so <span class="math inline">\(x \in B\)</span>.</p>
+</section>
+<section id="set-equality-example-1" class="slide level2">
+<h2>Set Equality Example</h2>
+<p><span class="math display">\[B \subseteq A\]</span></p>
+<p>Now let <span class="math inline">\(x \in B\)</span>. That means there is <span class="math inline">\(n \in \mathbb{Z}\)</span> such that <span class="math inline">\(x = 2m + 2\)</span>. Let <span class="math inline">\(n = m + 1\)</span>, and since <span class="math inline">\(2n = 2m + 2\)</span>, we know that <span class="math inline">\(x = 2n\)</span>. This means <span class="math inline">\(x \in A\)</span>.</p>
+<p>Since <span class="math inline">\(A \subseteq B\)</span> and <span class="math inline">\(B \subseteq A\)</span>, this means that the sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have the same elements. (Every element of A is an element of B, and vice versa). Therefore they are the same set.</p>
+</section>
+<section id="power-sets" class="slide level2">
+<h2>Power Sets</h2>
+<p><strong>Definition</strong>: Let <span class="math inline">\(A\)</span> be a set. Then <span class="math inline">\(\mathcal{P}(A) = \{ X : X \subseteq A \}\)</span> is called the <strong>power set</strong> of <span class="math inline">\(A\)</span>.</p>
+<p>Example: find all subsets of <span class="math inline">\(A = \{ 0 \}\)</span>.</p>
+</section>
+<section id="solution" class="slide level2">
+<h2>Solution</h2>
+<p><span class="math inline">\(\mathcal{P}(A) = \{ \emptyset, \{ 0 \} \}\)</span></p>
+<p>What about <span class="math inline">\(B = \{ 0, 1 \}\)</span>?</p>
+<div class="fragment">
+<p><span class="math inline">\(\mathcal{P}(B) = \{ \emptyset, \{ 0 \}, \{ 1 \}, \{ 0, 1 \} \}\)</span>.</p>
+</div>
+</section></section>
+<section id="next-time" class="title-slide slide level1">
+<h1>Next time</h1>
+<ul>
+<li>Ordered pairs / functions</li>
+<li>One to one and onto functions</li>
+<li>Cardinality</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
