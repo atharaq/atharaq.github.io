@@ -15,3 +15,4 @@ layout: default
 * [Lesson 1: Substition](lesson1.html)  
 * [Lesson 2: Exponential / Logarithmic Functions](lesson2.html)
 * [Lesson 3: Logarithms and Inverse Trig](lesson3.html)
+* [Lesson 4: Integration by Parts and Trig Integrals](lesson4.html)
