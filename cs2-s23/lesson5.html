@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>CS II Lesson 5</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS II Lesson 5</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">L5 Strings</p>
+</section>
+
+<section>
+<section id="warm-up" class="title-slide slide level1">
+<h1>Warm Up</h1>
+<p>Write a program which asks the user to input the size of a list. Then ask the user to input an integer for each element of the list, and output the <strong>arithmetic mean</strong> of the list (truncated if it is a decimal). Recall: the arithmetic mean of a set of numbers is the sum of all the numbers divided by the number of numbers.</p>
+</section>
+<section id="example-input-output" class="slide level2">
+<h2>Example input / output</h2>
+<pre><code>How large a list do you want?
+  3
+Enter in element 0:
+  5
+Enter in element 1:
+  -2
+Enter in element 2:
+  7
+The arithmetic mean of these numbers is 3.</code></pre>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions?</h2>
+<ul>
+<li>Exercises from last week?</li>
+<li>Topics from last week?</li>
+</ul>
+</section></section>
+<section>
+<section id="strings" class="title-slide slide level1">
+<h1>Strings</h1>
+<p>Like arrays, Strings are stored, technically, as <strong>references</strong>. (Every “object” in Java is stored as a reference to some data).</p>
+<p><img alt="Memory diagram of a String of 6 characters (Think Java, Chapter 6.)" src="https://trinket-app-assets.trinket.io/thinkjava2/thinkjava2_015.png" /></p>
+</section>
+<section id="immutability" class="slide level2">
+<h2>Immutability</h2>
+<p>Technically: Strings are <strong>immutable</strong>. Once a String is created, it cannot be changed. You can, however, change that reference!</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="bu">String</span> text = <span class="st">&quot;Hello&quot;</span>;</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="bu">String</span> other = text;</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="bu">String</span> newText = <span class="st">&quot; there&quot;</span>;</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>text += newText;</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(other);</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(text);</span></code></pre></div>
+<p>What is going on here? Draw the memory diagram to explain what is happening.</p>
+</section>
+<section id="string-api" class="slide level2">
+<h2>String API</h2>
+<p><strong>API</strong>: Application Programming Interface.</p>
+<ul>
+<li>Describes how you might interact with a class / package.</li>
+<li>In particular, the methods that are available to use.</li>
+<li>We can access the API for the String class by searching for <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html">Java String API</a>.</li>
+</ul>
+</section>
+<section id="some-string-methods" class="slide level2">
+<h2>Some String methods:</h2>
+<ul>
+<li><code>length()</code>: returns the length of the String</li>
+<li><code>substring()</code>: <code>"hello".substring(2)</code> returns “llo”, <code>"okay".substring(1, 3)</code> returns “ka”.</li>
+<li><code>equals()</code> and <code>equalsIgnoreCase()</code>: Checks if two Strings are the same (depending on whether you want case sensitivity or not).</li>
+<li><code>compareTo()</code>: Compares Strings based on alphabetical order.</li>
+<li><code>charAt()</code>: Determines the character at a given position in the String</li>
+</ul>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Ask the user to input in some text (use the nextLine() method in the Scanner class). Then do the following:</p>
+<ol type="1">
+<li>Output the length of that text.</li>
+<li>Determine if the text they entered is exactly the same as the String “help!”.</li>
+<li>Output the last two characters of the String.</li>
+</ol>
+<p>Write a program which asks the user to input the size of a list. Then ask the user to input an integer for each element of the list, and output the minimum element of the list.</p>
+<pre><code>How large a list do you want?
+   2
+Enter in element 0:
+   15
+Enter in element 1:
+   -2
+
+The minimum element in this list is -2.</code></pre>
+</section></section>
+<section>
+<section id="math-library" class="title-slide slide level1">
+<h1>Math library</h1>
+<p>The Java library provides a Math class which contains methods that are useful for mathematical operations: trig functions, powers, square roots, logarithms, and rounding.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="dt">int</span> x = -<span class="dv">3</span>;</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="dt">int</span> y = <span class="dv">2</span>;</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="dt">double</span> root2 = <span class="bu">Math</span>.<span class="fu">sqrt</span>(y);</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a><span class="dt">double</span> xToTheY = <span class="bu">Math</span>.<span class="fu">pow</span>(x, y); <span class="co">// x and y are arguments</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>to the method <span class="fu">pow</span>()</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a><span class="dt">int</span> absVal = <span class="bu">Math</span>.<span class="fu">abs</span>(x);</span></code></pre></div>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<p>Ask the user to input in two integers, x and y, and output <span class="math inline">\(x^y\)</span>. You can use the Math library for this.</p>
+<pre><code>Enter in x:
+  -3
+Enter in y:
+  4
+-3 raised to the power 4 = 81.</code></pre>
+</section></section>
+<section>
+<section id="homework" class="title-slide slide level1">
+<h1>Homework</h1>
+<p>A word is said to be a “doubloon” if every letter that appears in the word appears exactly twice. Here are some example doubloons found in the dictionary:</p>
+<p>Abba, Anna, appall, appearer, appeases, arraigning, beriberi, bilabial, boob, Caucasus, coco, Dada, deed, Emmett, Hannah, horseshoer, intestines, Isis, mama, Mimi, murmur, noon, Otto, papa, peep, reappear, redder, sees, Shanghaiings, Toto</p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p>Write a program which takes a String as input and checks whether it is a doubloon. If it is, your program should output “Doubloon!” If not, it should output “Not a doubloon!”" To ignore case, invoke the toLowerCase method before checking.</p>
+<p><a href="https://replit.com/team/cs2-spring-23/Doubloon">Submit this on replit!</a></p>
+</section></section>
+<section>
+<section id="project-1" class="title-slide slide level1">
+<h1>Project 1</h1>
+<p><a href="https://replit.com/team/cs2-spring-23/Project-1-Knight-Paths">On Replit</a></p>
+<p>Two parts (150 points total):</p>
+<ol type="1">
+<li>Programming project (100 points)</li>
+<li>Explanations (50 points)</li>
+</ol>
+<p>Let’s take a quick look. Think this through, start drawing out ideas, etc.</p>
+</section>
+<section id="tips" class="slide level2">
+<h2>Tips</h2>
+<ul>
+<li>Get started early!</li>
+<li>First: validate input.</li>
+<li>Then: get some simple cases working.</li>
+<li>How can you tell if you are one move away?</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
