@@ -15,7 +15,7 @@
 * Problem Presentation 1: **Monday, Feb 13**
 * Exam 1 (take home): next week!
   * Given Monday, 2/13
-  * Due Friday, 2/17
+  * Due **Friday, 2/17**
   * Chapter 1
   * Sections 3.1, 3.2, 3.4
   * Section 2.6
