@@ -56,7 +56,7 @@ First, notice that: $$\frac{1/2}{x-1} - \frac{1/2}{x+1} = \frac{1}{x^2 - 1}$$
 
 (Algebra! Get commone denomiantors on the left side)
 
-Then: $$\int (\frac{1/2}{x-1} - \frac{1/2}{x+1})dx = \frac{1}{2}(\ln|x-1| - \ln|x+1|) + C$$
+Then: $$\int (\frac{1/2}{x-1} - \frac{1/2}{x+1})dx = \frac{1}{2}(\ln\|x-1\| - \ln\|x+1\|) + C$$
 
 So the question becomes: how do we go from $\frac{1}{x^2 - 1}$ to $\frac{1/2}{x-1} - \frac{1/2}{x+1}$?
 
@@ -112,7 +112,7 @@ $$\int \frac{1}{x^2 - 6x + 5} dx$$
 * Factor: $x^2 - 6x + 5 = (x-5)(x-1)$
 * Partial Fractions: $\frac{1}{(x-5)(x-1)} = \frac{1/4}{x-5} - \frac{1/4}{x-1}$
 * $\int \frac{1/4}{x-5} dx - \int \frac{1/4}{x-1} dx$
-* $\frac{1}{4} \ln|x-5| - \frac{1}{4} \ln|x-1| + C$
+* $\frac{1}{4} \ln\|x-5\| - \frac{1}{4} \ln\|x-1\| + C$
 
 ## More general
 
@@ -126,7 +126,7 @@ Then we can just integrate:
 
 $\frac{1}{2}\int \frac{dx}{x+1} - \int \frac{dx}{x+2} + \frac{1}{2} \int \frac{dx}{x+3}$
 
-Final answer: $\frac{1}{2}\ln|x+1| - \ln|x+2| + \frac{1}{2}\ln|x+3| + C$
+Final answer: $\frac{1}{2}\ln\|x+1\| - \ln\|x+2\| + \frac{1}{2}\ln\|x+3\| + C$
 
 # Center of Mass
 
