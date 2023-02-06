@@ -105,7 +105,7 @@ $$\int \frac{1}{(x+2)(x-1)} dx$$
 
 * Using partial fractions, $\frac{1}{(x+2)(x-1)} = \frac{1/3}{x+2} - \frac{1/3}{x-1}$.
 * $\int \frac{1/3}{x+2} dx - \int \frac{1/3}{x-1} dx$
-* $\frac{1}{3} \ln|x+2| - \frac{1}{3} \ln|x-1| + C$
+* $\frac{1}{3} \ln\|x+2\| - \frac{1}{3} \ln\|x-1\| + C$
 
 $$\int \frac{1}{x^2 - 6x + 5} dx$$
 
