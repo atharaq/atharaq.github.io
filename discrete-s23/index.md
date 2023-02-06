@@ -19,3 +19,5 @@ lang: en-US
 * [Lesson 2: Proof Writing, Satisfiability, Intro to Counting Principles](lesson2.html)
 * [Lesson 3: Counting Principles](lesson3.html)
 * [Lesson 4: Set Theory](lesson4.html)
+* [Lesson 5: Functions](lesson5.html)
+* [Lesson 6: Cardinality](lesson6.html)

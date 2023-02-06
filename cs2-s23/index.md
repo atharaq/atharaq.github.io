@@ -16,3 +16,4 @@ layout: default
 * [Lesson 2: Input / Output](lesson2.html)
 * [Lesson 3: Conditionals / Loops](lesson3.html)
 * [Lesson 4: Arrays](lesson4.html)
+* [Lesson 5: Strings](lesson5.html)
