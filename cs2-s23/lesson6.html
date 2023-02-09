@@ -4,8 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Professor Abdul-Quader">
-  <meta name="dcterms.date" content="2022-02-21">
-  <title>CS II</title>
+  <title>CS II Lesson 6</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -88,9 +87,9 @@
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">CS II</h1>
+  <h1 class="title">CS II Lesson 6</h1>
   <p class="author">Professor Abdul-Quader</p>
-  <p class="date">21 February 2022</p>
+  <p class="date">L6 Methods</p>
 </section>
 
 <section>
@@ -124,7 +123,7 @@ The minimum element in this list is -2.</code></pre>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; list.<span class="fu">length</span>; i++) {</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>    list[i] = r.<span class="fu">nextInt</span>();</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a>}</span></code></pre></div>
-<p>Now how would we find the minimum element of this list?</p>
+<p>Now how would we find the minimum element?</p>
 </section>
 <section id="generalizing" class="slide level2">
 <h2>Generalizing</h2>
@@ -160,7 +159,7 @@ The minimum element in this list is -2.</code></pre>
 </section>
 <section id="flow-of-execution" class="slide level2">
 <h2>Flow of execution</h2>
-<p>Invoking a method changes the flow of execution of a program. In what order will the following lines of code execute?</p>
+<p>In what order will the following lines of code execute?</p>
 <div class="sourceCode" id="cb5" data-line-numbers="1-14"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">printManyTimes</span>(<span class="bu">String</span> message, <span class="dt">int</span> n) {</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>  <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; n; i++) {</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(message);</span>
@@ -223,31 +222,27 @@ The minimum element in this list is -2.</code></pre>
 <section>
 <section id="return-types-params" class="title-slide slide level1">
 <h1>Return Types / Params</h1>
-<p>When we define a method, we need to describe the return type of the method, and the parameters that the method requires:</p>
+<p>When we define a method, we need to describe the <strong>return type</strong> of the method, and the <strong>parameters</strong> that the method requires.</p>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
 <div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">printManyTimes</span>(<span class="bu">String</span> message, <span class="dt">int</span> n) {</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>   <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; n; i+) {</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>     <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(message);</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a>   }</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a>}</span></code></pre></div>
-<p><code>printManyTimes</code> does not return anything (so its return type is <code>void</code>), and requires two parameters (a <code>String</code> and an <code>int</code>, in that order). Because it does not return anything, we invoke it on its own line, providing the correct arguments to the method: `printManyTimes(“Repeat after me:”, 3);``</p>
+<p><code>printManyTimes</code> does not return anything (so its return type is <code>void</code>), and requires two parameters (a <code>String</code> and an <code>int</code>, in that order).</p>
+<p>How do we invoke it?</p>
 </section>
 <section id="exercise-2" class="slide level2">
 <h2>Exercise</h2>
 <p>Write a method which takes in an integer array as a parameter, and returns the second smallest element of that array. Test this out by invoking the method with a few different arrays as in:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a>   <span class="dt">int</span>[] x = <span class="kw">new</span> <span class="dt">int</span>[<span class="dv">5</span>];</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a>   x[<span class="dv">0</span>] = <span class="dv">1</span>;</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a>   x[<span class="dv">1</span>] = <span class="dv">5</span>;</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a>   x[<span class="dv">2</span>] = <span class="dv">1</span>;</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a>   x[<span class="dv">3</span>] = <span class="dv">0</span>;</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true"></a>   x[<span class="dv">4</span>] = -<span class="dv">1</span>;</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true"></a>   <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="fu">secondSmallest</span>(x));</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true"></a>   <span class="dt">int</span>[] y = <span class="kw">new</span> <span class="dt">int</span>[<span class="dv">3</span>];</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true"></a>   y[<span class="dv">0</span>] = <span class="dv">13</span>;</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true"></a>   y[<span class="dv">1</span>] = <span class="dv">10</span>;</span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true"></a>   y[<span class="dv">2</span>] = <span class="dv">15</span>;</span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true"></a>   <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="fu">secondSmallest</span>(y));</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true"></a>}</span></code></pre></div>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a>   <span class="dt">int</span>[] x = { <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">0</span>, -<span class="dv">1</span> };</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a>   <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="fu">secondSmallest</span>(x));</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a>   <span class="dt">int</span>[] y = { <span class="dv">13</span>, <span class="dv">10</span>, <span class="dv">15</span>};</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a>   <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="fu">secondSmallest</span>(y));</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a>}</span></code></pre></div>
 </section>
 <section id="exercise-3" class="slide level2">
 <h2>Exercise</h2>
@@ -270,7 +265,7 @@ The minimum element in this list is -2.</code></pre>
 </section>
 <section id="exercise-4" class="slide level2">
 <h2>Exercise</h2>
-<ol start="3" type="1">
+<ol type="1">
 <li>What are the return types and parameters for each of the above methods?</li>
 <li>How would we use <code>printManyTimes</code> to output “Hi” 4 times?</li>
 <li>How would we use <code>minElement</code> to output the smallest element of an int[] array variable <span class="math inline">\(x\)</span>?</li>

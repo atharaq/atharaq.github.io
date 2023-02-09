@@ -94,7 +94,7 @@ We add up each of these moments to get the (approximation of the) moments of the
 
 $$
 \begin{align}
-M_x &= \sum_{i=1}^n \frac{rho}{2} (f(x_i))^2 \Delta x \\
+M_x &= \sum_{i=1}^n \frac{\rho}{2} (f(x_i))^2 \Delta x \\
 M_y &= \sum_{i=1}^n \rho x_i f(x_i) \Delta x
 \end{align}
 $$
@@ -146,7 +146,7 @@ Now we compute $M_y$:
 
 $$\int_0^\pi x \sin(x) dx$$
 
-We use [Integration by parts](lesson4.html#review-of-integration-by-parts) for this problem. Since $\sin(x)$ is easy to integrate, and the integral of $\sin(x)$ does not increase the complexity of the problem, we let:
+We use [Integration by parts](lesson4.html#integration-by-parts) for this problem. Since $\sin(x)$ is easy to integrate, and the integral of $\sin(x)$ does not increase the complexity of the problem, we let:
 
 * $u = x$
 * $dv = \sin(x) dx$
