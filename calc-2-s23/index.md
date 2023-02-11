@@ -17,3 +17,4 @@ layout: default
 * [Lesson 3: Logarithms and Inverse Trig](lesson3.html)
 * [Lesson 4: Integration by Parts and Trig Integrals](lesson4.html)
 * [Lesson 5: Partial Fractions and Center of Mass Intro](lesson5.html)
+* [Lesson 6: Center of Mass](lesson6.html)
