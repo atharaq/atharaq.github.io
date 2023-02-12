@@ -41,7 +41,7 @@ Compute the following definite integrals by taking the appropriate limit.
 
 ## Divergence
 
-How would we find $\int_0^{\infty} (e^{-x} + 1) dx$. Without computing?
+How would we find $\int_0^{\infty} (e^{-x} + 1) dx$ **without computing**?
 
 <div class="desmos-container">
 <iframe src="https://www.desmos.com/calculator/o0plfqccr8?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
@@ -162,7 +162,7 @@ $$\int_0^1 (x - x^2) dx = \left.\frac{x^2}{2}-\frac{x^3}{3}\right|_0^1 - \frac{1
 
 1. Determine where they intersect
 2. Determine which function is greater in this region
-3. Set up the integral $\int_a^b |f(x) - g(x)| dx$.
+3. Set up the integral $\int_a^b \|f(x) - g(x)\| dx$.
 
 (Use (2) to determine whether the integral is of $f(x) - g(x)$ or $g(x) - f(x)$.)
 
