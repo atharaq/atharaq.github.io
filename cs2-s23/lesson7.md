@@ -30,7 +30,7 @@ Some questions to think about:
     public static boolean something(String[] list) {
         for (int i = 0; i < list.length; i++) {
             String nameOne = list[i];
-            for (int j = i + 1; j < list.size(); j++) {
+            for (int j = i + 1; j < list.length; j++) {
                 String nameTwo = list[j];
                 if (nameOne.equals(nameTwo)) {
                     return true;
