@@ -137,7 +137,7 @@ Do some algebra: $n^2 - n = 4$, or just $n^2 - n - 4 = 0$. Then use the quadrati
 
 <details>
 <summary>Click for answer</summary>
-<p>$\forall y \in B [\exists x \in A (f(x) = y) \wedge \forall z \in A (f(z) = y \rightarrow x = z)]$</p>
+<p>$\forall y \in B [\exists x \in A (f(x) = y \wedge \forall z \in A (f(z) = y \rightarrow x = z))]$</p>
 </details>
 
 "Every $y \in B$ has one and only one $x \in A$ mapping to it."
