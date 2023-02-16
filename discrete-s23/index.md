@@ -21,3 +21,5 @@ lang: en-US
 * [Lesson 4: Set Theory](lesson4.html)
 * [Lesson 5: Functions](lesson5.html)
 * [Lesson 6: Cardinality](lesson6.html)
+* [Lesson 7: Predicate Logic](lesson7.html)
+* [Lesson 8: More predicate logic / review](lesson8.html)
