@@ -19,3 +19,4 @@ layout: default
 * [Lesson 5: Partial Fractions and Center of Mass Intro](lesson5.html)
 * [Lesson 6: Center of Mass](lesson6.html)
 * [Lesson 7: Improper integrals](lesson7.html)
+* [Lesson 8: Areas between curves](lesson8.html)
