@@ -19,3 +19,4 @@ layout: default
 * [Lesson 5: Strings](lesson5.html)
 * [Lesson 6: Methods](lesson6.html)
 * [Lesson 7: Exam 1 review](lesson7.html)
+* [Lesson 8: Methods / Program Design](lesson8.html)
