@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>CS II Lesson 9</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS II Lesson 9</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">L9 Review / Intro to Classes</p>
+</section>
+
+<section>
+<section id="loops" class="title-slide slide level1">
+<h1>Loops</h1>
+<!--
+10:30 - 11:00 for loops
+    10:30 - 10:35 simple
+    10:35 - 10:45 run some exercises
+    10:45 - 11:00 memory diagrams
+11:00 - 11:15 project 1
+11:15 - 11:30 resize array.
+11:30 - 11:45 arraylist explanation
+11:45 - 12:05 exercise
+12:05 - 12:10 explanation
+-->
+<p>Cold calling: How many times will “Hi” print out below?</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">something</span>(<span class="dt">int</span> n) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>  <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; n; i++) {</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hi&quot;</span>);</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>  }</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="more-loops" class="slide level2">
+<h2>More Loops</h2>
+<p>How many times will <code>x *= 2</code> run here? How many times will <span class="math inline">\(x\)</span> be printed out?</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">something</span>(<span class="dt">int</span> n) {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>  <span class="dt">int</span> x = <span class="dv">1</span>;</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>  <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; n; i++) {</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>    x *= <span class="dv">2</span>;</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>  }</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(x);</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="two-loops" class="slide level2">
+<h2>Two loops?</h2>
+<p>How many times will “Hi” be printed out?</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">something</span>(<span class="dt">int</span> n) {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>  <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; n - <span class="dv">1</span>; i++) {</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>    <span class="kw">for</span> (<span class="dt">int</span> j = i + <span class="dv">1</span>; j &lt; n; j++) {</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hi&quot;</span>);</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>    }</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>  }</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>}</span></code></pre></div>
+<ul>
+<li>Harder to figure out in your head!</li>
+<li>Memory diagrams!</li>
+<li><a href="https://replit.com/team/cs2-spring-23/Lesson-9-Exam-recap">Try it out on replit</a></li>
+</ul>
+</section>
+<section id="memory-diagram" class="slide level2">
+<h2>Memory Diagram</h2>
+<p>Let <span class="math inline">\(n = 4\)</span>. When <span class="math inline">\(i = 0\)</span>, how many times does <span class="math inline">\(i, j\)</span> print out? What about when <span class="math inline">\(i = 1\)</span>? Make a memory diagram for the following.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; n - <span class="dv">1</span>; i++) {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>  <span class="kw">for</span> (<span class="dt">int</span> j = i + <span class="dv">1</span>; j &lt; n; j++) {</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(i + <span class="st">&quot;, &quot;</span> + j);    </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>  }</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="exam-1" class="slide level2">
+<h2>Exam 1</h2>
+<ul>
+<li>You need to know how to read loops.</li>
+<li>Loops <strong>repeat</strong>: memory diagrams shouldn’t just be one line then!</li>
+<li>Loops inside loops?</li>
+</ul>
+</section>
+<section id="last-time" class="slide level2">
+<h2>Last time</h2>
+<ul>
+<li>Parameter passing:
+<ul>
+<li>Pass by value: primitive types</li>
+<li>Value of an “object type”: memory location</li>
+<li>Weirdness ensues.</li>
+</ul></li>
+<li>Modular design
+<ul>
+<li>Break large problem into smaller problems.</li>
+<li>Solve each problem in its own method</li>
+<li>Test it out on its own!</li>
+<li>Easier to start working, build, maintain, test, etc</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="project-1" class="title-slide slide level1">
+<h1>Project 1</h1>
+<ul>
+<li>One move away?</li>
+<li>Have something working?
+<ul>
+<li>Test it on as many inputs as possible.</li>
+<li>Does it always output optimal paths?</li>
+<li>If not, can you find the cases it messes up on?</li>
+</ul></li>
+</ul>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions?</h2>
+<ul>
+<li>Last chance.</li>
+<li>Office hours today.</li>
+</ul>
+</section>
+<section id="demo" class="slide level2">
+<h2>Demo</h2>
+<ul>
+<li>Next two weeks: everyone must <strong>demo</strong> their code.</li>
+<li>Explain what you did, your <strong>overall idea</strong>.
+<ul>
+<li>Not: “I declared a variable <span class="math inline">\(x\)</span> and used a for loop.”</li>
+<li>Better: “I kept track of the number of moves I was making.”</li>
+<li>Better: “Overall: until I reach the destination, I check if I can get there in one move. If not, I check…”</li>
+</ul></li>
+<li><strong>Reminder</strong>: Written explanation due as <strong>part of the project</strong> (10 points).</li>
+</ul>
+</section>
+<section id="demo-1" class="slide level2">
+<h2>Demo</h2>
+<ul>
+<li>Demo is worth 40 points (out of 150). See replit for the rubric.</li>
+<li>4 volunteers to go on Monday? +5 extra credit.</li>
+<li>After that, I pick 4 randomly for each day (no more EC).</li>
+<li>Make sure you explain what is important about your code: how do you actually solve the problem here?</li>
+</ul>
+</section></section>
+<section>
+<section id="resize-array" class="title-slide slide level1">
+<h1>Resize Array</h1>
+<p>Problem with the following:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="dt">int</span>[] numbers = <span class="kw">new</span> <span class="dt">int</span>[<span class="dv">5</span>]; <span class="co">// hope that 5 is big enough!</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a><span class="bu">Scanner</span> sc = <span class="kw">new</span> <span class="bu">Scanner</span>(<span class="bu">System</span>.<span class="fu">in</span>);</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="dt">int</span> index = <span class="dv">0</span>;</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Input in the first number: &quot;</span>);</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a><span class="kw">while</span> (sc.<span class="fu">hasNextInt</span>()) {</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>    numbers[index] = sc.<span class="fu">nextInt</span>();</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a>    index++;</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Input in the next number: &quot;</span>);</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Write a method which takes in an integer array as a parameter, creates a new array that is twice as big, copies over all the elements of the old array and returns the new array.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">int</span>[] <span class="fu">resizeArray</span>(<span class="dt">int</span>[] originalArray) {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>    <span class="co">// what goes in here?</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>}</span></code></pre></div>
+<p><a href="https://replit.com/team/cs2-spring-23/Lesson-9-Resize-Arrays-ArrayList">New replit space for this</a> (don’t re-use the exam recap for this)</p>
+</section>
+<section id="main-method" class="slide level2">
+<h2>Main method</h2>
+<p>Use it with the following main method:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="dt">int</span>[] numbers = <span class="kw">new</span> <span class="dt">int</span>[<span class="dv">5</span>];</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a><span class="bu">Scanner</span> sc = <span class="kw">new</span> <span class="bu">Scanner</span>(<span class="bu">System</span>.<span class="fu">in</span>);</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a><span class="dt">int</span> index = <span class="dv">0</span>;</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Input in the first number: &quot;</span>);</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a><span class="kw">while</span> (sc.<span class="fu">hasNextInt</span>()) {</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a>    <span class="dt">int</span> number = sc.<span class="fu">nextInt</span>();</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a>    <span class="kw">if</span> (index &gt;= numbers.<span class="fu">length</span>) {</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a>        numbers = <span class="fu">resizeArray</span>(numbers);</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a>    }</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true"></a>    numbers[index] = number;</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true"></a>    index++;</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Input in the next number: &quot;</span>);</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true"></a>}</span></code></pre></div>
+</section></section>
+<section>
+<section id="generalize" class="title-slide slide level1">
+<h1>Generalize?</h1>
+<ul>
+<li>Every time we use arrays, we need to do this?</li>
+<li>Separately, for each type of array? <code>int[]</code> vs <code>String[]</code> vs <code>int[][]</code> etc?</li>
+<li>Better way? Built-in solution:</li>
+</ul>
+</section>
+<section id="arraylist-class" class="slide level2">
+<h2>ArrayList class</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="kw">import</span><span class="im"> java.util.ArrayList;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a><span class="co">// must import the above!</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a><span class="co">// in main:</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a><span class="bu">ArrayList</span>&lt;<span class="bu">String</span>&gt; stringList = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a><span class="kw">for</span>(<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">100</span>; i++) {</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a>    stringList.<span class="fu">add</span>(<span class="st">&quot;hello!&quot;</span>);</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true"></a>}</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(stringList.<span class="fu">size</span>());</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true"></a><span class="bu">ArrayList</span>&lt;<span class="bu">Integer</span>&gt; integerList = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true"></a><span class="kw">for</span>(<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">20</span>; i++) {</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true"></a>    integerList.<span class="fu">add</span>(i * i);</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true"></a>}</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(integerList.<span class="fu">get</span>(<span class="dv">15</span>));</span></code></pre></div>
+</section>
+<section id="arraylist-class-1" class="slide level2">
+<h2>ArrayList class</h2>
+<ul>
+<li>Built-in class that handles “resizeable arrays”</li>
+<li>Can use with any type!</li>
+</ul>
+</section>
+<section id="type-parameters" class="slide level2">
+<h2>Type Parameters</h2>
+<ul>
+<li>Inside angle brackets: the <em>type paramter</em></li>
+<li>Must be the name of a <em>class</em>
+<ul>
+<li>Not a primitive!</li>
+<li><code>ArrayList&lt;int&gt;</code> doesn’t work!</li>
+</ul></li>
+<li>For primitives: use wrapper classes
+<ul>
+<li>Integer for int</li>
+<li>Double for double</li>
+<li>Character for char</li>
+</ul></li>
+</ul>
+</section>
+<section id="arraylist-methods" class="slide level2">
+<h2>ArrayList Methods</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="bu">ArrayList</span>&lt;<span class="bu">Integer</span>&gt; list = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a>list.<span class="fu">add</span>(<span class="dv">1</span>); <span class="co">// list[0] = 1</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a>list.<span class="fu">add</span>(<span class="dv">5</span>); <span class="co">// list[1] = 5</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a>list.<span class="fu">add</span>(<span class="dv">10</span>); <span class="co">// list[2] = 10</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(list.<span class="fu">get</span>(<span class="dv">1</span>)); <span class="co">// should output 5</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(list.<span class="fu">size</span>()); <span class="co">// should output 3</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true"></a>list.<span class="fu">set</span>(<span class="dv">2</span>, <span class="dv">27</span>); <span class="co">// list[2] = 27</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true"></a><span class="co">// list.set(25, 3); throws an exception! list size is only 3!</span></span></code></pre></div>
+</section>
+<section id="arraylist-methods-1" class="slide level2">
+<h2>ArrayList Methods</h2>
+<ul>
+<li><code>add</code>: add to the “end” of this list
+<ul>
+<li><code>add(index, element)</code>: add element to list at position <span class="math inline">\(index\)</span>, shift everything over</li>
+</ul></li>
+<li><code>get</code>: get the element at index <span class="math inline">\(i\)</span></li>
+<li><code>set</code>: change the value of the list at position <span class="math inline">\(i\)</span>
+<ul>
+<li>Only works if enough things have been added!</li>
+</ul></li>
+<li><code>remove</code></li>
+<li><code>size</code></li>
+</ul>
+</section>
+<section id="iterating" class="slide level2">
+<h2>Iterating</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="co">// output all the contents of the list</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;List contents:&quot;</span>);</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a><span class="kw">for</span> (<span class="dt">int</span> number : list) {</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(number);</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true"></a>}</span></code></pre></div>
+<p>“Foreach” loop syntax above, regular for loop below:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; list.<span class="fu">size</span>(); i++) {</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(list.<span class="fu">get</span>(i));</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<p>Write a method (with no parameters) which allows the user to input in as many numbers as possible (until they input in something that is not an integer), and continues to add them to an <code>ArrayList</code>. Test it out with the following main method:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true"></a>    <span class="bu">ArrayList</span>&lt;<span class="bu">Integer</span>&gt; numbersList = <span class="fu">getInput</span>();</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true"></a>    <span class="co">// print out all the numbers in the list:</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true"></a>    <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; numbersList.<span class="fu">size</span>(); i++) {</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true"></a>        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Element &quot;</span> + i + <span class="st">&quot;: &quot;</span> + numbersList.<span class="fu">get</span>(i));</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true"></a>    }</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true"></a>}</span></code></pre></div>
+</section></section>
+<section>
+<section id="classes" class="title-slide slide level1">
+<h1>Classes</h1>
+<ul>
+<li><p>ArrayList is a <strong>class</strong></p></li>
+<li><p>class: a template for a data type</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a><span class="bu">ArrayList</span>&lt;<span class="bu">Integer</span>&gt; list = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true"></a><span class="bu">ArrayList</span>&lt;<span class="bu">Integer</span>&gt; list2 = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();</span></code></pre></div></li>
+<li><p><code>list</code> and <code>list2</code> are different <strong>objects</strong> of type ArrayList</p></li>
+<li><p>What does <strong>new</strong> do?</p></li>
+</ul>
+</section>
+<section id="instantiation" class="slide level2">
+<h2>Instantiation</h2>
+<ul>
+<li>The <strong>new</strong> keyword <strong>instantiates</strong> the ArrayList object.</li>
+<li><strong>Instantiation</strong>: creating a new object of that type in memory.</li>
+<li>What does this involve?</li>
+</ul>
+</section>
+<section id="constructors" class="slide level2">
+<h2>Constructors</h2>
+<p>Another way to define ArrayLists:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true"></a><span class="bu">ArrayList</span>&lt;<span class="bu">String</span>&gt; list = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;(<span class="dv">25</span>);</span></code></pre></div>
+<ul>
+<li>ArrayList has multiple <strong>constructors</strong></li>
+<li>Constructor: special method that is called when we the object is created
+<ul>
+<li>In particular, when the <strong>new</strong> keyword is used.</li>
+</ul></li>
+<li>Used to initialize the data type.</li>
+</ul>
+</section>
+<section id="instance-methods" class="slide level2">
+<h2>Instance Methods</h2>
+<div class="sourceCode" id="cb15"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true"></a><span class="bu">ArrayList</span>&lt;<span class="bu">Integer</span>&gt; list = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true"></a><span class="bu">ArrayList</span>&lt;<span class="bu">Integer</span>&gt; list2 = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true"></a>list.<span class="fu">add</span>(<span class="dv">1</span>);</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;List 1 size: &quot;</span> + list.<span class="fu">size</span>());</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;list 2 size: &quot;</span> + list2.<span class="fu">size</span>());</span></code></pre></div>
+<p>What does this print out? Why?</p>
+</section>
+<section id="instance-methods-1" class="slide level2">
+<h2>Instance Methods</h2>
+<ul>
+<li><code>list</code> and <code>list2</code> are different <em>objects</em>
+<ul>
+<li>Keep track of different arrays in memory!</li>
+<li>The arrays have different elements!</li>
+<li>The arrays may have different sizes!</li>
+</ul></li>
+<li><code>size</code> is an <em>instance</em> method.
+<ul>
+<li>as opposed to a <em>static</em> method</li>
+</ul></li>
+<li><strong>instance methods</strong>: methods which act on specific objects
+<ul>
+<li>not on the class as a whole!</li>
+</ul></li>
+<li>syntax: <code>object.method(parameters)</code></li>
+</ul>
+</section>
+<section id="new-data-types" class="slide level2">
+<h2>New data types?</h2>
+<p>How do we define our own data types?</p>
+<ul>
+<li>Define a <strong>class</strong>: <code>public class MyClass</code></li>
+<li>In the class:
+<ul>
+<li>Define a <em>constructor</em> to initialize your data</li>
+<li>Define <em>instance methods</em> to act on that data</li>
+<li>How do we specify the data? **instance variables*</li>
+</ul></li>
+<li>Outside of the class: use the class!</li>
+</ul>
+<div class="sourceCode" id="cb16"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true"></a>MyClass m = <span class="kw">new</span> <span class="fu">MyClass</span>();</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true"></a>m.<span class="fu">someMethod</span>();</span></code></pre></div>
+</section>
+<section id="data-behavior" class="slide level2">
+<h2>Data / Behavior</h2>
+<ul>
+<li>Objects encapsulate <strong>data</strong> and <strong>behavior</strong>:</li>
+<li>integer variable:
+<ul>
+<li>data: actual number it represents</li>
+<li>behavior: add, subtract, etc.</li>
+</ul></li>
+<li>ArrayList variable?
+<ul>
+<li>data?</li>
+<li>behavior?</li>
+</ul></li>
+<li>User-defined types? often:
+<ul>
+<li>data: instance variables</li>
+<li>behavior: instance methods</li>
+</ul></li>
+</ul>
+</section>
+<section id="tostring-and-equals" class="slide level2">
+<h2>toString and equals</h2>
+<p>Special methods that every class defines.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true"></a><span class="bu">ArrayList</span>&lt;<span class="bu">Integer</span>&gt; list1 = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true"></a><span class="bu">ArrayList</span>&lt;<span class="bu">Integer</span>&gt; list2 = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true"></a>list1.<span class="fu">add</span>(<span class="dv">10</span>);</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true"></a>list2.<span class="fu">add</span>(<span class="dv">10</span>);</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true"></a><span class="kw">if</span> (list1 == list2) {</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;The lists refer to the same object&quot;</span>);</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true"></a>} <span class="kw">else</span> <span class="kw">if</span> (list1.<span class="fu">equals</span>(list2)) {</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;The two lists have the same contents:&quot;</span>);</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(list1.<span class="fu">toString</span>());</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true"></a>    <span class="co">// technically, we could just do:</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true"></a>    <span class="co">// System.out.println(list1);</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true"></a>}</span></code></pre></div>
+</section></section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Project 1: due Sunday night.</li>
+<li>Reading: skim chapters 9 and 11.</li>
+<li>Quiz 2: next <strong>Thursday</strong>, 3/10, 11:25-12:10.
+<ul>
+<li>Practice Problems on Monday.</li>
+</ul></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

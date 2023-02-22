@@ -20,3 +20,4 @@ layout: default
 * [Lesson 6: Methods](lesson6.html)
 * [Lesson 7: Exam 1 review](lesson7.html)
 * [Lesson 8: Methods / Program Design](lesson8.html)
+* [Lesson 9: Exam recap / intro to classes](lesson9.html)
