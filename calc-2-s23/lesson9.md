@@ -4,9 +4,7 @@
 1. Table of Contents
 {:toc}
 
-# Warm Up
-
-## Questions?
+# Questions?
 
 * Improper integrals?
 * Areas between curves?
