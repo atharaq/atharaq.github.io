@@ -193,7 +193,7 @@ A ball is thrown straight into the air with an initial velocity of 5 meters per 
 2. How many seconds after the ball is thrown does it reach its maximum height?
 3. If the ball is thrown at a height of 2 meters above the ground, what is the maximum height reached?
 
-## Solution (1)
+## Solution 
 
 Since $v^\prime(t) = a(t)$, and $a(t) = -9.8$, we know:
 
