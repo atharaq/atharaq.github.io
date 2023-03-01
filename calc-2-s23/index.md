@@ -22,3 +22,4 @@ layout: default
 * [Lesson 8: Areas between curves](lesson8.html)
 * [Lesson 9: Volumes by slicing](lesson9.html)
 * [Lesson 10: Volumes (Shells), Arc Length](lesson10.html)
+* [Lesson 11: Arc Length, Differential Equations Intro](lesson11.html)
