@@ -12,7 +12,8 @@
 * Monday: HW (MyOpenMath)
 * Next Friday: Presentation 2 (VoiceThread)
 * Next week: quiz
-* Exam 2: 2 weeks
+* Exam 2: 2 weeks (March 16)
+  * Bring a **graphing calculator**!
 
 # Volumes
 
