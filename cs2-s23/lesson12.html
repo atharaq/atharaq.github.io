@@ -133,6 +133,23 @@
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>GaussianInteger x = <span class="kw">new</span> <span class="fu">GaussianInteger</span>(<span class="dv">3</span>, <span class="dv">4</span>); <span class="co">// 3 + 4i</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>g.<span class="fu">multiply</span>(x); <span class="co">// g should now be -5 + 10i</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(g);</span></code></pre></div>
+</section>
+<section id="aside-debugging" class="slide level2">
+<h2>Aside: Debugging</h2>
+<p>Why doesn’t the below <code>multiply</code> work:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">multiply</span>(GaussianInteger other) {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>  <span class="co">// real part: ac - bd</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>  real = real * other.<span class="fu">real</span> - imag * other.<span class="fu">imag</span>;</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>  <span class="co">// imaginary part: ad + bc</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>  imag = real * other.<span class="fu">imag</span> + imag * other.<span class="fu">real</span>;</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>}</span></code></pre></div>
+<p>Let’s try out the <strong>debugger</strong> in replit to see what happens.</p>
+</section>
+<section id="aside-debugging-1" class="slide level2">
+<h2>Aside: Debugging</h2>
+<p>The debugger in IntelliJ is actually a bit easier to use:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pua88-TEBlg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
 </section></section>
 <section>
 <section id="immutability" class="title-slide slide level1">
@@ -142,9 +159,9 @@
 <section id="our-gaussianinteger" class="slide level2">
 <h2>Our GaussianInteger</h2>
 <p>Was our implementation of GaussianInteger mutable or immutable? Consider the following code:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a>GaussianInteger gi = <span class="kw">new</span> <span class="fu">GaussianInteger</span>(<span class="dv">3</span>, <span class="dv">4</span>);</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="dt">int</span> something = SomeLibrary.<span class="fu">libraryMethod</span>(gi);</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(gi); <span class="co">// what will this output?</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a>GaussianInteger gi = <span class="kw">new</span> <span class="fu">GaussianInteger</span>(<span class="dv">3</span>, <span class="dv">4</span>);</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a><span class="dt">int</span> something = SomeLibrary.<span class="fu">libraryMethod</span>(gi);</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(gi); <span class="co">// what will this output?</span></span></code></pre></div>
 <p>Hope: it should output “3 + 4 i”. Will that always happen? (Even worse: what if SomeLIbrary.libraryMethod spawns a new thread, which runs in parallel…)</p>
 </section>
 <section id="section" class="slide level2">
@@ -176,23 +193,23 @@
 </section>
 <section id="changing-add-method" class="slide level2">
 <h2>Changing add method</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="kw">public</span> GaussianInteger <span class="fu">add</span>(GaussianInteger other) {</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>    GaussianInteger gi = <span class="kw">new</span> <span class="fu">GaussianInteger</span>(...); <span class="co">// fill this in</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>    <span class="kw">return</span> gi;</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="kw">public</span> GaussianInteger <span class="fu">add</span>(GaussianInteger other) {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>    GaussianInteger gi = <span class="kw">new</span> <span class="fu">GaussianInteger</span>(...); <span class="co">// fill this in</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>    <span class="kw">return</span> gi;</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>}</span></code></pre></div>
 </section>
 <section id="exercise-1" class="slide level2">
 <h2>Exercise</h2>
 <p>Re-design your GaussianInteger class to be immutable. Test it out with the following main method:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a>GaussianInteger one = <span class="kw">new</span> <span class="fu">GaussianInteger</span>(<span class="dv">1</span>, <span class="dv">0</span>);</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>GaussianInteger i = <span class="kw">new</span> <span class="fu">GaussianInteger</span>(<span class="dv">0</span>, <span class="dv">1</span>);</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(one); <span class="co">// should be 1 + 0i</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(i); <span class="co">// should be 0 + 1i</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(one.<span class="fu">add</span>(i)); <span class="co">// should be 1 + 1i</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(one); <span class="co">// should still be 1 + 0i</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(i.<span class="fu">multiply</span>(i)); <span class="co">// should be -1 + 0i</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(i); <span class="co">// should be 0 + 1i</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a>GaussianInteger one = <span class="kw">new</span> <span class="fu">GaussianInteger</span>(<span class="dv">1</span>, <span class="dv">0</span>);</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>GaussianInteger i = <span class="kw">new</span> <span class="fu">GaussianInteger</span>(<span class="dv">0</span>, <span class="dv">1</span>);</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(one); <span class="co">// should be 1 + 0i</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(i); <span class="co">// should be 0 + 1i</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(one.<span class="fu">add</span>(i)); <span class="co">// should be 1 + 1i</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(one); <span class="co">// should still be 1 + 0i</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(i.<span class="fu">multiply</span>(i)); <span class="co">// should be -1 + 0i</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(i); <span class="co">// should be 0 + 1i</span></span></code></pre></div>
 </section></section>
 <section>
 <section id="project-2" class="title-slide slide level1">
@@ -220,12 +237,12 @@
 <section id="test-it-out" class="slide level2">
 <h2>Test it out</h2>
 <p>As you implement the Library class, write code that tests it out:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a>Library l = <span class="kw">new</span> <span class="fu">Library</span>();</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a><span class="bu">Book</span> b = <span class="kw">new</span> <span class="bu">Book</span>(<span class="st">&quot;Donald Knuth&quot;</span>, <span class="st">&quot;The Art of Computer Programming&quot;</span>, <span class="dv">1968</span>);</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a><span class="bu">Book</span> b2 = <span class="kw">new</span> <span class="bu">Book</span>(<span class="st">&quot;Virginia Woolf&quot;</span>, <span class="st">&quot;To the Lighthouse&quot;</span>, <span class="dv">1927</span>); </span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>l.<span class="fu">add</span>(b);</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>l.<span class="fu">add</span>(b2);</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a>l.<span class="fu">listALlBooks</span>();</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a>Library l = <span class="kw">new</span> <span class="fu">Library</span>();</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a><span class="bu">Book</span> b = <span class="kw">new</span> <span class="bu">Book</span>(<span class="st">&quot;Donald Knuth&quot;</span>, <span class="st">&quot;The Art of Computer Programming&quot;</span>, <span class="dv">1968</span>);</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a><span class="bu">Book</span> b2 = <span class="kw">new</span> <span class="bu">Book</span>(<span class="st">&quot;Virginia Woolf&quot;</span>, <span class="st">&quot;To the Lighthouse&quot;</span>, <span class="dv">1927</span>); </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a>l.<span class="fu">add</span>(b);</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a>l.<span class="fu">add</span>(b2);</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a>l.<span class="fu">listALlBooks</span>();</span></code></pre></div>
 </section></section>
 <section>
 <section id="presentation" class="title-slide slide level1">
