@@ -23,3 +23,4 @@ layout: default
 * [Lesson 9: Volumes by slicing](lesson9.html)
 * [Lesson 10: Volumes (Shells), Arc Length](lesson10.html)
 * [Lesson 11: Arc Length, Differential Equations Intro](lesson11.html)
+* [Lesson 12: Differential Equations](lesson12.html)
