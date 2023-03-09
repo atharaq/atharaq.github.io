@@ -124,7 +124,6 @@ Now that we have $v(t)$:
 Next week:
 
 * Exam 2
-* Given Monday, due Friday
 * Cumulative (some topics from exam 1)
   * Explicitly and implicitly!
   * Meaning, you should know how to integrate by parts / partial fractions / etc, to help with applications problems.
