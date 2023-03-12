@@ -27,3 +27,4 @@ lang: en-US
 * [Lesson 10: Exam Recap / Induction / Number Theory](lesson10.html)
 * [Lesson 11: Some Number Theory](lesson11.html)
 * [Lesson 12: Modular Arithmetic](lesson12.html)
+* [Lesson 13: Intro to binary / hex / octal](lesson13.html)
