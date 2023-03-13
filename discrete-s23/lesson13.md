@@ -324,12 +324,12 @@ Historically, data was kept in powers of 2 amounts, which causes some confusion:
 Suppose I give you a number $n$, written in decimal. How many bits would it take to represent that number? Let's go through a couple of specific examples first:
 
 * The number 100 can be represented as 64 + 32 + 4, or $1100100_2$, which has 7 bits.
-* The nubmer 200 can be represented as 128 + 64 + 8, or $11001000_2$, which has 8 bits.
+* The number 200 can be represented as 128 + 64 + 8, or $11001000_2$, which has 8 bits.
 
 Let's try some bigger numbers:
 
 * The number 1000 can be represented as 512 + 256 + 128 + 64 + 8, or $1111001000_2$, which has 10 bits.
-* The number 2000 can be represented as 1024 + 512 + 256 + 128 + 16$, or $11110010000_2$, which has 11 bits.
+* The number 2000 can be represented as 1024 + 512 + 256 + 128 + 16, or $11110010000_2$, which has 11 bits.
 
 The pattern is that doubling a number increases its length, in binary, by only a single bit. This is the *inverse* of the pattern we have seen before: increasing the number of bits by one doubles the amount of numbers you can represent. In other words, if, with $n$ bits, we can represent $2^n$ numbers, then if we have a number $n$, we need **about** $\log_2(n)$ bits to represent it. (Notice that the rules of logarithms tell us that $\log_2(2n) = \log_2(2) + \log_2(n)$, which is $\log_2(n) + 1$.)
 
