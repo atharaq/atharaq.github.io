@@ -188,7 +188,7 @@
 <h2>Example</h2>
 <p>From the CopyFile exercise on replit:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="kw">try</span> {</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>    stream = CopyFile.<span class="fu">class</span>.<span class="fu">getResourceAsStream</span>(FILENAME);</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>    stream = Main.<span class="fu">class</span>.<span class="fu">getResourceAsStream</span>(FILENAME);</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>    out = <span class="kw">new</span> <span class="bu">FileOutputStream</span>(OUTPUT_FILE);</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>    ...</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>} <span class="kw">catch</span> (<span class="bu">IOException</span> e) {</span>
@@ -211,7 +211,7 @@
 <li>Needed to handle that!</li>
 <li>Thankfully, there is a better way: try-with-resources</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="kw">try</span> (<span class="bu">InputStream</span> stream = CopyFile.<span class="fu">class</span>.<span class="fu">getResourceAsStream</span>(FILENAME);</span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="kw">try</span> (<span class="bu">InputStream</span> stream = Main.<span class="fu">class</span>.<span class="fu">getResourceAsStream</span>(FILENAME);</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>     <span class="bu">FileOutputStream</span> out = <span class="kw">new</span> <span class="bu">FileOutputStream</span>(OUTPUT_FILE)) {</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>    <span class="kw">...  </span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>} <span class="kw">catch</span> (<span class="bu">IOException</span> e) {</span>
