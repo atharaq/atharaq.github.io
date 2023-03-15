@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>CS2 Lesson 15</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 15</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">L15 Polymorphism II</p>
+</section>
+
+<section id="project-2" class="title-slide slide level1">
+<h1>Project 2</h1>
+<!--
+12:30 - 12:40 Polymorphism
+12:40 - 1:10 Exercise
+1:10 - 1:15 Object class
+1:15 - 1:25 Vocab / implementing vs extending / etc
+1:25 - 1:55 Case study: averager
+1:55 - 2:10 Introduce an interface, how does it help.
+-->
+<ul>
+<li>Due Sunday</li>
+<li>Any last minute questions?</li>
+</ul>
+</section>
+
+<section>
+<section id="polymorphism" class="title-slide slide level1">
+<h1>Polymorphism</h1>
+<p>Last time:</p>
+<ul>
+<li>Difference between declared type (compile-time) and run-time type.</li>
+<li>Implemented an interface.</li>
+</ul>
+</section>
+<section id="dynamic-binding" class="slide level2">
+<h2>Dynamic binding</h2>
+<ul>
+<li>When a method is invoked, the “run-time” type’s method is invoked, not the “compile-time” type.</li>
+<li>However: we can only invoke those methods which are declared on the “compile-time” type!</li>
+<li>What methods can you see? <em>compile-time</em>.</li>
+<li>What code do you run? <em>run-time</em>.</li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">LinkedList</span>&lt;<span class="bu">String</span>&gt; list = <span class="kw">new</span> <span class="bu">LinkedList</span>&lt;<span class="bu">String</span>&gt;();</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>list.<span class="fu">addFirst</span>(<span class="st">&quot;hello&quot;</span>);</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>list.<span class="fu">addFirst</span>(<span class="st">&quot;ok&quot;</span>);</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="bu">List</span>&lt;<span class="bu">String</span>&gt; abstractList = <span class="kw">new</span> <span class="bu">LinkedList</span>&lt;<span class="bu">String</span>&gt;();</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>abstractList.<span class="fu">addFirst</span>(<span class="st">&quot;hello&quot;</span>); <span class="co">// doesn&#39;t work!</span></span></code></pre></div>
+<ul>
+<li><code>addFirst</code> is a method declared in the <code>LinkedList</code> class</li>
+<li>adds an element at the beginning of the list (creates a new node, links to the previous beginning)</li>
+<li>This is not something that all lists can do.</li>
+<li>How would this work on an ArrayList?</li>
+<li>It is specific to this <em>implementation</em>.</li>
+</ul>
+</section></section>
+<section>
+<section id="inheritance" class="title-slide slide level1">
+<h1>Inheritance</h1>
+<p><strong>Inheritance</strong>: to make one class inherit from another, we use the <code>extends</code> keyword.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">public</span> <span class="kw">class</span> Square <span class="kw">extends</span> <span class="bu">Rectangle</span> {</span></code></pre></div>
+<ul>
+<li><code>Square extends Rectangle</code> means every <code>Square</code> is a <code>Rectangle</code>.</li>
+<li>It <strong>does not</strong> mean that every Rectangle is a Square!</li>
+</ul>
+</section>
+<section id="compile-time-vs-run-time" class="slide level2">
+<h2>Compile-time vs run-time</h2>
+<ul>
+<li>Every Square object can invoke methods written inside the Rectangle class – but not vice versa!</li>
+<li>If the <em>compile-time</em> type of an object is Rectangle:
+<ul>
+<li>You can only invoke methods declared in the Rectangle class.</li>
+<li>But the actual method that is invoked is based upon the <em>run-time</em> class!
+<ul>
+<li>That is: the code that is run might be in <code>Square</code>!</li>
+</ul></li>
+</ul></li>
+<li>What methods can you see? <em>compile-time</em>.</li>
+<li>What code do you run? <em>run-time</em>.</li>
+</ul>
+</section>
+<section id="example-1" class="slide level2">
+<h2>Example</h2>
+<p><a href="https://replit.com/team/cs2-spring-23/Lesson-15">On Replit</a></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">public</span> <span class="kw">class</span> Square <span class="kw">extends</span> <span class="bu">Rectangle</span> {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    <span class="kw">private</span> <span class="dt">int</span> sideLength;</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>    <span class="kw">public</span> <span class="fu">Square</span>(<span class="dt">int</span> side) {</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>        <span class="kw">super</span>(side, side);</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Constructing a square with side length &quot;</span> + side);</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>        sideLength = side;</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>    }</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="constructors" class="slide level2">
+<h2>Constructors</h2>
+<ul>
+<li>The constructor for <code>Square</code> <strong>must</strong> invoke the constructor for its “superclass” (Rectangle).</li>
+<li>It does this by calling <code>super</code></li>
+<li>Notice that when we run <code>Main</code>, the print statement inside Rectangle happens twice:
+<ul>
+<li>Once for the Rectangle object we create</li>
+<li>Once for the Square object!</li>
+</ul></li>
+</ul>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<ol type="1">
+<li>In the <code>Rectangle</code> class, implement the <code>getArea</code> method, and then uncomment the <code>printAllAreas(rectangles);</code> line inside <code>Main</code>.</li>
+<li>Run the <code>Main</code>. How does this correctly compute the areas even for the Square object?</li>
+<li>Uncomment the <code>System.out.println</code> statement inside <code>main</code>. What error do you get? Why?</li>
+</ol>
+</section>
+<section id="exercise-part-2" class="slide level2">
+<h2>Exercise (Part 2)</h2>
+<ol start="4" type="1">
+<li>Uncomment the <code>printAllShapes(rectangles);</code> line inside <code>Main</code>. Run it once and take a look at the output. Then implement the <code>toString</code> method inside the <code>Square</code> class. When a Square with side length <span class="math inline">\(x\)</span> is output, it should print out “Square with side length <span class="math inline">\(x\)</span>”. Run the <code>Main</code> again and see if the output changes. (It should!) Why does it change?</li>
+</ol>
+</section></section>
+<section>
+<section id="object-class" class="title-slide slide level1">
+<h1><code>Object</code> class</h1>
+<p>Every class inherits from the <code>Object</code> class. This provides default implementations of a few commonly used methods:</p>
+<ul>
+<li>toString: used when we call <code>System.out.println</code></li>
+<li>equals: default implementation checks if two objects refer to the same location in memory</li>
+<li>getClass: returns the run-time class of an Object. (cannot be overridden)</li>
+</ul>
+</section>
+<section id="tostring" class="slide level2">
+<h2>toString</h2>
+<ul>
+<li>Under the hood: <code>println</code> is defined on all Objects</li>
+<li><code>println</code> calls a method (which calls another, which, eventually) which calls the toString method on the Object.</li>
+<li>If we <em>override</em> the toString method, it will use ours!</li>
+</ul>
+</section>
+<section id="class-hierarchies" class="slide level2">
+<h2>Class Hierarchies</h2>
+<ul>
+<li>Every class, except Object, has exactly one direct <strong>superclass</strong>.</li>
+<li>In our example:
+<ul>
+<li>The superclass of Square is Rectangle.</li>
+<li>The superclass of Rectangle is Object.</li>
+</ul></li>
+<li>Notice that in Rectangle’s constructor, we don’t have to explicitly invoke <code>super</code>.</li>
+<li><code>Object</code> has a default (no-argument) constructor, which is automatically invoked (unless otherwise specified).</li>
+</ul>
+</section></section>
+<section>
+<section id="vocabulary" class="title-slide slide level1">
+<h1>Vocabulary</h1>
+<ul>
+<li><strong>method overriding</strong></li>
+<li><strong>abstraction</strong></li>
+<li><strong>implementation</strong></li>
+<li><strong>polymorphism</strong></li>
+<li><strong>base class</strong> / <strong>parent class</strong></li>
+<li><strong>derived class</strong> / <strong>child class</strong></li>
+</ul>
+</section>
+<section id="implementing-vs-extending" class="slide level2">
+<h2>Implementing vs extending</h2>
+<p>Interfaces:</p>
+<ul>
+<li>A class can implement multiple interfaces.</li>
+<li>(Prior to Java 8) interfaces do not provide implementations, just declarations.</li>
+<li>Interfaces do not provide any instance variables.</li>
+<li>Interfaces describe a contract: they guarantee that implementing classes will have certain methods.</li>
+</ul>
+</section>
+<section id="implementing-vs-extending-1" class="slide level2">
+<h2>Implementing vs extending</h2>
+<p>Extending classes:</p>
+<ul>
+<li>A class can extend exactly one other class.</li>
+<li>Classes “inherit” all members (variables, methods) from their parent class – but can only see the <code>public</code> or <code>protected</code> members!</li>
+<li>Used when one type is a more specialized version of a another type.</li>
+</ul>
+</section>
+<section id="class-relationships" class="slide level2">
+<h2>Class relationships</h2>
+<p>Two main types of class relationships:</p>
+<ul>
+<li><strong>Inheritance</strong>, also known as an “is-a” relationship.</li>
+<li><strong>Composition</strong>, also known as a “has-a” relationship.</li>
+</ul>
+</section>
+<section id="inheritance-1" class="slide level2">
+<h2>Inheritance</h2>
+<ul>
+<li>If <code>Employee</code> and <code>Person</code> are two different classes, and <code>Employee</code> inherits from <code>Person</code>, we say that every <code>Employee</code> <strong>is a</strong> <code>Person</code>.</li>
+<li>Liskov’s Substitution Principle: If <span class="math inline">\(S\)</span> is a subtype of <span class="math inline">\(T\)</span>, then any object of type <span class="math inline">\(T\)</span> in a program can be replaced with an object of type <span class="math inline">\(S\)</span> without breaking the program. (Barbara Liskov, MIT)</li>
+</ul>
+</section>
+<section id="composition" class="slide level2">
+<h2>Composition</h2>
+<p><strong>Composition</strong> is referred to as a “has-a” relationship. That is: a <code>Driver</code> is <strong>not</strong> a <code>Vehicle</code>, but a <code>Driver</code> does <strong>have a</strong> <code>Vehicle</code>. Usually implemented by making the <code>Vehicle</code> be an instance variable of the <code>Driver</code> class.</p>
+</section></section>
+<section>
+<section id="case-study-averager" class="title-slide slide level1">
+<h1>Case Study: Averager</h1>
+<p>Look at the Averager class on Replit.</p>
+<ul>
+<li>What does the Averager class do?</li>
+<li>Is the Averager class designed in an “object-oriented” way?</li>
+<li>How many jobs is the <code>average</code> method responsible for?</li>
+</ul>
+</section>
+<section id="single-responsibility-principle" class="slide level2">
+<h2>Single Responsibility Principle</h2>
+<p>“There should never be more than one reason for a class to change.”"</p>
+<p><img width="40%" src="https://upload.wikimedia.org/wikipedia/commons/2/27/Robert_C._Martin_surrounded_by_computers.jpg" /><br />
+Robert Martin, aka “Uncle Bob”, author of <em>Agile Software Development: Principles, Patterns, and Practices</em> (2001)</p>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<p>Break up the Averager class into separate components.</p>
+<ul>
+<li>an <code>Input</code> class which has a method that returns a <code>List&lt;Integer&gt;</code></li>
+<li>the <code>Averager</code> class (which requires a <code>List&lt;Integer&gt;</code> as a constructor parameter), and returns the average in a method</li>
+<li>a Main component which instantiates an Input object, and Averager object, and outputs the average</li>
+</ul>
+</section></section>
+<section>
+<section id="more-abstraction" class="title-slide slide level1">
+<h1>More abstraction</h1>
+<p>Let’s focus on input for a little bit.</p>
+<ul>
+<li>In real-world systems, what are some of the ways in which “input” to a program is found?</li>
+<li>What is the purpose of the Input class? Specifically, what is it needed for?</li>
+</ul>
+<p>Often, our components should depend upon abstractions, rather than concrete implementations. How do we think about the Input component more abstractly?</p>
+</section>
+<section id="input-component" class="slide level2">
+<h2>Input component</h2>
+<ul>
+<li>The Input component <strong>provides a list of integers</strong>.</li>
+<li>This is an abstract goal: think of it as an “Integer List Provider”.</li>
+<li>Other ways that one can provide a list of integers?
+<ul>
+<li>Hard-code it (for testing)?</li>
+<li>Read from a file?</li>
+<li>Load from a database?</li>
+</ul></li>
+</ul>
+</section>
+<section id="refactoring" class="slide level2">
+<h2>Refactoring</h2>
+<p>Let’s introduce an <strong>abstraction</strong>, and <strong>refactor</strong> our code to use that abstraction.</p>
+<ul>
+<li>Create an IntegerListProvider interface.</li>
+<li>Refactor the Input class implement that interface.</li>
+<li>Make an Output component which depends on an IntegerListProvider interface</li>
+<li>Change the main method to use these different components.</li>
+</ul>
+</section>
+<section id="if-time" class="slide level2">
+<h2>If time</h2>
+<p>If there’s time, we can see how using an interface allows us to test out different components independently:</p>
+<ul>
+<li>Test out the Output and Averager components without needing input.</li>
+<li>Create an “dummy” class that implements the “IntegerListProvider” interface and just returns a hardcoded list for testing.</li>
+<li>Use that class to test out the Output and Averager components</li>
+</ul>
+</section></section>
+<section>
+<section id="best-practices" class="title-slide slide level1">
+<h1>Best Practices</h1>
+<p>Joshua Bloch, <em>Effective Java</em> (2018):</p>
+<p><strong>Item 18</strong>: “Favor composition over inheritance”.</p>
+<p>“Unlike method invocation, inheritance violates encapsulation (Snyder86). In other words, a subclass depends on the implementation details of its superclass for its proper function. The superclass’s implementation may change from release to release, and if it does, the subclass may break, even though its code has not been touched.”</p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p>(continued)</p>
+<p>“Inheritance is appropriate only in circumstances where the subclass really is a subtype of the superclass. In other words, a class B should extend a class A only if an ‘is-a’ relationship exists between the two classes. . . it is often the case that B should contain a private instance of A and expose a different API: A is not an essential part of B, merely a detail of its implementation.”</p>
+</section>
+<section id="paradigm-code-to-interfaces-not-implementations" class="slide level2">
+<h2>Paradigm: Code to interfaces, not implementations!</h2>
+<p>When you design classes/methods: don’t worry about the implementations of the parameters that are passed in. Just worry about what they can <em>do</em>.</p>
+</section>
+<section id="benefits-of-coding-to-interfaces" class="slide level2">
+<h2>Benefits of coding to interfaces</h2>
+<ol type="1">
+<li><strong>Testability</strong>. We can quickly implement a “dummy” class which does nothing, and pass that in as an implementation to test out our method.</li>
+<li><strong>Robustness</strong>. Our methods/classes do not rely upon implementation details, which may change in future versions of the code.</li>
+</ol>
+</section>
+<section id="paradigm" class="slide level2">
+<h2>Paradigm</h2>
+<p>When <strong>designing</strong> methods/classes: plan for the most <strong>general</strong> usage. When <strong>invoking</strong> methods/classes: provide the most specific implementation. (Be generous in what you accept, conservative in what you send out.)</p>
+</section></section>
+<section id="reading" class="title-slide slide level1">
+<h1>Reading</h1>
+<ul>
+<li>Read chapter 14 (extending classes).</li>
+<li>Finish project 2.</li>
+<li>Take Home Exam sent out this weekend, due after break (Friday, 3/31)</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
