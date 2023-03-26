@@ -28,3 +28,4 @@ lang: en-US
 * [Lesson 11: Some Number Theory](lesson11.html)
 * [Lesson 12: Modular Arithmetic](lesson12.html)
 * [Lesson 13: Intro to binary / hex / octal](lesson13.html)
+* [Lesson 14: Presentations, Problem Set review, Binary / hex / octal](lesson14.html)
