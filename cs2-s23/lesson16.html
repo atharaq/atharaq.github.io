@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>CS2 Lesson 16</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 16</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">L16 Polymorphism III</p>
+</section>
+
+<section id="announcements" class="title-slide slide level1">
+<h1>Announcements</h1>
+<ul>
+<li>Possible cancelations / last minute changes to classes over the next two weeks.</li>
+<li>For now, unless I say otherwise:</li>
+<li><strong>Thursday, April 6</strong> will be asynchronous. The lecture notes will be posted on Moodle.</li>
+<li><strong>Monday, April 10</strong> might be asynchronous or on Zoom. This will be announced later.</li>
+</ul>
+</section>
+
+<section id="exam-2" class="title-slide slide level1">
+<h1>Exam 2</h1>
+<p><strong>Take Home</strong> Exam 2 due Friday. Questions?</p>
+</section>
+
+<section>
+<section id="last-time" class="title-slide slide level1">
+<h1>Last Time</h1>
+<p>Recall the <strong>Averager</strong> program from last time:</p>
+<ul>
+<li>Input component gets input, returns a list of integers</li>
+<li>Averager class takes in a list of integers, returns their average.</li>
+<li>Main componenet instantiates both and outputs.</li>
+</ul>
+</section>
+<section id="more-abstraction" class="slide level2">
+<h2>More Abstraction</h2>
+<p>Let’s focus on input for a little bit.</p>
+<ul>
+<li>In real-world systems, what are some of the ways in which “input” to a program is found?</li>
+<li>What is the purpose of the Input class? Specifically, what is it needed for?</li>
+</ul>
+<p>Often, our components should depend upon abstractions, rather than concrete implementations. How do we think about the Input component more abstractly?</p>
+</section>
+<section id="input-component" class="slide level2">
+<h2>Input component</h2>
+<ul>
+<li>The Input component <strong>provides a list of integers</strong>.</li>
+<li>This is an abstract goal: think of it as an “Integer List Provider”.</li>
+<li>Other ways that one can provide a list of integers?
+<ul>
+<li>Hard-code it (for testing)?</li>
+<li>Read from a file?</li>
+<li>Load from a database?</li>
+</ul></li>
+</ul>
+</section>
+<section id="refactoring" class="slide level2">
+<h2>Refactoring</h2>
+<p>Let’s introduce an <strong>abstraction</strong>, and <strong>refactor</strong> our code to use that abstraction.</p>
+<ul>
+<li>Create an IntegerListProvider interface.</li>
+<li>Refactor the Input class implement that interface.</li>
+<li>Make an Output component which depends on an IntegerListProvider interface</li>
+<li>Change the main method to use these different components.</li>
+</ul>
+</section>
+<section id="if-time" class="slide level2">
+<h2>If time</h2>
+<p>If there’s time, we can see how using an interface allows us to test out different components independently:</p>
+<ul>
+<li>Test out the Output and Averager components without needing input.</li>
+<li>Create an “dummy” class that implements the “IntegerListProvider” interface and just returns a hardcoded list for testing.</li>
+<li>Use that class to test out the Output and Averager components</li>
+</ul>
+</section>
+<section id="paradigm-code-to-interfaces-not-implementations" class="slide level2">
+<h2>Paradigm: Code to interfaces, not implementations!</h2>
+<p>When you design classes/methods: don’t worry about the implementations of the parameters that are passed in. Just worry about what they can <em>do</em>.</p>
+</section>
+<section id="benefits-of-coding-to-interfaces" class="slide level2">
+<h2>Benefits of coding to interfaces</h2>
+<ol type="1">
+<li><strong>Testability</strong>. We can quickly implement a “dummy” class which does nothing, and pass that in as an implementation to test out our method.</li>
+<li><strong>Robustness</strong>. Our methods/classes do not rely upon implementation details, which may change in future versions of the code.</li>
+</ol>
+</section></section>
+<section>
+<section id="best-practices" class="title-slide slide level1">
+<h1>Best Practices</h1>
+<p>Recall:</p>
+<ul>
+<li><strong>inheritance</strong>: “is-a” relationship. One class <strong>extends</strong> another. Every instance of the subclass <strong>is</strong> an instance of the superclass.</li>
+<li><strong>composition</strong>: “has-a” relationship. One class <strong>uses</strong> an instance of another class.</li>
+</ul>
+</section>
+<section id="favor-composition" class="slide level2">
+<h2>Favor composition</h2>
+<p>Joshua Bloch, <em>Effective Java</em> (2018):</p>
+<p><strong>Item 18</strong>: “Favor composition over inheritance”.</p>
+<p>“Unlike method invocation, inheritance violates encapsulation (Snyder86). In other words, a subclass depends on the implementation details of its superclass for its proper function. The superclass’s implementation may change from release to release, and if it does, the subclass may break, even though its code has not been touched.”</p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p>(continued)</p>
+<p>“Inheritance is appropriate only in circumstances where the subclass really is a subtype of the superclass. In other words, a class B should extend a class A only if an ‘is-a’ relationship exists between the two classes. . . it is often the case that B should contain a private instance of A and expose a different API: A is not an essential part of B, merely a detail of its implementation.”</p>
+</section>
+<section id="paradigm" class="slide level2">
+<h2>Paradigm</h2>
+<p>When <strong>designing</strong> methods/classes: plan for the most <strong>general</strong> usage. When <strong>invoking</strong> methods/classes: provide the most specific implementation. (Be generous in what you accept, conservative in what you send out.)</p>
+</section></section>
+<section>
+<section id="coingame" class="title-slide slide level1">
+<h1>CoinGame</h1>
+<p>On <a href="https://replit.com/team/cs2-spring-23/Coin-Game">Replit</a>: simple coin flipping game for two players.</p>
+<ul>
+<li>Not object-oriented!</li>
+<li>Some changes may be hard!</li>
+</ul>
+</section>
+<section id="coingame-1" class="slide level2">
+<h2>CoinGame</h2>
+<p>Simple coin flipping game for two players. It works as follows:</p>
+<ol type="1">
+<li>First, a coin is flipped 9 times.</li>
+<li>A human player is then prompted to guess the number of heads.</li>
+<li>A computer player guesses a random number of heads (from 0 - 9).</li>
+<li>A winner is declared, based on whoever is closer to the real number.</li>
+</ol>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<ol type="1">
+<li>Change the game so that the user can enter in the number of times we will flip the coin.</li>
+<li>Change the game so that the user can choose who guesses first (the human or the computer player).</li>
+</ol>
+<p>(Surprisingly, one of these changes is much harder than the other.)</p>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<ol start="3" type="1">
+<li>Come up with another strategy for the computer player. Change the game so that the user can select between the two strategies (Random / other strategy).</li>
+<li>Change the game to allow for multiple ways to play: Human vs Human, Computer vs Computer, etc. Allowing all possible strategies for computer players as well.</li>
+</ol>
+<p>You must complete these changes for <strong>homework</strong>. It will be due on <strong>Monday</strong> 4/3 at 11:59 PM.</p>
+</section></section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Exam 2 due <strong>Friday, March 31</strong>.</li>
+<li>CoinGame homework due <strong>Monday, April 3</strong>.</li>
+<li>Project 3 assigned on Thursday, due <strong>Wednesday, April 19</strong>.</li>
+<li>Description will be up on replit soon, start as soon as you can.</li>
+<li>Presentation 2 (online): likely after Project 3 is due.</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
