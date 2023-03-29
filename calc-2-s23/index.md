@@ -26,3 +26,4 @@ layout: default
 * [Lesson 12: Differential Equations](lesson12.html)
 * [Lesson 13: Linear First-order Differential Equations](lesson13.html)
 * [Lesson 14: Parametric Equations (Intro)](lesson14.html)
+* [Lesson 15: Areas and Arc Lengths of Parametric Curves](lesson15.html)
