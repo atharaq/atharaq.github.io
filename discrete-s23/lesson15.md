@@ -90,14 +90,14 @@ $$
 
 ## Connection between limits and Big Oh?
 
-**Theorem**: If $\lim\limits_{n \rightarrow \infty} \|\frac{f(n)}{g(n)}\| = L < \infty$, then $f(n) = O(g(n))$.
+**Theorem**: If $\lim\limits_{n \rightarrow \infty} \\|\frac{f(n)}{g(n)}\\| = L < \infty$, then $f(n) = O(g(n))$.
 
 What does this limit mean?
 
 $$\forall \varepsilon > 0 \exists N \forall n \geq N  ( L - \varepsilon < |\dfrac{f(n)}{g(n)}| < L + \varepsilon)$$
 
 * Let $\varepsilon = 1$.
-* Then $\exists N \forall n \geq N |f(n)| \leq (L + 1)g(n)$.
+* Then $\exists N \forall n \geq N \\|f(n)\\| \leq (L + 1)g(n)$.
 * So $f(n) = O(g(n))$ by definition ($k = L + 1$).
 
 ## Converse?
@@ -113,7 +113,7 @@ It turns out that the actual converse uses "lim sup", not limits.
 * $n^k = O(n^m)$ whenever $k \leq m$
 * $\log(n) = O(n^k)$ for any **positive real number** $k$
 * $a_0 + a_1 n + \ldots + a_k n^k = O(n^k)$.
-  * Hint: $a_0 + a_1 n + \ldots + a_k n^k \leq \|a_0\| n^k + \|a_1\| n^k + \ldots + \|a_k\| n^k$ for all $n \geq 0$.
+  * Hint: $a_0 + a_1 n + \ldots + a_k n^k \leq \\|a_0\\| n^k + \\|a_1\\| n^k + \ldots + \\|a_k\\| n^k$ for all $n \geq 0$.
 * $n^k = O(2^n)$ (for any positive real $k$)
 * $2^n = O(n!)$
 * $n! = O(n^n)$
@@ -121,7 +121,7 @@ It turns out that the actual converse uses "lim sup", not limits.
 
 ## "Big Omega" and "Big Theta"
 
-* $f = \Omega(g)$ if there are $N \in \mathbb{N}$ and a positive real $k$ such that for all $n \geq N$, $f(n) \geq k\|g(n)\|$.
+* $f = \Omega(g)$ if there are $N \in \mathbb{N}$ and a positive real $k$ such that for all $n \geq N$, $f(n) \geq k\\|g(n)\\|$.
 * $f = \Theta(g)$ if $f = O(g)$ and $f = \Omega(g)$
 
 $f = \Omega(g)$ if and only if $g = O(f)$. So roughly: $f = \Theta(g)$ means $f = O(g) and $g = O(f)$.
