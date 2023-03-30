@@ -57,7 +57,7 @@ How can we make the statement that exponential functions grow "ridiculously fast
 
 ## Big Oh
 
-**Definition**: Let $f : \mathbb{N} \to \mathbb{R}$ and $g : \mathbb{N} \to \mathbb{R}$. We say $f \in O(g)$, or, abusing notation, $f(x) = O(g(x))$, if there is $N \in \mathbb{N}$ and a positive real number $k$ such that for all $n \geq N$, $$\|f(n)\| \leq k \cdot \|g(n)\|$$
+**Definition**: Let $f : \mathbb{N} \to \mathbb{R}$ and $g : \mathbb{N} \to \mathbb{R}$. We say $f \in O(g)$, or, abusing notation, $f(x) = O(g(x))$, if there is $N \in \mathbb{N}$ and a positive real number $k$ such that for all $n \geq N$, $$\\|f(n)\\| \leq k \cdot \\|g(n)\\|$$
 
 ## Examples
 
