@@ -133,4 +133,4 @@ So $a = -\frac{1}{\sqrt{5}}$ and $b = \frac{1}{\sqrt{5}}$. Therefore our solutio
 # Upcoming
 
 * Take-home exam 2 will be posted soon.
-* Next set of presentations will be April 17 - 24. Perhaps just two days
+* Next set of presentations will be April 17 - 24. Perhaps just two days?
