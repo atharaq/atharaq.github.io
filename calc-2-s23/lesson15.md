@@ -19,7 +19,7 @@
 
 Continuing on with our study of parametric curves, we can compute areas under such curves. Consider a curve given by parametric equations $x(t)$ and $y(t)$. Suppose we want to find the area under the curve from when $t = a$ to $t = b$. As we did when we computed areas under curves defined by functions $y = f(x)$, we can divide the interval up into small sub-intervals, and approximate the area by rectangles:
 
-<img src="https://openstax.org/resources/a2db09935d39d947568703f0f8362a6abade9191" alt="Figure 7.22 from the textbook, approximating the area under a parametrically defined curve" />
+<img src="https://openstax.org/apps/archive/20230220.155442/resources/a2db09935d39d947568703f0f8362a6abade9191" alt="Figure 7.22 from the textbook, approximating the area under a parametrically defined curve" />
 
 The area of one such rectangle is approximated as $y(t)(x(t_{i+1}) - x(t_i))$, or, more simply, $y \Delta x$. So the area under the entire interval would be approximated by the sum
 
