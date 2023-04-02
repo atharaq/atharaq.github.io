@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>CS2 Lesson 18</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 18</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Analysis of Algorithms</p>
+</section>
+
+<section>
+<section id="project-3" class="title-slide slide level1">
+<h1>Project 3</h1>
+<!--
+12:30: Project 3
+1:00: Recursive Prints
+1:15: Algorithms
+1:30: Analysis
+1:45: String concat
+-->
+<p>Bluffing Coins is a game I made up (based on a game called “Liar’s Dice”). Each player has five coins. <em>You cannot see your opponent’s coins!</em></p>
+</section>
+<section id="gameplay" class="slide level2">
+<h2>Gameplay</h2>
+<ol type="1">
+<li>Player 1 “bids”: they state a face value (heads / tails) and a guess for the minimum number of coins that they believe show that side.</li>
+<li>Player 2 either raises, or calls "LIAR! (challenges). If they raise, they guess a higher number (for the same side).</li>
+<li>Play continues until one player challenges. If a player challenges, the previous player (“bidder”) wins if the number of coins that shows the side (heads/tails) in question is at least as high as the current bid. If not, the “challenger” wins.</li>
+</ol>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<ul>
+<li>Player 1’s coins: [H, H, T, T, H]</li>
+<li>Player 2’s coins: ???</li>
+<li>Player 1 bids: face value H, minimum = 3.</li>
+<li>Player 2 raises: minimum = 4.</li>
+<li>Player 1 calls LIAR</li>
+<li>Player 1 reveals dice: [H, H, T, T, H]</li>
+<li>Player 2 reveals: [T, T, H, T, H]</li>
+<li>Player 2 wins! There are 5 HEADS on the table!</li>
+</ul>
+</section>
+<section id="design" class="slide level2">
+<h2>Design</h2>
+<p>Consider a scenario in which we want to allow for human players, a “smart” computer player, and a “random” computer player. How would we design this project?</p>
+</section>
+<section id="getting-started" class="slide level2">
+<h2>Getting Started</h2>
+<p>Implement the <code>Coin</code> class. You may need to use the <code>Random</code> class (<code>import java.util.Random;</code>). Here is a quick example:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">Random</span> r = <span class="kw">new</span> <span class="bu">Random</span>(); <span class="co">// should be an instance variable.</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="dt">boolean</span> heads = r.<span class="fu">nextBoolean</span>(); <span class="co">// returns T / F randomly.</span></span></code></pre></div>
+</section>
+<section id="strategies" class="slide level2">
+<h2>Strategies</h2>
+<p>Human Player:</p>
+<ul>
+<li>Ask for input: head or tails? (Can use 1 / 2 for Heads / Tails if you want).</li>
+<li>Ask for input: how many coins?</li>
+<li>Ask for input: raise or call liar?</li>
+<li>If they raise, ask for input: how much do they want to raise to?</li>
+</ul>
+</section>
+<section id="strategies-1" class="slide level2">
+<h2>Strategies</h2>
+<p>Random Player:</p>
+<ul>
+<li>Randomly choose between heads or tails (50-50 odds).</li>
+<li>Randomly choose between 0 and 10 (inclusive) for the number of coins.</li>
+<li>Randomly choose between raising and calling liar (50-50 odds).</li>
+<li>If they raise, increase the bid by <strong>exactly one</strong>.</li>
+</ul>
+</section>
+<section id="strategies-2" class="slide level2">
+<h2>Strategies</h2>
+<p>Smart player?</p>
+<ul>
+<li>Come up with another strategy that is smarter than the random player.</li>
+<li>At least: Random player never looks at their own coins!</li>
+</ul>
+</section>
+<section id="grading" class="slide level2">
+<h2>Grading</h2>
+<ul>
+<li>25%: <strong>compiles</strong></li>
+<li>25%: <strong>functionality</strong>
+<ul>
+<li>3 player types (Human, Random, Smart)</li>
+<li>All possible matchups: Computer (either) vs Computer (either), Computer (either) vs Human, Human vs Computer (either)</li>
+<li>Correctly determine winner in all cases</li>
+</ul></li>
+</ul>
+</section>
+<section id="grading-continued" class="slide level2">
+<h2>Grading (continued)</h2>
+<ul>
+<li>30%: <strong>object-oriented design / style</strong>
+<ul>
+<li>Code is “lightly coupled”, independent testable components</li>
+<li>Limit static methods as much as possible</li>
+<li>Normal style rules apply: indentation, good variable names, comments, etc.</li>
+</ul></li>
+</ul>
+</section>
+<section id="grading-continued-1" class="slide level2">
+<h2>Grading (continued)</h2>
+<ul>
+<li>30%: <strong>written explanation</strong>
+<ul>
+<li>Explain how the various components are implemented</li>
+<li>If you use inheritance, explain why; if you use interfaces, explain why. etc.</li>
+<li>Use object-oriented vocabulary (polymorphism, run-time types vs compile-time types, interfaces, implementations, etc).</li>
+<li>Explain how your smart strategy works. How well does it do?</li>
+</ul></li>
+</ul>
+</section>
+<section id="grading-continued-2" class="slide level2">
+<h2>Grading (continued)</h2>
+<ul>
+<li>40%: <strong>Demo</strong>:
+<ul>
+<li>Explain how you designed the project (object-oriented design).</li>
+<li>Explain the smarter strategy.</li>
+<li>Show the code that does all of that.</li>
+<li>Run through a demo of the game.</li>
+</ul></li>
+</ul>
+</section>
+<section id="time-management" class="slide level2">
+<h2>Time Management</h2>
+<ul>
+<li>Probably the most challenging project</li>
+<li>Get started now.</li>
+<li>What can you do now? (Coin class, Player interface, RandomPlayer, HumanPlayer)</li>
+<li>Design the main game with just these players. (Object-oriented so it’s easy to extend!)</li>
+</ul>
+<p>Use your time wisely!</p>
+<p>Due <strong>Sunday, April 23</strong>. 20 days.</p>
+</section></section>
+<section>
+<section id="recursion" class="title-slide slide level1">
+<h1>Recursion</h1>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">printBeforeRecursion</span>(<span class="bu">ArrayList</span>&lt;<span class="bu">String</span>&gt; list, <span class="dt">int</span> i) {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>  <span class="kw">if</span> (i == list.<span class="fu">size</span>()) {</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>      <span class="kw">return</span>;</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>  }</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(list.<span class="fu">get</span>(i));</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>  <span class="fu">printBeforeRecursion</span>(list, i+<span class="dv">1</span>);</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>}</span></code></pre></div>
+<ul>
+<li>list = [a, b, c, d, e], i = 0?</li>
+<li>What do you think it will output?</li>
+<li>Make a <strong>stack diagram</strong>.</li>
+<li>What does it output?</li>
+</ul>
+</section>
+<section id="recursion-1" class="slide level2">
+<h2>Recursion</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">printAfterRecursion</span>(<span class="bu">ArrayList</span>&lt;<span class="bu">String</span>&gt; list, <span class="dt">int</span> i) {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>  <span class="kw">if</span> (i == list.<span class="fu">size</span>()) {</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>      <span class="kw">return</span>;</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>  }</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>  <span class="fu">printAfterRecursion</span>(list, i+<span class="dv">1</span>);</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(list.<span class="fu">get</span>(i));</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>}</span></code></pre></div>
+<ul>
+<li>list = [a, b, c, d, e], i = 0?</li>
+<li>What do you think it will output?</li>
+<li>Make a <strong>stack diagram</strong>.</li>
+<li>What does it output?</li>
+</ul>
+</section></section>
+<section>
+<section id="algorithms" class="title-slide slide level1">
+<h1>Algorithms</h1>
+<ul>
+<li><strong>algorithm</strong>: a precise list of instructions for solving a general problem.</li>
+<li>Many ways to describe algorithms: English, Java/Python/C++ code, <em>pseudocode</em>.</li>
+</ul>
+</section>
+<section id="describing-algorithms" class="slide level2">
+<h2>Describing algorithms</h2>
+<p>For example, the algorithm which finds the maximum number in a list of numbers:</p>
+<ul>
+<li>English: “Set the max equal to the first number. For each of the rest of the numbers in the list, compare it to the previous max. If the number is greater than the max, update the max to that number.”</li>
+<li>Java/Python/C++ code that implements that algorithm.</li>
+<li>“Pseudocode”: somewhere in-between natural language and a high level programming language.</li>
+</ul>
+</section>
+<section id="sequential-search-algorithm" class="slide level2">
+<h2>Sequential Search Algorithm</h2>
+<p><strong>Problem</strong>: Given a list <span class="math inline">\(l\)</span> and an object we are looking for <span class="math inline">\(o\)</span>, find it in the list. Return <span class="math inline">\(i\)</span> if <span class="math inline">\(l_i == o\)</span>, and return <span class="math inline">\(-1\)</span> if <span class="math inline">\(o\)</span> is not in the list.</p>
+<p>Try to do the following:</p>
+<ol type="1">
+<li>On paper, describe an algorithm in English to solve this problem.</li>
+<li>On paper, describe this same algorithm in pseudocode.</li>
+</ol>
+</section>
+<section id="pseudocode" class="slide level2">
+<h2>Pseudocode</h2>
+<pre><code>procedure find(list l, object o):
+    for i = 0 to l.size()
+        if l[i] = o
+            return i
+    return -1</code></pre>
+</section>
+<section id="syntax" class="slide level2">
+<h2>Syntax</h2>
+<ul>
+<li>No generally accepted syntax for pseudocode.</li>
+<li>Not a real langauge / no compiler.</li>
+<li>Just describe the idea of the algorithm precisely.</li>
+</ul>
+<ol type="1">
+<li>Variables and assignments</li>
+<li>Comparisons and if-else statements</li>
+<li>For and while loops</li>
+<li>Functions / subroutines</li>
+<li>Arrays and other data structures (like lists)</li>
+</ol>
+<p>Don’t worry so much about syntax rules like semicolons or { / }. These are specific to the Java language.</p>
+</section></section>
+<section>
+<section id="analysis-of-algorithms" class="title-slide slide level1">
+<h1>Analysis of Algorithms</h1>
+<p><strong>Question</strong>: What’s the difference between an <strong>algorithm</strong> and its <strong>implementation</strong> in code?</p>
+</section>
+<section id="analysis-of-algoirthms" class="slide level2">
+<h2>Analysis of Algoirthms</h2>
+<ul>
+<li>
+We analyze algorithms without worrying about hardware or language specific details.
+</li>
+<li class="fragment">
+Focus on the number of steps it takes for an algorithm to run on any input of a specified size.
+</li>
+<li class="fragment">
+Ideally, try to describe this using a mathematical function.
+</li>
+</ul>
+</section>
+<section id="running-time" class="slide level2">
+<h2>Running Time</h2>
+<p>The running time of an algorithm is the function <span class="math inline">\(t(n)\)</span> which, for each <span class="math inline">\(n\)</span>, gives the maximum number of steps required for the algorithm to run on any input of size <span class="math inline">\(n\)</span>.</p>
+<p>Recall the “find” algorithm:</p>
+<pre><code>procedure find(list l, object o):
+    for i = 0 to l.size()
+        if l[i] == o
+            return i
+    return -1</code></pre>
+</section>
+<section id="comparing-functions" class="slide level2">
+<h2>Comparing Functions</h2>
+<p>Worst / averge case of <code>find</code>:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Size of list</th>
+<th style="text-align: right;">Worst Case</th>
+<th style="text-align: right;">Average Case</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">100</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Often: don’t care exactly about <span class="math inline">\(t(n)\)</span>, just what it’s <em>proportional</em> to.</li>
+<li>Both worst and average case: proportional to <span class="math inline">\(n\)</span> (linear).</li>
+</ul>
+</section></section>
+<section>
+<section id="string-concatenation" class="title-slide slide level1">
+<h1>String concatenation</h1>
+<p>Determine what the following algorithm does:</p>
+<pre><code>procedure create(int n)
+    String s = &quot;&quot;
+    for i = 1 to n
+        s += &quot;1&quot;
+    return s</code></pre>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Recall: how does the += operator on <strong>immutable</strong> Strings? Fill in the following table for the number of steps for the <code>create</code> method:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;"><span class="math inline">\(n\)</span></th>
+<th style="text-align: right;">Number of steps</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;"> </td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="analysis" class="slide level2">
+<h2>Analysis</h2>
+<ul>
+<li>The <span class="math inline">\(n\)</span>-fold concatenation ends up taking <span class="math inline">\(1 + 2 + \ldots + n\)</span> steps to create a string of <span class="math inline">\(n\)</span> 1’s.</li>
+<li>(<strong>Tip</strong>: use a <code>StringBuilder</code> instead of a String to do things like this).</li>
+<li>Exercise: find a formula for <span class="math inline">\(1 + 2 + 3 + \ldots + n\)</span>.</li>
+</ul>
+</section>
+<section id="big-oh" class="slide level2">
+<h2>Big Oh</h2>
+<ul>
+<li><span class="math inline">\(1 + 2 + \ldots + n = n(n+1) / 2 = \frac{n^2 + n}{2}\)</span>.</li>
+<li>For large <span class="math inline">\(n\)</span>, roughly proportional to <span class="math inline">\(n^2\)</span>: the <span class="math inline">\(n^2\)</span> term dominates.</li>
+<li>Formalize: “Big Oh” notation.</li>
+<li>This algorithm takes <span class="math inline">\(O(n^2)\)</span> steps.</li>
+</ul>
+</section></section>
+<section>
+<section id="arraylist-add" class="title-slide slide level1">
+<h1>ArrayList add</h1>
+<ul>
+<li><code>ArrayList</code> class: dynamic list implementation based on an array</li>
+<li>Arrays, in Java, have fixed sizes.</li>
+<li>Under the hood: when it runs out of space, ArrayList creates new, larger array, copies the old elements over, and then adds the new element at the correct position.</li>
+</ul>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<p><strong>Exercise</strong>: write pseudocode for the following two versions of the “add” algorithm.</p>
+<ol type="1">
+<li>When you create a new array, make it be exactly <span class="math inline">\(1\)</span> element larger.</li>
+<li>When you create a new array, make it be twice the size as the original array.</li>
+</ol>
+</section>
+<section id="analysis-1" class="slide level2">
+<h2>Analysis</h2>
+<ul>
+<li>Analyze the two “add” algorithms. If we start with an ArrayList of size <span class="math inline">\(10\)</span>, how many steps are taken in each algorithm when we add <span class="math inline">\(10\)</span> new elements? What if we add <span class="math inline">\(100\)</span> new elements?</li>
+<li>How many steps does it take to add in <span class="math inline">\(N\)</span> new elements in each of the algorithms? (In terms of “Big Oh”)</li>
+<li>Based on the above, on average, how many steps does it take to add in 1 new element in each of the algorithms (in terms of “Big Oh”)?</li>
+</ul>
+</section></section>
+<section id="reminder" class="title-slide slide level1">
+<h1>Reminder</h1>
+<ul>
+<li>CoinGame due tonight.</li>
+<li>Thursday’s class is asynchronous! No meeting!
+<ul>
+<li>There will be homework to respond to on Moodle.</li>
+</ul></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
