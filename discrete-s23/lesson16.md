@@ -1,8 +1,10 @@
-# Discrete Mathematics Lesson 15: Big Oh, Big Theta, Recurrence Relations
+# Discrete Mathematics Lesson 16: Big Oh, Big Theta, Recurrence Relations
 {:.no_toc}
 
 1. Table of Contents
 {:toc}
+
+Before starting: review the notes from last time / what we skipped on [Big Oh and Big Theta](lesson15.html#big-oh--big-theta) up until the end of that lesson. Then continue below:
 
 # Recurrence Relations
 
