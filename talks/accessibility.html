@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Athar Abdul-Quader and Knarik Tunyan">
+  <title>Accessible Mathematics</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Accessible Mathematics</h1>
+  <p class="author">Athar Abdul-Quader and Knarik Tunyan</p>
+  <p class="date">August 2020</p>
+</section>
+
+<section id="sources" class="title-slide slide level1">
+<h1>Sources?</h1>
+<ul>
+<li>Accessibility training: “Keep original sources” (Word, PPT, etc).</li>
+<li>Problem: original sources usually in LaTeX</li>
+<li>LaTeX does not compile to accessible PDFs: it doesn’t tag the PDFs, and there are not “text to speech” rules for the mathematics expressions.</li>
+<li>Word equations / PPT equations?</li>
+</ul>
+</section>
+
+<section id="mathml" class="title-slide slide level1">
+<h1>MathML?</h1>
+<ul>
+<li>Never used MathML</li>
+<li>Never met a mathematician who ever used MathML</li>
+<li>Who has time?</li>
+</ul>
+</section>
+
+<section id="this-talk" class="title-slide slide level1">
+<h1>This talk</h1>
+<ul>
+<li>I will <strong>not</strong> be telling you what works for everyone.</li>
+<li>I <strong>will</strong> tell you what worked for me.</li>
+<li>If you use Word, PPT, etc, feel free to continue using them!
+<ul>
+<li>Today: converting Word/PPT equations to accessible HTML</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="pdf-bad-html-good" class="title-slide slide level1">
+<h1>PDF bad, HTML Good</h1>
+<ul>
+<li>HTML content is structured.</li>
+<li>Gives hints to screen readers, Braille devices, etc.</li>
+<li>ChromeVox extension: test it out.</li>
+<li>For Math: use MathJax!
+<ul>
+<li>Type in LaTeX, converts automatically to multiple accessible formats.</li>
+</ul></li>
+</ul>
+</section>
+
+<section>
+<section id="mathjax-examples" class="title-slide slide level1">
+<h1>MathJax Examples</h1>
+<p>Basic examples:</p>
+<ul>
+<li><span class="math inline">\(x^2\)</span></li>
+<li><span class="math inline">\(\sqrt{x}\)</span></li>
+<li>Mathematics can be in-line: if <span class="math inline">\(x &lt; -3\)</span>, then <span class="math inline">\(x^2 &gt; 9\)</span>.</li>
+<li>Mathematics can be displayed on its own: <span class="math display">\[\sum_{n=0}^{\infty} \frac{2^n}{n!}\]</span>.</li>
+</ul>
+</section>
+<section id="continuity" class="slide level2">
+<h2>Continuity</h2>
+<p>“We say a function <span class="math inline">\(f : \mathbb{R} \to \mathbb{R}\)</span> is continuous at <span class="math inline">\(x = a\)</span> if, for all <span class="math inline">\(\epsilon &gt; 0\)</span>, there is <span class="math inline">\(\delta &gt; 0\)</span> such that for any <span class="math inline">\(x\)</span>, <span class="math display">\[|x - a| &lt; \delta \implies |f(x) - f(a)| &lt; \epsilon\]</span>.”</p>
+</section></section>
+<section id="writing-html" class="title-slide slide level1">
+<h1>Writing HTML?</h1>
+<ul>
+<li>Secret: I didn’t write <em>any</em> HTML for this talk (or any of my notes / slides)</li>
+<li>Workflow:
+<ol type="1">
+<li>Write Markdown (<a href="https://atom.io/">Atom</a> text editor)</li>
+<li>Include LaTeX in the document wherever I need mathematical symbols.</li>
+<li>Convert to HTML using <a href="https://pandoc.org/index.html">pandoc</a>.</li>
+</ol></li>
+</ul>
+</section>
+
+<section id="pandoc" class="title-slide slide level1">
+<h1>Pandoc?</h1>
+<p>Pandoc converts between many different formats!</p>
+<ul>
+<li>HTML</li>
+<li>LaTeX</li>
+<li>Markdown</li>
+<li>docx</li>
+<li>pptx</li>
+<li>etc etc etc</li>
+</ul>
+<p><a href="https://pandoc.org/index.html">Full list on pandoc’s website.</a></p>
+</section>
+
+<section id="using-pandoc" class="title-slide slide level1">
+<h1>Using pandoc</h1>
+<ul>
+<li>Run on the <strong>command line</strong> (Mac Terminal / Windows Powershell)</li>
+<li>For “lecture notes”:</li>
+</ul>
+<pre><code>pandoc --mathjax -s -o accessibility.html accessibility.md</code></pre>
+<p>Example: <a href="lecture_notes_set0.html">Discrete Math Lecture Notes</a>.</p>
+<ul>
+<li>For fancy slides:</li>
+</ul>
+<pre><code>pandoc --mathjax -t revealjs -s -o accessibility.html accessibility.md</code></pre>
+</section>
+
+<section id="latex---html" class="title-slide slide level1">
+<h1>LaTeX -&gt; HTML</h1>
+<p>If you have lecture notes in LaTeX:</p>
+<pre><code>pandoc -s --mathjax -o output.html notes.tex</code></pre>
+<p>Be warned:</p>
+<ul>
+<li>Some environments not supported (theorem, proof environments)</li>
+<li>Custom packages might not be supported.</li>
+<li>Best for bare-bones notes, with just text / math.</li>
+</ul>
+</section>
+
+<section id="ams-webinar" class="title-slide slide level1">
+<h1>AMS Webinar</h1>
+<p><a href="https://ams.zoom.us/rec/play/uZQkdOqu_Do3HNLAuQSDBvZ7W9S_J6-shCYe-fBbnhu1BSFSYwKkZrJBN-CSBM9mU8hJDm0nSiy8K25a?startTime=1594663084000&amp;_x_zm_rtaid=Fdls5bYfRSGCKoDfwXuHig.1595533121371.3565c1a8f399de0e8a0ced83892aa541&amp;_x_zm_rhtaid=516">Webinar Video</a></p>
+<p>Highlights:</p>
+<ul>
+<li>More in-depth accessibility features of MathJax</li>
+<li>Mentioned EquatIO, Word / Google Docs equation editors</li>
+<li>“MathType is geared … toward visual representation … not towards accessibility.”</li>
+<li>Discussion of captioning (no good solutions :( )</li>
+</ul>
+</section>
+
+<section id="graphs-images" class="title-slide slide level1">
+<h1>Graphs / Images?</h1>
+<ul>
+<li>No clear standard solution.</li>
+<li>Seems like SVG + alt-text is the best we can do?</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
