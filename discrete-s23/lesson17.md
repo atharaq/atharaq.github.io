@@ -58,7 +58,7 @@ Two element relations:
 
 ## Rock, Paper, Scissors
 
-Let $X = \{$ rock, paper, scissors $\}$. Let $x \mathrel{R} y$ mean "$x$ beats $y$ in a game of rock/paper/scissors". Describe $R$ completely:
+Let $X = \\{ $ rock, paper, scissors $ \\} $. Let $x \mathrel{R} y$ mean "$x$ beats $y$ in a game of rock/paper/scissors". Describe $R$ completely:
 
 <details>
 <summary>Solution</summary>
@@ -66,6 +66,7 @@ Let $X = \{$ rock, paper, scissors $\}$. Let $x \mathrel{R} y$ mean "$x$ beats $
 <li>rock beats scissors</li>
 <li>scissors beats paper</li>
 <li>paper beats rock</li>
+<li>So the set is: $\{$ (rock, scissors), (scissors, paper), (paper, rock) $\}$ and that's it.
 </ul>
 </details>
 
@@ -104,7 +105,7 @@ Are the following relations transitive: $\forall x \forall y \forall z (x \mathr
 * $X = \mathbb{Z}$, $R$ is: $x \leq y$.
 * $X = \mathbb{Z}$, $R$ is: $x \mid y$
 * $X = \{$ rock, paper, scissors $\}$, $R$ is "$x$ beats $y$".
-* $X$ is the collection of all finite subsets of $\mathbb{N}$, $R$ is "$|x| = |y|$".
+* $X$ is the collection of all finite subsets of $\mathbb{N}$, $R$ is "$\mid x \mid = \mid y \mid".
 
 # Equivalence Relations
 
@@ -122,7 +123,7 @@ The idea of an equivalence relation generalizes the following notions:
 
 * $x = y$
 * $x \equiv y$ (mod $n$) (Exam 2 Q2)
-* Cardinality: $|A| = |B|$
+* Cardinality: $\mid A \mid = \mid B \mid$
 * Any notion of "sameness" (congruent shapes, similar triangles, etc)
 
 Congruence modulo 3 is an equivalence relation:
@@ -134,7 +135,7 @@ Congruence modulo 3 is an equivalence relation:
 * Generalizing the notion of "congruence classes".
 * Let $X$ be a set, $\sim$ an equivalence relation.
 * Let $x \in X$. Then $[x]_{\sim} = \{ y \in X : x \sim y \}$ is the **equivalence class of $x$**.
-* The **quotient** of $X$ by ${\sim}$ is the set $X / {\sim} = \{ [x]_{\sim} : x \in X \}$.
+* The **quotient** of $X$ by ${\sim}$ is the set $X / {\sim} := \\{ [x]_{\sim} : x \in X \\}$.
 * $x$ is called a **representative** of its equivalence class $[x]_{\sim}$.
   * One equivalence class can have many representatives.
 
@@ -147,7 +148,7 @@ Congruence modulo 3 is an equivalence relation:
   * $x \equiv 0$ (mod 10) if its last digit is a 0.
   * $x \equiv 1$ (mod 10) if its last digit is a 1.
   * etc.
-  * $X / {\sim} = \{ [0]_{\sim}, [1]_{\sim}, \ldots, [9]_{\sim} \}$
+  * $X / \sim = \\{ [0]_{\sim}, [1]_{\sim}, \ldots, [9]_{\sim} \\}$
 
 ## Squares
 
@@ -181,7 +182,7 @@ Let $X = \mathbb{R}$, and $x \sim y$ if $\sin(x) = \sin(y)$. **Claim**: $\sim$ i
 <ul>
 <li>Proof: Again follows from reflexivity / symmetry / transitivity of =</li>
 <li>$[0]_{\sim} = \{0, \pi, 2\pi, -\pi, -2\pi, \ldots \} = \{ k\pi : k \in \mathbb{Z} \}$. For $\pi/2$: $[\pi/2]_{\sim} = \{ \pi/2 + 2\pi\cdot k : k \in \mathbb{Z} \}$.</li>
-<li>Before answering, look at the graph below:
+<li>Before answering, look at the graph below:</li>
 </ul>
 <div class="desmos-container">
 <iframe src="https://www.desmos.com/calculator/nu2npsc6le?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
