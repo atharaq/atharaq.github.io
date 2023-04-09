@@ -148,7 +148,7 @@ Congruence modulo 3 is an equivalence relation:
   * $x \equiv 0$ (mod 10) if its last digit is a 0.
   * $x \equiv 1$ (mod 10) if its last digit is a 1.
   * etc.
-  * \( X / \sim = \\{ [0]_{\sim}, [1]_{\sim}, \ldots, [9]_{\sim} \\} \)
+  * In this case: $$X / \sim = \{ [0]_{\sim}, [1]_{\sim}, \ldots, [9]_{\sim} \\}.$$
 
 ## Squares
 
