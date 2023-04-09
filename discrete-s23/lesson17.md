@@ -66,7 +66,7 @@ Let $X = \\{ $ rock, paper, scissors $ \\} $. Let $x \mathrel{R} y$ mean "$x$ be
 <li>rock beats scissors</li>
 <li>scissors beats paper</li>
 <li>paper beats rock</li>
-<li>So the set is: $\{$ (rock, scissors), (scissors, paper), (paper, rock) $\}$ and that's it.
+<li>So the set is: $\{$ (rock, scissors), (scissors, paper), (paper, rock) $\}$ and that's it.</li>
 </ul>
 </details>
 
