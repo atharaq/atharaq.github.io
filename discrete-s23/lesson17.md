@@ -142,13 +142,13 @@ Congruence modulo 3 is an equivalence relation:
 ## Examples
 
 * $X = \mathbb{Z}$, $\sim$ is $\equiv$ (mod 2).
-  * Equivalence classes: evens and odds. $X / {\sim} = \\{ E, O \\}$.
+  * Equivalence classes: evens and odds. $(X / {\sim}) = \\{ E, O \\}$.
 * $X = \mathbb{Z}$, $\sim$ is $\equiv$ (mod 10).
   * Equivalence classes?
   * $x \equiv 0$ (mod 10) if its last digit is a 0.
   * $x \equiv 1$ (mod 10) if its last digit is a 1.
   * etc.
-  * In this case: $$X / \sim = \{ [0]_{\sim}, [1]_{\sim}, \ldots, [9]_{\sim} \}.$$
+  * In this case: $$(X / \sim) = \{ [0]_{\sim}, [1]_{\sim}, \ldots, [9]_{\sim} \}.$$
 
 ## Squares
 
