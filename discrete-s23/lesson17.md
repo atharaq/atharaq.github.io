@@ -104,7 +104,7 @@ Are the following relations transitive: $\forall x \forall y \forall z (x \mathr
 
 * $X = \mathbb{Z}$, $R$ is: $x \leq y$.
 * $X = \mathbb{Z}$, $R$ is: $x \mid y$
-* $X = \{$ rock, paper, scissors $\}$, $R$ is "$x$ beats $y$".
+* $X = \\{$ rock, paper, scissors $\\}$, $R$ is "$x$ beats $y$".
 * $X$ is the collection of all finite subsets of $\mathbb{N}$, $R$ is "$\mid x \mid = \mid y \mid".
 
 # Equivalence Relations
@@ -123,7 +123,7 @@ The idea of an equivalence relation generalizes the following notions:
 
 * $x = y$
 * $x \equiv y$ (mod $n$) (Exam 2 Q2)
-* Cardinality: $\mid A \mid = \mid B \mid$
+* Cardinality: $\mid A \mid$ = $\mid B \mid$
 * Any notion of "sameness" (congruent shapes, similar triangles, etc)
 
 Congruence modulo 3 is an equivalence relation:
@@ -142,13 +142,13 @@ Congruence modulo 3 is an equivalence relation:
 ## Examples
 
 * $X = \mathbb{Z}$, $\sim$ is $\equiv$ (mod 2).
-  * Equivalence classes: evens and odds. $X / {\sim} = \{ E, O \}$.
+  * Equivalence classes: evens and odds. $X / {\sim} = \\{ E, O \\}$.
 * $X = \mathbb{Z}$, $\sim$ is $\equiv$ (mod 10).
   * Equivalence classes?
   * $x \equiv 0$ (mod 10) if its last digit is a 0.
   * $x \equiv 1$ (mod 10) if its last digit is a 1.
   * etc.
-  * $X / \sim = \\{ [0]_{\sim}, [1]_{\sim}, \ldots, [9]_{\sim} \\}$
+  * \( X / \sim = \\{ [0]_{\sim}, [1]_{\sim}, \ldots, [9]_{\sim} \\} \)
 
 ## Squares
 
