@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>Calc II Lesson 18</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Calc II Lesson 18</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">L18 Describing Sequences</p>
+</section>
+
+<section>
+<section id="questions" class="title-slide slide level1">
+<h1>Questions</h1>
+<ul>
+<li>Arc length in Polar</li>
+<li>Areas in polar</li>
+<li>Intro to sequences.
+<ul>
+<li>What are real numbers?</li>
+</ul></li>
+</ul>
+</section>
+<section id="upcoming" class="slide level2">
+<h2>Upcoming</h2>
+<ul>
+<li>Presentation due tonight.</li>
+<li>Lesson 17 homework due Thursday (in person!).
+<ul>
+<li>Questions?</li>
+</ul></li>
+<li>MyOpenMath due next Monday.</li>
+<li>Exam 3? Probably in two weeks?</li>
+</ul>
+</section></section>
+<section>
+<section id="describing-sequences" class="title-slide slide level1">
+<h1>Describing Sequences</h1>
+<ul>
+<li><strong>Closed-form</strong> expression: a formula which describes each element of a sequence.</li>
+<li>ie: <span class="math inline">\(a_n = f(n)\)</span></li>
+<li>Finding closed-form expressions: trial and error, play around, look for patterns.</li>
+</ul>
+</section>
+<section id="last-time" class="slide level2">
+<h2>Last time</h2>
+<ul>
+<li><span class="math inline">\(0, \frac{1}{2}, \frac{3}{4}, \frac{7}{8}, \ldots\)</span></li>
+<li><span class="math inline">\(a_n = \frac{2^n - 1}{2^n}\)</span></li>
+<li>Can use this to compute the limit:</li>
+<li><span class="math inline">\(\frac{2^n - 1}{2^n} = 1 - \frac{1}{2^n}\)</span></li>
+<li>So as <span class="math inline">\(n \rightarrow \infty\)</span>, <span class="math inline">\(a_n \rightarrow 1\)</span>.</li>
+</ul>
+</section>
+<section id="closed-forms" class="slide level2">
+<h2>Closed Forms</h2>
+<p>Try to find closed form expressions for the following sequences:</p>
+<ul>
+<li>
+1, 1, 2, 6, 24, 120, 720, <span class="math inline">\(\ldots\)</span>
+</li>
+<li class="fragment">
+1, 1, <span class="math inline">\(\frac{1}{2}\)</span>, <span class="math inline">\(\frac{1}{6}\)</span>, <span class="math inline">\(\frac{1}{24}\)</span>, <span class="math inline">\(\frac{1}{120}\)</span>, <span class="math inline">\(\frac{1}{720}\)</span>, <span class="math inline">\(\ldots\)</span>
+</li>
+<li class="fragment">
+1, -1, <span class="math inline">\(\frac{1}{2}\)</span>, <span class="math inline">\(-\frac{1}{6}\)</span>, <span class="math inline">\(\frac{1}{24}\)</span>, <span class="math inline">\(-\frac{1}{120}\)</span>, <span class="math inline">\(\frac{1}{720}\)</span>, <span class="math inline">\(\ldots\)</span>
+</ul>
+</section>
+<section id="even-and-odd" class="slide level2">
+<h2>Even and Odd</h2>
+<ul>
+<li>
+Let <span class="math inline">\(a_n\)</span> be the sequence <span class="math inline">\(\frac{1}{n!}\)</span>.
+</li>
+<li class="fragment">
+“Even” parts of <span class="math inline">\(a_n\)</span>: <span class="math inline">\(1, \frac{1}{2}, \frac{1}{24}, \frac{1}{720}, \ldots\)</span>?
+</li>
+<li class="fragment">
+“Odd” parts of <span class="math inline">\(a_n\)</span>: <span class="math inline">\(1, \frac{1}{6}, \frac{1}{120}, \ldots\)</span>?
+</li>
+</ul>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>(Jamboard slides 1-3) Find a closed form expression for the following sequences:</p>
+<ul>
+<li><span class="math inline">\(1, \frac{1}{3}, \frac{1}{5}, \frac{1}{7}, \ldots\)</span></li>
+<li><span class="math inline">\(1, -\frac{1}{3}, \frac{1}{5}, -\frac{1}{7}, \ldots\)</span></li>
+<li><span class="math inline">\(-1, \frac{1}{3}, -\frac{1}{5}, \frac{1}{7}, \ldots\)</span></li>
+</ul>
+</section></section>
+<section>
+<section id="recurrences" class="title-slide slide level1">
+<h1>Recurrences</h1>
+<ul>
+<li>Some sequences are hard to describe with a closed form.</li>
+<li>Ex: <span class="math inline">\(1, 0, \frac{1}{2}, \frac{1}{4}, \frac{3}{8}, \frac{5}{16}, \ldots\)</span></li>
+</ul>
+</section>
+<section id="recurrences-1" class="slide level2">
+<h2>Recurrences</h2>
+<ul>
+<li>Describe recursively (or with a recurrence relation):</li>
+<li><span class="math inline">\(a_0 = 1\)</span>, <span class="math inline">\(a_1 = 0\)</span></li>
+<li><span class="math inline">\(a_n = \frac{a_{n-1} + a_{n-2}}{2}\)</span></li>
+<li>What is <span class="math inline">\(a_8\)</span>?</li>
+</ul>
+</section>
+<section id="fibonacci" class="slide level2">
+<h2>Fibonacci</h2>
+<ul>
+<li><span class="math inline">\(a_0 = 1\)</span>, <span class="math inline">\(a_1 = 1\)</span></li>
+<li><span class="math inline">\(a_n = a_{n-1} + a_{n-2}\)</span></li>
+<li>First few terms: <span class="math inline">\(1, 1, 2, 3, 5, 8, 13, \ldots\)</span></li>
+<li><span class="math inline">\(\lim\limits_{n \rightarrow \infty} a_n = \infty\)</span></li>
+<li>Ratios?</li>
+<li><span class="math inline">\(\frac{a_1}{a_0}, \frac{a_2}{a_1}, \frac{a_3}{a_2}, \ldots\)</span>?</li>
+</ul>
+</section>
+<section id="limits" class="slide level2">
+<h2>Limits</h2>
+<p>Suppose <span class="math inline">\(\lim\limits_{n \rightarrow \infty} \frac{a_{n+1}}{a_n} = L\)</span>. Then notice:</p>
+<ul>
+<li><span class="math inline">\(a_{n+1} = a_n + a_{n-1}\)</span></li>
+<li><span class="math inline">\(\frac{a_{n+1}}{a_n} = \frac{a_n + a_{n-1}}{a_n} = 1 + \frac{a_{n-1}}{a_n}\)</span></li>
+<li>As <span class="math inline">\(n \rightarrow \infty\)</span>: <span class="math inline">\(1 + \frac{1}{L} = L\)</span></li>
+<li>Solve: <span class="math inline">\(L^2 = L + 1\)</span>.</li>
+<li><span class="math inline">\(L = \frac{1 \pm \sqrt{5}}{2}\)</span></li>
+<li><span class="math inline">\(\phi = \frac{1 + \sqrt{5}}{2}\)</span> is the “golden ratio”!</li>
+</ul>
+</section></section>
+<section>
+<section id="continuity" class="title-slide slide level1">
+<h1>Continuity</h1>
+<p>Recall: <span class="math inline">\(f\)</span> continuous at <span class="math inline">\(x = a\)</span> if <span class="math inline">\(a\)</span> is in the domain of <span class="math inline">\(f\)</span>, and</p>
+<p><span class="math display">\[\lim_{x \rightarrow a} f(x) = f(a)\]</span></p>
+<p>(Draw example graph)</p>
+</section>
+<section id="theorem" class="slide level2">
+<h2>Theorem</h2>
+<p>Suppose <span class="math inline">\(a\)</span> is in the domain of <span class="math inline">\(f(x)\)</span>. Then <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(x = a\)</span> <em>if and only if</em> whenever <span class="math inline">\((a_n)\)</span> is a sequence such that each <span class="math inline">\(a_n\)</span> is in the domain of <span class="math inline">\(f\)</span>, and</p>
+<p><span class="math display">\[\lim_{n \rightarrow \infty} a_n = a\]</span></p>
+<p>then</p>
+<p><span class="math display">\[\lim_{n \rightarrow \infty} f(a_n) = f(a)\]</span></p>
+</section>
+<section id="in-other-words" class="slide level2">
+<h2>In other words</h2>
+<p>“<span class="math inline">\(f\)</span> is continuous” means:</p>
+<p><span class="math display">\[f(\lim_{n \rightarrow \infty} a_n) = \lim_{n \rightarrow \infty} f(a_n)\]</span></p>
+<ul>
+<li>More than just “left hand and right hand” limits coincide.</li>
+<li>Can approach <span class="math inline">\(x = a\)</span> in many ways!</li>
+<li>Note: Keep this in mind in Calc 3.</li>
+<li>(Draw out the plane)</li>
+</ul>
+</section></section>
+<section>
+<section id="kinds-of-sequences" class="title-slide slide level1">
+<h1>Kinds of sequences</h1>
+<p><strong>Exercise</strong>: Find the next two terms of each of these sequences:</p>
+<ol type="1">
+<li>0, 2, 4, 6, 8, …</li>
+<li>25, 29, 33, 37, …</li>
+<li>1, -2, -5, -8, -11, …</li>
+</ol>
+<p>What do these sequences have in common?</p>
+</section>
+<section id="arithmetic-sequences" class="slide level2">
+<h2>Arithmetic Sequences</h2>
+<ul>
+<li>Differences between consecutive terms is constant.</li>
+<li>Closed form for arithmetic sequences: <strong>linear</strong>.</li>
+<li>If <span class="math inline">\(a_0\)</span> is the first term, <span class="math inline">\(d\)</span> is the “common difference”, then <span class="math inline">\(a_n = a_0 + d \cdot n\)</span>.</li>
+<li>Compare to <span class="math inline">\(y = mx + b\)</span> (linear function)</li>
+</ul>
+</section>
+<section id="examples" class="slide level2">
+<h2>Examples</h2>
+<p>Closed forms for:</p>
+<ol type="1">
+<li>0, 2, 4, 6, 8, …:</li>
+<li>25, 29, 33, 37, …:</li>
+<li>1, -2, -5, -8, -11, …:</li>
+</ol>
+<details>
+<summary>
+Answers:
+</summary>
+<ol>
+<li>
+<span class="math inline">\(a_n = 2n\)</span>
+</li>
+<li>
+<span class="math inline">\(b_n = 25 + 4n\)</span>
+</li>
+<li>
+<span class="math inline">\(c_n = 1 - 3n\)</span>
+</li>
+</ol>
+</details>
+</section>
+<section id="limits-1" class="slide level2">
+<h2>Limits</h2>
+<p>If <span class="math inline">\(a_n\)</span> is an arithmetic sequence, then <span class="math inline">\(\lim\limits_{n \rightarrow \infty} a_n = \pm \infty\)</span>. Why?</p>
+<ul>
+<li>Similarly: <span class="math inline">\(y = mx + b\)</span>. <span class="math inline">\(m &gt; 0\)</span>? <span class="math inline">\(\lim\limits_{x\rightarrow \infty}\)</span>?</li>
+<li><span class="math inline">\(m &lt; 0\)</span>? Limit?</li>
+</ul>
+</section>
+<section id="more-sequences" class="slide level2">
+<h2>More sequences</h2>
+<ul>
+<li>1, 2, 4, 8, 16, …</li>
+<li>1, <span class="math inline">\(\frac{1}{3}\)</span>, <span class="math inline">\(\frac{1}{9}\)</span>, <span class="math inline">\(\frac{1}{27}\)</span>, …</li>
+<li><span class="math inline">\(\frac{9}{10}, \frac{9}{100}, \frac{9}{1000}, \ldots\)</span></li>
+</ul>
+</section>
+<section id="geometric-sequences" class="slide level2">
+<h2>Geometric sequences</h2>
+<ul>
+<li><em>Ratios</em> between successive terms is constant.</li>
+<li>Closed form: <span class="math inline">\(a_n = a_0 \cdot r^n\)</span>, where <span class="math inline">\(r\)</span> is the “common ratio”.</li>
+<li>Example: <span class="math inline">\(\frac{9}{10}, \frac{9}{100}, \frac{9}{1000}, \ldots\)</span> ?</li>
+</ul>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<p>(Jamboard slides 4-6) Come up with examples of geometric sequences with the following properties:</p>
+<ul>
+<li><span class="math inline">\(r = 1\)</span></li>
+<li><span class="math inline">\(r = -1\)</span></li>
+<li><span class="math inline">\(|r| &gt; 1\)</span></li>
+<li><span class="math inline">\(0 &lt; r &lt; 1\)</span></li>
+</ul>
+<p>In each case, what is <span class="math inline">\(\lim\limits_{n \rightarrow \infty} a_n\)</span>?</p>
+</section></section>
+<section id="next-week" class="title-slide slide level1">
+<h1>Next week</h1>
+<ul>
+<li>Series (“Infinite sums”)</li>
+<li>Adding up all the terms of an infinite sequence</li>
+<li>Zeno’s Paradox: “Motion is Impossible”</li>
+<li><span class="math inline">\(0.99999\ldots\)</span></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
