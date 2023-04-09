@@ -30,3 +30,5 @@ lang: en-US
 * [Lesson 13: Intro to binary / hex / octal](lesson13.html)
 * [Lesson 14: Presentations, Problem Set review, Binary / hex / octal](lesson14.html)
 * [Lesson 15: Finishing up binary/hex/octal, Big Oh Intro](lesson15.html)
+* [Lesson 16: Big Oh, Big Theta, Recurrence Relations](lesson16.html)
+* [Lesson 17: Relations](lesson17.html)]
