@@ -32,3 +32,4 @@ layout: default
 * [Lesson 18: Algorithms / Pseudocode](lesson18.html)
 * [Lesson 19: Towers of Hanoi (Recursion again)](lesson19.html)
 * [Lesson 20: Searching Algorithms](lesson20.html)
+* [Lesson 21: Sorting](lesson21.html)
