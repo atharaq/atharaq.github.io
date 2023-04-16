@@ -33,3 +33,4 @@ layout: default
 * [Lesson 19: Towers of Hanoi (Recursion again)](lesson19.html)
 * [Lesson 20: Searching Algorithms](lesson20.html)
 * [Lesson 21: Sorting](lesson21.html)
+* [Lesson 22: Merge sort](lesson22.html)
