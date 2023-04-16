@@ -17,7 +17,7 @@
   * Infinite series
   * Geometric series
   * Divergence Test
-  * Convergence Test
+  * Integral Test
 
 # Warm-up
 
@@ -107,10 +107,15 @@ converges to $\frac{1}{2} \ln(2)$!
 
 **Definitions**:
 
-* If a series $\sum |a_n|$ converges, we say it converges **absolutely**.
+* If a series $\sum \mid a_n \mid$ converges, we say it converges **absolutely**.
 * If not, but $\sum a_n$ converges, we say it converges **conditionally**.
 
 It turns out that series that converge conditionally do not *respect the commutative law of addition*! (This is crazy!)
+
+In fact: if a series converges conditionally, then:
+
+1. There is a way to rearrange it so that it diverges, and,
+2. for each real number $r$, there is a way to rearrange the series so that it converges to $r$.
 
 # Comparison Test
 
