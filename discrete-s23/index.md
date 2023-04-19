@@ -33,3 +33,4 @@ lang: en-US
 * [Lesson 16: Big Oh, Big Theta, Recurrence Relations](lesson16.html)
 * [Lesson 17: Relations](lesson17.html)
 * [Lesson 18: Equivalence Relations](lesson18.html)
+* [Lesson 19: Intro to Graph Theory](lesson19.html)

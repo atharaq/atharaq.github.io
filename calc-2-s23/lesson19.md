@@ -178,7 +178,7 @@ Then either $$\int_N^{\infty} f(x) dx \textrm{ and } \sum_{n = 1}^{\infty} a_n$$
 
 # Homework
 
-Due **Thursday** April 21:
+Due **Thursday** April 20:
 
 5.1 #4
 
