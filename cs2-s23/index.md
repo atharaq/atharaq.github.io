@@ -34,3 +34,4 @@ layout: default
 * [Lesson 20: Searching Algorithms](lesson20.html)
 * [Lesson 21: Sorting](lesson21.html)
 * [Lesson 22: Merge sort](lesson22.html)
+* [Lesson 23: Data structures](lesson23.html)
