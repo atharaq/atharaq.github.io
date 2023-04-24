@@ -183,7 +183,7 @@ Putting these two facts together means $2\|E\| \geq 3\|F\|$. In this case, with 
 
 ## Planarity Game
 
-There are several games which generate graphs with edge crossings, and ask you to move the vertices around so there are no crossings. [https://www.jasondavies.com/planarity/](Planarity) is a nice example of this. (This is actually a new version of an older game that used to be in Flash).
+There are several games which generate graphs with edge crossings, and ask you to move the vertices around so there are no crossings. [Planarity](https://www.jasondavies.com/planarity/) is a nice example of this. (This is actually a new version of an older game that used to be in Flash).
 
 ![Screenshot of a planar graph](planar.jpeg)
 
