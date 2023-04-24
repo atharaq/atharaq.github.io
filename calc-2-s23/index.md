@@ -33,3 +33,4 @@ layout: default
 * [Lesson 19: Infinite series](lesson19.html)
 * [Lesson 20: Convergence tests](lesson20.html)
 * [Lesson 21: Power series](lesson21.html)
+* [Lesson 22: Taylor series](lesson22.html)
