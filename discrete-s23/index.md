@@ -36,3 +36,4 @@ lang: en-US
 * [Lesson 19: Intro to Graph Theory](lesson19.html)
 * [Lesson 20: Graph representations, isomorphisms](lesson20.html)
 * [Lesson 21: Automorphisms, connectivity, planarity](lesson21.html)
+* [Lesson 22: Graph Coloring and Trees](lesson22.html)
