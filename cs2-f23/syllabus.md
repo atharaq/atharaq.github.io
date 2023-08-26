@@ -6,11 +6,11 @@ MAT 1540
 Fall 2023
 
 **Meeting Times**: Mondays and Thursdays, 10:30 - 12:10  
-**Location**: Humanities 2034
+**Location**: Humanities 2034  
 **Instructor**: Professor Abdul-Quader (or just "Athar")  
 **Email**: athar.abdulquader AT purchase DOT edu  
 **Office Hours**:  Mondays and Thursdays, 9:30 - 10:30 NSB 3003   
-**Learning Assistant**:  
+**Learning Assistants**:
   * Eduardo Gutierrez-Cervantes: e.gutierrezcervantes AT purchase DOT edu
   * Sacia Matthews: sacia.matthews AT purchase DOT edu
   * Office hours will be posted on BrightSpace
