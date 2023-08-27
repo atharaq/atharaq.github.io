@@ -1,10 +1,9 @@
 # Professor Abdul-Quader's Lecture Notes
 
-Lecture Notes for Spring 2023 Courses:
+Lecture Notes for Fall 2023 Courses:
 
-* [Calculus II](calc-2-s23)
-* [Computer Science II](cs2-s23)
-* [Discrete Mathematics](discrete-s23)
+* [Computer Science II](cs2-f23)
+* [Data Structures](data-structures-f23)
 
 Old lecture notes can still be found at their respective sites. Contact me if you need access to them.
 
