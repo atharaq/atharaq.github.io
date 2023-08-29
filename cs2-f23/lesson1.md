@@ -93,15 +93,11 @@ Exercise 3 does not need to be submitted, but please work on that as well. You c
 This exercise starts off similarly to exercise 3:
 
 1. Write a program that creates variables named hour and minute. Assign them values that roughly correspond to the current time. Use a 24-hour clock so that 2:00 PM should be "14:00".
-2. Output the current time in one line,  including a message. For example:
-<pre>
-The current time is 15:10.
-</pre>
-3. Modify the program so that it also displays the time 55 minutes from now. (Hint: you may need to use the **remainder** operator %.)  For example:
-<pre>
-The current time is 15:10.
-In 55 minutes, it will be 16:05.
-</pre>
+2. Output the current time in one line,  including a message. For example:  
+    The current time is 15:10.
+3. Modify the program so that it also displays the time 55 minutes from now. (Hint: you may need to use the **remainder** operator %.)  For example:  
+    The current time is 15:10.  
+    In 55 minutes, it will be 16:05.
 
 # Preview: Chapter 3: Input / Output
 
