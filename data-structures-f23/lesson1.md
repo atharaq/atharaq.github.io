@@ -4,6 +4,22 @@
 1. Table of Contents
 {:toc}
 
+# OPTIONAL: Java Crash Course Video
+
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/3cptnJBqYx8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+This video is optional, but maybe those of you who are having trouble getting reacquainted with Java should watch it.
+
+I cover a lot of things in this video, hoping that by going through an example of a simple class or two, I can illustrate some of the subtle issues that can creep up from time to time. Things that I covered here include:
+
+* Classes: representing "state" (or "data") and "behavior".
+* Object oriented programming: modeling your code around the "things" in your program, rather than the "actions" your program needs to do.
+* Interfaces, classes, run-time types vs compile-time types
+
+I don't cover inheritance, which may be an important notion, but I do not expect that we will be using it in this class.
+
 # Selection Exercise
 
 At this point, I hope you have already signed up for Replit. If you haven't yet, please make sure to do so now!
