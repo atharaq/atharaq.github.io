@@ -96,7 +96,7 @@ That said, please do come to class as much as you can. This will allow me to see
 * 10%: Homework, class exercises, and class participation
 * 20%: Presentations (4 short code demos / algorithm explanations; including two demos / explanations of the projects)
 * 5%: Quizzes
-* 20%: In-class and/or take-home Exams (3 exams, cumulative)
+* 15%: In-class and/or take-home Exams (3 exams, cumulative)
 * 15%: Final Exam (Thursday, **12/14** from 9 - 11:30 AM)
 
 ## Late Homework Policy
