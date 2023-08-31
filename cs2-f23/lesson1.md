@@ -15,7 +15,7 @@
 <iframe src="https://www.youtube.com/embed/wCugzvxeDK4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-For this lesson, you will *review* chapter 1 from the textbook, work through chapter 2, and *preview* chapter 3. For the most part, early in the semester we will stick closely to the textbook. There are exercises on CodingRooms to work through as we go through the book, I am describing them here.
+For this lesson, you will *review* chapter 1 from the textbook, work through chapter 2, and *preview* chapter 3. For the most part, early in the semester we will stick closely to the textbook. There are exercises on replit to work through as we go through the book, I am describing them here.
 
 Next Monday, we will look at these exercises as well as some supplementary material about variables, data types, and input / output.
 
@@ -27,7 +27,7 @@ Please read [ThinkJava Chapter 1](https://books.trinket.io/thinkjava2/chapter1.h
 
 At this point, you should be able to run a simple program. I'd like to you [submit a program on Replit](https://replit.com/team/cs2-fall-2023/Pre-Lesson-1) just to make sure you can. The program should output your name. 
 
-In addition, make sure you are doing all of the exercises at the end of chapter 1. In particular, **Exercise 3** is a good way to see what symbols / words / etc are important and what is not, at least to the Java compiler. Spend some time on that: you can play around with it during the coding exercise on CodingRooms, but please make sure you submit **working** code that just outputs your name after you are done with all of that.
+In addition, make sure you are doing all of the exercises at the end of chapter 1. In particular, **Exercise 3** is a good way to see what symbols / words / etc are important and what is not, at least to the Java compiler. Spend some time on that: you can play around with it during the coding exercise on replit, but please make sure you submit **working** code that just outputs your name after you are done with all of that.
 
 # Chapter 2: Variables and Operators
 
@@ -72,8 +72,8 @@ System.out.println(b);
 
 <details>
 <summary>Check your answer</summary>
-<p>I suggest you try this out on your own machine / on CodingRooms.</p>
-<p>When I try this out on CodingRooms, I get the following:
+<p>I suggest you try this out on your own machine / on replit.</p>
+<p>When I try this out on replit, I get the following:
 <pre>
 0.7999999999999999
 0.8
