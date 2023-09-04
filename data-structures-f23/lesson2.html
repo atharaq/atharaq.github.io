@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>Data Structures</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Lesson 2</p>
+</section>
+
+<section>
+<section id="review" class="title-slide slide level1">
+<h1>Review</h1>
+
+</section>
+<section id="junit-unit-testing" class="slide level2">
+<h2>JUnit / Unit Testing</h2>
+<ul>
+<li>Replit has an autograding feature</li>
+<li>It uses <strong>JUnit</strong>, a framework for unit testing</li>
+<li>Unit testing: automated tests that check one small feature of your code</li>
+</ul>
+</section>
+<section id="test-driven-development" class="slide level2">
+<h2>Test-driven Development:</h2>
+<ul>
+<li>Write <em>failing</em> unit tests <strong>first</strong></li>
+<li>Then write code that fixes it</li>
+<li>Benefits?</li>
+</ul>
+</section>
+<section id="exercise-questions" class="slide level2">
+<h2>Exercise Questions?</h2>
+</section>
+<section id="generics-questions" class="slide level2">
+<h2>Generics questions</h2>
+<ul>
+<li>Type erasure?</li>
+<li>Type bounds / Wildcards?</li>
+</ul>
+</section></section>
+<section>
+<section id="lists" class="title-slide slide level1">
+<h1>Lists</h1>
+<ul>
+<li><strong>List</strong>: ordered sequence of data: <span class="math inline">\(x_0, x_1, \ldots, x_{n-1}\)</span></li>
+<li>Size of list: <span class="math inline">\(n\)</span></li>
+<li>First element: <span class="math inline">\(x_0\)</span>, last element: <span class="math inline">\(x_{n-1}\)</span></li>
+<li><span class="math inline">\(x_{i+1}\)</span> is the <em>successor</em> of <span class="math inline">\(x_i\)</span>, <span class="math inline">\(x_i\)</span> is the <em>predecessor</em> of <span class="math inline">\(x_{i+1}\)</span></li>
+<li>Index / position of <span class="math inline">\(x_i\)</span> is <span class="math inline">\(i\)</span></li>
+</ul>
+</section>
+<section id="list-operations" class="slide level2">
+<h2>List Operations?</h2>
+<p>What operations should a list have?</p>
+<div class="fragment">
+<ul>
+<li>add to the list (at the end)</li>
+<li>get the element at position <span class="math inline">\(i\)</span></li>
+<li>remove a value from the list</li>
+<li>insert an element at position <span class="math inline">\(i\)</span></li>
+<li>return the size of the list</li>
+</ul>
+</div>
+</section>
+<section id="simple-list" class="slide level2">
+<h2>Simple List</h2>
+<p>Skeleton code of simple array-backed list structure on replit now. Finish implementing this, and then determine the running times of the following operations (based on your implementation):</p>
+<ul>
+<li>add</li>
+<li>get</li>
+<li>remove</li>
+<li>insert</li>
+</ul>
+</section>
+<section id="iterators" class="slide level2">
+<h2>Iterators</h2>
+<p>for-each loops: List<T> implements <strong>Iterable<T></strong>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">List</span>&lt;<span class="bu">String</span>&gt; myList;</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="kw">for</span> (<span class="bu">String</span> word : myList) {</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>  <span class="co">// ...</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>}</span></code></pre></div>
+<p>is really:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="bu">List</span>&lt;<span class="bu">String</span>&gt; myList;</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="bu">Iterator</span>&lt;<span class="bu">String</span>&gt; iter = myList.<span class="fu">iterator</span>();</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="kw">while</span> (iter.<span class="fu">hasNext</span>()) {</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>  <span class="bu">String</span> word = iter.<span class="fu">next</span>();</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>  <span class="co">// ...</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="iterator-interface" class="slide level2 scrollable">
+<h2>Iterator interface</h2>
+<style>
+  .scrollable {
+    overflow-y: auto  !important;
+    overflow-x: hidden !important;
+    height: 700px;
+}
+</style>
+<p>Iterator<T> interface has:</p>
+<ul>
+<li>T next() returns the next value in the list</li>
+<li>boolean hasNext() returns true if we can call “next”</li>
+<li>remove() removes the last element returned by this iterator</li>
+</ul>
+<p>What happens if the list is modified while iterating through it?</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="bu">List</span>&lt;<span class="bu">String</span>&gt; l = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>l.<span class="fu">add</span>(<span class="st">&quot;a&quot;</span>);</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="kw">for</span> (<span class="bu">String</span> w : l) {</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>  l.<span class="fu">add</span>(<span class="st">&quot;hi&quot;</span>);</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="problem" class="slide level2">
+<h2>Problem</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">public</span> <span class="kw">class</span> SLIterator&lt;T&gt; <span class="kw">implements</span> <span class="bu">Iterator</span>&lt;T&gt; {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>   <span class="kw">private</span> SimpleList&lt;T&gt; list;</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>   <span class="kw">private</span> <span class="dt">int</span> pos = <span class="dv">0</span>;</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>   <span class="kw">public</span> <span class="fu">SLIterator</span>(SimpleList&lt;t&gt; l) {</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>     list = l;</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>   }</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>  <span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">hasNext</span>() {</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a>    <span class="kw">return</span> pos &lt; list.<span class="fu">size</span>();</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a>  }</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a>  <span class="kw">public</span> T <span class="fu">next</span>() {</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a>    <span class="kw">return</span> list.<span class="fu">array</span>[pos++];</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a>  }</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a>}</span></code></pre></div>
+<p>Problem?</p>
+</section>
+<section id="inner-classes" class="slide level2">
+<h2>Inner Classes</h2>
+<ul>
+<li>Iterator needs to access <strong>private</strong> variables of main class</li>
+<li>Solution: make Iterator an <strong>inner class</strong>
+<ul>
+<li>Technically many kinds of inner classes</li>
+<li>Usually static inner classes</li>
+<li>But this time: non-static (only time in my life)</li>
+<li>Effective Java item 24: Favor static member classes over non-static</li>
+<li>Inner classes can access private members (because they’re inside the scope)</li>
+</ul></li>
+</ul>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Quick exercise: make SimpleList implement Iterable<T></p>
+<p>Update your main method to add in the following code:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="kw">for</span> (<span class="bu">String</span> word : list) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(word);</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>}</span></code></pre></div>
+<p>Does it work?</p>
+</section></section>
+<section>
+<section id="linkedlist" class="title-slide slide level1">
+<h1>LinkedList</h1>
+<figure>
+<img data-src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Singly-linked-list.svg" title="Singly Linked List diagram, Wikimedia Commons" alt="" /><figcaption>Singly Linked List diagram, Wikimedia Commons</figcaption>
+</figure>
+<ul>
+<li>Another implementation of List ADT</li>
+<li>Node class has a data field and a pointer to the next node</li>
+<li><strong>Doubly linked list</strong>: each Node has a pointer to the previous node as well</li>
+</ul>
+</section>
+<section id="linkedlist-code" class="slide level2">
+<h2>LinkedList code</h2>
+<p>Code on replit. Running times:</p>
+<ul>
+<li>add</li>
+<li>insert</li>
+<li>remove</li>
+<li>get</li>
+</ul>
+</section></section>
+<section>
+<section id="homework" class="title-slide slide level1">
+<h1>Homework</h1>
+<p>Due <strong>Thursday, 9/14</strong>. Submit via <strong>BrightSpace</strong> (single PDF).</p>
+<p>Problem 1:</p>
+<p>Implement an Iterator for this LinkedList structure (code is on replit)</p>
+</section>
+<section id="problem-2" class="slide level2">
+<h2>Problem 2</h2>
+<p>The following method removes the first half of the list passed as a parameter:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">removeFirstHalf</span>(<span class="bu">List</span>&lt;?&gt; lst) {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>  <span class="dt">int</span> theSize = list.<span class="fu">size</span>() / <span class="dv">2</span>;</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>  <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; theSize; i++) {</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>    lst.<span class="fu">remove</span>(<span class="dv">0</span>);</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>  }</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="problem-2-continued" class="slide level2">
+<h2>Problem 2, continued</h2>
+<ul>
+<li>Why is theSize saved prior to entering the for loop?</li>
+<li>What is the running time of removeFirstHalf is lst is an ArrayList?</li>
+<li>What is the running time of removeFirstHalf if lst is a LinkedList?</li>
+<li>Does using an iterator make removeFirstHalf faster for either type of list?</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
