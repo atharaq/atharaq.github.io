@@ -17,3 +17,4 @@ lang: en-US
 * [Lesson 0: Intro to course](lesson0.html)
 * Lesson 1: Java generics: [Notes](lesson1.html) \| [Slides](lesson1_slides.pdf)
 * [Lesson 2: Lists and Iterators](lesson2.html)
+* [Lesson 3: Stacks and Queues](lesson3.html)

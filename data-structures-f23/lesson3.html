@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>Data Structures</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Lesson 2</p>
+</section>
+
+<section>
+<section id="review" class="title-slide slide level1">
+<h1>Review</h1>
+<ul>
+<li>Iterators: <code>next</code>, <code>hasNext</code>, and <code>remove</code>.
+<ul>
+<li>Keep a “pointer” to current list item.</li>
+<li>Advance it each time you call next.</li>
+</ul></li>
+<li>LinkedList
+<ul>
+<li>Data kept in “nodes”.</li>
+<li>Implementing get / remove / insert / etc: similar idea!</li>
+</ul></li>
+</ul>
+</section>
+<section id="linkedlist" class="slide level2">
+<h2>LinkedList</h2>
+<ul>
+<li><code>Node</code> class is an inner class. Why?</li>
+<li>Static. Why?</li>
+</ul>
+</section>
+<section id="video" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cwQ3A2mS6PY?si=1EOO3qdeiNfozMA4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section>
+<section id="junit-in-intellij" class="slide level2">
+<h2>JUnit in IntelliJ</h2>
+<ul>
+<li><a href="https://www.jetbrains.com/help/idea/junit.html#intellij">Setting up</a></li>
+<li>Right-click on class-name: show context actions.</li>
+<li>Create test.</li>
+<li>Need to download JUnit 5 / add to project.</li>
+<li>Annotate tests with <code>@Test</code> above.</li>
+</ul>
+</section></section>
+<section>
+<section id="stacks-and-queues" class="title-slide slide level1">
+<h1>Stacks and Queues</h1>
+<div class="columns">
+<div class="column" style="width:10%;">
+
+</div><div class="column" style="width:35%;">
+<figure>
+<img data-src="stack.jpg" alt="" /><figcaption>Stack of plates</figcaption>
+</figure>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:35%;">
+<figure>
+<img data-src="queue.jpg" alt="" /><figcaption>Queue of people</figcaption>
+</figure>
+</div><div class="column" style="width:10%;">
+
+</div>
+</div>
+</section>
+<section id="idea" class="slide level2">
+<h2>Idea</h2>
+<ul>
+<li>Both are <strong>restrictions</strong> of list ADT.</li>
+<li>Neither allow: iteration, random access, insertions/deletions in middle</li>
+<li>Main two operations: <strong>insert</strong> and <strong>remove</strong></li>
+<li>Also: “peek”, “size”, “isEmpty”</li>
+</ul>
+</section>
+<section id="operations" class="slide level2">
+<h2>Operations</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p>Stack:</p>
+<ul>
+<li><strong>push</strong>: insert an item “on top” of the stack.</li>
+<li><strong>pop</strong>: remove the top item.</li>
+<li><strong>LIFO</strong> “Last In, First Out”.</li>
+</ul>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:45%;">
+<p>Queue:</p>
+<ul>
+<li><strong>enqueue</strong>: add to the end of the queue</li>
+<li><strong>dequeue</strong>: remove from the beginning of the queue.</li>
+<li><strong>FIFO</strong>: “First In, First Out”</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions</h2>
+<ul>
+<li>How might you implement each of these ADTs with an array / ArrayList?</li>
+<li>How might you implement each of these ADTs with a LinkedList?</li>
+</ul>
+<p><strong>Exercise</strong>: Describe (pseudocode / English / to each other) implementations in which all the operations listed above are <span class="math inline">\(O(1)\)</span>.</p>
+<p><strong>Warning</strong>: never use the built-in <strong>java.util.Stack</strong> class. There are better implementations: in particular, ArrayDeque and LinkedList.</p>
+</section>
+<section id="deques" class="slide level2">
+<h2>Deques</h2>
+<ul>
+<li><strong>deque</strong>: <strong>doubly-ended queue</strong>.</li>
+<li>Supports all of the operations: push / pop and enqueue / dequeue.</li>
+<li>In Java: <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Deque.html">Deque</a> is an interface (as is Queue)</li>
+<li>Implementations: ArrayDeque, LinkedList</li>
+</ul>
+</section>
+<section id="video-1" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TUNxlSrMOaw?si=N3cCvbWp2Q0ptPCT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section></section>
+<section>
+<section id="challenge-questions" class="title-slide slide level1">
+<h1>Challenge Questions</h1>
+<style>
+  .scrollable {
+    overflow-y: auto  !important;
+    overflow-x: hidden !important;
+    height: 700px;
+}
+</style>
+<p>Some problems to think about. Try to find the best algorithms to solve these problems. I don’t expect you to do all of these now, or even to implement any of them, but do your best to come up with an algorithm that would solve it (at least on paper). Then we can discuss some of our solutions on Thursday.</p>
+</section>
+<section id="reverse-a-singly-linked-list" class="slide level2">
+<h2>Reverse a Singly Linked List</h2>
+<p>Given a singly LinkedList, how might you implement a <strong>reverse</strong> method? Moreover, how might you do this <strong>in-place</strong>: that is, without using a secondary list or additional storage?</p>
+</section>
+<section id="middle-element-of-a-linked-list" class="slide level2">
+<h2>Middle element of a Linked List</h2>
+<p>Given a singly LinkedList, how might you find the middle element <strong>in one loop</strong>? (ie in N steps, not in 2N steps).</p>
+</section>
+<section id="collate-iterators" class="slide level2">
+<h2>Collate Iterators</h2>
+<p>Suppose we have an array of Iterators. Implement an Iterator which “collates” these. That is, suppose we have iterators for the following lists:</p>
+<ul>
+<li>[0, 1, 2]</li>
+<li>[3, 4 ]</li>
+<li>[5, 6, 7, 8, 9]</li>
+</ul>
+</section>
+<section id="collate-iterators-1" class="slide level2">
+<h2>Collate Iterators</h2>
+<p>Then the result of</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">Iterator</span>&lt;<span class="bu">Integer</span>&gt; iter = <span class="kw">new</span> <span class="fu">CollatedIterator</span>(iterArray);</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="kw">while</span> (iter.<span class="fu">hasNext</span>()) {</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>  <span class="dt">int</span> i = iter.<span class="fu">next</span>();</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(i);</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>}</span></code></pre></div>
+<p>would be 0, 3, 5, 1, 4, 6, 2, 7, 8, 9 (on separate lines, without commas).</p>
+</section>
+<section id="bracket-matching" class="slide level2">
+<h2>Bracket Matching</h2>
+<p>The following strings of brackets are perfectly matched:</p>
+<ul>
+<li>{}([])</li>
+<li>[(()())]</li>
+</ul>
+<p>The following are not:</p>
+<ul>
+<li>{(})</li>
+<li>(][)</li>
+</ul>
+<p>Devise an algorithm which, given a string of brackets, determines if the brackets are perfectly matched.</p>
+</section>
+<section id="base-counting" class="slide level2">
+<h2>Base Counting</h2>
+<p>Devise an algorithm which, given an input <span class="math inline">\(n\)</span>, outputs all numbers from 1 to <span class="math inline">\(n\)</span> in binary. Example: if <span class="math inline">\(n = 5\)</span>, then we write 1, 10, 11, 100, 101, 110. (The format of the output doesn’t matter, they can all be on separate lines.)</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
