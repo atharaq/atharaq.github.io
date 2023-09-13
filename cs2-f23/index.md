@@ -15,3 +15,4 @@ layout: default
 * [Lesson 1: Variables / Operators, Input / Output](lesson1.html)
 * [Lesson 2: Input / output](lesson2.html)
 * [Lesson 3: Conditionals / Loops](lesson3.html)
+* [Lesson 4: Arrays](lesson4.html)
