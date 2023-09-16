@@ -228,7 +228,7 @@ Ask the user to input in some text (use the nextLine() method in the Scanner cla
 
 ## Exercise (Don't submit)
 
-Finally, I would like you to submit [Chapter 6, Exercise 5](https://books.trinket.io/thinkjava2/chapter6.html#sec84) on CodingRooms:
+Take a look at [Chapter 6, Exercise 5](https://books.trinket.io/thinkjava2/chapter6.html#sec84):
 
 A word is said to be a “doubloon” if every letter that appears in the word appears
 exactly twice. Here are some example doubloons found in the dictionary:
