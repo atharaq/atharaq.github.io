@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>Data Structures</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Lesson 5</p>
+</section>
+
+<section>
+<section id="newsfeed" class="title-slide slide level1">
+<h1>Newsfeed</h1>
+<p>Suppose we are developing a newsfeed app for devices with very small amounts of memory. The app should store links to major news stories as they come in, subject to the following considerations:</p>
+<ul>
+<li>The app can only store up to a certain number <span class="math inline">\(N\)</span> of links at a time.</li>
+<li>When the app is full, as new links come in, old ones get deleted.</li>
+</ul>
+</section>
+<section id="circular-queue" class="slide level2">
+<h2>Circular Queue</h2>
+<p>Implementation considerations:</p>
+<ul>
+<li>Array or linked list?</li>
+<li>How do we recognize the “front” and “back” of the queue?</li>
+<li>What happens to the “front” and “back” if we insert into a full queue?</li>
+<li>How do we recognize if the queue is empty?</li>
+</ul>
+</section>
+<section id="circular-queue-ideas" class="slide level2">
+<h2>Circular Queue Ideas</h2>
+<ul>
+<li>Fixed size? Use an array.</li>
+<li>Keep track of where to insert (“back”) and remove (“front”).</li>
+<li>front/back initial values?</li>
+<li>Recognize if the queue is empty?</li>
+<li>Recognize if the queue is full?</li>
+<li>Draw this out on the board (<span class="math inline">\(N == 5\)</span>).</li>
+</ul>
+</section>
+<section id="video" class="slide level2">
+<h2>Video</h2>
+<p>Circular Queue Overview video:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5Cmi-Y4aPv8?si=vI2vsr367RqlGpie" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section>
+<section id="implementation" class="slide level2">
+<h2>Implementation</h2>
+<p>Let’s implement a circular queue together (video shows me using an old-style JUnit in IntelliJ).</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DbmfPgJ1XGA?si=57snqQ-aSj9auIgx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section></section>
+<section>
+<section id="tree-adt" class="title-slide slide level1">
+<h1>Tree ADT</h1>
+<p>A <strong>tree</strong> is a set of nodes with the following relationships:</p>
+<ul>
+<li>Every node has an edge (or link) with one parent node</li>
+<li>There is one, unique <strong>root</strong> node.</li>
+</ul>
+<p>Idea: if our tree is a balanced, <strong>binary search tree</strong>, we can hope for <span class="math inline">\(O(\log n)\)</span> for all operations: insertion, removal, lookups. (Compare to a list structure.)</p>
+</section>
+<section id="definitions" class="slide level2">
+<h2>Definitions</h2>
+<ul>
+<li><strong>arity</strong>: the maximum number of children a node in a tree has. (This might not be defined on an infinite tree). A tree of arity 2 is called a <strong>binary tree</strong>.</li>
+<li><strong>leaf</strong>: a node which has no children.</li>
+<li><strong>path</strong>: a path in a tree is a set of nodes <span class="math inline">\(n_1, n_2, \ldots, n_k\)</span> such that each <span class="math inline">\(n_i\)</span> is the parent of <span class="math inline">\(n_{i+1}\)</span>. This path has <strong>length</strong> <span class="math inline">\(k −1\)</span>, because there are <span class="math inline">\(k − 1\)</span> steps to go from <span class="math inline">\(n_1\)</span> to <span class="math inline">\(n_k\)</span>.</li>
+<li><strong>height</strong>: the height of a tree is the length of the longest path starting at the root and ending at a leaf.</li>
+</ul>
+</section>
+<section id="picture" class="slide level2">
+<h2>Picture</h2>
+<p><img alt="Binary tree, from Wikimedia Commons" title="Binary tree, from Wikimedia Commons" src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Binary_tree.svg" /></p>
+</section>
+<section id="search-trees" class="slide level2">
+<h2>Search Trees</h2>
+<p>Idea: a <strong>binary search tree</strong> has the following property for any node:</p>
+<ul>
+<li>all data in left subtree is <span class="math inline">\(\leq\)</span> the data in the node</li>
+<li>all data in the right subtree are <span class="math inline">\(\geq\)</span> the data in the node.</li>
+</ul>
+<p>This means we can use the “binary search” algorithm on the tree to look for elements.</p>
+</section>
+<section id="video-1" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uTMLbmmzHeQ?si=KWBKZaE2l8h0yRoL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section></section>
+<section>
+<section id="implementation-1" class="title-slide slide level1">
+<h1>Implementation</h1>
+<p>Generic type needs to implement Comparable: see <a href="https://atharaq.github.io/data-structures-f23/lesson1.html#selection-exercise-update">Lesson 1</a>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">public</span> <span class="kw">class</span> BinaryTree&lt;T <span class="kw">extends</span> <span class="bu">Comparable</span>&lt;? <span class="kw">super</span> T&gt;&gt;</span></code></pre></div>
+</section>
+<section id="nodes" class="slide level2">
+<h2>Nodes</h2>
+<p>Static inner class:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">private</span> <span class="dt">static</span> <span class="kw">class</span> <span class="bu">TreeNode</span>&lt;T&gt; {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>    T data;</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>    <span class="bu">TreeNode</span>&lt;T&gt; left;</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>    <span class="bu">TreeNode</span>&lt;T&gt; right;</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>    <span class="bu">TreeNode</span>(T d, <span class="bu">TreeNode</span>&lt;T&gt; l, <span class="bu">TreeNode</span>&lt;T&gt; r) {</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>        data = d;</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a>        left = l;</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a>        right = r;</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a>    }</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="traversals" class="slide level2">
+<h2>Traversals</h2>
+<ul>
+<li>One way to iterate through a list.</li>
+<li>Many ways to visit a tree.</li>
+<li>One way: in-order traversal (using recursion)</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">private</span> <span class="dt">void</span> <span class="fu">printTree</span>(<span class="bu">TreeNode</span>&lt;T&gt; tree) {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    <span class="kw">if</span> (tree != <span class="kw">null</span>) {</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>        <span class="fu">printTree</span>(tree.<span class="fu">left</span>);</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(tree.<span class="fu">data</span>);</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>        <span class="fu">printTree</span>(tree.<span class="fu">right</span>);</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>    }</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>What does this output if the tree contains the following:</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Binary_search_tree.svg" alt="Binary search tree" /></p>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<p>What about if we modified the code to use a <strong>pre-order</strong> traversal:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">private</span> <span class="dt">void</span> <span class="fu">printTree</span>(<span class="bu">TreeNode</span>&lt;T&gt; tree) {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>    <span class="kw">if</span> (tree != <span class="kw">null</span>) {</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(tree.<span class="fu">data</span>);      </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>        <span class="fu">printTree</span>(tree.<span class="fu">left</span>);</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>        <span class="fu">printTree</span>(tree.<span class="fu">right</span>);</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>    }</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="exercise-2" class="slide level2">
+<h2>Exercise</h2>
+<p>What would happen if we used a <strong>post-order</strong> traversal:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="kw">private</span> <span class="dt">void</span> <span class="fu">printTree</span>(<span class="bu">TreeNode</span>&lt;T&gt; tree) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>    <span class="kw">if</span> (tree != <span class="kw">null</span>) {     </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>        <span class="fu">printTree</span>(tree.<span class="fu">left</span>);</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>        <span class="fu">printTree</span>(tree.<span class="fu">right</span>);</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(tree.<span class="fu">data</span>);</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>    }</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="answers" class="slide level2">
+<h2>Answers</h2>
+<ul>
+<li>In-order: 1, 3, 4, 6, 7, 8, 10, 13, 14</li>
+<li>Pre-order: 8, 3, 1, 6, 4, 7, 10, 14, 13</li>
+<li>Post-order: 1, 4, 7, 6, 3, 13, 14, 10, 8</li>
+</ul>
+</section>
+<section id="video-2" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1mYr7kgbXn4?si=50vCZPwnJ0_FDV-M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section></section>
+<section>
+<section id="insertion" class="title-slide slide level1">
+<h1>Insertion</h1>
+<ul>
+<li>Insert / contains / remove: use recursion.</li>
+<li>Insert: recursively binary search to find the correct place to add new node.</li>
+<li>If <code>root == null</code>, create a new node with this data item, and make that the new root.</li>
+<li>If <code>item &lt; root</code>, recursively insert into the root node’s left subtree.</li>
+<li>Otherwise, recursively insert into the root node’s right subtree.</li>
+</ul>
+</section>
+<section id="video-3" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_njTKrlc0xw?si=tyNHx-BE2KDPa7gq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section>
+<section id="code-snippet" class="slide level2">
+<h2>Code snippet</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">insert</span>(T item) {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>    root = <span class="fu">insert</span>(root, item);</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>}</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a><span class="kw">private</span> <span class="bu">TreeNode</span>&lt;T&gt; <span class="fu">insert</span>(<span class="bu">TreeNode</span>&lt;T&gt; subtree, T item) {</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>    <span class="kw">if</span> (subtree == <span class="kw">null</span>) {</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a>        <span class="kw">return</span> <span class="kw">new</span> <span class="bu">TreeNode</span>&lt;T&gt;(item, <span class="kw">null</span>, <span class="kw">null</span>);</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a>    }</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a>    <span class="dt">int</span> comparison = item.<span class="fu">compareTo</span>(subtree.<span class="fu">data</span>);</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true"></a>    <span class="kw">if</span> (comparison &lt; <span class="dv">0</span>) {</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true"></a>        subtree.<span class="fu">left</span> = <span class="fu">insert</span>(subtree.<span class="fu">left</span>, item);</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true"></a>    } <span class="kw">else</span> <span class="kw">if</span> (comparison &gt; <span class="dv">0</span>) {</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true"></a>        subtree.<span class="fu">right</span> = <span class="fu">insert</span>(subtree.<span class="fu">right</span>, item);</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true"></a>    } <span class="co">// if comparison == 0, then it&#39;s a duplicate, we ignore it.</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true"></a>      <span class="co">// some tree implementations allow duplicates, then we&#39;d have a decision to make.</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true"></a>    <span class="kw">return</span> subtree;</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="idea" class="slide level2">
+<h2>Idea</h2>
+<ul>
+<li>Public method that calls private method.</li>
+<li>Private method handles recursion.</li>
+<li>Recursive needs to return an updated tree.</li>
+<li>This will ensure that the root (and its subtrees) gets updated.</li>
+</ul>
+</section>
+<section id="exercise-3" class="slide level2">
+<h2>Exercise</h2>
+<p>Implement the <strong>contains</strong> method. Use a similar paradigm:</p>
+<ul>
+<li>Recursively binary search for the item.</li>
+<li><code>int comparison = item.compareTo(subtree.data);</code></li>
+<li>If comparison &lt; 0, check subtree.left for item.</li>
+<li>If comparison &gt; 0, check subtree.right.</li>
+<li>If it’s == 0, you found it! Return true!</li>
+<li>How do you know to return false?</li>
+<li>Hint: what’s your base case for your recursion?</li>
+</ul>
+</section>
+<section id="removal" class="slide level2">
+<h2>Removal</h2>
+<p>You don’t need to submit this, but think about how you might implement the <strong>remove</strong> method. It’s a bit more involved, so we can talk about it more next time, but try to think it through yourself. Think about the following questions:</p>
+<ul>
+<li>How do you remove a node if it has no children?</li>
+<li>How do you remove a node if it has one child?</li>
+<li>How do you remove a node if it has two children? We have a choice to make, but the idea we will use is to replace the node by its successor (the next largest element in the tree).</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
