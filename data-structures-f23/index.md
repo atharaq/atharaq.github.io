@@ -20,3 +20,4 @@ lang: en-US
 * [Lesson 3: Stacks and Queues](lesson3.html)
 * [Lesson 4: Challenge questions / Circular queues](lesson4.html)
 * [Lesson 5: Circular Queues / Binary Search Trees](lesson5.html)
+* [Lesson 6: Trees and tree rotations](lesson6.html)

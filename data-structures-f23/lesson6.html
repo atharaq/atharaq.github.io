@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>Data Structures</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Lesson 6 (Trees / Rotations)</p>
+</section>
+
+<section>
+<section id="presentations" class="title-slide slide level1">
+<h1>Presentations</h1>
+<p>Start with problem presentations.</p>
+</section>
+<section id="project" class="slide level2">
+<h2>Project</h2>
+<p>Project hints / questions?</p>
+</section>
+<section id="postfix-calc" class="slide level2">
+<h2>Postfix Calc</h2>
+<ul>
+<li><a href="https://atharaq.github.io/data-structures-f23/lesson4.html#/postfix_test.txt">Parse the text file</a></li>
+<li>For each line, instantiate a new stack (of integers).</li>
+<li>While parsing a line, if you see a number, push.</li>
+<li>If you see an operation, pop two numbers from the stack.
+<ul>
+<li>if-then or switch-case to figure out what to push back on</li>
+<li>Fancier: enum types.</li>
+</ul></li>
+<li>When done with the line, pop the stack and output.</li>
+</ul>
+</section>
+<section id="base-counter" class="slide level2">
+<h2>Base counter</h2>
+<ul>
+<li>Queue of <strong>Strings</strong>.</li>
+<li>Enqueue all digits from 1 to <span class="math inline">\(base - 1\)</span> <strong>as Strings</strong>.</li>
+<li>Repeat <span class="math inline">\(num\)</span> times:
+<ul>
+<li>Dequeue a “number” (as a String)</li>
+<li>Print it out.</li>
+<li>For each “digit” from 0 to <span class="math inline">\(base - 1\)</span>, enqueue “number” + “digit”</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="binarytree" class="title-slide slide level1">
+<h1>BinaryTree</h1>
+<p>Today:</p>
+<ul>
+<li>contains / remove</li>
+<li>rotations</li>
+<li>balancing</li>
+</ul>
+</section>
+<section id="contains" class="slide level2">
+<h2>Contains</h2>
+<p>Binary search:</p>
+<ul>
+<li>If item &lt; root, check root.left (<strong>recursion</strong>)</li>
+<li>If item &gt; root, check root.right (recursively)</li>
+<li>If item == root, return true.</li>
+<li>When do we return false? Base case?</li>
+</ul>
+</section>
+<section id="code" class="slide level2">
+<h2>Code</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">if</span> (root == <span class="kw">null</span>) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    <span class="kw">return</span> <span class="kw">false</span>;</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>}</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="dt">int</span> comparison = item.<span class="fu">compareTo</span>(root.<span class="fu">data</span>);</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="kw">if</span> (comparison == <span class="dv">0</span>) {</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>    <span class="kw">return</span> <span class="kw">true</span>;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>} <span class="kw">else</span> <span class="kw">if</span> (comparison &lt; <span class="dv">0</span>) {</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>    <span class="kw">return</span> <span class="fu">contains</span>(root.<span class="fu">left</span>, item);</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>} <span class="kw">else</span> {</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>    <span class="kw">return</span> <span class="fu">contains</span>(root.<span class="fu">right</span>, item);</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="remove" class="slide level2">
+<h2>Remove</h2>
+<ul>
+<li>Method signature should be void, not</li>
+<li>if the node is a leaf, return null</li>
+<li>if the node has one child, replace its data with its child, delete its child.</li>
+<li>if the node has two children, replace its data with its successor, delete the successor</li>
+</ul>
+</section>
+<section id="one-child" class="slide level2">
+<h2>One Child</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="bu">TreeNode</span>&lt;T&gt; child = subtree.<span class="fu">left</span>; <span class="co">// or right?</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>subtree.<span class="fu">data</span> = child.<span class="fu">data</span>;</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>subtree.<span class="fu">right</span> = <span class="fu">remove</span>(child, child.<span class="fu">data</span>);</span></code></pre></div>
+</section>
+<section id="successor" class="slide level2">
+<h2>Successor</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">private</span> T <span class="fu">findMin</span>(<span class="bu">TreeNode</span>&lt;T&gt; subtree) {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    <span class="kw">if</span> (subtree == <span class="kw">null</span>) {</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>        <span class="kw">return</span> <span class="kw">null</span>;</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>    }</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>    <span class="kw">while</span> (subtree.<span class="fu">left</span> != <span class="kw">null</span>) {</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>        subtree = subtree.<span class="fu">left</span>;</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>    }</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a>    <span class="kw">return</span> subtree.<span class="fu">data</span>;</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="remove-1" class="slide level2">
+<h2>Remove</h2>
+<ul>
+<li>Replit</li>
+<li>Run Unit Tests in IntelliJ?</li>
+</ul>
+</section>
+<section id="running-times" class="slide level2">
+<h2>Running times</h2>
+<ul>
+<li>BinaryTree of integers.</li>
+<li>Suppose <span class="math inline">\(N\)</span> integers are inserted randomly.</li>
+<li>Running time of insert? Contains? Remove?</li>
+<li>What if insertion is not so random? Worst case?</li>
+</ul>
+</section></section>
+<section>
+<section id="tree-rotations" class="title-slide slide level1">
+<h1>Tree Rotations</h1>
+<p><img src="rightrotate1.png" alt="Binary Tree with root E, children C and F; C has children B and D; B has child A. This is rotated right to a tree with root C, children B and E, B has child A, E has children D and F" /></p>
+<ul>
+<li>Preserves “Search Tree” property</li>
+<li>Algorithm?</li>
+</ul>
+</section>
+<section id="right-rotation" class="slide level2">
+<h2>Right Rotation</h2>
+<pre><code>L = root.left
+root.left = L.right
+L.right = root
+return L</code></pre>
+<p>Makes L the new root of this subtree.</p>
+</section>
+<section id="left-rotation" class="slide level2">
+<h2>Left Rotation</h2>
+<p>Similar idea:</p>
+<pre><code>R = root.right
+root.right = R.left
+R.left = root
+return R</code></pre>
+<ul>
+<li>Makes R the new root of this subtree</li>
+<li>Inverse operations:
+<ul>
+<li>Right rotation followed by left rotation?</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="balancing" class="title-slide slide level1">
+<h1>Balancing</h1>
+<p>What does an “unbalanced” tree look like?</p>
+</section>
+<section id="unbalanced-trees" class="slide level2">
+<h2>Unbalanced Trees</h2>
+<div class="columns">
+<div class="column" style="width:10%;">
+
+</div><div class="column" style="width:35%;">
+<figure>
+<img data-src="right_right.png" alt="" /><figcaption>Right-right unbalanced tree</figcaption>
+</figure>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:35%;">
+<figure>
+<img data-src="right_left.png" alt="" /><figcaption>Right-left unbalanced tree</figcaption>
+</figure>
+</div><div class="column" style="width:10%;">
+
+</div>
+</div>
+</section>
+<section id="unbalanced-trees-1" class="slide level2">
+<h2>Unbalanced Trees</h2>
+<ul>
+<li>Can also define left-right and left-left unbalanced trees</li>
+<li>In general:
+<ul>
+<li>if heights of left and right subtrees differ by more than 1</li>
+</ul></li>
+<li>Keep track of the height of each node</li>
+<li>If one subtree has a larger height than the other, rebalance</li>
+<li>How do we rebalance? Tree rotations!</li>
+</ul>
+</section>
+<section id="algorithms-for-balancing" class="slide level2">
+<h2>Algorithms for balancing</h2>
+<p>Some unbalanced trees can be rebalanced easily:</p>
+<ul>
+<li>right-right: rotate left</li>
+<li>left-left: rotate right</li>
+</ul>
+</section>
+<section id="right-left" class="slide level2">
+<h2>Right-left</h2>
+<div class="columns">
+<div class="column" style="width:35%;">
+<p><img alt="Right-left unbalanced tree" src="right_left.png" /></p>
+</div><div class="column" style="width:65%;">
+<ul>
+<li>Rotate left around 30?</li>
+<li>Rotate right around 30? (can’t!)</li>
+<li>Solution?</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Forget about the code for a bit. What <strong>should</strong> a self-balancing tree do when we insert in the following order: 1, 2, 3, 4, 5, 6, 7?</p>
+<p>Draw the pictures of the BSTs that result. When do we trigger a “rebalancing”?</p>
+</section>
+<section id="self-balancing-pseudocode" class="slide level2">
+<h2>Self-balancing pseudocode</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="co">// pseudocode</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="kw">private</span> <span class="bu">TreeNode</span>&lt;T&gt; <span class="fu">insert</span>(T item, <span class="bu">TreeNode</span>&lt;T&gt; subtree) {</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>   <span class="co">// code to insert</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>   <span class="dt">int</span> balance = <span class="fu">height</span>(subtree.<span class="fu">left</span>) - <span class="fu">height</span>(subtree.<span class="fu">right</span>);</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>   <span class="kw">if</span> (balance &gt; <span class="dv">1</span>) {</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>     <span class="co">// left-left or left-right?</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a>   } <span class="kw">else</span> <span class="kw">if</span> (balance &lt; -<span class="dv">1</span>) {</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a>     <span class="co">// right-right or right-left?</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a>   }</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a>}</span></code></pre></div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
