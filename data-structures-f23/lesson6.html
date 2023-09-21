@@ -134,6 +134,7 @@
 <p>Today:</p>
 <ul>
 <li>contains / remove</li>
+<li>some mathematics / theory / running times</li>
 <li>rotations</li>
 <li>balancing</li>
 </ul>
@@ -165,7 +166,7 @@
 <section id="remove" class="slide level2">
 <h2>Remove</h2>
 <ul>
-<li>Method signature should be void, not boolean</li>
+<li>Method signature should be void, not <code>boolean</code></li>
 <li>if the node is a leaf, return null</li>
 <li>if the node has one child, replace its data with its child, delete its child.</li>
 <li>if the node has two children, replace its data with its successor, delete the successor</li>
@@ -205,6 +206,54 @@
 <li>Running time of insert? Contains? Remove?</li>
 <li>What if insertion is not so random? Worst case?</li>
 </ul>
+</section></section>
+<section>
+<section id="theory" class="title-slide slide level1">
+<h1>Theory</h1>
+<ul>
+<li>The <strong>level</strong> of a node in a tree is the length of the path from the root to that node. Example: the root is at level <span class="math inline">\(0\)</span>, its children are at level <span class="math inline">\(1\)</span>, etc. The height of the tree is equal to the highest level of the tree.</li>
+<li>A <strong>full</strong> binary tree is a tree for which every non-leaf node has exactly 2 children.</li>
+<li>A <strong>complete</strong> binary tree is a binary tree in which every level (possibly except the last) is completely filled, and all nodes are as fall left as possible.</li>
+</ul>
+</section>
+<section id="theorem" class="slide level2">
+<h2>Theorem</h2>
+<p><strong>Exercise</strong> (Might be homework at some point): Suppose <span class="math inline">\(T\)</span> is a complete binary tree of height <span class="math inline">\(h\)</span> and the last level is completely filled. Then <span class="math inline">\(T\)</span> has exactly <span class="math inline">\(2^{h+1} - 1\)</span> nodes.</p>
+<p>Therefore: a complete binary tree of height <span class="math inline">\(h\)</span> has between <span class="math inline">\(2^h\)</span> and <span class="math inline">\(2^{h+1} - 1\)</span> nodes. That is:</p>
+<ul>
+<li>a tree of height 0 will have 1 node</li>
+<li>a tree of height 1 will have between 2 and 3 nodes</li>
+<li>a tree of height 2 will have between 4 and 7 nodes</li>
+<li>a tree of height 3 will have between 8 and 15 nodes</li>
+</ul>
+</section>
+<section id="height" class="slide level2">
+<h2>Height</h2>
+<ul>
+<li>If <span class="math inline">\(T\)</span> is a complete tree with <span class="math inline">\(N\)</span> nodes, then its height is <span class="math inline">\(\lfloor \log_2(N) \rfloor\)</span>; that is, the height of the tree is <span class="math inline">\(O(\log(N))\)</span>.</li>
+<li>Insert: <span class="math inline">\(O(\log(N))\)</span> steps in this case then (need to travel down one path of a tree from the root to a leaf, then insert below that leaf)</li>
+<li>That is, insertion doesn’t happen until the “subtree” is null. That takes <span class="math inline">\(h\)</span> steps, where <span class="math inline">\(h\)</span> is the height of the tree.</li>
+<li>Contains? On average, how many steps will it take to find a node in the tree?</li>
+</ul>
+</section>
+<section id="contains-1" class="slide level2">
+<h2>Contains</h2>
+<ul>
+<li>For each node at level <span class="math inline">\(l\)</span>, it takes <span class="math inline">\(l\)</span> steps to find that node.</li>
+<li><span class="math inline">\(2^l\)</span> nodes on each level (you can prove this by induction), and <span class="math inline">\(2^{h+1} - 1\)</span> nodes in total</li>
+<li>Average level of a node is <span class="math inline">\(\dfrac{1}{2^{h+1} - 1} \sum_{l=1}^{h} l \times 2^l\)</span>.</li>
+<li>Sum? Hard. Just find an upper bound.</li>
+<li>Since <span class="math inline">\(l \leq h\)</span>, above is <span class="math inline">\(\leq \dfrac{h}{2^{h+1} - 1} \sum_{l=1}^h 2^l\)</span></li>
+<li>Sum of <span class="math inline">\(2^l\)</span> from <span class="math inline">\(l = 1\)</span> to <span class="math inline">\(h\)</span> is <span class="math inline">\(2^{h+1} - 2\)</span>, this is roughly <span class="math inline">\(h\)</span>, or <span class="math inline">\(O(\log(N))\)</span>.</li>
+</ul>
+</section>
+<section id="worst-case" class="slide level2">
+<h2>Worst Case</h2>
+<p>Remember, the running times are all based on the height of the tree. Given a tree with <span class="math inline">\(N\)</span> nodes, what’s the worst possible height of such a tree? What insertion order gives that height?</p>
+</section>
+<section id="preventing" class="slide level2">
+<h2>Preventing</h2>
+<p>Next topic: trees that are <strong>self-balancing</strong>, which will prevent the tree from getting too unbalanced.</p>
 </section></section>
 <section>
 <section id="tree-rotations" class="title-slide slide level1">
