@@ -18,3 +18,4 @@ layout: default
 * [Lesson 4: Arrays](lesson4.html)
 * [Lesson 5: Methods and Strings](lesson5.html)
 * [Lesson 6: Methods / Modular design](lesson6.html)
+* [Lesson 7: Review for exam 1](lesson7.html)
