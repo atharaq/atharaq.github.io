@@ -22,3 +22,4 @@ lang: en-US
 * [Lesson 5: Circular Queues / Binary Search Trees](lesson5.html)
 * [Lesson 6: Trees and tree rotations](lesson6.html)
 * [Lesson 7: Self-balancing trees](lesson7.html)
+* [Lesson 8: AVL Trees, Set ADT](lesson8.html)

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>Data Structures</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Lesson 8 (AVL Trees / Hashtable Intro)</p>
+</section>
+
+<section>
+<section id="presentations" class="title-slide slide level1">
+<h1>Presentations</h1>
+<p>Six presentations today.</p>
+</section>
+<section id="project-1" class="slide level2">
+<h2>Project 1</h2>
+<p>Project 1 is due <strong>Sunday</strong>. Questions?</p>
+</section></section>
+<section>
+<section id="self-balancing-algorithm" class="title-slide slide level1">
+<h1>Self-balancing algorithm</h1>
+<ul>
+<li>Keep track of the heights of each node.</li>
+<li>Make sure to update the height during rotations.</li>
+<li>At the end of <code>insert</code> or <code>remove</code>, rebalance.</li>
+</ul>
+</section>
+<section id="code-snippet" class="slide level2">
+<h2>Code Snippet</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">private</span> <span class="bu">TreeNode</span>&lt;T&gt; <span class="fu">balance</span>(<span class="bu">TreeNode</span>&lt;T&gt; subtree) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>   <span class="dt">int</span> balance = <span class="fu">height</span>(subtree.<span class="fu">left</span>) - <span class="fu">height</span>(subtree.<span class="fu">right</span>);</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>   <span class="kw">if</span> (balance &gt; <span class="dv">1</span>) {</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>     <span class="co">// left-left</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>     <span class="kw">if</span> (<span class="fu">height</span>(subtree.<span class="fu">left</span>.<span class="fu">left</span>) &gt;= <span class="fu">height</span>(subtree.<span class="fu">left</span>.<span class="fu">right</span>)) {</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>       subtree = <span class="fu">rotateRight</span>(subtree);</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>     } <span class="kw">else</span> {</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>       <span class="co">// left-right</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>       <span class="co">// left rotation turns this into left-left</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>       subtree.<span class="fu">left</span> = <span class="fu">rotateLeft</span>(subtree.<span class="fu">left</span>);</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>       <span class="co">// right rotation rebalances</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a>       subtree = <span class="fu">rotateRight</span>(subtree);</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a>     }</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a>   } <span class="kw">else</span> <span class="kw">if</span> (balance &lt; -<span class="dv">1</span>) {</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a>     <span class="co">// right-right or right-left?</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a>     <span class="co">// do the opposite as above</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a>   }</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true"></a>   <span class="co">// update height</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true"></a>   subtree.<span class="fu">height</span> = <span class="dv">1</span> + <span class="bu">Math</span>.<span class="fu">max</span>(<span class="fu">height</span>(subtree.<span class="fu">left</span>), <span class="fu">height</span>(subtree.<span class="fu">right</span>));</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true"></a>   <span class="kw">return</span> subtree;</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="test-it-out" class="slide level2">
+<h2>Test it out</h2>
+<ul>
+<li>Let’s implement the above (IntelliJ or replit)</li>
+<li>Test it out on random insertions and in-order insertions</li>
+<li>What are the heights if we insert 100 elements? 1000?</li>
+</ul>
+</section>
+<section id="video" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/g8htJR5nu98?si=KQ2DWVrM673PvmSZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section></section>
+<section>
+<section id="analysis" class="title-slide slide level1">
+<h1>Analysis</h1>
+<ul>
+<li>Adelson-Velsky, Landis (1962): <strong>AVL Trees</strong></li>
+<li>Height is <span class="math inline">\(O(\log(n))\)</span></li>
+<li>So contains is <span class="math inline">\(O(\log(n))\)</span>.</li>
+<li>Insert/remove may trigger rebalancings. How many?
+<ul>
+<li>Only up <strong>one branch</strong> of the tree! So still <span class="math inline">\(O(\log(n))\)</span>.</li>
+</ul></li>
+<li>Adelson-Velsky/Landis proved: worst case height is about <span class="math inline">\(1.44 \log(n)\)</span>.</li>
+</ul>
+</section>
+<section id="running-times" class="slide level2">
+<h2>Running times</h2>
+<ul>
+<li>BST: average case <span class="math inline">\(O(\log(N))\)</span> (not proven)
+<ul>
+<li>Worst case <span class="math inline">\(O(N)\)</span></li>
+</ul></li>
+<li>AVL Tree: best case = average case = worst case = <span class="math inline">\(O(\log(N))\)</span></li>
+</ul>
+</section>
+<section id="video-1" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vKWjts8JJWQ?si=UtjxMokK22eMH4Cp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+<p>In the above video, I go through the proof that all the operations are <span class="math inline">\(O(\log(n))\)</span> on an AVL tree.</p>
+</section></section>
+<section>
+<section id="challenge-questions" class="title-slide slide level1">
+<h1>Challenge questions</h1>
+<ul>
+<li>Tree (not necessarily BST / AVL): Level-order traversal</li>
+<li>AVL Tree Sort / running times</li>
+<li>Tree (not necessarily BST / AVL): Path from root to a node N</li>
+<li>Tree (not necessarily BST / AVL): Node N, height <span class="math inline">\(h\)</span>, find ancestor of <span class="math inline">\(N\)</span> that is <span class="math inline">\(h\)</span> levels above.</li>
+<li>Tree (not necessarily BST / AVL): two nodes, find lowest common ancestor</li>
+</ul>
+</section>
+<section id="level-order" class="slide level2">
+<h2>Level-order</h2>
+<p>Given a tree T, output its nodes in <em>level-order</em>. That is, output the root first, then output the root’s children, then the grandchildren, etc.</p>
+<p>Hint:</p>
+<ul>
+<li>Nothing to do with BST</li>
+<li>We’ve seen this before (kind of)…?</li>
+</ul>
+</section>
+<section id="avl-sort" class="slide level2">
+<h2>AVL Sort</h2>
+<p>Implement a method in the AVL Tree class which returns a List of items in sorted order:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">public</span> <span class="bu">List</span>&lt;T&gt; <span class="fu">sort</span>() {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>  <span class="co">// your code here</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>  </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>}</span></code></pre></div>
+<p>Asymptotic running time (if the tree has <span class="math inline">\(N\)</span> elements)?</p>
+</section>
+<section id="avl-sort-continued" class="slide level2">
+<h2>AVL Sort (continued)</h2>
+<p>Asymptotic running time of the following:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">static</span> &lt;T&gt; <span class="bu">List</span>&lt;T&gt; <span class="fu">sort</span>(<span class="bu">List</span>&lt;T&gt; list) {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>  AVLTree&lt;T&gt; tree = <span class="kw">new</span> AVLTree&lt;&gt;();</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>  <span class="kw">for</span> (T item : list) {</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>    tree.<span class="fu">insert</span>(item);</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>  }</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>  <span class="kw">return</span> tree.<span class="fu">sort</span>();</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>}</span></code></pre></div>
+</section></section>
+<section>
+<section id="homework-2" class="title-slide slide level1">
+<h1>Homework 2</h1>
+<p>Due <strong>Monday</strong>, October 9 on BrightSpace. Submit a single PDF file.</p>
+<ol type="1">
+<li>Prove (by induction) that there are <span class="math inline">\(2^{h+1} - 1\)</span> nodes in a complete binary tree of height <span class="math inline">\(h\)</span>, assuming the last level is completely filled.</li>
+<li>Write a method which outputs the nodes of a binary tree in level-order. Do this in linear time (<span class="math inline">\(O(n)\)</span>), and explain why your method runs in that time.</li>
+</ol>
+</section>
+<section id="homework-2-1" class="slide level2">
+<h2>Homework 2</h2>
+<ol start="3" type="1">
+<li>Describe how you would modify the binary search tree (and its TreeNode class) to support a <code>findKth(int k)</code> method. This method should return the <span class="math inline">\(k\)</span>-th smallest element of the tree in <span class="math inline">\(O(\log(N))\)</span> time (on average if it’s a BST, or always if it’s an AVL tree). You do not need to write actual code here, but you do need to explain the algorithm, and what changes need to be made to the tree / node classes to support this.</li>
+</ol>
+</section></section>
+<section>
+<section id="set-adt" class="title-slide slide level1">
+<h1>Set ADT</h1>
+<blockquote>
+<p>A set is a gathering together into a whole of distinct objects of our thought – which are called elements of the set.<br />
+(Georg Cantor)</p>
+</blockquote>
+<p>Mathematically, a <strong>set</strong> is a collection of distinct objects (no repetitions). Two sets are considered equal if they have the same elements.</p>
+</section>
+<section id="set-operations" class="slide level2">
+<h2>Set operations</h2>
+<p>For our perspective, we consider the following operations on a set:</p>
+<ul>
+<li>contains</li>
+<li>insert</li>
+<li>remove</li>
+<li>size</li>
+</ul>
+<p>Sometimes “insert” / “remove” are boolean methods, to indicate whether you were able to successfully modify the set (returning false, for example, if you tried to insert a duplicate).</p>
+</section>
+<section id="possible-implementations" class="slide level2">
+<h2>Possible implementations</h2>
+<ul>
+<li>ArrayList? Already has these operations. Running times? Can you get <span class="math inline">\(O(1)\)</span> insert if you don’t allow duplicates?</li>
+<li>Tree?
+<ul>
+<li>Generic type must implement Comparable</li>
+<li>Trees have contains / insert / remove.</li>
+<li>We can impelment a “size” easily, just keep track of it whenever we call insert or remove.</li>
+<li>Our implementation didn’t allow duplicates.</li>
+<li>Running times?</li>
+</ul></li>
+</ul>
+</section>
+<section id="arraylist-implementation" class="slide level2">
+<h2>ArrayList implementation</h2>
+<p><strong>Exercise</strong>: Using an ArrayList, implement the Set interface <a href="https://replit.com/team/data-structures-fall-23/Lesson-8-Set-exercise">on replit</a>. Analyze the time complexity of contains / insert / remove.</p>
+</section>
+<section id="better-implementation" class="slide level2">
+<h2>Better Implementation?</h2>
+<ul>
+<li>All we care about: is <span class="math inline">\(x\)</span> in the set or not?</li>
+<li>Do we need to store elements in order?</li>
+<li>Focus on integers:
+<ul>
+<li>Trade-off: use a huge amount of space.</li>
+<li>Can we make insert / remove / contains <span class="math inline">\(O(1)\)</span>?</li>
+</ul></li>
+</ul>
+</section>
+<section id="hashing" class="slide level2">
+<h2>Hashing</h2>
+<ul>
+<li>Keep a large array, called <code>table</code>, size <span class="math inline">\(s\)</span></li>
+<li>Given data of type <span class="math inline">\(T\)</span>, need a function <span class="math inline">\(f : T \to [0, s - 1]\)</span>
+<ul>
+<li>Should be easy to compute, called the <strong>hash function</strong></li>
+</ul></li>
+<li>Add a data item to the set?
+<ul>
+<li>Compute <span class="math inline">\(f(item)\)</span>, insert item into <code>table[f(item)]</code></li>
+</ul></li>
+<li>Check if item is in the set? Check <code>table[f(item)] == null</code></li>
+<li>Remove?</li>
+</ul>
+</section>
+<section id="hashtables" class="slide level2">
+<h2>Hashtables</h2>
+<ul>
+<li>This is the idea behind a <strong>hashtable</strong>.</li>
+<li>Lots of analysis needs to be done
+<ul>
+<li>How do we define a good hash function?</li>
+<li>What is the likelihood of a collision?</li>
+<li>What happens if there are collisions?</li>
+</ul></li>
+</ul>
+</section>
+<section id="think-about" class="slide level2">
+<h2>Think about</h2>
+<p>The following question was posed to me on a phone interview.</p>
+<blockquote>
+<p>Given a list of 2,000,000 unique 7-digit phone numbers, output them in order using no more than 4MB of additional memory.</p>
+</blockquote>
+<p>Each integer requires 4 bytes of space. Can we store them all in memory? If not, how do we sort them if we can’t store all at once?</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
