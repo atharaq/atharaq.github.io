@@ -23,3 +23,4 @@ lang: en-US
 * [Lesson 6: Trees and tree rotations](lesson6.html)
 * [Lesson 7: Self-balancing trees](lesson7.html)
 * [Lesson 8: AVL Trees, Set ADT](lesson8.html)
+* [Lesson 9: Set ADT, Hashtables](lesson9.html)

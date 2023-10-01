@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>Data Structures</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Lesson 9 (Sets / Hashtable Intro)</p>
+</section>
+
+<section id="interview-question" class="title-slide slide level1">
+<h1>Interview Question</h1>
+<!--
+12:30 - 12:45 Interview Q
+12:45 - 12:55 Set ADT
+12:55 - 1:10 ArrayList Implementation
+1:10 - 1:20 Hashtable intro
+1:20 - 1:30 Hash functions
+1:30 - 1:45 Collisions
+1:45 - 2:10 Separate Chaining
+-->
+<p>The following question was posed to me on a phone interview.</p>
+<blockquote>
+<p>Given a list of 2,000,000 unique 7-digit phone numbers, output them in order using no more than 4MB of additional memory.</p>
+</blockquote>
+<p>Each integer requires 4 bytes of space. Can we store them all in memory? If not, how do we sort them if we can’t store all at once?</p>
+<p><strong>Discuss</strong> with your tables. Design your best solution. (5-10 minutes.)</p>
+</section>
+
+<section>
+<section id="set-adt" class="title-slide slide level1">
+<h1>Set ADT</h1>
+<blockquote>
+<p>A set is a gathering together into a whole of distinct objects of our thought – which are called elements of the set.<br />
+(Georg Cantor)</p>
+</blockquote>
+<p>Mathematically, a <strong>set</strong> is a collection of distinct objects (no repetitions). Two sets are considered equal if they have the same elements.</p>
+</section>
+<section id="set-operations" class="slide level2">
+<h2>Set operations</h2>
+<p>For our perspective, we consider the following operations on a set:</p>
+<ul>
+<li>contains</li>
+<li>insert</li>
+<li>remove</li>
+<li>size</li>
+</ul>
+<p>Sometimes “insert” / “remove” are boolean methods, to indicate whether you were able to successfully modify the set (returning false, for example, if you tried to insert a duplicate).</p>
+</section>
+<section id="possible-implementations" class="slide level2">
+<h2>Possible implementations</h2>
+<ul>
+<li>ArrayList? Already has these operations. Running times? Can you get <span class="math inline">\(O(1)\)</span> insert if you don’t allow duplicates?</li>
+<li>Tree?
+<ul>
+<li>Generic type must implement Comparable</li>
+<li>Trees have contains / insert / remove.</li>
+<li>We can impelment a “size” easily, just keep track of it whenever we call insert or remove.</li>
+<li>Our implementation didn’t allow duplicates.</li>
+<li>Running times?</li>
+</ul></li>
+</ul>
+</section>
+<section id="arraylist-implementation" class="slide level2">
+<h2>ArrayList implementation</h2>
+<p><strong>Exercise</strong>: Using an ArrayList, implement the Set interface <a href="https://replit.com/team/data-structures-fall-23/Lesson-9-Set-exercise">on replit</a>. Analyze the time complexity of contains / insert / remove.</p>
+</section>
+<section id="better-implementation" class="slide level2">
+<h2>Better Implementation?</h2>
+<ul>
+<li>All we care about: is <span class="math inline">\(x\)</span> in the set or not?</li>
+<li>Do we need to store elements in order?</li>
+<li>Focus on integers:
+<ul>
+<li>Trade-off: use a huge amount of space.</li>
+<li>Can we make insert / remove / contains <span class="math inline">\(O(1)\)</span>?</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="hashing" class="title-slide slide level1">
+<h1>Hashing</h1>
+<ul>
+<li>Keep a large array, called <code>table</code>, size <span class="math inline">\(s\)</span></li>
+<li>Given data of type <span class="math inline">\(T\)</span>, need a function <span class="math inline">\(f : T \to [0, s - 1]\)</span>
+<ul>
+<li>Should be easy to compute, called the <strong>hash function</strong></li>
+</ul></li>
+<li>Add a data item to the set?
+<ul>
+<li>Compute <span class="math inline">\(f(item)\)</span>, insert item into <code>table[f(item)]</code></li>
+</ul></li>
+<li>Check if item is in the set? Check <code>table[f(item)] == null</code></li>
+<li>Remove?</li>
+</ul>
+</section>
+<section id="hashtables" class="slide level2">
+<h2>Hashtables</h2>
+<ul>
+<li>This is the idea behind a <strong>hashtable</strong>.</li>
+<li>Lots of analysis needs to be done
+<ul>
+<li>How do we define a good hash function?</li>
+<li>What is the likelihood of a collision?</li>
+<li>What happens if there are collisions?</li>
+</ul></li>
+</ul>
+</section>
+<section id="video" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aMC0JtEeDXc?si=6IfVQEJGdtQ7dmaQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section></section>
+<section>
+<section id="hash-functions" class="title-slide slide level1">
+<h1>Hash Functions</h1>
+<p>Suppose we have a large array of size <span class="math inline">\(s\)</span>.</p>
+<ul>
+<li><strong>key</strong>: “lookup” value used as input to the hash function.</li>
+<li><strong>hash function</strong>: a function which maps keys to a value between <span class="math inline">\(0\)</span> and <span class="math inline">\(s - 1\)</span>.</li>
+<li>Outputs should be (roughly) <strong>uniformly distributed</strong>: the probability that, given a random key <span class="math inline">\(k\)</span>, <span class="math inline">\(h(k) = i\)</span> should be the same for all <span class="math inline">\(i \in \{ 0, 1, \ldots, s - 1 \}\)</span>.</li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<ul>
+<li>Example (integer keys): <span class="math inline">\(h(x) = x\)</span> mod <span class="math inline">\(s\)</span>.</li>
+<li>In what scenarios would this be a good hash function?</li>
+<li>Bad?</li>
+<li>Choose a good table size <span class="math inline">\(s\)</span> to avoid these problems?</li>
+</ul>
+</section>
+<section id="string-keys" class="slide level2">
+<h2>String Keys</h2>
+<p>Simple idea: think of a word as a number in base 27 (“a” represents the digit 1, and “z” represents the digit 27), then convert it to an integer.</p>
+<ul>
+<li>“abc” hashes to <span class="math inline">\(27^2 \times 1 + 27 \times 2 + 3\)</span>.</li>
+<li>What do we do if this value ends up larger than the hashtable size?</li>
+<li>Any major problem with this approach? (Hint: what characters can make up a String?)</li>
+</ul>
+<p>Let’s look at the <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html#hashCode()">built-in hash function for Strings in Java</a>.</p>
+</section>
+<section id="video-1" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4FSjuvDJi5E?si=xS6QLu0YN7QwjP13" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section></section>
+<section>
+<section id="collisions" class="title-slide slide level1">
+<h1>Collisions</h1>
+<ul>
+<li><strong>Collision</strong>: when two objects hash to the same value (or same index in the array)</li>
+<li>Insert <span class="math inline">\(N\)</span> items into a hashtable of size <span class="math inline">\(s\)</span>. Probability of collision?</li>
+</ul>
+<p>The math here is a little bit of a challenge, let’s do some examples!</p>
+</section>
+<section id="probability" class="slide level2">
+<h2>Probability</h2>
+<p>Insert <span class="math inline">\(N\)</span> items into a table of size <span class="math inline">\(s\)</span>. Suppose the hash function is uniform. What’s the probability of a collision?</p>
+<ul>
+<li><span class="math inline">\(N = 2, s = 4\)</span>?
+<ul>
+<li>Two elements: <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</li>
+<li>Probability that <span class="math inline">\(h(x) == h(y)\)</span>?</li>
+<li>Probability that <span class="math inline">\(h(x) \neq h(y)\)</span> is 3/4, so probabiliyt of collision is <span class="math inline">\(1/4\)</span>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="n-3-s-9" class="slide level2">
+<h2>N = 3, s = 9</h2>
+<ul>
+<li>Three: <span class="math inline">\(x, y, z\)</span>. Probability that <span class="math inline">\(h(x) == h(y)\)</span> or <span class="math inline">\(h(x) == h(z)\)</span> or <span class="math inline">\(h(y) == h(z)\)</span>?</li>
+<li>Maybe easier to solve: probability that <span class="math inline">\(h(x)\)</span>, <span class="math inline">\(h(y)\)</span> and <span class="math inline">\(h(z)\)</span> are all different!</li>
+<li>Probability of a collision then is <span class="math inline">\(1 - Prob(h(x), h(y), h(z)\)</span> are different<span class="math inline">\()\)</span>.</li>
+</ul>
+</section>
+<section id="n-4-s-9" class="slide level2">
+<h2>N = 4, s = 9</h2>
+<ul>
+<li>Same idea, first find the probability that all four hash values are different</li>
+<li>Then subtract from 1.</li>
+</ul>
+</section>
+<section id="birthday-problem" class="slide level2">
+<h2>Birthday Problem</h2>
+<ul>
+<li><span class="math inline">\(N = 23\)</span>, <span class="math inline">\(s = 365\)</span> is the famous <a href="https://en.wikipedia.org/wiki/Birthday_problem">birthday problem</a>!</li>
+<li>In a room with 23 people, there is a greater than 50% chance that two of them have the same birthday!</li>
+<li>What does this have to do with hash collisions?
+<ul>
+<li>What’s the “hash function” here?</li>
+<li>What are the “keys” here?</li>
+</ul></li>
+<li>In general, if <span class="math inline">\(N &gt; \sqrt{s}\)</span>, there is a good chance of a collision.</li>
+</ul>
+</section>
+<section id="video-2" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6fMx2RroO0g?si=4aruGN14ItGBovNC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section></section>
+<section>
+<section id="collision-resolution" class="title-slide slide level1">
+<h1>Collision Resolution</h1>
+<p>Two main strategies for collision resolution:</p>
+<ul>
+<li><strong>Separate chaining</strong>: Each entry in the hashtable is a List or some other data structure (usually a LinkedList)</li>
+<li><strong>Open addressing</strong>: search through the hashtable for another location to put something in.</li>
+</ul>
+</section>
+<section id="think-about" class="slide level2">
+<h2>Think about</h2>
+<p>As we learn about these, keep this question in mind: in what scenarios (in terms of the table size <span class="math inline">\(s\)</span> and the number of insertions <span class="math inline">\(N\)</span>) might we prefer one scheme over the other?</p>
+</section>
+<section id="load-factor" class="slide level2">
+<h2>Load Factor</h2>
+<ul>
+<li>Let <span class="math inline">\(N\)</span> be number of elements to insert into the table.</li>
+<li>Let <span class="math inline">\(s\)</span> be the size of the table.</li>
+<li><span class="math inline">\(\lambda = \dfrac{N}{s}\)</span> is called the <strong>load factor</strong> of the table.</li>
+<li><span class="math inline">\(\lambda\)</span> small: few collisions, lots of wasted space</li>
+<li><span class="math inline">\(\lambda\)</span> large: space used efficiently, but high chance of collisions.</li>
+</ul>
+</section>
+<section id="separate-chaining" class="slide level2">
+<h2>Separate Chaining</h2>
+<ul>
+<li>Don’t keep a “large array”.</li>
+<li>Instead: keep an array of <span class="math inline">\(s\)</span> <em>lists</em>.</li>
+<li>Think of each list as a “bucket” (or “bin”).</li>
+<li>Elements that hash to the same value go in to the same bucket.</li>
+</ul>
+</section>
+<section id="image" class="slide level2">
+<h2>Image</h2>
+<p><img alt="Separate chaining hashtable: an array of lists" src="separate-chaining.jpeg" /></p>
+</section>
+<section id="running-times" class="slide level2">
+<h2>Running times</h2>
+<ul>
+<li>Insert <span class="math inline">\(x\)</span>: compute hashcode <span class="math inline">\(h(x)\)</span>, add <span class="math inline">\(x\)</span> to the <span class="math inline">\(h(x)\)</span>-th list.</li>
+<li>Running time of insert?</li>
+<li><code>contains</code>: compute the hash function, check the relevant list.</li>
+<li>Running time (average case)? Worst case?</li>
+<li>What happens as <span class="math inline">\(\lambda\)</span> increases?</li>
+<li>Can we keep a bound on <span class="math inline">\(\lambda\)</span>?</li>
+</ul>
+</section>
+<section id="rehashing" class="slide level2">
+<h2>Rehashing</h2>
+<ul>
+<li>If we allow <span class="math inline">\(\lambda\)</span> to increase without bound, performance degrades.</li>
+<li>Many implementations (including Java’s) will <strong>rehash</strong> if it increases too much.</li>
+<li>Increase the size of the table (usually: pick the next prime number <span class="math inline">\(p &gt; 2s\)</span>).</li>
+<li>Go through each previously inserted item, and re-insert into the new table.</li>
+<li>Should not happen too often, so that we still get (amortized) constant time inserts.</li>
+</ul>
+</section>
+<section id="image-1" class="slide level2">
+<h2>Image</h2>
+<p><img alt="Rehashing from a table of size 5 to a table of size 11" src="rehashing.jpeg" /></p>
+</section>
+<section id="video-3" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/V3sj2TKagj0?si=R6h84mMWcBG7Z-3U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section></section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Finish up on hashtables intro (separate chaining / open addressing) next time.</li>
+<li>Revisit some of the challenge problems from last week.</li>
+<li>Quiz 1 on Thursday; can make up anything incorrect / missed for homework.</li>
+<li>HW 2 due next week.</li>
+<li>Project 2 coming up.</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
