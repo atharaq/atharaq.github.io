@@ -50,6 +50,39 @@
 </section>
 
 <section>
+<section id="homework" class="title-slide slide level1">
+<h1>Homework</h1>
+<p>Prove (by induction) that there are <span class="math inline">\(2^{h+1} - 1\)</span> nodes in a complete binary tree of height <span class="math inline">\(h\)</span>, assuming the last level is completely filled.</p>
+</section>
+<section id="induction" class="slide level2">
+<h2>Induction</h2>
+<p>To prove a statement for every number <span class="math inline">\(n\)</span>:</p>
+<ol type="1">
+<li>Prove that the statement is true when <span class="math inline">\(n = 0\)</span>. (Base case)</li>
+<li>Prove that, for any natural number <span class="math inline">\(k\)</span>, if the statement is true when <span class="math inline">\(n = k\)</span> (fixed), then the statement still holds for <span class="math inline">\(n = k + 1\)</span>. (Inductive step)</li>
+</ol>
+</section>
+<section id="base-case-h-0" class="slide level2">
+<h2>Base case: h = 0</h2>
+<ul>
+<li>Prove that there are <span class="math inline">\(2^{1} - 1\)</span> nodes in a complete binary tree of height <span class="math inline">\(0\)</span>, assuming the last level is completely filled.</li>
+<li>What is a tree of height 0?</li>
+</ul>
+</section>
+<section id="inductive-step" class="slide level2">
+<h2>Inductive step</h2>
+<ul>
+<li>Suppose we know that, for some arbitrary <span class="math inline">\(h\)</span>, there are <span class="math inline">\(2^{h+1} - 1\)</span> nodes in a complete binary tree of height <span class="math inline">\(h\)</span>, assuming the last level is completely filled.</li>
+<li>Consider a complete binary tree of height <span class="math inline">\(h + 1\)</span>. What does that look like?
+<ul>
+<li>Has a root, which has two subtrees… of height?</li>
+<li>(Using inductive assumption) How many nodes in those subtrees?</li>
+<li>Therefore: how many nodes total?</li>
+</ul></li>
+<li>Conclusion: this tree has <span class="math inline">\(2^{h+2} - 1\)</span> nodes.</li>
+</ul>
+</section></section>
+<section>
 <section id="set-adt" class="title-slide slide level1">
 <h1>Set ADT</h1>
 <blockquote>
