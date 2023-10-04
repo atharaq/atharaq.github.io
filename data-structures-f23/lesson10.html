@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>Data Structures</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Lesson 10 (Hashtables / Collisions)</p>
+</section>
+
+<section>
+<section id="collision-resolution" class="title-slide slide level1">
+<h1>Collision Resolution</h1>
+<!--
+12:30 - 1:00 Separate Chaining
+1:00 - 1:30 Open Addressing
+1:30 - 1:50 Set and Maps in Java
+1:50 - 2:00 Challenge Problems and exercise
+-->
+<p>Two main strategies for collision resolution:</p>
+<ul>
+<li><strong>Separate chaining</strong>: Each entry in the hashtable is a List or some other data structure (usually a LinkedList)</li>
+<li><strong>Open addressing</strong>: search through the hashtable for another location to put something in.</li>
+</ul>
+</section>
+<section id="think-about" class="slide level2">
+<h2>Think about</h2>
+<p>As we learn about these, keep this question in mind: in what scenarios (in terms of the table size <span class="math inline">\(s\)</span> and the number of insertions <span class="math inline">\(N\)</span>) might we prefer one scheme over the other?</p>
+</section>
+<section id="load-factor" class="slide level2">
+<h2>Load Factor</h2>
+<ul>
+<li>Let <span class="math inline">\(N\)</span> be number of elements to insert into the table.</li>
+<li>Let <span class="math inline">\(s\)</span> be the size of the table.</li>
+<li><span class="math inline">\(\lambda = \dfrac{N}{s}\)</span> is called the <strong>load factor</strong> of the table.</li>
+<li><span class="math inline">\(\lambda\)</span> small: few collisions, lots of wasted space</li>
+<li><span class="math inline">\(\lambda\)</span> large: space used efficiently, but high chance of collisions.</li>
+</ul>
+</section>
+<section id="separate-chaining" class="slide level2">
+<h2>Separate Chaining</h2>
+<ul>
+<li>Don’t keep a “large array”.</li>
+<li>Instead: keep an array of <span class="math inline">\(s\)</span> <em>lists</em>.</li>
+<li>Think of each list as a “bucket” (or “bin”).</li>
+<li>Elements that hash to the same value go in to the same bucket.</li>
+</ul>
+</section>
+<section id="image" class="slide level2">
+<h2>Image</h2>
+<p><img width="60%" alt="Separate chaining hashtable: an array of lists" src="separate-chaining.jpeg" /></p>
+</section>
+<section id="running-times" class="slide level2">
+<h2>Running times</h2>
+<ul>
+<li>Insert <span class="math inline">\(x\)</span>: compute hashcode <span class="math inline">\(h(x)\)</span>, add <span class="math inline">\(x\)</span> to the <span class="math inline">\(h(x)\)</span>-th list.</li>
+<li>Running time of insert?</li>
+<li><code>contains</code>: compute the hash function, check the relevant list.</li>
+<li>Running time (average case)? Worst case?</li>
+<li>What happens as <span class="math inline">\(\lambda\)</span> increases?</li>
+<li>Can we keep a bound on <span class="math inline">\(\lambda\)</span>?</li>
+</ul>
+</section>
+<section id="rehashing" class="slide level2">
+<h2>Rehashing</h2>
+<ul>
+<li>If we allow <span class="math inline">\(\lambda\)</span> to increase without bound, performance degrades.</li>
+<li>Many implementations (including Java’s) will <strong>rehash</strong> if it increases too much.</li>
+<li>Increase the size of the table (usually: pick the next prime number <span class="math inline">\(p &gt; 2s\)</span>).</li>
+<li>Go through each previously inserted item, and re-insert into the new table.</li>
+<li>Should not happen too often, so that we still get (amortized) constant time inserts.</li>
+</ul>
+</section>
+<section id="image-1" class="slide level2">
+<h2>Image</h2>
+<p><img width="60%" alt="Rehashing from a table of size 5 to a table of size 11" src="rehashing.jpeg" /></p>
+</section>
+<section id="video" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/V3sj2TKagj0?si=R6h84mMWcBG7Z-3U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section></section>
+<section>
+<section id="open-addressing" class="title-slide slide level1">
+<h1>Open Addressing</h1>
+<ul>
+<li>If <code>table[h(x)]</code> is filled, look for an open spot to put <span class="math inline">\(x\)</span> in.</li>
+<li><strong>Linear Probing</strong>: Look at the next spot.</li>
+<li>If that’s filled, check the next one.</li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<ul>
+<li>Table size = 7, insert 16 and 2.</li>
+<li>16 mod 7 = 2, so put 16 at position 2.</li>
+<li>2 mod 7 = 2, so try to put 2 at position 2.</li>
+<li>Fails, so check position 3.</li>
+</ul>
+</section>
+<section id="image-2" class="slide level2">
+<h2>Image</h2>
+<p><img alt="Probing hashtable" src="probing.jpeg" width="60%" /></p>
+</section>
+<section id="more-generally" class="slide level2">
+<h2>More generally</h2>
+<ul>
+<li>Let <span class="math inline">\(h(x)\)</span> be our hash function.</li>
+<li>Use another function, <span class="math inline">\(f(i)\)</span>, callled <strong>collision resolution</strong> function.</li>
+<li>Consider the sequence <span class="math inline">\(h(x) + f(0), h(x) + f(1), h(x) + f(2), \ldots\)</span></li>
+<li>Above: <span class="math inline">\(f(i) = i\)</span>.</li>
+<li><span class="math inline">\(f(i)\)</span> linear: <strong>linear probing</strong>.</li>
+<li><span class="math inline">\(f(i)\)</span> quadratic: <strong>quadratic probing</strong>.</li>
+<li>Both cases: want <span class="math inline">\(\lambda\)</span> to be small, usually less than 0.5</li>
+</ul>
+</section>
+<section id="analysis-linear" class="slide level2">
+<h2>Analysis (Linear)</h2>
+<ul>
+<li>If <span class="math inline">\(s &gt; N\)</span>, can always find a spot.</li>
+<li>Might take too long!</li>
+<li><strong>clustering</strong>: tendency of keys to cluster around a few spots.
+<ul>
+<li>Too many objects hash close to each other.</li>
+<li><a href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/HashCSimple.html#the-problem-with-linear-probing">Clustering leads to more clustering</a></li>
+</ul></li>
+<li>Average # probes for insert / unsuccessful search: <span class="math inline">\(\frac{1}{2}(1 + \frac{1}{(1 - \lambda)^2})\)</span>.</li>
+<li>Average # probes for successful search: <span class="math inline">\(\frac{1}{2}(1 + \frac{1}{1 - \lambda})\)</span>.</li>
+</ul>
+</section>
+<section id="video-1" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BgU5fObyZq4?si=5Tx_AxK3hiflwbHN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section></section>
+<section>
+<section id="quadratic" class="title-slide slide level1">
+<h1>Quadratic</h1>
+<ul>
+<li>Uses <span class="math inline">\(f(i) = i^2\)</span>.</li>
+<li>Meaning: check <span class="math inline">\(h(x)\)</span>, then <span class="math inline">\(h(x) + 1\)</span>, then <span class="math inline">\(h(x) + 4\)</span>, etc.</li>
+<li>Problem?</li>
+</ul>
+<p><strong>Exercise</strong>: Let <span class="math inline">\(s = 7\)</span>. Insert 0, 1, 2, 4, 14 using the strategy <span class="math inline">\(f(i) = i^2\)</span>. What happens?</p>
+</section>
+<section id="problem" class="slide level2">
+<h2>Problem</h2>
+<ul>
+<li>14 mod 7 = 0. Taken.</li>
+<li>0 + 1 = 1. Taken</li>
+<li>0 + 4 = 4, Taken.</li>
+<li>0 + 9 = 9 mod 7 = 2. Taken.</li>
+<li>0 + 16 = 16 mod 7 = 2.</li>
+<li>0 + 25 = 25 mod 7 = 4.</li>
+<li>0 + 36 = 36 mod 7 = 1.</li>
+</ul>
+<p>Modular arithmetic is cyclical: anything over <span class="math inline">\(f(6)\)</span> will repeat. Never find an open spot!</p>
+</section>
+<section id="upshot" class="slide level2">
+<h2>Upshot</h2>
+<ul>
+<li>If <span class="math inline">\(\lambda &gt; 0.5\)</span> or <span class="math inline">\(s\)</span> is composite, it’s possible we don’t find an open spot to insert!</li>
+<li><strong>Necessary</strong> that <span class="math inline">\(\lamda \leq 0.5\)</span> and <span class="math inline">\(s\)</span> is prime.</li>
+<li><strong>Theorem</strong>: In that case (<span class="math inline">\(\lambda \leq 0.5\)</span> and <span class="math inline">\(s\)</span> is prime), you will always find a spot to insert into the table.</li>
+</ul>
+</section>
+<section id="removals" class="slide level2">
+<h2>Removals</h2>
+<ul>
+<li><span class="math inline">\(s = 7\)</span>.</li>
+<li>insert(2), insert(16)</li>
+<li>remove(2)</li>
+<li>contains(16)?</li>
+<li>Do you see the problem?</li>
+</ul>
+</section>
+<section id="lazy-deletion" class="slide level2">
+<h2>Lazy Deletion</h2>
+<ul>
+<li><strong>Lazy deletion</strong>: Keep a flag for whether or not a cell is deleted.</li>
+<li>Don’t actually set the entry to null!</li>
+<li>If we search for 16
+<ul>
+<li>Check position 2.</li>
+<li>If it’s null, not there.</li>
+<li>Otherwise, something was there: probe until we see null (or 16).</li>
+</ul></li>
+</ul>
+</section>
+<section id="image-3" class="slide level2">
+<h2>Image</h2>
+<p><img alt="Removing from a probing hashtable: use lazy deletion" src="remove-probing.jpeg" width="70%" /></p>
+</section>
+<section id="video-2" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Y8MwaHJXeTw?si=5xANLCPGjypkMvgF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section></section>
+<section>
+<section id="java" class="title-slide slide level1">
+<h1>Java</h1>
+<ul>
+<li><code>Set</code> and <code>Map</code> interfaces.</li>
+<li>Set interface: add, contains, remove, size (iterable)</li>
+<li>Implementations: HashSet, TreeSet</li>
+</ul>
+</section>
+<section id="map-adt" class="slide level2">
+<h2>Map ADT</h2>
+<ul>
+<li>Asks the question: why must arrays use integer indices?</li>
+<li><strong>map</strong>: a set of key-value pairs.</li>
+<li><code>void put(K key, V value)</code></li>
+<li><code>V get(K key)</code></li>
+<li><code>boolean containsKey(K key)</code></li>
+</ul>
+</section>
+<section id="example-1" class="slide level2">
+<h2>Example</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">HashMap</span>&lt;<span class="bu">String</span>, <span class="bu">Integer</span>&gt; namesToAgesMap = <span class="kw">new</span> <span class="bu">HashMap</span>&lt;&gt;();</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>namesToAgesMap.<span class="fu">put</span>(<span class="st">&quot;Bob&quot;</span>, <span class="dv">27</span>);</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>namesToAgesMap.<span class="fu">put</span>(<span class="st">&quot;Athar&quot;</span>, <span class="dv">29</span>); <span class="co">// yeah right</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>namesToAgesMap.<span class="fu">put</span>(<span class="st">&quot;James&quot;</span>, <span class="dv">55</span>);</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="co">// some other code</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">int</span> <span class="fu">getAge</span>(<span class="bu">Map</span>&lt;<span class="bu">String</span>, <span class="bu">Integer</span>&gt; agesMap, <span class="bu">String</span> name) {</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>  <span class="kw">if</span> (agesMap.<span class="fu">containsKey</span>(name)) {</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>    <span class="kw">return</span> agesMap.<span class="fu">get</span>(name);</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>  }</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>  <span class="co">// if we don&#39;t know their age:</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a>  <span class="kw">return</span> -<span class="dv">1</span>;</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="implementations" class="slide level2">
+<h2>Implementations</h2>
+<ul>
+<li>Standard library provides good implementations of Map and Set interfaces
+<ul>
+<li>TreeSet, TreeMap, HashSet, HashMap</li>
+</ul></li>
+<li>Generic! Works with any class.</li>
+<li>BUT: you <strong>must</strong> implement equals and hashCode</li>
+</ul>
+</section>
+<section id="equals-hashcode" class="slide level2">
+<h2>equals / hashCode</h2>
+<ul>
+<li>equals(Object o): returns <strong>true</strong> if o is “equal” to your object</li>
+<li>hashCode(): two objects that are “equal” <strong>must</strong> return the same hashCode
+<ul>
+<li>Otherwise, HashMap might not work correctly!</li>
+<li>If-then: if they are equal, hashCode should be equal. Other way around? Not necessary.</li>
+<li>hashCode should be random. Distribute objects uniformly across integers.</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="exercise" class="title-slide slide level1">
+<h1>Exercise</h1>
+<p>Given a list of data, remove all duplicates from the data. That is, if your list is [1, 2, 1, 4, 3, 1, 3, 4, 1, 2], you should return [1, 2, 4, 3].</p>
+<p>Notice that the list returned should have the elements listed in the order that they first appeared in the original list.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">public</span> <span class="bu">List</span>&lt;<span class="bu">Integer</span>&gt; <span class="fu">removeDuplicates</span>(<span class="bu">List</span>&lt;<span class="bu">Integer</span>&gt; list) {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="algorithms" class="slide level2">
+<h2>Algorithms</h2>
+<ul>
+<li>Simple <span class="math inline">\(O(n^2)\)</span> solution using nested for loops.</li>
+<li>Pseudocode?</li>
+<li>Improve it using a data structure?</li>
+<li>Pseudocode and running time of improved solution?</li>
+</ul>
+</section></section>
+<section>
+<section id="challenge-problems" class="title-slide slide level1">
+<h1>Challenge Problems</h1>
+<ul>
+<li>Given a tree (not necessarily a BST, not necessarily even a binary tree), and a node N, output the path (list of vertices visited) from the root to N.</li>
+<li>Given a binary tree (not a BST), a node N and a height <span class="math inline">\(h\)</span>, find the ancestor of N that is <span class="math inline">\(h\)</span> levels above N.</li>
+<li>Given a binary tree (not a BST) and two nodes on the tree, determine their lowest common ancestor.</li>
+</ul>
+<p>All slightly different versions of hte same problem.</p>
+</section>
+<section id="hint" class="slide level2">
+<h2>Hint</h2>
+<p>Level-order traversal:</p>
+<pre><code>enqueue(root)
+while (queue is not empty) {
+    dequeue a node
+    print node.data
+    enqueue node.left, node.right
+}</code></pre>
+<p>Modify this algorithm to keep track of the path from the root to the node?</p>
+</section>
+<section id="hint-2" class="slide level2">
+<h2>Hint 2</h2>
+<ul>
+<li>Each node should keep track of who enqueued it.</li>
+<li>Modify the while loop to exit as soon as you dequeue the node you’re looking for.</li>
+<li>Then backtrack.</li>
+<li>Code here is tricky: try to implement this!</li>
+</ul>
+</section></section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Quiz 1 on Monday; can make up anything incorrect / missed for homework.</li>
+<li>HW 2 due Monday.</li>
+<li>Project 2</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
