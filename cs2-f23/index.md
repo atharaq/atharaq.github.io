@@ -21,3 +21,4 @@ layout: default
 * [Lesson 7: Review for exam 1](lesson7.html)
 * [Lesson 8: Project 1 discussion](lesson8.html)
 * [Lesson 9: Classes (intro)](lesson9.html)
+* [Lesson 10: Designing classes](lesson10.html)
