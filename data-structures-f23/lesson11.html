@@ -213,6 +213,42 @@ print(list)</code></pre>
 </ul>
 </section></section>
 <section>
+<section id="project-2" class="title-slide slide level1">
+<h1>Project 2</h1>
+<p>Implement the Set interface in three ways: using an ArrayList, using an AVL tree (use the code included on replit), and using a regular BST (not a self balancing tree). Write a Benchmark class which has the following methods:</p>
+<p>(continued)</p>
+</section>
+<section id="benchmark-class" class="slide level2">
+<h2>Benchmark Class</h2>
+<ul>
+<li><code>insertRandoms(Set&lt;Integer&gt; set, int n)</code> : this method should insert n random numbers into the set, and output the amount of time it takes to do this (use <code>System.nanoTime()</code> before and after you do the n insertions)</li>
+<li><code>insertInOrder(Set&lt;Integer&gt; set, int n)</code> : this method should insert all the numbers from <span class="math inline">\(0\)</span> to <span class="math inline">\(n − 1\)</span> into the set, and output the amount of time it takes to do this.</li>
+</ul>
+<p>(continued)</p>
+</section>
+<section id="benchmark-class-1" class="slide level2">
+<h2>Benchmark Class</h2>
+<ul>
+<li><code>containsRandom(Set&lt;Integer&gt; set, int size, int n, int numSearches)</code>: this method should first insert size many random numbers into the set. Then it should do numSearches many calls to <code>set.contains(n)</code>, and output the amount of time that takes.</li>
+<li><code>containsInOrder(Set&lt;Integer&gt; set, int size, int n, int numSearches)</code> : similar to above, but first insert the numbers <span class="math inline">\(0\)</span> to <span class="math inline">\(size − 1\)</span> in order into the set.</li>
+</ul>
+<p>These methods just benchmark the calls to <code>set.contains(n)</code>, <strong>after</strong> the inserts already happened.</p>
+</section>
+<section id="write-up" class="slide level2">
+<h2>Write up</h2>
+<p>After writing the Benchmark code, you must use that class to test out your different Set implementations. You then must do a write-up explaining your results. We assume that an AVL tree and a BST should be much better than an ArrayList. Does this actually happen for different types of insertions / different sizes of trees? Organize your results into tables and provide your analysis of what’s happening.</p>
+</section>
+<section id="questions-to-explore" class="slide level2">
+<h2>Questions to explore</h2>
+<p>You should explore the following questions:</p>
+<ul>
+<li>Is the AVL tree or BST faster for random insertions? What about for in-order insertions?</li>
+<li>Does the ArrayList perform well for small sizes? For which sizes do we start to see its performance degrade?</li>
+<li>Do you ever get a StackOverflowError for the BST? What about for the AVL tree? Which methods trigger this?</li>
+</ul>
+<p>This project is due <strong>Thursday, October 26</strong> at 11:59 PM.</p>
+</section></section>
+<section>
 <section id="upcoming" class="title-slide slide level1">
 <h1>Upcoming</h1>
 <ul>
