@@ -22,3 +22,4 @@ layout: default
 * [Lesson 8: Project 1 discussion](lesson8.html)
 * [Lesson 9: Classes (intro)](lesson9.html)
 * [Lesson 10: Designing classes](lesson10.html)
+* [Lesson 11: Designing classes part 2](lesson11.html)

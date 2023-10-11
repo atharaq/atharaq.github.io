@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>CS II Lesson 11</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS II Lesson 11</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Designing Classes</p>
+</section>
+
+<section id="presentation-1" class="title-slide slide level1">
+<h1>Presentation 1</h1>
+<ul>
+<li>We’ll start with demos for project 1.</li>
+</ul>
+</section>
+
+<section>
+<section id="time-exercise" class="title-slide slide level1">
+<h1>Time exercise</h1>
+<!--
+10:30 - 11:15: Demos
+11:15 - 11:45 Time exercise
+11:45 - 12:00 Designing Classes
+12:00 - 12:10 Exam 1 / Project 2 intro
+-->
+<p>Attempt 3: design a program which asks the user to input in the current time and a number of minutes to add (up to a max of 1000), and outputs the time after that many minutes.</p>
+</section>
+<section id="modular-design" class="slide level2">
+<h2>Modular design</h2>
+<p>Already implemented for you:</p>
+<ul>
+<li>Time class (keeps track of hour, minute, AM/PM)
+<ul>
+<li><code>toString</code> displays the time correctly</li>
+<li><code>timeAfter</code> method</li>
+</ul></li>
+<li>getInput (gets an integer in a certain range from the user)</li>
+<li>getAmOrPmInput (asks the user for input until they type in “AM” or “PM”)</li>
+</ul>
+<p>What do you need to do?</p>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Implement the main method to put everything together. <a href="https://replit.com/team/cs2-fall-2023/Lesson-11-Time-class">On replit</a></p>
+</section></section>
+<section>
+<section id="section" class="title-slide slide level1">
+<h1></h1>
+<p><a target="_blank" href="https://upload.wikimedia.org/wikipedia/commons/4/49/%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg"><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg/773px-%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg" alt="Plato and Aristotle in The School of Athens (Raphael)" /></a></p>
+</section>
+<section id="object-oriented-design" class="slide level2">
+<h2>Object Oriented Design</h2>
+<ul>
+<li>Classes are templates for data types</li>
+<li>Represent <strong>data</strong> and <strong>behavior</strong></li>
+<li>Break your problem up into components: the <em>nouns</em> of your problem.</li>
+<li>Implement each component in its own <em>class</em></li>
+<li>Think about the <em>data</em> required to represnt that component</li>
+<li>Think about the <em>actions</em> the object should be able to do.</li>
+</ul>
+<p>The Time project is much easier to implement if we have already implemented the <code>Time</code> component!</p>
+</section>
+<section id="design-discussion" class="slide level2">
+<h2>Design discussion</h2>
+<p>A <strong>Gaussian integer</strong> is a complex number of the form <span class="math inline">\(a + bi\)</span>, where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are integers (<span class="math inline">\(i\)</span> is the imaginary number representing a square root of <span class="math inline">\(-1\)</span>). How would you design a Gaussian integer? What <strong>data</strong> is required to represent a Gaussian Integer? What are the <strong>actions</strong> it should be able to do?</p>
+</section>
+<section id="example-project-2" class="slide level2">
+<h2>Example: Project 2</h2>
+<ul>
+<li>Course roster / gradebook:</li>
+<li>Courses contain a list of Students.</li>
+<li>Each Student has a <strong>name</strong>, <strong>ID</strong>, and a <strong>grade</strong>.</li>
+<li>For a course:
+<ul>
+<li>add a student to the course</li>
+<li>list all students in the course</li>
+<li>find a student (by name)</li>
+<li>find all students above a particular grade</li>
+</ul></li>
+<li>Main: loop around, give user the above choices, or the option to quit the program.</li>
+</ul>
+</section>
+<section id="design" class="slide level2">
+<h2>Design?</h2>
+<p>What are the nouns here?</p>
+</section>
+<section id="exercise-student-class" class="slide level2">
+<h2>Exercise: Student class</h2>
+<ul>
+<li>Implement the Student class.</li>
+<li>First think about the data needed to represent it.
+<ul>
+<li>Declare the instance variables.</li>
+<li>Create a constructor for the class</li>
+<li>Create a toString method for it so that a Student is outputted in the format: Name (ID): grade</li>
+</ul></li>
+<li>Finish for homework (on replit)!
+<ul>
+<li>Run the tests for it!</li>
+</ul></li>
+</ul>
+</section>
+<section id="caveat" class="slide level2">
+<h2>Caveat</h2>
+<p>You will probably need to add to this class later, as you start implementing the methods in the Course class! For example, you may need a getName() method or a getGrade() method.</p>
+</section>
+<section id="course-class-discussion" class="slide level2">
+<h2>Course class discussion</h2>
+<ul>
+<li>What data (instance variables) should the Course class have?</li>
+<li>What instance methods should the Course class have?</li>
+</ul>
+</section></section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Project 2 <strong>due November 2</strong>. Full description on reddit tomorrow.</li>
+<li>Presentation 1 (this week and next week)</li>
+<li>Exam 1 possible extra credit (if grade &lt; 80)): discussed next time</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
