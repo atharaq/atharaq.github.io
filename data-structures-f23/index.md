@@ -26,3 +26,4 @@ lang: en-US
 * [Lesson 9: Set ADT, Hashtables](lesson9.html)
 * [Lesson 10: Hashtables / Collisions](lesson10.html)
 * [Lesson 11: Shortest Path Problems](lesson11.html)
+* [Lesson 12: Heaps (intro)](lesson12.html)
