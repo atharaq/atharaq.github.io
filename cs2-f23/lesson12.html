@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>CS II Lesson 12</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS II Lesson 12</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">(Im)mutability</p>
+</section>
+
+<section id="demos" class="title-slide slide level1">
+<h1>Demos</h1>
+<!--
+10:30 - 11:20 Demos
+11:20 - 11:30 Follow along: create GI class, toString, add
+11:30 - 11:40 Follow along: multiply 
+11:40 - 11:50 Immutability
+11:50 - 12:10 Exercise: make it immutable
+
+-->
+</section>
+
+<section>
+<section id="design-discussion" class="title-slide slide level1">
+<h1>Design discussion</h1>
+<p><strong>Problem</strong>: Ask the user to input in two GaussianIntegers (their real parts and their imaginary parts). Create the two GaussianIntegers, output them, add them, and then output their sum.</p>
+<p>Recall: A <strong>Gaussian integer</strong> is a complex number of the form <span class="math inline">\(a + bi\)</span>, where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are integers (<span class="math inline">\(i\)</span> is the imaginary number representing a square root of <span class="math inline">\(-1\)</span>). How would you design a Gaussian integer?</p>
+</section>
+<section id="oop" class="slide level2">
+<h2>OOP</h2>
+<p><strong>Question</strong>: What are the <strong>nouns</strong> of this problem?</p>
+<ul>
+<li>Real parts and imaginary parts of each GaussianInteger?</li>
+<li>Just the GaussianIntegers?</li>
+</ul>
+</section>
+<section id="object-orientation" class="slide level2">
+<h2>Object-orientation</h2>
+<p>How should we design the <code>add</code> method? Option 1:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">add</span>(<span class="dt">int</span> otherReal, <span class="dt">int</span> otherImag)</span></code></pre></div>
+<p>Option 2:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">add</span>(GaussianInteger other)</span></code></pre></div>
+<p>Which is more “object-oriented”?</p>
+</section>
+<section id="implementation" class="slide level2">
+<h2>Implementation</h2>
+<p>What <strong>data</strong> is required to represent a Gaussian Integer? What are the <strong>actions</strong> it should be able to do?</p>
+</section>
+<section id="exercise-part-1" class="slide level2">
+<h2>Exercise (Part 1)</h2>
+<ul>
+<li>Create a GaussianInteger class.</li>
+<li>Declare your instance variables.</li>
+<li>Create a constructor for that class</li>
+<li>Create the toString method.</li>
+<li>In a separate class, make a main method that instantiates a GaussianInteger object and prints it out.</li>
+</ul>
+</section>
+<section id="exercise-part-2" class="slide level2">
+<h2>Exercise (Part 2)</h2>
+<p>Create a method to <strong>add</strong> another GaussianInteger object. To add two GaussianIntegers, add their real parts and add their imaginary parts (where do you store them?). Test it out in your main method:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>GaussianInteger g1 = <span class="kw">new</span> <span class="fu">GaussianInteger</span>(<span class="dv">2</span>, <span class="dv">3</span>); <span class="co">// 2 + 3i</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>GaussianInteger g2 = <span class="kw">new</span> <span class="fu">GaussianInteger</span>(<span class="dv">3</span>, -<span class="dv">5</span>); <span class="co">// 3 + 5i</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(g1);</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(g2);</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>g1.<span class="fu">add</span>(g2); <span class="co">// Now g1 should be 5 + -2i</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(g1);</span></code></pre></div>
+</section>
+<section id="exercise-part-3" class="slide level2">
+<h2>Exercise (Part 3)</h2>
+<p>Now create a method to <strong>multiply</strong> another GaussianInteger object. Test it out in the main method.</p>
+<p><strong>Hint</strong>: If <span class="math inline">\(g1 = a + bi\)</span>, and <span class="math inline">\(g2 = c + di\)</span>, then <span class="math inline">\(g1 \times g2 = (a + bi)(c + di) = (ac - bd) + (ad + bc)i\)</span></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co">// test it out in main:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>GaussianInteger g = <span class="kw">new</span> <span class="fu">GaussianInteger</span>(<span class="dv">1</span>, <span class="dv">2</span>); <span class="co">// 1 + 2i</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>GaussianInteger x = <span class="kw">new</span> <span class="fu">GaussianInteger</span>(<span class="dv">3</span>, <span class="dv">4</span>); <span class="co">// 3 + 4i</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>g.<span class="fu">multiply</span>(x); <span class="co">// g should now be -5 + 10i</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(g);</span></code></pre></div>
+</section>
+<section id="aside-debugging" class="slide level2">
+<h2>Aside: Debugging</h2>
+<p>Why doesn’t the below <code>multiply</code> work:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">multiply</span>(GaussianInteger other) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>  <span class="co">// real part: ac - bd</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>  real = real * other.<span class="fu">real</span> - imag * other.<span class="fu">imag</span>;</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>  <span class="co">// imaginary part: ad + bc</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>  imag = real * other.<span class="fu">imag</span> + imag * other.<span class="fu">real</span>;</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>}</span></code></pre></div>
+<p>Let’s try out the <strong>debugger</strong> in replit to see what happens.</p>
+</section>
+<section id="aside-debugging-1" class="slide level2">
+<h2>Aside: Debugging</h2>
+<p>The debugger in IntelliJ is actually a bit easier to use:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pua88-TEBlg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section></section>
+<section>
+<section id="immutability" class="title-slide slide level1">
+<h1>Immutability</h1>
+<p>Recall: an object is <strong>mutable</strong> if its data (instance variables) can be changed after the object was created. It is <strong>immutable</strong> otherwise. (Strings are immutable; ArrayLists are mutable.)</p>
+</section>
+<section id="our-gaussianinteger" class="slide level2">
+<h2>Our GaussianInteger</h2>
+<p>Was our implementation of GaussianInteger mutable or immutable? Consider the following code:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a>GaussianInteger gi = <span class="kw">new</span> <span class="fu">GaussianInteger</span>(<span class="dv">3</span>, <span class="dv">4</span>);</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="dt">int</span> something = SomeLibrary.<span class="fu">libraryMethod</span>(gi);</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(gi); <span class="co">// what will this output?</span></span></code></pre></div>
+<ul>
+<li>Hope: it should output “3 + 4 i”. Will that always happen?</li>
+<li>Compare to what happens with integer parameters.</li>
+</ul>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>Benefits of <strong>mutable</strong> objects:</p>
+<ul>
+<li>Flexibility.</li>
+<li>Easier to design / reason about</li>
+<li>Sometimes more efficient?</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<p>Benefits of <strong>immutable</strong> objects:</p>
+<ul>
+<li>Safety! The object can be shared without worrying about what other methods / threads do to it.</li>
+<li>Easier to reason about.</li>
+<li>Other benefits require more material that we haven’t covered (yet): handles errors better, easier to parallelize, better to use with <code>Map</code> and <code>Set</code> types, <span class="math inline">\(\ldots\)</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="immutable-gaussianinteger" class="slide level2">
+<h2>Immutable GaussianInteger</h2>
+<p>To re-design GaussianInteger to be an immutable type, first we can try to ensure that the instance variables can’t be changed: e.g. make them all <code>final</code>! First try that.</p>
+<div class="fragment">
+<p>Any errors? They tell us what we need to change:</p>
+<ul>
+<li><code>add</code> and <code>multiply</code>.</li>
+<li>Instead of making them <code>void</code>, have them return new <code>GaussianInteger</code> objects.</li>
+<li>Now we don’t change our original object!</li>
+</ul>
+</div>
+</section>
+<section id="changing-add-method" class="slide level2">
+<h2>Changing add method</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="kw">public</span> GaussianInteger <span class="fu">add</span>(GaussianInteger other) {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>    GaussianInteger gi = <span class="kw">new</span> <span class="fu">GaussianInteger</span>(...); <span class="co">// fill this in</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>    <span class="kw">return</span> gi;</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Re-design your GaussianInteger class to be immutable. Test it out with the following main method:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a>GaussianInteger one = <span class="kw">new</span> <span class="fu">GaussianInteger</span>(<span class="dv">1</span>, <span class="dv">0</span>);</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>GaussianInteger i = <span class="kw">new</span> <span class="fu">GaussianInteger</span>(<span class="dv">0</span>, <span class="dv">1</span>);</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(one); <span class="co">// should be 1 + 0i</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(i); <span class="co">// should be 0 + 1i</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(one.<span class="fu">add</span>(i)); <span class="co">// should be 1 + 1i</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(one); <span class="co">// should still be 1 + 0i</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(i.<span class="fu">multiply</span>(i)); <span class="co">// should be -1 + 0i</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(i); <span class="co">// should be 0 + 1i</span></span></code></pre></div>
+</section></section>
+<section>
+<section id="presentation-2" class="title-slide slide level1">
+<h1>Presentation 2</h1>
+<ul>
+<li>Pick any challenging problem you have worked on.
+<ul>
+<li>Should be something you can explain in a few minutes</li>
+<li>Old exercises, quiz / exam problems, review problems, textbook exercises</li>
+</ul></li>
+<li>Describe the algorithm (the idea of how to solve the problem).</li>
+<li>Show code where you solve the problem.</li>
+<li>Explain how your code solves the problem.</li>
+</ul>
+</section>
+<section id="submission" class="slide level2">
+<h2>Submission</h2>
+<ul>
+<li>Make a short presentation of this (take screenshots of your code to include in PPT, etc)</li>
+<li>Upload your slides to the <strong>VoiceThread</strong> link on BrightSpace.</li>
+<li>Add an <strong>audio comment</strong> on each slide to narrate your presentation</li>
+<li>Should be around 5 minutes total (similar to the demos)</li>
+</ul>
+<p>Due <strong>Sunday, October 29</strong> at 11:59 PM (2 weeks).</p>
+</section>
+<section id="rubric" class="slide level2">
+<h2>Rubric</h2>
+<p>5 points:</p>
+<ul>
+<li>(1 point) Problem Description</li>
+<li>(1 point) Algorithm explanation</li>
+<li>(2 points) Code: show and explain a working demo for this problem.</li>
+<li>(1 point) Explain how the code implements your algorithm</li>
+</ul>
+</section></section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Thursday:
+<ul>
+<li>Finish demos</li>
+<li>Discuss Exam 1 / extra credit</li>
+<li>More on debugging</li>
+<li>Quiz 2</li>
+</ul></li>
+<li>Project 2 due 11/2</li>
+<li>Exam 2 will be take-home.
+<ul>
+<li>Assigned next week (10/26 or 10/30)</li>
+<li>Due the following week (11/6 most likely)</li>
+</ul></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
