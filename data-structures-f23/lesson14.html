@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>Data Structures Lesson 14</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures Lesson 14</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Intro to Graphs</p>
+</section>
+
+<section id="project-2" class="title-slide slide level1">
+<h1>Project 2</h1>
+<p>Questions?</p>
+</section>
+
+<section>
+<section id="find-k-th-bst" class="title-slide slide level1">
+<h1>Find k-th (BST)</h1>
+<p>From HW2: Describe how you would modify the binary search tree (and its TreeNode class) to support a <code>findKth(int k)</code> method. This method should return the k-th smallest element in <span class="math inline">\(O(\log(n))\)</span> time.</p>
+</section>
+<section id="wrong-idea" class="slide level2">
+<h2>Wrong idea</h2>
+<ul>
+<li>Traverse the tree and count to k</li>
+<li>Why is this wrong?</li>
+</ul>
+</section>
+<section id="better-idea" class="slide level2">
+<h2>Better idea</h2>
+<ul>
+<li>Let each node keep track of the size of its subtree.</li>
+<li>Binary search.
+<ul>
+<li>How?</li>
+</ul></li>
+</ul>
+</section>
+<section id="even-better" class="slide level2">
+<h2>Even better?</h2>
+<p>Do you actually need to keep track of the size of the whole subtree?</p>
+</section></section>
+<section id="buildheap" class="title-slide slide level1">
+<h1>buildHeap</h1>
+<ul>
+<li>Pseudocode?</li>
+<li>Running time? How many comparisons needed</li>
+</ul>
+</section>
+
+<section>
+<section id="overlapping-intervals" class="title-slide slide level1">
+<h1>Overlapping Intervals</h1>
+<p>A website earns advertising money (per viewer) based on the number of minutes a viewer spends visiting their website. The website only tracks when a browsing session starts and ends.</p>
+</section>
+<section id="continued" class="slide level2">
+<h2>Continued</h2>
+<p>A user may have multiple browsing sessions open at the same time (multiple facebook tabs open), and the browsing sessions might not be ordered in any way. How can we tally up the minutes a user spends?</p>
+</section>
+<section id="format" class="slide level2">
+<h2>Format</h2>
+<p>The format for the data is a list of intervals: (start1, end1), (start2, end2), <span class="math inline">\(\ldots\)</span>, (start100, end100). This list can be given in any order.</p>
+<p>Ideas?</p>
+</section></section>
+<section>
+<section id="graphs" class="title-slide slide level1">
+<h1>Graphs</h1>
+<p>A <strong>graph</strong> is a set of <strong>vertices</strong> and <strong>edges</strong>: <span class="math inline">\(G = (V, E)\)</span>. An edge is a pair of vertices. Graphs can be either <strong>undirected</strong> or <strong>directed</strong>. If a graph is directed, edges have a start vertex and end vertex (usually represented by arrows).</p>
+</section>
+<section id="graph-questions" class="slide level2">
+<h2>Graph Questions</h2>
+<p>Graphs are incredibly useful mathematical abstractions. There are many questions one can think about:</p>
+<ul>
+<li>How can we represent graphs?</li>
+<li>How can we tell if two vertices are connected by an edge?</li>
+<li>How can we tell if there is a path between two vertices?</li>
+<li>etc.</li>
+</ul>
+</section>
+<section id="definitions" class="slide level2">
+<h2>Definitions</h2>
+<ul>
+<li><strong>degree</strong> of a vertex: the number of vertices it is connected to.</li>
+<li>In a directed graph, we can define <em>in-degree</em> and <em>out-degree</em></li>
+<li>Edges can be <strong>weighted</strong>: for example, to represent the distance between two cities on a map.</li>
+</ul>
+<p>Weights can come into play when dealing with “shortest path” questions.</p>
+</section>
+<section id="representations." class="slide level2">
+<h2>Representations.</h2>
+<p>Let <span class="math inline">\(G = (V, E)\)</span> be a graph. Suppose <span class="math inline">\(V = \{ v_1, v_2, \ldots, v_n \}\)</span> (so it has <span class="math inline">\(n\)</span> vertices).</p>
+<ul>
+<li>An <strong>adjacency list</strong> for a vertex is the list of all the vertices it shares an edge with.</li>
+<li>An <strong>adjacency matrix</strong> is an <span class="math inline">\(n \times n\)</span> matrix such that the <span class="math inline">\((i, j)\)</span> entry is <span class="math inline">\(1\)</span> if there is an edge between <span class="math inline">\(v_i\)</span> and <span class="math inline">\(v_j\)</span>, and <span class="math inline">\(0\)</span> if there is no edge.
+<ul>
+<li>If we want to represent weighted graphs?</li>
+</ul></li>
+</ul>
+</section>
+<section id="adjacency-list" class="slide level2">
+<h2>Adjacency List</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="star_graph.png" alt="Star Graph" /><br />
+</p>
+</div><div class="column" style="width:60%;">
+<p>Adjacency List:</p>
+<ul>
+<li><span class="math inline">\(v_1\)</span>: <span class="math inline">\(v_2\)</span></li>
+<li><span class="math inline">\(v_2\)</span>: <span class="math inline">\(v_1, v_3, v_4\)</span></li>
+<li><span class="math inline">\(v_3\)</span>: <span class="math inline">\(v_2\)</span></li>
+<li><span class="math inline">\(v_4\)</span>: <span class="math inline">\(v_3\)</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="adjacency-matrix" class="slide level2">
+<h2>Adjacency Matrix</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="star_graph.png" alt="Star Graph" /><br />
+</p>
+</div><div class="column" style="width:60%;">
+<p><span class="math display">\[
+\begin{array}{c|c|c|c|c}
+&amp; v_1 &amp; v_2 &amp; v_3 &amp; v_4 \\
+\hline
+v_1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+v_2 &amp; 1 &amp; 0 &amp; 1 &amp; 1 \\
+v_3 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+v_4 &amp; 0 &amp; 1 &amp; 0 &amp; 0
+\end{array}
+\]</span></p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="graph-theory" class="title-slide slide level1">
+<h1>Graph Theory</h1>
+<p>Simple graph theory result:</p>
+<p><strong>Theorem</strong>: Every finite, undirected graph has an even number of vertices with odd degree.</p>
+<p>Proof?</p>
+<div class="fragment">
+<p><strong>Corollary</strong>: in every group of people, there is an even number of people who have an odd number of friends.</p>
+</div>
+</section>
+<section id="more-graph-theory" class="slide level2">
+<h2>More Graph Theory</h2>
+<p>A <span class="math inline">\(k\)</span>-clique is a group of <span class="math inline">\(k\)</span> vertices that all are mutually interconnected. A <span class="math inline">\(k\)</span>-anti-clique is a group of <span class="math inline">\(k\)</span> vertices such that none of them are connected to each other.</p>
+<p><strong>Theorem</strong>: Every graph with at least 6 vertices has either a 3-clique or a 3-anti-clique.</p>
+<p>Proof? Corollary (in terms of friendship)?</p>
+</section></section>
+<section>
+<section id="pagerank" class="title-slide slide level1">
+<h1>PageRank</h1>
+<p>Application: Google’s PageRank algorithm.</p>
+<ul>
+<li><span class="math inline">\(N\)</span> websites.</li>
+<li>Each website may / may not have a link to the other sites.</li>
+<li>“Ranking” algorithm: try to figure out, if a user randomly clicks links, in the limit, what is the probability that they end up on page <span class="math inline">\(i\)</span>?</li>
+<li>Solution: Linear Algebra.</li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p>Simplified internet with just 4 websites.</p>
+<ul>
+<li>Page 1 has links to pages 2, 3, and 4</li>
+<li>Page 2 has a link to page 4</li>
+<li>Page 3 has links to pages 1 and 4</li>
+<li>Page 4 has links to pages 1 and 3</li>
+</ul>
+</div><div class="column" style="width:30%;">
+<p>Represent with the following matrix:</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+0 &amp; 0 &amp; .5 &amp; .5 \\
+1/3 &amp; 0 &amp; 0 &amp; 0 \\
+1/3 &amp; 0 &amp; 0 &amp; .5 \\
+1/3 &amp; 1 &amp; .5 &amp; 0
+\end{pmatrix}
+\]</span></p>
+</div>
+</div>
+<p>Look for the “steady-state” vectors here. How?</p>
+</section></section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Project 2 due next Thursday</li>
+<li>Quiz 2 (10/30)</li>
+<li>HW 3 assigned next Monda</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
