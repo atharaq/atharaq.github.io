@@ -104,7 +104,7 @@ int input = sc.nextInt();
 <iframe src="https://www.youtube.com/embed/Am0zf_iqUGk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-Often times, there is some code you wish to always run, regardless of whether an exception was thrown. Usually, this involves closing resources of some kind. For example, the following code (from "CopyFile.java" on Moodle) is part of a program which makes a copy of a file. The code opens a file to read from it, creates a second file to write to, and copies things from the first one to the second.
+Often times, there is some code you wish to always run, regardless of whether an exception was thrown. Usually, this involves closing resources of some kind. For example, the following code (from "CopyFile.java" on BrightSpace) is part of a program which makes a copy of a file. The code opens a file to read from it, creates a second file to write to, and copies things from the first one to the second.
 
 ```java
 try {
