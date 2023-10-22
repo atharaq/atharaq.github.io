@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>Data Structures Lesson 15</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures Lesson 15</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Intro to Graphs</p>
+</section>
+
+<section id="presentations" class="title-slide slide level1">
+<h1>Presentations</h1>
+
+</section>
+
+<section>
+<section id="percolate-down" class="title-slide slide level1">
+<h1>Percolate Down?</h1>
+<ul>
+<li>Take the element at position <span class="math inline">\(i\)</span> and move it “down” as far as it needs to.</li>
+<li>Check which of its children is smaller, compare that to the number</li>
+<li>Slide down and repeat until either no more children, or no smaller child.</li>
+<li>How many comparisons for a given node in the tree?
+<ul>
+<li>At most 2 per “step” down?</li>
+<li>So it’s at most…?</li>
+</ul></li>
+</ul>
+</section>
+<section id="pseudocode" class="slide level2">
+<h2>Pseudocode</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">percolateDown</span>(<span class="dt">int</span> i) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>  num = array[i]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>  child = <span class="dv">2</span>*i + <span class="dv">1</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>  <span class="kw">while</span> (child &lt; tail) {</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>    <span class="kw">if</span> (child + <span class="dv">1</span> &lt; tail &amp;&amp; array[child] &gt; array[child+<span class="dv">1</span>]) {</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>      child++</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>    }</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>    <span class="kw">if</span> (array[child] &lt; num) {</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>      slide array[child] up</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>      update i, child</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>    } <span class="kw">else</span> {</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a>      <span class="kw">break</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a>    }</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a>  }</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a>  array[i] = num</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="sum-of-heights" class="slide level2">
+<h2>Sum of heights</h2>
+<ul>
+<li><strong>Definition</strong>: the <strong>height</strong> of a node is the length of the longest path from that node to a leaf.</li>
+<li>Each node has to go “down” by, at most, its height.</li>
+<li>Each step it goes down: at most 2 comparisons.</li>
+<li>Therefore: at most <span class="math inline">\(2 \times height\)</span> comparisons.</li>
+<li>What is the sum of the heights of a complete binary tree?
+<ul>
+<li>Let’s do 3 examples: <span class="math inline">\(n = 11\)</span>, <span class="math inline">\(n = 12\)</span>, <span class="math inline">\(n = 16\)</span>.</li>
+<li>Something to do with the <em>binary representation</em> of the number.</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="graph-representations" class="title-slide slide level1">
+<h1>Graph Representations</h1>
+<p>Let <span class="math inline">\(G = (V, E)\)</span> be a graph. Suppose <span class="math inline">\(V = \{ v_1, v_2, \ldots, v_n \}\)</span> (so it has <span class="math inline">\(n\)</span> vertices).</p>
+<ul>
+<li><strong>adjacency lists</strong></li>
+<li><strong>adjacency matrix</strong></li>
+</ul>
+</section>
+<section id="representations" class="slide level2">
+<h2>Representations</h2>
+<ul>
+<li>An <strong>adjacency list</strong> for a vertex is the list of all the vertices it shares an edge with.</li>
+<li>An <strong>adjacency matrix</strong> is an <span class="math inline">\(n \times n\)</span> matrix such that the <span class="math inline">\((i, j)\)</span> entry is <span class="math inline">\(1\)</span> if there is an edge between <span class="math inline">\(v_i\)</span> and <span class="math inline">\(v_j\)</span>, and <span class="math inline">\(0\)</span> if there is no edge.
+<ul>
+<li>If we want to represent weighted graphs?</li>
+</ul></li>
+</ul>
+</section>
+<section id="adjacency-list" class="slide level2">
+<h2>Adjacency List</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="star_graph.png" alt="Star Graph" /><br />
+</p>
+</div><div class="column" style="width:60%;">
+<p>Adjacency List:</p>
+<ul>
+<li><span class="math inline">\(v_1\)</span>: <span class="math inline">\(v_2\)</span></li>
+<li><span class="math inline">\(v_2\)</span>: <span class="math inline">\(v_1, v_3, v_4\)</span></li>
+<li><span class="math inline">\(v_3\)</span>: <span class="math inline">\(v_2\)</span></li>
+<li><span class="math inline">\(v_4\)</span>: <span class="math inline">\(v_3\)</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="adjacency-matrix" class="slide level2">
+<h2>Adjacency Matrix</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="star_graph.png" alt="Star Graph" /><br />
+</p>
+</div><div class="column" style="width:60%;">
+<p><span class="math display">\[
+\begin{array}{c|c|c|c|c}
+&amp; v_1 &amp; v_2 &amp; v_3 &amp; v_4 \\
+\hline
+v_1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+v_2 &amp; 1 &amp; 0 &amp; 1 &amp; 1 \\
+v_3 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+v_4 &amp; 0 &amp; 1 &amp; 0 &amp; 0
+\end{array}
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="code" class="slide level2">
+<h2>Code</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">public</span> <span class="kw">class</span> Graph {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>  <span class="kw">private</span> <span class="dt">boolean</span>[][] adjacencyMatrix;</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>  <span class="kw">public</span> <span class="fu">Graph</span>(<span class="dt">int</span> n) {</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>    adjacencyMatrix = <span class="kw">new</span> <span class="dt">boolean</span>[n][n];</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>  }</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>  </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a>  <span class="co">// puts an edge between vertices i and j</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a>  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">makeEdge</span>(<span class="dt">int</span> i, <span class="dt">int</span> j) {</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a>    adjacencyMatrix[i][j] = <span class="kw">true</span>;</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a>    <span class="co">// should this be symmetric?</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true"></a>  }</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true"></a>}</span></code></pre></div>
+</section></section>
+<section>
+<section id="graph-theory" class="title-slide slide level1">
+<h1>Graph Theory</h1>
+<p>Simple graph theory result:</p>
+<p><strong>Theorem</strong>: Every finite, undirected graph has an even number of vertices with odd degree.</p>
+<p>Proof?</p>
+<div class="fragment">
+<p><strong>Corollary</strong>: in every group of people, there is an even number of people who have an odd number of friends.</p>
+</div>
+</section>
+<section id="more-graph-theory" class="slide level2">
+<h2>More Graph Theory</h2>
+<p>A <span class="math inline">\(k\)</span>-clique is a group of <span class="math inline">\(k\)</span> vertices that all are mutually interconnected. A <span class="math inline">\(k\)</span>-anti-clique is a group of <span class="math inline">\(k\)</span> vertices such that none of them are connected to each other.</p>
+<p><strong>Theorem</strong>: Every graph with at least 6 vertices has either a 3-clique or a 3-anti-clique.</p>
+<p>Proof? Corollary (in terms of friendship)?</p>
+</section></section>
+<section>
+<section id="pagerank" class="title-slide slide level1">
+<h1>PageRank</h1>
+<p>Application: Google’s PageRank algorithm.</p>
+<ul>
+<li><span class="math inline">\(N\)</span> websites.</li>
+<li>Each website may / may not have a link to the other sites.</li>
+<li>“Ranking” algorithm: try to figure out, if a user randomly clicks links, in the limit, what is the probability that they end up on page <span class="math inline">\(i\)</span>?</li>
+<li>Solution: Linear Algebra.</li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p>Simplified internet with just 4 websites.</p>
+<ul>
+<li>Page 1 has links to pages 2, 3, and 4</li>
+<li>Page 2 has a link to page 4</li>
+<li>Page 3 has links to pages 1 and 4</li>
+<li>Page 4 has links to pages 1 and 3</li>
+</ul>
+</div><div class="column" style="width:30%;">
+<p>Represent with the following matrix:</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+0 &amp; 0 &amp; .5 &amp; .5 \\
+1/3 &amp; 0 &amp; 0 &amp; 0 \\
+1/3 &amp; 0 &amp; 0 &amp; .5 \\
+1/3 &amp; 1 &amp; .5 &amp; 0
+\end{pmatrix}
+\]</span></p>
+</div>
+</div>
+<p>Look for the “steady-state” vectors here. How?</p>
+</section>
+<section id="video" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yt3Djohnxfs?si=dBLLtu_IdmDNg6WS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section></section>
+<section>
+<section id="shortest-path" class="title-slide slide level1">
+<h1>Shortest Path</h1>
+<p><strong>Problem</strong>: Given a graph <span class="math inline">\(G = (V, E)\)</span>, node <span class="math inline">\(s \in V\)</span>, find the shortest path from <span class="math inline">\(s\)</span> to every node in the graph.</p>
+<ul>
+<li>Weighted graph vs unweighted graph?</li>
+<li>Unweighted graph: BFS!</li>
+</ul>
+</section>
+<section id="bfs-pseudocode" class="slide level2">
+<h2>BFS Pseudocode</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="bu">Queue</span>&lt;Vertex&gt; q;</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="fu">setAllDistancesToInfinity</span>()</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>s.<span class="fu">dist</span> = <span class="dv">0</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>q.<span class="fu">enqueue</span>(s)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a><span class="kw">while</span> (!q.<span class="fu">isEmpty</span>()) {</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>  Vertex v = q.<span class="fu">dequeue</span>()</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>  v.<span class="fu">visited</span> = <span class="kw">true</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>  <span class="kw">for</span> (Vertex w : v.<span class="fu">getAdjacentVertices</span>()) {</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a>    <span class="kw">if</span> (!w.<span class="fu">visited</span>) {</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a>      <span class="kw">if</span> (v.<span class="fu">dist</span> + <span class="dv">1</span> &lt; w.<span class="fu">dist</span>) {</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a>        w.<span class="fu">dist</span> = v.<span class="fu">dist</span> + <span class="dv">1</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true"></a>        w.<span class="fu">parent</span> = v</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true"></a>        q.<span class="fu">enqueue</span>(w)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true"></a>      }</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true"></a>    }</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true"></a>  }</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="weighted-graphs" class="slide level2">
+<h2>Weighted Graphs?</h2>
+<ul>
+<li>Above idea needs to be modified.</li>
+<li>Instead of just adding 1, you need to add the <em>weight</em>.</li>
+<li>When you take from the “queue”, you want to take off the node that has the <em>shortest</em> current distance.
+<ul>
+<li>Not FIFO! So: use a priority queue!</li>
+</ul></li>
+<li>This is the idea behind <strong>Dijkstra’s Algorithm</strong></li>
+</ul>
+</section>
+<section id="pseudocode-1" class="slide level2">
+<h2>Pseudocode</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="fu">initializeDistances</span>()</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>pq.<span class="fu">insert</span>(s)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="kw">while</span> (!pq.<span class="fu">isEmpty</span>()) {</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>  Vertex v = pq.<span class="fu">removeMin</span>()</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>  v.<span class="fu">visited</span> = <span class="kw">true</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>  <span class="kw">for</span> (Vertex w : v.<span class="fu">getAdjacentVertices</span>()) {</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>    <span class="kw">if</span> (!w.<span class="fu">visited</span>) {</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>      <span class="kw">if</span> (v.<span class="fu">dist</span> + <span class="fu">weight</span>(v, w) &lt; w.<span class="fu">dist</span>) {</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a>        w.<span class="fu">dist</span> = v.<span class="fu">dist</span> + <span class="fu">weight</span>(v, w)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a>        w.<span class="fu">parent</span> = v</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a>        pq.<span class="fu">insert</span>(w)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a>      }</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a>    }</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a>  }</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="implementation-details" class="slide level2">
+<h2>Implementation details</h2>
+<ul>
+<li>We may end up inserting a vertex multiple times in this algorithm.</li>
+<li>But at the end, the distances and parents will be correct.</li>
+<li>Instead of <code>v.visted = true</code>, might have a <code>Set</code> object.</li>
+<li><code>parent</code> and <code>dist</code> might be <code>Map</code>s instead of properties in the Vertex class.
+<ul>
+<li>Might not even have a Vertex class.</li>
+</ul></li>
+</ul>
+</section>
+<section id="decrease-key" class="slide level2">
+<h2>decrease-key</h2>
+<ul>
+<li>Instead of re-inserting: you could just change the “priority” of <span class="math inline">\(w\)</span></li>
+<li>That is: check if <span class="math inline">\(w\)</span> is in the priority queue, and if so, change its priority.</li>
+<li>How would we find <span class="math inline">\(w\)</span> in the priority queue quickly?</li>
+</ul>
+</section>
+<section id="video-1" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Wf9K54AUVh0?si=qpwsxmrv5-A_pryP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section>
+<section id="aside-dijkstra" class="slide level2">
+<h2>Aside: Dijkstra</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Edsger_W._Dijkstra">Edsger Dijkstra</a>: famouse Dutch computer scientist.</li>
+<li>Dijkstra’s algorithm: 1956, published 1959</li>
+<li>Besides Dijkstra’s algorithm, most famous for his paper: “GOTO Statement Considered Harmful” (1968)</li>
+<li>Launched a series of responses / memes (“‘GOTO Considered Harmful’ Considered Harmful”, “‘“GOTO Considered Harmful” Considered Harmful’ Considered Harmful?”)
+<ul>
+<li>Dijsktra (May 1987): “On a Somewhat Disappointing Correspondence”</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="homework-3" class="title-slide slide level1">
+<h1>Homework 3</h1>
+<p>Due <strong>Friday, November 3</strong>:</p>
+<ol type="1">
+<li>Implement the heapsort algorithm in Java. Test it out by creating an array of size 20, assigning random numbers (using the Random class) to the array, and then printing out the array.</li>
+</ol>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<ol start="2" type="1">
+<li>Prove that for binary heaps, buildHeap (where we take an array of <span class="math inline">\(N\)</span> integers and turn it into a heap, in-place) does at most <span class="math inline">\(2N - 2\)</span> comparisons between elements.</li>
+</ol>
+<ul>
+<li>Recall: buildHeap: start at the “end” of the heap, “percolateDown” each element.</li>
+<li>Each “move” requires 2 comparisons.</li>
+<li>Each node may move as much as its <em>height</em>.</li>
+<li>Sum of the heights of all nodes? (Prove it’s <span class="math inline">\(\leq N - 1\)</span>)</li>
+<li>Hint: something to do with the number of ones in the binary representation of <span class="math inline">\(N\)</span>.</li>
+</ul>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<ol start="3" type="1">
+<li>Show that a heap of eight elements can be constructed in eight comparisons between heap elements. (Not obvious!)</li>
+<li>Write pseudocode which, given an adjacency matrix for a graph and vertices i and j, whether there is a path between i and j.</li>
+</ol>
+</section></section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Project 2 due Thursday</li>
+<li>Quiz 2 next Monday</li>
+<li>HW3 due next Friday</li>
+<li>Presentations</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

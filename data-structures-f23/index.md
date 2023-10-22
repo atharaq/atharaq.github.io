@@ -29,3 +29,4 @@ lang: en-US
 * [Lesson 12: Heaps (intro)](lesson12.html)
 * [Lesson 13: Heaps / heapsort](lesson13.html)
 * [Lesson 14: Intro to graphs](lesson14.html)
+* [Lesson 15: Graphs](lesson15.html)
