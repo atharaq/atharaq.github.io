@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>Data Structures Lesson 16</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures Lesson 16</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Topological Sorting</p>
+</section>
+
+<section id="hw" class="title-slide slide level1">
+<h1>HW</h1>
+<ul>
+<li>Build eight element heap in eight comparisons?
+<ul>
+<li>Hint: tournaments?</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="edit-distance" class="title-slide slide level1">
+<h1>Edit Distance</h1>
+<p><strong>Problem</strong>: Given a dictionary (as a list of words), and two words, compute the <strong>edit distance</strong> between those two words. That is, the number of edits needed to go from word 1 to word 2, such that <em>all intermediate words are words in the dictionary</em>.</p>
+</section>
+
+<section>
+<section id="probability" class="title-slide slide level1">
+<h1>Probability</h1>
+<ul>
+<li>Directed graph with <span class="math inline">\(N\)</span> nodes, labeled <span class="math inline">\(0, 1, \ldots, N - 1\)</span>.</li>
+<li>Fixed probability <span class="math inline">\(p\)</span> such that: between any two <span class="math inline">\(i\)</span>, <span class="math inline">\(j\)</span>, the probability of an edge <span class="math inline">\((i, j)\)</span> is <span class="math inline">\(p\)</span>&gt;</li>
+<li>What is the probability that there is a <em>path</em> from <span class="math inline">\(0\)</span> to <span class="math inline">\(N - 1\)</span>?</li>
+</ul>
+</section>
+<section id="examples" class="slide level2">
+<h2>Examples</h2>
+<ul>
+<li>If <span class="math inline">\(N = 2\)</span>, then the probability is just <span class="math inline">\(p\)</span>.</li>
+<li>If <span class="math inline">\(N = 3\)</span>, the probability is <span class="math inline">\(p + (1-p)p^2\)</span>. (the probability that there is an edge from <span class="math inline">\(0\)</span> to <span class="math inline">\(2\)</span>, plus the probability that there is no edge from <span class="math inline">\(0\)</span> to 2, but there is an edge from <span class="math inline">\(0\)</span> to 1, and an edge from <span class="math inline">\(1\)</span> to <span class="math inline">\(2\)</span>)</li>
+<li>If <span class="math inline">\(N = 4\)</span>, the formula gets very complicated, very quickly.</li>
+</ul>
+</section>
+<section id="video" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/geWuKT6LQCo?si=ra5rrz4yKs46ZgRY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section>
+<section id="simulation" class="slide level2">
+<h2>Simulation</h2>
+<p>Instead of computing this mathematically, let’s try to write a simulation.</p>
+<ul>
+<li>On replit: implement the <code>hasAPath</code> method.</li>
+<li>Play around with different values of <span class="math inline">\(p\)</span> and <span class="math inline">\(size\)</span>.</li>
+<li>Check if your implementation works correctly by calling printGraph (and checking by hand if there is a path).</li>
+</ul>
+</section>
+<section id="simulation-1" class="slide level2">
+<h2>Simulation</h2>
+<ul>
+<li>Implement the <code>simulate</code> method and play around with <span class="math inline">\(size\)</span> and <span class="math inline">\(prob\)</span>:</li>
+<li>If <span class="math inline">\(p = 0.5\)</span>, for what values of <span class="math inline">\(size\)</span> will the probability of a path be at least <span class="math inline">\(90\%\)</span>?</li>
+<li>If <span class="math inline">\(p = 0.25\)</span>, same question.</li>
+<li>If <span class="math inline">\(p = 0.001\)</span>, for what values of <span class="math inline">\(size\)</span> will the probability of a path be at least <span class="math inline">\(50\%\)</span>?</li>
+</ul>
+</section></section>
+<section>
+<section id="dependencies" class="title-slide slide level1">
+<h1>Dependencies</h1>
+<p>Need to take many courses. Some courses have others as prerequisites. Suppose we can only take one per semester. What would be a valid order that we can take the courses in?</p>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<ul>
+<li>MATH 1202</li>
+<li>MATH 2010</li>
+<li>MATH 3007: prerequisite MATH 1202</li>
+<li>MATH 4010: prerequisites MATH 1202, MATH 2010</li>
+<li>MATH 4020: prerequisites MATH 4010, MATH 3007</li>
+<li>MATH 4040: prerequisites MATH 1202, MATH 2010</li>
+<li>MATH 4060: prerequisite MATH 3007</li>
+</ul>
+</section>
+<section id="topological-sort" class="slide level2">
+<h2>Topological Sort</h2>
+<p>More general problem: given a directed graph, a <strong>topological sort</strong> is an ordering of all the vertices <span class="math inline">\(v_1, v_2, \ldots, v_n\)</span> such that if there is an edge from <span class="math inline">\(v_i\)</span> to <span class="math inline">\(v_j\)</span>, then <span class="math inline">\(i &lt; j\)</span>.</p>
+<p>Think about how to represent the course prerequisite problem from the previous slide as a directed graph, and this definition should make sense.</p>
+</section>
+<section id="topological-sort-1" class="slide level2">
+<h2>Topological Sort</h2>
+<ul>
+<li>Note: this means that we cannot find a topological sort on a graph that has a cycle. (Why?)</li>
+<li>A directed grpah with no cycles is called a <strong>directed acyclic graph</strong>, or DAG.</li>
+<li>Every DAG (including disconnected ones) can be topologically sorted. Proof?</li>
+</ul>
+</section>
+<section id="algorithm" class="slide level2">
+<h2>Algorithm</h2>
+<ul>
+<li>Describe an algorithm which, given a directed graph, outputs a valid topological sort.</li>
+<li>Implement this algorithm in the RandomDAG class (on replit)</li>
+</ul>
+</section>
+<section id="pseudocode" class="slide level2">
+<h2>Pseudocode</h2>
+<pre><code>int[] inDegree
+List&lt;Integer&gt; topologicalOrdering
+Queue&lt;Integer&gt; queue
+for (int vertex : vertices)
+    calculateInDegree(vertex)
+    if (inDegree[vertex] == 0)
+        queue.enqueue(vertex)
+
+while (!queue.isEmpty())
+    int vertex = queue.remove()
+    topologicalOrdering.add(vertex)
+    for (int neighbor : getNeighbors(vertex))
+        inDegrees[neighbor]--
+        if (inDegree[neighbor] == 0)
+            queue.add(neighbor)
+
+return topologicalOrdering</code></pre>
+</section></section>
+<section>
+<section id="dfs" class="title-slide slide level1">
+<h1>DFS</h1>
+<p>What ordering do we get if we do a depth-first search?</p>
+<pre><code>void dfs(int node, boolean[] visited) {
+    print(node)
+    visited[node] = true
+
+    for (int vertex : getNeighbors(node)) {
+        if (!visited[vertex]) {
+            dfs(vertex, visited)
+        }
+    }
+}</code></pre>
+</section>
+<section id="alternative" class="slide level2">
+<h2>Alternative</h2>
+<p>Two options for DFS:</p>
+<ul>
+<li>Visit a node before we visit its child.</li>
+<li>Visit a node after we visit its child.</li>
+<li>Do we get a topological ordering in either case?</li>
+</ul>
+</section></section>
+<section>
+<section id="scheduling-problem" class="title-slide slide level1">
+<h1>Scheduling Problem</h1>
+<p><strong>Project 3</strong>: Given a list of courses, each of which just contains a list of student IDs (of students taking that course), find a schedule for these courses.</p>
+</section>
+<section id="restrictions" class="slide level2">
+<h2>Restrictions</h2>
+<ul>
+<li>A student can be in only one room at a time: so two courses which share a student should not be scheduled at the same time.</li>
+<li><strong>Ideally</strong>, we would like the schedule to have the minimal number of time slots.</li>
+<li>How can we represent this as a graph theory problem?</li>
+</ul>
+</section>
+<section id="graph-coloring-problem" class="slide level2">
+<h2>Graph Coloring Problem</h2>
+<div class="columns">
+<div class="column" style="width:25%;">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Petersen_graph_3-coloring.svg/480px-Petersen_graph_3-coloring.svg.png" alt="A 3 coloring of the Petersen graph (Wikimedia Commons)" /></p>
+</div><div class="column" style="width:75%;">
+<p>Given an undirected graph <span class="math inline">\(G = (V, E)\)</span>, a <strong>coloring</strong> is an assignment of colors to the vertices such that no two vertices which share an edge are given the same color. A minimal coloring is a coloring that uses the least amount of colors.</p>
+</div>
+</div>
+<p>Question: how are these two problems related?</p>
+</section>
+<section id="eulerian-path-circuit-problem" class="slide level2">
+<h2>Eulerian Path / Circuit Problem</h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Konigsberg_bridges.png" alt="Seven Bridges of Konisgberg" /></p>
+<p>Euler (1736): is there a way to cross every bridge in Königsberg <strong>exactly</strong> once? (Treat the picture as a (multi)graph. What are the nodes / edges?)</p>
+</section>
+<section id="eulerian-path-circuit-problem-1" class="slide level2">
+<h2>Eulerian Path / Circuit Problem</h2>
+<ul>
+<li>More generally: given a graph, is there a path which crosses each edge exactly once? (<strong>Eulerian path</strong>)</li>
+<li>Given a graph, is there a path which crosses every edge exactly once and starts and ends at the same vertex? (<strong>Eulerian circuit</strong>)</li>
+</ul>
+<p>Solution? Notice: every time you enter a vertex, you must also leave it (with the exception of the start / end vertices if it’s a path and not a circuit).</p>
+</section>
+<section id="similar-problems" class="slide level2">
+<h2>Similar Problems</h2>
+<ul>
+<li>Hamiltonian path: a path which visits every <strong>vertex</strong> exactly once.</li>
+<li>Hamiltonian circuit: start and end at the same vertex (so visit that one twice), and visit all the others exactly once.</li>
+<li>Traveling Salesman Problem: given a complete weighted graph (with non-negative weights), and an integer <span class="math inline">\(k\)</span>, is there a Hamiltonian cycle which has cost <span class="math inline">\(\leq k\)</span>?</li>
+</ul>
+</section></section>
+<section>
+<section id="p-vs-np" class="title-slide slide level1">
+<h1>P vs NP</h1>
+<ul>
+<li><p>Formally: a problem is in the class <strong>P</strong> if there is an algorithm which, for any input of length <span class="math inline">\(n\)</span>, runs in polynomial time in terms of <span class="math inline">\(n\)</span>:</p>
+<p><span class="math display">\[P = \bigcup\limits_{i = 0}^{\infty} O(n^i)\]</span></p></li>
+<li><p>These are <strong>easy to solve</strong>.</p></li>
+</ul>
+</section>
+<section id="class-np" class="slide level2">
+<h2>Class NP</h2>
+<ul>
+<li>A problem is in <strong>NP</strong> if there is an algorithm which checks a solution in polynomial time. (<strong>easy to check</strong>)</li>
+<li>Example: composites. Given a number <span class="math inline">\(x\)</span> of length <span class="math inline">\(N\)</span> (in binary), determine if <span class="math inline">\(x\)</span> is composite.</li>
+<li>Verifier: on input <span class="math inline">\(x\)</span> and <span class="math inline">\(c\)</span>, check if <span class="math inline">\(c | x\)</span> (can be done in polynomial time in <span class="math inline">\(N\)</span>). If so, output <strong>true</strong>. If not <strong>false</strong>.</li>
+<li>Solver? On input <span class="math inline">\(x\)</span>, determine if <em>any</em> <span class="math inline">\(c\)</span> divides <span class="math inline">\(x\)</span>?
+<ul>
+<li>Naive: <strong>exponential</strong> in the length of <span class="math inline">\(x\)</span>. Why?</li>
+</ul></li>
+</ul>
+</section>
+<section id="examples-1" class="slide level2">
+<h2>Examples</h2>
+<ol type="1">
+<li>Given a representationn (adjacency matrix or list) of a graph <span class="math inline">\(G = (V, E)\)</span> <em>and</em> an assignment of colors to the vertices, check if it is a valid coloring.</li>
+<li>The Eulerian path/cycle problem is in <strong>P</strong>. (The algorithm we talked about is a proof of this fact.)</li>
+<li>Hamiltonian cycle problem? TSP?</li>
+<li>Non-Hamiltonian cycle? Give a graph <span class="math inline">\(G = (V, E)\)</span>, determine if the graph does not have a Hamiltonian cycle.</li>
+</ol>
+</section>
+<section id="p-vs-np-1" class="slide level2">
+<h2>P vs NP</h2>
+<p>In the year 2000, the Clay Mathematics Institute posed a list a 7 <strong>Millenium problems</strong>, offering a $1M cash prize for a solution to any of these. The P vs NP question is one of them:</p>
+<p><strong>Problem</strong>: Prove or disprove that every problem in NP is also in P.</p>
+</section>
+<section id="np-completeness" class="slide level2">
+<h2>NP-Completeness</h2>
+<ul>
+<li><strong>NP-complete</strong>: problems which, if solved, can be used to solve (in polynomial time) any other problem in the class NP.<br />
+</li>
+<li>Examples:
+<ul>
+<li>Hamiltonian circuit problem</li>
+<li>Traveling Salesman Problem</li>
+<li>Graph Coloring problem</li>
+</ul></li>
+</ul>
+</section>
+<section id="not-known" class="slide level2">
+<h2>Not known</h2>
+<p>Many other problems are known to be in NP, but not known to be NP-complete:</p>
+<ul>
+<li>Integer factorization,</li>
+<li>Discrete logarithm (both of these are used in encryption algorithms)</li>
+<li>Graph isomorphism</li>
+<li>…</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
