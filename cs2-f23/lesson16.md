@@ -39,7 +39,7 @@ Every Square object can invoke methods written inside the Rectangle class -- but
 
 ## Example
 
-[On Replit](https://replit.com/team/cs2-fall-2023/Lesson-16)
+[On Replit](https://replit.com/team/cs2-fall-2023/Lesson-16-Polymorphism-exercises)
 
 ```java
 public class Square extends Rectangle {
@@ -62,7 +62,7 @@ The constructor for `Square` **must** invoke the constructor for its **superclas
 
 1. In the `Rectangle` class, implement the `getArea` method, and then uncomment the `printAllAreas(rectangles);` line inside `Main`.
 2. Run the `Main`. How does this correctly compute the areas even for the Square object?
-3. Uncomment the `System.out.println` statement inside `main`. What error do you get? Why?
+3. Uncomment the `System.out.println` statement inside `main` (line 17). What error do you get? Why?
 4. Comment that println statement again, and then uncomment the `printAllShapes(rectangles);` line inside `Main`. 
    * Run it once and take a look at the output. 
    * Then implement the `toString` method inside the `Square` class. 
@@ -137,7 +137,7 @@ Think about this in terms of your second project. A `Library` is **not** a list.
 <iframe src="https://www.youtube.com/embed/d4TjtggzZqM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-Take a look at the Averager class on replit. Answer the following questions first, before writing any code.
+Take a look at the Averager class on [replit](https://replit.com/team/cs2-fall-2023/Lesson-16-Averager-case-study). Answer the following questions first, before writing any code.
 
 * What does the Averager class do?
 * Is the Averager class designed in an "object-oriented" way?
@@ -150,7 +150,7 @@ Another software development design principle that we should know of:
 > There should never be more than one reason for a class to change.
 > &mdash; <cite>Robert Martin, aka "Uncle Bob"</cite>
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Robert_Cecil_Martin.png/472px-Robert_Cecil_Martin.png" alt="Robert Martin, aka 'Uncle Bob'" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/27/Robert_C._Martin_surrounded_by_computers.jpg" alt="Robert Martin, aka 'Uncle Bob'" />
 
 (Robert Martin is the author of *Agile Software Development: Principles, Patterns, and Practices* (2001))
 
@@ -177,7 +177,7 @@ Think about the following:
 * In real-world systems, what are some of the ways in which "input" to a program is found?
 * What is the purpose of the `Input` class? Specifically, what is it needed for?
 
-Often, our components should depend upon abstractions, rather than concrete implementations. How do we think about the Input component more abstractly? Let's discus this next time!
+Often, our components should depend upon abstractions, rather than concrete implementations. How do we think about the Input component more abstractly? Let's discus this next time.
 
 # Composition vs Inheritance
 
