@@ -31,3 +31,4 @@ lang: en-US
 * [Lesson 14: Intro to graphs](lesson14.html)
 * [Lesson 15: Graphs](lesson15.html)
 * [Lesson 16: Topological Sort](lesson16.html)
+* [Lesson 17: Topological Sorting](lesson17.html)
