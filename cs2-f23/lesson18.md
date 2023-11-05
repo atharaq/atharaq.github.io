@@ -8,13 +8,15 @@
 
 Instead of breaking it up for this video, I have one (long) video that covers the whole lesson.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/orXaI_ptAXI?si=mQAREVl9lLahuqjc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/orXaI_ptAXI?si=mQAREVl9lLahuqjc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
 Timestamps:
 
 * [0:00 - 19:00: Algorithms](#algorithms)
-* [19:01 - 31:40: Analysis of algorithms](#analysis-of-algoirthms) [Link to video at this timestamp](https://youtu.be/orXaI_ptAXI?si=ePxGw_CRAi49_cHr&t=1142)
-* [31:40 - end: String concatenation / ArrayList add](#string-concatenation) [Link to video at this timestamp](https://youtu.be/orXaI_ptAXI?si=u9VqU_pSAawh4FZ0&t=1900)
+* [19:01 - 31:40: Analysis of algorithms](#analysis-of-algorithms): [Link to video at this timestamp](https://youtu.be/orXaI_ptAXI?si=ePxGw_CRAi49_cHr&t=1142)
+* [31:40 - end: String concatenation / ArrayList add](#string-concatenation): [Link to video at this timestamp](https://youtu.be/orXaI_ptAXI?si=u9VqU_pSAawh4FZ0&t=1900)
 
 # Algorithms
 
