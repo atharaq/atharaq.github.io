@@ -33,3 +33,4 @@ lang: en-US
 * [Lesson 16: Topological Sort](lesson16.html)
 * [Lesson 17: Topological Sorting](lesson17.html)
 * [Lesson 18: NP-Completeness, Sorting](lesson18.html)
+* [Lesson 19: Sorting](lesson19.html)
