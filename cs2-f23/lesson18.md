@@ -26,7 +26,7 @@ An **algorithm** is a precise list of instructions for solving a general problem
 * Java/Python/C++ code that implements that algorithm.
 * Pseudocode: somewhere in-between natural language and a high level programming language.
 
-Describing an algorithm using pseudocode allows us to ignore language-specific features (ie, the syntax and particular methods of the {\lstinline|ArrayList|} type). We instead focus on the steps of the algorithm.
+Describing an algorithm using pseudocode allows us to ignore language-specific features (ie, the syntax and particular methods of the `ArrayList` type). We instead focus on the steps of the algorithm.
 
 ## Sequential Search Algorithm
 
@@ -109,12 +109,12 @@ procedure create(int n)
 ```
 Recall: how does the += operator on **immutable** Strings? Fill in the following table for the number of steps for the `create` method:
 
-   $n$     Number of steps
-------    ----------------
-  1           &nbsp;
-  2           &nbsp;
-  3           &nbsp;
-  4           &nbsp;
+| $n$  | Number of steps |
+| ------ | ---------------- |
+|  1  |         &nbsp;  |
+|  2  |         &nbsp;  |
+|  3  |         &nbsp;  |
+|  4   |        &nbsp;  |
 
 ## Big Oh Notation
 
