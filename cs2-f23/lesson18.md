@@ -9,7 +9,7 @@
 Instead of breaking it up for this video, I have one (long) video that covers the whole lesson.
 
 <div class="youtube-container">
-<iframe src="https://www.youtube.com/embed/orXaI_ptAXI?si=mQAREVl9lLahuqjc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe class="noreverse" src="https://www.youtube.com/embed/orXaI_ptAXI?si=mQAREVl9lLahuqjc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 Timestamps:
@@ -90,11 +90,11 @@ Think about:
 
 Roughly speaking it takes about $n / 2$ steps to find $o$ on a list of $n$ elements. We often don't care exactly what the running time function $t(n)$ is; instead, we care about what the running time is **proportional** to.
 
-  Size of list      Worst Case      Average Case
---------------    ------------    --------------
-50                50                25
-100               100               50
-200               200              100
+|  Size of list  |     Worst Case  |    Average Case |
+| -------------- | ------------ |   -------------- |
+| 50  |              50          |      25  |
+| 100 |              100 |              50 |
+| 200 |              200 |              100 |
 
 # String concatenation
 
