@@ -121,7 +121,7 @@ In general, when should we use inheritance? There is a principle in software dev
 
 If $S$ is a subtype of $T$, then any object of type $T$ in a program can be replaced with an object of type $S$ without breaking the program.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Barbara_Liskov_MIT_computer_scientist_2010.jpg/428px-Barbara_Liskov_MIT_computer_scientist_2010.jpg" alt="Barbara Liskov" />
+<img class="noreverse" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Barbara_Liskov_MIT_computer_scientist_2010.jpg/428px-Barbara_Liskov_MIT_computer_scientist_2010.jpg" alt="Barbara Liskov" />
 
 In other words: when designing subclasses, **make sure** that your subclass really can be used any time an object of the superclass is needed. If that's not always the case, then you probably don't want to **extend** the superclass!
 
@@ -150,7 +150,7 @@ Another software development design principle that we should know of:
 > There should never be more than one reason for a class to change.
 > &mdash; <cite>Robert Martin, aka "Uncle Bob"</cite>
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/27/Robert_C._Martin_surrounded_by_computers.jpg" alt="Robert Martin, aka 'Uncle Bob'" />
+<img class="noreverse" src="https://upload.wikimedia.org/wikipedia/commons/2/27/Robert_C._Martin_surrounded_by_computers.jpg" alt="Robert Martin, aka 'Uncle Bob'" />
 
 (Robert Martin is the author of *Agile Software Development: Principles, Patterns, and Practices* (2001))
 
