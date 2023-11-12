@@ -35,3 +35,4 @@ lang: en-US
 * [Lesson 18: NP-Completeness, Sorting](lesson18.html)
 * [Lesson 19: Sorting](lesson19.html)
 * [Lesson 20: Quicksort analysis](lesson20.html)
+* [Lesson 21: Quickselect, Radix sorting](lesson21.html)
