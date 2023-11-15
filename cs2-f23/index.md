@@ -32,3 +32,4 @@ layout: default
 * [Lesson 18: Algorithms and pseudocode](lesson18.html)
 * [Lesson 19: Recursion](lesson19.html)
 * [Lesson 20: Recursion again](lesson20.html)
+* [Lesson 21: Searching](lesson21.html)
