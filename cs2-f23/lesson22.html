@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>CS2 Lesson 22</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 22</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Sorting</p>
+</section>
+
+<section>
+<section id="project-3" class="title-slide slide level1">
+<h1>Project 3</h1>
+<ul>
+<li>Questions?</li>
+<li>Due next Monday!</li>
+</ul>
+</section>
+<section id="documentation" class="slide level2">
+<h2>Documentation</h2>
+<ul>
+<li>Make sure you explained your smarter strategy!</li>
+<li>Could be in a separate text file, included in the src folder</li>
+<li>Or in the comments of the SmartPlayer class.</li>
+</ul>
+</section>
+<section id="grading" class="slide level2">
+<h2>Grading</h2>
+<p>Reminder of the grading rubric for project 3:</p>
+<ul>
+<li>25% compilation</li>
+<li>25% functionality (all player types work; bidding / raising loop works; correctly determines winner)</li>
+<li>30% OOP design / style (separate components into independent classes; use polymorphism / interfaces correctly, etc)</li>
+<li>20% Documentation: explain the smarter strategy; explain your OOP design choices.
+<ul>
+<li>Use the explanation.md text file.</li>
+</ul></li>
+</ul>
+</section>
+<section id="reminder" class="slide level2">
+<h2>Reminder</h2>
+<p>If you need to (and have any), use your grace time.</p>
+</section>
+<section id="demo" class="slide level2">
+<h2>Demo</h2>
+<ul>
+<li>Presentation 3: demos!</li>
+<li>Describe the <strong>design</strong> of your project. What were your classes and how did you tie everything together?</li>
+<li>Describe your <strong>smarter strategy</strong>. What is it? How well does it work? Does it beat you?</li>
+<li>Briefly show how your code implements these ideas.</li>
+</ul>
+</section>
+<section id="demo-days" class="slide level2">
+<h2>Demo days</h2>
+<ul>
+<li>Mon Nov. 27 (+1 point extra credit for up to 6 volunteers)</li>
+<li>Thurs Nov 30</li>
+<li>Thurs Dec 7</li>
+</ul>
+</section></section>
+<section id="binary-search" class="title-slide slide level1">
+<h1>Binary Search</h1>
+<ul>
+<li>Questions?</li>
+</ul>
+</section>
+
+<section>
+<section id="sorting" class="title-slide slide level1">
+<h1>Sorting</h1>
+<p><a href="https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/visualize/">Interactive sorting demo.</a></p>
+<p>More fun: let’s get some volunteers and sort people by height.</p>
+</section>
+<section id="pseudocode-running-time" class="slide level2">
+<h2>Pseudocode / running time</h2>
+<p>The algorithm we used was called the “Bubble Sort” algorithm. It’s called this because the bigger elements “bubble up” to the top at each iteration.</p>
+<p><strong>Exercise</strong>: Write pseudo-code for the algorithm we described.</p>
+</section>
+<section id="selection-sort" class="slide level2">
+<h2>Selection Sort</h2>
+<p>Here we describe another algorithm to sort. This algorithm uses the fact that it’s easy to find the smallest element in a list.</p>
+<ul>
+<li>For each <span class="math inline">\(i\)</span>, look for the smallest element in the list between <span class="math inline">\(i\)</span> and the end of the list.</li>
+<li>If we find something smaller than <span class="math inline">\(a_i\)</span>, swap it with the smallest element between <span class="math inline">\(i\)</span> and the end.</li>
+<li>Repeat this until we have looked through all <span class="math inline">\(i\)</span> from <span class="math inline">\(0\)</span> to <span class="math inline">\(n - 1\)</span>.</li>
+</ul>
+<p>Write pseudocode for this algorithm.</p>
+</section>
+<section id="running-times" class="slide level2">
+<h2>Running times</h2>
+<p>Analyze the running times of the two algorithms. Is one better than the other in terms of Big Oh? Fill in the table:</p>
+<p><span class="math display">\[
+\begin{array}{|c|c|}
+\hline
+\text{Algorithm} &amp; \text{Running Time} \\
+\hline
+\text{Bubble Sort} &amp; \\
+\hline
+\text{Selection Sort} &amp; \\
+\hline
+\end{array}
+\]</span></p>
+</section></section>
+<section>
+<section id="divide-and-conquer" class="title-slide slide level1">
+<h1>Divide and conquer</h1>
+<p>It seems like sorting algorithms are <span class="math inline">\(O(n^2)\)</span>. Can we do any better?</p>
+</section>
+<section id="recursion" class="slide level2">
+<h2>Recursion</h2>
+<p>There are several options; most involve <strong>divide-and-conquer</strong> algorithms. Divide-and-conquer means we split the list into smaller parts, and (recursively) sort these smaller lists. There are several ways to do this, we will describe one: the <strong>merge sort</strong> algorithm.</p>
+</section>
+<section id="merge-sort" class="slide level2">
+<h2>Merge sort</h2>
+<ol type="1">
+<li>Split the list in half.</li>
+<li>(Recursively) merge sort each half.</li>
+<li>Merge the two halves to produce one, sorted list.</li>
+</ol>
+<p>Exercise: write pseudocode for merging two lists. We will discuss the running time together.</p>
+</section></section>
+<section id="presentation-4" class="title-slide slide level1">
+<h1>Presentation 4</h1>
+<ul>
+<li>Due <strong>Sunday, December 10</strong></li>
+<li>Focus on one challenging aspect of a larger problem</li>
+<li>Ideally use problems you needed to solve for project 2 or 3.</li>
+<li>Clearly explain the background of the problem, explain the overall, high-level solution, show code, then explain how the code implements your solution.</li>
+<li>On VoiceThread again.</li>
+</ul>
+</section>
+
+<section id="coming-up" class="title-slide slide level1">
+<h1>Coming Up</h1>
+<ul>
+<li>Mergesort algorithm + running time of mergesort</li>
+<li>Intro to data structures</li>
+<li>Problem Set (“project 4”)</li>
+<li>Final Exam review</li>
+<li>Happy Thanksgiving!</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

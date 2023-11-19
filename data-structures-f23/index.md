@@ -37,3 +37,4 @@ lang: en-US
 * [Lesson 20: Quicksort analysis](lesson20.html)
 * [Lesson 21: Quickselect, Radix sorting](lesson21.html)
 * [Lesson 22: Algorithm design / intro to concurrency](lesson22.html)
+* [Lesson 23: Concurrency](lesson23.html)

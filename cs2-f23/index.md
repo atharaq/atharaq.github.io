@@ -33,3 +33,4 @@ layout: default
 * [Lesson 19: Recursion](lesson19.html)
 * [Lesson 20: Recursion again](lesson20.html)
 * [Lesson 21: Searching](lesson21.html)
+* [Lesson 22: Sorting](lesson22.html)
