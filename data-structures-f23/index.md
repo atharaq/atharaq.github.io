@@ -38,3 +38,4 @@ lang: en-US
 * [Lesson 21: Quickselect, Radix sorting](lesson21.html)
 * [Lesson 22: Algorithm design / intro to concurrency](lesson22.html)
 * [Lesson 23: Concurrency](lesson23.html)
+* [Lesson 24: Concurrent Data Structures](lesson24.html)
