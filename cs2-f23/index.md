@@ -35,3 +35,4 @@ layout: default
 * [Lesson 21: Searching](lesson21.html)
 * [Lesson 22: Sorting](lesson22.html)
 * [Lesson 23: Merge sort](lesson23.html)
+* [Lesson 24: Data structures](lesson24.html)

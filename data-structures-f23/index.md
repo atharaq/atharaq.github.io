@@ -39,3 +39,4 @@ lang: en-US
 * [Lesson 22: Algorithm design / intro to concurrency](lesson22.html)
 * [Lesson 23: Concurrency](lesson23.html)
 * [Lesson 24: Concurrent Data Structures](lesson24.html)
+* [Lesson 25: Java miscellany](lesson25.html)
