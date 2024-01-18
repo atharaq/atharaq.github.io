@@ -175,8 +175,8 @@ These first two are essential: you **must** check these out.
 
 # Lesson 1 "Pre-work"
 
-0. Read Chapter 0 of Sipser. This is posted on Moodle.  
-1. Use the .tex file posted on Moodle. Fill in your name / year / major. Next, re-write the following argument that if $f(x)$ and $g(x)$ are differentiable at $x = a$, then $(f + g)(x)$ is differentiable at $x = a$:  
+0. Read Chapter 0 of Sipser. This is posted on BrightSpace.  
+1. Use the .tex file posted on BrightSpace. Fill in your name / year / major. Next, re-write the following argument that if $f(x)$ and $g(x)$ are differentiable at $x = a$, then $(f + g)(x)$ is differentiable at $x = a$:  
   $$
   \begin{align}
   (f + g)^\prime(a) &= \lim_{x \rightarrow a} \frac{(f + g)(x) - (f + g)(a)}{x - a} \\
@@ -186,4 +186,4 @@ These first two are essential: you **must** check these out.
   \end{align}
   $$  
 2. Write down any questions you have about the reading under question 5 in the .tex file.
-3. Compile the .tex file to a PDF, and upload the PDF to the assignment space on Moodle.
+3. Compile the .tex file to a PDF, and upload the PDF to the assignment space on BrightSpace. Make sure to double check that your PDF is viewable before you upload.
