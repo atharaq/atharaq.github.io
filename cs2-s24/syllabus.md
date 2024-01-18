@@ -6,7 +6,7 @@ MAT 1540
 Spring 2024
 
 **Meeting Times**: Mondays and Thursdays, 10:30 - 12:10  
-**Location**: Humanities 2034  
+**Location**: Humanities 1054  
 **Instructor**: Professor Abdul-Quader (or just "Athar")  
 **Email**: athar.abdulquader AT purchase DOT edu  
 **Office Hours**:  Mondays and Thursdays, 9:45 - 10:15 NSB 3003; Wednesdays 10 - 11 Zoom (link on BrightSpace)
@@ -97,7 +97,7 @@ That said, please do come to class as much as you can. This will allow me to see
 * 10%: Homework, in-class exercises
 * 10%: Quizzes
 * 20%: In-class and/or take-home Exams (3 exams, cumulative)
-* 15%: Final Exam (Thursday, **12/14** from 9 - 11:30 AM)
+* 15%: Final Exam (TBA, will update when I see the schedule on the registrar)
 
 ## Late Homework Policy
 
