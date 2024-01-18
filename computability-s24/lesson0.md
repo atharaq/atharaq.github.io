@@ -177,7 +177,6 @@ These first two are essential: you **must** check these out.
 
 0. Read Chapter 0 of Sipser. This is posted on Moodle.  
 1. Use the .tex file posted on Moodle. Fill in your name / year / major, put in any questions you have about the reading, and then re-write the following argument that if $f(x)$ and $g(x)$ are differentiable at $x = a$, then $(f + g)(x)$ is differentiable at $x = a$:  
-  
   $$
   \begin{align}
   (f + g)^\prime(a) &= \lim_{x \rightarrow a} \frac{(f + g)(x) - (f + g)(a)}{x - a} \\
