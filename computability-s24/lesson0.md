@@ -114,7 +114,7 @@ The answer is called **LaTeX**. LaTeX is a markup language used to typeset acade
 ## Setting up
 {: .no_toc}
 
-There are several ways to set up and install LaTeX. If you prefer not to install anything on your local computer, you can create a **free** account on [Overleaf.com](https://www.overleaf.com). This is the simplest way to get up and running.
+There are several ways to set up and install LaTeX. If you prefer not to install anything on your local computer, you can create a **free** account on [Overleaf.com](https://www.overleaf.com?r=c1af9661&rm=d&rs=b): this is my "referral" link. This is the simplest way to get up and running.
 
 If you prefer to use LaTeX on your own computer, you will need two things:
 
@@ -176,7 +176,7 @@ These first two are essential: you **must** check these out.
 # Lesson 1 "Pre-work"
 
 0. Read Chapter 0 of Sipser. This is posted on Moodle.  
-1. Use the .tex file posted on Moodle. Fill in your name / year / major, put in any questions you have about the reading, and then re-write the following argument that if $f(x)$ and $g(x)$ are differentiable at $x = a$, then $(f + g)(x)$ is differentiable at $x = a$:  
+1. Use the .tex file posted on Moodle. Fill in your name / year / major. Next, re-write the following argument that if $f(x)$ and $g(x)$ are differentiable at $x = a$, then $(f + g)(x)$ is differentiable at $x = a$:  
   $$
   \begin{align}
   (f + g)^\prime(a) &= \lim_{x \rightarrow a} \frac{(f + g)(x) - (f + g)(a)}{x - a} \\
@@ -185,5 +185,5 @@ These first two are essential: you **must** check these out.
   &= f^\prime(a) + g^\prime(a)
   \end{align}
   $$  
-2. Write down any questions you have about the reading in the .tex file.
+2. Write down any questions you have about the reading under question 5 in the .tex file.
 3. Compile the .tex file to a PDF, and upload the PDF to the assignment space on Moodle.
