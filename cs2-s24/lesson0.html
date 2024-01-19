@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>CS II</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS II</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Lesson 0</p>
+</section>
+
+<section>
+<section id="welcome" class="title-slide slide level1">
+<h1>Welcome!</h1>
+<ul>
+<li>Call me “Athar” or “Professor Abdul-Quader”</li>
+<li>He / him</li>
+<li>CS + math undergrad, math PhD</li>
+<li>Some software experience in industry (primarily Java)</li>
+</ul>
+</section>
+<section id="intros" class="slide level2">
+<h2>Intros</h2>
+<ul>
+<li>Introduce yourselves (name, pronouns, year at purchase, major, hobbies / interests, anything else you’d like to share)</li>
+<li>Why are you interested in CS? What are your career goals?</li>
+<li>What do you think CS is mostly about?</li>
+<li>Each group: nominate one person to share some of your group’s CS interests, goals, and thoughts on what CS is about.</li>
+<li>You have 5 minutes!</li>
+</ul>
+</section>
+<section id="what-is-computer-science" class="slide level2">
+<h2>What is Computer Science?</h2>
+<p>The study of <strong>algorithmic problem solving</strong></p>
+<ul>
+<li>An <strong>algorithm</strong> is a precise, step-by-step list of instructions for solving a general problem.</li>
+<li>We use a <strong>programming language</strong> to describe an algorithm to a machine.</li>
+<li>Study algorithms: designing, implementing, analyzing</li>
+<li>Modern CS research: theory, systems, AI, application development, etc.
+<ul>
+<li>Ex: algorithms for detecting faces in photos.</li>
+</ul></li>
+</ul>
+</section>
+<section id="course-expectations" class="slide level2">
+<h2>Course Expectations</h2>
+<ul>
+<li>Before class: readings (textbook + notes), exercises, come up with questions / problems to go over</li>
+<li>In class: review, work through exercises.</li>
+<li>Code every day!</li>
+<li>Some lessons: hybrid.
+<ul>
+<li>Asynchronous notes, videos: go through on your own pace.</li>
+<li>During class-time: small group meetings. Helps me figure out what is holding you back.</li>
+<li>Everyone should come: get help from LAs, go through problems with classmates, etc.</li>
+</ul></li>
+</ul>
+</section>
+<section id="small-groups" class="slide level2">
+<h2>Small Groups</h2>
+<ul>
+<li>During pandemic, many students found it useful.</li>
+<li>Get a chance to dive deeper on what is holding each person back.</li>
+<li>If it’s not helpful, we can go back to “traditional” lectures later on!</li>
+</ul>
+</section>
+<section id="textbook-software" class="slide level2">
+<h2>Textbook / Software</h2>
+<ul>
+<li>Textbook: <a href="https://books.trinket.io/thinkjava2/">Think Java</a></li>
+<li>Install Java: <a href="https://www.oracle.com/java/technologies/javase-downloads.html">Oracle JDK</a></li>
+<li>Install IntelliJ: <a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a> Ultimate Edition
+<ul>
+<li><a href="https://www.jetbrains.com/shop/eform/students">Apply for a free license</a> using your purchase.edu email</li>
+</ul></li>
+<li>Sign up for <a href="https://replit.com/">Replit</a>
+<ul>
+<li>Join link / join code on Moodle.</li>
+</ul></li>
+</ul>
+</section>
+<section id="grading" class="slide level2">
+<h2>Grading</h2>
+<ul>
+<li>35%: projects (programming assignments and/or problem sets)
+<ul>
+<li>Projects 1-3 will be worth 10% each, Project 4 will be worth 5%.</li>
+</ul></li>
+<li>10% Demos (short demos / explanations of projects 1 and 3)</li>
+<li>10%: Homework, in-class exercises</li>
+<li>10%: Quizzes (weekly, some multiple choice, some coding)</li>
+<li>20%: In-class and/or take-home Exams (3 exams, cumulative)</li>
+<li>15%: Final Exam (TBA)</li>
+</ul>
+</section>
+<section id="projects" class="slide level2">
+<h2>Projects</h2>
+<ul>
+<li>Get started early!</li>
+<li>“Project 1 helped me learn to prioritize my time.” - Solomon (2021 LA)</li>
+<li>2-3 weeks of work.
+<ul>
+<li>25-40 <strong>hours</strong> of work!</li>
+</ul></li>
+<li>“Homework” vs “Projects”:
+<ul>
+<li>“Homework” assignments can be done in a day, or a weekend.</li>
+<li>“Projects” are longer term. Take “building blocks” and turn it into something larger.</li>
+</ul></li>
+</ul>
+</section>
+<section id="course-outline" class="slide level2">
+<h2>Course Outline</h2>
+<p>Roughly three parts to the course:</p>
+<ol type="1">
+<li>Basic Java syntax: statements, variables, conditions, loops, Strings, arrays, methods (1 month)</li>
+<li>Object oriented programming: classes, interfaces, polymorphism (1.5 months)</li>
+<li>Algorithm analysis: big Oh notation, searching and sorting algorithms, intro to data structures (1 month)</li>
+</ol>
+<p>Each part builds upon previous parts! Don’t fall behind!</p>
+</section></section>
+<section>
+<section id="exercise" class="title-slide slide level1">
+<h1>Exercise</h1>
+<p>Recall: an “algorithm” is a list of steps needed to solve some problem in full generality. Describe, as precisely as possible, the steps needed to find the largest number in a list of numbers. You can describe this algorithm in English or in “pseudocode”.</p>
+<p>How is the list represented? What are the simplest individual steps needed?</p>
+<p>Work in a small group. Try to write down one algorithm for your group (on paper).</p>
+</section>
+<section id="allowable-instructions" class="slide level2">
+<h2>Allowable Instructions</h2>
+<p>In order to solve simple problems like the “find largest number” problem, a programming language needs:</p>
+<ul>
+<li>Variables to store data (including “list” type variables and “number” type variables, at least)</li>
+<li>Comparisons between data</li>
+<li>Loops to repeat certain steps over and over again.</li>
+</ul>
+<p>The syntax for using variables, comparisons, and loops forms a main part of the first month of this course: “basic Java syntax”.</p>
+</section></section>
+<section>
+<section id="java" class="title-slide slide level1">
+<h1>Java</h1>
+<p>Kinds of languages:</p>
+<ul>
+<li><strong>Machine Language</strong>: usually all in binary. Native to specific hardware. Can be optimized / fast to run. Hard to read / write, may be hard to port.</li>
+<li><strong>Natural language</strong>: ie English. Easy to read/write, but can be <a href="https://twitter.com/Browtweaten/status/1481341755870138368">ambiguous</a>. Hard for a computer to interpret.</li>
+<li><strong>High-level programming languages</strong>: ie C++, Java, Python. Write code once, take to different machines with minimal effort (<em>recompile</em> the code).</li>
+</ul>
+</section>
+<section id="simple-java-program" class="slide level2">
+<h2>Simple Java Program</h2>
+<div class="sourceCode" id="cb1" data-line-numbers="1-9|1-3|5|6-8"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co">// Hello.java</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="co">// Any line starting with two slashes is a comment,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co">// and is not processed by the compiler</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="kw">public</span> <span class="kw">class</span> Hello {</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Sup?&quot;</span>);</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>  }</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="structure" class="slide level2">
+<h2>Structure</h2>
+<ul>
+<li>Top-level: class
+<ul>
+<li>Class name = File name</li>
+</ul></li>
+<li>Next level: <strong>main method</strong></li>
+<li>Inside main: <strong>statements</strong></li>
+<li>Statements end with a semicolon ;</li>
+<li>As many statements as you need to solve your problem.</li>
+<li>Kinds of statements?</li>
+</ul>
+</section></section>
+<section id="replit" class="title-slide slide level1">
+<h1>Replit</h1>
+<ul>
+<li>Create a free account: <a href="https://replit.com/teams/join/zjjmbihweeggdsmefdqzuokyuxropfzm-cs2-spring-2024">Join link</a>.
+<ul>
+<li>Use your name / last initial</li>
+<li>Helps me track for homework completion</li>
+</ul></li>
+<li>Will use for class exercises, homework assignments, and projects</li>
+<li><a href="https://replit.com/team/cs2-spring-2024/Lesson-0">Let’s try it out!</a></li>
+</ul>
+</section>
+
+<section id="homework" class="title-slide slide level1">
+<h1>Homework</h1>
+<ol type="1">
+<li>Download and install Java / IntelliJ.</li>
+<li>Read <a href="https://books.trinket.io/thinkjava2/chapter1.html">ThinkJava Chapter 1</a>. Go through all the exercises (using IntelliJ or replit).</li>
+<li>Get set up on replit. Change the code in <a href="https://replit.com/team/cs2-spring-2024/Pre-Lesson-1">this assignment</a> to print your name.</li>
+<li>Skim through <a href="https://books.trinket.io/thinkjava2/chapter2.html">Chapter 2: Variables and Operators</a>. In the comments of your code, explain, in your own words, what variables and data types are.</li>
+</ol>
+<p>Due <strong>Thursday</strong> before class!</p>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
