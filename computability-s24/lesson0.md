@@ -112,7 +112,6 @@ Have you ever wondered how mathematical articles are typed? We do not have symbo
 The answer is called **LaTeX**. LaTeX is a markup language used to typeset academic articles. Academic articles are **not** written in Microsoft Word or Google Docs: while you *can* get them to understand mathematical equations, it is not standard and somewhat clunky. LaTeX is **the** standard. These course notes are a minor exception: in addition to LaTeX for the mathematical symbols, I am also using Markdown (converted to HTML) and MathJax (a Javascript library that renders LaTeX on the web).
 
 ## Setting up
-{: .no_toc}
 
 There are several ways to set up and install LaTeX. If you prefer not to install anything on your local computer, you can create a **free** account on [Overleaf.com](https://www.overleaf.com?r=c1af9661&rm=d&rs=b): this is my "referral" link. This is the simplest way to get up and running.
 
