@@ -1,9 +1,9 @@
 # Professor Abdul-Quader's Lecture Notes
 
-Lecture Notes for Fall 2023 Courses:
+Lecture Notes for Spring 2024 Courses:
 
-* [Computer Science II](cs2-f23)
-* [Data Structures](data-structures-f23)
+* [Computer Science II](cs2-s24)
+* [Computability](computability-s24)
 
 Old lecture notes can still be found at their respective sites. Contact me if you need access to them.
 
