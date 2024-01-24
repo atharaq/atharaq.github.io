@@ -16,6 +16,21 @@ To see this, notice that every two flips "cancel out". So if we start at the off
 
 In set-theoretic notation, we say that the language of the machine is { $w : w$ is a string consisting entirely of an odd number of $F$'s }.
 
+# Alphabets
+
+Example: Here we use the alphabet $\Sigma = \\{ 0, 1 \\}$.
+
+1. $\mathcal{L}_1 = \emptyset$. The set of no words.
+2. $\mathcal{L}_2 = \Sigma^*$. The set of **all** possible words.
+3. $\mathcal{L}_3 = \\{ 0, 1, 00, 01 \\}$. This is a finite language. ($\mathcal{L}_2$ is not!)
+4. $\mathcal{L}_4 = \\{ w \in \Sigma^* : w$ has more 0s than 1s $\\}$.
+
+**Exercise**: Give 3 examples of strings in $\mathcal{L}_4$, and one example of a string not in $\mathcal{L}_4$.
+
+**Possible answers**:
+
+$w_1 = 0$, $w_2 = 010$, $w_3 = 00101$ are all in $\mathcal{L}_4$, and $w_4 = 1100 \notin \mathcal{L}_4$.
+
 # DFA 1
 
 <img class="noreverse" src="../images/dfa-example.jpeg" />

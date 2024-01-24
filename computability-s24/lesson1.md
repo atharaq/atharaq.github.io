@@ -70,7 +70,7 @@ Set theoretically, we say $\mathcal{L}$ is a language over $\Sigma$ is $\mathcal
 3. $\mathcal{L}_3 = \\{ 0, 1, 00, 01 \\}$. This is a finite language. ($\mathcal{L}_2$ is not!)
 4. $\mathcal{L}_4 = \\{ w \in \Sigma^* : w$ has more 0s than 1s $\\}$.
 
-**Exercise**: Give 3 examples of strings in $\mathcal{L}_4$, and one example of a string not in $\mathcal{L}_4$.
+**Exercise**: Give 3 examples of strings in $\mathcal{L}_4$, and one example of a string not in $\mathcal{L}_4$. [Answers will be here after class](solutions/lesson1.html#alphabets).
 
 Important note: strings are **finite**, but languages do not have to be.
 
