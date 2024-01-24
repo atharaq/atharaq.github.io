@@ -4,6 +4,7 @@
 1. Table of Contents
 {:toc}
 
+<!--
 # Light switch
 
 <img class="noreverse" src="../images/light-switch.jpeg" />
@@ -67,3 +68,5 @@ Answers:
 3. No.
 4. Yes.
 5. $\mathcal{L}(M) = \\{ w : w$ contains the string 00 $ \\}$.
+
+-->
