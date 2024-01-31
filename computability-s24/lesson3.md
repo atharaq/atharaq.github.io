@@ -194,6 +194,8 @@ We can define computation similarly to how we define it for DFAs. The issue, of 
 
 Then $\mathcal{L}(N) = \\{ w : N$ accepts $w \\}$ is the **language** of $N$. We say that $N$ **recognizes** (or **accepts**) $\mathcal{L}(N)$.
 
+# Problem Set 1
+
 **Due Thursday, February 8** on BrightSpace (see tex file):
 
 For all of these problems, the alphabet $\Sigma = \\{ 0, 1 \\}$.
