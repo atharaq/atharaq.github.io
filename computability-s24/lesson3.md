@@ -196,7 +196,7 @@ Then $\mathcal{L}(N) = \\{ w : N$ accepts $w \\}$ is the **language** of $N$. We
 
 # Problem Set 1
 
-**Due Thursday, February 8** on BrightSpace (see tex file):
+**Due Thursday, February 8** on BrightSpace ([see tex file](assignments/problemset1.tex)):
 
 For all of these problems, the alphabet $\Sigma = \\{ 0, 1 \\}$.
 
