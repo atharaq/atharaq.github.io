@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Athar Abdul-Quader">
+  <title>What is (pure) mathematics?</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">What is (pure) mathematics?</h1>
+  <p class="author">Athar Abdul-Quader</p>
+  <p class="date">Junior Seminar Feb 2024</p>
+</section>
+
+<section>
+<section id="what-is-mathematics" class="title-slide slide level1">
+<h1>What is mathematics?</h1>
+<p>“Mathematics is what mathematicians do.”</p>
+<p>So what do mathematicians do?</p>
+</section>
+<section id="areas-of-mathematics" class="slide level2">
+<h2>Areas of mathematics</h2>
+<ul>
+<li>Algebra: the study of abstract <strong>structures</strong> including groups, rings, fields, vector spaces, …</li>
+<li>Analysis: the rigorous treatment of calculus, including of the calculus of complex functions.
+<ul>
+<li>Start with: “What even is a real number?”</li>
+</ul></li>
+<li>Topology: the study of space, specifically properties of space that are preserved under continuous deformations
+<ul>
+<li>“A coffee mug and a donut are the same thing, actually.”</li>
+</ul></li>
+</ul>
+</section>
+<section id="aside" class="slide level2">
+<h2>Aside</h2>
+<p>Quick poll: how do you eat corn?</p>
+<ul>
+<li>Typewriter style (left-to-right)</li>
+<li>Rotary style (around in circles)</li>
+</ul>
+</section></section>
+<section>
+<section id="algebra" class="title-slide slide level1">
+<h1>Algebra</h1>
+<ul>
+<li>A <strong>structure</strong> is a set <span class="math inline">\(X\)</span> with an operation <span class="math inline">\(*\)</span>.</li>
+<li>That means, for each <span class="math inline">\(a, b \in X\)</span>, we can <em>compute</em> <span class="math inline">\(a * b \in X\)</span> (<span class="math inline">\(X\)</span> is <strong>closed</strong> under <span class="math inline">\(*\)</span>.)</li>
+<li>Generalizes everything.</li>
+<li>Typical examples?</li>
+</ul>
+</section>
+<section id="symmetry" class="slide level2">
+<h2>Symmetry</h2>
+<p><img width="50%" src="dihedral.png" /></p>
+<p>(Carter, <em>Visual Group Theory</em>) How many “symmetries” of the triangle are there?</p>
+</section>
+<section id="symmetry-1" class="slide level2">
+<h2>Symmetry</h2>
+<ul>
+<li>What’s the set?</li>
+<li>What is the operation?</li>
+<li>What <em>properties</em> can we infer about this operation?</li>
+</ul>
+<p>Exercise: what are the symmetries of a square?</p>
+</section>
+<section id="symmetries" class="slide level2">
+<h2>Symmetries</h2>
+<ul>
+<li>A <em>symmetry</em> is a <em>function</em> (on the vertices) preserving some sort of structure (in this case, preserving the adjacencies / non-adjacencies of the triangle or square.)</li>
+<li>Symmetries of the triangle: three rotations (including identity), three reflections</li>
+<li>Operation? <em>Function composition</em>.
+<ul>
+<li>Applying one symmetry and then the other.</li>
+</ul></li>
+<li>Properties?</li>
+</ul>
+</section>
+<section id="equations" class="slide level2">
+<h2>Equations</h2>
+<ul>
+<li>Which equations of the form <span class="math inline">\(ax = b\)</span> can be solved?</li>
+<li>What if we insist that <span class="math inline">\(x\)</span> must be an integer?</li>
+<li>What if we insist that <span class="math inline">\(x\)</span> must be a positive integer?</li>
+<li>What if …?</li>
+<li>What <em>properties</em> of the numbers <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> allow us to solve these kinds of questions?</li>
+<li>What properties of our <em>number systems</em> allow us to solve these kinds of questions?</li>
+</ul>
+</section>
+<section id="solutions" class="slide level2">
+<h2>Solutions</h2>
+<p><span class="math inline">\(ax = b\)</span> is solvable if:</p>
+<ul>
+<li><span class="math inline">\(a\)</span> has an <strong>inverse</strong> (<span class="math inline">\(z\)</span>) in our number system, ie <span class="math inline">\(za = 1\)</span>.</li>
+<li><span class="math inline">\(z(ax) = (za)x\)</span>, that is, <span class="math inline">\(*\)</span> is <strong>associative</strong></li>
+<li><span class="math inline">\(1x = x\)</span>; that is, <span class="math inline">\(1\)</span> is the <strong>identity</strong> element.</li>
+</ul>
+<p>A set <span class="math inline">\(X\)</span> with an operation <span class="math inline">\(*\)</span> such that there is an identity element, every <span class="math inline">\(a \in X\)</span> has an inverse, and <span class="math inline">\(*\)</span> is associative is called a <strong>group</strong>.</p>
+</section>
+<section id="example-1" class="slide level2">
+<h2>Example 1</h2>
+<p><span class="math inline">\(B = \{ 0, 1 \}\)</span>, with the operation of <span class="math inline">\(+_2\)</span> (addition mod 2)</p>
+<p><span class="math display">\[
+\begin{array}{c|c|c}
++ &amp; 0 &amp; 1 \\
+\hline
+0 &amp; 0 &amp; 1 \\
+1 &amp; 1 &amp; 0 
+\end{array}
+\]</span></p>
+</section>
+<section id="example-2" class="slide level2">
+<h2>Example 2</h2>
+<p><span class="math inline">\(S = \{ -1, 1 \}\)</span> with the operation of <span class="math inline">\(\times\)</span> (regular multiplication).</p>
+<p><span class="math display">\[
+\begin{array}{c|c|c}
+\times &amp; 1 &amp; -1 \\
+\hline
+1 &amp; 1 &amp; -1 \\
+-1 &amp; -1 &amp; 1
+\end{array}
+\]</span></p>
+<p>What do we notice?</p>
+</section>
+<section id="a-rose" class="slide level2">
+<h2>A rose</h2>
+<blockquote>
+<p>What’s in a name? That which we call a rose by any other name would smell just as sweet.</p>
+</blockquote>
+<p>Suppose <span class="math inline">\(G_1\)</span> is a group with operation <span class="math inline">\(*_1\)</span>, and <span class="math inline">\(G_2\)</span> is a group with operation <span class="math inline">\(*_2\)</span>. What would it mean for <span class="math inline">\(G_1\)</span> and <span class="math inline">\(G_2\)</span> to be the “same” group?</p>
+</section>
+<section id="isomorphisms" class="slide level2">
+<h2>Isomorphisms</h2>
+<p><span class="math inline">\(G_1\)</span> is <strong>isomorphic</strong> to <span class="math inline">\(G_2\)</span> , denoted <span class="math inline">\(G_1 \cong G_2\)</span>, if there is a function <span class="math inline">\(f: G_1 \to G_2\)</span> such that:</p>
+<ul>
+<li><span class="math inline">\(f\)</span> is a <strong>bijection</strong> (one to one and onto function)</li>
+<li><span class="math inline">\(f\)</span> converts <span class="math inline">\(*_1\)</span> to <span class="math inline">\(*_2\)</span>: <span class="math inline">\(f(x *_1 y) = f(x) *_2 f(y)\)</span></li>
+</ul>
+<p>Can you find an isomorphism between <span class="math inline">\(B = \{ 0, 1 \}\)</span> and <span class="math inline">\(S = \{ -1, 1 \}\)</span>?</p>
+</section>
+<section id="other-groups" class="slide level2">
+<h2>Other Groups</h2>
+<ul>
+<li>For each <span class="math inline">\(n\)</span>, the group <span class="math inline">\(\mathbb{Z}_n = \{ 0, 1, \ldots, n - 1 \}\)</span>, operation <span class="math inline">\(+_n\)</span>. (These are called <strong>cyclic</strong> groups.)</li>
+<li>For each <span class="math inline">\(n \geq 3\)</span>, the <strong>dihedral group</strong> <span class="math inline">\(D_n\)</span>, the group of symmetries of a regular <span class="math inline">\(n\)</span>-gon.</li>
+<li><span class="math inline">\((\mathbb{Z} / n \mathbb{Z})^{\times}\)</span>: the set of <span class="math inline">\(x &lt; n\)</span> that are <em>relatively prime</em> to <span class="math inline">\(n\)</span>.</li>
+</ul>
+</section>
+<section id="infinite-groups" class="slide level2">
+<h2>Infinite groups?</h2>
+<ul>
+<li><span class="math inline">\(\mathbb{Z}\)</span> under addition</li>
+<li><span class="math inline">\(\mathbb{Q}\)</span> (all rational numbers)</li>
+<li><span class="math inline">\(\mathbb{R}\)</span> (all real numbers)</li>
+<li><span class="math inline">\(GL(n, \mathbb{R})\)</span> the <strong>general linear group</strong> of degree <span class="math inline">\(n\)</span>: set of all <em>invertible</em> <span class="math inline">\(n \times n\)</span> matrices
+<ul>
+<li>Many <strong>subgroups</strong> of <span class="math inline">\(GL(n, \mathbb{R})\)</span>: ex the matrices with determinant 1 <span class="math inline">\(SL(n, \mathbb{R})\)</span>.</li>
+<li>Lots of geometric intuition on these for <span class="math inline">\(n = 2, 3\)</span>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="other-structures" class="slide level2">
+<h2>Other structures?</h2>
+<ul>
+<li>We can do more than just add integers: we can multiply them too. (<strong>rings</strong>)</li>
+<li><span class="math inline">\(\mathbb{Q}\)</span>: every non-zero rational number has a multiplicative inverse (<strong>fields</strong>)</li>
+<li><strong>Ordered</strong> rings / fields (if <span class="math inline">\(x &lt; y\)</span>, then <span class="math inline">\(x + a &lt; y + a\)</span>)</li>
+</ul>
+</section></section>
+<section>
+<section id="other-areas-of-mathematics" class="title-slide slide level1">
+<h1>Other areas of mathematics</h1>
+
+</section>
+<section id="analysis" class="slide level2">
+<h2>Analysis</h2>
+<p><img src="trollpi.png" /></p>
+</section>
+<section id="complex-analysis" class="slide level2">
+<h2>Complex Analysis</h2>
+<p><img src="conformal.png" /></p>
+<ul>
+<li>The study of <em>functions of a complex variable</em>.</li>
+<li>Much better behaved than real functions!</li>
+</ul>
+</section>
+<section id="topology" class="slide level2">
+<h2>Topology</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img src="mug-to-torus.gif" /></p>
+</div><div class="column" style="width:50%;">
+<p><img src="surfaces.gif" /></p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="philosophy" class="title-slide slide level1">
+<h1>Philosophy</h1>
+<ul>
+<li>Ontology: what are the mathematical objects we’ve discussed, really?</li>
+<li>Epistemology: how do we obtain mathematical knowledge?</li>
+</ul>
+</section>
+<section id="logicisim" class="slide level2">
+<h2>Logicisim</h2>
+<ul>
+<li>All of mathematics is reduced to logic.</li>
+<li>Frege (1800s), Russell + Whitehead (early 1900s))</li>
+<li>(Not very popular today.)</li>
+</ul>
+</section>
+<section id="platonism" class="slide level2">
+<h2>Platonism</h2>
+<ul>
+<li>Mathematical objects exist <em>abstractly</em>
+<ul>
+<li>Eternal / unchanging</li>
+<li>Exist outside of our experience</li>
+</ul></li>
+<li>Problem: how do we come to know about them?</li>
+</ul>
+</section>
+<section id="formalism" class="slide level2">
+<h2>Formalism</h2>
+<ul>
+<li>Symbols on paper, manipulated according to some rules</li>
+<li>Define numbers formally using set theory:
+<ul>
+<li>0 is <em>defined</em> to be <span class="math inline">\(\emptyset\)</span></li>
+<li><span class="math inline">\(1\)</span> is defined to be <span class="math inline">\(\{ 0 \}\)</span>, <span class="math inline">\(2\)</span> is defined to be <span class="math inline">\(\{ 0, 1 \}\)</span> (Von Neumann)</li>
+<li>Or: <span class="math inline">\(2\)</span> is defined to be <span class="math inline">\(\{ \{ 0 \} \}\)</span> (Zermelo)</li>
+<li>Prove theorems about equivalence of definitions.</li>
+</ul></li>
+<li>Problem: why is mathematics so useful then?
+<ul>
+<li>“Unreasonable effectiveness of mathematics.”</li>
+</ul></li>
+</ul>
+</section>
+<section id="intuitionism" class="slide level2">
+<h2>Intuitionism</h2>
+<ul>
+<li>There are no mathematical truths except those we prove directly.</li>
+<li>Ex: we don’t use proof by contradiction.</li>
+<li>Only those objects which can be explicitly <em>constructed</em> exist.
+<ul>
+<li>What does that mean?</li>
+<li>Often: “finite” and/or “computable” objects exist.</li>
+</ul></li>
+</ul>
+</section>
+<section id="structuralism" class="slide level2">
+<h2>Structuralism</h2>
+<ul>
+<li>Mathematics really describes <strong>structures</strong>.</li>
+<li>Mathematical objects are defined by their relation to the larger structure.</li>
+<li>First: <span class="math inline">\(\mathbb{N} = \{0, 1, 2, \ldots \}\)</span> is the smallest set containing 0, closed under <em>successors</em>.</li>
+<li>However you represent the natural numbers, all that matters are those properties.</li>
+</ul>
+</section>
+<section id="structuralism-1" class="slide level2">
+<h2>Structuralism</h2>
+<ul>
+<li>Similarly: “The real numbers <span class="math inline">\(\mathbb{R}\)</span> are the unique complete ordered field.”</li>
+<li>First need to describe a <em>construction</em> of the real numbers (to show that a complete ordered field exists).
+<ul>
+<li>There are multiple such constructions! (Dedekind, Cauchy)</li>
+</ul></li>
+<li>Then: whenever we prove anything about reals, we just use the fact that they are a complete ordered field.</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
