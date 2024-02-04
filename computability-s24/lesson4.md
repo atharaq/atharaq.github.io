@@ -45,10 +45,32 @@ So $1001 \not \in \mathcal{L}(N)$, because there is no way to break up $1001$ in
 
 Design an NFA which accepts the language $\mathcal{L} = \\{ xy : x $ has an even number of 0s and $y$ has an odd number of 1s $ \\}$.
 
+# Equivalence
+
+**Theorem**: Let $\Sigma$ be an alphabet and $\mathcal{L}$ a language of words over $\Sigma$. Then $\mathcal{L}$ is regular if and only if there is an NFA which recognizes it.
+
+What does "if and only if" mean? We need to prove two things:
+
+1. If $\mathcal{L}$ is regular, there is an NFA which recognizes it.
+2. If an NFA recognizes a language $\mathcal{L}$, it is regular.
+
+Let's examine this a bit deeper. What does it mean for a language to be regular? Recall: $\mathcal{L}$ is regular if there is a DFA (deterministic!) which recognizes it. This definition makes one of the two statements above obvious. (Which one?)
+
+## Exercise
+
+**Definition**: Let $\mathcal{L}_1$ and $\mathcal{L}_2$ be two languages. The **concatenation** of $\mathcal{L}_1$ and $\mathcal{L}_2$ is given by $$\mathcal{L}_1 \cdot \mathcal{L}_2 = \{ w : w = w_1 w_2 \text{ for some } w_1 \in \mathcal{L}_1, w_2 \in \mathcal{L}_2 \}$$. Suppose the theorem stated above is true. (It is, we just haven't proved it yet.) Use this theorem to prove the following statement:
+
+**Exercise**: Prove that the class of regular languages is closed under concatenation.
+
+**Idea**: What do we need to prove here? First suppose we have two regular languages $\mathcal{L}_1$ and $\mathcal{L}_2$. By definition, there are DFAs which recognize those two languages. We need to construct a DFA which recognizes the concatenation.
+
+But wait: we have a new tool we can use. The theorem above says that if we can actually just construct an NFA which recognizes the concatenation, then we are done, because if an NFA recognizes the language, then the language is regular!
+
+(So: any idea on how to construct an NFA which recognizes the concatenation? Again, start with two DFAs, $M_1$ and $M_2$. Then design an NFA $N$, giving its states, alphabet, transition function, start state, and final states.)
 
 # Formal Definition
 
-Notice that there are two main differences between DFAs and NFAs:
+Before we can proceed with the Theorem, we need to formally define NFAs and computation. Notice that there are two main differences between DFAs and NFAs:
 
 1. We are allowed to read $\varepsilon$ as a symbol (so this should change the inputs to $\delta$), and
 2. The transition function does not need to pick out exactly one state (this should change the *outputs* of $\delta$).
@@ -84,28 +106,6 @@ We can define computation similarly to how we define it for DFAs. The issue, of 
 
 Then $\mathcal{L}(N) = \\{ w : N$ accepts $w \\}$ is the **language** of $N$. We say that $N$ **recognizes** (or **accepts**) $\mathcal{L}(N)$.
 
-# Equivalence
-
-**Theorem**: Let $\Sigma$ be an alphabet and $\mathcal{L}$ a language of words over $\Sigma$. Then $\mathcal{L}$ is regular if and only if there is an NFA which recognizes it.
-
-What does "if and only if" mean? We need to prove two things:
-
-1. If $\mathcal{L}$ is regular, there is an NFA which recognizes it.
-2. If an NFA recognizes a language $\mathcal{L}$, it is regular.
-
-Let's examine this a bit deeper. What does it mean for a language to be regular? Recall: $\mathcal{L}$ is regular if there is a DFA (deterministic!) which recognizes it. This definition makes one of the two statements above obvious. (Which one?)
-
-## Exercise
-
-**Definition**: Let $\mathcal{L}_1$ and $\mathcal{L}_2$ be two languages. The **concatenation** of $\mathcal{L}_1$ and $\mathcal{L}_2$ is given by $$\mathcal{L}_1 \cdot \mathcal{L}_2 = \{ w : w = w_1 w_2 \text{ for some } w_1 \in \mathcal{L}_1, w_2 \in \mathcal{L}_2 \}$$. Suppose the theorem stated above is true. (It is, we just haven't proved it yet.) Use this theorem to prove the following statement:
-
-**Exercise**: Prove that the class of regular languages is closed under concatenation.
-
-**Idea**: What do we need to prove here? First suppose we have two regular languages $\mathcal{L}_1$ and $\mathcal{L}_2$. By definition, there are DFAs which recognize those two languages. We need to construct a DFA which recognizes the concatenation.
-
-But wait: we have a new tool we can use. The theorem above says that if we can actually just construct an NFA which recognizes the concatenation, then we are done, because if an NFA recognizes the language, then the language is regular!
-
-(So: any idea on how to construct an NFA which recognizes the concatenation? Again, start with two DFAs, $M_1$ and $M_2$. Then design an NFA $N$, giving its states, alphabet, transition function, start state, and final states.)
 
 ## Proof Idea
 
