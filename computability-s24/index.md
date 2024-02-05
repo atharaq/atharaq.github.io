@@ -18,4 +18,4 @@ layout: default
 
 ## Problem Sets
 
-* [Problem Set 1: Due Monday 2/11](assignments/problemset1.tex)
+* [Problem Set 1: Due Monday 2/12](assignments/problemset1.tex)
