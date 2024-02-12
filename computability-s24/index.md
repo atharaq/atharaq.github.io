@@ -15,6 +15,7 @@ layout: default
 * [Lesson 2: Deterministic Finite State Automata](lesson2.html)
 * [Lesson 3: NFAs](lesson3.html)
 * [Lessons 4 and 5: NFA / DFA Equivalence](lesson4.html)
+* [Lesson 6: Regular Expressions](lesson6.html)
 
 ## Problem Sets
 
