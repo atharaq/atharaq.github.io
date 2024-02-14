@@ -16,6 +16,7 @@ layout: default
 * [Lesson 3: NFAs](lesson3.html)
 * [Lessons 4 and 5: NFA / DFA Equivalence](lesson4.html)
 * [Lesson 6: Regular Expressions](lesson6.html)
+* [Lesson 7: Non-regular languages](lesson7.html)
 
 ## Problem Sets
 
