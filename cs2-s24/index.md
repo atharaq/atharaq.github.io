@@ -20,3 +20,4 @@ layout: default
 * [Lesson 6: Methods / Modular Design](lesson6.html)
 * [Lesson 7: Intro to classes](lesson7.html)
 * [Exam 1 Review Questions](exam1_review.html)
+* [Lesson 8: Project discussion / classes intro](lesson8.html)
