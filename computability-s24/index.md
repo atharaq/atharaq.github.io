@@ -19,6 +19,7 @@ layout: default
 * [Lesson 7: Non-regular languages](lesson7.html)
 * [Lesson 8: Context-free languages](lesson8.html)
 * [Lesson 9: Context Free Grammars (formally)](lesson9.html)
+* [Lesson 10: Quiz / Pushdown Automata](lesson10.html)
 
 ## Problem Sets
 
