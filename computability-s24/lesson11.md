@@ -6,11 +6,8 @@
 
 # Warm up
 
-Determine the language accepted by this machine:
-
-<img class="noreverse" src="images/pda-palindrome.jpeg" />
-
-Design a PDA which recognizes $\mathcal{L} = \\{ a^n b^m : n \leq m \\}$.
+1. Determine the language accepted by this machine: <img class="noreverse" src="images/pda-palindrome.jpeg" />
+2. Design a PDA which recognizes $\mathcal{L} = \\{ a^n b^m : n \leq m \\}$.
 
 ## Another Example
 
