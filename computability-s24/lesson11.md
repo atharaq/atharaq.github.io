@@ -227,13 +227,13 @@ Due **Monday 3/18**:
 	 * $x[w]$ is a term, whenever $w$ is a number (written in binary),
 	 * if $t_1$ and $t_2$ are terms, then $t_1 + t_2$ is a term, and
 	 * if $t_1$ and $t_2$ are terms, then $t_1 \times t_2$ is a term.  
-Show that $\{ t : t$ is a term $ \}$ is context-free.
+Show that $\\{ t : t $ is a term $ \\}$ is context-free.
 3. A **formula** in the first-order language of arithmetic is defined inductively as follows:
 	 * if $t_1$ and $t_2$ are terms, then $t_1 = t_2$ is a formula,
 	 * if $t_1$ and $t_2$ are terms, then $t_1 < t_2$ is a formula,
 	 * if $\phi$ is a formula, then $\lnot \phi$ is a formula,
 	 * if $\phi$ and $\psi$ are formulas, then $\phi \wedge \psi$ is a formula, and
 	 * if $\phi$ is a formula, then $\exists x[w] \phi$ is a formula whenever $w$ is a number (written in binary).  
-Show that $\{ \phi : \phi$ is a formula $ \}$ is context-free.
+Show that $\\{ \phi : \phi $ is a formula $ \\}$ is context-free.
 4. Give a formal state diagram of a Turing Machine which recognizes the language $$ \{\# a^n + a^m = a^{n+m} : n , m \in \mathbb{N} \}. $$ (You can use the `#` symbol to recognize the beginning of the tape.)
 5. Sketch a proof that the class of computably enumerable languages is closed under intersection. (Hint: if $M_1$ and $M_2$ are two Turing machines, put \textbf{all} states of $M_1$ and all states of $M_2$ into your new machine, simulate $M_1$ on input $w$. What happens if $M_1$ loops forever? What happens if $M_1$ accepts? What happens if $M_1$ rejects?)
