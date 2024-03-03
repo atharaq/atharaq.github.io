@@ -186,7 +186,7 @@ There are many ways to do this. The book uses the convention $uqv$, where $u$ an
 
 **Notation**: A *configuration* of a TM is given by the triple $(w, i, q)$, where $w \in \Gamma^*$ is the string on the tape (starting from the "left-edge" of the tape, which may contain blanks, all the way until the rightmost non-blank symbol), $i \in \mathbb{N}$ is the position of the read-head on the tape, and $q \in Q$ is the state the TM is currently in.
 
-Say a configuration $(w, i q)$ **yields** a configuration $(w^\prime, j, q^\prime)$ if the following are true:
+Say a configuration $(w, i, q)$ **yields** a configuration $(w^\prime, j, q^\prime)$ if the following are true:
 
 * $w_k = w^\prime_k$ for each $k \neq i$, and
 * One of the following is true:
@@ -238,5 +238,5 @@ Show that $\{ t : t$ is a term $ \}$ is context-free.
 	 * if $\phi$ and $\psi$ are formulas, then $\phi \wedge \psi$ is a formula, and
 	 * if $\phi$ is a formula, then $\exists x[w] \phi$ is a formula whenever $w$ is a number (written in binary).  
 Show that $\{ \phi : \phi$ is a formula $ \}$ is context-free.
-4. Give a formal state diagram of a Turing Machine which recognizes the language $$ \{\# a^n + a^m = a^{n+m} : n , m \in \mathbb{N} \}. $$ (You can use the ``$\#$'' symbol to recognize the beginning of the tape.)
+4. Give a formal state diagram of a Turing Machine which recognizes the language $$ \{\# a^n + a^m = a^{n+m} : n , m \in \mathbb{N} \}. $$ (You can use the `#` symbol to recognize the beginning of the tape.)
 5. Sketch a proof that the class of computably enumerable languages is closed under intersection. (Hint: if $M_1$ and $M_2$ are two Turing machines, put \textbf{all} states of $M_1$ and all states of $M_2$ into your new machine, simulate $M_1$ on input $w$. What happens if $M_1$ loops forever? What happens if $M_1$ accepts? What happens if $M_1$ rejects?)
