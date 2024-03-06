@@ -23,3 +23,4 @@ layout: default
 * [Lesson 8: Project discussion / classes intro](lesson8.html)
 * [Lesson 9: Designing classes](lesson9.html)
 * [Lesson 10: Designing classes part 2](lesson10.html)
+* [Lesson 11: (Im)mutability](lesson11.html)
