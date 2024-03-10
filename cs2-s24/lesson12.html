@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>CS II Lesson 12</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS II Lesson 12</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Debugging</p>
+</section>
+
+<section id="demos" class="title-slide slide level1">
+<h1>Demos</h1>
+<!--
+10:30 - 11:15 Demos
+11:15 - 11:25 Exam 1 discussion / EC / Project 2 discussion
+11:25 - 11:35 Immutability
+11:35 - 11:50 One debugging example. (5 mins to introduce it, 10 mins to discuss in small groups, 5 mins together)
+11:50 - 12:10 Quiz
+-->
+</section>
+
+<section>
+<section id="exam-1" class="title-slide slide level1">
+<h1>Exam 1</h1>
+<p>If you are behind, you need to be doing as many exercises as possible.</p>
+</section>
+<section id="memory-diagrams" class="slide level2">
+<h2>Memory Diagrams</h2>
+<p>Make a memory diagram if <span class="math inline">\(n = 100\)</span>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">int</span> <span class="fu">l</span>(<span class="dt">int</span> n) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>  <span class="dt">int</span> i = <span class="dv">0</span>;</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>  <span class="kw">while</span> (n / <span class="dv">2</span> &gt;= <span class="dv">1</span>) {</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>      i++;</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>      n /= <span class="dv">2</span>;</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>  }</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>  <span class="kw">return</span> i;</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="find-the-mistakes" class="slide level2">
+<h2>Find the mistakes</h2>
+<p>Problem: given a String <em>name</em>, return the number of times the character <em>c</em> appears in it. What are all the mistakes in the following?</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">int</span> <span class="fu">numAppearances</span>(<span class="bu">String</span> name, <span class="dt">char</span> c) {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>  <span class="bu">String</span> name = <span class="st">&quot;bob&quot;</span>;</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>  <span class="dt">char</span> c = <span class="st">&quot;b&quot;</span>;</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>  <span class="dt">int</span> n = <span class="dv">0</span>;</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>  <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; name.<span class="fu">length</span>(); i++) {</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>    <span class="kw">if</span> (name.<span class="fu">charAt</span>(i) == c) {</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(c);</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a>      n++;</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a>    }</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a>  }</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a>  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(n);</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="return-types-and-parameters" class="slide level2">
+<h2>Return types and parameters</h2>
+<ul>
+<li>Pay attention to return types / parameter types</li>
+<li>Do not <strong>set</strong> the parameters. (Why?)</li>
+<li>Read the questions carefully. Understand what is being asked. Understand what you are meant to return.</li>
+</ul>
+</section>
+<section id="corrections" class="slide level2">
+<h2>Corrections</h2>
+<p>If your grade on exam 1 was below 80, I will accept corrections for any problem you wish to correct. For each question, you must:</p>
+<ol type="1">
+<li>Write a short explanation of your thinking on the original problem. What did you do wrong? Did you misunderstand what you were supposed to do, did you misunderstand something about the material, or was there another reason for making that mistake?</li>
+<li>Write up a complete, <strong>corrected</strong> solution to the problem.</li>
+</ol>
+</section>
+<section id="extra-credit" class="slide level2">
+<h2>Extra Credit</h2>
+<p>You will get up to <strong>half</strong> the credit lost for each response (up to a max of 80). <em>Please come see me in office hours if you had trouble with any of these!</em> <strong>Due: 3/21</strong> (to me, in class, before Spring Break).</p>
+<p>If your exam 1 grade is below 50, <strong>please see me in office hours</strong>, we can discuss further strategies to help catch you up.</p>
+</section>
+<section id="immutable-gaussianinteger" class="slide level2">
+<h2>Immutable GaussianInteger</h2>
+<p>To re-design GaussianInteger to be an immutable type, first we can try to ensure that the instance variables can’t be changed: e.g. make them all <code>final</code>! First try that.</p>
+<div class="fragment">
+<p>Any errors? They tell us what we need to change:</p>
+<ul>
+<li><code>add</code> and <code>multiply</code>.</li>
+<li>Instead of making them <code>void</code>, have them return new <code>GaussianInteger</code> objects.</li>
+<li>Now we don’t change our original object!</li>
+</ul>
+</div>
+</section>
+<section id="changing-add-method" class="slide level2">
+<h2>Changing add method</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">public</span> GaussianInteger <span class="fu">add</span>(GaussianInteger other) {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    GaussianInteger gi = <span class="kw">new</span> <span class="fu">GaussianInteger</span>(...); <span class="co">// fill this in</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>    <span class="kw">return</span> gi;</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="multiply-method" class="slide level2">
+<h2>Multiply method?</h2>
+<ul>
+<li>How do we change the multiply method?</li>
+<li>Take a few minutes to try to make your GaussianInteger immutable.</li>
+<li>We will not go over this today (it will be on the quiz later).</li>
+</ul>
+</section></section>
+<section>
+<section id="project-2" class="title-slide slide level1">
+<h1>Project 2</h1>
+<p>Two weeks left.</p>
+<ul>
+<li>Student class: should be done.</li>
+<li>Course class: one week. Write code that tests it out.</li>
+<li>Main class (menu / loop): one week.</li>
+</ul>
+</section>
+<section id="course-discussion" class="slide level2">
+<h2>Course Discussion</h2>
+<p>Design this in an <strong>object-oriented</strong> way. (Limit use of “static” keyword!)</p>
+<ul>
+<li>Instance variables for Course class?</li>
+<li>Methods for Course class?
+<ul>
+<li>add a student: return type? parameters?<br />
+</li>
+<li>listAllStudents: return type? parameters?</li>
+<li>find student by name?</li>
+<li>find <strong>all</strong> students above grade?</li>
+</ul></li>
+</ul>
+</section>
+<section id="test-it-out" class="slide level2">
+<h2>Test it out</h2>
+<p>As you implement the Course class, write code that tests it out:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a>Course c = <span class="kw">new</span> <span class="fu">Course</span>();</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>Student s = <span class="kw">new</span> <span class="fu">Student</span>(<span class="st">&quot;Georg Cantor&quot;</span>, <span class="dv">1</span>, <span class="dv">99</span>);</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>Student s2 = <span class="kw">new</span> <span class="fu">Student</span>(<span class="st">&quot;Maryam Mirzakhani&quot;</span>, <span class="dv">2</span>, <span class="dv">100</span>);</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>c.<span class="fu">add</span>(s);</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>c.<span class="fu">add</span>(s2);</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>c.<span class="fu">listAllStudents</span>();</span></code></pre></div>
+</section>
+<section id="more-tips" class="slide level2">
+<h2>More tips</h2>
+<p>findByName:</p>
+<ul>
+<li>For <span class="math inline">\(i = 0\)</span> to the length of the list:
+<ul>
+<li>If the name of student <span class="math inline">\(i\)</span> equals the name that you’re looking for, print it out</li>
+<li>Can assume there is only one Student with that title, so you can return at this point.</li>
+</ul></li>
+<li>If you don’t find a Student by that title, output “There are no students named … in the course.”
+<ul>
+<li>How can you tell if there is no student with that name?</li>
+</ul></li>
+</ul>
+</section>
+<section id="findallabovegrade" class="slide level2">
+<h2>findAllAboveGrade</h2>
+<ul>
+<li>For <span class="math inline">\(i = 0\)</span> to the length of the list:
+<ul>
+<li>If student <span class="math inline">\(i\)</span> has a grade that is above the grade you’re looking for, print it out</li>
+<li>In this case, there may be <strong>more than one</strong> student above that grade.</li>
+</ul></li>
+<li>If you don’t find any students with that grade, output “There are no students with a grade above … in this course.”
+<ul>
+<li>How can you tell if there is no student with a high enough grade?</li>
+<li>A little harder than the previous one!</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="kinds-of-errors" class="title-slide slide level1">
+<h1>Kinds of errors</h1>
+<ul>
+<li>Compiler errors: syntax errors, type mismatches, etc. These are caught by the compiler.</li>
+<li>Run-time errors: usually Exceptions, but also things like <code>OutOfMemoryError</code>.</li>
+<li>“Bugs” or logic errors: when the program doesn’t do what you wanted it to do. Focus today: these types.</li>
+</ul>
+<p>Examples for today are taken from Bloch and Gafter, <em>Java Puzzlers: Traps, Pitfalls and Corner Cases</em> (2005).</p>
+</section>
+<section id="set-up" class="slide level2">
+<h2>Set-up</h2>
+<ul>
+<li>Can use either Replit or IntelliJ today.</li>
+<li>For IntelliJ:
+<ul>
+<li>Download the LogicErrors.zip file on BrightSpace.</li>
+<li>Unzip the file, it should create a folder.</li>
+<li>Open IntelliJ: File -&gt; “Open Project” and go to the folder that was just created.</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="example-animalfarm" class="title-slide slide level1">
+<h1>Example: AnimalFarm</h1>
+<p>Look at the “AnimalFarm” program.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="dt">final</span> <span class="bu">String</span> pig = <span class="st">&quot;length: 10&quot;</span>;</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a><span class="dt">final</span> <span class="bu">String</span> dog = <span class="st">&quot;length: &quot;</span> + pig.<span class="fu">length</span>();</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(pig);</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(dog);</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Animals are equal: &quot;</span> + pig == dog);</span></code></pre></div>
+</section>
+<section id="ideas" class="slide level2">
+<h2>Ideas?</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="dt">final</span> <span class="bu">String</span> pig = <span class="st">&quot;length: 10&quot;</span>;</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="dt">final</span> <span class="bu">String</span> dog = <span class="st">&quot;length: &quot;</span> + pig.<span class="fu">length</span>();</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(pig);</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(dog);</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Animals are equal: &quot;</span> + pig == dog);</span></code></pre></div>
+<ul>
+<li>Before running, what do you think will happen?</li>
+<li>Run the program. What happens?</li>
+</ul>
+</section>
+<section id="debugger" class="slide level2">
+<h2>Debugger</h2>
+<p>Modern IDEs have built-in tools to help us debug.</p>
+<ul>
+<li>Click on the “side” of a line to add a <strong>breakpoint</strong>.</li>
+<li>Use the debugger (replit: left side menu; on IntelliJ: Run menu -&gt; “Debug…”)</li>
+<li>The program runs until it hits the breakpoint, and then lets us continue execution one line at a time.</li>
+<li>The debugger shows us a <strong>memory diagram</strong>, the values of all the variables at a particular moment.</li>
+<li>What is the variable in the last println method? Why?</li>
+<li>Also: notice anything in IntelliJ?</li>
+</ul>
+</section>
+<section id="lessons" class="slide level2">
+<h2>Lessons</h2>
+<p>There are two main lessons here:</p>
+<ol type="1">
+<li>Precedence rules are tricky. <strong>Use parentheses when worried about precedence rules</strong>. It’s not clear that the ‘+’ symbol concatenates two strings first, and then the == symbol checks for equality after, but that’s what happened!</li>
+<li>Reference equality (==) is usually not what you want to use for non-primitive types. <strong>Use the <code>.equals</code> method!</strong></li>
+</ol>
+</section></section>
+<section>
+<section id="more-examples" class="title-slide slide level1">
+<h1>More Examples</h1>
+<p>There are two other examples on Replit / in the LogicErrors zip file:</p>
+<ul>
+<li><code>Increment</code></li>
+<li><code>InTheLoop</code></li>
+</ul>
+<p>Go through these on your own; we will discuss next time.</p>
+</section>
+<section id="increment" class="slide level2">
+<h2>Increment</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="dt">int</span> j = <span class="dv">0</span>;</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">100</span>; i++) {</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>    j = j++;</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>}</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(j);</span></code></pre></div>
+<ul>
+<li>Before running, what do you think will happen?</li>
+<li>Run the program. What happens?</li>
+<li>Use the debugger to figure out what happened.</li>
+</ul>
+</section>
+<section id="intheloop" class="slide level2">
+<h2>InTheLoop</h2>
+<p>Look at the InTheLoop program:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">final</span> <span class="dt">int</span> END = <span class="bu">Integer</span>.<span class="fu">MAX_VALUE</span>;</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">final</span> <span class="dt">int</span> START = END - <span class="dv">5</span>;</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a>    <span class="dt">int</span> count = <span class="dv">0</span>;</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a>    <span class="kw">for</span> (<span class="dt">int</span> i = START; i &lt;= END; i++)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a>        count++;</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(count);</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true"></a>}</span></code></pre></div>
+<ul>
+<li>Before running, what do you think will happen?</li>
+<li>Run the program. What happens?</li>
+<li>Use the debugger to figure out what happened.</li>
+</ul>
+</section></section>
+<section id="debugging-in-replit" class="title-slide slide level1">
+<h1>Debugging in Replit</h1>
+<p>If you used IntelliJ today:</p>
+<ul>
+<li>There is a debugger on replit.</li>
+<li>It does look a little different (e.g. doesn’t highlight variables when they change)</li>
+<li>But still:
+<ul>
+<li>Can add breakpoints</li>
+<li>Shows the values of variables</li>
+<li>“Steps” through code</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="quiz" class="title-slide slide level1">
+<h1>Quiz</h1>
+<p>Same rules apply: this is attempt 1, after it is graded you may make up any missed questions for homework for full credit.</p>
+</section>
+
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Thursday: small groups + async lesson.</li>
+<li>Work on the projects!</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

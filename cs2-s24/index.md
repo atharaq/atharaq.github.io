@@ -24,3 +24,4 @@ layout: default
 * [Lesson 9: Designing classes](lesson9.html)
 * [Lesson 10: Designing classes part 2](lesson10.html)
 * [Lesson 11: (Im)mutability](lesson11.html)
+* [Lesson 12: Debugging](lesson12.html)
