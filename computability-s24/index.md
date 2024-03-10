@@ -22,6 +22,7 @@ layout: default
 * [Lesson 10: Quiz / Pushdown Automata](lesson10.html)
 * [Lesson 11: Turing Machines (intro)](lesson11.html)
 * [Lesson 12: Formal description of TMs](lesson12.html)
+* [Lesson 13: Variants of TMs](lesson13.html)
 
 ## Problem Sets
 
