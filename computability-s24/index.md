@@ -27,3 +27,4 @@ layout: default
 
 * [Problem Set 1: Due Monday 2/12](assignments/problemset1.tex)
 * [Problem Set 2: Due Monday, 2/26](assignments/problemset2.tex)
+* [Problem Set 3: Due Monday, 3/18](assignments/problemset3.tex)
