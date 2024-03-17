@@ -198,8 +198,6 @@ You can `throw` any object whose type is "Exception".
 
 # Properly using Exceptions
 
-video 5?
-
 Some Exceptions, like the InputMismatchException thrown by the Scanner class, don't need to be surrounded by a try-catch block. These are called **unchecked** exceptions. Others, like the `IOException` in the `CopyFile` example, need to be caught or handled. These are **checked** exceptions.
 
 In general, we should respect the following paradigms:
