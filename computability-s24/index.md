@@ -25,6 +25,7 @@ layout: default
 * [Lesson 13: Variants of TMs](lesson13.html)
 * [Lesson 14: Enumerators and Input/Output](lesson14.html)
 * [Lesson 15: IO TMs and Cardinality](lesson15.html)
+* [Lesson 16: Cardinality](lesson16.html)
 
 ## Problem Sets
 
