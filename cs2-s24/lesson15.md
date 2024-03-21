@@ -86,8 +86,8 @@ Recall that the **toString** method is used in the `println`. Under the hood: `p
 
 Every class, except Object, has exactly one direct **superclass**. In our example:
 
-	* The superclass of Square is Rectangle.
-	* The superclass of Rectangle is Object.
+* The superclass of Square is Rectangle.
+* The superclass of Rectangle is Object.
 
 Notice that in Rectangle's constructor, we don't have to explicitly invoke `super`. This is because the `Object` class has a default (no-argument) constructor, which is automatically invoked (unless otherwise specified).
 
