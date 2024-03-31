@@ -26,6 +26,7 @@ layout: default
 * [Lesson 14: Enumerators and Input/Output](lesson14.html)
 * [Lesson 15: IO TMs and Cardinality](lesson15.html)
 * [Lesson 16: Cardinality](lesson16.html)
+* [Lesson 17: Undecidability and Reductions](lesson17.html)
 
 ## Problem Sets
 
