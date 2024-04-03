@@ -27,6 +27,7 @@ layout: default
 * [Lesson 15: IO TMs and Cardinality](lesson15.html)
 * [Lesson 16: Cardinality](lesson16.html)
 * [Lesson 17: Undecidability and Reductions](lesson17.html)
+* [Lesson 18: Reductions](lesson18.html)
 
 ## Problem Sets
 
