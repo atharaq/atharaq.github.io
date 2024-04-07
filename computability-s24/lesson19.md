@@ -6,7 +6,7 @@
 
 This lesson is **asynchronous** / self-directed. Please go through these notes at your own pace.
 
-There are some exercises you need to do. Most of these you can do on your own and we can go over on Thursday. But for a couple of them, you will see **HAND IN** on them. For these: you are to write up your solutions and bring it in to class on Thursday. It's okay if you do not get these correct, just that you make a serious attempt at each of them.
+There are some exercises you need to do. Most of these you can do on your own and we can go over on Thursday. But for **three** exercises, you will see **HAND IN** on them. For these: you are to write up your solutions and bring it in to class on Thursday. It's okay if you do not get these correct, just that you make a serious attempt at each of them.
 
 # Halting Problem
 
