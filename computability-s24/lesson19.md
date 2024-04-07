@@ -41,7 +41,7 @@ In fact, what we showed is that $H \leq_m A_{TM} \leq_m H$, which means that $H$
 
 **Exercise (HAND IN 1)**: Consider the language FIN = $\\{ \langle M \rangle : \mathcal{L}(M)$ is finite $\\}$. Show that $A_{TM} \leq_m \overline{FIN}$.
 
-That is: on input $\langle M, w \rangle$, construct a TM $M^\prime$ such that $\mathcal{L}(M^\prime)$ is *infinite* if and only if $M$ accepts $w$.
+That is: on input $\langle M, w \rangle$, construct a TM $M^\prime$ such that $\mathcal{L}(M^\prime)$ is *infinite* if and only if $M$ accepts $w$. What can we conclude about FIN based on this? [Go back to the "Strategy" section last lesson](lesson18.html#strategy)
 
 # Logic / Quantifiers
 
@@ -226,7 +226,7 @@ Answer the following:
 
 ## Back to time complexity
 
-**Definition**: Let $t : \mathbb{N} \to \mathbb{N}$ e any function. Then $TIME(t(n))$ is the collection of all languages which are decidable by a TM whose running time is $O(t(n))$.
+**Definition**: Let $t : \mathbb{N} \to \mathbb{N}$ be any function. Then $TIME(t(n))$ is the collection of all languages which are decidable by a TM whose running time is $O(t(n))$.
 
 **Definition**: The complexity class $P$ is defined as $P = \bigcup \limits_{k \in \mathbb{N}} TIME(n^k)$. This is the collection of all *polynomial-time* decidable problems.
 
