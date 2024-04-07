@@ -28,6 +28,7 @@ layout: default
 * [Lesson 16: Cardinality](lesson16.html)
 * [Lesson 17: Undecidability and Reductions](lesson17.html)
 * [Lesson 18: Reductions](lesson18.html)
+* [Lesson 19: Logic / Quantifiers and intro to complexity](lesson19.html)
 
 ## Problem Sets
 
