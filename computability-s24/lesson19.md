@@ -90,7 +90,7 @@ Is two universal quantifiers worse than one? No: this language is still **co-c.e
 
 **Exercise**: Describe the following languages using quantifiers and decidable predicates:
 
-1. (**HAND IN 2**) TOT = $\\{ \langle F \rangle : F$ is a total computable function $\\}$. Hint: $F$ is total computable means for every $w$, there is some step $s$ such that $F$ halts on input $w$ after $s$ steps. Translate this into 
+1. (**HAND IN 2**) TOT = $\\{ \langle F \rangle : F$ is a total computable function $\\}$. Hint: $F$ is total computable means for every $w$, there is some step $s$ such that $F$ halts on input $w$ after $s$ steps. Translate this into logic!
 2. FIN = $\\{ \langle M \rangle : \mathcal{L}(M)$ is finite $\\}$.
 
 It turns out that the quantifier complexity of these languages is higher than the quantifier complexity of $E_{TM}$, and so while $E_{TM}$ is co-c.e. but not c.e., TOT and FIN are neither c.e. nor co-c.e.

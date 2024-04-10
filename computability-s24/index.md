@@ -29,6 +29,7 @@ layout: default
 * [Lesson 17: Undecidability and Reductions](lesson17.html)
 * [Lesson 18: Reductions](lesson18.html)
 * [Lesson 19: Logic / Quantifiers and intro to complexity](lesson19.html)
+* [Lesson 20: Complexity](lesson20.html)
 
 ## Problem Sets
 
