@@ -31,3 +31,4 @@ layout: default
 * [Lesson 16: Polymorphism III](lesson16.html)
 * [Lesson 17: Algorithms / Pseudocode](lesson17.html)
 * [Lesson 18: Searching algorithms](lesson18.html)
+* [Lesson 19: Sorting](lesson19.html)

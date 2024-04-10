@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>CS2 Lesson 19</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 19</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Sorting</p>
+</section>
+
+<section>
+<section id="project-3" class="title-slide slide level1">
+<h1>Project 3</h1>
+<ul>
+<li>Start by making the Player interface</li>
+<li>Think about how to represent the board.</li>
+</ul>
+</section>
+<section id="game" class="slide level2">
+<h2>Game</h2>
+<ul>
+<li>Keep track of whose turn it is (maybe a “current” Player variable)</li>
+<li>As long as there are <em>any</em> stones left (How? Efficiency?):
+<ul>
+<li>Ask the current player to make a move</li>
+<li>Output that move</li>
+<li>Update the “board” based on the move</li>
+<li>Change the current player (now it’s the other player’s turn)</li>
+</ul></li>
+<li>Afterward: print out who won!
+<ul>
+<li>Who took the last stone?</li>
+</ul></li>
+</ul>
+</section>
+<section id="time-management" class="slide level2">
+<h2>Time Management</h2>
+<ul>
+<li>Done?
+<ul>
+<li>Player interface, SimplePlayer, HumanPlayer</li>
+<li>Test out that these do exactly what you need.</li>
+</ul></li>
+<li>This week:
+<ul>
+<li>Design the gameplay</li>
+<li>Game class</li>
+<li>Does it figure out the correct winner each time?</li>
+<li>Test it out with all 4 ways to play.</li>
+</ul></li>
+</ul>
+</section>
+<section id="after-that" class="slide level2">
+<h2>After that</h2>
+<ul>
+<li>Smarter Player
+<ul>
+<li>As you play the game, try to think about strategies that make sense.</li>
+<li>Can you implement any of those?</li>
+<li>Can you recognize when you’re in a “winning position”?</li>
+<li>If not: can you just find <em>anything</em> better than the Simple player?</li>
+</ul></li>
+<li>Testing!</li>
+</ul>
+</section></section>
+<section id="async-lessons" class="title-slide slide level1">
+<h1>Async lessons</h1>
+<ul>
+<li>Algorithms / Pseudocode</li>
+<li>Running time / Big Oh</li>
+<li>Binary Search</li>
+<li>Questions?</li>
+</ul>
+</section>
+
+<section>
+<section id="sorting" class="title-slide slide level1">
+<h1>Sorting</h1>
+<p><a href="https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/visualize/">Interactive sorting demo.</a></p>
+<p>More fun: let’s get some volunteers and sort people by height.</p>
+</section>
+<section id="pseudocode-running-time" class="slide level2">
+<h2>Pseudocode / running time</h2>
+<p>The algorithm we used was called the “Bubble Sort” algorithm. It’s called this because the bigger elements “bubble up” to the top at each iteration.</p>
+<p><strong>Exercise</strong>: Write pseudo-code for the algorithm we described.</p>
+</section>
+<section id="selection-sort" class="slide level2">
+<h2>Selection Sort</h2>
+<p>Here we describe another algorithm to sort. This algorithm uses the fact that it’s easy to find the smallest element in a list.</p>
+<ul>
+<li>For each <span class="math inline">\(i\)</span>, look for the smallest element in the list between <span class="math inline">\(i\)</span> and the end of the list.</li>
+<li>If we find something smaller than <span class="math inline">\(a_i\)</span>, swap it with the smallest element between <span class="math inline">\(i\)</span> and the end.</li>
+<li>Repeat this until we have looked through all <span class="math inline">\(i\)</span> from <span class="math inline">\(0\)</span> to <span class="math inline">\(n - 1\)</span>.</li>
+</ul>
+<p>Write pseudocode for this algorithm.</p>
+</section>
+<section id="running-times" class="slide level2">
+<h2>Running times</h2>
+<p>Analyze the running times of the two algorithms. Is one better than the other in terms of Big Oh? Fill in the table:</p>
+<p><span class="math display">\[
+\begin{array}{|c|c|}
+\hline
+\text{Algorithm} &amp; \text{Running Time} \\
+\hline
+\text{Bubble Sort} &amp; \\
+\hline
+\text{Selection Sort} &amp; \\
+\hline
+\end{array}
+\]</span></p>
+</section>
+<section id="upshot" class="slide level2">
+<h2>Upshot</h2>
+<ul>
+<li>Can we do any better?</li>
+<li>Yes, but requires a new technique: <strong>recursion</strong>!</li>
+</ul>
+</section></section>
+<section id="coming-up" class="title-slide slide level1">
+<h1>Coming Up</h1>
+<ul>
+<li>Quiz on BrightSpace this weekend (due Monday)</li>
+<li>Next week: recursion</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
