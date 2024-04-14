@@ -30,12 +30,14 @@ layout: default
 * [Lesson 18: Reductions](lesson18.html)
 * [Lesson 19: Logic / Quantifiers and intro to complexity](lesson19.html)
 * [Lesson 20: Complexity](lesson20.html)
+* [Lesson 21: Complexity Relationships / NP](lesson21.html)
 
 ## Problem Sets
 
 * [Problem Set 1: Due Monday 2/12](assignments/problemset1.tex)
 * [Problem Set 2: Due Monday, 2/26](assignments/problemset2.tex)
 * [Problem Set 3: Due Monday, 3/18](assignments/problemset3.tex)
+* [Problem Set 4: Due Monday, 4/22](assignments/problemset4.tex)
 
 ## Final Project
 

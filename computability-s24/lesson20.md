@@ -111,7 +111,7 @@ Due **Monday, April 22**.
 
 1. Show that $A_{TM} \leq_T \overline{A_{TM}}$ and $\overline{A_{TM}} \leq_T A_{TM}$. That is, show that $A_{TM}$ is Turing-equivalent to its complement. (Note: These are *Turing reductions*, not $m$-reductions!)
 2. Sketch a proof that the class $P$ is closed under intersection and complements.
-3. Recall the language $FIN$ defined by: $$FIN = \\{ \langle M \rangle : \mathcal{L}(M) \text{ is finite } \\}.$$ Show that $A_\textrm{TM} \leq_\text{m} F$. (Hint: given $\langle M, w \rangle$, we construct a machine $M^\prime$ so that, on input $x$, $M^\prime$ should run $M$ on input $w$ for $\|x\|$ steps. What should $M^\prime$ then do if $M$ accepts in that many steps? What if $M$ does not accept in that many steps?)
+3. Recall the language $FIN$ defined by: $$FIN = \\{ \langle M \rangle : \mathcal{L}(M) \text{ is finite } \\}.$$ Show that $A_\textrm{TM} \leq_\text{m} FIN$. (Hint: given $\langle M, w \rangle$, we construct a machine $M^\prime$ so that, on input $x$, $M^\prime$ should run $M$ on input $w$ for $\|x\|$ steps. What should $M^\prime$ then do if $M$ accepts in that many steps? What if $M$ does not accept in that many steps?)
 4. Let $G = (V, E)$ be a finite graph. An *Eulerian path* is a path through the graph which visits every edge exactly once. An *Eulerian circuit* is an Eulerian path that begins and ends at the same vertex. A graph is called *Eulerian* if it has an Eulerian circuit. Let E = { $ \langle G \rangle : G$ is an Eulerian graph }. Show that $E \in P$.
 
 (Hint: Every time you visit a vertex, you have to enter it through one edge and leave it through another. What does that tell you? Is the following graph Eulerian? Why or why not? Is there an edge you can delete that makes it Eulerian?)
