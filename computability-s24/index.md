@@ -31,6 +31,7 @@ layout: default
 * [Lesson 19: Logic / Quantifiers and intro to complexity](lesson19.html)
 * [Lesson 20: Complexity](lesson20.html)
 * [Lesson 21: Complexity Relationships / NP](lesson21.html)
+* [NP and NP-completeness](lesson22.html)
 
 ## Problem Sets
 
