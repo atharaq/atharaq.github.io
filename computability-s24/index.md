@@ -31,7 +31,8 @@ layout: default
 * [Lesson 19: Logic / Quantifiers and intro to complexity](lesson19.html)
 * [Lesson 20: Complexity](lesson20.html)
 * [Lesson 21: Complexity Relationships / NP](lesson21.html)
-* [NP and NP-completeness](lesson22.html)
+* [Lesson 22: NP and NP-completeness](lesson22.html)
+* [Lesson 23: NP-complete problems](lesson23.html)
 
 ## Problem Sets
 
@@ -39,6 +40,7 @@ layout: default
 * [Problem Set 2: Due Monday, 2/26](assignments/problemset2.tex)
 * [Problem Set 3: Due Monday, 3/18](assignments/problemset3.tex)
 * [Problem Set 4: Due Monday, 4/22](assignments/problemset4.tex)
+* [Problem Set 5: Due Thursday, 5/2](assignments/problemset5.tex)
 
 ## Final Project
 
