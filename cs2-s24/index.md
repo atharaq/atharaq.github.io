@@ -34,3 +34,4 @@ layout: default
 * [Lesson 19: Sorting](lesson19.html)
 * [Lesson 20: Recursion](lesson20.html)
 * [Lesson 21: Recursion again](lesson21.html)
+* [Lesson 22: Merge sort](lesson22.html)
