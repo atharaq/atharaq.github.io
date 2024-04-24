@@ -33,6 +33,7 @@ layout: default
 * [Lesson 21: Complexity Relationships / NP](lesson21.html)
 * [Lesson 22: NP and NP-completeness](lesson22.html)
 * [Lesson 23: NP-complete problems](lesson23.html)
+* [Lesson 24: NP-completeness, Decision vs Search](lesson24.html)
 
 ## Problem Sets
 
