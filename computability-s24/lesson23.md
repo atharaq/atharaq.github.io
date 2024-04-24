@@ -162,6 +162,6 @@ Due **Thursday, May 2**:
 3. Answer both parts:
    * Describe what it means for a language to be computable (decidable), computably enumerable (c.e.) but not computable, and co-c.e. but not computable.
    * For each of the following languages, determine which, if any, of the above categories the language belongs to:
-      * $\overline{H_{\text{TM}}}$, where $H_\text{TM} = \{ \langle M, w \rangle : M $ halts on input $ w \}$
+      * $\overline{H_{\text{TM}}}$, where $H_\text{TM} = \\{ \langle M, w \rangle : M $ halts on input $ w \\}$
       * $CLIQUE$
       * $A_\text{TM}$ (the acceptance problem)
