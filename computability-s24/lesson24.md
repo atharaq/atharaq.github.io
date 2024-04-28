@@ -1,4 +1,4 @@
-# Lesson 23: Decision / Search
+# Lesson 24: Decision / Search
 {:.no_toc}
 
 1. Table of Contents

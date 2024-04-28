@@ -34,6 +34,7 @@ layout: default
 * [Lesson 22: NP and NP-completeness](lesson22.html)
 * [Lesson 23: NP-complete problems](lesson23.html)
 * [Lesson 24: NP-completeness, Decision vs Search](lesson24.html)
+* [Lesson 25: Decision vs Search, Turing Jumps](lesson25.html)
 
 ## Problem Sets
 
