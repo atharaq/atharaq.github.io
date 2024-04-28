@@ -8,6 +8,7 @@ Here are some initial topics to think about:
 * Computable real numbers, computable functions between real numbers, and computable notions of continuity and calculus. This is most often referred to as "computable analysis". What does it mean for a real number (an infinite sequence of digits) to be computable? What does it mean for a function between computable numbers to be computable? Surprisingly, in "computable analysis", all functions are continuous! Explain these kinds of results for computable analysis, and also explain why philosophers study this (this often comes up in the "constructivist" ontology of mathematics).
 * Quantum algorithms. Which problems can be decided by a "quantum computer"? Are they the same as the problems that can be solved by a Turing Machine? What about complexity: are problems with "quantum polynomial time" the same as the problems in "polynomial time"? What are the "quantum" versions of the normal complexity classes?
 * Probabilistic algorithms. Similar questions to above.
+
 The idea of the project is to research one of these topics as a group, explain it to the rest of us at a high level in your presentation, and then write a technical paper explaining things in a bit more detail than in your presentation. 
 
 # Rubrics
