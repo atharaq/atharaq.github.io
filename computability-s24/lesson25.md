@@ -18,7 +18,7 @@ Examples:
 
 1. Let $A = CLIQUE$ and $B = A_{TM}$. Then $A \leq_{T} B$ because, given a graph $G$ and a number $k$, if we have an oracle for $A_{TM}$, we can decide if $G$ has a k-clique by simply ignoring the oracle and just brute-force searching for a $k$-clique.
 2. Let $A = A_{TM}$ and $B = FIN$. Then we actually saw this before: $A \leq_m B$! (This was a homework question. On input $\langle M, w \rangle$, construct a TM $M^\prime$ which, on input $x$, runs $M$ on $w$ for $\|x\|$ steps steps...).
-   * What if $A$ is computable? Suppose $A = CLIQUE$ and $B = FIN$. Then, given a graph $G$ and integer $k$, construct two TMs, $M_1$ which accepts nothing, and $M_2$ which accepts nothing. Brute force search for a $k$-clique in $G$, and depending on your answer, output $\langle M_1 \rangle$ or $\langle M_2 \rangle$.
+   * What if $A$ is computable? Suppose $A = CLIQUE$ and $B = FIN$. Then, given a graph $G$ and integer $k$, construct two TMs, $M_1$ which accepts nothing, and $M_2$ which accepts everything. Brute force search for a $k$-clique in $G$, and depending on your answer, output $\langle M_1 \rangle$ or $\langle M_2 \rangle$.
 3. Let $A = \\{ w : w$ represents a power of 2 in binary $\\}$ and $B = CLIQUE$. Similar idea: on input $w$, construct two graphs: one that's a triangle, and one that is just three vertices (disconnected). Check if $w$ is a power of 2 in binary (in polynomial time!) and then output either the triangle (a 3-clique) or the disconnected vertices (not a 3-clique) depending on your answer!
 
 # CLIQUE is NP-Complete
