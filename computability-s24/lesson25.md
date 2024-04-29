@@ -85,7 +85,7 @@ Readings: skim 6.1 and read 6.2 (Sipser)
 
 Recall that a function $f$ is called a "partial computable function" if there is an input-output TM $F$ such that, on input $w$, $F(w)$ halts and outputs $f(w)$ if $w$ is in the domain of $f$.
 
-For now, we will talk about functions whose domains are subsets of $\mathbb{N}$, the natural numbers. We will say that $f : \mathbb{N}^k \to \mathbb{N}$ is a partial computable function if there is an input output TM $F$ which, on input $a^{n_1} # a^{n_2}# \ldots # a^{n_k}$, halts and outputs $a^n$ if and only if $(n_1, n_2, \ldots, n_k)$ is in the domain of $f$ and $f(n_1, n_2, \ldots, n_k) = n$.
+For now, we will talk about functions whose domains are subsets of $\mathbb{N}$, the natural numbers. We will say that $f : \mathbb{N}^k \to \mathbb{N}$ is a partial computable function if there is an input output TM $F$ which, on input $a^{n_1} \\# a^{n_2} \\# \ldots \\# a^{n_k}$, halts and outputs $a^n$ if and only if $(n_1, n_2, \ldots, n_k)$ is in the domain of $f$ and $f(n_1, n_2, \ldots, n_k) = n$.
 
 Recall that there is a notion of a "Universal TM". That is, a TM which, given input $\langle F, w \rangle$ will halt and output $F(w)$ if and only if $F$ halts on input $w$. Similarly, there is a kind of **universal partial-computable function**: a partial computable function $f : \mathbb{N}^2 \to \mathbb{N}$ such that the following two properties hold:
 
