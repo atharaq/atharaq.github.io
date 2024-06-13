@@ -117,7 +117,7 @@ In software, I often heard the proverb "Shared mutable state is the root of all 
 * **Mutable**? Data that can be changed.
 * **Shared**? Data that can be accessed **in parallel**, by multiple threads / processes!
 
-**Example**: Imagine that you have $100 in the bank. Payday comes and you will receive a $100 deposit. You also wish to withdraw $100. What happens if you do these things at the same time?
+**Example**: Imagine that you have 100 in the bank. Payday comes and you will receive a 100 deposit. You also wish to withdraw 100. What happens if you do these things at the same time?
 
 In reality: one of those *transactions* will be forced to finish before the other. But in a program?
 
@@ -135,14 +135,14 @@ for (int i = 0; i < 10000; i++) {
 }
 ```
 
-This program simulates doing 5000 withdrawals and 5000 deposits in parallel (across different threads). Running this a few times, I get $100 (correct answer), $-400, $-1600, $400, ...
+This program simulates doing 5000 withdrawals and 5000 deposits in parallel (across different threads). Running this a few times, I get \$100 (correct answer), \$-400, \$-1600, \$400, ...
 
-Why does this give different answers when I run it different times? What is actually happening? Imagine that two threads are trying to access the bank at the same time. If they are literally executing at the same time, you could encounter a scenario where **both** see $100, and then it just depends on the randomness of which thread finishes last. Example:
+Why does this give different answers when I run it different times? What is actually happening? Imagine that two threads are trying to access the bank at the same time. If they are literally executing at the same time, you could encounter a scenario where **both** see \$100 in the bank, and then it just depends on the randomness of which thread finishes last. Example:
 
-**Thread 1**: Sees 100 in the bank.  
-**Thread 2**: Sees 100 in the bank.  
-**Thread 1**: Add 100, now there is 200 in the bank.  
-**Thread 2**: Subtract 100, now there is 0 in the bank.  
+**Thread 1**: Sees \$100 in the bank.  
+**Thread 2**: Sees \$100 in the bank.  
+**Thread 1**: Add 100, now there is \$200 in the bank.  
+**Thread 2**: Subtract 100, now there is \$0 in the bank.  
 
 Now after both threads finish, there is nothing left in the bank. (How would we fix this? We would make sure that no two threads could access the bank at the same time. Or...?)
 
