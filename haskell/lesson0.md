@@ -135,7 +135,7 @@ for (int i = 0; i < 10000; i++) {
 }
 ```
 
-This program simulates doing 5000 withdrawals and 5000 deposits in parallel (across different threads). Running this a few times, I get \$100 (correct answer), \$-400, \$-1600, \$400, ...
+This program simulates doing 5000 withdrawals and 5000 deposits in parallel (across different threads). Running this a few times, I get 100 (correct answer), -400, -1600, 400, ...
 
 Why does this give different answers when I run it different times? What is actually happening? Imagine that two threads are trying to access the bank at the same time. If they are literally executing at the same time, you could encounter a scenario where **both** see \$100 in the bank, and then it just depends on the randomness of which thread finishes last. Example:
 
