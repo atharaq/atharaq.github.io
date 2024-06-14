@@ -150,21 +150,27 @@ Note: this is a very **simplified** example of an issue with shared mutable stat
 
 # Haskell
 
+We will be using the Haskell language in this course. We will need GHCup and Visual Studio Code.
+
+(We may need to get set up on GitHub Classroom as well.)
+
 ## Set-up
+
+1. [GHCup installer](https://www.haskell.org/ghcup/) Follow the instructions. Make sure to install HLS.
+2. [VSCode](https://code.visualstudio.com/download)
+3. After installing both: [Haskell extension for VSCode](https://marketplace.visualstudio.com/items?itemName=haskell.haskell) Or: open VSCode, go to Extensions (View -> Extensions), and search for Haskell.
 
 ## Starting out
 
+We will mostly use the "interactive" Haskell compiler. This allows us to input in Haskell expressions and the console immediately outputs the result. To do this, we can open a terminal (or use a terminal in VSCode) and type in the command "ghci". (Eventually we might start using "stack ghci").
+
+GHC stands for "Glasgow Haskell Compiler"; ghci is the **interactive shell** mode for this compiler. This is a common environment called a REPL: **read-evaluate-print-loop**.
+
+Now let's follow along some of the examples from [Chapter 2](https://learnyouahaskell.com/starting-out#ready-set-go).
+
 ## Simple functions
 
-# Lists
-
-## Ranges
-
-## Implementation questions
-
-## Comprehensions
-
-## Exercises
+## Type checking
 
 # Readings
 
