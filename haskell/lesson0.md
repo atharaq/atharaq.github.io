@@ -160,6 +160,8 @@ We will be using the Haskell language in this course. We will need GHCup and Vi
 2. [VSCode](https://code.visualstudio.com/download)
 3. After installing both: [Haskell extension for VSCode](https://marketplace.visualstudio.com/items?itemName=haskell.haskell) Or: open VSCode, go to Extensions (View -> Extensions), and search for Haskell.
 
+(May also need to update directions here for GitHub Classroom.)
+
 ## Starting out
 
 We will mostly use the "interactive" Haskell compiler. This allows us to input in Haskell expressions and the console immediately outputs the result. To do this, we can open a terminal (or use a terminal in VSCode) and type in the command "ghci". (Eventually we might start using "stack ghci").
@@ -168,10 +170,30 @@ GHC stands for "Glasgow Haskell Compiler"; ghci is the **interactive shell** mod
 
 Now let's follow along some of the examples from [Chapter 2](https://learnyouahaskell.com/starting-out#ready-set-go).
 
+* 
+
 ## Simple functions
 
 ## Type checking
 
+* Haskell is **strongly typed**. This means...
+* Haskell has **type inference**. This means...
+* To check the type of an expression, use `:t`.
+
+> ghci> :t True  
+> True :: Bool
+
+This says that the type of the expression `True` is `Bool`.
+
+More complicated example: consider the "anonymous function" `\x -> x + 3`. This is the function which takes in a parameter x, and returns x + 3.
+
+> ghci> :t \x -> x + 3  
+> \x -> x + 3 :: Num a => a -> a  
+
+This is harder to parse. First, it introduces a **type variable** $a$ and states that $a$ has the Num **typeclass**. That is, "Num a" puts a **class constraint** on the type variable $a$. We read the above line as: "The function takes in a parameter of one type and returns a value of the same type. That type must be a member of the Num class."
+
+We will say more about type variables and classes later. Type classes are kind of like interfaces in Java. If you know about generics in Java, type variables are kind of like generics. 
+
 # Readings
 
-Read Chapters 1 and 2 of the textbook. Get set up with Haskell and VSCode.
+Read Chapters 1 and 2 of the textbook. Get set up with Haskell / VSCode / (GitHub Classroom?).
