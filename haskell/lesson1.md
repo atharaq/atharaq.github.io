@@ -50,7 +50,7 @@ Infinite lists:
 ## Implementation questions
 
 * Think of these as **linked lists**.
-* Except: each node has a pointer to a *computation* (called a **thunk**).
+* Except: each node has a pointer to a *computation* (called a **thunk**) which would give the next node / value.
 * This allows **lazy evaluation**.
 * That's how infinite lists work!
 
