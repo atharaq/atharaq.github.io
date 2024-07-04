@@ -51,7 +51,7 @@ All of these assume the basic fundamentals: programming, algorithms, the basics 
 
 # This course
 
-* Interleaved lectures (by me) and student Presentations
+* Interleaved lectures (by me) and student presentations
 * 3 presentations per student (roughly 15-20 minutes per student)
 * 2 short papers (2-5 pages and 5-8 pages)
 
@@ -170,14 +170,72 @@ GHC stands for "Glasgow Haskell Compiler"; ghci is the **interactive shell** mod
 
 Now let's follow along some of the examples from [Chapter 2](https://learnyouahaskell.com/starting-out#ready-set-go).
 
-* 
+### Arithmetic
+{:.no_toc}
 
-## Simple functions
+> ghci> 2 + 15  
+> 1 
+
+> ghci> 8 + 3*(-2)  
+> 2
+
+(What happens if you forget the parentheses around -2?)
+
+### Boolean algebra
+{:.no_toc}
+
+> ghci> True && False  
+> False
+
+> ghci> True || not True  
+> True
+
+> ghci> not (True || not True)  
+> False
+
+> ghci> 5 == 2  
+> False
+
+> ghci> 5 /= 2  
+> True
+
+### Function application
+{:.no_toc}
+
+Invoke functions by writing the function name, and then the list of parameters, separated by spaces (no commas). (`succ` function is the successor function, which just adds one).
+
+> ghci> succ 2  
+> 3
+
+Precedence?
+
+> ghci> succ 3 * 5  
+> 20
+
+(It's $4 \times 5$, not $15 + 1$.)
+
+More than one parameter: again, just use spaces to separate
+
+> ghci> max 5 2  
+> 5
+
+(What happens if you use parentheses and commas? It thinks the parameter is a **tuple**!)
+
+## Defining functions
+
+Follow along the examples from [Chapter 2](https://learnyouahaskell.com/starting-out#babys-first-functions).
+
+We should be able to:
+
+* Define functions in a haskell file (.hs extension) and load them into ghci
+* Define functions which use other functions we have defined
+* Use the `if-else` expression
 
 ## Type checking
 
-* Haskell is **strongly typed**. This means...
-* Haskell has **type inference**. This means...
+* Haskell is **statically typed**. This means that the type of every expression is known at compile-time.
+* Haskell has **type inference**. This means that the compiler can *infer* the type of an expression, so we do not *always* need to declare these.
+  * Good practice to do so though!
 * To check the type of an expression, use `:t`.
 
 > ghci> :t True  
@@ -192,7 +250,10 @@ More complicated example: consider the "anonymous function" `\x -> x + 3`. This 
 
 This is harder to parse. First, it introduces a **type variable** $a$ and states that $a$ has the Num **typeclass**. That is, "Num a" puts a **class constraint** on the type variable $a$. We read the above line as: "The function takes in a parameter of one type and returns a value of the same type. That type must be a member of the Num class."
 
-We will say more about type variables and classes later. Type classes are kind of like interfaces in Java. If you know about generics in Java, type variables are kind of like generics. 
+We will say more about type variables and classes later. Two quick notes:
+
+1. Type classes are kind of like *interfaces* in Java. 
+2. Type variables are kind of like *generics* in Java (if you don't know what generics are, think about the type in angled brackets in `ArrayList<Integer>`). 
 
 # Readings
 
