@@ -45,8 +45,9 @@ In parentheses below, you can see how the course learning outcomes map to the [M
 
 Upon completion of this course, students should be able to...
 
-...
-
+* Develop basic algorithms that avoid assigning to mutable state. (PLO 1, 2) 
+* Develop useful functions that take and return other functions. (PLO 1, 2, 5)
+* Explain the distinction between the functional and object-oriented programming paradigms, along with the pros/cons of each (PLO 3, 4, 5)
 * Explore an advanced topic in computer science independently (PLO 4, 5)
 * Oral presentation and technical writing skills (PLO 3)
 

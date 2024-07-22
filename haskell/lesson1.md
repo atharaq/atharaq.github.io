@@ -8,7 +8,19 @@
 
 * Setting up
 * Topics?
-* Choose a topic by the beginning of next week!
+
+## Reminders
+
+* Monday: Labor day. No classes!
+* Topics: choose a topic by the **end of next week**!
+  * Send me 2 or 3 topic ideas in case of clashes.
+  * Meet with me in office hours if you are unsure of a topic.
+* Presentations:
+  * First set of presentations will start in 2.5 weeks (9/16).
+  * We will slowly make a schedule.
+  * Meet with me before your first presentation!
+* Problem Set 1
+  * Given next week, due the week after.
 
 # Lists
 
@@ -90,6 +102,12 @@ More than one condition? Even squares that are multiples of 3?
 <summary>Solution</summary>
 <p>pythTrips = [(x,y,z) | z <- [1..], y <- [1..z], x <- [1..y], x^2 + y^2 == z^2]</p>
 </details>
+
+Aside: tuples?
+
+* Tuples are not the same as a list.
+* Can be *heterogeneous*: `let a = (2, "hi", "there")`
+* Have a fixed size (cannot "add" to a tuple)
 
 ## Exercise
 
