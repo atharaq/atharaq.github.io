@@ -14,7 +14,8 @@
 
 # Reading
 
-...
+* Chapter 3: Types/Typeclasses
+* Chapter 4: Syntax in Functions
 
 # Types
 
@@ -42,17 +43,38 @@
 
 # Functions
 
-* Define functions using patterns
-* Wildcards
-* Compiler checks
+Can define functions using cases:
 
-## Pattern matching
+```haskell
+count :: Integral a => a -> String
+count 0 = "None"
+count 1 = "One"
+count 2 = "Two"
+count _ = "Many"
+```
 
-(on lists, recursion, etc)
+* **Pattern matching**.
+* Underscore is a wildcard: matches everything.
+  * Used if we don't need a variable name
+  * Works the same with `count x = "Many"` in the last line.
+* What if we don't define the "wildcard" case? Error.
+  * Can turn it into a compiler error with :set -Wincomplete-patterns.
+
+## More Pattern Matching
+
+Works on lists and tuples. Examples:
+
+...
+
+Recursion? Examples:
+
+...
 
 ## Guards
 
 ## Where
+
+## Let
 
 # Problem Set 1
 
