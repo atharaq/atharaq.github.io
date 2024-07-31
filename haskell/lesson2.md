@@ -19,7 +19,9 @@
 
 # Types
 
-...
+* Recall: Haskell is **statically typed**. Meaning?
+* Recall: **type inference**. Meaning?
+* "::" means?
 
 ## Common Types
 
