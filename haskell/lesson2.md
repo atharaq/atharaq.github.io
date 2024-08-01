@@ -78,18 +78,82 @@ Compiler verifies that your type declaration is correct.
 
 # Polymorphism
 
-* Parametric polymorphism: variables can be of any type! (Java generics / C++ templates)
-* Ad-hoc polymorphism: variables can be from a set of typeclasses that support certain functions. (Kind of like interfaces)
+* **Parametric** polymorphism: variables can be of any type! (Java generics / C++ templates)
+* **Ad-hoc** polymorphism: variables can be from a set of typeclasses that support certain functions. (Kind of like interfaces)
+
+Example of parametric polymorphism: the `fst` function takes in a tuple `(x, y)` and returns the first element of the tuple `x`.
+
+> ghci> fst (3, "Athar")  
+> ghci> 3  
+> ghci> :t fst  
+> fst :: (a, b) -> a
+
+Here `a` and `b` are two **type variables**. They can range over any possible types (they may be the same or different types). This is saying that `fst` is a function whose argument is a tuple, and returns a value whose type matches the type of the first element of the tuple.
+
+Ad-hoc polymorphism is accomplished using **type classes**.
+
+> ghci> :t (+)  
+> (+) :: Num a => a -> a -> a
+
+This says that + is a function which takes in two parameters of some type `a`, and returns another one of type `a`. Moreover, it says that this type `a` must be of the `Num` class (whatever that is).
 
 ## Common classes
 
+* Eq: == and /=
+* Ord (ordered): Eq, >, >=, <, <=, max, min, compare
+* Enum (enumerable): succ, pred, fromEnum, toEnum
+* Bounded: minBound, maxBound
+* Num (numeric): (+), (-), (*), negate, abs, signum, fromInteger
+* Real: Num, Ord, and toRational
+* Integral: Real, Enum, quot, rem, div, mod, toInteger, quotRem, divMod
+* Show (can be turned into a string): show, showList, showsPrec
+* Read (opposite of show: parse from a string): read
+
 ## Ord / Enum / Bounded
+
+Try out the following:
+
+1. `:t (>)`
+2. `:t compare`
+   * `:t compare 0`
+   * `:t compare "Athar"`
+   * `compare "Athar" "Ali"`
+3. `:t succ`
+   * `succ 3.5`
+4. `maxBound :: Int`
+5. `maxBound :: Char`
 
 ## Num
 
+1. `:t 0`
+2. `:t (-)`
+3. `:t 1 + 2`
+4. `:t (1 + 2) :: Int`
+5. `:t (1 :: Int) + 2`
+6. `:t (1 :: Int) + (2 :: Double)`
+
 ## Integral / Fractional
 
+1. `:t (4 + 2.3)`
+2. `:t (5 :: Int) + 3.5`
+3. `:t (/)`
+4. `:t div`
+5. `:t toInteger`
+   * Why?
+6. `:t fromIntegral`
+   * Why?
+7. `fromIntegral (1 :: Integer) + 2.3`
+
 ## Show
+
+1. `:t show`
+2. `show 3`
+3. `show pi`
+4. `show True`
+5. `show ("Hi", "there")`
+6. `show (3, 5)`
+7. `show ["hi", "there"]`
+8. `show [3, 5]`
 
 # Functions
 
@@ -106,7 +170,7 @@ count _ = "Many"
 * **Pattern matching**.
 * Underscore is a wildcard: matches everything.
   * Used if we don't need a variable name
-  * Works the same with `count x = "Many"` in the last line.
+  * Works the same with `count x = "Many"` in the last line. (But we don't use the `x`, so not needed.)
 * What if we don't define the "wildcard" case? Error.
   * Can turn it into a compiler error with :set -Wincomplete-patterns.
 
