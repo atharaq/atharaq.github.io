@@ -22,16 +22,64 @@
 * Recall: Haskell is **statically typed**. Meaning?
 * Recall: **type inference**. Meaning?
 * "::" means?
+* How to check the type of an expression / function?
 
 ## Common Types
 
+* Bool: True or False
+* Char: a single Unicode character 
+  * `String` is `[Char]` (list of characters)
+* Int: word-sized integer (64 bits on a 64-bit machine, 32 bits on a 32-bit machine, etc)
+* Integer: unbounded integer (less efficient)
+* Float 
+* Double
+
 ## Types of functions
+
+`->` indicates a function.
+
+```haskell
+welcome x = "Hello " ++ x
+```
+
+* `welcome "Athar"`?
+* `:t welcome`?
+  * `welcome :: [Char] -> [Char]`
+  * "welcome is a function that takes a list of characters and returns a list of characters"
 
 ## Curried
 
+Every function in Haskell has exactly one argument. So how do we define multi-arg functions?
+
+> ghci> hello first last = "Hello " ++ first ++ " " ++ last  
+> ghci> :t hello  
+> hello :: [Char] -> [Char] -> [Char]
+
+What does this mean? `hello` is a function that takes in a string as a parameter, and returns another function! This is called **currying**.
+
+What happens if we do `:t hello "Athar"`?
+
+## Style note
+
+Good style to include type declarations for your functions in .hs files. The following might go in a file called "linear.hs":
+
+```haskell
+linear :: Int -> Int -> Int
+linear x y = 2*x + y
+```
+
+Then in ghci:
+
+> ghci> :set -Wall
+> ghci> :l linear
+> ...
+
+Compiler verifies that your type declaration is correct. 
+
 # Polymorphism
 
-(type variables)
+* Parametric polymorphism: variables can be of any type! (Java generics / C++ templates)
+* Ad-hoc polymorphism: variables can be from a set of typeclasses that support certain functions. (Kind of like interfaces)
 
 ## Common classes
 
