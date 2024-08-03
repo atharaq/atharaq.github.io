@@ -172,21 +172,75 @@ count _ = "Many"
   * Used if we don't need a variable name
   * Works the same with `count x = "Many"` in the last line. (But we don't use the `x`, so not needed.)
 * What if we don't define the "wildcard" case? Error.
-  * Can turn it into a compiler error with :set -Wincomplete-patterns.
+  * Can turn it into a compiler error with :set -Wincomplete-patterns (or :set -Wall)
 
 ## More Pattern Matching
 
 Works on lists and tuples. Examples:
 
-...
+> ghci> fst' (x,_) = x  
+> ghci> :t fst'
+> ghci> fst' :: (a, b) -> a
+> ghci> fst' (30, 10)
+> 30
 
-Recursion? Examples:
+**Exercises**: 
 
-...
+1. Define a function `addVector` which takes in two tuples `(x1, y1)` and `(x2, y2)` and returns their *vector sum* (add the x's, add the y's).
+2. Define a function `dotProd` which takes in two tuples `(x1, y1)` and `(x2, y2)` and returns their *dot product* (multiply the x's, multiply the y's, add them together).
+
+What if we wanted to define these on two vectors of arbitrary length? We can use pattern matching on lists with recursion.
+
+```haskell
+:{
+dotProd [] [] = 0
+dotProd _ [] = error "list sizes do not match"
+dotProd [] _ = error "list sizes do not match"
+dotProd (x:xs) (y:ys) = x*y + dotProd xs ys
+:}
+```
+
+**Exercise**: Implement `addVector` on two lists recursively (as efficiently as you can). If one list is empty and the other is not, throw an exception (as we did above).
+
+(There will turn out to be a simpler solution later on: `zipWith (+)`)
+
+List comprehensions: we've seen this already. Recall: Pythagorean triples:
+
+```haskell
+pythTrips = [(x,y,z) | z <- [1..], y <- [1..z], x <- [1..y], x^2 + y^2 == z^2]
+```
+
+We can do other things like: `perims = [ a + b + c | (a, b, c) <- pythTrips ]`
+
+(Try `take 10 perims`).
+
+## As patterns
+
+**As patterns**: pattern match + bind a name. Syntax: `name@pattern`
+
+```haskell
+capital :: String -> String
+capital "" = "Empty"
+capital all@(x:xs) = "The first letter of " ++ all ++ " is " ++ [x]
+```
 
 ## Guards
 
+Boolean expression after a pipe symbol (`|`). Like an "if" or "switch":
+
+```haskell
+bmiClassifier bmi 
+  | bmi <= 18.5 = "underweight"
+  | bmi <= 25.0 = "normal"
+  | bmi <= 30.0 = "overweight"
+  | otherwise = "obese"
+```
+
+This can be all on one line, but more readable if you put each guard on its own line, indented.
+
 ## Where
+
+
 
 ## Let
 
