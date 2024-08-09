@@ -240,9 +240,42 @@ This can be all on one line, but more readable if you put each guard on its own 
 
 ## Where
 
+What if we wanted to define `bmiClassifier` in terms of height and weight? Your BMI is defined as your mass in kilograms divided by your height in meters squared.
 
+```haskell
+bmiClassifier weight height
+  | weight / height^2 < 18.5 = "underweight"
+  | weight / height^2 < 25.0 = "normal"
+  | weight / height^2 < 30.0 = "overweight"
+  | otherwise = "obese"
+```
+
+It would be easier if we could define a temporary variable which computed `weight / height^2` once. This is the point of the **where** clause. The above can be written more simply as:
+
+```haskell
+bmiClassifier weight height
+  | bmi <= 18.5 = "underweight"
+  | bmi <= 25.0 = "normal"
+  | bmi <= 30.0 = "overweight"
+  | otherwise = "obese"
+  where bmi = weight / height^2
+```
 
 ## Let
+
+**where** bindings define variable names across the whole funciton. **let** bindings are local. `let ... in ...` is an *expression*. The idea is you use `let ...` to define some set of variables, and then the value of the expression is returned by the `in` clause.
+
+```haskell
+cylinder :: (RealFloat a) => a -> a -> a
+cylinder r h =
+    let sideArea = 2 * pi * r * h
+        topArea = pi * r^2
+    in sideArea + 2*topArea
+```
+
+In this function, the surface area of the cylinder is defined as `sideArea + 2*topArea`; those variables are bound by the `let` clause. `let` bindings can be used in list comprehensions and in GHCi as well.
+
+(Examples)
 
 # Problem Set 1
 
