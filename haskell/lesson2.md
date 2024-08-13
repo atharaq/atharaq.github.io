@@ -275,10 +275,20 @@ cylinder r h =
 
 In this function, the surface area of the cylinder is defined as `sideArea + 2*topArea`; those variables are bound by the `let` clause. `let` bindings can be used in list comprehensions and in GHCi as well.
 
-(Examples)
-
 # Problem Set 1
 
 Due **next Friday** on BrightSpace / GH classroom?
 
 (.hs on github classroom?)
+
+1. Explain the differences between functional and imperative programming. In your answer, provide an example of an algorithm (described in Java / Python / pseudocode / etc) that is *not* written in a functional style, and explain what is not "functional" about it. You can write your answer using comments `{-` and `-}` in the hs file.
+2. Write a function `elemSorted x xs` that returns true if `x` is an element of the **sorted** list `xs`. In this case, we assume `xs` is sorted; it may be infinite. Do **not** use `elem`: it fails for infinite lists. The type signature should be `elemSorted :: Ord a => a -> [a] -> Bool`. In the comments, in English, explain what this type signature means.
+3. Write a function `isPerfectSquare :: Int -> Bool` which returns true if `x` is a perfect square. **Hint**: use `elemSorted` to check if `x` is an element of an infinite list of all perfect squares. (Can you figure out how to define a list of all perfect squares?)
+4. Consider the expression `p = sieve [2..] where sieve (x:xs) = x : sieve [ y | y <- xs, y \`mod\` x /= 0]`. In the comments of the .hs file, answer the following:
+   * What is the type of p?
+   * What is the value of `take 10 p`?
+   * Describe `p`. What is it, mathematically? Explain how the recursive definition of `sieve` works. Explain how this defines an infinite list, without 
+5. Two numbers `x` and `y` are called **twin primes** if they are both prime and they differ by 2. For example, 3 and 5 are twin primes, as are 5 and 7. Define a list `twins` of all tuples `(x, y)` where `x < y` and `x` and `y` are twin primes.
+   * Hint 1: use a **let** binding to ensure `y` is equal to `x + 2`, and a `where` binding to define a local function `isPrime`.
+   * Hint 2: define the function `isPrime` using `elemSorted` similarly to how you defined `isPerfectSquare`. 
+   * If it works, `take 10 twins` should return the following: `[(3,5),(5,7),(11,13),(17,19),(29,31),(41,43),(59,61),(71,73),(101,103),(107,109)]`
