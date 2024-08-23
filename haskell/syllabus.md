@@ -6,10 +6,10 @@ MAT 4230
 Fall 2024
 
 **Meeting Times**: Mondays and Thursdays, 10:30 - 12:10  
-**Location**: ???  
+**Location**: Humanities 2034  
 **Instructor**: Professor Abdul-Quader (or just "Athar")  
 **Email**: athar.abdulquader AT purchase DOT edu  
-**Office Hours**: Mondays and Thursdays, 12:45 - 1:45 NSB 3003  
+**Office Hours**: Mondays and Thursdays, 9 - 10 AM NSB 3003  
 
 Inclement Weather Hotline: 914-251-7500
 
@@ -28,16 +28,17 @@ The above description is from the department webpage. This semester, I plan to o
   * Computer Vision
   * Natural Language Processing
   * Compilers / Interpreters / Translators
-  * Functional Programming Languages (LISP, Scala, F#, …)
   * Logic Programming (Prolog)
-  * Declarative / Imperative Programming Paradigms
+  * Declarative / Imperative Programming Paradigms (might be too closely related to our course material)
   * Computability Theory
+  * Complexity Theory
+  * Cryptography
   * Quantum Computing
   * Computer Architecture
 
 Students should contact me if they are having trouble finding a topic that they are interested in.
 
-We may also have guest lecturers coming in from time to time. I will announce these in class and on Moodle.
+We may also have guest lecturers coming in from time to time. I will announce these in class and on BrightSpace.
 
 ## Learning Outcomes
 
@@ -57,13 +58,20 @@ Upon completion of this course, students should be able to...
 
 For your own topics, you will need to find your own materials. I am happy to assist you in office hours in your search for materials. For some of these topics, I can loan you a textbook for the semester, while for others I can suggest materials that we find online.
 
+## Software / Tech Requirements
+
+* Haskell: you must [install GHC](https://www.haskell.org/ghcup/). Make sure to answer **yes** to installing cabal, stack, and hls (Haskell Language Server).
+* [Visual Studio Code](https://code.visualstudio.com/download)
+* Haskell extension for VSCode.
+* GitHub Classroom: you will need a GitHub account. Information will be provided soon.
+
 ## Grading Rubric
 
-* 10%: Classwork (class exercises) / short responses
+* 10%: Classwork (class exercises) / short responses / exit tickets?
 * 40%: Problem Sets / Programming assignments (4 x 10%)
 * 15%: Presentations (3 x 5%)
 * 15%: Midterm Paper (3-5 pages double spaced)
-* 20%: Final Paper (5-8 pages)
+* 20%: Final Paper (5-10 pages)
 
 Note that there are no exams in this course. Problem sets will be challenging, but you will have ample time to complete them. I suggest forming study groups, but everyone should write up their own solutions. Come to office hours as much as possible.
 
