@@ -54,7 +54,7 @@ Upon completion of this course, students should be able to...
 
 ## Required Textbook
 
-[Learn You a Haskell For Great Good!](https://learnyouahaskell.com/) (Available for free online.)
+[Learn You a Haskell For Great Good!](https://learnyouahaskell.github.io) (Available for free online.)
 
 For your own topics, you will need to find your own materials. I am happy to assist you in office hours in your search for materials. For some of these topics, I can loan you a textbook for the semester, while for others I can suggest materials that we find online.
 
