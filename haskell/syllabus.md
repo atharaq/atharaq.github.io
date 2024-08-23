@@ -15,11 +15,11 @@ Inclement Weather Hotline: 914-251-7500
 
 ## Course Description
 
-Prerequisite: Computer Science II
+Prerequisite: Computer Science II  
 *“Topics are selected from computability, complexity, artificial intelligence, machine learning, programming languages, data mining, informatics in biology and medicine, cryptography, and other application areas. This course does include topics in theoretical computer science, which has a strong mathematical component, as well as attention to current practical problems. Includes oral presentations by students on approved topics of their choosing.”*
 
 The above description is from the department webpage. This semester, I plan to organize the course as follows:
-* I will focus on teaching **functional programming** in Haskell. We will learn the difference between functional and imperative programming, the pros and cons of each, and this different paradigm for solving problems with the Haskell programming language.
+* I will focus on teaching **functional programming** in Haskell. We will learn the difference between functional and imperative programming, the pros and cons of each, and use this different paradigm for solving problems in the Haskell programming language.
 * In addition, each student will be required to independently learn about **one** advanced topic of their choosing from computer science. Students would be responsible to write **two** short papers explaining the topic. In addition, students are expected to present **at least three** times during the semester, in the hopes that we can learn from each other. A small, but not exhaustive, list of possible topics students can choose from:
   * Database systems
   * OSI stack (networking)
@@ -118,4 +118,4 @@ Due to the nature of a course in which I will be inter-leaving lectures with stu
 9. Functors (Chapters 10-11)
 10. Monads (Chapters 12-13)
 
-We might not cover everything in the text. I will make a note of which sections/chapters we should read in class or on BrightSpace.
+We might not cover everything in the text, and we will likely go out of order at times. I will make a note of which sections/chapters we should read in class or on BrightSpace. I will also do my best to summarize these in my lecture notes.
