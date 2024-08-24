@@ -174,7 +174,7 @@ Now let's follow along some of the examples from [Chapter 2](https://learnyouaha
 {:.no_toc}
 
 > ghci> 2 + 15  
-> 1 
+> 17 
 
 > ghci> 8 + 3*(-2)  
 > 2
