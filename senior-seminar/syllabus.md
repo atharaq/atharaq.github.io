@@ -5,7 +5,7 @@ MAT 4880
 Fall 2024
 
 **Meeting Times**: Wednesdays, 10:00 - 11:40 (see schedule below)  
-**Location**: Humanities 2034  
+**Location**: Natural Sciences 3052    
 **Instructor**: Professor Abdul-Quader (or just "Athar")  
 **Email**: athar.abdulquader AT purchase DOT edu  
 **Office Hours**: Mondays and Thursdays, 9 - 10 AM NSB 3003  

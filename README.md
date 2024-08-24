@@ -1,9 +1,9 @@
 # Professor Abdul-Quader's Lecture Notes
 
-Lecture Notes for Spring 2024 Courses:
+Lecture Notes for Fall 2024 Courses:
 
-* [Computer Science II](cs2-s24)
-* [Computability](computability-s24)
+* [Topics in Advanced Computing](haskell)
+* [Senior Seminar I](senior-seminar)
 
 Old lecture notes can still be found at their respective sites. Contact me if you need access to them.
 
