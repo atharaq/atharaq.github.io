@@ -22,6 +22,16 @@ The goal of this course, which is one of the two required seminar courses, is to
 
 ## Learning Outcomes
 
+After successful completion of this course students will be able to...
+
+* demonstrate the ability to conduct research by, for example, designing computer programs, or applying mathematical or statistical knowledge;
+* produce a senior thesis draft with proper use of references, tables, figures, appendices, etc.;
+* present senior research progress report in the form of an oral presentation;
+* provide constructive feedback on a classmate’s academic writing and oral presentation;
+* improve writing skills;
+* be effective in written and oral communication;
+* ask meaningful questions and provide useful responses.
+
 # Policies
 
 ## Academic Integrity Policy
