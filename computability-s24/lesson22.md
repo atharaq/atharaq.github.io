@@ -44,7 +44,7 @@ We measure the time complexity of a verifier in terms of the length of $w$ (not 
 
 We would have to prove two directions: If $L$ has a polynomial time NTM $N$, then it has a has a polynomial time verifier $V$, and vice versa.
 
-**Exercise**: Suppose $N$ is a polynomial-time NTM for a language $L$. Since $N$ is a polynomial time NTM, that means that every branch of $N$ ... (fill in the blank here). Morever, since $w \in L$, that means that when $N$ runs on input $w$, there is at least one branch $b$ such that ... (filli n the blank here).
+**Exercise**: Suppose $N$ is a polynomial-time NTM for a language $L$. Since $N$ is a polynomial time NTM, that means that every branch of $N$ ... (fill in the blank here). Morever, since $w \in L$, that means that when $N$ runs on input $w$, there is at least one branch $b$ such that ... (fill in the blank here).
 
 So a verifier for $L$ would work as follows. Use the computational branch $b$ as your "certificate".
 

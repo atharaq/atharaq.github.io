@@ -124,8 +124,8 @@ Using the Theorem, we can show that $EQ_{TM}$ is not c.e. by showing that $\over
 
 Then, given $\langle M, w \rangle$:
 
-* If $\langle M, w \in A_{TM}$, $F$ outputs a pair $\langle M_1, M_2 \rangle$ where $\mathcal{L}(M_1) = \emptyset$ and $\mathcal{L}(M_2) = \Sigma^{\*}$, so $\langle M_1, M_2 \rangle \not \in EQ_{TM}$.
-* If $\langle M, w \not \in A_{TM}$, $F$ outputs $\langle M_1, M_2 \rangle$ where $\mathcal{L}(M_1) = \mathcal{L}(M_2) = \emptyset$, so $\langle M_1, M_2 \rangle \in EQ_{TM}$.
+* If $\langle M, w \rangle \in A_{TM}$, $F$ outputs a pair $\langle M_1, M_2 \rangle$ where $\mathcal{L}(M_1) = \emptyset$ and $\mathcal{L}(M_2) = \Sigma^{\*}$, so $\langle M_1, M_2 \rangle \not \in EQ_{TM}$.
+* If $\langle M, w \rangle \not \in A_{TM}$, $F$ outputs $\langle M_1, M_2 \rangle$ where $\mathcal{L}(M_1) = \mathcal{L}(M_2) = \emptyset$, so $\langle M_1, M_2 \rangle \in EQ_{TM}$.
 
 That is, $F$ is a reduction from $A_{TM}$ to $\overline{EQ_{TM}}$!
 
