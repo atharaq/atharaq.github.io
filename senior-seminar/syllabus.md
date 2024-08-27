@@ -91,6 +91,8 @@ In general, it is a good idea to ask your peers to read your thesis periodically
 
 # Course Outline (Tentative)
 
+We will likely modify this depending on the breakdown between Seniors 1 (graduating Spring 2025) and 2 (graduating Dec 2024) this semester.
+
 | Week (date) | Topics | Assignments (due before class) |
 | ---- | ------ | -------- |
 | 1 (8/28) | Intro to course / goal setting | |
