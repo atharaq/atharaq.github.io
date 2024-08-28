@@ -22,6 +22,13 @@
 * Problem Set 1
   * Given next week, due the week after.
 
+## Set Up
+
+* Last time, issues with set-up on the lab computers. You might need to first **update xcode**: in the terminal, run the following command `softwareupdate --install -a`
+* This might require your computer to restart.
+* Then run the [ghcup installation command](https://www.haskell.org/ghcup/) after the restart. Again, make sure to say yes to HLS and stack.
+* Then install the Haskell extension for VSCode.
+
 # Lists
 
 * One of the most fundamental data structures in Haskell.
