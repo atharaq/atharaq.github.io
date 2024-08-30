@@ -70,7 +70,7 @@ linear x y = 2*x + y
 
 Then in ghci:
 
-> ghci> :set -Wall
+> ghci> :set -Wall  
 > ghci> :l linear
 > ...
 
