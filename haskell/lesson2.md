@@ -179,9 +179,9 @@ count _ = "Many"
 Works on lists and tuples. Examples:
 
 > ghci> fst' (x,_) = x  
-> ghci> :t fst'
-> ghci> fst' :: (a, b) -> a
-> ghci> fst' (30, 10)
+> ghci> :t fst'  
+> ghci> fst' :: (a, b) -> a  
+> ghci> fst' (30, 10)  
 > 30
 
 **Exercises**: 
