@@ -71,7 +71,7 @@ linear x y = 2*x + y
 Then in ghci:
 
 > ghci> :set -Wall  
-> ghci> :l linear
+> ghci> :l linear  
 > ...
 
 Compiler verifies that your type declaration is correct. 
