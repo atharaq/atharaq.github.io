@@ -287,7 +287,7 @@ Due **next Friday** on BrightSpace / GH classroom?
 4. Consider the expression ``p = sieve [2..] where sieve (x:xs) = x : sieve [ y | y <- xs, y `mod` x /= 0]``. In the comments of the .hs file, answer the following:
    * What is the type of p?
    * What is the value of `take 10 p`?
-   * Describe `p`. What is it, mathematically? Explain how the recursive definition of `sieve` works. Explain how this defines an infinite list, without 
+   * Describe `p`. What is it, mathematically? Explain how the recursive definition of `sieve` works. Explain how this defines an infinite list despite the function itself having finite length.
 5. Two numbers `x` and `y` are called **twin primes** if they are both prime and they differ by 2. For example, 3 and 5 are twin primes, as are 5 and 7. Define a list `twins` of all tuples `(x, y)` where `x < y` and `x` and `y` are twin primes.
    * Hint 1: use a **let** binding to ensure `y` is equal to `x + 2`, and a `where` binding to define a local function `isPrime`.
    * Hint 2: define the function `isPrime` using `elemSorted` similarly to how you defined `isPerfectSquare`. 
