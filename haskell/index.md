@@ -15,3 +15,4 @@ lang: en-US
 
 * [Lesson 0: Intro to course](lesson0.html)
 * [Lesson 1: Lists](lesson1.html)
+* [Lesson 2: Types](lesson2.html)
