@@ -12,7 +12,8 @@
   * Overview of your topic. 15ish minutes?
   * Motivate it: why is this is an interesting area of research?
   * See rubric on BrightSpace
-* Problem Set 1 due **this Friday**.
+  * Volunteers?
+* Problem Set 1 due **next Tuesday**.
 
 ## Reading
 
@@ -21,13 +22,41 @@
 
 # Recursion
 
+* Defining a function in terms of itself.
+* Need a base case.
+* Recursively, if we can define `f` on smaller inputs, use it to figure out what to do on larger ones.
+
 ## Examples
 
-* maxList, replicate', take'
+* maxList :: (Ord a) => [a] -> a (Hint: use the `max` function which takes in two parameters)
+* replicate' :: (Num i, Ord i) => i -> a -> [a]
+* take' :: (Num i, Ord i) => i -> [a] -> [a]
+
+How do we define these recursively?
 
 ## Quicksort
 
-## Recursive Thinking
+The **quicksort** algorithm is a classical $O(n \log n)$ sorting algorithm. The idea is as follows:
+
+* Pick some element as the **pivot**.
+* Put everything smaller than the pivot on the "left" side.
+* Put everything bigger than the pivot on the "right" side.
+* This puts the pivot in the correct place.
+* Recursively quicksort the left and right sides.
+
+How do we implement this in Haskell? Hint: use the head as the pivot.
+
+```haskell
+quicksort :: (Ord a) => [a] -> [a]
+quicksort [] = []
+quicksort (x:xs) = 
+```
+
+Hints:
+
+* Use a `let`..`in` binding to define the left and right lists.
+* Recursively quicksort those lists
+* Put everything back together.
 
 ## zip / zipWith
 
@@ -37,7 +66,7 @@ zip: take two lists and return a list of pairs.
 zip [0, 1, 2] [1..]
 ```
 
-Returns [(0,1), (1,2), (2,3)] (cuts off the infinite list!). How would we define this using recursion / pattern matching?
+Returns [(0,1), (1,2), (2,3)] (cuts off the infinite list!). **Exercise**: How would we define this using recursion / pattern matching? (Hint: base cases? )
 
 zipWith: combination of zip and map. Take a function, two lists, and returns a list where we apply the function to both list elements.
 
@@ -46,10 +75,6 @@ zipWith (+) [0..10] [1..]
 ```
 
 Returns `[1,3,5,7,9,11,13,15,17,19,21]`.
-
-## Exercises
-
-...
 
 # Higher-order Functions
 
@@ -203,8 +228,3 @@ map (negate . abs) [5, -3, 7, -2]
 ```
 
 "Compose the `negate` and `abs` functions, pass that to `map`".
-
-## Exercises
-
-...
-  
