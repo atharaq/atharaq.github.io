@@ -277,9 +277,7 @@ In this function, the surface area of the cylinder is defined as `sideArea + 2*t
 
 # Problem Set 1
 
-Due **next Friday** on BrightSpace / GH classroom?
-
-(.hs on github classroom?)
+Due **Tuesday, September 17** on GH classroom.
 
 1. Explain the differences between functional and imperative programming. In your answer, provide an example of an algorithm (described in Java / Python / pseudocode / etc) that is *not* written in a functional style, and explain what is not "functional" about it. You can write your answer using comments `{-` and `-}` in the hs file.
 2. Write a function `elemSorted x xs` that returns true if `x` is an element of the **sorted** list `xs`. In this case, we assume `xs` is sorted; it may be infinite. Do **not** use `elem`: it fails for infinite lists. The type signature should be `elemSorted :: Ord a => a -> [a] -> Bool`. In the comments, in English, explain what this type signature means.
