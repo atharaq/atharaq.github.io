@@ -6,6 +6,8 @@
 
 # Questions
 
+GH Classroom questions? Questions from last time?
+
 ## Reminders
 
 * Presentation 1 starts **next week**.
@@ -34,10 +36,6 @@ Notes from last week that we didn't get to:
 * [Problem Set 1](lesson2.html#problem-set-1)
 
 **Note**: We probably won't get through the rest of these notes in one class.
-
-## Questions
-
-* GH Classroom questions?
 
 # Recursion
 
