@@ -20,6 +20,25 @@
 * Chapter 5: Recursion
 * Chapter 6: Higher-order functions
 
+# Finish up
+
+Notes from last week that we didn't get to:
+
+* [Type classes](lesson2.html#num)
+* [Functions](lesson2.html#functions)
+  * Pattern matching
+  * As patterns
+  * Guards 
+  * Where clause
+  * Let clause
+* [Problem Set 1](lesson2.html#problem-set-1)
+
+**Note**: We probably won't get through the rest of these notes in one class.
+
+## Questions
+
+* GH Classroom questions?
+
 # Recursion
 
 * Defining a function in terms of itself.
@@ -66,7 +85,7 @@ zip: take two lists and return a list of pairs.
 zip [0, 1, 2] [1..]
 ```
 
-Returns [(0,1), (1,2), (2,3)] (cuts off the infinite list!). **Exercise**: How would we define this using recursion / pattern matching? (Hint: base cases? )
+Returns [(0,1), (1,2), (2,3)] (cuts off the infinite list!). **Exercise**: How would we define this using recursion / pattern matching? (Hint: base cases?)
 
 zipWith: combination of zip and map. Take a function, two lists, and returns a list where we apply the function to both list elements.
 
@@ -75,6 +94,8 @@ zipWith (+) [0..10] [1..]
 ```
 
 Returns `[1,3,5,7,9,11,13,15,17,19,21]`.
+
+**Exercise**: Can we define zipWith using zip? Can we define `zipWith` without using zip (recursion / pattern matching)?
 
 # Higher-order Functions
 
