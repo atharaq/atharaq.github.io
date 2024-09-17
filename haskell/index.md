@@ -17,3 +17,4 @@ lang: en-US
 * [Lesson 1: Lists](lesson1.html)
 * [Lesson 2: Types](lesson2.html)
 * [Lesson 3: Functions, Recursion, Higher-Order functions](lesson3.html)
+* [Lesson 4: Tail recursion](lesson4.html)
