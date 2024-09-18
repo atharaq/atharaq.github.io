@@ -104,7 +104,7 @@ We will likely modify this depending on the breakdown between Seniors 1 (graduat
 | 7 (10/9) | Presentations | Senior thesis draft 1 |
 | 8 (10/16) | Presentations | Forum 3 posts (Senior Project Info) | 
 | 9 (10/23) | No class | | 
-| 10 (10/30) | No class | Forum 4 posts |
+| 10 (10/30) | **Guest Lecture**: Peter Dearing (Learning Center) on Time Management / Writing skills | Forum 4 posts |
 | 11 (11/6) | Writing workshop: peer feedback | Reply to at least 2 classmates in Forum 4 |
 | 12 (11/13) | No class | |
 | 13 (11/20) | Presentations | | 
