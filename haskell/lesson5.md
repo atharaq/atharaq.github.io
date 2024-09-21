@@ -61,7 +61,7 @@ import qualified Data.List as L
 * `concatMap`
 * `and`
 * `or`
-* `any`
+* `any (==5) [1..10]` (check if anything in the list satisfies the predicate)
 * `all`
 * `iterate`
 * `splitAt`
@@ -82,7 +82,25 @@ Back to Data.List:
 
 ## Searching
 
+* `isPrefixOf` / `isInfixOf` / `isSuffixOf`
+* How do we implement `isPrefixOf` recursively?
+* **Exercise**: implement `search`, which is essentially `isInfixOf`. `search sublist list`
+  * Hint: check if any of the `tails` lists `sublist` as a prefix.
 
+## Text
+
+* `words`
+* `unwords`
+* `lines`
+* `unlines`
+
+## Set Operations
+
+* `nub` (remove duplicates)
+* `delete` (removes the first matching element)
+* `([10,9..1] \\ [2, 5, 6])` (implemented as `foldl (flip delete)`. How?)
+* `union`
+* `intersect`
 
 # Data.Char
 
