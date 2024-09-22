@@ -8,6 +8,43 @@
 
 Chapter 7
 
+# Warm-Up
+
+Implement a function `maxrun` which takes in a list and returns the length of the longest continuous sublist containing all equal values.
+
+> ghci> maxrun []  
+> 0  
+> ghci> maxrun [1, 2, 2, 2, 1, 0, 1, 1]
+> 3
+
+```haskell
+maxrun :: Eq a => [a] -> Int
+```
+
+Ideas?
+
+Maybe first: write a function which takes in a list, and splits it into sublists, each of which has identical values. ie:
+
+> ghci> split [1, 2, 2, 2, 1, 0, 1, 1]  
+> [[1], [2, 2, 2], [1], [0], [1, 1]]
+
+Then? (Two more steps?)
+
+But first: how do we write `split`?
+
+```haskell
+split [] = []
+```
+
+What's next? (This takes some work!) Some hints:
+
+1. Can you implement a function which takes in an `x` and a list and returns all the elements at the beginning of the list which are equal to x? (Equivalent to `takeWhile ==x`)?
+2. Implement a function which takes in an `x` and a list and returns all the elements *after* the ones returned above?
+3. Can you implement a function which takes in an `x` and a list and returns both of the above as a tuple?
+4. Then we can implement split using the above.
+
+(Turns out there are built in functions that do almost all of these in the `Data.List` module.)
+
 # Data.List
 
 Importing a module in an .hs file:
