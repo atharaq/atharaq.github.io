@@ -141,6 +141,23 @@ Back to Data.List:
 
 # Data.Char
 
+([See the reading, chapter 7](https://learnyouahaskell.com/modules#data-char), for more)
+
+Character type functions:
+
+* isAscii, isAsciiUpper, isAsciiLower
+* isLatin1
+* isControl, isPrint, isSpace, etc
+* generalCategory?
+
+Conversion functions:
+
+* toUpper, toLower
+* digitToInt, intToDigit (hex digits allowed)
+* ord / chr (ASCII / Unicode values)
+
+Exercise: Caesar cipher encode / decode functions (as in the book)?
+
 # Data.Map
 
 # Data.Set
