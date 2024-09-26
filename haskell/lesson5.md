@@ -14,7 +14,7 @@ Implement a function `maxrun` which takes in a list and returns the length of th
 
 > ghci> maxrun []  
 > 0  
-> ghci> maxrun [1, 2, 2, 2, 1, 0, 1, 1]
+> ghci> maxrun [1, 2, 2, 2, 1, 0, 1, 1]  
 > 3
 
 ```haskell
