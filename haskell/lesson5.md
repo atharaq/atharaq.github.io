@@ -160,4 +160,87 @@ Exercise: Caesar cipher encode / decode functions (as in the book)?
 
 # Data.Map
 
+What is a Map?
+
+* Set of key-value pairs?
+* An *efficient* data structure for looking up values based on keys?
+
+One implementation: lists of tuples.
+
+```haskell
+phoneNumbers = [("Athar", "123-4567"), ("Bob", "000-1111"), ("Jenny", "867-5309")]
+```
+
+Then how do we look stuff up? Need a `find` function. Let's check the [book's implementation](https://learnyouahaskell.com/modules#data-map). Running time? Better? (In Java: `HashMap` has $O(1)$ lookups / insertions.) Haskell's `Data.Map` module uses **trees** instead.
+
+```haskell
+import qualified Data.Map as Map -- name clashes with Data.List / Prelude
+```
+
+* Map.fromList
+* Map.empty
+* Map.insert
+  * Immutability?
+* Map.null
+* Map.size
+* Map.singleton
+* Map.lookup
+* Map.member
+* Map.map
+* Map.filter
+* Map.keys
+* Map.elems
+* Map.toList
+* Map.fromListWith
+
 # Data.Set
+
+```haskell
+import qualified Data.Set as Set
+```
+
+* Set.fromList
+* Set.union
+* Set.intersection
+* Set.difference
+* Set.empty
+* Set.null
+* Set.size
+* Set.insert
+* Set.member
+* Set.isSubsetOf
+* Set.isProperSubsetOf
+
+
+# Defining Modules
+
+* Modules **export** functions.
+* If you import a module, you can use the functions it exported.
+* How do we define our own modules?
+
+In "Geometry.hs"
+
+```haskell
+module Geometry
+(
+  sphereVolume,
+  cubeVolume -- exported names
+) where
+
+sphereVolume :: Float-> Float 
+sphereVolume radius = (4.0 / 3.0) * pi * (radius^3) 
+cubeVolume :: Float-> Float 
+cubeVolume side= cuboidVolume side side side
+
+cuboidVolume ::Float-> Float-> Float->Float 
+cuboidVolume a b c = rectangleArea a b * c 
+
+rectangleArea :: Float-> Float-> Float −− Internal only 
+rectangleArea a b = a * b
+```
+
+How do we use this? In ghci, simply `:l Geometry`. In another hs file in the same folder, `import Geometry`. Let's play around with this.
+
+## Breaking up
+
+(Maybe next time: break up Geometry into separate files. Submodules)
