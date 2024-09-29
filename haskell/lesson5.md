@@ -81,7 +81,7 @@ Imports *everything* from Data.List **except** the sort function.
 import qualified Data.List
 ```
 
-Imports the functions in the Data.List module but you need to give the full name: `Data.List.nub`, `Data.List.sort`, etc. You would do this to avoid name clashes (if you imported something else that defined a sort function, for example). But if `Dat.List.nub` is too long, you can use "as":
+Imports the functions in the Data.List module but you need to give the full name: `Data.List.nub`, `Data.List.sort`, etc. You would do this to avoid name clashes (if you imported something else that defined a sort function, for example). But if `Data.List.nub` is too long, you can use "as":
 
 ```haskell
 import qualified Data.List as L
