@@ -19,3 +19,4 @@ lang: en-US
 * [Lesson 3: Functions, Recursion, Higher-Order functions](lesson3.html)
 * [Lesson 4: Tail recursion](lesson4.html)
 * [Lesson 5: Modules](lesson5.html)
+* [Lesson 6: Defining modules and types](lesson6.html)
