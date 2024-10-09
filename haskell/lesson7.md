@@ -166,6 +166,12 @@ insert x n@(Node a left right)
 
 * Let's play around with this.
 * Exercise: implement a function that takes in an (unsorted) list and returns a BST. (Use a fold!)
+* Exercise: implement a function that takes an element `x` and a Tree and returns True or False depending on whether `x` is an element of the tree.
+
+```haskell
+member :: Ord a => a -> Tree a -> Bool
+member _ _ = False -- change this
+```
 
 # Instances
 
