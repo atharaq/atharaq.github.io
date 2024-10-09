@@ -104,7 +104,68 @@ lookup k ((x, v) : xs)
 
 ## Lists
 
+What is a list? Recursively: it's an element followed by another list (base case: empty list).
+
+```haskell
+data List a = Empty | Cons a (List a) deriving (Show, Read, Eq, Ord)
+```
+
+Or, as a record:
+
+```haskell
+data List a = Empty | Cons { lHead :: a, lTail :: List a } deriving (Show, Read, Eq, Ord)
+```
+
+Play around:
+
+> ghci> 4 `Cons` (5 `Cons` Empty)  
+
+`cons` is the name of `:` operator ("construct" a new list). We can do something similar: to make a function automatically "infix", we can define it with special characters:
+
+```haskell
+infixr 5 :.
+data List a = a :. List a | Empty deriving (Eq, Ord, Show, Read)
+```
+
+> ghci> (3 :. 4 :. 5 :. Empty) :: List Int  
+> 3 :. (4 :. (5 :. Empty))
+
+## Fixity?
+
+* Defining an operator, you can give it a [fixity](https://www.haskell.org/onlinereport/decls.html)
+* infixr: this is a **right-associative** infix operator.
+* The number tells you the **precedence**. Can be from 1-9
+  * Ex: '*' is `infixl 7` but '+' is `infixl 6`.
+  * Higher precedence binds more tightly.
+  * Both of those are left-associative (why?)
+  * Why should ours be right-associative?
+* If you wanted a *non-associative* operator, you can use `infix`.
+
 ## Trees
+
+Let's make a **binary tree**. Imperatively, we thiunk of a binary tree as containing a root node, which contains a data element, and (at most) two children: a left node and a right node. Declaratively: a tree is either an empty tree, or it has a root node which contains left and right subtrees.
+
+
+```haskell
+data Tree a = Nil | Nod a (Tree a) (Tree a) deriving (Eq, Show, Read)
+
+singleton :: a -> Tree a
+singleton x = Node x Nil Nil
+```
+
+Let's make it a **binary search tree** in fact. A BST is a tree that has the property: if $x < y$, then x appears on the **left** of y on the tree. How do we ensure this? When we insert, we check if the node we are inserting is less than the root. If it is, then put it on the left. If not, put it on the rigth:
+
+```haskell
+insert :: Ord a => a -> Tree a -> Tree a
+insert x Nil = singleton x -- base case
+insert x n@(Node a left right)
+  | x < a == Node a (insert x left) right
+  | x > a == Node a left (insert x right)
+  | otherwise = n
+```
+
+* Let's play around with this.
+* Exercise: implement a function that takes in an (unsorted) list and returns a BST. (Use a fold!)
 
 # Instances
 
