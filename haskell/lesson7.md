@@ -187,4 +187,39 @@ instance Show Time where
 
 # Defining Typeclasses
 
+Eq?
+
+```haskell
+class Eq a where
+  (==), (/=) :: a -> a -> Bool
+  x /= y = not (x == y)
+  x == y = not (x /= y)
+```
+
+ToBool:
+
+```haskell
+class ToBool a where
+  toBool :: a -> Bool
+```
+
+Implementation?
+
+```haskell
+instance ToBool Bool where
+  toBool = id
+
+instance ToBool Int where
+  toBool 0 = False -- C semantics
+  toBool _ = True
+
+instance ToBool [a] where
+  toBool [] = False -- JS semantics
+  toBool _ = True
+
+instance ToBool (Maybe a) where
+  toBool Nothing = False
+  toBool (Just _) = True
+```
+
 # Input?
