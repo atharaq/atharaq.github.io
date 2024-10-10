@@ -147,7 +147,7 @@ Let's make a **binary tree**. Imperatively, we thiunk of a binary tree as contai
 
 
 ```haskell
-data Tree a = Nil | Nod a (Tree a) (Tree a) deriving (Eq, Show, Read)
+data Tree a = Nil | Node a (Tree a) (Tree a) deriving (Eq, Show, Read)
 
 singleton :: a -> Tree a
 singleton x = Node x Nil Nil
@@ -220,6 +220,58 @@ instance ToBool [a] where
 instance ToBool (Maybe a) where
   toBool Nothing = False
   toBool (Just _) = True
+```
+
+# Functors
+
+```haskell
+class Functor f where
+  fmap :: (a -> b) -> f a -> f b
+  (<$) :: a -> f b -> f a
+```
+
+Aside: mathematical functors?
+
+* Category: set of *objects* and *morphisms* (functions) between those objects.
+* Functor: a mapping of categories: objects to objects and mappings to mappigns
+  * ...with the caveat that it preserves identity morphisms and commutes with compositions
+
+Back to it:
+
+* `f` is a type constructor that takes an argument (ex: `Maybe`)
+* `<$` has a default implementation: given an object of type a, replace all objects of type `b` with that constant object.
+* Many default implementations of Functors: lists, Maybes, Eithers, tuples
+
+
+## Lists
+
+```haskell
+instance Functor [] where
+  fmap = map
+```
+
+How does this definition make sense?
+
+## Maybes
+
+```haskell
+instance Functor Maybe where
+  fmap f Nothing = Nothing
+  fmap f Just x = ...
+```
+
+What do you think?
+
+## Trees
+
+What about our tree type?
+
+```haskell
+data Tree a = Nil | Node a (Tree a) (Tree a)
+
+instance Functor Tree where
+  fmap f Nil = Nil
+  fmap f (Node a left right) = ...
 ```
 
 # Input?
