@@ -273,5 +273,3 @@ instance Functor Tree where
   fmap f Nil = Nil
   fmap f (Node a left right) = ...
 ```
-
-# Input?
