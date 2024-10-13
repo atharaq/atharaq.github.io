@@ -10,6 +10,7 @@
 
 * [Trees](lesson7.html#trees)
 * [Instances](lesson7.html#instances)
+* [Synonyms](lesson7.html#synonyms)
 * [Defining typeclasses](lesson7.html#defining-typeclasses)
 * [Functors](lesson7.html#functors)
 
@@ -67,15 +68,148 @@ Compile / run. What gets printed? Why? (What did putStrLn return again? `IO ()`)
 
 ## Lets
 
-...
+In a `do` block, we can have `let` bindings, with no `in`.
+
+```haskell
+import Data.Char
+
+main = do
+    putStrLn "What's your first name?"
+    firstName <- getLine
+    putStrLn "What's your last name?"
+    lastName <- getLine
+    let bigFirstName = map toUpper firstName
+        bigLastName = map toUpper lastName
+    putStrLn $ "hey " ++ bigFirstName ++ " " ++ bigLastName ++ ", how are you?"
+```
+
+Q: `<-` vs `let`?
+
+* `<-` for performing IO actions and binding their result.
+  * "Impure"
+* `let` for binding pure Haskell expressions to names. 
+
+```haskell
+printTwo = putStrLn "Two" 
+
+main = do 
+  putStrLn "One" 
+  let printFour= putStrLn "Four" 
+      getMyLine = getLine 
+      printThree = putStrLn "Three" 
+  printTwo 
+  printThree 
+  putStr "Type something " 
+  myLine <-getMyLine 
+  printFour 
+  putStrLn $ "You typed \"" ++ myLine ++ "\""
+```
+
+Word Reverser program:
+
+```haskell
+reverseWords :: String -> String 
+reverseWords = unwords . map reverse . words 
+
+main = do 
+  line <- getLine 
+  if null line then 
+    return () 
+  else do
+    putStrLn $ reverseWords line 
+    main -- glue together two IO actions as one using do block.
+```
+
+`if-then-else` is an expression. Both branches must return the same type. What does `return` do?
 
 ## Returns
 
-* Do blocks return a value.
+* Do blocks return a value: the value of the last expression.
 * return is an IO action that puts a value into an IO t
+  * ie, it wraps a value into a "box" for an 
 * return **does not return control**!
+  * Why did we need to do this?
+  * Above: needed the `then` clause to return an IO action since 
 * `<-` is the inverse of return.
+
+```haskell
+main = do
+  return "tree falls in a forest" -- no one is listening
+  return () -- no control transfer
+  a <- return "something " -- basically: let a = "something"
+  b <- do
+    return "silence"
+    putStrLn "did we return?"
+    return "else " -- binds else to b
+  let c = "was returned"
+  putStrLn $ a ++ b ++ c
+```
+
+## IO Functions
+
+* putChar
+* putStr
+* putStrLn
+* print: essentially putStrLn . show
+* getChar
+* getLine
+* getContents
+* `interact :: (String -> String) -> IO ()`
+  * read, apply f, print
+* readIO 
+* readLn
 
 ## When
 
-## mapM and forM
+```haskell
+when :: Bool -> IO () -> IO ()
+when p s = if p then s else return ()
+```
+
+Basically an if without an else. So the earlier code could have been:
+
+```haskell
+import Control.Monad (when)
+reverseWords :: String -> String 
+reverseWords = unwords . map reverse . words 
+
+main = do 
+  line <- getLine 
+  when (not (null line)) $ do 
+    putStrLn $ reverseWords line 
+    main
+```
+
+`unless` is better than `when (not...))`
+
+## Others
+
+* sequence: apply a list of IO actions, capture the result
+* mapM: take a function and a list, maps the function over the list, sequences it.
+* mapM_: same thing, but throw away the result.
+* forM (in Control.Monad): same as mapM but with the parameters switched around.
+  * for/foreach loop syntax
+
+Examples:
+
+```haskell
+main= do 
+  inputLines <- sequence $ replicate 10 getLine 
+  mapM_ putStrLn inputLines
+```
+
+```haskell
+import Control.Monad
+
+main = do
+  colors <- forM [1..4] (\a -> do
+    putStrLn $ "Pick a color for the number " ++ show ++ a
+    getLine)
+  forM_ colors putStrLn -- for each color in colors, putStrLn color
+```
+
+## Conclusion
+
+* IO actions are values like anything else.
+* Can be passed as parameters, returned
+* If they are in the main function: they are *performed*.
