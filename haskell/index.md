@@ -22,3 +22,4 @@ lang: en-US
 * [Lesson 6: Defining modules and types](lesson6.html)
 * [Lesson 7: More on types](lesson7.html)
 * [Lesson 8: IO](lesson8.html)
+* [Lesson 9: Some Problems](lesson9.html)
