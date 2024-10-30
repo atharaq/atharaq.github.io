@@ -102,12 +102,12 @@ We will likely modify this depending on the breakdown between Seniors 1 (graduat
 | 5 (9/25) | No class | Forum 2 posts |
 | 6 (10/2) | No class | Reply to at least 2 classmates in Forum 2 |
 | 7 (10/9) | Presentations | Senior thesis draft 1 |
-| 8 (10/16) | Presentations | Forum 3 posts (Senior Project Info) | 
-| 9 (10/23) | No class | | 
-| 10 (10/30) | **Guest Lecture**: Peter Dearing (Learning Center) on Time Management / Writing skills | Forum 4 posts |
-| 11 (11/6) | Writing workshop: peer feedback | Reply to at least 2 classmates in Forum 4 |
-| 12 (11/13) | No class | |
-| 13 (11/20) | Presentations | | 
+| 8 (10/16) | Presentations | | 
+| 9 (10/23) | No class | Forum 3 posts | 
+| 10 (10/30) | **Guest Lecture**: Peter Dearing (Learning Center) on Time Management / Writing skills |  |
+| 11 (11/6) | No class | |
+| 12 (11/13) | Writing workshop: peer feedback | Forum 4 posts |
+| 13 (11/20) | Presentations | Reply to at least 2 classmates in Forum 4 | 
 | 14 (11/27) | No class (Thanksgiving) | |
 | 15 (12/4) | Presentations | Senior thesis draft 2 | 
 | 16 (12/11) | Finals week: meet if needed (time TBD) | | 
