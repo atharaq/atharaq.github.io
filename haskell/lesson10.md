@@ -84,3 +84,59 @@ instance Applicative IO where
 * `pure (.) <*> u <*> v <*> w = u <*> (v <*> w)`: right-associativity
 * `pure f <*> pure x` = `pure (f x)`: put f and x into boxes and apply?
 * `x <*> pure y` = `pure ($ y) <*> x`: `($ y)` is the "apply function with argument y" operator.
+
+# Monoids
+
+```haskell
+class Monoid m where  
+  mempty :: m  
+  mappend :: m -> m -> m  
+  mconcat :: [m] -> m  
+  mconcat = foldr mappend mempty  
+```
+
+A **monoid** is a set of objects $M$ that comes with two distinguished pieces of data: (1) a **binary operation** $*$ (meaning that $*$ is a function which takes two parameters from $M$ and returns a value in $M$) that is associative (ie, if $a, b, c \in M$, then $a * (b * c) = (a * b) * c$), and (2) an **identity** element $e \in M$; that is, for all $a \in M$, $e * a = a * e = a$.
+
+This is a generalization of a few patterns we see in mathematical objects all the time:
+
+* $\mathbb{N} = \\{ 0, 1, 2, \ldots \\}$, with the operation $+$ and the identity $0$.
+* $\mathbb{N}$, the operation $\times$, and the identity $1$.
+* $n \times n$ matrices, wtih the operation of matrix multiplication, and the $n \times n$ identity matrix.
+* In Haskell: lists with the `++` operator (identity is the empty list `[]`).
+
+How does this make sense in Haskell?
+
+* `mempty` is the "identity" element
+* `mappend` is the binary operator
+
+The other function, `mconcat`, is defined so that it takes a list of objects in that monoid, and repeatedly applies the operator over all of them. (ie, it folds over the list).
+
+* Lists are monoids! (Already mentioned.)
+* Product, Sum monoids.
+  * [`newtype` syntax](https://learnyouahaskell.github.io/functors-applicative-functors-and-monoids.html#the-newtype-keyword)
+
+## Foldables
+
+```haskell
+class Foldable t where
+  Data.Foldable.fold :: Monoid m => t m -> m
+  foldMap :: Monoid m => (a -> m) -> t a -> m
+  Data.Foldable.foldMap' :: Monoid m => (a -> m) -> t a -> m
+  foldr :: (a -> b -> b) -> b -> t a -> b
+  Data.Foldable.foldr' :: (a -> b -> b) -> b -> t a -> b
+  foldl :: (b -> a -> b) -> b -> t a -> b
+  Data.Foldable.foldl' :: (b -> a -> b) -> b -> t a -> b
+  foldr1 :: (a -> a -> a) -> t a -> a
+  foldl1 :: (a -> a -> a) -> t a -> a
+  Data.Foldable.toList :: t a -> [a]
+  null :: t a -> Bool
+  length :: t a -> Int
+  elem :: Eq a => a -> t a -> Bool
+  maximum :: Ord a => t a -> a
+  minimum :: Ord a => t a -> a
+  sum :: Num a => t a -> a
+  product :: Num a => t a -> a
+  {-# MINIMAL foldMap | foldr #-}
+```
+
+We need to implement `foldMap` or `foldr`. Given our Tree data type, how would we implement `foldMap`?
