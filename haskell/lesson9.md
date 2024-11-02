@@ -1,4 +1,4 @@
-# Topics in Advanced Computing Lesson 8: Input
+# Topics in Advanced Computing Lesson 9: Some Problems
 {:.no_toc}
 
 1. Table of Contents
