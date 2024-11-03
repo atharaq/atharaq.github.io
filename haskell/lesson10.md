@@ -95,7 +95,7 @@ class Monoid m where
   mconcat = foldr mappend mempty  
 ```
 
-A **monoid** is a set of objects $M$ that comes with two distinguished pieces of data: (1) a **binary operation** $*$ (meaning that $*$ is a function which takes two parameters from $M$ and returns a value in $M$) that is associative (ie, if $a, b, c \in M$, then $a * (b * c) = (a * b) * c$), and (2) an **identity** element $e \in M$; that is, for all $a \in M$, $e * a = a * e = a$.
+A **monoid** is a set of objects $M$ that comes with two distinguished pieces of data: (1) a **binary operation** $\*$ (meaning that $*$ is a function which takes two parameters from $M$ and returns a value in $M$) that is associative (ie, if $a, b, c \in M$, then $a \* (b \* c) = (a \* b) \* c$), and (2) an **identity** element $e \in M$; that is, for all $a \in M$, $e \* a = a \* e = a$.
 
 This is a generalization of a few patterns we see in mathematical objects all the time:
 
