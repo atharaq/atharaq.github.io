@@ -24,4 +24,4 @@ lang: en-US
 * [Lesson 8: IO](lesson8.html)
 * [Lesson 9: Some Problems](lesson9.html)
 * [Guest Lecture: Navigating Your Career](NavigatingCS-SlidesOnly.pdf)
-* [Lesson 10: Applicative FUnctors](lesson10.html)
+* [Lesson 10: Applicative Functors](lesson10.html)
