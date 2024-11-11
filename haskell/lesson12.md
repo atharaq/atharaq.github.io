@@ -24,6 +24,7 @@ Point-free:
 prependAll = map . (:)
 ```
 
+---
 
 ```haskell
 p :: Num a => [[a]]
@@ -31,6 +32,8 @@ p = [1] : [1 : zipWith (+) l (tail l) ++ [1] | l <- p ]
 ```
 
 zipWith, tail, and list comprehensions...
+
+---
 
 ```haskell
 n = foldr (\x acc -> x : filter (/= x) acc) []
