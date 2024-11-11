@@ -25,3 +25,5 @@ lang: en-US
 * [Lesson 9: Some Problems](lesson9.html)
 * [Guest Lecture: Navigating Your Career](NavigatingCS-SlidesOnly.pdf)
 * [Lesson 10: Applicative Functors](lesson10.html)
+* [Lesson 11: Monoids, Foldables, Monads](lesson11.html)
+* [Lesson 12: Monads](lesson12.html)
