@@ -97,6 +97,19 @@ do
 
 # List Monad
 
+```haskell
+instance Monad [] where
+  return x = [x]
+  xs >>= f = concat (map f xs)
+  fail _ = []
+```
+
+Remember: the type of `>>=` is `m a -> (a -> m b) -> m b`. If `m` is `[]`, then this is `[a] -> (a -> [b]) -> [b]`.
+
+So `f` has to be a function which takes an element and produces a list. So `map f xs` produces a list of lists, and then `concat` concatenates them all. Example: `f x = [x + 1, x - 1]`. What happens when we execute `[1..5] >>= f`?
+
+**Idea**: The list monad represents *nondeterministic computations*: apply all functions to all inputs.
+
 # Take stock
 
 What actually is a monad? What does the term mean?
@@ -114,9 +127,58 @@ Let's see a couple more examples.
 
 # Writer
 
-# Functions
+Use it for computations that return a value and accumulate a result; ex: logging. Defined in the `Control.Monad.Writer` module. Definition:
 
-# State Monad
+```haskell
+newtype Writer w a = Writer { runWriter :: (a, w) }
 
+instance (Monoid w) => Monad (Writer w) where
+  return x = Writer (x, mempty) -- append nothing
+  (Writer (x, v)) >>= f = let (Writer (y, v')) = f x in Writer (y, v `mappend` v') -- append to log
+```
+
+**Note: this definition is not quite correct anymore**. Upshot: when we instantiate a Writer, you can use the `writer` function (lowercase w) instead of the `Writer` constructor. 
+
+`w` is the type of what we are logging (ex: lists of strings). `a` is the type of the computation.
+
+Example:
+
+```haskell
+import Control.Monad.Writer  
+  
+logNumber :: Int -> Writer [String] Int  
+logNumber x = writer(x, ["logging: " ++ show x]) -- note lowercase w!
+  
+multWithLog :: Writer [String] Int  
+multWithLog = do  
+    a <- logNumber 3  
+    b <- logNumber 5  
+    return (a*b)  
+```
+
+Then in ghci: `runWriter multWithLog`
+
+## tell
+
+The `tell` function is useful: it essentially will append to a Writer.
+
+Example:
+
+```haskell
+gcd' :: Int -> Int -> Writer [String] Int
+gcd' a b = do
+  tell ["logging " ++ show a ++ ", " ++ show b]
+  if a == b then writer (a, ["done"])
+  else if a < b then do
+    tell ["a < b"]
+    gcd' a (b - a)
+  else do
+    tell ["a > b"]
+    gcd' b (a - b)
+```
+
+Run it with `mapM_ putStrLn $ snd $ runWriter $ gcd'` (and then give the inputs).
+
+(Recall: `mapM_`?)
 
 
