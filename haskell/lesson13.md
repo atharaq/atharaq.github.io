@@ -117,5 +117,8 @@ f = do
 
 (`a` and `b` are functions here. `f x` is going to apply `a x` and `b x` and then add them.)
 
+"glue functions together" into one function, give that parameter to all the glued functions.
+
 # State Monad
 
+Represents "stateful computations".
