@@ -121,4 +121,82 @@ f = do
 
 # State Monad
 
-Represents "stateful computations".
+Represents "stateful computations". First let's describe an example without monads.
+
+Suppose you represent "states" in your program by integeres. (So you have a "State 0", "State 1", etc.) Maybe you represent this by:
+
+```haskell
+data MyState = MyState Int
+```
+
+Now let's say we have a series of functions which take in the state, either examining or modifying it:
+
+```haskell
+f1 :: MyState -> (Int, MyState)
+f2 :: Int -> MyState -> (Char, MyState)
+f3 :: Char -> MyState -> (String, MyState)
+```
+
+Then to use them in order:
+
+```haskell
+f = 
+  let state0 = MyState 0
+      (a, state1) = f1 state0
+      (b, state2) = f2 a state1
+      (c, state3) = f3 b state2
+  in c
+```
+
+Notice two things:
+
+1. The pattern is that each function has something like `MyState -> (a, MyState)`. (Maybe this can just be built in to the type?)
+2. At each intermediate step, we need to name the states. (Could we abstract this pattern?)
+
+Fixes?
+
+```haskell
+data MyStateWrapper s a = MyStateWrapper { runMyState :: s -> (a, s) }
+
+f1 :: MyStateWrapper MyState Int
+f2 :: Int -> MyStateWrapper MyState Char
+f3 :: Char -> MyStateWrapper MyState String
+
+andThen :: MyStateWrapper s a -> (a -> MyStateWrapper s b) -> s b
+andThen f g =
+    MyStateWrapper (\state0 -> 
+      let (a, state1) = runMyState f state0
+      in runMyState (g a) state1)
+```
+
+Then we can rewrite our `let` statement above as:
+
+```haskell
+f =
+    runMyState (f1 `andThen` \a ->
+                g a `andThen` \b ->
+                h b) (MyStateWrapper 0)
+```
+
+That's basically it! With the State Monad, you can simplify this to:
+
+```haskell
+f = do
+    a <- f1
+    b <- g a
+    h b
+```
+
+## Definition
+
+In Control.Monad.State:
+
+```haskell
+newtype State s a = State { runState :: s -> (a, s) }
+
+instance Monad (State s) where
+    return x = State $ \s -> (x, s)
+    (State h) >>= f = State $ \s -> let (a, nextState) = h s
+                                        (State g) = f a
+                                    in g nextState
+```
