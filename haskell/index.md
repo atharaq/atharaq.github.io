@@ -27,3 +27,5 @@ lang: en-US
 * [Lesson 10: Applicative Functors](lesson10.html)
 * [Lesson 11: Monoids, Foldables, Monads](lesson11.html)
 * [Lesson 12: Monads](lesson12.html)
+* [Lesson 13: More on Monads](lesson13.html)
+* [Lesson 14: Randomness](lesson14.html)
