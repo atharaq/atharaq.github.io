@@ -6,6 +6,8 @@
 
 # Random
 
+Might need to run `stack ghci --package random`. Then `import System.Random` will work.
+
 # Die type
 
 # Using State
