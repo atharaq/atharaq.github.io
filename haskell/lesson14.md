@@ -99,7 +99,7 @@ Now try `evalState flipThrice (mkStdGen 10)`
 
 That easy! What about n times? Or infinitely many times? Can we try the `repeat` function? `repeat <$> flipCoin`? Will this work? Try:
 
-> ghci> r = repeat <$> flipCoin  
+> ghci> r = repeat <\$> flipCoin  
 > ghci> take 10 $ evalState r (mkStdGen 10)
 
 What happens? Explanation?
