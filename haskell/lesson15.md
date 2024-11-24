@@ -72,3 +72,62 @@ goBack (xs, y:ys) = (y:xs, ys)
 ```
 
 Play around with this. What is the zipper for `[1, 2, 3, 4,5]` when we goForward twice?
+
+# File System
+
+File System Zipper:
+
+```haskell
+type Name = String
+type Data = String
+data FSItem = File Name Data | Folder Name [FSItem] deriving (Show)
+
+data FSCrumb = FSCrumb Name [FSItem] [FSItem] deriving (Show)
+type FSZipper = (FSItem, [FSCrumb])
+```
+
+* An item is either a File or a Folder. 
+* A Folder is a list of items.
+* A breadcrumb for an item consists of:
+  * the name of the parent folder, 
+  * list of everything coming before it, 
+  * list of everything coming after it.
+* Zipper: tuple of the item with the list of crumbs leading toward that item.
+
+How do we go up?
+
+```haskell
+fsUp :: FSZipper -> FSZipper
+fsUp (item, FSCrumb name left right: bs) = -- what goes here?
+```
+
+Hint: The parent of `item` is a Folder with the appropriate name and the correct list of items.
+
+How do we go down? In a folder, how do we change the focus from the parent to a child?
+
+```haskell
+fsTo :: Name -> FSZipper -> FSZipper
+fsTo name (Folder f items, crumbs) = -- what goes here?
+```
+
+Hint: split items based on the name. `items` is a list of `FSItem`s. Can split using either `span` or `break`.
+
+## Modifying
+
+Exercise: rename function?
+
+```haskell
+rename :: Name -> FSZipper -> FSZipper
+rename name _ = -- what goes here?
+```
+
+Should be easy: just change the name of the item in the current zipper. (Do it piecewise for a Folder and a File)
+
+New file?
+
+```haskell
+newFile :: FSItem -> FSZipper -> FSZipper
+newFile item _ = -- what goes here?
+```
+
+This should be easy also: just add the item to the beginning of the current folder's list of items. (Only makes sense if the current FSZipper is a Folder).
