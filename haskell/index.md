@@ -29,3 +29,4 @@ lang: en-US
 * [Lesson 12: Monads](lesson12.html)
 * [Lesson 13: More on Monads](lesson13.html)
 * [Lesson 14: Randomness](lesson14.html)
+* [Lesson 15: Zippers](lesson15.html)
