@@ -1,10 +1,10 @@
 ---
 layout: page
-title: MAT 4880: Mathematics Senior Seminar I
+title: MAT 4890: Mathematics Senior Seminar II
 lang: en-US
 ---
 
-# MAT 4880: Mathematics Senior Seminar I
+# MAT 4890: Mathematics Senior Seminar I
 
 ## Resources
 

@@ -1,8 +1,8 @@
-# Mathematics Senior Seminar I
+# Mathematics Senior Seminar II
 
-MAT 4880  
+MAT 4890  
 1 credit  
-Fall 2024
+Spring 2025
 
 **Meeting Times**: Wednesdays, 10:00 - 11:40 (see schedule below)  
 **Location**: Natural Sciences 3052    
@@ -61,7 +61,6 @@ All students at Purchase College can take advantage of our tutoring services in 
 * Attendance and punctuality are mandatory for every class.
 * Your presence is vital for participation in varied learning activities and small-group work.
 * Attendance will be taken at the beginning of every class.
-* Late arrivals (more than 10 mins), early departures (more than 10 mins), long breaks (more than 10 mins) may result in 50% deduction in attendance category.
 * If you miss class, please don’t ask me if you missed anything important; each class covers important material.
 * If you miss class, it is your responsibility to find out from classmates what you missed and submit assignments on time.
 
@@ -81,13 +80,26 @@ For this course, the assignments have been designed (with deadlines!) to make su
 
 In general, it is a good idea to ask your peers to read your thesis periodically and make presentations in smaller group settings. To improve your writing, I strongly recommend making the most of the tutoring support available at the Learning Center and Online Writing Lab (OWL). Don’t hesitate to use it beyond the required session.
 
-# Grading Rubric
+# Grading
 
-* 10%: Attendance
-* 10%: Forum posts / replies
-* 40%: 2 Presentations (2x20%)
-* 30%: Thesis drafts (2x15%)
-* 10%: Feedback implementation
+This course will be using a **contract** grading system. That is: if you complete all assignments **in the spirit in which they were assigned**, you attend class (on time) and participate, you will receive an A. 
+
+## Assignments
+
+1. Forum posts: there will be **three** forums that you will need to post to. Each post should be about 1-4 paragraphs.
+2. Drafts: there will be two thesis drafts due during this semester.
+3. Presentations: two presentations will be due during this semester.
+4. Feedback implementation: you will be required to get feedback from a peer, and to document what their feedback was, and what, specifically, you changed in your thesis.
+
+Each assignment will be given a grade: 0 if it is not done, 1 if it is late or incomplete (insufficient), or 2 if it is done on time, in the spirit of the assignment.
+
+For example, if a forum post asks you to introduce yourself in 1-3 paragraphs, and you write one sentence, you would get a grade of a 1.
+
+## Losses
+
+1. Every 0 on an assignment drops you one letter grade (from an A to a B, or B to C, etc).
+2. Two late or incomplete assignments drop you one letter grade.
+3. More than two absences drop you one letter grade.
 
 # Course Outline (Tentative)
 
@@ -95,19 +107,19 @@ We will likely modify this depending on the breakdown between Seniors 1 (graduat
 
 | Week (date) | Topics | Assignments (due before class) |
 | ---- | ------ | -------- |
-| 1 (8/28) | Intro to course / goal setting | |
-| 2 (9/4) | Practicing public speaking: self-introduction; Writing workshop: thesis structure, Word / LaTeX, formatting tables / pictures / references | Forum 1 posts |
-| 3 (9/11) | No class | |
-| 4 (9/18) | Writing workshop: chapter outline, lit review  | |
-| 5 (9/25) | No class | Forum 2 posts |
-| 6 (10/2) | No class | Reply to at least 2 classmates in Forum 2 |
-| 7 (10/9) | Presentations | Senior thesis draft 1 |
-| 8 (10/16) | Presentations | | 
-| 9 (10/23) | No class | Forum 3 posts | 
-| 10 (10/30) | **Guest Lecture**: Peter Dearing (Learning Center) on Time Management / Writing skills |  |
-| 11 (11/6) | No class | |
-| 12 (11/13) | Writing workshop: peer feedback |  |
-| 13 (11/20) | Presentations | Forum 4 posts (due Friday) | 
-| 14 (11/27) | No class (Thanksgiving) | Reply to at least 2 classmates in Forum 4 (due Friday)|
-| 15 (12/4) | Presentations | Senior thesis draft 2 | 
-| 16 (12/11) | Finals week: meet from 9:30-11:30 | | 
+| 1 (1/22) | **Seniors 1 only**: Getting started | |
+| 2 (1/29) | Intro to course; public speaking; Seniors 1: Thesis outline | Prepare to answer common interview questions |
+| 3 (2/5) | No class | |
+| 4 (2/12) | No class | Forum 1: presentation topic |
+| 5 (2/19) | Presentation: advanced topic |  |
+| 6 (2/26) | Presentation: advanced topic | |
+| 7 (3/5) | No class | Forum 2 posts |
+| 8 (3/12) | Workshop: senior thesis feedback | | 
+| 9 (3/19) | No class | Senior thesis draft 3 or 1 | 
+| 10 (3/26) | No class: **spring break** | |
+| 11 (4/2) | No class | |
+| 12 (4/9) | Abstract / thesis statement |  |
+| 13 (4/16) | No class | Forum 3 | 
+| 14 (4/23) | Final presentations | |
+| 15 (4/30) | Final presentations | Thesis draft 4 or 2 | 
+| 16 (5/7) | Finals week: if needed | | 
