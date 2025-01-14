@@ -1,9 +1,11 @@
 # Professor Abdul-Quader's Lecture Notes
 
-Lecture Notes for Fall 2024 Courses:
+Lecture Notes for Spring 2025 Courses:
 
-* [Topics in Advanced Computing](haskell)
-* [Senior Seminar I](senior-seminar)
+* [CS2](cs2-s25)
+* [Data Structures](data-structures-s25)
+* [Juinor Seminar](junior-sem)
+* [Senior Seminar II](senior-seminar-2)
 
 Old lecture notes can still be found at their respective sites. Contact me if you need access to them.
 
