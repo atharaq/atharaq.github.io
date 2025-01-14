@@ -10,7 +10,7 @@ Spring 2025
 **Instructor**: Professor Abdul-Quader (or just "Athar")  
 **Email**: athar.abdulquader AT purchase DOT edu  
 **Office Hours**:  Mondays and Thursdays, 9:00 - 10:00 NSB 3003
-**Learning Assistants**:
+**Learning Assistants**:  
   * Sage Melton
   * Jada Valle
   * Office hours will be posted on BrightSpace
@@ -61,7 +61,6 @@ For in-class exercises, we might use IntelliJ, the Terminal (on Mac), or VSCode.
 
 We will be using GitHub Classroom to submit projects and possibly some classwork / homework assignments. More information will be found on BrightSpace.
 
-
 ## PURCHASE COLLEGE ACADEMIC INTEGRITY POLICY 
 
 The Purchase College [academic integrity policy](https://www.purchase.edu/live/blurbs/840-academic-and-professional-integrity) explicitly forbids cheating, plagiarism, and other forms of academic dishonesty. Plagiarism is the appropriation or imitation of the language, ideas, and/or thoughts of another person and the representation of them as one’s own original work. Students are responsible for familiarizing themselves with the definition of plagiarism and the acceptable methods of attribution. Violation of any of the above may lead to formal disciplinary action.
@@ -98,10 +97,11 @@ That said, please do come to class as much as you can. This will allow me to see
 
 * 35%: projects / problem sets
   * Projects 1-3 will be worth 10% each, Project 4 will be worth 5%.
+* 5%: Participation / "exit tickets"
 * 10%: Demos (short demos / explanations of Projects 1 and 3)
 * 10%: Quizzes
 * 20%: In-class Exams (Best 2 out of 3 exams, cumulative)
-* 25%: Final Exam (TBA, will update when I see the schedule on the registrar)
+* 20%: Final Exam (TBA, will update when I see the schedule on the registrar)
 
 ## Late Homework Policy
 
