@@ -102,9 +102,9 @@ We will likely modify this depending on the availability of faculty / guest pres
 | 1 (1/22) | Intro to course / goal setting | |
 | 2 (1/29) | No class | Forum 1 posts |
 | 3 (2/5) | **Guest Lecture**: Peter Dearing (Learning Center) on Time Management | |
-| 4 (2/12) | Faculty presentations | |
-| 5 (2/19) | No class | Forum 2 posts |
-| 6 (2/26) | No class | |
+| 4 (2/12) | No class | |
+| 5 (2/19) | Faculty presentations | |
+| 6 (2/26) | No class | Forum 2 posts |
 | 7 (3/5) | Lightning talks | |
 | 8 (3/12) | No class | Literature Review | 
 | 9 (3/19) | Presentations: Brainstorming | | 

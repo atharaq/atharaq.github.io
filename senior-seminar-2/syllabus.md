@@ -110,8 +110,8 @@ We will likely modify this depending on the breakdown between Seniors 1 (graduat
 | 1 (1/22) | **Seniors 1 only**: Getting started | |
 | 2 (1/29) | Intro to course; public speaking; Seniors 1: Thesis outline | Prepare to answer common interview questions |
 | 3 (2/5) | No class | |
-| 4 (2/12) | No class | Forum 1: presentation topic |
-| 5 (2/19) | Presentation: advanced topic |  |
+| 4 (2/12) | Presentation: advanced topic | Forum 1: presentation topic |
+| 5 (2/19) | No class |  |
 | 6 (2/26) | Presentation: advanced topic | |
 | 7 (3/5) | No class | Forum 2 posts |
 | 8 (3/12) | Workshop: senior thesis feedback | | 
