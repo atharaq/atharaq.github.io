@@ -87,9 +87,9 @@ This course will be using a **contract** grading system. That is: if you complet
 ## Assignments
 
 1. Forum posts: there will be **three** forums that you will need to post to. Each post should be about 1-4 paragraphs.
-2. Drafts: there will be two thesis drafts due during this semester.
-3. Presentations: two presentations will be due during this semester.
-4. Feedback implementation: you will be required to get feedback from a peer, and to document what their feedback was, and what, specifically, you changed in your thesis.
+2. Drafts: there will be **two** thesis drafts due during this semester.
+3. Presentations: **two** presentations will be due during this semester.
+4. Feedback implementation: you will be required to get feedback from a peer, to document what their feedback was, and what, specifically, you changed in your thesis.
 
 Each assignment will be given a grade: 0 if it is not done, 1 if it is late or incomplete (insufficient), or 2 if it is done on time, in the spirit of the assignment.
 
