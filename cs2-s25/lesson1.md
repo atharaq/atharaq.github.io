@@ -21,13 +21,13 @@ Next Monday, we will look at these exercises as well as some supplementary mater
 
 # Chapter 1
 
-Please read [ThinkJava Chapter 1](https://books.trinket.io/thinkjava2/chapter1.html). This section shows the basic structure of a Java program. I encourage you to work through **all** of the exercises in this chapter. You can use your Replit account to try some of these out if you haven't downloaded IntelliJ yet!
+Please read [ThinkJava Chapter 1](https://books.trinket.io/thinkjava2/chapter1.html). This section shows the basic structure of a Java program. I encourage you to work through **all** of the exercises in this chapter.
 
 ## Homework
 
 At this point, you should be able to run a simple program. I'd like to you submit a program ([via GitHub Classroom](https://classroom.github.com/a/P6j-i4Xt)) just to make sure you can. The program should output your name. (*This is the homework you were already assigned from last time, just reminding you to do this.*)
 
-In addition, make sure you are doing all of the exercises at the end of chapter 1. In particular, **Exercise 3** is a good way to see what symbols / words / etc are important and what is not, at least to the Java compiler. Spend some time on that: you can play around with it during the coding exercise on replit, but please make sure you submit **working** code that just outputs your name after you are done with all of that.
+In addition, make sure you are doing all of the exercises at the end of chapter 1. In particular, **Exercise 3** is a good way to see what symbols / words / etc are important and what is not, at least to the Java compiler. Spend some time on that: you can play around with it in the same file that your homework is in, but please make sure you submit **working** code that just outputs your name after you are done with all of that.
 
 ## GitHub Issues
 
@@ -93,8 +93,8 @@ System.out.println(b);
 
 <details>
 <summary>Check your answer</summary>
-<p>I suggest you try this out on your own machine / on replit.</p>
-<p>When I try this out on replit, I get the following:
+<p>I suggest you try this out on your own machine.</p>
+<p>When I try this out myself, I get the following:
 <pre>
 0.7999999999999999
 0.8
