@@ -12,3 +12,4 @@ layout: default
 ## Lecture Notes
 
 * [Lesson 0: What is computer science?](lesson0.html)
+* [Lesson 1: Variables and Data Types](lesson1.html)

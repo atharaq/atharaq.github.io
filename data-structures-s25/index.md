@@ -15,3 +15,4 @@ lang: en-US
 ## Lecture Notes
 
 * [Lesson 0: Intro to course](lesson0.html)
+* [Lesson 1: Generics](lesson1.html)
