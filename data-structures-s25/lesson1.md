@@ -44,9 +44,9 @@ At this point, you should be able to finally commit. Reminder: when you're done 
 
 # Selection Exercise
 
-Take a look at the "Selection Exercise" code on BrightSpace. This code provides a data structure which attempts to solve the **selection problem**. The selection problem can be stated as follows: given a set of (orderable) data, find the i-th smallest element of the set. That is, if $i = 0$, it should find the smallest element of the set, if $i = 1$, the second smallest, etc.
+Take a look at the ["Selection Exercise" code](https://classroom.github.com/a/derQnukz). This code provides a data structure which attempts to solve the **selection problem**. The selection problem can be stated as follows: given a set of (orderable) data, find the i-th smallest element of the set. That is, if $i = 0$, it should find the smallest element of the set, if $i = 1$, the second smallest, etc.
 
-We solve this problem by creating a *data structure* which can handle the operations of adding and selecting. The **SelectionList** class is our data structure: we can **add** to it, **select** from it, and call **printList** to view the entire list. Take a look at the code and see if you can make sense of it. This code may look familiar to those of you who took CS2 with me recently, but if you haven't seen anything like this before, I hope it's not too much of a challenge to understand. Feel free to reach out to me (Discord, email, or in office hours on Friday) if you need help understanding it!
+We solve this problem by creating a *data structure* which can handle the operations of adding and selecting. The **SelectionList** class is our data structure: we can **add** to it, **select** from it, and call **printList** to view the entire list. Take a look at the code and see if you can make sense of it. This code may look familiar to those of you who took CS2 with me recently, but if you haven't seen anything like this before, I hope it's not too much of a challenge to understand. Feel free to reach out to me (Discord, email, office hours, etc) if you need help understanding it!
 
 **Exercise**: Suppose we have an instance of the SelectionList class with $n$ elements in it already. What is the running time of each of the methods? That is: how many steps does the code take to run **add**, **select** and **printList**?
 
