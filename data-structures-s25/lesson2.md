@@ -34,7 +34,7 @@ What operations should a list have?
 
 ## Simple List
 
-Skeleton code of simple array-backed list structure in [this GitHub Classroom assignment](...). Finish implementing it, and then determine the running times of the following operations (based on your implementation):
+Skeleton code of simple array-backed list structure in [this GitHub Classroom assignment](https://classroom.github.com/a/6r8JNV4a). Finish implementing it, and then determine the running times of the following operations (based on your implementation):
 
 * add
 * get
