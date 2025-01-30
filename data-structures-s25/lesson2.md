@@ -146,7 +146,9 @@ Code was in the same GH Classroom assignment. Running times:
   * remove
   * get
 
-## HomewroDue **Monday, 2/10**. Submit via **BrightSpace** (single PDF).
+## Homework
+
+Due **Monday, 2/10**. Submit via **BrightSpace** (single PDF).
 
 **Problem 1**: Implement an Iterator for this LinkedList structure.
 
