@@ -146,26 +146,10 @@ Code was in the same GH Classroom assignment. Running times:
   * remove
   * get
 
-# Homework
+## Homework
 
 Due **Monday, 2/10**. Submit via **BrightSpace** (single PDF).
 
 **Problem 1**: Implement an Iterator for this LinkedList structure.
 
-**Problem 2**
-
-The following method removes the first half of the list passed as a parameter:
-
-```java
-public static void removeFirstHalf(List<?> lst) {
-  int theSize = list.size() / 2;
-  for (int i = 0; i < theSize; i++) {
-    lst.remove(0);
-  }
-}
-```
-
-* Why is theSize saved prior to entering the for loop?
-* What is the running time of removeFirstHalf is lst is an ArrayList?
-* What is the running time of removeFirstHalf if lst is a LinkedList?
-* Does using an iterator make removeFirstHalf faster for either type of list?
+**Problem 2** is on BrightSpace.
