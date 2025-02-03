@@ -9,7 +9,7 @@
 Please read through [Chapter 5](https://books.trinket.io/thinkjava2/chapter5.html) on conditionals and logic. I hope you have seen "if" statements before, as well as the comparison operators and the logical operators.
 
 <div class="youtube-container">
-<iframe src="https://www.youtube.com/embed/8bmSniNfs8w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/8bmSniNfs8w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
 </div>
 
 Consider the following two code snippets:
@@ -35,7 +35,7 @@ Which one of these correctly determines if the input is between 1 and 10 (inclus
 ## Using hasNextInt
 
 <div class="youtube-container">
-<iframe src="https://www.youtube.com/embed/2YSFH1sITaY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/2YSFH1sITaY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
 </div>
 
 In this video I go through using the **hasNextInt** method to validate input. Notice the syntax:
@@ -89,7 +89,7 @@ This exercise will really help you get ready for the first project, so please be
 ## Reminder
 
 <div class="youtube-container">
-<iframe src="https://www.youtube.com/embed/hVjGWI4Bioo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/hVjGWI4Bioo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
 </div>
 
 # Loops (Chapter 6)
@@ -97,7 +97,7 @@ This exercise will really help you get ready for the first project, so please be
 Now read through [Chapter 6](https://books.trinket.io/thinkjava2/chapter6.html) on for and while loops.
 
 <div class="youtube-container">
-<iframe src="https://www.youtube.com/embed/1buhhCHfk6c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/1buhhCHfk6c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
 </div>
 
 Consider the following code snippet:
@@ -132,7 +132,7 @@ What does this output if our input is 1000? What if our input is 10?
 ## Nested loops
 
 <div class="youtube-container">
-  <iframe src="https://www.youtube.com/embed/kTs4kFPffJY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/kTs4kFPffJY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
 </div>
 
 What does the following output if input is 5? What if input is 10?
