@@ -7,7 +7,7 @@
 # OPTIONAL: Java Crash Course Video
 
 <div class="youtube-container">
-<iframe src="https://www.youtube.com/embed/3cptnJBqYx8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/3cptnJBqYx8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
 </div>
 
 This video is optional, but maybe those of you who are having trouble getting reacquainted with Java should watch it.
