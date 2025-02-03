@@ -6,7 +6,9 @@
 
 # Recording
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qVgvMUIvqs4?si=k4vIdNLX1MOUaKyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div class="youtube-container">
+<iframe src="https://www.youtube.com/embed/qVgvMUIvqs4?si=k4vIdNLX1MOUaKyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 This is a recording from when I taught this course in Spring 2021. Here are some links to timestamps:
 
