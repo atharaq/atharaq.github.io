@@ -9,11 +9,14 @@ Spring 2025
 **Location**: Natural Sciences 1013  
 **Instructor**: Professor Abdul-Quader (or just "Athar")  
 **Email**: athar.abdulquader AT purchase DOT edu  
-**Office Hours**:  Mondays and Thursdays, 9:00 - 10:00 NSB 3003
+**Office Hours**:  Mondays and Thursdays, 9:00 - 10:00 NSB 3003  
 **Learning Assistants**:  
   * Sage Melton
+    * Email: sage.melton AT purchase DOT edu
+    * Office Hours TBA
   * Jada Valle
-  * Office hours will be posted on BrightSpace
+    * Email: jada.valle AT purchase DOT edu
+    * Office Hours 3:30 - 4:30 in the Einstein Corner (NSB 3046)
 
 ## Course Description
 
