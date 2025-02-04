@@ -13,10 +13,10 @@ Spring 2025
 **Learning Assistants**:  
   * Sage Melton
     * Email: sage.melton AT purchase DOT edu
-    * Office Hours TBA
+    * Office Hours Wednesdys 12 - 1 and Thursdays 6 - 7; location TBD (probably Einstein Corner / NSB 3046)
   * Jada Valle
     * Email: jada.valle AT purchase DOT edu
-    * Office Hours 3:30 - 4:30 in the Einstein Corner (NSB 3046)
+    * Office Hours Tuesdays 3:30 - 4:30 (probably in the library) 
 
 ## Course Description
 
