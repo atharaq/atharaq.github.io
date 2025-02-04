@@ -155,7 +155,7 @@ Write a program which asks the user to input a positive integer $N$. For the pur
 
 Write a program which asks the user to input a positive integer. Check that the input is valid (using **hasNextInt**) and that it is positive. If the number is positive, determine if it is a perfect square.
 
-Do this **without** using the built-in Math libraries. Think for a bit first about how you might try to figure this one out. Describe your method on paper, in words or in pseudocode first, before you write the code. This exercise will be due **next Thursday** (2/8), so you have some time.
+Do this **without** using the built-in Math libraries. Think for a bit first about how you might try to figure this one out. Describe your method on paper, in words or in pseudocode first, before you write the code.
 
 Some problem solving tips:
 
