@@ -18,3 +18,4 @@ lang: en-US
 * Lesson 1: Java generics: [Notes](lesson1.html) \| [Slides](lesson1_slides.pdf)
 * [Lesson 2: Lists / Iterators](lesson2.html)
 * [Lesson 3: Stacks / Queues](lesson3.html)
+* [Lesson 4: Challenge questions / Circular queues](lesson4.html)
