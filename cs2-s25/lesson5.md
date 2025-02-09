@@ -198,7 +198,14 @@ public static void main(String[] args) {
 }
 ```
 
-We will go over these on Monday, so if you are unsure about why some of these things are happening, be ready to ask questions in class on Monday.
+We will go over these next time, so if you are unsure about why some of these things are happening, be ready to ask questions in class.
+
+## Exit Ticket!
+
+**Respond to the following questions on BrightSpace**:
+
+1. What is your best explanation for what is happening in the exercises above?
+2. What is your best explanation for what the point of putting code in a method is?
 
 # Strings (Chapter 6)
 
