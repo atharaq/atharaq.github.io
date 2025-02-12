@@ -8,11 +8,11 @@
 {:.no_toc}
 
 <div class="youtube-container">
-<iframe src="https://www.youtube.com/embed/g3Jx1kIo-H0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/g3Jx1kIo-H0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
 </div>
 
 <div class="youtube-container">
-<iframe src="https://www.youtube.com/embed/wCugzvxeDK4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/wCugzvxeDK4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
 </div>
 
 For this lesson, you will *review* chapter 1 from the textbook, work through chapter 2, and *preview* chapter 3. For the most part, early in the semester we will stick closely to the textbook. Each chapter ends with several exercises. You should attempt as many of them as possible, but there are specific ones that I will highlight that I think everyone should do to practice their basic coding skills.
