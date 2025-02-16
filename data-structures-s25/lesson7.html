@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>Data Structures</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Lesson 7 (Tree Rotations / AVL Trees)</p>
+</section>
+
+<section>
+<section id="presentations" class="title-slide slide level1">
+<h1>Presentations</h1>
+<p>Six presentations today.</p>
+</section>
+<section id="project-1" class="slide level2">
+<h2>Project 1</h2>
+<p>Project 1 is due <strong>Sunday</strong>. Questions?</p>
+</section></section>
+<section>
+<section id="theory" class="title-slide slide level1">
+<h1>Theory</h1>
+<ul>
+<li>The <strong>level</strong> of a node in a tree is the length of the path from the root to that node. Example: the root is at level <span class="math inline">\(0\)</span>, its children are at level <span class="math inline">\(1\)</span>, etc. The height of the tree is equal to the highest level of the tree.</li>
+<li>A <strong>full</strong> binary tree is a tree for which every non-leaf node has exactly 2 children.</li>
+<li>A <strong>complete</strong> binary tree is a binary tree in which every level (possibly except the last) is completely filled, and all nodes are as fall left as possible.</li>
+</ul>
+</section>
+<section id="theorem" class="slide level2">
+<h2>Theorem</h2>
+<p><strong>Exercise</strong> (Might be homework at some point): Suppose <span class="math inline">\(T\)</span> is a complete binary tree of height <span class="math inline">\(h\)</span> and the last level is completely filled. Then <span class="math inline">\(T\)</span> has exactly <span class="math inline">\(2^{h+1} - 1\)</span> nodes.</p>
+<p>Therefore: a complete binary tree of height <span class="math inline">\(h\)</span> has between <span class="math inline">\(2^h\)</span> and <span class="math inline">\(2^{h+1} - 1\)</span> nodes. That is:</p>
+<ul>
+<li>a tree of height 0 will have 1 node</li>
+<li>a tree of height 1 will have between 2 and 3 nodes</li>
+<li>a tree of height 2 will have between 4 and 7 nodes</li>
+<li>a tree of height 3 will have between 8 and 15 nodes</li>
+</ul>
+</section>
+<section id="height" class="slide level2">
+<h2>Height</h2>
+<ul>
+<li>If <span class="math inline">\(T\)</span> is a complete tree with <span class="math inline">\(N\)</span> nodes, then its height is <span class="math inline">\(\lfloor \log_2(N) \rfloor\)</span>; that is, the height of the tree is <span class="math inline">\(O(\log(N))\)</span>.</li>
+<li>Insert: <span class="math inline">\(O(\log(N))\)</span> steps in this case then (need to travel down one path of a tree from the root to a leaf, then insert below that leaf)</li>
+<li>That is, insertion doesn’t happen until the “subtree” is null. That takes <span class="math inline">\(h\)</span> steps, where <span class="math inline">\(h\)</span> is the height of the tree.</li>
+<li>Contains? On average, how many steps will it take to find a node in the tree?</li>
+</ul>
+</section>
+<section id="contains" class="slide level2">
+<h2>Contains</h2>
+<ul>
+<li>For each node at level <span class="math inline">\(l\)</span>, it takes <span class="math inline">\(l\)</span> steps to find that node.</li>
+<li><span class="math inline">\(2^l\)</span> nodes on each level (you can prove this by induction), and <span class="math inline">\(2^{h+1} - 1\)</span> nodes in total</li>
+<li>Average level of a node is <span class="math inline">\(\dfrac{1}{2^{h+1} - 1} \sum_{l=1}^{h} l \times 2^l\)</span>.</li>
+<li>Sum? Hard. Just find an upper bound.</li>
+<li>Since <span class="math inline">\(l \leq h\)</span>, above is <span class="math inline">\(\leq \dfrac{h}{2^{h+1} - 1} \sum_{l=1}^h 2^l\)</span></li>
+<li>Sum of <span class="math inline">\(2^l\)</span> from <span class="math inline">\(l = 1\)</span> to <span class="math inline">\(h\)</span> is <span class="math inline">\(2^{h+1} - 2\)</span>, this is roughly <span class="math inline">\(h\)</span>, or <span class="math inline">\(O(\log(N))\)</span>.</li>
+</ul>
+</section>
+<section id="worst-case" class="slide level2">
+<h2>Worst Case</h2>
+<p>Remember, the running times are all based on the height of the tree. Given a tree with <span class="math inline">\(N\)</span> nodes, what’s the worst possible height of such a tree? What insertion order gives that height?</p>
+</section>
+<section id="preventing" class="slide level2">
+<h2>Preventing</h2>
+<p>Next topic: trees that are <strong>self-balancing</strong>, which will prevent the tree from getting too unbalanced.</p>
+</section></section>
+<section>
+<section id="tree-rotations" class="title-slide slide level1">
+<h1>Tree Rotations</h1>
+<p><img src="rightrotate1.png" alt="Binary Tree with root E, children C and F; C has children B and D; B has child A. This is rotated right to a tree with root C, children B and E, B has child A, E has children D and F" /></p>
+<ul>
+<li>Preserves “Search Tree” property</li>
+<li>Algorithm?</li>
+</ul>
+</section>
+<section id="right-rotation" class="slide level2">
+<h2>Right Rotation</h2>
+<pre><code>L = root.left
+root.left = L.right
+L.right = root
+return L</code></pre>
+<p>Makes L the new root of this subtree.</p>
+</section>
+<section id="left-rotation" class="slide level2">
+<h2>Left Rotation</h2>
+<p>Similar idea:</p>
+<pre><code>R = root.right
+root.right = R.left
+R.left = root
+return R</code></pre>
+<ul>
+<li>Makes R the new root of this subtree</li>
+<li>Inverse operations:
+<ul>
+<li>Right rotation followed by left rotation?</li>
+</ul></li>
+</ul>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Draw the trees we obtain after the following sequence of operations:</p>
+<ul>
+<li>(Create a new tree)</li>
+<li>Insert 0, 4, 2</li>
+<li>Rotate right around 4</li>
+<li>Insert -1, 1</li>
+<li>Rotate left around 0</li>
+</ul>
+</section></section>
+<section>
+<section id="balancing" class="title-slide slide level1">
+<h1>Balancing</h1>
+<p>What does an “unbalanced” tree look like?</p>
+</section>
+<section id="unbalanced-trees" class="slide level2">
+<h2>Unbalanced Trees</h2>
+<div class="columns">
+<div class="column" style="width:10%;">
+
+</div><div class="column" style="width:35%;">
+<figure>
+<img data-src="right_right.png" alt="" /><figcaption>Right-right unbalanced tree</figcaption>
+</figure>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:35%;">
+<figure>
+<img data-src="right_left.png" alt="" /><figcaption>Right-left unbalanced tree</figcaption>
+</figure>
+</div><div class="column" style="width:10%;">
+
+</div>
+</div>
+</section>
+<section id="unbalanced-trees-1" class="slide level2">
+<h2>Unbalanced Trees</h2>
+<ul>
+<li>Can also define left-right and left-left unbalanced trees</li>
+<li>In general:
+<ul>
+<li>if heights of left and right subtrees differ by more than 1</li>
+</ul></li>
+<li>Keep track of the height of each node</li>
+<li>If one subtree has a larger height than the other, rebalance</li>
+<li>How do we rebalance? Tree rotations!</li>
+</ul>
+</section>
+<section id="algorithms-for-balancing" class="slide level2">
+<h2>Algorithms for balancing</h2>
+<p>Some unbalanced trees can be rebalanced easily:</p>
+<ul>
+<li>right-right: rotate left</li>
+<li>left-left: rotate right</li>
+</ul>
+</section>
+<section id="right-left" class="slide level2">
+<h2>Right-left</h2>
+<div class="columns">
+<div class="column" style="width:35%;">
+<p><img alt="Right-left unbalanced tree" src="right_left.png" /></p>
+</div><div class="column" style="width:65%;">
+<ul>
+<li>Rotate left around 30?</li>
+<li>Rotate right around 30? (can’t!)</li>
+<li>Solution?</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<p>Forget about the code for a bit. What <strong>should</strong> a self-balancing tree do when we insert in the following order: 1, 2, 3, 4, 5, 6, 7?</p>
+<p>Draw the pictures of the BSTs that result. When do we trigger a “rebalancing”?</p>
+</section>
+<section id="visualization" class="slide level2">
+<h2>Visualization</h2>
+<ul>
+<li><a href="https://www.cs.usfca.edu/~galles/visualization/AVLtree.html">Self-balancing visualization</a></li>
+<li>When are rebalancings triggered?</li>
+</ul>
+</section></section>
+<section>
+<section id="self-balancing" class="title-slide slide level1">
+<h1>Self-balancing</h1>
+<p>Again:</p>
+<ul>
+<li>Each node keeps track of a “height”</li>
+<li>Ideally: heights of the left/right subtrees are equal</li>
+<li>If there are exactly 8 nodes? What’s the most “balanced” tree?</li>
+</ul>
+</section>
+<section id="self-balancing-pseudocode" class="slide level2">
+<h2>Self-balancing pseudocode</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="co">// pseudocode</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="kw">private</span> <span class="bu">TreeNode</span>&lt;T&gt; <span class="fu">insert</span>(T item, <span class="bu">TreeNode</span>&lt;T&gt; subtree) {</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>   <span class="co">// code to insert</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>   <span class="dt">int</span> balance = <span class="fu">height</span>(subtree.<span class="fu">left</span>) - <span class="fu">height</span>(subtree.<span class="fu">right</span>);</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>   <span class="kw">if</span> (balance &gt; <span class="dv">1</span>) {</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>     <span class="co">// left-left or left-right?</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>     <span class="co">// check height()</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>   } <span class="kw">else</span> <span class="kw">if</span> (balance &lt; -<span class="dv">1</span>) {</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a>     <span class="co">// right-right or right-left?</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a>   }</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="rr" class="slide level2">
+<h2>RR</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
+<p><img src="right-right-rotate.png" alt="BST with 10->15-&gt;20, rotate left around 10" /&gt;</p>
+</div><div class="column" style="width:35%;">
+<p>Right-right: rotate left</p>
+</div>
+</div>
+</section>
+<section id="rl" class="slide level2">
+<h2>RL</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
+<p><img src="right-left-double-rotate.png" alt="BST with 10->20-&gt;15, rotate right around 20, then left around 10" /&gt;</p>
+</div><div class="column" style="width:35%;">
+<p>Right-left: rotate right around 20, then left around 10.</p>
+</div>
+</div>
+</section>
+<section id="difference" class="slide level2">
+<h2>Difference?</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><img src="right-right-vs-right-left.jpeg" alt="Right-right unbalanced tree" /></p>
+</div><div class="column" style="width:45%;">
+<ul>
+<li>How to tell right-right vs right-left?</li>
+<li><code>height(subtree.right.right) &gt;= height(subtree.right.left)</code></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="code-snippet" class="slide level2">
+<h2>Code Snippet</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">private</span> <span class="bu">TreeNode</span>&lt;T&gt; <span class="fu">balance</span>(<span class="bu">TreeNode</span>&lt;T&gt; subtree) {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>   <span class="dt">int</span> balance = <span class="fu">height</span>(subtree.<span class="fu">left</span>) - <span class="fu">height</span>(subtree.<span class="fu">right</span>);</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>   <span class="kw">if</span> (balance &gt; <span class="dv">1</span>) {</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>     <span class="co">// left-left</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>     <span class="kw">if</span> (<span class="fu">height</span>(subtree.<span class="fu">left</span>.<span class="fu">left</span>) &gt;= <span class="fu">height</span>(subtree.<span class="fu">left</span>.<span class="fu">right</span>)) {</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>       subtree = <span class="fu">rotateRight</span>(subtree);</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>     } <span class="kw">else</span> {</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>       <span class="co">// left-right</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a>       <span class="co">// left rotation turns this into left-left</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a>       subtree.<span class="fu">left</span> = <span class="fu">rotateLeft</span>(subtree.<span class="fu">left</span>);</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a>       <span class="co">// right rotation rebalances</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a>       subtree = <span class="fu">rotateRight</span>(subtree);</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a>     }</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true"></a>   } <span class="kw">else</span> <span class="kw">if</span> (balance &lt; -<span class="dv">1</span>) {</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true"></a>     <span class="co">// right-right or right-left?</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true"></a>     <span class="co">// do the opposite as above</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true"></a>   }</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true"></a>   <span class="co">// update height</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true"></a>   subtree.<span class="fu">height</span> = <span class="dv">1</span> + <span class="bu">Math</span>.<span class="fu">max</span>(<span class="fu">height</span>(subtree.<span class="fu">left</span>), <span class="fu">height</span>(subtree.<span class="fu">right</span>));</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true"></a>   <span class="kw">return</span> subtree;</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="video" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/g8htJR5nu98?si=KQ2DWVrM673PvmSZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section></section>
+<section>
+<section id="analysis" class="title-slide slide level1">
+<h1>Analysis</h1>
+<ul>
+<li>Adelson-Velsky, Landis (1962): <strong>AVL Trees</strong></li>
+<li>Height is <span class="math inline">\(O(\log(n))\)</span></li>
+<li>So contains is <span class="math inline">\(O(\log(n))\)</span>.</li>
+<li>Insert/remove may trigger rebalancings. How many?
+<ul>
+<li>Only up <strong>one branch</strong> of the tree! So still <span class="math inline">\(O(\log(n))\)</span>.</li>
+</ul></li>
+<li>Adelson-Velsky/Landis proved: worst case height is about <span class="math inline">\(1.44 \log(n)\)</span>.</li>
+</ul>
+</section>
+<section id="video-1" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vKWjts8JJWQ?si=UtjxMokK22eMH4Cp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+<p>In the above video, I go through the proof that all the operations are <span class="math inline">\(O(\log(n))\)</span>.</p>
+</section></section>
+<section>
+<section id="challenge-questions" class="title-slide slide level1">
+<h1>Challenge questions</h1>
+<ul>
+<li>Tree (not necessarily BST / AVL): Level-order traversal</li>
+<li>AVL Tree Sort / running times</li>
+<li>Tree (not necessarily BST / AVL): Path from root to a node N</li>
+<li>Tree (not necessarily BST / AVL): Node N, height <span class="math inline">\(h\)</span>, find ancestor of <span class="math inline">\(N\)</span> that is <span class="math inline">\(h\)</span> levels above.</li>
+<li>Tree (not necessarily BST / AVL): two nodes, find lowest common ancestor</li>
+</ul>
+</section>
+<section id="level-order" class="slide level2">
+<h2>Level-order</h2>
+<p>Given a tree T, output its nodes in <em>level-order</em>. That is, output the root first, then output the root’s children, then the grandchildren, etc.</p>
+<p>Hint:</p>
+<ul>
+<li>Nothing to do with BST</li>
+<li>We’ve seen this before (kind of)…?</li>
+</ul>
+</section>
+<section id="avl-sort" class="slide level2">
+<h2>AVL Sort</h2>
+<p>Implement a method in the AVL Tree class which returns a List of items in sorted order:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="kw">public</span> <span class="bu">List</span>&lt;T&gt; <span class="fu">sort</span>() {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>  <span class="co">// your code here</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>  </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>}</span></code></pre></div>
+<p>Asymptotic running time (if the tree has <span class="math inline">\(N\)</span> elements)?</p>
+</section>
+<section id="avl-sort-continued" class="slide level2">
+<h2>AVL Sort (continued)</h2>
+<p>Asymptotic running time of the following:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">static</span> &lt;T&gt; <span class="bu">List</span>&lt;T&gt; <span class="fu">sort</span>(<span class="bu">List</span>&lt;T&gt; list) {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>  AVLTree&lt;T&gt; tree = <span class="kw">new</span> AVLTree&lt;&gt;();</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>  <span class="kw">for</span> (T item : list) {</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>    tree.<span class="fu">insert</span>(item);</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>  }</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>  <span class="kw">return</span> tree.<span class="fu">sort</span>();</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a>}</span></code></pre></div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
