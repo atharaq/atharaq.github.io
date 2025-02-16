@@ -17,3 +17,5 @@ layout: default
 * [Lesson 3: Conditionals and Loops](lesson3.html)
 * [Lesson 4: Arrays](lesson4.html)
 * [Lesson 5: Methods and Strings](lesson5.html)
+* [Lesson 6: Methods / Modular Design](lesson6.html)
+* [Exam 1 Review Questions](exam1_review.html)
