@@ -23,3 +23,9 @@ lang: en-US
 * [Lesson 6: Trees and tree rotations](lesson6.html)
 * [Lesson 7: Tree theory, rotations, self-balancing trees](lesson7.html)
 * [Lesson 8: AVL Trees](lesson8.html)
+* [Lesson 9: Sets / Hashtables Intro](lesson9.html)
+* [Lesson 10: Hashtables / Collisions](lesson10.html)
+
+## Solution Code
+
+* [AVL Tree](solution/AVLTree.html)
