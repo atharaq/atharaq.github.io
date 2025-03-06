@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>Data Structures</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Lesson 11 (Shortest Path Problems)</p>
+</section>
+
+<section>
+<section id="exercise" class="title-slide slide level1">
+<h1>Exercise</h1>
+<p>Given a list of data, remove all duplicates from the data. That is, if your list is [1, 2, 1, 4, 3, 1, 3, 4, 1, 2], you should return [1, 2, 4, 3].</p>
+<p>Notice that the list returned should have the elements listed in the order that they first appeared in the original list.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">public</span> <span class="bu">List</span>&lt;<span class="bu">Integer</span>&gt; <span class="fu">removeDuplicates</span>(<span class="bu">List</span>&lt;<span class="bu">Integer</span>&gt; list) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="algorithms" class="slide level2">
+<h2>Algorithms</h2>
+<ul>
+<li>Simple <span class="math inline">\(O(n^2)\)</span> solution using nested for loops.</li>
+<li>Pseudocode?</li>
+<li>Improve it using a data structure?</li>
+<li>Pseudocode and running time of improved solution?</li>
+</ul>
+</section></section>
+<section>
+<section id="breadth-first-search" class="title-slide slide level1">
+<h1>Breadth First Search</h1>
+<p>Given a tree (not necessarily a BST, not necessarily even a binary tree), and a node N, output the path (list of vertices visited) from the root to N.</p>
+</section>
+<section id="idea" class="slide level2">
+<h2>Idea</h2>
+<ul>
+<li>Breadth-first search for the node (“Level order traversal”), using a queue.</li>
+<li>Keep track of which node enqueued the previous node.</li>
+</ul>
+</section>
+<section id="pseudocode" class="slide level2">
+<h2>Pseudocode</h2>
+<pre><code>void pathToNode(Node n):
+  parents[root] = null
+  queue.enqueue(root)
+  Node current = queue.dequeue()
+  while (current != n) {
+    queue.enqueue(current.left)
+    queue.enqueue(current.right)
+    parents[current.left] = current
+    parents[current.right] = current
+    current = queue.dequeue()
+  }</code></pre>
+</section>
+<section id="path" class="slide level2">
+<h2>Path?</h2>
+<p>Now <strong>backtrack</strong>:</p>
+<pre><code>LinkedList&lt;T&gt; list;
+Node current = n;
+while (current != null) {
+  list.addFirst(current.data)
+  current = parents[current]
+}
+print(list)</code></pre>
+</section>
+<section id="shortest-path-problems" class="slide level2">
+<h2>Shortest Path Problems</h2>
+<p>The same algorithm can be used in more general “shortest path” problems. For example: given two positions on a chessboard, find the shortest path a <strong>knight</strong> can take to go from the starting to the ending position. Recall that knights can either move two steps horizontally and one step vertically, or two steps vertically and one horizontally.</p>
+<ul>
+<li>Differences with the tree problem?</li>
+<li>Implementation considerations?</li>
+<li>Pseudocode?</li>
+</ul>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<p>Let’s implement the shortest path for the knight problem!</p>
+<p>Given two positions on a chessboard, output the shortest path a knight can take to get from one to the other.</p>
+</section>
+<section id="dfs-vs-bfs" class="slide level2">
+<h2>DFS vs BFS?</h2>
+<ul>
+<li>Alternative: depth-first search?</li>
+<li>What would that look like?</li>
+<li>Doesn’t always provide the shortest path!</li>
+</ul>
+</section>
+<section id="video" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Q5f9rBsemVE?si=qCurTNvS6C5Z_h8x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+<ul>
+<li>Explains the BFS algorithm in another context.</li>
+<li>Explains the issue with using DFS</li>
+</ul>
+</section></section>
+<section>
+<section id="synonymous-search-queries" class="title-slide slide level1">
+<h1>Synonymous Search Queries</h1>
+<p>Suppose we have a list of synonymous words (each just a pair of Strings), and a list of pairs of search queries. Describe an algorithm which determines, for each pair of queries, if the queries are “synonymous”.</p>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p>If our synonyms list contains:</p>
+<ul>
+<li>hello, hi</li>
+<li>world, earth</li>
+</ul>
+<p>Then the queries “hello world” and “hi earth” are synonymous. The queries “world hello” and “hi earth” are <strong>not</strong> synonymous (order matters). Your algorithm should return a list of booleans (true / false), which correspond to whether the given pair of queries is “synonymous”.</p>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions</h2>
+<ul>
+<li>Running time of your algorithm? Assume you have 1 pair of queries: <span class="math inline">\(N\)</span> words in each query, synonym list has <span class="math inline">\(M\)</span> pairs of words.</li>
+<li>Pseudocode for this problem?</li>
+</ul>
+</section>
+<section id="pseudocode-1" class="slide level2">
+<h2>Pseudocode</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co">// checking two queries against each other</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="dt">boolean</span> queriesMatch = <span class="kw">true</span>;</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="bu">String</span>[] firstWords = query.<span class="fu">first</span>.<span class="fu">split</span>(<span class="st">&quot; &quot;</span>);</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a><span class="bu">String</span>[] secondWords = query.<span class="fu">second</span>.<span class="fu">split</span>(<span class="st">&quot; &quot;</span>);</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a><span class="kw">if</span> (firstWords.<span class="fu">length</span> != secondWords.<span class="fu">length</span>) {</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>  returns.<span class="fu">add</span>(<span class="kw">false</span>); <span class="co">// add to list we will be returning</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>}</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; firstWords.<span class="fu">length</span>; i++) {</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a>    <span class="kw">if</span> (wordsAreNotEqual &amp;&amp; wordsAreNotSynonymous) {</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a>      queriesMatch = <span class="kw">false</span>;</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a>      <span class="kw">break</span>;</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a>    }</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a>}</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a>returns.<span class="fu">add</span>(queriesMatch);</span></code></pre></div>
+</section>
+<section id="synonymous" class="slide level2">
+<h2>Synonymous?</h2>
+<ul>
+<li>We are given a list of <em>pairs</em> of synonymous words.</li>
+<li>How do we check if words are synonymous or not?
+<ul>
+<li>Check: if the pair <code>(firstWords[i], secondWords[i])</code> is in the list of synonyms?</li>
+<li>Also check if the pair <code>(secondWOrds[i], firstWords[i])</code> is in the list?</li>
+<li>Running time of checking if something is in a list?</li>
+<li>Improvement?</li>
+</ul></li>
+<li>Code / pseudocode</li>
+</ul>
+</section></section>
+<section>
+<section id="project-2" class="title-slide slide level1">
+<h1>Project 2</h1>
+<p>Implement the Set interface in three ways: using an ArrayList, using an AVL tree (use the <a href="solution/AVLTree.html">solution code</a>, and using a regular BST (not a self balancing tree). Write a Benchmark class which has the following methods:</p>
+<p>(continued)</p>
+</section>
+<section id="benchmark-class" class="slide level2">
+<h2>Benchmark Class</h2>
+<ul>
+<li><code>insertRandoms(Set&lt;Integer&gt; set, int n)</code> : this method should insert n random numbers into the set, and output the amount of time it takes to do this (use <code>System.nanoTime()</code> before and after you do the n insertions)</li>
+<li><code>insertInOrder(Set&lt;Integer&gt; set, int n)</code> : this method should insert all the numbers from <span class="math inline">\(0\)</span> to <span class="math inline">\(n − 1\)</span> into the set, and output the amount of time it takes to do this.</li>
+</ul>
+<p>(continued)</p>
+</section>
+<section id="benchmark-class-1" class="slide level2">
+<h2>Benchmark Class</h2>
+<ul>
+<li><code>containsRandom(Set&lt;Integer&gt; set, int size, int n, int numSearches)</code>: this method should first insert size many random numbers into the set. Then it should do numSearches many calls to <code>set.contains(n)</code>, and output the amount of time that takes.</li>
+<li><code>containsInOrder(Set&lt;Integer&gt; set, int size, int n, int numSearches)</code> : similar to above, but first insert the numbers <span class="math inline">\(0\)</span> to <span class="math inline">\(size − 1\)</span> in order into the set.</li>
+</ul>
+<p>These methods just benchmark the calls to <code>set.contains(n)</code>, <strong>after</strong> the inserts already happened.</p>
+</section>
+<section id="write-up" class="slide level2">
+<h2>Write up</h2>
+<p>After writing the Benchmark code, you must use that class to test out your different Set implementations. You then must do a write-up explaining your results. We assume that an AVL tree and a BST should be much better than an ArrayList. Does this actually happen for different types of insertions / different sizes of trees? Organize your results into tables and provide your analysis of what’s happening.</p>
+</section>
+<section id="questions-to-explore" class="slide level2">
+<h2>Questions to explore</h2>
+<p>You should explore the following questions:</p>
+<ul>
+<li>Is the AVL tree or BST faster for random insertions? What about for in-order insertions?</li>
+<li>Does the ArrayList perform well for small sizes? For which sizes do we start to see its performance degrade?</li>
+<li>Do you ever get a StackOverflowError for the BST? What about for the AVL tree? Which methods trigger this?</li>
+</ul>
+<p>This project is due <strong>Friday, March 21</strong> at 11:59 PM.</p>
+</section></section>
+<section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li><strong>Now</strong>: Quiz 1</li>
+<li>Next time: wrap up on hashtables.</li>
+<li>Think about the problem on the next slide</li>
+</ul>
+</section>
+<section id="os-job-scheduling" class="slide level2">
+<h2>OS Job Scheduling</h2>
+<p>Operating systems need to solve a <strong>scheduling problem</strong>:</p>
+<ul>
+<li>Some number of processes come in at various times.</li>
+<li>Each process runs for a certain length.</li>
+<li>Only one process can run at a time.</li>
+</ul>
+<p>Suppose we are running one process and it ends. We have some list of processes that have been waiting. How do we decide which process to run next?</p>
+</section>
+<section id="video-1" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VfiHD_Qwi9A?si=G9n5cQAp9DOUh-ng" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+<ul>
+<li>In this video: choose the <em>shortest</em> job on that list, not necessarily the one which has been waiting the longest (so not FIFO)!</li>
+<li>How? Need a different data structure: not a stack / queue.</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
