@@ -251,6 +251,10 @@ print(list)</code></pre>
 <li><code>containsRandom(Set&lt;Integer&gt; set, int size, int n, int numSearches)</code>: this method should first insert size many random numbers into the set. Then it should do numSearches many calls to <code>set.contains(n)</code>, and output the amount of time that takes.</li>
 <li><code>containsInOrder(Set&lt;Integer&gt; set, int size, int n, int numSearches)</code> : similar to above, but first insert the numbers <span class="math inline">\(0\)</span> to <span class="math inline">\(size − 1\)</span> in order into the set.</li>
 </ul>
+<p>(continued)</p>
+</section>
+<section id="benchmark-class-2" class="slide level2">
+<h2>Benchmark Class</h2>
 <p>These methods just benchmark the calls to <code>set.contains(n)</code>, <strong>after</strong> the inserts already happened.</p>
 </section>
 <section id="write-up" class="slide level2">
@@ -262,7 +266,7 @@ print(list)</code></pre>
 <p>You should explore the following questions:</p>
 <ul>
 <li>Is the AVL tree or BST faster for random insertions? What about for in-order insertions?</li>
-<li>Does the ArrayList perform well for small sizes? For which sizes do we start to see its performance degrade?</li>
+<li>Does the ArrayList ever perform well? For which sizes do we start to see its performance degrade?</li>
 <li>Do you ever get a StackOverflowError for the BST? What about for the AVL tree? Which methods trigger this?</li>
 </ul>
 <p>This project is due <strong>Friday, March 21</strong> at 11:59 PM.</p>
