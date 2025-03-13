@@ -57,7 +57,7 @@ In the below video I present an alternative solution to this problem, using a mi
 <iframe src="https://www.youtube.com/embed/jjZipYnCV60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-**Exit ticket**: Draw out the heaps you end up getting if your list is [4, 1, 3, 5, 8, 2, 18] and k = 3. (Draw them out on paper and submit this on BrightSpace.)
+**Exit ticket**: Draw out the heaps you end up getting if your list is [4, 1, 3, 5, 8, 2, 18] and k = 3. (Draw them out on paper and submit this in class on Monday.)
 
 # Heapsort
 
