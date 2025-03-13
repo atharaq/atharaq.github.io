@@ -11,29 +11,15 @@
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
-    .reveal .sourceCode {  /* see #7635 */
-      overflow: visible;
-    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
-    /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
+    ul.task-list{list-style: none;}
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
     div.sourceCode { margin: 1em 0; }
     pre.sourceCode { margin: 0; }
@@ -68,7 +54,7 @@
     code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
     code span.at { color: #7d9029; } /* Attribute */
     code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { color: #008000; } /* BuiltIn */
+    code span.bu { } /* BuiltIn */
     code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #4070a0; } /* Char */
     code span.cn { color: #880000; } /* Constant */
@@ -81,7 +67,7 @@
     code span.ex { } /* Extension */
     code span.fl { color: #40a070; } /* Float */
     code span.fu { color: #06287e; } /* Function */
-    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.im { } /* Import */
     code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
     code span.kw { color: #007020; font-weight: bold; } /* Keyword */
     code span.op { color: #666666; } /* Operator */
@@ -103,7 +89,7 @@
 <section id="title-slide">
   <h1 class="title">CS2 Lesson 12</h1>
   <p class="author">Professor Abdul-Quader</p>
-  <p class="date">L13 Debugging and Exceptions</p>
+  <p class="date">Debugging and Exceptions</p>
 </section>
 
 <section id="demos" class="title-slide slide level1">
@@ -117,7 +103,7 @@
 1:40 - 1:50: Exceptions intro
 1:50 - 2:10: Quiz
 -->
-<p>Today: last set of demos. Expect project 1 grades soon.</p>
+<p>Today: last set of demos.</p>
 </section>
 
 <section>
@@ -136,30 +122,25 @@
 </section>
 <section id="gaussianinteger" class="slide level2">
 <h2>GaussianInteger</h2>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> GaussianInteger <span class="fu">multiply</span><span class="op">(</span>GaussianInteger other<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">...</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">public</span> GaussianInteger <span class="fu">multiply</span>(GaussianInteger other) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>  <span class="kw">return</span> ...</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>}</span></code></pre></div>
 <ul>
 <li>Don’t pass around two integer variables.</li>
-<li>If you need a GaussianInteger, use the new data type you
-created!</li>
+<li>If you need a GaussianInteger, use the new data type you created!</li>
 </ul>
 </section>
 <section id="project-2" class="slide level2">
 <h2>Project 2</h2>
-<div class="sourceCode" id="cb2"><pre
-class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Library class:</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">addBook</span><span class="op">(</span><span class="bu">String</span> title<span class="op">,</span> <span class="bu">String</span> author<span class="op">,</span> <span class="dt">int</span> year<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Is this object-oriented?</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="co">// Library class:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">addBook</span>(<span class="bu">String</span> title, <span class="bu">String</span> author, <span class="dt">int</span> year) {</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>  <span class="co">// Is this object-oriented?</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>}</span></code></pre></div>
 <ul>
 <li>Same idea: adding a “book” should mean adding a <code>Book</code>.
 <ul>
-<li>Don’t pass around the title / author / year, just the
-<code>Book</code> object.</li>
-<li>How do you get the title / author / year from the <code>Book</code>
-object?</li>
+<li>Don’t pass around the title / author / year, just the <code>Book</code> object.</li>
+<li>How do you get the title / author / year from the <code>Book</code> object?</li>
 <li>Define new getters!</li>
 </ul></li>
 </ul>
@@ -168,16 +149,12 @@ object?</li>
 <h2>findByTitle</h2>
 <ul>
 <li>Return type / parameters?</li>
-<li>For <span class="math inline">\(i = 0\)</span> to the length of the
-list:
+<li>For <span class="math inline">\(i = 0\)</span> to the length of the list:
 <ul>
-<li>If the title of book <span class="math inline">\(i\)</span> equals
-the title that you’re looking for, print it out</li>
-<li>Can assume there is only one book with that title, so you can return
-at this point.</li>
+<li>If the title of book <span class="math inline">\(i\)</span> equals the title that you’re looking for, print it out</li>
+<li>Can assume there is only one book with that title, so you can return at this point.</li>
 </ul></li>
-<li>If you don’t find a book by that title, output “There are no books
-called … in this library.”
+<li>If you don’t find a book by that title, output “There are no books called … in this library.”
 <ul>
 <li>How can you tell if there is no book with that title?</li>
 </ul></li>
@@ -187,16 +164,12 @@ called … in this library.”
 <h2>findByAuthor</h2>
 <ul>
 <li>Return type / parameters?</li>
-<li>For <span class="math inline">\(i = 0\)</span> to the length of the
-list:
+<li>For <span class="math inline">\(i = 0\)</span> to the length of the list:
 <ul>
-<li>If the author of book <span class="math inline">\(i\)</span> equals
-the author that you’re looking for, print it out</li>
-<li>In this case, there may be <strong>more than one</strong> book by
-the same author.</li>
+<li>If the author of book <span class="math inline">\(i\)</span> equals the author that you’re looking for, print it out</li>
+<li>In this case, there may be <strong>more than one</strong> book by the same author.</li>
 </ul></li>
-<li>If you don’t find a book by that author, output “There are no books
-authored by … in this library.”
+<li>If you don’t find a book by that author, output “There are no books authored by … in this library.”
 <ul>
 <li>How can you tell if there is no book with that title?</li>
 <li>A little harder than the previous one!</li>
@@ -205,12 +178,11 @@ authored by … in this library.”
 </section></section>
 <section id="debugging" class="title-slide slide level1">
 <h1>Debugging</h1>
-<div class="sourceCode" id="cb3"><pre
-class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">final</span> <span class="bu">String</span> pig <span class="op">=</span> <span class="st">&quot;length: 10&quot;</span><span class="op">;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dt">final</span> <span class="bu">String</span> dog <span class="op">=</span> <span class="st">&quot;length: &quot;</span> <span class="op">+</span> pig<span class="op">.</span><span class="fu">length</span><span class="op">();</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>pig<span class="op">);</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>dog<span class="op">);</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;Animals are equal: &quot;</span> <span class="op">+</span> pig <span class="op">==</span> dog<span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="dt">final</span> <span class="bu">String</span> pig = <span class="st">&quot;length: 10&quot;</span>;</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="dt">final</span> <span class="bu">String</span> dog = <span class="st">&quot;length: &quot;</span> + pig.<span class="fu">length</span>();</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(pig);</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(dog);</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Animals are equal: &quot;</span> + pig == dog);</span></code></pre></div>
 <ul>
 <li>Before running, what do you think will happen?</li>
 <li>Run the program. What happens?</li>
@@ -221,9 +193,7 @@ class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="
 <section>
 <section id="exceptions" class="title-slide slide level1">
 <h1>Exceptions</h1>
-<p>An <strong>exception</strong> is short for “an exceptional event”:
-anything which disrupts the normal flow of the program’s instructions.
-When this happens, there are a few steps:</p>
+<p>An <strong>exception</strong> is short for “an exceptional event”: anything which disrupts the normal flow of the program’s instructions. When this happens, there are a few steps:</p>
 <ul>
 <li><code>Exception</code> object created.</li>
 <li>JVM looks for an “Exception handler”</li>
@@ -233,44 +203,38 @@ When this happens, there are a few steps:</p>
 <section id="exception-object" class="slide level2">
 <h2>Exception Object</h2>
 <ul>
-<li>The method creates an <code>Exception</code> object (perhaps a
-subclass of <code>Exception</code>) and <code>throws</code> it to the
-JVM.
+<li>The method creates an <code>Exception</code> object (perhaps a subclass of <code>Exception</code>) and <code>throws</code> it to the JVM.
 <ul>
 <li>Object includes information:</li>
 <li>Kind of exception thrown</li>
 <li>Where exactly it happened in the program.</li>
 </ul></li>
 </ul>
-<p>(What is a “subclass”? More on this later this week / next week)</p>
+<p>(What is a “subclass”? More on this next week)</p>
 </section>
 <section id="exception-handler" class="slide level2">
 <h2>Exception Handler</h2>
 <ul>
-<li>The JVM looks for something which handles it (a
-<code>try-catch</code> block).</li>
+<li>The JVM looks for something which handles it (a <code>try-catch</code> block).</li>
 <li>It searches <em>backwards</em> from the current method.</li>
-<li>Traces back through the method invocations that occurred up until
-that point looking for a handler.</li>
-<li>If the JVM never finds a method that handles that particular
-exception, the JVM will crash.</li>
+<li>Traces back through the method invocations that occurred up until that point looking for a handler.</li>
+<li>If the JVM never finds a method that handles that particular exception, the JVM will crash.</li>
 </ul>
 </section></section>
 <section>
 <section id="stack-trace" class="title-slide slide level1">
 <h1>Stack Trace</h1>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;</span> list <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">printSorted</span><span class="op">(</span>list<span class="op">);</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">printSorted</span><span class="op">(</span><span class="bu">List</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;</span> list<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">Collections</span><span class="op">.</span><span class="fu">sort</span><span class="op">(</span>list<span class="op">);</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> num <span class="op">:</span> list<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>num<span class="op">);</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>    <span class="bu">ArrayList</span>&lt;<span class="bu">Integer</span>&gt; list = <span class="kw">null</span>;</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>    <span class="fu">printSorted</span>(list);</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>}</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a><span class="kw">private</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">printSorted</span>(<span class="bu">List</span>&lt;<span class="bu">Integer</span>&gt; list) {</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>    <span class="bu">Collections</span>.<span class="fu">sort</span>(list);</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>    <span class="kw">for</span> (<span class="dt">int</span> num : list) {</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a>        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(num);</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a>    }</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a>}</span></code></pre></div>
 <p>What is printed out?</p>
 </section>
 <section id="stack-trace-1" class="slide level2">
@@ -282,64 +246,55 @@ class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="
 <p>You get some useful information in this error message:</p>
 <ul>
 <li>Exactly the lines of code where the Exception was thrown</li>
-<li>All the methods that had to be invoked in order for that line of
-code to end up being executed.
+<li>All the methods that had to be invoked in order for that line of code to end up being executed.
 <ul>
-<li>Tells you where the JVM looked for an exception handler (in which
-order)</li>
+<li>Tells you where the JVM looked for an exception handler (in which order)</li>
 </ul></li>
 </ul>
 </section></section>
 <section>
 <section id="handling-try-catch" class="title-slide slide level1">
 <h1>Handling: try-catch</h1>
-<p>Mentioned earlier: the JVM will search for an exception handler in
-the form of a <code>try-catch</code> block. So what exactly does that
-look like?</p>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span> <span class="op">{</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">someMethod</span><span class="op">();</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">catch</span> <span class="op">(</span>SpecificException e<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">doSomethingWithTheException</span><span class="op">(</span>e<span class="op">);</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Mentioned earlier: the JVM will search for an exception handler in the form of a <code>try-catch</code> block. So what exactly does that look like?</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="kw">try</span> {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>    <span class="fu">someMethod</span>();</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>} <span class="kw">catch</span> (SpecificException e) {</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>    <span class="fu">doSomethingWithTheException</span>(e);</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>}</span></code></pre></div>
 </section>
 <section id="catching-multiple-exceptions" class="slide level2">
 <h2>Catching multiple exceptions</h2>
 <p>You can catch multiple exceptions:</p>
-<div class="sourceCode" id="cb7"><pre
-class="sourceCode java"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span> <span class="op">{</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">someMethod</span><span class="op">();</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">anotherMethod</span><span class="op">();</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">catch</span> <span class="op">(</span>SpecificException <span class="op">|</span> AnotherException e<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">doSomethingWithTheException</span><span class="op">(</span>e<span class="op">);</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="kw">try</span> {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>    <span class="fu">someMethod</span>();</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>    <span class="fu">anotherMethod</span>();</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>} <span class="kw">catch</span> (SpecificException | AnotherException e) {</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>    <span class="fu">doSomethingWithTheException</span>(e);</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a>}</span></code></pre></div>
 </section>
 <section id="catch-em-all" class="slide level2">
 <h2>Catch ’em all?</h2>
-<div class="sourceCode" id="cb8"><pre
-class="sourceCode java"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span> <span class="op">{</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">...</span>     </span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">catch</span> <span class="op">(</span>FirstException e<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">handleFirstException</span><span class="op">(</span>e<span class="op">);</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">catch</span> <span class="op">(</span>SecondException e<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">handleSecondException</span><span class="op">(</span>e<span class="op">);</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<p>Careful: the JVM looks for the <strong>first</strong> catch clause
-that matches the Exception thrown.</p>
-<div class="sourceCode" id="cb9"><pre
-class="sourceCode java"><code class="sourceCode java"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span> <span class="op">{</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">...</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">catch</span> <span class="op">(</span><span class="bu">Exception</span> e<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">...</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">catch</span> <span class="op">(</span>SpecificException e<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;You will never see this!&quot;</span><span class="op">);</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="kw">try</span> {</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>    <span class="kw">...     </span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>} <span class="kw">catch</span> (FirstException e) {</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a>    <span class="fu">handleFirstException</span>(e);</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a>} <span class="kw">catch</span> (SecondException e) {</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a>    <span class="fu">handleSecondException</span>(e);</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a>}</span></code></pre></div>
+<p>Careful: the JVM looks for the <strong>first</strong> catch clause that matches the Exception thrown.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="kw">try</span> {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a>    ...</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a>} <span class="kw">catch</span> (<span class="bu">Exception</span> e) {</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a>    ...</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a>} <span class="kw">catch</span> (SpecificException e) {</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;You will never see this!&quot;</span>);</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true"></a>}</span></code></pre></div>
 </section></section>
 <section id="upcoming" class="title-slide slide level1">
 <h1>Upcoming</h1>
 <ul>
 <li>Now: quiz</li>
-<li>Project 2 due the following Sunday (March 19).</li>
+<li>Project 2 due after Spring Break (3/31).</li>
 </ul>
 </section>
     </div>
@@ -347,7 +302,7 @@ class="sourceCode java"><code class="sourceCode java"><span id="cb9-1"><a href="
 
   <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
 
-  <!-- reveal.js plugins -->
+  // reveal.js plugins
   <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
   <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
   <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
@@ -358,148 +313,12 @@ class="sourceCode java"><code class="sourceCode java"><span id="cb9-1"><a href="
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
-        // Display controls in the bottom right corner
-        controls: true,
-
-        // Help the user learn the controls by providing hints, for example by
-        // bouncing the down arrow when they first encounter a vertical slide
-        controlsTutorial: true,
-
-        // Determines where controls appear, "edges" or "bottom-right"
-        controlsLayout: 'bottom-right',
-
-        // Visibility rule for backwards navigation arrows; "faded", "hidden"
-        // or "visible"
-        controlsBackArrows: 'faded',
-
-        // Display a presentation progress bar
-        progress: true,
-
         // Display the page number of the current slide
         slideNumber: true,
-
-        // 'all', 'print', or 'speaker'
-        showSlideNumber: 'all',
-
-        // Add the current slide number to the URL hash so that reloading the
-        // page/copying the URL will return you to the same slide
-        hash: true,
-
-        // Start with 1 for the hash rather than 0
-        hashOneBasedIndex: false,
-
-        // Flags if we should monitor the hash and change slides accordingly
-        respondToHashChanges: true,
-
         // Push each slide change to the browser history
-        history: false,
-
-        // Enable keyboard shortcuts for navigation
-        keyboard: true,
-
-        // Enable the slide overview mode
-        overview: true,
-
-        // Disables the default reveal.js slide layout (scaling and centering)
-        // so that you can use custom CSS layout
-        disableLayout: false,
-
-        // Vertical centering of slides
-        center: true,
-
-        // Enables touch navigation on devices with touch input
-        touch: true,
-
-        // Loop the presentation
-        loop: false,
-
-        // Change the presentation direction to be RTL
-        rtl: false,
-
-        // see https://revealjs.com/vertical-slides/#navigation-mode
-        navigationMode: 'default',
-
-        // Randomizes the order of slides each time the presentation loads
-        shuffle: false,
-
-        // Turns fragments on and off globally
-        fragments: true,
-
-        // Flags whether to include the current fragment in the URL,
-        // so that reloading brings you to the same fragment position
-        fragmentInURL: true,
-
-        // Flags if the presentation is running in an embedded mode,
-        // i.e. contained within a limited portion of the screen
-        embedded: false,
-
-        // Flags if we should show a help overlay when the questionmark
-        // key is pressed
-        help: true,
-
-        // Flags if it should be possible to pause the presentation (blackout)
-        pause: true,
-
-        // Flags if speaker notes should be visible to all viewers
-        showNotes: false,
-
-        // Global override for autoplaying embedded media (null/true/false)
-        autoPlayMedia: null,
-
-        // Global override for preloading lazy-loaded iframes (null/true/false)
-        preloadIframes: null,
-
-        // Number of milliseconds between automatically proceeding to the
-        // next slide, disabled when set to 0, this value can be overwritten
-        // by using a data-autoslide attribute on your slides
-        autoSlide: 0,
-
-        // Stop auto-sliding after user input
-        autoSlideStoppable: true,
-
-        // Use this method for navigation when auto-sliding
-        autoSlideMethod: null,
-
-        // Specify the average time in seconds that you think you will spend
-        // presenting each slide. This is used to show a pacing timer in the
-        // speaker view
-        defaultTiming: null,
-
-        // Enable slide navigation via mouse wheel
-        mouseWheel: false,
-
-        // The display mode that will be used to show slides
-        display: 'block',
-
-        // Hide cursor if inactive
-        hideInactiveCursor: true,
-
-        // Time before the cursor is hidden (in ms)
-        hideCursorTime: 5000,
-
-        // Opens links in an iframe preview overlay
-        previewLinks: false,
-
-        // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'slide',
-
-        // Transition speed (default/fast/slow)
-        transitionSpeed: 'default',
-
-        // Transition style for full page slide backgrounds
-        // (none/fade/slide/convex/concave/zoom)
-        backgroundTransition: 'fade',
-
-        // Number of slides away from the current that are visible
-        viewDistance: 3,
-
-        // Number of slides away from the current that are visible on mobile
-        // devices. It is advisable to set this to a lower number than
-        // viewDistance in order to save resources.
-        mobileViewDistance: 2,
-
+        history: true,
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
