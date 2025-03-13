@@ -26,7 +26,8 @@ lang: en-US
 * [Lesson 9: Sets / Hashtables Intro](lesson9.html)
 * [Lesson 10: Hashtables / Collisions](lesson10.html)
 * [Lesson 11: Shortest Path Problems](lesson11.html)
-* [Lesson 12](lesson12.html)
+* [Lesson 12: Heaps (intro)](lesson12.html)
+* [Lesson 13: Heaps (code) + Heapsort](lesson13.html)
 
 ## Solution Code
 
