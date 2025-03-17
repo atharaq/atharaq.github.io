@@ -28,6 +28,7 @@ lang: en-US
 * [Lesson 11: Shortest Path Problems](lesson11.html)
 * [Lesson 12: Heaps (intro)](lesson12.html)
 * [Lesson 13: Heaps (code) + Heapsort](lesson13.html)
+* [Lesson 14: Heapsort / Graphs](lesson14.html)
 
 ## Solution Code
 
