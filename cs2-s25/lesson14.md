@@ -173,7 +173,7 @@ Every Square object can invoke methods written inside the Rectangle class -- but
 
 ## Example
 
-[Starter code](Polymorphism.html)
+[Example code](code/Polymorphism.html)
 
 ```java
 public class Square extends Rectangle {
@@ -199,11 +199,10 @@ The constructor for `Square` **must** invoke the constructor for its **superclas
 3. Uncomment the `System.out.println` statement inside `main` (line 17). What error do you get? Why?
 4. Comment that println statement again, and then uncomment the `printAllShapes(rectangles);` line inside `Main`. 
    * Run it once and take a look at the output. 
-   * Then implement the `toString` method inside the `Square` class. 
-   * When a Square with side length $x$ is output, it should print out "Square with side length $x$". 
+   * Then implement the `toString` method inside the `Square` class so that when a Square with side length $x$ is output, it should print out "Square with side length $x$". 
    * Run the `Main` again and see if the output changes. (It should!) Why does it change?
 
-**Exit Ticket**: Submit on 
+**Exit Ticket 2**: Explain why you got an error (in question 3) and why the output changed when we implemented the toString in Square. Try to use vocabulary that we learned in this lesson, including compile-time and run-time types.
 
 # `Object` class
 
@@ -266,3 +265,7 @@ In other words: when designing subclasses, **make sure** that your subclass real
 **Composition** is referred to as a "has-a" relationship. For example, suppose we are implementing a Pizza Delivery app. Maybe we have a class for a `Vehicle`, and a class for a `Deliverer`. A `Deliverer` is **not** a `Vehicle`, but a `Deliverer` does **have a** `Vehicle`. Usually this is implemented by making the `Vehicle` be an instance variable of the `Deliverer` class.
 
 Think about this in terms of your second project. A `Library` is **not** a list. You should not use a `Library` whenever an `ArrayList` is needed. But a `Library` certainly might **use** a list. A Library probably does need to keep track of a list of books. And so it makes sense to have the library have an `ArrayList<Book>` as an instance variable.
+
+# Exit Tickets
+
+On BrightSpace, submit your answers to exit tickets 1 and 2 above.
