@@ -66,6 +66,8 @@ Run the main method after you have implemented compareTo. It should output:
 
 [10 St and 7 Ave, 15 St and 2 Ave, 15 St and 5 Ave, 25 St and 3 Ave]
 
+**Exit Ticket 1**: How is the `Collections.sort` method able to sort a list of Locations, when it had no idea what a Location was in the first place? Location is a class that *we* wrote!
+
 # Polymorphism
 
 **Polymorphism**: The ability for an object to take multiple forms. For example: if we have a method that can calculate the area of a Rectangle, it should work on Squares too!
@@ -133,7 +135,7 @@ list.add(5);
 
 <details>
 <summary>Click for the answers.</summary>
-<p>The compile-time type tells you that you're even allowed to call the method. In this case, the compile-time type being List<Integer> tells you that list.add(5) compiles.</p>
+<p>The compile-time type tells you that you're even allowed to call the method. In this case, the compile-time type being List&lt;Integer&gt; tells you that list.add(5) compiles.</p>
 <p>The run-time type tells you which code is actually invoked. In this case, it says that the add method in the ArrayList class is the one that is actually going to be called.</p>
 </details>
 
