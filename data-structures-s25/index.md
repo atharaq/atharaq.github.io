@@ -29,6 +29,7 @@ lang: en-US
 * [Lesson 12: Heaps (intro)](lesson12.html)
 * [Lesson 13: Heaps (code) + Heapsort](lesson13.html)
 * [Lesson 14: Heapsort / Graphs](lesson14.html)
+* [Lesson 15: Graphs / Shortest Paths](lesson15.html)   
 
 ## Solution Code
 
