@@ -30,6 +30,7 @@ lang: en-US
 * [Lesson 13: Heaps (code) + Heapsort](lesson13.html)
 * [Lesson 14: Heapsort / Graphs](lesson14.html)
 * [Lesson 15: Graphs / Shortest Paths](lesson15.html)   
+* [Lesson 16: Topological Sorting](lesson16.html)
 
 ## Solution Code
 
