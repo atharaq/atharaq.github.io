@@ -25,3 +25,5 @@ layout: default
 * [Lesson 10: Designing classes 3](lesson10.html)
 * [Lesson 11: Mutability / Immutability / Debugging](lesson11.html)
 * [Lesson 12: Debugging / Exceptions](lesson12.html)
+* [Lesson 13: Polymorphism](lesson13.html)
+* [Lesson 14: Polymorphism II](lesson14.html)

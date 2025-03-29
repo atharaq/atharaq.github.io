@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>CS II Lesson 15</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS II Lesson 15</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Polymorphism III</p>
+</section>
+
+<section id="advising" class="title-slide slide level1">
+<h1>Advising</h1>
+<ul>
+<li>Core next semester: Calc 1, Calc 3, Discrete</li>
+<li>Electives next semester: AI Fundamentals (new course)</li>
+<li>Also: ECO 3080 Game Theory, ECO 3070 Econometrics, NME 3215 Experimental Game Lab</li>
+<li>Next week: advising week. Make an appointment.</li>
+</ul>
+</section>
+
+<section>
+<section id="coingame" class="title-slide slide level1">
+<h1>CoinGame</h1>
+<p>Today: <a href="code/CoinGame.html">simple coin flipping game for two players</a>.</p>
+<ul>
+<li>Not object-oriented!</li>
+<li>Some changes may be hard…
+<ul>
+<li>…because it’s not object-oriented!</li>
+</ul></li>
+</ul>
+</section>
+<section id="coingame-1" class="slide level2">
+<h2>CoinGame</h2>
+<p>Simple coin flipping game for two players. It works as follows:</p>
+<ol type="1">
+<li>First, a coin is flipped 9 times.</li>
+<li>A human player is then prompted to guess the number of heads.</li>
+<li>A computer player guesses a random number of heads (from 0 - 9).</li>
+<li>A winner (or tie) is declared, based on whoever is closer to the real number.</li>
+</ol>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<ol type="1">
+<li>Change the game so that the user can enter in the number of times we will flip the coin.</li>
+<li>Change the game so that the user can choose who guesses first (the human or the computer player).</li>
+</ol>
+<p>(Surprisingly, one of these changes is much harder than the other.)</p>
+</section>
+<section id="hint" class="slide level2">
+<h2>Hint</h2>
+<ul>
+<li>Why is this so hard to do?</li>
+<li>The code is <strong>poorly designed</strong>.</li>
+<li>Not modular, not object-oriented.</li>
+<li>Move code out of main method into other classes / methods!</li>
+<li>We will need <strong>polymorphism</strong>!</li>
+</ul>
+</section>
+<section id="single-responsibility-principle" class="slide level2">
+<h2>Single Responsibility Principle</h2>
+<p>Software development design principle that we should know of:</p>
+<blockquote>
+<p>There should never be more than one reason for a class to change. — <cite>Robert Martin, aka “Uncle Bob”</cite></p>
+</blockquote>
+<p><img class="noreverse" src="https://upload.wikimedia.org/wikipedia/commons/2/27/Robert_C._Martin_surrounded_by_computers.jpg" alt="Robert Martin, aka 'Uncle Bob'" /></p>
+<p>(Robert Martin is the author of <em>Agile Software Development: Principles, Patterns, and Practices</em> (2001))</p>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<ol start="3" type="1">
+<li>Come up with a better strategy for the computer player. Change the game so that the user can select between the two strategies (Random / other strategy).</li>
+<li>Change the game to allow for multiple ways to play: Human vs Human, Computer vs Computer, etc. Allowing all possible strategies for computer players as well.</li>
+</ol>
+</section></section>
+<section>
+<section id="paradigm" class="title-slide slide level1">
+<h1>Paradigm</h1>
+<p><strong>Code to interfaces, not implementations!</strong></p>
+<p>When you design classes/methods: don’t worry about the implementations of the parameters that are passed in. Just worry about what they can <em>do</em>.</p>
+</section>
+<section id="benefits-of-coding-to-interfaces" class="slide level2">
+<h2>Benefits of coding to interfaces</h2>
+<ol type="1">
+<li><strong>Testability</strong>. We can quickly implement a “dummy” class which does nothing, and pass that in as an implementation to test out our method.</li>
+<li><strong>Robustness</strong>. Our methods/classes do not rely upon implementation details, which may change in future versions of the code.</li>
+<li><strong>Flexibility</strong>: we can easily / quickly swap out implementations depending on the situation. (Ex: today!)</li>
+</ol>
+</section></section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Project 3 will be posted this week: due <strong>Friday, April 25</strong>.
+<ul>
+<li>Get started ASAP!</li>
+</ul></li>
+<li>Thursday: Exam 2</li>
+<li>Monday: asynchronous / small groups.</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4/dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
