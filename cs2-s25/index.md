@@ -27,3 +27,5 @@ layout: default
 * [Lesson 12: Debugging / Exceptions](lesson12.html)
 * [Lesson 13: Polymorphism](lesson13.html)
 * [Lesson 14: Polymorphism II](lesson14.html)
+* [Lesson 15: Polymorphism III](lesson15.html)
+  * [Coin Game Solution Code](solution/CoinGame.html)
