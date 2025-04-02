@@ -31,6 +31,7 @@ lang: en-US
 * [Lesson 14: Heapsort / Graphs](lesson14.html)
 * [Lesson 15: Graphs / Shortest Paths](lesson15.html)   
 * [Lesson 16: Topological Sorting](lesson16.html)
+* [Lesson 17: P vs NP](lesson17.html)
 
 ## Solution Code
 

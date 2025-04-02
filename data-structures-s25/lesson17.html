@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>Data Structures Lesson 17</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures Lesson 17</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Topological Sorting</p>
+</section>
+
+<section id="presentations" class="title-slide slide level1">
+<h1>Presentations</h1>
+
+</section>
+
+<section>
+<section id="p-vs-np" class="title-slide slide level1">
+<h1>P vs NP</h1>
+<ul>
+<li><p>Formally: a problem is in the class <strong>P</strong> if there is an algorithm which, for any input of length <span class="math inline">\(n\)</span>, runs in polynomial time in terms of <span class="math inline">\(n\)</span>:</p>
+<p><span class="math display">\[P = \bigcup\limits_{i = 0}^{\infty} O(n^i)\]</span></p></li>
+<li><p>These are <strong>easy to solve</strong>.</p></li>
+</ul>
+</section>
+<section id="class-np" class="slide level2">
+<h2>Class NP</h2>
+<ul>
+<li>A problem is in <strong>NP</strong> if there is an algorithm which checks a solution in polynomial time. (<strong>easy to check</strong>)</li>
+<li>Example: composites. Given a number <span class="math inline">\(x\)</span> of length <span class="math inline">\(N\)</span> (in binary), determine if <span class="math inline">\(x\)</span> is composite.</li>
+<li>Verifier: on input <span class="math inline">\(x\)</span> and <span class="math inline">\(c\)</span>, check if <span class="math inline">\(c | x\)</span> (can be done in polynomial time in <span class="math inline">\(N\)</span>). If so, output <strong>true</strong>. If not <strong>false</strong>.</li>
+<li>Solver? On input <span class="math inline">\(x\)</span>, determine if <em>any</em> <span class="math inline">\(c\)</span> divides <span class="math inline">\(x\)</span>?
+<ul>
+<li>Naive: <strong>exponential</strong> in the length of <span class="math inline">\(x\)</span>. Why?</li>
+</ul></li>
+</ul>
+</section>
+<section id="examples" class="slide level2">
+<h2>Examples</h2>
+<ol type="1">
+<li>Given a representationn (adjacency matrix or list) of a graph <span class="math inline">\(G = (V, E)\)</span> <em>and</em> an assignment of colors to the vertices, check if it is a valid coloring.</li>
+<li>The Eulerian path/cycle problem is in <strong>P</strong>. (The algorithm we talked about is a proof of this fact.)</li>
+<li>Hamiltonian cycle problem? TSP?</li>
+<li>Non-Hamiltonian cycle? Give a graph <span class="math inline">\(G = (V, E)\)</span>, determine if the graph does not have a Hamiltonian cycle.</li>
+</ol>
+</section>
+<section id="p-vs-np-1" class="slide level2">
+<h2>P vs NP</h2>
+<p>In the year 2000, the Clay Mathematics Institute posed a list a 7 <strong>Millenium problems</strong>, offering a $1M cash prize for a solution to any of these. The P vs NP question is one of them:</p>
+<p><strong>Problem</strong>: Prove or disprove that every problem in NP is also in P.</p>
+</section>
+<section id="np-completeness" class="slide level2">
+<h2>NP-Completeness</h2>
+<ul>
+<li><strong>NP-complete</strong>: problems which, if solved, can be used to solve (in polynomial time) any other problem in the class NP.<br />
+</li>
+<li>Not obvious that such problems exist!</li>
+<li>Examples:
+<ul>
+<li>Hamiltonian circuit problem</li>
+<li>Traveling Salesman Problem</li>
+<li>Graph Coloring problem</li>
+</ul></li>
+</ul>
+</section>
+<section id="not-known" class="slide level2">
+<h2>Not known</h2>
+<p>Many other problems are known to be in NP, but not known to be NP-complete:</p>
+<ul>
+<li>Integer factorization,</li>
+<li>Discrete logarithm (both of these are used in encryption algorithms)</li>
+<li>Graph isomorphism</li>
+<li>…</li>
+</ul>
+</section></section>
+<section>
+<section id="simulation" class="title-slide slide level1">
+<h1>Simulation</h1>
+<p>(If time) Let’s go back to the <a href="code/RandomGraph.html">RandomGraph</a> from last time:</p>
+<ul>
+<li>Implement the <code>hasAPath</code> method. How?</li>
+<li>Play around with different values of <span class="math inline">\(p\)</span> and <span class="math inline">\(size\)</span>.</li>
+<li>Check if your implementation works correctly by calling printGraph (and checking by hand if there is a path).</li>
+</ul>
+</section>
+<section id="simulation-1" class="slide level2">
+<h2>Simulation</h2>
+<ul>
+<li>Implement the <code>simulate</code> method and play around with <span class="math inline">\(size\)</span> and <span class="math inline">\(prob\)</span>:</li>
+<li>If <span class="math inline">\(p = 0.5\)</span>, for what values of <span class="math inline">\(size\)</span> will the probability of a path be at least <span class="math inline">\(90\%\)</span>?</li>
+<li>If <span class="math inline">\(p = 0.25\)</span>, same question.</li>
+<li>If <span class="math inline">\(p = 0.001\)</span>, for what values of <span class="math inline">\(size\)</span> will the probability of a path be at least <span class="math inline">\(50\%\)</span>?</li>
+</ul>
+</section></section>
+<section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Quiz 2 (now)</li>
+<li>HW 3 due Friday</li>
+<li>Project 3 will be posted soon.</li>
+<li>Final project (group project).</li>
+</ul>
+</section>
+<section id="remaining-topics" class="slide level2">
+<h2>Remaining topics</h2>
+<ul>
+<li>Sorting (2 weeks)</li>
+<li>Greedy and on-line algorithms</li>
+<li>Dynamic programming</li>
+<li>Concurrency and concurrent data structures (1.5 weeks)</li>
+<li>Java miscellany</li>
+</ul>
+</section></section>
+<section id="quiz" class="title-slide slide level1">
+<h1>Quiz</h1>
+
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4/dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
