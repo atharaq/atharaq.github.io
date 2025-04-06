@@ -32,6 +32,7 @@ lang: en-US
 * [Lesson 15: Graphs / Shortest Paths](lesson15.html)   
 * [Lesson 16: Topological Sorting](lesson16.html)
 * [Lesson 17: P vs NP](lesson17.html)
+* [Lesson 18: Sorting](lesson18.html)
 
 ## Solution Code
 

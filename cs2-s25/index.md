@@ -29,3 +29,4 @@ layout: default
 * [Lesson 14: Polymorphism II](lesson14.html)
 * [Lesson 15: Polymorphism III](lesson15.html)
   * [Coin Game Solution Code](solution/CoinGame.html)
+* [Lesson 16: Algorithms / Pseudocode](lesson16.html)

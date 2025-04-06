@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>Data Structures Lesson 18</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures Lesson 18</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Sorting</p>
+</section>
+
+<section id="presentations" class="title-slide slide level1">
+<h1>Presentations</h1>
+<p>Finish presentations today</p>
+</section>
+
+<section>
+<section id="sorting" class="title-slide slide level1">
+<h1>Sorting</h1>
+<p><strong>Sorting problem</strong>: given an array of integers, re-arrange the elements to be in increasing order.</p>
+<p>CS2:</p>
+<ul>
+<li>Bubble Sort</li>
+<li>Merge Sort</li>
+</ul>
+<p>Remember these?</p>
+</section>
+<section id="bubble-sort" class="slide level2">
+<h2>Bubble Sort</h2>
+<ul>
+<li>Repeatedly compare consecutive elements, moving the bigger one to the right.</li>
+<li>Pseudocode?</li>
+<li>Running time?</li>
+</ul>
+</section>
+<section id="selection-sort" class="slide level2">
+<h2>Selection Sort</h2>
+<ul>
+<li>for each <span class="math inline">\(i\)</span>, repeatedly search for the smallest element in the list in between positions <span class="math inline">\(i\)</span> and <span class="math inline">\(n - 1\)</span>, and swap it with the element at position <span class="math inline">\(i\)</span>.</li>
+<li>Pseudocode?</li>
+<li>Running time?</li>
+</ul>
+</section>
+<section id="insertion-sort" class="slide level2">
+<h2>Insertion sort</h2>
+<ul>
+<li>Keep the beginning of the list (first <span class="math inline">\(i\)</span> elements) sorted, and then figure out where the element <span class="math inline">\(a_{i+1}\)</span> goes.</li>
+<li>Pseudocode?</li>
+<li>Running time?</li>
+</ul>
+</section>
+<section id="video" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ttgiIhn3BSc?si=w4v1pykY3thDVM7h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section></section>
+<section>
+<section id="merge-sort" class="title-slide slide level1">
+<h1>Merge Sort</h1>
+<p>Recursive algorithm:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>procedure <span class="fu">mergesort</span>(array, tmpArray, left, right):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    <span class="kw">if</span> (left &gt;= right) <span class="kw">return</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>    mid = (left + right)  / <span class="dv">2</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>    <span class="fu">mergesort</span>(array, tmpArray, left, mid)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>    <span class="fu">mergesort</span>(array, tmpArray, mid + <span class="dv">1</span>, right)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>    <span class="fu">merge</span>(array, tmpArray, left, mid + <span class="dv">1</span>, right)</span></code></pre></div>
+<p>How do we implement the <code>merge</code> algorithm? (This is why we have a <code>tmpArray</code>)</p>
+</section>
+<section id="analysis" class="slide level2">
+<h2>Analysis</h2>
+<ol type="1">
+<li>How many comparisons does this algorithm make for an array of size <span class="math inline">\(4\)</span>? How many would the insertion sort algorithm make?</li>
+<li>What is the worst case running time of this algorithm? Average case?</li>
+<li>A sorting algorithm is called <strong>stable</strong> if whenever multiple elements of the input array are equal, they are left in their original order. Is this algorithm stable?</li>
+<li>What is the <em>space</em> complexity of this algorithm?</li>
+</ol>
+</section></section>
+<section>
+<section id="stability" class="title-slide slide level1">
+<h1>Stability</h1>
+<p>A sorting algorithm is called <strong>stable</strong> if whenever multiple elements of the input array are equal, they are left in their original order. Is the merge sort algorithm stable?</p>
+</section>
+<section id="stability-1" class="slide level2">
+<h2>Stability</h2>
+<p>Why is “stability” important? Suppose we have a list of Employees. Each employee has a startDate and a job title.</p>
+<pre><code>sortByStartDate(employees)
+sortByJobTitle(employees)</code></pre>
+<p>What does the employees list look like after this?</p>
+</section></section>
+<section>
+<section id="others" class="title-slide slide level1">
+<h1>Others</h1>
+<p>Recall: we have seen other sorting algorithms which use data structures.</p>
+<ul>
+<li>Heapsort. <span class="math inline">\(O(n \log(n))\)</span> running time, <span class="math inline">\(O(1)\)</span> space complexity (use an “in-place” heap).</li>
+<li>“TreeSort”: <span class="math inline">\(O(n \log(n))\)</span> running time. What is the space complexity?</li>
+</ul>
+<p>Are these algorithms stable?</p>
+</section>
+<section id="heapsort-stability" class="slide level2">
+<h2>Heapsort stability</h2>
+<p>Video:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SpGZBcOxKPc?si=uXZ5mrAjepcCPwbx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section></section>
+<section>
+<section id="quicksort" class="title-slide slide level1">
+<h1>QuickSort</h1>
+<p>Pick a pivot. <strong>Partition</strong> the array: the left part should only contain elements smaller than the pivot. Then you know exactly where the pivot should be, and then recursively quicksort the left and right parts.</p>
+<pre><code>procedure quicksort(list, start, end):
+  if (start &gt;= end) return
+  pivot = list[end]
+  pivotIndex = partition(list, start, end, pivot)
+  quicksort(list, start, pivotIndex)
+  quicksort(list, pivotIndex + 1, end)</code></pre>
+<p>Let’s write pseudocode for partition together.</p>
+</section>
+<section id="video-1" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7vxg2DYvp6U?si=2TWenjxXDdBoB931" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section>
+<section id="analysis-1" class="slide level2">
+<h2>Analysis</h2>
+<ul>
+<li>Is this algorithm stable? (Think about what happens if there are multiple elements equal to the pivot).</li>
+<li>What is the space complexity?</li>
+<li>What is the worst case time complexity? What choice of pivot gives us this worst case?</li>
+<li>What is the average case running time?</li>
+</ul>
+</section>
+<section id="video-2" class="slide level2">
+<h2>Video</h2>
+<p>(Stability / space / worst case)</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GR-j_qnKM_g?si=NRxOASebN2tAsG3V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section></section>
+<section id="interview" class="title-slide slide level1">
+<h1>Interview</h1>
+<p>Suppose we have <span class="math inline">\(16\)</span> GB of data to sort on disk. We can store, in memory, <span class="math inline">\(4\)</span> GB of data at a time. How can we sort all of this data? In particular, we cannot possibly hope to keep it all in memory, so the goal is to store the data on disk in sorted order.</p>
+</section>
+
+<section>
+<section id="project-3" class="title-slide slide level1">
+<h1>Project 3</h1>
+<p>Due April 21 (two weeks). Three parts:</p>
+<p>Given (as input) a list of course rosters (each line is list of student IDs), form a graph.</p>
+<ul>
+<li>The nodes are the courses (use numbers <span class="math inline">\(0, 1, \ldots, numCourses - 1\)</span>)</li>
+<li><span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> share an edge if there is at least one student in both courses</li>
+<li>Output the edges as pairs of nodes.</li>
+</ul>
+</section>
+<section id="part-2" class="slide level2">
+<h2>Part 2</h2>
+<p>Output a schedule for the courses (assign each course a time slot).</p>
+<ul>
+<li>Valid if no two courses which share a student have the same time slot</li>
+<li>Output the list of courses scheduled in time slot 0, then the list of courses scheduled for time slot 1, etc.</li>
+<li>Ideally: minimal number of time slots.</li>
+<li>Should be able to run Parts 1 and 2 independently. Two main methods!</li>
+</ul>
+</section>
+<section id="part-3-write-up" class="slide level2">
+<h2>Part 3 (Write-up)</h2>
+<ul>
+<li>Try to break your algorithm.
+<ul>
+<li>Describe a graph for which your algorithm does not output the minimal coloring for that graph.</li>
+<li>Hint: start with a coloring (ie, nodes 0, 2, 5 are red, 1, 3, 6 are green, 4 are blue) and work backwards.</li>
+</ul></li>
+<li>Describe the coloring algorithm you implemented.</li>
+<li>This write-up should be in a text file or a PDF. Add it to the replit space.</li>
+</ul>
+</section>
+<section id="video-3" class="slide level2">
+<h2>Video</h2>
+<p>Getting started:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6tPVY2DGbnA?si=buknC7Q6hbipeOPG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section></section>
+<section id="presentation-3" class="title-slide slide level1">
+<h1>Presentation 3</h1>
+<ul>
+<li>See description from <a href="lesson4.html#/presentation">presentation 1</a></li>
+<li>Due <strong>Friday, April 25</strong> on VoiceThread.</li>
+</ul>
+</section>
+
+<section>
+<section id="final-project" class="title-slide slide level1">
+<h1>Final Project</h1>
+<ul>
+<li>Groups of 3</li>
+<li>Topic of your choice, related to data structures.</li>
+<li>Examples: “data structures used in operating systems”, “data structures used in databases”, other kinds of data structures not covered in our class (trie, red-black trees, etc), implementation issues that come up, etc.</li>
+<li>Presentation on the last day of class</li>
+<li>Paper due the following week.</li>
+</ul>
+</section>
+<section id="upcoming" class="slide level2">
+<h2>Upcoming</h2>
+<ul>
+<li>Thursday: <strong>asynchronous</strong> (Quicksort analysis). No in-person meeting.
+<ul>
+<li>Will host office hours as usual.</li>
+</ul></li>
+<li>Next week: quickselect, bucket/radix sorting, intro to concurrency</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4/dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
