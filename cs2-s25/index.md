@@ -30,3 +30,4 @@ layout: default
 * [Lesson 15: Polymorphism III](lesson15.html)
   * [Coin Game Solution Code](solution/CoinGame.html)
 * [Lesson 16: Algorithms / Pseudocode](lesson16.html)
+* [Lesson 17: Recursion](lesson17.html)

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>CS II Lesson 17</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS II Lesson 17</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Recursion</p>
+</section>
+
+<section>
+<section id="advising" class="title-slide slide level1">
+<h1>Advising</h1>
+<ul>
+<li>Calculus I / Calculus III</li>
+<li>Discrete Mathematics</li>
+<li>Artificial Intelligence Fundamentals</li>
+<li>NME 3215 New Directions in Virtual Space</li>
+<li>ECO 3070 Econometrics</li>
+</ul>
+</section>
+<section id="other-courses-of-interest" class="slide level2">
+<h2>Other courses of interest</h2>
+<ul>
+<li>PHI 2120 Methods of Reasoning
+<ul>
+<li>Does not count for math/CS, but toward the “outside math/CS credits”</li>
+</ul></li>
+<li>Manhattanville:
+<ul>
+<li>Geometry (prerequisite: Calculus 1)</li>
+<li>Databases</li>
+<li>Intro to Data Science</li>
+<li>Building Computer System Software</li>
+</ul></li>
+</ul>
+</section></section>
+<section id="questions" class="title-slide slide level1">
+<h1>Questions</h1>
+<p>Last lesson:</p>
+<ul>
+<li>Algorithms</li>
+<li>Pseudocode</li>
+<li>Analysis of algorithms</li>
+<li>Big Oh Notation.</li>
+</ul>
+</section>
+
+<section>
+<section id="project-3" class="title-slide slide level1">
+<h1>Project 3</h1>
+<ul>
+<li>Start by making the Player interface</li>
+<li>Think about how to represent the board.</li>
+</ul>
+</section>
+<section id="game" class="slide level2">
+<h2>Game</h2>
+<ul>
+<li>Keep track of whose turn it is (maybe a “current” Player variable)</li>
+<li>As long as there are <em>any</em> stones left:
+<ul>
+<li>Ask the current player to make a move</li>
+<li>Output that move</li>
+<li>Update the “board” based on the move</li>
+<li>Change the current player (now it’s the other player’s turn)</li>
+</ul></li>
+<li>Afterward: print out who won!
+<ul>
+<li>Who took the last stone?</li>
+</ul></li>
+</ul>
+</section>
+<section id="time-management" class="slide level2">
+<h2>Time Management</h2>
+<ul>
+<li>This week:
+<ul>
+<li>Player interface, SimplePlayer, HumanPlayer</li>
+<li>Test out that these do exactly what you need.</li>
+<li>Think about the gameplay while designing these.</li>
+<li>Do you need more classes to make these work?</li>
+<li>Start working on the Game class.</li>
+</ul></li>
+<li>Next week:
+<ul>
+<li>Get the gameplay working.</li>
+<li>Does it figure out the correct winner each time?</li>
+<li>Test it out with all 4 ways to play.</li>
+</ul></li>
+</ul>
+</section>
+<section id="after-that" class="slide level2">
+<h2>After that</h2>
+<ul>
+<li>Smarter Player
+<ul>
+<li>As you play the game, try to think about strategies that make sense.</li>
+<li>Can you implement any of those?</li>
+<li>Can you recognize when you’re in a “winning position”?</li>
+<li>If not: can you just find <em>anything</em> better than the Simple player?</li>
+</ul></li>
+<li>Testing!</li>
+</ul>
+</section></section>
+<section>
+<section id="recursion" class="title-slide slide level1">
+<h1>Recursion</h1>
+<p><a href="https://www.google.com/search?q=recursion" target="_blank"><img src="recursion.PNG" alt="What happens if you google 'recursion'" /></a></p>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p><a href="code/lesson17.html">Starter Code</a></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">int</span> <span class="fu">add</span>(<span class="dt">int</span> x, <span class="dt">int</span> y) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Calling add(&quot;</span> + x + <span class="st">&quot;, &quot;</span> + y + <span class="st">&quot;)&quot;</span>);</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>    <span class="kw">if</span> (y == <span class="dv">0</span>) {</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>        <span class="kw">return</span> x;</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>    }</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>    <span class="kw">if</span> (y &gt; <span class="dv">0</span>) {</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>        <span class="kw">return</span> <span class="fu">add</span>(x + <span class="dv">1</span>, y - <span class="dv">1</span>);</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>    }</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>    <span class="kw">if</span> (y &lt; <span class="dv">0</span>) {</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>        <span class="kw">return</span> <span class="fu">add</span>(x - <span class="dv">1</span>, y + <span class="dv">1</span>);</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>    }</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a>    <span class="co">// this shouldn&#39;t happen</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a>    <span class="kw">return</span> -<span class="dv">1</span>;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="base-case" class="slide level2">
+<h2>Base Case</h2>
+<p>A method which invokes itself is called <strong>recursive</strong>. The <code>add</code> method invokes itself (as long as <span class="math inline">\(y \neq 0\)</span>).</p>
+<p>Recursive methods have a <strong>base case</strong>: a condition which leads to an actual answer, rather than recursively calling the same method again.</p>
+<ol type="1">
+<li>What is the need for a base case?</li>
+<li>What is the base case in the <code>add</code> method?</li>
+</ol>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<ol type="1">
+<li>Run the RecursionExample program. What is output?</li>
+<li>Change the parameters and see what happens.</li>
+<li>Given any input <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, if we invoke <code>add(x, y)</code>, how “deep” does the recursion go?</li>
+</ol>
+<p>5 minutes to discuss these at your tables. Nominate one person from your room to share.</p>
+</section></section>
+<section>
+<section id="leap-of-faith" class="title-slide slide level1">
+<h1>Leap of Faith</h1>
+<p>Project design:</p>
+<ul>
+<li>Break up the problem into smaller components.</li>
+<li>Implement each component on its own (<strong>once</strong>!), and test each one.</li>
+<li>Re-use the components as needed – trusting that they were implemented correctly the first time!</li>
+</ul>
+</section>
+<section id="recursive-calls" class="slide level2">
+<h2>Recursive Calls</h2>
+<ul>
+<li>If we <strong>know</strong> that a method has been implemented correctly, we don’t need to know how it works, we can just call it and use it.</li>
+<li>Similarly, when we see a recursive call, assume it works! Then we can just use it.</li>
+<li>Important: the assumption is that the recursive call works on <em>smalller</em> inputs.</li>
+<li>Strategy is often to reduce the problem to a smaller problem.</li>
+</ul>
+</section>
+<section id="recursive-factorial" class="slide level2">
+<h2>Recursive Factorial</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">int</span> <span class="fu">recursiveFactorial</span>(<span class="dt">int</span> n) {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>    <span class="kw">if</span> (n &lt;= <span class="dv">0</span>) {</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>        <span class="kw">return</span> <span class="dv">1</span>;</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>    }</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>    <span class="kw">return</span> n * <span class="fu">recursiveFactorial</span>(n - <span class="dv">1</span>);</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>}</span></code></pre></div>
+<ul>
+<li>Assume that <code>recursiveFactorial(n-1)</code> correctly returns <span class="math inline">\((n-1)!\)</span>.</li>
+<li>Then <span class="math inline">\(n \times\)</span> <code>recursiveFactorial(n-1)</code> is, in fact, equal to <span class="math inline">\(n!\)</span> (Why?)</li>
+<li>Math analogy: proof by induction.</li>
+</ul>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<p>Implement a recursive Fibonacci method. Remember:</p>
+<ul>
+<li><code>fib(0)</code> should return <span class="math inline">\(0\)</span></li>
+<li><code>fib(1)</code> should return <span class="math inline">\(1\)</span></li>
+<li><code>fib(n)</code> should return <code>fib(n-1) + fib(n-2)</code> if <span class="math inline">\(n &gt; 1\)</span>.</li>
+<li>For the purposes of this method, if <span class="math inline">\(n &lt; 0\)</span>, return <span class="math inline">\(-1\)</span></li>
+</ul>
+</section></section>
+<section>
+<section id="recursive-prints" class="title-slide slide level1">
+<h1>Recursive Prints</h1>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">printBeforeRecursion</span>(<span class="bu">ArrayList</span>&lt;<span class="bu">String</span>&gt; list, <span class="dt">int</span> i) {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>  <span class="kw">if</span> (i == list.<span class="fu">size</span>()) {</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>      <span class="kw">return</span>;</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>  }</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(list.<span class="fu">get</span>(i));</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>  <span class="fu">printBeforeRecursion</span>(list, i+<span class="dv">1</span>);</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>}</span></code></pre></div>
+<ul>
+<li>list = [a, b, c, d, e], i = 0?</li>
+<li>What do you think it will output?</li>
+<li>Make a <strong>stack diagram</strong>.</li>
+<li>What does it output?</li>
+</ul>
+</section>
+<section id="print-after" class="slide level2">
+<h2>Print After</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">printAfterRecursion</span>(<span class="bu">ArrayList</span>&lt;<span class="bu">String</span>&gt; list, <span class="dt">int</span> i) {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>  <span class="kw">if</span> (i == list.<span class="fu">size</span>()) {</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>      <span class="kw">return</span>;</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>  }</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>  <span class="fu">printAfterRecursion</span>(list, i+<span class="dv">1</span>);</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(list.<span class="fu">get</span>(i));</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>}</span></code></pre></div>
+<ul>
+<li>list = [a, b, c, d, e], i = 0?</li>
+<li>What do you think it will output?</li>
+<li>Make a <strong>stack diagram</strong>.</li>
+<li>What does it output?</li>
+</ul>
+</section></section>
+<section>
+<section id="sum-the-digits" class="title-slide slide level1">
+<h1>Sum the digits</h1>
+<p>(If time): Problem: Given a (positive) integer, add up its digits.</p>
+<p>Recursive idea:</p>
+<ol type="1">
+<li>What is the base case?</li>
+<li>If we know how to solve the problem for a number with <em>fewer</em> digits, how can we use that to solve the problem for a bigger list?</li>
+</ol>
+</section>
+<section id="exercise-sum-digits" class="slide level2">
+<h2>Exercise: Sum Digits</h2>
+<p><a href="code/lesson17.html">Starter code</a> Implement the sumDigits method recursively. Hint: to get the ones digit of a number, use <span class="math inline">\(num % 10\)</span>. To remove the ones digit from the number, use <span class="math inline">\(num / 10\)</span>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">int</span> <span class="fu">sumDigits</span>(<span class="dt">int</span> num) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>    <span class="kw">if</span> (num &lt; <span class="dv">0</span>) {</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>        <span class="kw">return</span> <span class="fu">sumDigits</span>(-num);</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>    }</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>    <span class="kw">if</span> (num &lt; <span class="dv">10</span>) {</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>        <span class="kw">return</span> num;</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a>    }</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a>    <span class="co">// implement the rest...</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a>}</span></code></pre></div>
+</section></section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Reading: Chapter 8 on recursion!</li>
+<li>Project 3: get started!</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4/dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
