@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>Data Structures Lesson 20</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures Lesson 20</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Quickselect / Radix Sorting</p>
+</section>
+
+<section>
+<section id="project-3" class="title-slide slide level1">
+<h1>Project 3</h1>
+<p>Due this week. Questions? Thoughts?</p>
+<ul>
+<li>Use <code>Parser</code>: turn input into List of course rosters (each is a list of integers)</li>
+<li>Step 1: turn that into a graph.
+<ul>
+<li>Each “list” is a course (vertex)</li>
+<li>Make edges if two courses share a vertex.</li>
+<li>Output all the edges.</li>
+</ul></li>
+<li>Step 2: Color the graph.</li>
+<li>Step 3: Write-up / break your algorithm.</li>
+</ul>
+</section>
+<section id="breaking-the-algorithm" class="slide level2">
+<h2>Breaking the algorithm?</h2>
+<ul>
+<li>Most end up using the <em>greedy coloring</em> algorithm.</li>
+<li>How might this fail to produce the fewest colors?</li>
+<li>Vertex Order!</li>
+</ul>
+</section>
+<section id="example-1" class="slide level2">
+<h2>Example 1</h2>
+<p><img alt="Color a tree" src="tree.jpeg" width="50%" /></p>
+<p>Color vertices in order. How many colors?</p>
+</section>
+<section id="example-2" class="slide level2">
+<h2>Example 2</h2>
+<p><img alt="Color another tree" src="relabeled_tree.jpeg" width="50%" /></p>
+<p>Color vertices in order. How many colors?</p>
+</section></section>
+<section>
+<section id="final-projects" class="title-slide slide level1">
+<h1>Final Projects</h1>
+<ul>
+<li>I will make groups</li>
+<li>Presentations on May 1 and May 5</li>
+<li>Paper due May 8.</li>
+<li>Project deliverables:
+<ul>
+<li>One 25 minute presentation,</li>
+<li>One 5 page paper (I don’t actually care about length) thoroughly explaining the topic.</li>
+</ul></li>
+<li>Focus should be pedagogical: give clear descriptions of the problems, algorithms, implementations and running times.</li>
+</ul>
+</section>
+<section id="topics" class="slide level2">
+<h2>Topics</h2>
+<ul>
+<li>Other kinds of trees: Red-Black trees, B-trees, 2-3-4 trees, splay trees: Describe the data structure. Prove the running times. Explain what they are used for (don’t need to do <em>all</em> of these, maybe just one, or maybe more?)</li>
+<li>Huffman Coding (compression). Describe the compression algorithm and give a thorough explanation of the data structures used in it (the “trie” data structure). Implement the algorithm and run it on a large file (<span class="math inline">\(&gt;2\)</span>MB). How much does it actually compress that file?</li>
+</ul>
+</section>
+<section id="topics-1" class="slide level2">
+<h2>Topics</h2>
+<ul>
+<li>Union-find algorithm / Disjoint Set data structure. Explain the problem and the data structure. Explain how this data structure can be used to help solve the “Synonymous Search Queries” question in the case where the synonym relation is transitive.</li>
+<li>Heuristic algorithms for NP complete problems. Take your favorite NP-complete problem (not graph coloring), and describe an algorithm which attempts to solve it. Describe its running time and the scenarios for which this algorithm will work well.</li>
+</ul>
+</section>
+<section id="topics-2" class="slide level2">
+<h2>Topics</h2>
+<ul>
+<li>Data structures used in Operating System design</li>
+<li>Find the Longest Common Substring of a set of words. Explain the algorithms and their running times. There is an algorithm which uses “suffix trees”: describe how to implement this data structure and how it helps solve the problem.</li>
+<li>“Median of medians” pivot selection strategy. Explain the algorithm, show some examples, and implement it. Prove that this strategy results in a worst case <span class="math inline">\(O(n)\)</span> quickselect algorithm (and worst case <span class="math inline">\(O(n \log(n))\)</span> quicksort).</li>
+</ul>
+</section>
+<section id="topics-3" class="slide level2">
+<h2>Topics</h2>
+<p>… or any other problem you’ve seen that was interesting and that you’d like to explore in more depth.</p>
+<ul>
+<li>Try to rank your preferences and let me know by Friday.</li>
+<li>I will try to use that to make groups</li>
+<li>Let me know if you have made groups already.</li>
+<li>Then as a group you will need to come to a consensus.</li>
+</ul>
+</section></section>
+<section>
+<section id="last-time" class="title-slide slide level1">
+<h1>Last time</h1>
+<ul>
+<li>Quicksort analysis</li>
+<li>Information theory lower bounds</li>
+<li>Interview question</li>
+</ul>
+</section>
+<section id="external-sort" class="slide level2">
+<h2>External Sort</h2>
+<p>Changing the description:</p>
+<ul>
+<li>12GB of data on disk</li>
+<li>4GB of RAM</li>
+<li>Output to a new file on disk</li>
+</ul>
+<p>Ideas?</p>
+</section></section>
+<section>
+<section id="quicksort" class="title-slide slide level1">
+<h1>Quicksort</h1>
+<ul>
+<li>Last time: pick the last element as pivot.</li>
+<li>Or: pick a random pivot.</li>
+</ul>
+<p>This question of how to select the pivot in the quicksort algorithm is well studied (in particular by Robert Sedgewick in his 1975 Ph.D thesis).</p>
+</section>
+<section id="pivot-selection-schemes" class="slide level2">
+<h2>Pivot Selection schemes</h2>
+<ul>
+<li>Pick the first element as a pivot. Worst case: the list is already sorted!</li>
+<li>Pick the last element as a pivot. Worst case: still, if the list is sorted (or in reverse order).</li>
+<li>Pick a random pivot. Worst case: you’re just really unlucky. Perhaps this is good enough?</li>
+</ul>
+<p>We will study some other possible improvements.</p>
+</section>
+<section id="median-of-3" class="slide level2">
+<h2>Median of 3</h2>
+<p>Make the pivot be the median of three elements. Two simple implementations:</p>
+<ol type="1">
+<li>Find the median of the first, last and middle elements.</li>
+<li>Find the median of three random elements.</li>
+</ol>
+<p>The worst case here is still <span class="math inline">\(O(n^2)\)</span>! But it’s somewhat less likely to happen, and on average the random version improves on the number of comparisons that the “random pivot” strategy would make.</p>
+</section>
+<section id="dual-pivots" class="slide level2">
+<h2>Dual pivots</h2>
+<p>The version currently implemented in the Java standard library <code>Arrays.sort</code>, created by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch, uses two pivots. Idea:</p>
+<ol type="1">
+<li>Pick pivots <span class="math inline">\(p_1\)</span> and <span class="math inline">\(p_2\)</span> with <span class="math inline">\(p_1 &lt; p_2\)</span>.</li>
+<li>Partition the list into three parts: the part less than <span class="math inline">\(p_1\)</span>, the part in between <span class="math inline">\(p_1\)</span> and <span class="math inline">\(p_2\)</span>, and the part greater than <span class="math inline">\(p_2\)</span>. At this point, <span class="math inline">\(p_1\)</span> and <span class="math inline">\(p_2\)</span> should be in the correct positions.</li>
+<li>Quicksort the three parts.</li>
+</ol>
+</section>
+<section id="caveat" class="slide level2">
+<h2>Caveat</h2>
+<p>Technically, the one in the JDK is much more complicated, but this is the spirit of the algorithm.</p>
+<ul>
+<li>Small arrays: uses insertion sort instead.</li>
+<li>“Close” to being sorted, mergesort is used.</li>
+<li>Non-primitives: “Timsort”</li>
+</ul>
+</section>
+<section id="quickselect" class="slide level2">
+<h2>Quickselect</h2>
+<p>Recall the selection problem: given an unsorted list and an integer <span class="math inline">\(k\)</span>, find the <span class="math inline">\(k\)</span>-th largest element. We can use a variant of quicksort, called <strong>quickselect</strong>, to solve this problem:</p>
+<ol type="1">
+<li>Pick a pivot (for now, let’s pick a pivot randomly).</li>
+<li>Partition the list and determine the <span class="math inline">\(pivotIndex\)</span>, the position of the pivot.</li>
+<li>If <span class="math inline">\(k == pivotIndex\)</span>, return the pivot.</li>
+</ol>
+<p>Otherwise? Recursion!</p>
+</section>
+<section id="quickselect-1" class="slide level2">
+<h2>Quickselect</h2>
+<ol start="4" type="1">
+<li>If <span class="math inline">\(k &lt; pivotIndex\)</span>, run quickselect on the list from <span class="math inline">\(start\)</span> to <span class="math inline">\(pivotIndex - 1\)</span>.</li>
+<li>If <span class="math inline">\(k &gt; pivotIndex\)</span>, run quickselect on the list from <span class="math inline">\(pivotIndex + 1\)</span> to <span class="math inline">\(end\)</span>, searching for <span class="math inline">\(k - pivotIndex - 1\)</span>.</li>
+</ol>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p>Find the 3rd largest element of the following list: [3, 1, 4, 5, 9, 2, 6]</p>
+<ul>
+<li>Pick pivot = 3 (randomly)</li>
+<li>Partition: [2, 1, 3, 5, 9, 6, 4]</li>
+<li>Index = 2, quickselect([5, 9, 6, 4], 0)</li>
+<li>Pick pivot = 4 (randomly)</li>
+<li>Paritition: [4, 9, 6, 5]</li>
+<li>Index = 0: returns 4!</li>
+</ul>
+</section>
+<section id="running-time" class="slide level2">
+<h2>Running time</h2>
+<p>Worst case: <span class="math inline">\(O(n^2)\)</span>. Proof?</p>
+<p>Best case: each partition takes <span class="math inline">\(m\)</span> comparisons (really <span class="math inline">\(O(m)\)</span>, but we will simplify), where <span class="math inline">\(m\)</span> is the size of the part of the array that we are looking at. If the pivot is the median every single time, then the number of comparisons needed is:</p>
+<p><span class="math display">\[n + n / 2 + n / 4 + \ldots = 2n\]</span></p>
+<p>which is <span class="math inline">\(O(n)\)</span>.</p>
+</section>
+<section id="average-case-analysis" class="slide level2">
+<h2>Average case analysis</h2>
+<p>Average case? This is the scenario where every pivot is equally likely.</p>
+<p>Let <span class="math inline">\(T(n, k)\)</span> be the expected time to find the <span class="math inline">\(k\)</span>-th smallest in an array of size <span class="math inline">\(n\)</span>, and <span class="math inline">\(T(n)\)</span> be the largest value over all <span class="math inline">\(k\)</span>.</p>
+<ul>
+<li>It takes <span class="math inline">\(n - 1\)</span> comparisons to partition the array.</li>
+<li>The array is split into pieces: <span class="math inline">\(0\)</span> and <span class="math inline">\(n - 1\)</span>, <span class="math inline">\(1\)</span> and <span class="math inline">\(n - 2\)</span>, etc. We assume here that we always pick the larger piece.</li>
+</ul>
+</section>
+<section id="magic" class="slide level2">
+<h2>Magic</h2>
+<p><span class="math display">\[T(n) \leq n - 1 + average(T(n / 2), \ldots, T(n - 1))\]</span></p>
+<p>Magic: prove that <span class="math inline">\(T(n) \leq 4n\)</span> by induction.</p>
+<ul>
+<li>True for <span class="math inline">\(T(0), T(1), T(2)\)</span> by inspection.</li>
+<li>Assume that, for all <span class="math inline">\(i &lt; n, T(i) \leq 4i\)</span>.</li>
+<li>Using the equation above, we get:</li>
+</ul>
+<p><span class="math display">\[
+\begin{align}
+T(n) &amp;\leq n - 1 + average(4(n / 2), \ldots, 4(n - 1)) \\
+&amp;= n - 1 + 4(3n / 4) &lt; 4n
+\end{align}
+\]</span></p>
+<p>So <span class="math inline">\(T(n) = O(n)\)</span>.</p>
+</section></section>
+<section>
+<section id="bucket-sorts" class="title-slide slide level1">
+<h1>Bucket Sorts</h1>
+<p>Given a list of <span class="math inline">\(N\)</span> integers, each of which is between <span class="math inline">\(0\)</span> and <span class="math inline">\(100\)</span>, sort it in <span class="math inline">\(O(N)\)</span> time. (Suppose <span class="math inline">\(N\)</span> is much larger than <span class="math inline">\(100\)</span>).</p>
+<p>Have we seen this before? What is the algorithm for this? Why does this not contradict the theorem from last time?</p>
+</section>
+<section id="bucket-sort" class="slide level2">
+<h2>Bucket Sort</h2>
+<p>Keep 100 “buckets”. Run through the list and add to a counter. Then run through all the buckets and output them all.</p>
+<p>Suppose there are <span class="math inline">\(N\)</span> numbers and <span class="math inline">\(M\)</span> buckets. What is the running time?</p>
+</section>
+<section id="radix-sorting" class="slide level2">
+<h2>Radix Sorting</h2>
+<p>What if <span class="math inline">\(N\)</span> is much smaller than <span class="math inline">\(M\)</span>? In particular: how do we sort <span class="math inline">\(10\)</span> elements that are all between <span class="math inline">\(1\)</span> and <span class="math inline">\(999\)</span>? Two ideas:</p>
+<ul>
+<li>“Most significant digit” sorting: sort by the hundreds digit, then tens digit, then ones.</li>
+<li>“Least significant digit” sorting: sort by 1s digit, then 10s, then 100s.</li>
+</ul>
+<p>Important: each step must be <em>stable</em>.</p>
+<p><strong>Exercise</strong>: try this out on 125, 111, 061, 209, 290, 095.</p>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Consider an <span class="math inline">\(n\)</span> by <span class="math inline">\(n\)</span> matrix <span class="math inline">\(M\)</span>, whose rows and columns are each sorted in increasing order. That is, the elements of each row increase as you go left to right, and the elements of each column increase as you go down. Determine if a number <span class="math inline">\(x\)</span> is in the matrix in <span class="math inline">\(O(n)\)</span> comparisons.</p>
+</section></section>
+<section>
+<section id="homework" class="title-slide slide level1">
+<h1>Homework</h1>
+<p>Due Friday, 5/2:</p>
+<ol type="1">
+<li>Implement the quicksort algorithm in Java using a randomized pivot selection strategy. (That is, pick the pivot to be a random element of the list). Test it out on a randomly generated array and make sure it works.</li>
+</ol>
+</section>
+<section id="homework-1" class="slide level2">
+<h2>Homework</h2>
+<ol start="2" type="1">
+<li>Given an array of <span class="math inline">\(5\)</span> elements, what is the probability that the worst case for quicksort actually happens? That is, what is the probability that every pivot we select happens to be either the largest or smallest possible element? What if the array has <span class="math inline">\(10\)</span> elements?</li>
+</ol>
+</section>
+<section id="homework-2" class="slide level2">
+<h2>Homework</h2>
+<ol start="3" type="1">
+<li>Describe an algorithm (in English or pseudocode) which uses at most 7 comparisons to sort an array of 5 elements.</li>
+<li>Sort 3, 1, 4, 1, 5, 9, 2, 6 using mergesort. Show every step.</li>
+</ol>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4/dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
