@@ -31,3 +31,4 @@ layout: default
   * [Coin Game Solution Code](solution/CoinGame.html)
 * [Lesson 16: Algorithms / Pseudocode](lesson16.html)
 * [Lesson 17: Recursion](lesson17.html)
+* [Lesson 18: Recursion (again)](lesson18.html)
