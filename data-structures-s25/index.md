@@ -34,6 +34,7 @@ lang: en-US
 * [Lesson 17: P vs NP](lesson17.html)
 * [Lesson 18: Sorting](lesson18.html)
 * [Lesson 19: Quicksort](lesson19.html)
+* [Lesson 20: Quickselect](lesson20.html)
 
 ## Solution Code
 
