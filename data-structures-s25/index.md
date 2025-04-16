@@ -35,6 +35,7 @@ lang: en-US
 * [Lesson 18: Sorting](lesson18.html)
 * [Lesson 19: Quicksort](lesson19.html)
 * [Lesson 20: Quickselect](lesson20.html)
+* [Lesson 21: Radix / Algorithm Design / Concurrency](lesson21.html)
 
 ## Solution Code
 
