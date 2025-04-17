@@ -46,7 +46,6 @@ For this, you will need to have gone through the sections on [Analysis of Algori
 
 1. If we have an **unsorted** list of 1 million integers, about how many comparisons would need need to determine if a number $x$ is in the list? 10, 20, 100, 1000, or 1,000,000? What algorithm would we use?
 2. If we have a **sorted** list of 1 million integers, about how many comparisons would need need to determine if a number $x$ is in the list? 10, 20, 100, 1000, or 1,000,000? What algorithm would we use?
-3. List any questions you have about the material from today or from last week (on algorithms / pseudocode / running time.)
 
 # Upcoming
 
