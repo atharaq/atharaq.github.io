@@ -8,8 +8,8 @@
 
 For this lesson, you will be working on this Guessing Game / Finder activity. You'll be going through the following steps for today:
 
-0. Copy/paste [the starter code](code/lesson19.html). 
-1. Run Main. This is a guessing game where you guess a number between 0 and 1022 (inclusive). You should be able to guess the number **within at most 10 guesses**. Find a good strategy for this!
+0. Copy/paste [the starter code](code/lesson19.html) for GuessingGame.java. 
+1. Run main. This is a guessing game where you guess a number between 0 and 1022 (inclusive). You should be able to guess the number **within at most 10 guesses**. Find a good strategy for this!
 2. Determine the algorithm used for (1). Then see if you can use that same idea to find an algorithm to find a number in a **sorted list**.
 3. Determine the running time of this "find" method. **Use Big Oh notation**.
 4. Use the algorithm devised in (2) to implement a faster "find" algorithm in the Finder class (included in this same starter code page). You do not need to submit this.
