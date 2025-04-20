@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>Data Structures Lesson 22</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures Lesson 22</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Concurrency</p>
+</section>
+
+<section id="final-project" class="title-slide slide level1">
+<h1>Final Project</h1>
+<ul>
+<li>Form groups (today, if not done already).</li>
+<li>Many other possibilities besides the topics I listed.</li>
+<li>Most advanced topics in CS have something to do with data structures: compilers, OS, databases, etc.</li>
+<li>Find a topic ASAP!</li>
+</ul>
+</section>
+
+<section>
+<section id="hw-4" class="title-slide slide level1">
+<h1>HW 4</h1>
+<ul>
+<li>Sort 5 elements with 7 comparisons?</li>
+<li>120 orderings of 5 elements, <span class="math inline">\(2^7 = 128\)</span>, 7 is optimal.</li>
+<li>a &lt; b &lt; c, d &lt; e: 4</li>
+<li>Merge: 4 more! Better solution? Hint: similar to HW 3 question.</li>
+</ul>
+</section>
+<section id="probability" class="slide level2">
+<h2>Probability</h2>
+<ul>
+<li>Quicksort worst case probability (<span class="math inline">\(n = 5\)</span>)?</li>
+<li>Choose first or last element in group of 5.</li>
+<li>Then: choose first or last in group of 4.</li>
+<li>Then: choose first or last in group of 3.</li>
+<li>etc.</li>
+</ul>
+</section></section>
+<section>
+<section id="threads" class="title-slide slide level1">
+<h1>Threads</h1>
+<ul>
+<li><strong>Thread</strong>: a <em>lightweight process</em>.</li>
+<li>We still have the same <em>program</em> running, but different parts of the program could be executing at the same time.</li>
+<li>Same <em>heap</em> memory is allocated for everything.</li>
+<li>Each thread has its own:
+<ul>
+<li>Stack memory (local memory)</li>
+<li>Program counter (line of code that the thread is sitting on)</li>
+</ul></li>
+</ul>
+</section>
+<section id="thread-object" class="slide level2">
+<h2>Thread object</h2>
+<ul>
+<li>java.util.Thread object (JVM Thread)</li>
+<li>When the JVM thread is created, the JVM allocates stack memory, creates the program counter, and <strong>asks the OS</strong> to create an <strong>OS thread</strong>.</li>
+</ul>
+</section>
+<section id="context-switching" class="slide level2">
+<h2>Context switching</h2>
+<ul>
+<li>Too many threads running: <strong>time-slicing</strong>.</li>
+<li>OS schedules each thread to run for short “slices” of CPU clock</li>
+<li>Then pause a thread and then run another thraed.</li>
+<li>Threads are paused / unpaused somewhat randomly.</li>
+<li><strong>Context-switching</strong>: when the OS switches from one thread to another.
+<ul>
+<li>The <em>context</em> is the state of the thread (Prog Counter / stack memory).</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="example" class="title-slide slide level1">
+<h1>Example</h1>
+<p><a href="code/Increment.html">Take a look at the <code>Increment.java</code> program.</a></p>
+<ul>
+<li>Creates several threads</li>
+<li>Each increments a counter</li>
+<li>Counter shared across all threads.</li>
+<li>By the end, counter should be equal to <code>NUM_THREADS * NUM_INCREMENTS</code>.</li>
+<li>What happens?</li>
+</ul>
+</section>
+<section id="race-condition" class="slide level2">
+<h2>Race Condition</h2>
+<ul>
+<li>Why does this program not work?</li>
+<li>There is a <strong>race condition</strong>
+<ul>
+<li>When the behavior of a program depends on which instructions go first.</li>
+</ul></li>
+<li>What’s the race condition?</li>
+</ul>
+</section>
+<section id="incrementing" class="slide level2">
+<h2>Incrementing</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>++counter;</span></code></pre></div>
+<p><strong>Not just one instruction</strong>! Actually:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>temp = counter;</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>temp2 = temp + <span class="dv">1</span>;</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>counter = temp2;</span></code></pre></div>
+</section>
+<section id="video" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vZ1C6-toJtE?si=SESFt7KTMyhuzmSl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section></section>
+<section>
+<section id="creating-threads" class="title-slide slide level1">
+<h1>Creating Threads</h1>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="bu">Thread</span> t = <span class="kw">new</span> <span class="bu">Thread</span>(someRunnableObject);</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>t.<span class="fu">start</span>();</span></code></pre></div>
+<ul>
+<li>Creates a new thread</li>
+<li>In that thread, calls <code>someRunnableObject.run()</code></li>
+<li>Other way to do this: <code>class C extends Thread</code> and override <code>run</code></li>
+<li>Preferred way: implement <code>Runnable</code></li>
+</ul>
+</section>
+<section id="creating-threads-1" class="slide level2">
+<h2>Creating Threads</h2>
+<p>Earlier: created Threads directly. <strong>Don’t ever do that.</strong> Creating a thread involves:</p>
+<ul>
+<li>allocating memory for the thread’s stack frame (for method invocations in that thread)</li>
+<li>allocating a program counter (points to the instruction that the processor is executing)</li>
+<li>an actual OS thread is created (corresponding to the Java “Thread” object)</li>
+<li>All threads share heap memory</li>
+</ul>
+</section>
+<section id="thread-tradeoffs" class="slide level2">
+<h2>Thread tradeoffs</h2>
+<p>Some tradeoffs should be thought about:</p>
+<ul>
+<li>If we do everything in one thread (or very few threads), we might not be able to take advantage of parallelization.</li>
+<li>If we create too many threads?</li>
+<li>So what should we do?</li>
+</ul>
+</section>
+<section id="thread-pools-executors" class="slide level2">
+<h2>Thread Pools / Executors</h2>
+<p>Thread pools: re-use threads that were already created.</p>
+<ul>
+<li>Create a (possibly fixed) set of “worker threads”.</li>
+<li>When “tasks” come in, pick off the next available thread and use it.</li>
+<li>If no threads are available, add to a “task queue”</li>
+<li>When a thread finishes working, it goes back into the pool
+<ul>
+<li>Threads in the “pool” that are not doing anything: sleeping.</li>
+</ul></li>
+</ul>
+</section>
+<section id="executor-framework" class="slide level2">
+<h2>Executor framework</h2>
+<p>There is a framework for this in Java: Executor and ExecutorService objects:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="bu">ExecutorService</span> pool = <span class="bu">Executors</span>.<span class="fu">newFixedThreadPool</span>(<span class="dv">5</span>);</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>pool.<span class="fu">execute</span>(someRunnableObject);</span></code></pre></div>
+<p>This is very flexible – many possible “execution” policies. See <a href="https://jcip.net/"><em>Java Concurrency in Practice</em></a>.</p>
+</section>
+<section id="aside-simple-http-server" class="slide level2">
+<h2>Aside: Simple HTTP Server</h2>
+<ul>
+<li>Let’s look at a <a href="code/HTTPServer.html">simple HTTP server</a>.</li>
+<li>Waits for a connection, responds with some HTML <strong>then pauses</strong>.
+<ul>
+<li>(Simulates “working” for a bit.)</li>
+<li>What happens if another connection comes in at the same time?</li>
+<li>Can we add in concurrency to handle the problem?</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="dining-philosophers" class="title-slide slide level1">
+<h1>Dining Philosophers</h1>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/An_illustration_of_the_dining_philosophers_problem.png" alt="Image of the Dining Philosophers Problem (Wikimedia Commons)" width="40%" /></p>
+</section>
+<section id="problem" class="slide level2">
+<h2>Problem</h2>
+<ul>
+<li>Philosophers can eat and think</li>
+<li>Think until right fork is available, then pick it up.</li>
+<li>Think until left fork is available, then pick it up.</li>
+<li>Then eat until full, and put both down.</li>
+<li>Repeat.</li>
+<li>Problem?</li>
+</ul>
+</section>
+<section id="deadlock" class="slide level2">
+<h2>Deadlock</h2>
+<p>A <a href="https://en.wikipedia.org/wiki/Deadlock">deadlock</a> is when several processes / threads are all waiting for each other to finish working before they can do their work.</p>
+</section></section>
+<section>
+<section id="thread-safety" class="title-slide slide level1">
+<h1>Thread Safety</h1>
+<blockquote>
+<p>A class is thread-safe if it behaves correctly when accessed from multiple threads, regardless of the scheduling or interleaving of the execution of those threads by the runtime environment, and with no additional synchronization or other coordination on the part of the calling code. — <cite>Java Concurrency In Practice</cite></p>
+</blockquote>
+</section>
+<section id="state" class="slide level2">
+<h2>State</h2>
+<p>In general, what is most worrisome is <em>state</em>.</p>
+<ul>
+<li>A class which only uses immutable objects, or does not have any state variables, is thread-safe. (Example: “stateless servers”)</li>
+<li>You might opt to only allow one thread to access a state variable (don’t share it across threads).</li>
+<li>You might need to use synchronization whenever accessing a state variable.</li>
+</ul>
+</section>
+<section id="synchronization-primitives" class="slide level2">
+<h2>Synchronization Primitives</h2>
+<ul>
+<li>OS: <strong>synchronization primitives</strong>: semaphores, mutexes, etc.</li>
+<li>Not all available in high-level languages.</li>
+<li>Prior to Java 5: <code>synchronized</code> keyword.</li>
+</ul>
+</section>
+<section id="synchronized" class="slide level2">
+<h2>Synchronized</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="kw">public</span> <span class="kw">synchronized</span> <span class="dt">void</span> <span class="fu">add</span>(T item) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>  ...</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>}</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a><span class="kw">public</span> <span class="kw">synchronized</span> T <span class="fu">get</span>(<span class="dt">int</span> i) {</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>  ...</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>}</span></code></pre></div>
+<ul>
+<li>Thread 1: calls “add”</li>
+<li>Thread 2: calls “get”</li>
+<li>What happens?</li>
+</ul>
+</section>
+<section id="vectors" class="slide level2">
+<h2>Vectors</h2>
+<p>A <code>Vector</code> is like an <code>ArrayList</code>, with all of its methods synchronized. Is the following code thread-safe?</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="co">// ensures that there is exactly one &quot;item&quot; object in the vector v</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">addIfNotFound</span>(<span class="bu">Vector</span>&lt;T&gt; v, T item) {</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>    <span class="kw">if</span> (!v.<span class="fu">contains</span>(item)) {</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>        v.<span class="fu">add</span>(item);</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>    }</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="adding-to-linkedlist" class="slide level2">
+<h2>Adding to LinkedList</h2>
+<p>See <a href="code/ListRace.html">ListRaceCondition</a>. What happens when we run the code? Play around with the type of “Executor” we use (single vs multithreaded).</p>
+<div class="fragment">
+<p>Question: why do we see a <code>NullPointerException</code>? What is the race condition here?</p>
+</div>
+</section>
+<section id="linkedlist-code" class="slide level2">
+<h2>LinkedList Code</h2>
+<p><code>add</code> calls the following:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="dt">void</span> <span class="fu">linkLast</span>(E e) {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>    <span class="dt">final</span> <span class="bu">Node</span>&lt;E&gt; l = last;</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>    <span class="dt">final</span> <span class="bu">Node</span>&lt;E&gt; newNode = <span class="kw">new</span> <span class="bu">Node</span>&lt;&gt;(l, e, <span class="kw">null</span>);</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>    last = newNode;</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>    <span class="kw">if</span> (l == <span class="kw">null</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a>        first = newNode;</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a>    <span class="kw">else</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a>        l.<span class="fu">next</span> = newNode;</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a>    size++;</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true"></a>    modCount++;</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true"></a>}</span></code></pre></div>
+<ul>
+<li>This is extremely non-thread safe.</li>
+<li>Not meant to be!</li>
+<li>Draw out race condition.</li>
+</ul>
+</section></section>
+<section>
+<section id="concurrent-lists-and-queues" class="title-slide slide level1">
+<h1>Concurrent Lists and Queues</h1>
+<ul>
+<li>Writing your own thread-safe collection is hard!</li>
+<li>Use one of the built-in <strong>thread-safe collections</strong>:
+<ul>
+<li>LinkedBlockingQueue, ArrayBlockingQueue</li>
+<li>ConcurrentLinkedQueue</li>
+<li>CopyOnWriteArrayList</li>
+</ul></li>
+<li>Or, wrap: <code>List&lt;T&gt; synchronizedList = Collections.synchronizedList(list);</code></li>
+</ul>
+</section>
+<section id="next-time" class="slide level2">
+<h2>Next Time</h2>
+<ul>
+<li>Synchronized Collections</li>
+<li>CopyOnWriteArrayList</li>
+<li>Producer-Consumer pattern</li>
+<li>HashMap race condition</li>
+<li>ConcurrentHashMap</li>
+</ul>
+</section>
+<section id="reminders" class="slide level2">
+<h2>Reminders</h2>
+<ul>
+<li>Project 3 due tonight!</li>
+<li>Still left (after project 3)
+<ul>
+<li>HW 4 (due 4/25)</li>
+<li>Presentation 3 (next Monday)</li>
+<li>Final Project: presentation + paper.</li>
+<li>Rubrics will be up soon.</li>
+</ul></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4/dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
