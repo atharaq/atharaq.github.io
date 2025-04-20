@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>CS2 Lesson 20</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 20</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Sorting</p>
+</section>
+
+<section>
+<section id="catch-up" class="title-slide slide level1">
+<h1>Catch-up</h1>
+<ul>
+<li>Algorithms / Pseudocode</li>
+<li>Running time / Big Oh</li>
+<li>Recursion / Towers of Hanoi</li>
+<li>Binary Search</li>
+<li>Questions?</li>
+</ul>
+</section>
+<section id="towers-of-hanoi" class="slide level2">
+<h2>Towers of Hanoi</h2>
+<ul>
+<li><span class="math inline">\(S(0) = 0\)</span></li>
+<li><span class="math inline">\(S(1) = 2 \times 0 + 1 = 1\)</span></li>
+<li><span class="math inline">\(S(2) = 2 \times 1 + 1 = 3\)</span></li>
+<li><span class="math inline">\(S(3) = 2 \times 3 + 1 = 7\)</span></li>
+<li>etc</li>
+</ul>
+<p>What do we notice?</p>
+</section>
+<section id="project-3" class="slide level2">
+<h2>Project 3</h2>
+<ul>
+<li>Questions?</li>
+<li>Demos start this week
+<ul>
+<li>Sign up on BrightSpace!</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="sorting" class="title-slide slide level1">
+<h1>Sorting</h1>
+<p><a href="https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/visualize/">Interactive sorting demo.</a></p>
+<p>More fun: let’s get some volunteers and sort people by height.</p>
+</section>
+<section id="pseudocode-running-time" class="slide level2">
+<h2>Pseudocode / running time</h2>
+<p>The algorithm we used was called the “Bubble Sort” algorithm. It’s called this because the bigger elements “bubble up” to the top at each iteration.</p>
+<p><strong>Exercise</strong>: Write pseudo-code for the algorithm we described.</p>
+</section>
+<section id="selection-sort" class="slide level2">
+<h2>Selection Sort</h2>
+<p>Here we describe another algorithm to sort. This algorithm uses the fact that it’s easy to find the smallest element in a list.</p>
+<ul>
+<li>For each <span class="math inline">\(i\)</span>, look for the smallest element in the list between <span class="math inline">\(i\)</span> and the end of the list.</li>
+<li>If we find something smaller than <span class="math inline">\(a_i\)</span>, swap it with the smallest element between <span class="math inline">\(i\)</span> and the end.</li>
+<li>Repeat this until we have looked through all <span class="math inline">\(i\)</span> from <span class="math inline">\(0\)</span> to <span class="math inline">\(n - 1\)</span>.</li>
+</ul>
+<p>Write pseudocode for this algorithm.</p>
+</section>
+<section id="running-times" class="slide level2">
+<h2>Running times</h2>
+<p>Analyze the running times of the two algorithms. Is one better than the other in terms of Big Oh? Fill in the table:</p>
+<p><span class="math display">\[
+\begin{array}{|c|c|}
+\hline
+\text{Algorithm} &amp; \text{Running Time} \\
+\hline
+\text{Bubble Sort} &amp; \\
+\hline
+\text{Selection Sort} &amp; \\
+\hline
+\end{array}
+\]</span></p>
+</section>
+<section id="upshot" class="slide level2">
+<h2>Upshot</h2>
+<ul>
+<li>Can we do any better?</li>
+<li>Yes, but requires a new technique: <strong>recursion</strong>!</li>
+</ul>
+</section></section>
+<section id="coming-up" class="title-slide slide level1">
+<h1>Coming Up</h1>
+<ul>
+<li>Quiz on BrightSpace (due next Monday)</li>
+<li>Next week: recursion</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4/dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
