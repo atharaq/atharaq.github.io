@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>Data Structures Lesson 23</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures Lesson 23</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Concurrent Data Structures</p>
+</section>
+
+<section>
+<section id="last-time" class="title-slide slide level1">
+<h1>Last time</h1>
+<ul>
+<li>Threads, Executors, ThreadPools, etc</li>
+<li>Thread Safety
+<ul>
+<li>Main concern: shared mutable state.</li>
+<li>Race conditions</li>
+</ul></li>
+<li>Synchronization issues: deadlocks</li>
+</ul>
+</section>
+<section id="synchronized" class="slide level2">
+<h2>Synchronized</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">public</span> <span class="kw">synchronized</span> <span class="dt">void</span> <span class="fu">add</span>(T item) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>  ...</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>}</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="kw">public</span> <span class="kw">synchronized</span> T <span class="fu">get</span>(<span class="dt">int</span> i) {</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>  ...</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>}</span></code></pre></div>
+<ul>
+<li>Thread 1: calls “add”</li>
+<li>Thread 2: calls “get”</li>
+<li>What happens?</li>
+</ul>
+</section>
+<section id="vectors" class="slide level2">
+<h2>Vectors</h2>
+<p>A <code>Vector</code> is like an <code>ArrayList</code>, with all of its methods synchronized. Is the following code thread-safe?</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="co">// ensures that there is exactly one &quot;item&quot; object in the vector v</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">addIfNotFound</span>(<span class="bu">Vector</span>&lt;T&gt; v, T item) {</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>    <span class="kw">if</span> (!v.<span class="fu">contains</span>(item)) {</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>        v.<span class="fu">add</span>(item);</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>    }</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="list-race-condition" class="slide level2">
+<h2>List Race Condition</h2>
+<p>See <a href="code/ListRace.html">ListRaceCondition</a>. What happens when we run the code? Play around with the type of “Executor” we use (single vs multithreaded).</p>
+<div class="fragment">
+<p>Question: why do we see a <code>NullPointerException</code>? What is the race condition here?</p>
+</div>
+</section>
+<section id="linkedlist-code" class="slide level2">
+<h2>LinkedList Code</h2>
+<p><code>add</code> calls the following:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="dt">void</span> <span class="fu">linkLast</span>(E e) {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    <span class="dt">final</span> <span class="bu">Node</span>&lt;E&gt; l = last;</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>    <span class="dt">final</span> <span class="bu">Node</span>&lt;E&gt; newNode = <span class="kw">new</span> <span class="bu">Node</span>&lt;&gt;(l, e, <span class="kw">null</span>);</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>    last = newNode;</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>    <span class="kw">if</span> (l == <span class="kw">null</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>        first = newNode;</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>    <span class="kw">else</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>        l.<span class="fu">next</span> = newNode;</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a>    size++;</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a>    modCount++;</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a>}</span></code></pre></div>
+<ul>
+<li>This is extremely non-thread safe.</li>
+<li>Not meant to be!</li>
+<li>Draw out race condition.</li>
+</ul>
+</section>
+<section id="video" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HWq0u07-K8M?si=Ojo-EB7_tE-Ou6KJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+<ul>
+<li>Issue with Vector class</li>
+<li>LinkedList race condition</li>
+</ul>
+</section></section>
+<section>
+<section id="synchronized-collections" class="title-slide slide level1">
+<h1>Synchronized Collections</h1>
+<ul>
+<li>Vector, Hashtable, Stack are all <strong>synchronized</strong></li>
+<li>Collections class: <code>synchronizedList</code>, <code>synchronizedMap</code>, <code>synchronizedSet</code>, etc.</li>
+<li>Two issues:
+<ul>
+<li>compound operations</li>
+<li>iteration</li>
+</ul></li>
+</ul>
+</section>
+<section id="compound-operations" class="slide level2">
+<h2>Compound Operations</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a>list = <span class="bu">Collections</span>.<span class="fu">synchronizedList</span>(originalList);</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="kw">if</span> (!list.<span class="fu">contains</span>(<span class="dv">0</span>)) {</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>  list.<span class="fu">add</span>(<span class="dv">0</span>);</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>}</span></code></pre></div>
+<p><strong>Moral</strong>: may need to synchronize yourself.</p>
+</section>
+<section id="iteration" class="slide level2">
+<h2>Iteration</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="co">// Thread 1:</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">10000</span>; i++) {</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>  list.<span class="fu">add</span>(i);</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>}</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a><span class="co">// Thread 2:</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a><span class="kw">for</span> (<span class="dt">int</span> num : list) {</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a>  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(num);</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a>}</span></code></pre></div>
+<p>What could go wrong?</p>
+</section>
+<section id="iteration-issues" class="slide level2">
+<h2>Iteration Issues</h2>
+<ul>
+<li>Iterators are <em>fail-fast</em>.</li>
+<li>throw <code>ConcurrentModificationException</code> if they detect changes in another thread while iterating</li>
+<li>Not fool proof!</li>
+<li>If you need to, make sure to synchronize around the entire loop.</li>
+<li>Watch out for “hidden iterators”: calls to <code>containsAll</code>, <code>toString</code>, and other methods may trigger an iteration through the entire collection.</li>
+<li>Locking during iteration can be bad! (Starvation, deadlocks, contention)</li>
+</ul>
+</section>
+<section id="cloning" class="slide level2">
+<h2>Cloning</h2>
+<p>Intead of locking: you can <em>clone</em> the collection first.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="bu">ArrayList</span>&lt;<span class="bu">Integer</span>&gt; list2;</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="kw">synchronized</span>(list) { <span class="co">// synchronize while cloning</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>  list2 = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;(list);</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>}</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a><span class="kw">for</span> (<span class="dt">int</span> num : list2) {</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(num);</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a>}</span></code></pre></div>
+<ul>
+<li>Downside?</li>
+<li>Why does this work? Why don’t we need to synchronize the iteration?</li>
+</ul>
+</section>
+<section id="video-1" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Slc_FcAytac?si=w6R6PI6X5dUXyYY_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section></section>
+<section>
+<section id="concurrent-collections" class="title-slide slide level1">
+<h1>Concurrent Collections</h1>
+<ul>
+<li>Difference between <strong>synchronized</strong> and <strong>concurrent</strong> collections.</li>
+<li>Synchronized: only one thread can call a method at a time</li>
+<li>Concurrent?</li>
+</ul>
+</section>
+<section id="examples" class="slide level2">
+<h2>Examples</h2>
+<ul>
+<li>CopyOnWriteArrayList</li>
+<li>ConcurrentHashMap, ConcurrentSkipListMap</li>
+<li>ConcurrentLinkedQueue</li>
+<li>ArrayBlockingQueue, LinkedBlockingQueue</li>
+</ul>
+</section>
+<section id="copy-on-write" class="slide level2">
+<h2>Copy on Write</h2>
+<ul>
+<li>Each “modificaction” (add, remove) creates a new copy of the underlying array.</li>
+<li>No synchronization needed (why not?)
+<ul>
+<li>What happens if one thread changes the list while another thread is reading?</li>
+</ul></li>
+<li>Example: event notification systems
+<ul>
+<li>Asynchronous “event” comes in.</li>
+<li>Notify a large, static list of event handlers.</li>
+<li>Only when we “register” a new event handler will we need to update it.</li>
+</ul></li>
+</ul>
+</section>
+<section id="scenario-1" class="slide level2">
+<h2>Scenario 1</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="bu">CopyOnWriteArrayList</span>&lt;<span class="bu">Integer</span>&gt; l; <span class="co">// initialized somewhere</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a><span class="co">// Thread 1:</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">1000</span>; i++) {</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>    l.<span class="fu">add</span>(i);</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>}</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a><span class="co">// Thread 2:</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a><span class="kw">for</span> (<span class="dt">int</span> num : l) {</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(num);</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a>}</span></code></pre></div>
+<p>What gets printed?</p>
+</section>
+<section id="scenario-2" class="slide level2">
+<h2>Scenario 2</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="co">// Thread 1 is the same as before</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a><span class="co">// Thread 2:</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a><span class="bu">Iterator</span>&lt;<span class="bu">Integer</span>&gt; it = l.<span class="fu">iterator</span>();</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a><span class="kw">while</span> (it.<span class="fu">hasNext</span>()) {</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a>    <span class="dt">int</span> num = it.<span class="fu">next</span>();</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a>    it.<span class="fu">remove</span>();</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a>}</span></code></pre></div>
+<p>What happens?</p>
+</section>
+<section id="scenario-3" class="slide level2">
+<h2>Scenario 3</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="bu">CopyOnWriteArrayList</span>&lt;<span class="bu">Integer</span>&gt; l;</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a><span class="co">// l is initialized somewhere and shared</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a><span class="kw">if</span> (!l.<span class="fu">contains</span>(<span class="dv">0</span>)) {</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a>    l.<span class="fu">add</span>(<span class="dv">0</span>);</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a>}</span></code></pre></div>
+<p>Compound operations?</p>
+</section>
+<section id="video-2" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Mj93EAvPmqw?si=pItOShLULJnes2LV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section></section>
+<section>
+<section id="hashmap" class="title-slide slide level1">
+<h1>HashMap</h1>
+<p>Recall: a HashMap uses “separate chaining” (not probing). What happens as we add more things to a separate chaining HashMap?</p>
+</section>
+<section id="re-sizing" class="slide level2">
+<h2>Re-sizing</h2>
+<ul>
+<li>Re-sizing (rehashing)! There is a particularly nasty race condition in the resize method of a HashMap.
+<ul>
+<li>Causes an infinite loop!</li>
+</ul></li>
+<li>HashMaps are <strong>not</strong> designed to be thread-safe and you should not use them as if they were: <strong>even if you don’t care about data consistency</strong>.</li>
+<li>Read: <a href="https://mailinator.blogspot.com/2009/06/beautiful-race-condition.html">A Beautiful Race Condition</a></li>
+</ul>
+</section>
+<section id="concurrenthashmap" class="slide level2">
+<h2>ConcurrentHashMap</h2>
+<ul>
+<li>Again: HashMaps use “separate chaining”: basically a large table of LinkedLists</li>
+<li>ConcurrentHashMap uses “lock striping”: instead of one lock for the entire table, separate the table into “buckets”, each of which has its own lock.</li>
+<li>Reads (get / iterators over the keySet or entrySet) do not contend with each other, or with writes (put).</li>
+<li>Limited number of “writes” can be done concurrently.</li>
+</ul>
+</section>
+<section id="considerations" class="slide level2">
+<h2>Considerations</h2>
+<ul>
+<li>No need to lock on iteration: gives a “view” of the elements of the table as they existed at the time you iterate.
+<ul>
+<li>Does not necessarily update that “view” if there are modifications to the underlying table concurrently.</li>
+</ul></li>
+<li>Atomic compound operations: putIfAbsent, computeIfAbsent, etc.</li>
+<li>Resizing creates a separate table, locks on each “bucket” of the original table as it transfers</li>
+</ul>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p>“The semantics of methods that operate on the entire Map, such as size and isEmpty, have been slightly weakened to reflect the concurrent nature of the collection. Since the result of <strong>size could be out of date by the time it is computed</strong>, it is really only an estimate, so size is allowed to <strong>return an approximation</strong> instead of an exact count. While at first this may seem disturbing, in reality methods like size and isEmpty are far <strong>less useful in concurrent environments because these quantities are moving targets</strong>. So the requirements for these operations were weakened to enable performance optimizations for the most important operations . . .”</p>
+</section>
+<section id="video-3" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ElyR1OJxWPQ?si=YkX-s10E1idbZ1GR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section></section>
+<section id="reminders" class="title-slide slide level1">
+<h1>Reminders</h1>
+<ul>
+<li>Final Projects: choose topic ASAP!!!</li>
+<li>Presentations will all be <strong>next Monday</strong> 5/5.</li>
+<li>Papers due <strong>following Monday</strong> 5/12.</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4/dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

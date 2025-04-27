@@ -37,6 +37,7 @@ lang: en-US
 * [Lesson 20: Quickselect](lesson20.html)
 * [Lesson 21: Radix / Algorithm Design / Concurrency](lesson21.html)
 * [Lesson 22: Concurrency](lesson22.html)
+* [Lesson 23: Concurrent Data Structures](lesson23.html)
 
 ## Solution Code
 
