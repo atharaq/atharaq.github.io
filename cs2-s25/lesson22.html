@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>CS2 Lesson 22</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS2 Lesson 22</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Data Structures</p>
+</section>
+
+<section>
+<section id="data-structures" class="title-slide slide level1">
+<h1>Data structures</h1>
+<ul>
+<li>A <strong>data structure</strong> is a way of organizing data in memory. We have seen two important kinds of data structures already: arrays and ArrayList.</li>
+<li>A <strong>linked list</strong> is another kind of list structure.</li>
+</ul>
+</section>
+<section id="linked-list" class="slide level2">
+<h2>Linked List</h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Singly-linked-list.svg" /></p>
+<ul>
+<li>Data organized into <strong>nodes</strong>.</li>
+<li>Each node has a data item and a link to the next node.</li>
+<li>Last node links to <code>null</code>.</li>
+</ul>
+</section>
+<section id="linked-list-1" class="slide level2">
+<h2>Linked List</h2>
+<p>Look at the Node class in the <a href="code/Lesson22.html">starter code</a></p>
+<p><strong>Exercise</strong>: Create a “singly” linked list class. It should store a reference to the “head” node. First just implement the following operations:</p>
+<ul>
+<li>add to the beginning of the list (call this <code>addFirst</code>)</li>
+<li>find the size of the list</li>
+<li>get the first element of the list (the integer in the “head” node).</li>
+</ul>
+<p>Test out your class in a main method.</p>
+</section>
+<section id="running-time" class="slide level2">
+<h2>Running time</h2>
+<ul>
+<li>What is the running time of the <code>addFirst</code> method?</li>
+<li>What is the running time of the <code>size</code> method? Is there any way we can improve it?</li>
+</ul>
+<p>The implementation details of the class really do matter here. If you design the class well, you can support this operation in constant time. How?</p>
+<div class="fragment">
+<p>In addition, if we design the class well, we can support the operation of adding to the end to the list in constant time. How?</p>
+</div>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Implement the following methods. They should run in <span class="math inline">\(O(1)\)</span> time:</p>
+<ul>
+<li>addLast (adds an integer to the end of the list)</li>
+<li>getFirst (gets the first integer in the list)</li>
+<li>getLast (gets the last integer in the list)</li>
+</ul>
+</section>
+<section id="get-method" class="slide level2">
+<h2><code>get</code> method</h2>
+<p>To truly have a list structure, we should be able to access any element of the list. For example, if I add <span class="math inline">\(5, 10, 3, 7\)</span> to my list, I should be able to call <span class="math inline">\(list.get(1)\)</span> and it should return <span class="math inline">\(10\)</span>.</p>
+<ul>
+<li>Running time (Big Oh) of the ArrayList’s <code>get</code>?</li>
+<li>Best running time for <code>get</code> in our linked list class? Pseudocode?</li>
+</ul>
+<p>In general, a structure in which we can access the <span class="math inline">\(i^{\text{th}}\)</span> element in constant time is said to support <strong>random access</strong>.</p>
+</section></section>
+<section>
+<section id="trees" class="title-slide slide level1">
+<h1>Trees</h1>
+<p>A <strong>tree</strong> is a structure with a <strong>root</strong> node, so that all the nodes have links to <strong>child</strong> nodes, but there are <strong>no cycles</strong>. That is, you can’t have a situation where Node A has a child B, and B has a child A. A tree where every node has at most <span class="math inline">\(2\)</span> children is called a <strong>binary tree</strong>.</p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Binary_tree.svg" alt="A binary tree with root 2 (Wikimedia Commons)" /></p>
+<p>(Binary tree with root 2)</p>
+</section></section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Exam 3 Thursday (practice exam posted on BrightSpace)</li>
+<li>Project 4 (Problem Set) due May 12 (posted tomorrow)</li>
+<li>Project 3 demos</li>
+<li>Course Evaluations!</li>
+<li>Final Exam May 5</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4/dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
