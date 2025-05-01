@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>Data Structures Lesson 24</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Data Structures Lesson 24</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Java Miscellany</p>
+</section>
+
+<section id="last-time" class="title-slide slide level1">
+<h1>Last time</h1>
+<ul>
+<li>CopyOnWriteArrayList</li>
+<li>ConcurrentHashMap</li>
+</ul>
+</section>
+
+<section id="system-design" class="title-slide slide level1">
+<h1>System Design</h1>
+<p>3 types of technical interview questions:</p>
+<ol type="1">
+<li>Coding</li>
+<li>Algorithms</li>
+<li>System design: “How would you design Twitter?”</li>
+</ol>
+</section>
+
+<section>
+<section id="producer-consumers" class="title-slide slide level1">
+<h1>Producer-Consumers</h1>
+<p>Common asynchronous design pattern.</p>
+<ul>
+<li>Producer <em>produces</em> data</li>
+<li>Consumer <em>consumes</em> data</li>
+<li>Data stored in some buffer</li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p>Alerting system.</p>
+<ul>
+<li>Something bad happens</li>
+<li>Security alert message is “produced”.</li>
+<li>Anyone in the “911 hotline” can “consume” that message</li>
+<li>They then dispatch to the correct system.</li>
+</ul>
+<p>Data structure?</p>
+</section>
+<section id="queues" class="slide level2">
+<h2>Queues</h2>
+<ul>
+<li>Is there a max number of messages that can be stored at a time? Use ArrayBlockingQueue</li>
+<li>If not, do the consumers need to wait until a message is on the queue? (Probably!) Use LinkedBlockingQueue.</li>
+<li>ConcurrentLinkedQueue? What do consumers do if there’s nothing there?</li>
+</ul>
+</section></section>
+<section>
+<section id="programming-paradigms" class="title-slide slide level1">
+<h1>Programming Paradigms</h1>
+<p>Quick poll:</p>
+<p>Have you heard of “imperative” and/or “declarative” programming?</p>
+</section>
+<section id="paradigms" class="slide level2">
+<h2>Paradigms</h2>
+<ul>
+<li><em>Imperative</em> programming: what you’re used to
+<ul>
+<li>Procedural: C</li>
+<li>Object-oriented: Java, C++</li>
+<li>Everything: Python</li>
+</ul></li>
+<li><em>Declarative</em> programming: just say what needs to happen
+<ul>
+<li>SQL, HTML (I guess?)</li>
+<li><em>Functional</em> programming: Lisp, Haskell, F#, …</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="functional-programming" class="title-slide slide level1">
+<h1>Functional Programming</h1>
+<ul>
+<li>Functions are first-class objects</li>
+<li>Complex operations: apply / compose functions</li>
+<li>Functions are <em>pure</em></li>
+</ul>
+</section>
+<section id="pure-functions" class="slide level2">
+<h2>Pure functions</h2>
+<ul>
+<li>Think mathematically</li>
+<li>Result of a function is the same every time it is called on the same input</li>
+<li>No side effects</li>
+<li>Don’t change any <em>state</em> (memory)
+<ul>
+<li>Objects are <em>immutable</em> (variables are constant?)</li>
+</ul></li>
+<li>Loops? (Recursion!)</li>
+</ul>
+</section>
+<section id="why" class="slide level2">
+<h2>Why?</h2>
+<ul>
+<li>Getting more popular nowadays</li>
+<li>Reason: parallelism</li>
+<li>Functions are easy to run in parallel!</li>
+<li>No concurrency issues!</li>
+<li>Concurrency issues usually come from <em>state</em></li>
+</ul>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><img data-src="meme.jpeg" alt="Can’t change mutable state / if you don’t have any variables" /><br />
+</p>
+</section>
+<section id="computability-theory" class="slide level2">
+<h2>Computability Theory</h2>
+<ul>
+<li>Imperative programming: based on <em>Turing machines</em>
+<ul>
+<li>Several “states” in your program, arbitrary large memory space</li>
+<li>Program: based on current state, memory, change your state / memory</li>
+</ul></li>
+<li>Functional programming: based on <em>lambda calculus</em>
+<ul>
+<li>Formal model of computation based on functions</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="java-miscellany" class="title-slide slide level1">
+<h1>Java miscellany</h1>
+<ul>
+<li>Lots of features in “newer” versions of Java</li>
+<li>Maybe we can talk about two: streams and enums</li>
+<li>Enums: not so new!</li>
+<li>Mandatory reading: <em>Effective Java</em> (2017)</li>
+</ul>
+</section>
+<section id="streams" class="slide level2">
+<h2>Streams</h2>
+<ul>
+<li>Java 8: Streams, lambda expressions, method references</li>
+<li>Making Java “functional”</li>
+</ul>
+</section>
+<section id="streams-and-pipelines" class="slide level2">
+<h2>Streams and pipelines</h2>
+<ul>
+<li>Stream: sequence of data elements</li>
+<li>Pipeline: multistage computation on these elements</li>
+<li>Apply function 1, then function 2, then function 3, etc.</li>
+</ul>
+</section>
+<section id="example-1" class="slide level2">
+<h2>Example</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">String</span> list = <span class="st">&quot;[1, 3, 5, 7, 9]&quot;</span>;</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="dt">int</span>[] intList = <span class="bu">Arrays</span>.<span class="fu">stream</span>(list.<span class="fu">split</span>(<span class="st">&quot;,&quot;</span>)).<span class="fu">map</span>(<span class="bu">String</span>::trim).<span class="fu">mapToInt</span>(<span class="bu">Integer</span>::valueOf).<span class="fu">toArray</span>();</span></code></pre></div>
+<p>Yikes!</p>
+</section>
+<section id="whats-going-on" class="slide level2">
+<h2>What’s going on</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>list.<span class="fu">split</span>(<span class="st">&quot;,&quot;</span>)</span></code></pre></div>
+</section>
+<section id="part-2" class="slide level2">
+<h2>Part 2</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="bu">Arrays</span>.<span class="fu">stream</span>(array).<span class="fu">map</span>(<span class="bu">String</span>::trim)</span></code></pre></div>
+<ul>
+<li>Create a “pipeline” using the objects in the array.</li>
+<li><code>map</code>: apply a function to the elements of the stream
+<ul>
+<li>Pass in a “method reference” (String::trim) as a parameter</li>
+</ul></li>
+<li>returns a new stream (pipeline)</li>
+</ul>
+</section>
+<section id="part-3" class="slide level2">
+<h2>Part 3</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co">// have a stream of Strings now</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>stream.<span class="fu">mapToInt</span>(<span class="bu">Integer</span>::valueOf)</span></code></pre></div>
+<ul>
+<li>maps from Strings to Integers</li>
+<li>Now we have an IntStream instead of Stream<String></li>
+<li>Could use Stream<Integer> instead (boxing / slower)</li>
+</ul>
+</section>
+<section id="parallelizing" class="slide level2">
+<h2>Parallelizing?</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="bu">Array</span>.<span class="fu">stream</span>(array).<span class="fu">parallel</span>().<span class="fu">map</span>(<span class="bu">String</span>::trim).<span class="fu">mapToInt</span>(<span class="bu">Integer</span>::valueOf).<span class="fu">toArray</span>();</span></code></pre></div>
+<ul>
+<li>Careful when parallelizing streams</li>
+<li>Might not always be worth it.</li>
+</ul>
+</section>
+<section id="mapreduce-hadoop" class="slide level2">
+<h2>MapReduce / Hadoop</h2>
+<p><a href="https://en.wikipedia.org/wiki/MapReduce">MapReduce</a></p>
+<ul>
+<li>“Big Data” on large, distributed servers</li>
+<li>map: apply an operation to each element of the data set</li>
+<li>reduce: summarize</li>
+<li>Developed at Google, open sourced: Hadoop</li>
+<li>Parallelized: data not all in one place!</li>
+<li>maps can be parallel.</li>
+<li>reductions can be parallel (somewhat)</li>
+<li>Final project topic!</li>
+</ul>
+</section></section>
+<section>
+<section id="example-2" class="title-slide slide level1">
+<h1>Example</h1>
+<p>Project 3:</p>
+<ul>
+<li>Suppose you’ve colored your graph (with an <code>int[] colors</code> array)</li>
+<li>How do we map from a color to the list of all courses with that color?</li>
+</ul>
+</section>
+<section id="traditional" class="slide level2">
+<h2>Traditional</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="bu">Map</span>&lt;<span class="bu">Integer</span>, <span class="bu">List</span>&lt;<span class="bu">Integer</span>&gt;&gt; colorToCourses = <span class="kw">new</span> <span class="bu">HashMap</span>&lt;&gt;();</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; colors.<span class="fu">length</span>; i++) {</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>  <span class="bu">List</span>&lt;<span class="bu">Integer</span>&gt; list = colorToCourses.<span class="fu">get</span>(color[i]);</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>  <span class="kw">if</span> (list == <span class="kw">null</span>) {</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>    list = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>    colorToCourses.<span class="fu">put</span>(list);</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a>  }</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a>  list.<span class="fu">add</span>(i);</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="streamy" class="slide level2">
+<h2>Streamy</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="bu">Map</span>&lt;<span class="bu">Integer</span>, <span class="bu">List</span>&lt;<span class="bu">Integer</span>&gt;&gt; colorToCourseMap = </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>      IntStream.<span class="fu">range</span>(<span class="dv">0</span>, colors.<span class="fu">length</span>).<span class="fu">boxed</span>()</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>      .<span class="fu">collect</span>(Collectors.<span class="fu">groupingBy</span>(i -&gt; colors[i]));</span></code></pre></div>
+</section>
+<section id="part-1" class="slide level2">
+<h2>Part 1</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a>IntStream.<span class="fu">range</span>(<span class="dv">0</span>, colors.<span class="fu">length</span>).<span class="fu">boxed</span>()</span></code></pre></div>
+<ul>
+<li>Creates an IntStream of <span class="math inline">\([0, 1, \ldots, colors.length - 1]\)</span>.</li>
+<li>Then turns that into a `Stream<Integer>``</li>
+</ul>
+</section>
+<section id="part-2-1" class="slide level2">
+<h2>Part 2</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a>stream.<span class="fu">collect</span>(Collectors.<span class="fu">groupingBy</span>(i -&gt; colors[i]))</span></code></pre></div>
+<ul>
+<li>collect: “collects” the elements in the Stream according to some “Collector”</li>
+<li><code>Collectors.groupingBy(mappingFunction)</code>
+<ul>
+<li>Creates a <code>Map&lt;Integer, List&lt;Integer&gt;&gt;</code></li>
+<li>Puts all the <span class="math inline">\(i\)</span> that share the same <span class="math inline">\(color[i]\)</span> in the same list!</li>
+<li>Exactly what we wanted!</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="enums" class="title-slide slide level1">
+<h1>Enums</h1>
+<ul>
+<li>Special class that represents a group of constants</li>
+<li>In C++: really just integers</li>
+<li>In Java: actual objects.</li>
+</ul>
+</section>
+<section id="java-enums" class="slide level2">
+<h2>Java Enums</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="kw">public</span> <span class="kw">enum</span> Operator {</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a>    PLUS, MINUS, TIMES, DIVIDES;</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a>}</span></code></pre></div>
+<p>Why?</p>
+<ul>
+<li>Pre-set list of objects</li>
+<li>Might want to have variables / methods</li>
+</ul>
+</section>
+<section id="more-fancy" class="slide level2">
+<h2>More fancy</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a><span class="kw">public</span> <span class="kw">enum</span> Operator {</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true"></a>  <span class="fu">PLUS</span>(<span class="bu">Integer</span>::sum), <span class="fu">MINUS</span>((x, y) -&gt; x - y),</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true"></a>  <span class="fu">TIMES</span>((x, y) -&gt; x * y), <span class="fu">DIVIDES</span> ( (x, y) -&gt; x / y);</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true"></a>  <span class="kw">private</span> IntBinaryOperator operator;</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true"></a>  <span class="fu">Operator</span>(IntBinaryOperator o) {</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true"></a>    operator = o;</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true"></a>  }</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true"></a>  <span class="kw">public</span> <span class="dt">int</span> <span class="fu">operate</span>(<span class="dt">int</span> num1, <span class="dt">int</span> num2) {</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true"></a>    <span class="kw">return</span> operator.<span class="fu">applyAsInt</span>(num1, num2);</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true"></a>  }</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="what" class="slide level2">
+<h2>What?</h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a>(x, y) -&gt; x - y</span></code></pre></div>
+<ul>
+<li>Lambda expressions</li>
+<li>Functions-as-objects!</li>
+</ul>
+</section></section>
+<section>
+<section id="lambdas" class="title-slide slide level1">
+<h1>Lambdas</h1>
+<ul>
+<li>Lambda expressions are ubiquitous.</li>
+<li>Can make code more expressive</li>
+<li>Have to think about these in a different way.</li>
+</ul>
+</section>
+<section id="example-3" class="slide level2">
+<h2>Example</h2>
+<p>Project 3:</p>
+<ul>
+<li>Given a list of rosters, pre-process it to form a map</li>
+<li>Map from students to courses.</li>
+<li>How?</li>
+</ul>
+</section>
+<section id="foreach-method" class="slide level2">
+<h2>forEach method</h2>
+<ul>
+<li>Each collection has a <code>forEach</code> method.</li>
+<li>Does some work on each element</li>
+<li>for each student in a course, add that course to their corresponding map</li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; rosters.<span class="fu">size</span>(); i++) {</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true"></a>  rosters.<span class="fu">get</span>(i).<span class="fu">forEach</span>(student -&gt; ???);</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true"></a>}</span></code></pre></div>
+<p>What’s the right lambda expression?</p>
+</section>
+<section id="merge-method" class="slide level2">
+<h2>merge method</h2>
+<ul>
+<li>Map has a <code>merge</code> method</li>
+<li>Takes in a key, value, and a method reference</li>
+<li><code>(key, value) -&gt; { }</code></li>
+</ul>
+</section>
+<section id="code" class="slide level2">
+<h2>Code</h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true"></a><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; rosters.<span class="fu">size</span>(); i++) {</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true"></a>  <span class="dt">final</span> <span class="dt">int</span> course = i;</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true"></a>  rosters.<span class="fu">get</span>(i).<span class="fu">forEach</span>(student -&gt; studentToCourseMap.<span class="fu">putIfAbsent</span>(student, <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;()));</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true"></a>  rosters.<span class="fu">get</span>(i).<span class="fu">forEach</span>(student -&gt; studentToCourseMap.<span class="fu">merge</span>(student, <span class="bu">Collections</span>.<span class="fu">singletonList</span>(course), </span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true"></a>  (oldCourses, newCourses) -&gt; {</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true"></a>    oldCourses.<span class="fu">addAll</span>(newCourses);</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true"></a>    <span class="kw">return</span> oldCourses;</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true"></a>  }));</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="simpler" class="slide level2">
+<h2>Simpler?</h2>
+<div class="sourceCode" id="cb15"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true"></a><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; rosters.<span class="fu">size</span>(); i++) {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true"></a>  <span class="dt">final</span> <span class="dt">int</span> course = i;</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true"></a>  <span class="kw">for</span> (student : rosters.<span class="fu">get</span>(i)) {</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true"></a>    <span class="bu">List</span>&lt;<span class="bu">Integer</span>&gt; courses = studentToCourseMap.<span class="fu">getOrDefault</span>(student, <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;());</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true"></a>    courses.<span class="fu">add</span>(course);</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true"></a>    studentToCourseMap.<span class="fu">put</span>(student, courses);</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true"></a>  }</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true"></a>}</span></code></pre></div>
+</section></section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Groups: pick a topic ASAP!</li>
+<li>Presentations Monday.</li>
+<li>Papers due the following Monday.</li>
+<li>I owe project 3 + HW 4 grades.</li>
+<li>Make up work?</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4/dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
