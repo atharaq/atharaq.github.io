@@ -109,17 +109,17 @@ For example, if a forum post asks you to introduce yourself in 1-3 paragraphs, a
 | ---- | ------ | -------- |
 | 1 (8/25) | Intro to course / goal setting; Practicing public speaking: self-introductions | |
 | 2 (9/1) | No class | Forum 1 posts |
-| 3 (9/8) | **Guest Lecture**: ... | |
+| 3 (9/8) | **Guest Lecture**: Peter Dearing (Learning Center) on Time Management / Writing skills | |
 | 4 (9/15) | Writing workshop: thesis structure, Word / LaTeX, formatting tables / pictures / references | |
 | 5 (9/22) | No class | Forum 2 posts |
 | 6 (9/29) | Writing workshop: chapter outline, lit review | Reply to at least 2 classmates in Forum 2 |
 | 7 (10/6) | Presentations | Senior thesis draft 1 |
 | 8 (10/13) | Presentations | | 
 | 9 (10/20) | No class | Forum 3 posts | 
-| 10 (10/27) | TBD (Possibly a guest lecture) |  |
-| 11 (11/3) | TBD (possibly a guest lecture) | |
-| 12 (11/10) | Writing workshop: peer feedback |  |
+| 10 (10/27) | Writing workshop: peer feedback (possibly with Learning Center tutors) |  |
+| 11 (11/3) | TBD (hold for guest lecture) | |
+| 12 (11/10) | TBD (hold for guest lecture) |  |
 | 13 (11/17) | Presentations | Forum 4 posts | 
-| 14 (11/24) | No class (Thanksgiving) | Reply to at least 2 classmates in Forum 4 |
+| 14 (11/24) | No class | Reply to at least 2 classmates in Forum 4 |
 | 15 (12/1) | Presentations | Senior thesis draft 2 | 
 | 16 (12/8) | Finals week: meet from 9:30-11:30 if needed | | 
