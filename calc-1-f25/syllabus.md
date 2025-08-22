@@ -9,11 +9,11 @@ Fall 2025
 **Location**: Natural Sciences 3001  
 **Instructor**: Professor Abdul-Quader (or just "Athar")  
 **Email**: athar.abdulquader AT purchase DOT edu  
-**Office Hours**: Mondays and Thursdays, 9:15 - 10:15 NSB 3003  
+**Office Hours**: Mondays and Thursdays, 9:30 - 10:30 NSB 3003  
 
 ## Course Description
 
-**Prerequisite​**: Precalculus  
+**Prerequisite​**: Precalculus
 The basic concepts of the differential and integral calculus. Focus is on the applicability of these topics to an array of problems. The first course in a three-semester series.
 
 ## Learning Outcomes
@@ -63,16 +63,16 @@ We will be using the free website **​DeltaMath​** for online homework. To ac
 
 * 30% Homework and quizzes
   * **Note**: This includes online homework, written homework, and quizzes
-* 10% Classwork and participation
+* 5% Classwork and participation
   * This includes working on problems in small groups and, at times, presenting them on the board
 * 10% Problem Presentations (2 **short** explanations of a homework / exam / other challenging problem, done in class)
 * 20% Mid-semester exams (3 exams during the semester)
-* 20% Final Exam
+* 25% Final Exam
 * 10% Final Paper
-  * 2% Topic statement (**10/17**)
-  * 4% Initial reserach notes / outline (**10/31**)
-  * 4% First draft (**11/21**)
-  * 5% Final paper (**12/12**)
+  * 2% Topic statement
+  * 4% Initial research notes / outline
+  * 4% First draft 
+  * 5% Final paper
 
 ## Calculator Policy
 
@@ -112,15 +112,15 @@ Purchase College has many resources to support our students' wellness and mental
 | 2 | Limits | 2.1 - 2.3 |
 | 3 | Limits and continuity  | 2.4 - 2.5 |
 | 4 | Basic derivatives, derivative rules | 3.1 - 3.4 |
-| 5 | Review, Exam 1 |  |
+| 5 | Review, **Exam 1** |  |
 | 6 | Quotient rule, trig derivatives, chain rule, | 3.3, 3.5, 3.6, 3.8 |
 | 7 | Implicit differentiation Exponential and Logarithmic functions, related rates | 3.9, 4.1 |
 | 8 | More applications of derivatives | 4.1 -  4.5 |
-| 9  | Exam 2; More applications, limits at infinity | Exam 2; 4.6 - 4.8|
+| 9  | **Exam 2**; More applications, limits at infinity | Exam 2; 4.6 - 4.8|
 | 10 | Antiderivatives, areas | 4.10, 5.1 |
 | 11 | Definite integrals and the fundamental theorem of calculus | 5.2 - 5.3|
 | 12 | Evaluating integrals, substitution | 5.4 - 5.5 |
-| 13 | Exam 3, Applications of integrals | Exam 3; online resources |
+| 13 | **Exam 3**, Applications of integrals | Exam 3; online resources |
 | 14 | Review / overflow | |
 | 15 | Review | |
 

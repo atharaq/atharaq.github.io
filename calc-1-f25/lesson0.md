@@ -10,7 +10,24 @@
 
 # Introduction
 
-Welcome to Calculus I! Before we start let's go through some administrative notes:
+Welcome to Calculus I! Let's start with a warm-up activity:
+
+# Warm-up
+
+[Link to warm up activity](lesson0_warmup.html)
+
+# Administrative Notes
+
+Now for the syllabus...
+
+## Class Format
+
+Somewhat of a hybrid format:
+
+* Some lessons: traditional lectures.
+* Some lessons: no lecture, but there will be notes, textbook readings, videos, problems to go through on your own.
+* In lieu of lectures: those days we will have "small group meetings". I will make groups and set times for people to come.
+* First set of meetings: this **Thursday**. I will post groups by Thursday morning on BrightSpace.
 
 ## Office hours
 
@@ -31,21 +48,16 @@ Mondays and Thursdays, 9:15 AM
   * Keep each other on track
   * Share work on exercises
   * Help each other with homework
-* (Exams should be taken individually, of course!)
 
 ## Grading
 
 The syllabus, posted on BrightSpace, lists out the grading scheme. Pay attention to this breakdown: there will be many different forms of assessing your work:
 
 * Homework and quizzes (30%)
-* Classwork / participation / group work (10%)
-* Exams: best 2/3 x 10%, plus final exam (20%)
+* Classwork / participation / group work (5%)
+* Exams: best 2/3 x 10%, plus final exam (25%)
 * Problem presentations (2 x 5%)
 * Final paper (10%)
-
-# Warm-up
-
-[Link to warm up activity](lesson0_warmup.html)
 
 # Functions
 
