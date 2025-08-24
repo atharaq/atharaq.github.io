@@ -43,21 +43,18 @@ Students who desire additional resources can look into other textbooks, but none
 
 ## Required Software
 
-For written homework assignments, students will need to use either a scanner app or a scanner to create a single PDF of all of their work and upload the work to BrightSpace. There are several good scanner apps available for Android and iOS devices:
-* Scannable (iOS)
-* Genius Scan (Android / iOS)
-* CamScanner (Android / iOS)
+For *some* written homework assignments, students will need to use either a scanner app or a scanner to create a single PDF of all of their work and upload the work to BrightSpace. There are several good scanner apps available for Android and iOS devices, including CamScanner, Genius Scan, Adobe Scan and Microsoft Lens.
 
 ## DeltaMath Online Homework
 
 <!-- TODO: Fix the links here!!! -->
 
-We will be using the free website **​DeltaMath​** for online homework. To access this software, you can [create a free student account using this link](...). If the above link does not work, use the following steps:
+We will be using the free website **​DeltaMath​** for online homework. To access this software, you can [create a free student account using this link](https://www.deltamath.com/students?code=A3QF-453Q). If the above link does not work, use the following steps:
 
 1. Go to [​www.deltamath.com](https://www.deltamath.com)
 2. Click “For students" and then "Register".
-3. Enter Teacher Code ​**...**.
-4. Select MAT 1500 Fall 2025 for “Class” and register using your **purchase.edu** email address please!
+3. Enter Teacher Code ​**357935**.
+4. Select MAT 1500 Calculus 1 Fall 2025 for “Class” and register using your **purchase.edu** email address please!
 
 ## Grading Rubric
 
@@ -76,11 +73,11 @@ We will be using the free website **​DeltaMath​** for online homework. To ac
 
 ## Calculator Policy
 
-A graphing calculator is required for this course. You are welcome to use online calculators like [Desmos](https://www.desmos.com). If you would like an actual calculator, I recommend getting a TI-83+ or TI-84+. Unless otherwise specified, calculators are allowed for all assignments, including exams and quizzes.
+A graphing calculator is required for this course. You are welcome to use online calculators like [Desmos](https://www.desmos.com) on homework assignments. For exams, I recommend the TI-84+ CE or the Casio fx-9750GIII. Unless otherwise specified, calculators are allowed for all assignments, including exams and quizzes.
 
 ## Attendance
 
-I understand that there may be times you miss a class due to emergencies, illnesses, and other reasons. For this reason, I post the lecture notes online and on Moodle. If you miss a class, be sure to submit any work that was due that day, find out what work you missed, and catch yourself up. You can use my office hours, the LA's office hours, and the tutoring center to help catch you up.
+I understand that there may be times you miss a class due to emergencies, illnesses, and other reasons. For this reason, I post the lecture notes online and on Moodle. If you miss a class, be sure to submit any work that was due that day, find out what work you missed, and catch yourself up. You can use my office hours and the tutoring center to help catch you up.
 
 ## Late Homework Policy
 
