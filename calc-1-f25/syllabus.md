@@ -9,7 +9,7 @@ Fall 2025
 **Location**: Natural Sciences 3001  
 **Instructor**: Professor Abdul-Quader (or just "Athar")  
 **Email**: athar.abdulquader AT purchase DOT edu  
-**Office Hours**: Mondays and Thursdays, 9:30 - 10:30 NSB 3003  
+**Office Hours**: Mondays and Thursdays, 9:15 - 10:15 NSB 3003  
 
 ## Course Description
 
