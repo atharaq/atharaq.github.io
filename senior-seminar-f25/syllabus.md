@@ -61,9 +61,9 @@ All students at Purchase College can take advantage of our tutoring services in 
 * Attendance and punctuality are mandatory for every class.
 * Your presence is vital for participation in varied learning activities and small-group work.
 * Attendance will be taken at the beginning of every class.
-* Late arrivals (more than 10 mins), early departures (more than 10 mins), long breaks (more than 10 mins) may result in 50% deduction in attendance category.
+* Late arrivals (more than 10 mins), early departures (more than 10 mins), long breaks (more than 10 mins) count as half an absence (see "Grading" below)
 * If you miss class, please don’t ask me if you missed anything important; each class covers important material.
-* If you miss class, it is your responsibility to find out from classmates what you missed and submit assignments on time.
+* If you miss class, it is your responsibility to find out (from classmates, BrightSpace, etc) what you missed and submit assignments on time.
 
 # Senior Project
 
