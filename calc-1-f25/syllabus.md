@@ -77,7 +77,7 @@ A graphing calculator is required for this course. You are welcome to use online
 
 ## Attendance
 
-I understand that there may be times you miss a class due to emergencies, illnesses, and other reasons. For this reason, I post the lecture notes online and on Moodle. If you miss a class, be sure to submit any work that was due that day, find out what work you missed, and catch yourself up. You can use my office hours and the tutoring center to help catch you up.
+I understand that there may be times you miss a class due to emergencies, illnesses, and other reasons. For this reason, I post the lecture notes online and on BrightSpace. If you miss a class, be sure to submit any work that was due that day, find out what work you missed, and catch yourself up. You can use my office hours and the tutoring center to help catch you up.
 
 ## Late Homework Policy
 
