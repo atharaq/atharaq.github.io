@@ -147,7 +147,7 @@ What do we even mean by this?
 
 By definition: as $x$ gets closer to $2$ (from either the right or the left), what does $f(x)$ get closer to?
 
-Pick soem values close to 2. Try:
+Pick some values close to 2. Try:
 
 * $x = 1.9$
 * $x = 1.99$
