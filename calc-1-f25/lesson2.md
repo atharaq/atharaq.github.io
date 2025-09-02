@@ -44,6 +44,21 @@ Students often have trouble computing logarithms. This is because logarithms are
 
 We use this same intuition to figure out inverse trig functions. For example, $\arcsin(1) = \pi/2$, because $\sin(\pi/2) = 1$. Similar to the parabola above, trig functions do not have inverses unless we restrict the domain of the functions. [Review the restricted domains of inverse trigonometric functions in the textbook](https://openstax.org/books/calculus-volume-1/pages/1-4-inverse-functions#fs-id1170572141300).
 
+# Recall: Ideas of Calculus
+
+Main ideas:
+
+* Derivatives: slope of the line tangent to a curve at a point.
+  * To find the slope of the tangent line at $x = a$, take secant lines near $x = a$.
+  * Algebraic formula for the slopes of the secant lines: $\frac{f(b) - f(a)}{b - a}$. 
+  * As $b$ gets closer to $a$, then this approaches the slope of the tangent line at $x = a$.
+* Integrals: area under a curve.
+  * Between $x = a$ and $x = b$: pick some points.
+  * Draw rectangles that approximate the area.
+  * As we pick more and more points, apprxoimations approach the actual area.
+
+Below we dive deeper on the derivative:
+
 # Derivatives: Rates of Change
 
 To discuss the notion of "rate of change" more precisely, let's talk about a specific example. Let's say we drop a ball from a height of 45 meters. Its height (in meters), $t$ seconds later, is (roughly) given by the equation
@@ -122,9 +137,65 @@ Thirdly, a function can approach a limit that is different from the actual value
 
 Lastly, the best possible behavior regarding limits of a function is if the function simply approaches the actual value of the function there. That is, if ${\displaystyle \lim_{x \rightarrow a}} f(x) = f(a)$. Obviously this option is quite nice, and so we will often want functions that have this behavior. We will call this property *continuity*, and this will be an important subject during this semester.
 
-Before we close, let's go through some exercises involving *piecewise functions*, functions whose values are determined differently on different parts of their domains.
+## Example
+
+$f(x) = 2x - 1$. Graph it.
+
+What is the ${\displaystyle \lim_{x \rightarrow 2}} f(x)$?
+
+What do we even mean by this?
+
+By definition: as $x$ gets closer to $2$ (from either the right or the left), what does $f(x)$ get closer to?
+
+Pick soem values close to 2. Try:
+
+* $x = 1.9$
+* $x = 1.99$
+* $x = 1.999$
+
+And:
+
+* $x = 2.1$
+* $x = 2.01$
+* $x = 2.001$
+
+Both approach 3. In fact, it just so happens that $f(2) = 3$. (As we will mention, this is a nice property to have, but it doesn't always happen.) More importantly, in terms of **limits**, we just want to show that we can make $f(x)$ as close to $y = 3$ as we want, by picking $x$ values very close to $x = 2$. That is:
+
+Suppose we want to be within $0.1$ of $y = 3$. That is, we want $f(x)$ to stay in the interval $(2.9, 3.1)$. We just need to make sure that $x$ stays in the interval $(1.95, 2.05)$. This is what a limit actually means: for any small interval around the target $y$-value, there is a corresponding interval around the $x$ value we are approaching that keeps the function within a small "box".
+
+## Computing Limits
+
+3 ways to compute limits:
+
+1. Direct substitution
+2. Algebraic manipulation
+3. Squeeze Theorem
+
+Eventually: 4th way (l'Hôpital's rule). If you know that: don't use it yet.
+
+## Direct Substitution
+
+Easiest method. Works for "nicely behaved functions":
+
+* Polynomials
+* Rational functions, if the denominator is not 0
+* sin, cos, tan (if defined)
+* exponential, logarithmic functions (if defined)
+
+These functions are *continuous*.
+
+## Algebraic Manipulation
+
+* Can we cancel something?
+* Can we multiply by a **conjugate**?
+
+In other words: can we make our function equivalent to one of the ones where we can use direct substitution, except possibly at one, isolated point? Example: $f(x) = \frac{x^2 - 1}{x - 1}$. What does the graph look like? This function is **identical** to $f(x) = x + 1$ except in one important (if obvious) way.
+
+(Later: squeeze theorem.)
 
 ## Exercise
+
+Before we close, let's go through some exercises involving *piecewise functions*, functions whose values are determined differently on different parts of their domains.
 
 For the following functions, find the left-hand, right-hand, and two-sided limits, if they exist:
 
