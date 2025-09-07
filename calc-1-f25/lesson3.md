@@ -73,7 +73,7 @@ Use algebraic manipulation to compute these limits:
 
 ${\displaystyle \lim_{x \rightarrow 4}}\frac{\sqrt{x} - 2}{x -4}$
 
-Direct substitution? $\frac{2-2}{4-4}$ Indeterminate.
+Direct substitution? $\frac{2-2}{4-4}$ Indeterminate, direct substitution fails!
 
 Use algebra: multiply by the **conjugate** of $\sqrt{x}-2$:
 
