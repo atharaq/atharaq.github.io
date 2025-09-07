@@ -62,14 +62,14 @@ In other words: can we make our function equivalent to one of the ones where we 
 
 (Later: squeeze theorem.)
 
-# Exercise
+## Exercise
 
 Use algebraic manipulation to compute these limits:
 
 * ${\displaystyle \lim_{x\rightarrow 2}} \frac{x^2-4x+4}{x^2-4}$
 * ${\displaystyle \lim_{x\rightarrow 0}} \frac{x}{x^3}$
 
-## Conjugates
+# Conjugates
 
 ${\displaystyle \lim_{x \rightarrow 4}}\frac{\sqrt{x} - 2}{x -4}$
 
