@@ -257,7 +257,7 @@ Recall that $(x^2)^\prime = 2x$, and for any linear function, $(mx + b)^\prime =
 </ol>
 </details>
 
-# Homework Due Monday, 9/26
+# Homework Due Monday, 9/22
 
 As before, write your work neatly on paper and **staple** all the pages together. Make sure your name is on top!
 
@@ -265,11 +265,11 @@ As before, write your work neatly on paper and **staple** all the pages together
 * Section 3.1 \#26, 51
 * Section 3.2 \#58, 66, 94
 
-Please also note that there is a homework on DeltaMath due **Thursday, 9/22** at 11:59 PM.
+Please also note that there is a homework on DeltaMath due **Thursday, 9/18** at 11:59 PM.
 
 ## Upcoming
 
 * Quiz 1 on Thursday.
   * In-class, 15 minutes.
   * After it's graded, you can make it up for full credit for homework.
-* Exam 1: given next **Thursday, 9/29**, due **Monday, 10/3**.
+* Exam 1: in **two weeks** (September 29)
