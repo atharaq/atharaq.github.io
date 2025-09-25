@@ -98,10 +98,10 @@ Take a look at the following graphs.
 
 What does the derivative of each of these graphs represent? What stands out to you about these derivatives?
 
-Sources:
-
-* [Covid Graph 1: Total Cases in NY (excluding NYC) over Time, Jan 2020 - Sept 2022](https://covid.cdc.gov/covid-data-tracker/#trends_totalcases_select_36)
-* [Covid Graph 2: Daily Cases in NY (excluding NYC) over Time, Jan 2020 - Sept 2022](https://covid.cdc.gov/covid-data-tracker/#trends_dailycases_select_36)
+<!-- Sources: -->
+<!--  -->
+<!-- * [Covid Graph 1: Total Cases in NY (excluding NYC) over Time, Jan 2020 - Sept 2022](https://covid.cdc.gov/covid-data-tracker/#trends_totalcases_select_36) -->
+<!-- * [Covid Graph 2: Daily Cases in NY (excluding NYC) over Time, Jan 2020 - Sept 2022](https://covid.cdc.gov/covid-data-tracker/#trends_dailycases_select_36) -->
 
 # Tangent Lines
 
