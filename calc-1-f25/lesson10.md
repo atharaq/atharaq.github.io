@@ -72,7 +72,7 @@ Many others. Do some initial research on history of calculus and see what piques
 
 ## Topic Statement
 
-**Due October 23**. Pick a **specific** topic you'd like to study. Narrow it down as much as you can, and give a short summary of what you'll study.
+**Due October 20**. Pick a **specific** topic you'd like to study. Narrow it down as much as you can, and give a short summary of what you'll study.
 
 * Not just "Calculus in the news", but "I'll be studying trends in inflation in different sectors of the economy over the last 30 years."
 * Not just "History", but: "I will be studying the contributions of Maria Gaetana Agnessi to the development of calculus."
