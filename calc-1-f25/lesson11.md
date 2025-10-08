@@ -146,7 +146,7 @@ This is worth re-iterating: the key fact about exponential functions is that the
 
 Next time we will study derivatives of exponential functions and their inverses, logarithmic functions. Please review [Section 1.5 on exponential and logarithmic functions](https://openstax.org/books/calculus-volume-1/pages/1-5-exponential-and-logarithmic-functions) as well as [Section 3.9 on the derivatives of exponential and logarithmic functions](https://openstax.org/books/calculus-volume-1/pages/3-9-derivatives-of-exponential-and-logarithmic-functions).
 
-# Reminders
+# Reminders / Homework
 
 1. DeltaMath due Monday (10/13)
 2. Topic statement due following Monday (10/20)
