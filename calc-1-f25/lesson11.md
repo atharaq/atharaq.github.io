@@ -151,3 +151,7 @@ Next time we will study derivatives of exponential functions and their inverses,
 1. DeltaMath due Monday (10/13)
 2. Topic statement due following Monday (10/20)
 3. Presentation 1 starting next week.
+4. Written Homework 5 due next Thursday (10/16):
+   * Section 3.5: #180, 192, 201
+   * Section 3.6: #230, 232, 248, 254
+   * Section 3.8: #302, 316, 325
