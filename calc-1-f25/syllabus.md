@@ -66,9 +66,9 @@ We will be using the free website **​DeltaMath​** for online homework. To ac
 * 20% Mid-semester exams (3 exams during the semester)
 * 25% Final Exam
 * 10% Final Paper
-  * 2% Topic statement
-  * 4% Initial research notes / outline
-  * 4% First draft 
+  * 1% Topic statement / sources
+  * 2% Initial research notes / outline
+  * 2% First draft 
   * 5% Final paper
 
 ## Calculator Policy
