@@ -11,6 +11,7 @@ A very non-exhaustive list of recent talks is included here:
 * [Representations of Lattices Part II (April 2024)](Representations_of_Lattices_II.pdf) (MOPA Seminar)
 * [The Lattice Problem for Models of PA (Feb 2025)](The_Lattice_Problem.pdf) (Wesleyan / CT Logic Seminar)
 * [Nonstandard numbers (April 2025)](hofstra.pdf) (Hofstra Mathematics Department Seminar)
-* [Hajj Reflections (Sept 2025)](Hajj.pptx) (Guest Lecture in "Travel and Tourism", Purchase College)
+<!-- * [Hajj Reflections (Sept 2025)](Hajj.pptx) (Guest Lecture in "Travel and Tourism", Purchase College) -->
+* [Nonstandard Models, Part II (October 2025)](hofstra2.pdf) (Hofstra Mathematics Department Seminar)
 
 I also co-host (with Roman Kossak and Vika Gitman) an online seminar on Models of Peano Arithmetic. The [schedule of the talks is listed here](https://nylogic.github.io/MOPA.html) and most of the talks are posted on [this YouTube channel](https://www.youtube.com/@nylogic8687).
