@@ -84,7 +84,7 @@ We are now ready to start our unit on applications of derivatives. Our first set
 
 **Example**: A 10-ft ladder is leaning against a wall. If the top of the ladder slides down the wall at a rate of 2 ft/sec, how fast is the bottom moving along the ground when the bottom of the ladder is 5 ft from the wall?
 
-<img src="https://openstax.org/resources/5985bce6625143cae885714f862041da23457e09" data-media-type="image/jpeg" alt="A right triangle is formed by a ladder leaning up against a brick wall. The ladder forms the hypotenuse and is 10 ft long." />
+<img src="https://openstax.org/apps/image-cdn/v1/f=webp/apps/archive/20250916.165151/resources/5985bce6625143cae885714f862041da23457e09" data-media-type="image/jpeg" alt="A right triangle is formed by a ladder leaning up against a brick wall. The ladder forms the hypotenuse and is 10 ft long." />
 
 ## Solution
 
