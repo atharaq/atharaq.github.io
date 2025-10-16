@@ -14,6 +14,17 @@ Find the derivatives of the following:
 2. $g(x) = 3e^{-x}$
 3. $h(x) = \ln(2x)$
 
+What do we notice about this last derivative? Any idea why this is the case?
+
+**Example**: $y = \ln(x^2)$. (If you know the rules for logarithms, you might find a way to simplify this function.)
+
+By the chain rule, $y^\prime = \frac{1}{x^2} \cdot 2x$. This simplifies to $\frac{2}{x}$.
+
+It turns out that this is exactly $2 \cdot (\ln(x))^\prime$. In fact, one of the rules for logarithms is $\ln(a^b) = b \ln(a)$. Therefore:
+
+* $\ln(x^2) = 2 \ln(x)$
+* $(2 \ln(x))^\prime = 2 \cdot \frac{1}{x}$, using the constant multiple rule!
+
 # Other bases: Logarithmic Differentiation
 
 So far, we know a couple of things:
