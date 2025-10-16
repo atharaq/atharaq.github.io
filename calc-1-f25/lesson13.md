@@ -124,3 +124,10 @@ A better idea would be to reason *implicitly*. Use $x^2 + y^2 = 100$, take the d
 ## YouTube Playlist
 
 Related Rates is a challenging topic, so I suggest the following resource that I found helpful: [patrickJMT's playlist of related rates problems](https://www.youtube.com/watch?v=jv4gTxWqeBE&list=PLDC0E2E78840869A5). There are 8 videos in this playlist, going through a few different types of related rates problems. We will continue to do more on Thursday.
+
+# Upcoming
+
+1. Topic description + sources due Monday (10/20)
+2. DeltaMath HW 8 due Monday (10/20)
+3. Quiz sometime next week
+4. Next exam will in roughly 2.5 weeks.
