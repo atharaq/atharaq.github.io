@@ -24,7 +24,7 @@ layout: default
 * [Lesson 11: Implicit Differentiation and review of exponential functions](lesson11.html)
 * [Lesson 12: Exponential Functions](lesson12.html)
 * [Lesson 13: Logarithmic Differentiation](lesson13.html) 
-<!-- * [Lesson 14: Related Rates](lesson14.html) -->
+* [Lesson 14: Related Rates](lesson14.html)
 <!-- * [Lesson 15: Optimization and Linear Approximation](lesson15.html) -->
 <!-- * [Lesson 16: Mean Value Theorem](lesson16.html) -->
 <!-- * [Lesson 17: Applied Optimization](lesson17.html) -->
