@@ -6,6 +6,8 @@
 
 # Presentations
 
+# Quiz?
+
 # Related Rates
 
 We are now ready to start our unit on applications of derivatives. Our first set of applications come from **related rates**. These are problems where multiple rates of change are related to one another in some equations.
@@ -192,7 +194,6 @@ How can you tell when a point is a local min or local max?
 
 * DeltaMath due tonight
 * Topic + Sources for final paper due tonight
-* Quiz on Thursday
 * Homework 6, due next Monday:
    * Section 3.9 #332, 334, 343
    * Section 4.1 #12, 13
