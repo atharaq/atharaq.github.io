@@ -58,7 +58,7 @@ In small groups:
 
 Water is draining from the bottom of a cone-shaped funnel at the rate of 0.05 $\mathrm{ft}^3 / \mathrm{sec}$. The height of the funnel is 2 ft and the radius at the top of the funnel is 1ft. At what rate is the height of the water in the funnel changing when the height of the water is $\frac{1}{2}$ ft?
 
-<img src="https://openstax.org/resources/3cc93b86da3e1bb1b4269fb6c1adac832bad6253" data-media-type="image/jpeg" alt="A funnel is shown with height 2 and radius 1 at its top. The funnel has water to height h, at which point the radius is r." />
+<img src="https://openstax.org/apps/image-cdn/v1/f=webp/apps/archive/20250916.165151/resources/3cc93b86da3e1bb1b4269fb6c1adac832bad6253" data-media-type="image/jpeg" alt="A funnel is shown with height 2 and radius 1 at its top. The funnel has water to height h, at which point the radius is r." />
 
 To declare our variables:
 
@@ -154,7 +154,7 @@ Points satisfying (2) or (3) are called **critical points** of $f$.
 
 ## Critical Points
 
-<img src="https://openstax.org/resources/e585f057904f6a4921f41459177c281a6e560558" data-media-type="image/jpeg" alt="The function f(x) is shown, which curves upward from quadrant III, slows down in quadrant II, achieves a local maximum on the y-axis, decreases to achieve a local minimum in quadrant I at x = 1, increases to a local maximum at x = 2 that is greater than the other local maximum, and then decreases rapidly through quadrant IV." >
+<img src="https://openstax.org/apps/image-cdn/v1/f=webp/apps/archive/20250916.165151/resources/e585f057904f6a4921f41459177c281a6e560558" data-media-type="image/jpeg" alt="The function f(x) is shown, which curves upward from quadrant III, slows down in quadrant II, achieves a local maximum on the y-axis, decreases to achieve a local minimum in quadrant I at x = 1, increases to a local maximum at x = 2 that is greater than the other local maximum, and then decreases rapidly through quadrant IV." >
 
 ## Example
 
@@ -188,7 +188,7 @@ Take a look at the graph:
 
 How can you tell when a point is a local min or local max?
 
-<img src="https://openstax.org/resources/a60e8cf30409df9c4c687f5fcde44a2584ce2864" data-media-type="image/jpeg" alt="This figure has five parts a, b, c, d, and e. In figure a, a parabola is shown facing down in quadrant I; there is a horizontal tangent line at the local maximum marked f’(c) = 0. In figure b, there is a function drawn with an asymptote at c, meaning that the function increases toward infinity on both sides of c; it is noted that f’(c) is undefined. In figure c, a version of the absolute value graph is shown that has been shifted so that its minimum is in quadrant I with x = c. It is noted that f’(c) is undefined. In figure d, a version of the function f(x) = x3 is shown that has been shifted so that its inflection point is in quadrant I with x = c. Its inflection point at (c, f(c)) has a horizontal line through it, and it is noted that f’(c) = 0. In figure e, a version of the function f(x) = x1/3 is shown that has been shifted so that its inflection point is in quadrant I with x = c. Its inflection point at (c, f(c)) has a vertical line through it, and it is noted that f’(c) is undefined." id="10">
+<img src="https://openstax.org/apps/image-cdn/v1/f=webp/apps/archive/20250916.165151/resources/a60e8cf30409df9c4c687f5fcde44a2584ce2864" data-media-type="image/jpeg" alt="This figure has five parts a, b, c, d, and e. In figure a, a parabola is shown facing down in quadrant I; there is a horizontal tangent line at the local maximum marked f’(c) = 0. In figure b, there is a function drawn with an asymptote at c, meaning that the function increases toward infinity on both sides of c; it is noted that f’(c) is undefined. In figure c, a version of the absolute value graph is shown that has been shifted so that its minimum is in quadrant I with x = c. It is noted that f’(c) is undefined. In figure d, a version of the function f(x) = x3 is shown that has been shifted so that its inflection point is in quadrant I with x = c. Its inflection point at (c, f(c)) has a horizontal line through it, and it is noted that f’(c) = 0. In figure e, a version of the function f(x) = x1/3 is shown that has been shifted so that its inflection point is in quadrant I with x = c. Its inflection point at (c, f(c)) has a vertical line through it, and it is noted that f’(c) is undefined." id="10">
 
 # Upcoming
 
