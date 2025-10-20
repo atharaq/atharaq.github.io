@@ -194,7 +194,12 @@ How can you tell when a point is a local min or local max?
 
 * DeltaMath due tonight
 * Topic + Sources for final paper due tonight
-* Homework 6, due next Monday:
+* Homework 6, due next Monday (10/27):
    * Section 3.9 #332, 334, 343
    * Section 4.1 #12, 13
 * DeltaMath due next Thursday (10/30)
+* Exam 2 on November 3
+* School/departmental announcements:
+   * NSS Fall Lecture Series today: "Creating Leaders Who Can Be Effective Change Agents" (5 PM, Social Sciences 1001)
+   * "Shark Tank" Info Sessions (today on Zoom at 7 PM, tomorrow at 3 PM Social Sciences 1038)
+   * Math/CS Dept Lecture: "Scaling Your Career Brand" (11/3 at 12:30 PM here)
