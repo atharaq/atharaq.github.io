@@ -128,7 +128,7 @@ Let $[a, b]$ be an interval. The function $f(x)$ has an **absolute maximum** ove
 
 We can also study "local" maxima and minima: a function $f(x)$ has a **local maximum** at a point $c$ if there is an interval $(a, b)$ around $c$ such that $f(x) \leq f(c)$ for all $a < x < b$. We can similarly define **local minimum**. Take a look at the following figure [from the textbook, section 4.3](https://openstax.org/books/calculus-volume-1/pages/4-3-maxima-and-minima):
 
-<img src="https://openstax.org/resources/e585f057904f6a4921f41459177c281a6e560558" data-media-type="image/jpeg" alt="The function f(x) is shown, which curves upward from quadrant III, slows down in quadrant II, achieves a local maximum on the y-axis, decreases to achieve a local minimum in quadrant I at x = 1, increases to a local maximum at x = 2 that is greater than the other local maximum, and then decreases rapidly through quadrant IV." />
+<img src="https://openstax.org/apps/image-cdn/v1/f=webp/apps/archive/20250916.165151/resources/e585f057904f6a4921f41459177c281a6e560558" data-media-type="image/jpeg" alt="The function f(x) is shown, which curves upward from quadrant III, slows down in quadrant II, achieves a local maximum on the y-axis, decreases to achieve a local minimum in quadrant I at x = 1, increases to a local maximum at x = 2 that is greater than the other local maximum, and then decreases rapidly through quadrant IV." />
 
 We know:
 
