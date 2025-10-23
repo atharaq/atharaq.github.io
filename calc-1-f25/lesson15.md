@@ -206,8 +206,7 @@ Take a look at exercises 190-191 in [Section 4.4 of the textbook](https://openst
 Topics:
 
 * Applying the MVT: increasing / decreasing / constant intervals, first derivative and second derivative test, concavity
-* Review / Exam 2
-* Applied optimization problems
+* Exam 2
 
 Upcoming Work:
 
