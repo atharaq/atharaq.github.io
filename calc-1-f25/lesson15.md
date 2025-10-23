@@ -4,7 +4,7 @@
 1. Table of Contents
 {:toc}
 
-# Presentaions
+# Presentations
 
 # Warm-up
 
