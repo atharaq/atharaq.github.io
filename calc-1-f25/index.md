@@ -26,7 +26,7 @@ layout: default
 * [Lesson 13: Logarithmic Differentiation](lesson13.html) 
 * [Lesson 14: Related Rates](lesson14.html)
 * [Lesson 15: Optimization and Linear Approximation](lesson15.html)
-<!-- * [Lesson 16: Mean Value Theorem](lesson16.html) -->
+* [Lesson 16: Mean Value Theorem](lesson16.html)
 <!-- * [Lesson 17: Applied Optimization](lesson17.html) -->
 <!-- * [Lesson 18: Limits at Infinity](lesson18.html) -->
 <!-- * [Lesson 19: Antiderivatives](lesson19.html) -->
