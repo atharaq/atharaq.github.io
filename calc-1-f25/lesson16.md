@@ -4,6 +4,10 @@
 1. Table of Contents
 {:toc}
 
+# Warm Up
+
+Find the linear approximation (the equation of the tangent line) to $f(x) = 2\sin(2x)$ at $x = \frac{\pi}{2}$. Use this to approximate $f(1.5)$, using the approximation that $\frac{\pi}{2} \approx 1.57$.
+
 # Homework questions?
 
 # The Mean Value Theorem and its applications
