@@ -34,7 +34,7 @@
 
 An island is 2mi due north of its closest point along a straight shoreline. A visitor is staying at a cabin on the shore that is 6mi west of that point. The visitor is planning to go from the cabin to the island. Suppose the visitor runs at a rate of 8mph and swims at a rate of 3mph. How far should the visitor run before swimming to minimize the time it takes to reach the island?
 
-![Running and Swimming Picture](https://openstax.org/apps/image-cdn/v1/f=webp/apps/archive/20250916.165151/resources/d894012fd6e414e50b061ed4910e7470b7ce8065)\
+![Running and Swimming Picture](https://openstax.org/apps/image-cdn/v1/f=webp/apps/archive/20250916.165151/resources/d894012fd6e414e50b061ed4910e7470b7ce8065)
 
 **Attempt 1**: Swim straight there?
 
