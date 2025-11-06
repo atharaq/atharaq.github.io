@@ -7,11 +7,11 @@
 # Upcoming
 
 * Rough Draft (Monday, **November 24**) (2.5 weeks)
-* Problem Presentation 2: **Friday, December 2**
+* Problem Presentation 2: **11/17, 11/20, 11/24**
 * Exam 3: **12/1** (3.5 weeks)
 * Final Paper: due **Monday, December 8** (4.5 weeks)
 * Final Exam: **12/11** (5 weeks)
-* As always: if you need help, flexibility with deadlines, heads up about what's upcoming, etc, just ask!
+* As always: if you need help, heads up about what's upcoming, etc, just ask!
 
 ## Advising / Registration Spring 2026
 
