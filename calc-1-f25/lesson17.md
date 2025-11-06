@@ -57,7 +57,7 @@ Better than swimming straight there. But is that the **best** option?
 * Time: $\frac{x}{8} + \frac{y}{3}$.
 * What is $y$ in terms of $x$?
 
-![Running and Swimming Picture](hhttps://openstax.org/apps/image-cdn/v1/f=webp/apps/archive/20250916.165151/resources/d894012fd6e414e50b061ed4910e7470b7ce8065)\
+![Running and Swimming Picture](hhttps://openstax.org/apps/image-cdn/v1/f=webp/apps/archive/20250916.165151/resources/d894012fd6e414e50b061ed4910e7470b7ce8065)
 
 * Swap $x$ and $(6-x)$, makes the calculation easier.
 * Run $6 - x$ miles, swim $y$ miles.
