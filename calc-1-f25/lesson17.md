@@ -124,7 +124,7 @@ Why do bees make honeycombs using hexagons?
 
 Circles?
 
-![Circle Tiling](https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Circles_packed_in_square_15.svg/200px-Circles_packed_in_square_15.svg.png)\
+![Circle Tiling](https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Circles_packed_in_square_15.svg/200px-Circles_packed_in_square_15.svg.png)
 
 Lots of wasted space.
 
