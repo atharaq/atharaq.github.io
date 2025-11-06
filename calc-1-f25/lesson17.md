@@ -113,7 +113,7 @@ Can you make a general conjecture and prove it?
 
 Why do bees make honeycombs using hexagons?
 
-![Hexagon Tiling](https://en.wikipedia.org/wiki/Hexagonal_tiling#/media/File:Tiling_Regular_6-3_Hexagonal.svg)
+![Hexagon Tiling](https://upload.wikimedia.org/wikipedia/commons/5/53/Tiling_Regular_6-3_Hexagonal.svg)
 
 ## Optimization Problem
 
