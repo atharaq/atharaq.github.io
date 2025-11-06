@@ -113,11 +113,11 @@ Can you make a general conjecture and prove it?
 
 Why do bees make honeycombs using hexagons?
 
-![Hexagon Tiling](https://en.wikipedia.org/wiki/Hexagonal_tiling#/media/File:Tiling_Regular_6-3_Hexagonal.svg)\
+![Hexagon Tiling](https://en.wikipedia.org/wiki/Hexagonal_tiling#/media/File:Tiling_Regular_6-3_Hexagonal.svg)
 
 ## Optimization Problem
 
-* Find the smallest amount beeswax needed to create the largest honeycomb cells.
+* Find the smallest amount beeswax nee  ded to create the largest honeycomb cells.
 * **Honeycomb Conjecture**: a hexagonal grid is the most efficient way to divide a plane into equal areas, with minimal perimeter
 * First Conjectured in antiquity (36 BC?)
 * Proven in 1999! Thomas Hales (University of Pittsburgh)
@@ -128,11 +128,7 @@ Circles?
 
 Lots of wasted space.
 
-There are two other ways to **tile the plane** using regular polygons: squares and triangles.
-
-![Square Tiling](https://i.stack.imgur.com/p3wFT.png)
-
-But the hexagonal one uses less perimeter for the same areas.
+There are two other ways to **tile the plane** using regular polygons: squares and triangles. But the hexagonal one uses less perimeter for the same areas.
 
 ## Other ways?
 
