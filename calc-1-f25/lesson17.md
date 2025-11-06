@@ -130,7 +130,7 @@ Lots of wasted space.
 
 There are two other ways to **tile the plane** using regular polygons: squares and triangles.
 
-![Square Tiling](https://i.stack.imgur.com/p3wFT.png)\
+![Square Tiling](https://i.stack.imgur.com/p3wFT.png)
 
 But the hexagonal one uses less perimeter for the same areas.
 
