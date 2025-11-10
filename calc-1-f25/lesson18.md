@@ -12,6 +12,14 @@ Follow-up: what if she wishes to use a "corner"? In other words, if she needs to
 
 # Exam Questions
 
+# Presentation 2 Reminder
+
+Starting next week. Schedule?
+
+* Monday 11/17: 5 students
+* Thursday 11/20: 5 students
+* Monday 11/24: 6 students
+
 # Limits at Infinity
 
 <div class="youtube-container">
@@ -170,3 +178,4 @@ $$
    * Section 4.6 #262, 264
    * Section 4.7 #320, 326, 332, 334
    * Section 4.8 #358, 374, 380, 388
+3. Presentation 2: starting next week.
