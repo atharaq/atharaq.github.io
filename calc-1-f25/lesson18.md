@@ -6,9 +6,9 @@
 
 # Warm Up
 
-A 100' by 200' yard is fenced off. The owner wishes to use a corner of that property for a garden. The owner has 60 feet of fencing. Since the outsides are already fenced off, she only needs to fence off two sides. What is the area of the largest garden she can make?
+A 100' by 200' yard is fenced off. The owner wishes to use part of the back of the property for a garden. She has 60 feet of fencing. Since the back is already fenced off, she only needs to fence off three sides. What is the area of the largest garden she can make?
 
-Follow-up: what if she doesn't wish to use the corner, but just wishes to use the "back" side? In other words, if she needs to fence off three sides?
+Follow-up: what if she wishes to use a "corner"? In other words, if she needs to fence off two sides?
 
 # Limits at Infinity
 
