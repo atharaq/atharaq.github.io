@@ -29,7 +29,7 @@ layout: default
 * [Lesson 16: Mean Value Theorem](lesson16.html)
 * [Lesson 17: Applied Optimization](lesson17.html)
 * [Lesson 18: Limits at Infinity](lesson18.html)
-<!-- * [Lesson 19: Antiderivatives](lesson19.html) -->
+* [Lesson 19: Antiderivatives](lesson19.html)
 <!-- * [Lesson 20: Areas / Definite Integrals](lesson20.html) -->
 <!-- * [Lesson 21: Definite Integrals + FTC](lesson21.html) -->
 <!-- * [Lesson 22: Applications of Integrals; Substitution](lesson22.html) -->
