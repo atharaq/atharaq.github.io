@@ -8,7 +8,8 @@
 
 Use l'Hopital's rule to compute the following limits:
 
-1. 
+1. $\lim\limits_{x \rightarrow 3} \dfrac{2\tan(6 - 2x)}{3e^{x - 3} - 3}$. (Recall: the derivative of $\tan(x)$ is $\sec^2(x)$.)
+2. $\lim\limits_{x \rightarrow \infty} x e^{1 / x}$. (Hint: write this as a fraction).
 
 ## Questions?
 
