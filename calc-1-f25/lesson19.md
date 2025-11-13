@@ -27,12 +27,12 @@ As we've mentioned earlier in the semester, the two main topics in calculus are 
 
 **Example**: Find an antiderivative of $f(x) = 1$.
 
-* $F(x) = x$ is an antiderivative of $f(x), since $F^\prime(x) = 1$.
+* $F(x) = x$ is an antiderivative of $f(x)$, since $F^\prime(x) = 1$.
 * $G(x) = x + 1$ is also an antiderivative of $f(x)$, since $G^\prime(x) = 1$ also!
 
 In general, functions do not have just **one** antiderivative. As we've seen, $f^\prime(x) = g^\prime(x)$ means that $f$ and $g$ differ by a constant. That means all antiderivatives of the same function also differ by a constant.
 
-We write this using "indefinite integral" notation: $\int f(x) dx = F(x) + C$, if $F(x)$ is an antiderivative of $f(x). We will explore a few examples of functions and see if we can spot some patterns for antiderivatives. In general, we just need to find *one* antiderivative, and all others differ from that by some constant.
+We write this using "indefinite integral" notation: $\int f(x) dx = F(x) + C$, if $F(x)$ is an antiderivative of $f(x)$. We will explore a few examples of functions and see if we can spot some patterns for antiderivatives. In general, we just need to find *one* antiderivative, and all others differ from that by some constant.
 
 ## Reverse Power Rule
 
