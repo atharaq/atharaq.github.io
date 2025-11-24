@@ -186,6 +186,6 @@ Next time, we will look at using substitution with definite integrals.
 # Upcoming
 
 * Rough draft due tonight.
-* DeltaMath due **Monday**.
+* DeltaMath due **next Thursday, 12/4**. Do as much as you can now to practice for the exam next week.
 * Exam 3 **next Monday**.
 * Final paper due in two weeks.
