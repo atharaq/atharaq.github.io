@@ -8,11 +8,12 @@
 
 # Warm Up
 
-Using the fundamental theorem of calculus, compute the following definite integrals:
+Using the fundamental theorem of calculus, compute the following:
 
 1. $\int\limits_0^2 1 dx$
 2. $\int\limits_0^1 x^2 dx$
 3. $\int\limits_0^1 e^x dx$
+4. $\frac{d}{dx} \int\limits_0^x e^{-t^2} dt$
 
 ## Chain Rule
 
