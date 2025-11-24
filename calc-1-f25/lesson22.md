@@ -24,14 +24,14 @@ First, notice that $\int\limits_{-x^2}^{x^2} t^2 dt = \int\limits_{-x^2}^0 \cos(
 Let's first focus on $\int\limits_0^{x^2} \cos(t) dt$.
 
 1. Let $F(x) = \int\limits_0^x \cos(t) dt$.
-2. Then if $g(x) = x^2$, (F \circ g)(x) = \int\limits_0^{x^2} \cos(t) dt$
+2. Then if $g(x) = x^2$, $(F \circ g)(x) = \int\limits_0^{x^2} \cos(t) dt$
 3. Chain rule: $(F \circ g)^\prime(x) = F^\prime(g(x))(g^\prime(x))$
 4. What is $F^\prime(x)$? FTC: $F^\prime(x) = \cos(x)$.
 5. So $F^\prime(g(x)) = \cos(x^2)$, and $g^\prime(x) = 2x$, so this derivative is $2x \cos(x^2)$.
 
 Now what do we do about $\int\limits_{-x^2}^0 \cos(t) dt$?
 
-First re-write this as $-\int\limits_0^{-x^2} \cos(t) dt$. Then we do the same thing: $F(x) = - \int\limits_0^x \cos(t) dt$, g(x) = -x^2$, and we compute $F^\prime(g(x)) g^\prime(x)$:
+First re-write this as $-\int\limits_0^{-x^2} \cos(t) dt$. Then we do the same thing: $F(x) = - \int\limits_0^x \cos(t) dt$, $g(x) = -x^2$, and we compute $F^\prime(g(x)) g^\prime(x)$:
 
 * $F^\prime(x) = -\cos(x)$
 * $F^\prime(g(x)) = -\cos(-x^2)$
