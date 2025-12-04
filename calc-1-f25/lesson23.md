@@ -17,11 +17,11 @@ Consider the following two graphs:
 
 First: total COVID-19 cases in New York, excluding NYC (January 2020 - September 2022)
 
-<img class="noreverse" src="total-covid-cases-ny.png" />
+<img src="total-covid-cases-ny.png" />
 
 Second: daily COVID-19 cases in New York, excluding NYC (same time period):
 
-<img class="noreverse" src="daily-covid-cases-ny.png" />
+<img src="daily-covid-cases-ny.png" />
 
 How do these two graphs relate to one another?
 
