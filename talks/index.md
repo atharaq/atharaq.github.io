@@ -13,5 +13,6 @@ A very non-exhaustive list of recent talks is included here:
 * [Nonstandard numbers (April 2025)](hofstra.pdf) (Hofstra Mathematics Department Seminar)
 <!-- * [Hajj Reflections (Sept 2025)](Hajj.pptx) (Guest Lecture in "Travel and Tourism", Purchase College) -->
 * [Nonstandard Models, Part II (October 2025)](hofstra2.pdf) (Hofstra Mathematics Department Seminar)
+* [The Lattice Problem for Models of PA (Jan 2026)](abdul-quader-asl-2026.pdf) (ASL Winter Meeting)
 
 I also co-host (with Roman Kossak and Vika Gitman) an online seminar on Models of Peano Arithmetic. The [schedule of the talks is listed here](https://nylogic.github.io/MOPA.html) and most of the talks are posted on [this YouTube channel](https://www.youtube.com/@nylogic8687).
