@@ -8,7 +8,7 @@ Spring 2026
 **Location**: Natural Sciences 3052    
 **Instructor**: Professor Abdul-Quader (or just "Athar")  
 **Email**: athar.abdulquader AT purchase DOT edu  
-**Office Hours**: Mondays and Thursdays, 9 - 10 AM NSB 3003  
+**Office Hours**: Mondays and Thursdays, 9:15 - 10:15 AM NSB 3003  
 
 Inclement Weather Hotline: 914-251-7500
 
