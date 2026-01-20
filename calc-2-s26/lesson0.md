@@ -30,7 +30,7 @@ Topics for discussion:
 
 # Prerequisite material
 
-I expect that most of you have learned about integrals already in Calculus I. Indeed, I covered integration in [lessons 20-23](https://atharaq.github.io/calc-1-f22/) of my Calc I course last semester. You are free to look at those notes and videos if you ever need a refresher. Of course, I'm sure that there are some things that students may have forgotten in the meantime. Coming in, I expect you to know the following:
+I expect that most of you have learned about integrals already in Calculus I. Indeed, I covered integration in [lessons 20-23](https://atharaq.github.io/calc-1-f25/) of my Calc I course last semester. You are free to look at those notes and videos if you ever need a refresher. Of course, I'm sure that there are some things that students may have forgotten in the meantime. Coming in, I expect you to know the following:
 
 * The geometric meaning and the limit definition of the "definite integral".
 * The relationship between derivatives and definite integrals (the "Fundamental Theorem of Calculus").
@@ -172,7 +172,7 @@ That is, we look for $x$ such that $2^x = 8$. Since $2^3 = 8$, this means $x = 3
 
 # Written Homework
 
-Your first assignment is due on Moodle **before class on Monday**:
+Your first assignment is due on BrightSpace **before class on Monday**:
 
 1. We saw in class that there are sequences of rational numbers whose limit is not rational. Is there a sequence of integers whose limit is not an integer? Explain why or why not.
 2. Give an explanation, in English, of the meaning of a derivative of a function. (You may use graphs or pictures to supplement your explanation. Feel free to use [Desmos](https://www.desmos.com/) to make graphs if you need them.)
@@ -181,4 +181,4 @@ Your first assignment is due on Moodle **before class on Monday**:
 
 # MyOpenMath Homework
 
-There is also an assignment on MyOpenMath. This is a website we will be using for online homework this semester. Check on Moodle for the link and login information. Get started soon, so that if you have trouble on any of these problems, we can discuss it on Monday!
+There is also an assignment on MyOpenMath. This is a website we will be using for online homework this semester. Check on BrightSpace for the link and login information. Get started soon, so that if you have trouble on any of these problems, we can discuss it on Monday!
