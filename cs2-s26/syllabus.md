@@ -3,7 +3,7 @@
 MAT 1540
 
 4 credits  
-Spring 2025
+Spring 2026
 
 **Meeting Times**: Mondays and Thursdays, 12:30 - 2:30  
 **Location**: Natural Sciences 1013  

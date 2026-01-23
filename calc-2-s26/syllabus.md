@@ -44,7 +44,7 @@ Upon completion of this course, students should be able to...
 
 ### MyOpenMath Online Homework
 
-We will be using the [MyOpenMath](https://www.myopenmath.com) website for online homework. Please register ASAP using the Course ID and Enrollment Key provided on **Moodle**. Make sure to use your name and Purchase College email address.
+We will be using the [MyOpenMath](https://www.myopenmath.com) website for online homework. Please register ASAP using the Course ID and Enrollment Key provided on **BrightSpace**. Make sure to use your name and Purchase College email address.
 
 ## Calculator Policy
 
