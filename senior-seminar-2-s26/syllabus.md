@@ -110,7 +110,7 @@ We may modify this as needed.
 | 1 (1/21) | No class | |
 | 2 (1/28) | Intro to course; public speaking | Prepare to answer common interview questions |
 | 3 (2/4) | No class | Forum 1: presentation topic |
-| 4 (2/11) | Presentation: advanced topic |  |
+| 4 (2/11) | Presentation: advanced topic | |
 | 5 (2/18) | No class |  |
 | 6 (2/25) | Presentation: advanced topic | |
 | 7 (3/4) | No class | Forum 2: project update |
