@@ -103,14 +103,14 @@ For example, if a forum post asks you to introduce yourself in 1-3 paragraphs, a
 
 # Course Outline (Tentative)
 
-We will likely modify this depending on the breakdown between Seniors 1 (graduating Spring 2025) and 2 (graduating Dec 2024) this semester.
+We may modify this as needed.
 
 | Week (date) | Topics | Assignments (due before class) |
 | ---- | ------ | -------- |
 | 1 (1/21) | No class | |
 | 2 (1/28) | Intro to course; public speaking | Prepare to answer common interview questions |
-| 3 (2/4) | No class | |
-| 4 (2/11) | Presentation: advanced topic | Forum 1: presentation topic |
+| 3 (2/4) | No class | Forum 1: presentation topic |
+| 4 (2/11) | Presentation: advanced topic |  |
 | 5 (2/18) | No class |  |
 | 6 (2/25) | Presentation: advanced topic | |
 | 7 (3/4) | No class | Forum 2: project update |
