@@ -114,12 +114,12 @@ We may modify this as needed.
 | 5 (2/18) | No class |  |
 | 6 (2/25) | Presentation: advanced topic | |
 | 7 (3/4) | No class | Forum 2: project update |
-| 8 (3/11) | Workshop: senior thesis feedback; abstracts and thesis statements | | 
+| 8 (3/11) | Workshop: senior thesis feedback; | | 
 | 9 (3/18) | No class | Senior thesis draft 3 or 1 | 
 | 10 (3/25) | No class: **spring break** | |
-| 11 (4/1) | No class | |
+| 11 (4/1) | Abstracts and thesis statements | |
 | 12 (4/8) | No class |  |
-| 13 (4/15) | Final presentations | Forum 3: success stories | 
+| 13 (4/15) | No class | Forum 3: success stories | 
 | 14 (4/22) | Final presentations | |
 | 15 (4/29) | Final presentations | Thesis draft 4 or 2 | 
-| 16 (5/6) | Finals week: if needed | | 
+| 16 (5/6) | Finals week presentations: if needed | | 
