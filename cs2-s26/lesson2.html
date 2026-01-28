@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>CS II Lesson 2</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS II Lesson 2</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Input/Output</p>
+</section>
+
+<section>
+<section id="exercise" class="title-slide slide level1">
+<h1>Exercise</h1>
+<ul>
+<li>Create a new Java Project (either in IntelliJ or VSCode)</li>
+<li>Write a program that creates variables named hour and minute. Assign values that roughly correspond to the current time (use a 24 hour clock so 2pm should be 14 hours).</li>
+<li>Output the current time in one line, including a message. For example:</li>
+</ul>
+<pre><code>The current time is 12:30.</code></pre>
+</section>
+<section id="continued" class="slide level2">
+<h2>Continued</h2>
+<ul>
+<li>Modify the program so it also displays the time 55 minutes from now (hint: you may need to use the <strong>remainder</strong> operator %). For example:</li>
+</ul>
+<pre><code>The current time is 12:30.
+In 55 minutes, it will be 13:25.</code></pre>
+<ul>
+<li>Test your program out by changing the number of minutes to add.
+<ul>
+<li>If you coded it right, you should be able to change that number in just <em>one</em> part of your code!</li>
+<li>And it should continue to work fine!</li>
+<li>(Or we discover a bug, and we can fix it!)</li>
+</ul></li>
+</ul>
+<!--
+## Solution
+
+```java
+int hours = 10;
+int minutes = 30;
+int minutesToAdd = 55;
+minutes += minutesToAdd;
+int extraHours = minutes / 60;
+hours = hours + extraHours;
+minutes = minutes % 60;
+String message = "The time in " + minutesToAdd + " minutes will be " + hours + ":";
+if (minutes < 10) {
+  message += "0";
+  message += minutes;
+} else {
+  message += minutes;
+}
+System.out.println(message);
+```
+-->
+</section>
+<section id="if-statement" class="slide level2">
+<h2>If Statement</h2>
+<ul>
+<li>Issue: 30 + 35 = 65. 1 hour and 5 mintues</li>
+<li>10:30 + 35 minutes = 11:05, not 11:5!</li>
+<li>Fix? Either:
+<ul>
+<li><strong>if</strong> statement</li>
+<li><strong>printf</strong> format string (see chapter 3 for details)</li>
+</ul></li>
+</ul>
+</section></section>
+<section id="last-time" class="title-slide slide level1">
+<h1>Last time</h1>
+<ul>
+<li>Variables?</li>
+<li>Data types?</li>
+<li>Memory diagrams!</li>
+<li>Questions (any exercise)?</li>
+</ul>
+</section>
+
+<section>
+<section id="characters-and-strings" class="title-slide slide level1">
+<h1>Characters and Strings</h1>
+<p>The <strong>char</strong> data type represents single characters. A single character literal is written with single quotes around it.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="dt">char</span> c = <span class="ch">&#39;a&#39;</span>;</span></code></pre></div>
+</section>
+<section id="strings" class="slide level2">
+<h2>Strings</h2>
+<p>The <strong>String</strong> data type can be used to represent longer text. String literals are written with double quotes around them.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="bu">String</span> moby_dick = <span class="st">&quot;Call me Ishmael&quot;</span>;</span></code></pre></div>
+</section>
+<section id="string-concatenation" class="slide level2">
+<h2>String Concatenation</h2>
+<p>Strings can be <strong>concatenated</strong> with the + operator:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello &quot;</span> + <span class="st">&quot; world!&quot;</span>);</span></code></pre></div>
+<p>Strings can be concatenated with data of other types:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="dt">int</span> x = <span class="dv">5</span>;</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="bu">String</span> s = <span class="st">&quot;Hi &quot;</span> + x;</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(s);</span></code></pre></div>
+</section>
+<section id="confusion" class="slide level2">
+<h2>Confusion</h2>
+<p>This can cause some confusion. Java reads the operation <strong>left-to-right</strong>. Can you guess what is outputted in the following two lines?</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="dv">5</span> + <span class="dv">5</span> + <span class="st">&quot;Hello!&quot;</span>);</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello!&quot;</span> + <span class="dv">5</span> + <span class="dv">5</span>);</span></code></pre></div>
+</section></section>
+<section>
+<section id="system-class" class="title-slide slide level1">
+<h1>System Class</h1>
+<ul>
+<li>Java provides several <strong>standard libraries</strong>:
+<ul>
+<li>Packages and classes that are useful for all programmers regardless of their particular need.</li>
+<li>Example: <code>System</code> class.</li>
+</ul></li>
+<li><code>System.out</code> is a variable inside the <code>System</code> class.</li>
+<li>Its type is <code>PrintStream</code>.
+<ul>
+<li><code>PrintStream</code> has several methods for outputting, including <code>println</code> and <code>printf</code>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="navigating-in-intellij" class="slide level2">
+<h2>Navigating in IntelliJ</h2>
+<ul>
+<li>We can navigate Java libraries using IntelliJ.</li>
+<li>Try holding down the COMMAND key ⌘, and clicking on <code>System.out</code>.</li>
+<li>Useful tool when we are working with libraries that we don’t know fully well.</li>
+</ul>
+<p>We can also view information about Java standard libraries online: search for “java PrintStream” for example.</p>
+</section></section>
+<section>
+<section id="scanner-input" class="title-slide slide level1">
+<h1>Scanner Input</h1>
+<p>We use the <code>Scanner</code> class for input:</p>
+<div class="sourceCode" id="cb8" data-line-numbers="5-8|1|5|7"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="kw">import</span><span class="im"> java.util.Scanner;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a><span class="kw">public</span> <span class="kw">class</span> ScannerEx {</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a>        <span class="bu">Scanner</span> sc = <span class="kw">new</span> <span class="bu">Scanner</span>(<span class="bu">System</span>.<span class="fu">in</span>);</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a>        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Enter your height in inches: &quot;</span>);</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a>        <span class="dt">int</span> height = sc.<span class="fu">nextInt</span>();</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true"></a>        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;You are only &quot;</span> + height + <span class="st">&quot; inches tall?&quot;</span>);</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true"></a>    }</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions</h2>
+<ol type="1">
+<li>Purpose of <strong>import</strong> statement?</li>
+<li>Purpose of <strong>new</strong> keyword?</li>
+</ol>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<p>Write a program that asks a user to input their height in inches, and then displays their height in standard form (feet and inches).</p>
+<p>For example, if the user types in 70, we should convert that to 5’10".</p>
+</section>
+<section id="scanner-api" class="slide level2">
+<h2>Scanner API</h2>
+<ul>
+<li><strong>nextInt</strong>, <strong>nextDouble</strong>, <strong>nextLong</strong></li>
+<li><strong>next</strong>: reads the next “token” (until whitespace, by default), store as a String</li>
+<li><strong>nextLine</strong>: reads the entire next line (until a newline), store as a String</li>
+<li><strong>hasNextInt</strong>, <strong>hasNextDouble</strong>, <strong>hasNextLine</strong>: check if there is more input</li>
+</ul>
+<p><strong>hasNextInt</strong> may be useful for us in combination with <strong>if</strong> and <strong>while</strong> statements</p>
+</section>
+<section id="scanner-pitfall" class="slide level2">
+<h2>Scanner Pitfall</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="bu">Scanner</span> sc = <span class="kw">new</span> <span class="bu">Scanner</span>(<span class="bu">System</span>.<span class="fu">in</span>);</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Enter your age: &quot;</span>);</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a><span class="dt">int</span> age = sc.<span class="fu">nextInt</span>();</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Enter your name: &quot;</span>);</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a><span class="bu">String</span> name = sc.<span class="fu">nextLine</span>();</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hi &quot;</span> + name + <span class="st">&quot;, you are &quot;</span> + age + <span class="st">&quot; years old!&quot;</span>);</span></code></pre></div>
+<p>What happens?</p>
+</section>
+<section id="explanation" class="slide level2">
+<h2>Explanation</h2>
+<ul>
+<li>Scanner object parse input as <strong>tokens</strong>, not as entire lines.</li>
+<li><strong>nextInt</strong>: parses all of the input up until the end of the integer.</li>
+<li>“enter” key (newline) not processed by <strong>nextInt</strong></li>
+<li>newline processed by <strong>nextLine</strong></li>
+</ul>
+<p>Fix? Call <strong>nextLine</strong> after every group of nextInts.</p>
+</section>
+<section id="fix" class="slide level2">
+<h2>Fix</h2>
+<div class="sourceCode" id="cb10" data-line-numbers="1-7|3-4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="bu">Scanner</span> sc = <span class="kw">new</span> <span class="bu">Scanner</span>(<span class="bu">System</span>.<span class="fu">in</span>);</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Enter your age: &quot;</span>);</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a><span class="dt">int</span> age = sc.<span class="fu">nextInt</span>();</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true"></a>sc.<span class="fu">nextLine</span>();</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Enter your name: &quot;</span>);</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true"></a><span class="bu">String</span> name = sc.<span class="fu">nextLine</span>();</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hi &quot;</span> + name + <span class="st">&quot;, you are &quot;</span> + age + <span class="st">&quot; years old!&quot;</span>);</span></code></pre></div>
+</section></section>
+<section>
+<section id="java-structure" class="title-slide slide level1">
+<h1>Java Structure</h1>
+<p><img alt="Program Structure, Think Java Chapter 3" src="https://trinket-app-assets.trinket.io/thinkjava2/thinkjava2_008.png" title="Program Structure, Think Java Chapter 3" /></p>
+</section>
+<section id="structure" class="slide level2">
+<h2>Structure</h2>
+<ul>
+<li><strong>Packages</strong> (java.util) group related classes</li>
+<li><strong>classes</strong> (Scanner) contain methods (and more…)</li>
+<li><strong>methods</strong>: named sequences of statements</li>
+</ul>
+<p>All code goes inside a method!</p>
+</section></section>
+<section>
+<section id="exercise-2" class="title-slide slide level1">
+<h1>Exercise</h1>
+<p>Write a program that prompts a user for the amount of money they make per hour and the number of hours they worked, and outputs how much money they made in those hours. For the sake of simplicity, you can assume that the rate and the number of hours are <strong>integers</strong>.</p>
+</section>
+<section id="upcoming" class="slide level2">
+<h2>Upcoming</h2>
+<ul>
+<li>Read Chapter 3, if you haven’t already.</li>
+<li>Read Chapter 5 on conditionals and logical symbols.</li>
+<li>Read Chapter 6 on loops (<strong>for</strong> and <strong>while</strong>)</li>
+<li>Monday: asynchronous / small groups (10-12 students, not everyone).</li>
+<li><strong>Quiz 1</strong>: online
+<ul>
+<li>will be posted tomorrow on BrightSpace</li>
+<li>20 minutes</li>
+<li>includes material from next lesson</li>
+</ul></li>
+</ul>
+</section>
+<section id="preview" class="slide level2">
+<h2>Preview</h2>
+<p>What does the following code snippet do?</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a><span class="bu">Scanner</span> sc = <span class="kw">new</span> <span class="bu">Scanner</span>(<span class="bu">System</span>.<span class="fu">in</span>);</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;n?&quot;</span>);</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true"></a><span class="dt">int</span> n = sc.<span class="fu">nextInt</span>();</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true"></a><span class="dt">int</span> x = <span class="dv">1</span>;</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true"></a><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; n; i++) {</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true"></a>  x *= <span class="dv">2</span>;</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true"></a>}</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(x);</span></code></pre></div>
+<p>Make a <strong>memory diagram</strong> to figure it out.</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4/dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
