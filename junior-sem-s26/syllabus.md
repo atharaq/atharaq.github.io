@@ -113,4 +113,4 @@ We will likely modify this depending on the availability of faculty / guest pres
 | 13 (4/15) | Presentations: Senior Project Proposals | Senior Project Proposals | 
 | 14 (4/22) | *Optional*: attend seniors final presentations | |
 | 15 (4/29) | *Optional*: attend seniors final presentations |  | 
-| 16 (5/6) | Finals week: no class | | 
+| 16 (5/6) | Finals week: no class; optionally attend seniors final presentations | | 
