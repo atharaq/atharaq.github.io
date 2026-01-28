@@ -105,12 +105,12 @@ We will likely modify this depending on the availability of faculty / guest pres
 | 5 (2/18) | TBA: Faculty presentations or discuss lit review expectations. | |
 | 6 (2/25) | No class | Forum 2 posts |
 | 7 (3/4) | Lightning talks | |
-| 8 (3/11) | No class | Literature Review | 
+| 8 (3/11) | No class | | 
 | 9 (3/18) | Deep-dive Presentations | | 
 | 10 (3/25) | No class: **spring break** | |
-| 11 (4/1) | Literature review peer feedback | |
-| 12 (4/8) | Presentations: Senior Project Proposals |  |
-| 13 (4/15) | *Optional*: attend seniors final presentations | Senior Project Proposals | 
+| 11 (4/1) | No class | Literature Review |
+| 12 (4/8) | Literature review peer feedback |  |
+| 13 (4/15) | Presentations: Senior Project Proposals | Senior Project Proposals | 
 | 14 (4/22) | *Optional*: attend seniors final presentations | |
 | 15 (4/29) | *Optional*: attend seniors final presentations |  | 
-| 16 (5/6) | Finals week: no class | | 
+| 16 (5/6) | Finals week: no class; optionally attend seniors final presentations | | 

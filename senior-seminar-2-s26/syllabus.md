@@ -103,23 +103,23 @@ For example, if a forum post asks you to introduce yourself in 1-3 paragraphs, a
 
 # Course Outline (Tentative)
 
-We will likely modify this depending on the breakdown between Seniors 1 (graduating Spring 2025) and 2 (graduating Dec 2024) this semester.
+We may modify this as needed.
 
 | Week (date) | Topics | Assignments (due before class) |
 | ---- | ------ | -------- |
 | 1 (1/21) | No class | |
 | 2 (1/28) | Intro to course; public speaking | Prepare to answer common interview questions |
-| 3 (2/4) | No class | |
-| 4 (2/11) | Presentation: advanced topic | Forum 1: presentation topic |
+| 3 (2/4) | No class | Forum 1: presentation topic |
+| 4 (2/11) | Presentation: advanced topic | |
 | 5 (2/18) | No class |  |
 | 6 (2/25) | Presentation: advanced topic | |
 | 7 (3/4) | No class | Forum 2: project update |
-| 8 (3/11) | Workshop: senior thesis feedback; abstracts and thesis statements | | 
+| 8 (3/11) | Workshop: senior thesis feedback; | | 
 | 9 (3/18) | No class | Senior thesis draft 3 or 1 | 
 | 10 (3/25) | No class: **spring break** | |
-| 11 (4/1) | No class | |
+| 11 (4/1) | Abstracts and thesis statements | |
 | 12 (4/8) | No class |  |
-| 13 (4/15) | Final presentations | Forum 3: success stories | 
+| 13 (4/15) | No class | Forum 3: success stories | 
 | 14 (4/22) | Final presentations | |
 | 15 (4/29) | Final presentations | Thesis draft 4 or 2 | 
-| 16 (5/6) | Finals week: if needed | | 
+| 16 (5/6) | Finals week presentations: if needed | | 
