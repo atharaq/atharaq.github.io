@@ -102,7 +102,7 @@ Rule of thumb for $u$: "LIPET". Logs, Inverse trig, Polynomials, Exponentials, T
 
 # Homework
 
-**Due Monday, February 8** in class:
+**Due Monday, February 9** in class:
 
 * Section 1.6 #324, 334, 346
 * Section 1.7 #394, 398
