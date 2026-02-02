@@ -76,7 +76,7 @@ Picking $u$ and $v$ takes some intuition. Here are some general tips:
 
 More explicitly, for $u$, we usually look for (in this order):
 
-* logarithms ($(\ln|x|)^\prime = \frac{1}{x}$)
+* logarithms ($\ln(x)^\prime = \frac{1}{x}$)
 * inverse trig functions
 * polynomials / algebraic functions
 
