@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>CS II Lesson 4</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS II Lesson 4</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Arrays</p>
+</section>
+
+<section>
+<section id="warm-up" class="title-slide slide level1">
+<h1>Warm Up</h1>
+<p>What does the code do? It computes something, what does it compute?</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">Scanner</span> sc = <span class="kw">new</span> <span class="bu">Scanner</span>(<span class="bu">System</span>.<span class="fu">in</span>);</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Type in a positive integer&quot;</span>);</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="dt">int</span> input = sc.<span class="fu">nextInt</span>();</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="dt">int</span> t = <span class="dv">0</span>;</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; input; i++) {</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>  t += i;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(t);</span></code></pre></div>
+</section>
+<section id="code-snippet-2" class="slide level2">
+<h2>Code Snippet 2</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="bu">Scanner</span> sc = <span class="kw">new</span> <span class="bu">Scanner</span>(<span class="bu">System</span>.<span class="fu">in</span>);</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Type in a positive integer&quot;</span>);</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="dt">int</span> input = sc.<span class="fu">nextInt</span>();</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a><span class="dt">int</span> t = <span class="dv">1</span>;</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt; input; i++) {</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>  t *= i;</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>}</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(t);</span></code></pre></div>
+</section>
+<section id="code-snippet-3" class="slide level2">
+<h2>Code Snippet 3</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="bu">Scanner</span> sc = <span class="kw">new</span> <span class="bu">Scanner</span>(<span class="bu">System</span>.<span class="fu">in</span>);</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Type in a positive integer&quot;</span>);</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="dt">int</span> x = sc.<span class="fu">nextInt</span>();</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Type in another integer&quot;</span>);</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a><span class="dt">int</span> y = sc.<span class="fu">nextInt</span>();</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a><span class="dt">int</span> t = <span class="dv">1</span>;</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; y; i++) {</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>  t *= x;</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a>}</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(t);</span></code></pre></div>
+</section></section>
+<section>
+<section id="questions" class="title-slide slide level1">
+<h1>Questions?</h1>
+<p>Monday’s lesson:</p>
+<ul>
+<li>Conditions</li>
+<li>Loops</li>
+<li>Exercises:
+<ul>
+<li>Validate input (1-10)</li>
+<li>Perfect Square</li>
+</ul></li>
+</ul>
+</section>
+<section id="problem-solving-tips" class="slide level2">
+<h2>Problem Solving Tips</h2>
+<p>How do we solve a problem like “Determine if a number is a perfect square?”</p>
+<ol type="1">
+<li><strong>Examples</strong>! First think of example inputs for all the different types of output: ie one for “Not a number / not valid”, one for “Yes, it’s a perfect square”, one for “No, it’s not”.</li>
+<li><strong>Steps</strong>: Ask yourself: “What are the steps needed to figure out that 16 is a perfect square? What about for 326?”</li>
+</ol>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<ol start="3" type="1">
+<li><strong>Algorithm</strong>: Turn your steps into a specific algorithm. Write down those steps as precisely / explicitly as possible. Use common programming constructs in your algorithm: loops, variables, if/else statements, etc.</li>
+<li><strong>Code</strong>: Once you have a specific algorithm, then it’s time to start writing some code. The algorithm should not be too hard to translate to code.</li>
+<li><strong>Testing</strong>: Try out your code using several different inputs. See if it works if the input is valid, not valid, if the input is a perfect square, not a perfect square, etc. Try to test at least two inputs for each possible output that you expect.</li>
+</ol>
+</section></section>
+<section>
+<section id="arrays" class="title-slide slide level1">
+<h1>Arrays</h1>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="dt">int</span>[] x = <span class="kw">new</span> <span class="dt">int</span>[<span class="dv">7</span>]; <span class="co">// creates an array of 7 integers</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>x[<span class="dv">0</span>] = <span class="dv">1</span>; <span class="co">// first element of the array is x[0]</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt; <span class="dv">7</span>; i++) {</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>  x[i] = i * x[i-<span class="dv">1</span>];</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>}</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(x[<span class="dv">6</span>]);</span></code></pre></div>
+<ul>
+<li><strong>array</strong>: sequences of values of the same type</li>
+<li>above: array of 7 integers</li>
+<li>in brackets: <strong>index</strong></li>
+<li>first index is 0, last index is size - 1</li>
+</ul>
+</section>
+<section id="references" class="slide level2">
+<h2>References</h2>
+<p><img alt="Array is a reference" src="https://trinket-app-assets.trinket.io/thinkjava2/thinkjava2_016.png" title="Arrays are references" /></p>
+<p>When we declare a new array, we get a <strong>reference</strong> to a section of memory that is allocated (on the heap). The value of the array variable is technically the memory address that it is referring to.</p>
+<p>Side effect: what does the following output?</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="dt">int</span>[] x = <span class="kw">new</span> <span class="dt">int</span>[<span class="dv">10</span>];</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(x);</span></code></pre></div>
+</section>
+<section id="snippet" class="slide level2">
+<h2>Snippet</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="dt">int</span>[] x = <span class="kw">new</span> <span class="dt">int</span>[<span class="dv">1</span>];</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>x[<span class="dv">0</span>] = <span class="dv">10</span>;</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="dt">int</span>[] y = <span class="kw">new</span> <span class="dt">int</span>[<span class="dv">1</span>];</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>y[<span class="dv">0</span>] = x[<span class="dv">0</span>];</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a><span class="kw">if</span> (x == y) {</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Equal.&quot;</span>);</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a>} <span class="kw">else</span> {</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a>  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;What?&quot;</span>);</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a>}</span></code></pre></div>
+<p>Draw a memory diagram. What does this output?</p>
+</section></section>
+<section>
+<section id="exercise" class="title-slide slide level1">
+<h1>Exercise</h1>
+<p>Declare two integer arrays of size 2. Ask for the user to input into each of the elements. Compare the two arrays and determine if they have the <strong>same numbers</strong> in the <strong>same order</strong>.</p>
+</section>
+<section id="example-input-output" class="slide level2">
+<h2>Example input / output</h2>
+<pre><code>Enter in the first element of the first list:
+   5
+Enter in the second element of the first list:
+   2
+Enter in the first element of the second list:
+   5
+Enter in the second element of the second list:
+   2
+The arrays are equal.</code></pre>
+</section></section>
+<section>
+<section id="loops" class="title-slide slide level1">
+<h1>Loops</h1>
+<p>Use “length” property to tell the size of the array:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="dt">int</span>[] numbers;</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a><span class="co">// some code that initializes numbers</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>...</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a><span class="co">// add up all the elements of numbers</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a><span class="dt">int</span> total = <span class="dv">0</span>;</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; numbers.<span class="fu">length</span>; i++) {</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true"></a>   total += numbers[i];</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true"></a>}</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;The total is &quot;</span> + total);</span></code></pre></div>
+</section>
+<section id="foreach-loop" class="slide level2">
+<h2>Foreach loop</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="bu">String</span>[] names;</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a><span class="co">// some code which initializes names</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a><span class="kw">for</span> (<span class="bu">String</span> name : names) {</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a>  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(name);</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a>}</span></code></pre></div>
+<p>If we just need the objects in the arrays, and not the index, this is helpful.</p>
+<p>Technically called “enhanced for loop.” (Usually just referred to as “foreach”)</p>
+</section></section>
+<section>
+<section id="arrays-of-arrays" class="title-slide slide level1">
+<h1>Arrays of arrays</h1>
+<p>We can create arrays of any type we like, using this [] syntax:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="dt">int</span>[] x = <span class="kw">new</span> <span class="dt">int</span>[<span class="dv">5</span>]; <span class="co">// creates an array of integers</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a><span class="bu">String</span>[] s = <span class="kw">new</span> <span class="bu">String</span>[<span class="dv">10</span>]; <span class="co">// creates an array of strings</span></span></code></pre></div>
+<p>Question: What about arrays of arrays?</p>
+</section>
+<section id="multidimensional-arrays" class="slide level2">
+<h2>Multidimensional arrays</h2>
+<p>Yes, it works!</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a><span class="dt">int</span>[][] x = <span class="kw">new</span> <span class="dt">int</span>[<span class="dv">5</span>][<span class="dv">3</span>];</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true"></a><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">5</span>; i++) {</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true"></a>  <span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">0</span>; j &lt; <span class="dv">3</span>; j++) {</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true"></a>    x[i][j] = i*j;</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true"></a>  }</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true"></a>}</span></code></pre></div>
+<p>Take a minute to draw a memory diagram for this.</p>
+</section></section>
+<section>
+<section id="reading" class="title-slide slide level1">
+<h1>Reading</h1>
+<ul>
+<li><a href="https://books.trinket.io/thinkjava2/chapter7.html">Think Java, Chapter 7</a>.</li>
+<li>Do as many exercises as you can. (Might need to skim chapter 4).</li>
+<li>Catch up on any readings that you missed.</li>
+<li>Do the exercises from the book (even when I don’t assign any)!</li>
+</ul>
+</section>
+<section id="upcoming" class="slide level2">
+<h2>Upcoming</h2>
+<ul>
+<li>Exam 1 (in-class) <strong>February 19</strong> (2 weeks)</li>
+<li>Project 1 assigned this weekend, <strong>due Sunday, 3/1</strong> (3 weeks). Get started soon!</li>
+<li>Getting started tips:
+<ul>
+<li>Validate input first!</li>
+<li>Draw things out / think through algorithms on paper.</li>
+</ul></li>
+<li>Monday: small groups / asynchronous.</li>
+</ul>
+</section>
+<section id="quizzes" class="slide level2">
+<h2>Quizzes</h2>
+<p>For any problem you did not receive full credit on (on paper):</p>
+<ol type="1">
+<li>Explain what you did wrong.</li>
+<li>Make a memory diagram to show what <strong>should</strong> happen in the code.</li>
+<li>State the correct answer.</li>
+</ol>
+<p>Submit this to me in class on <strong>Monday</strong>. (Even if you are not scheduled for a meeting.)</p>
+</section>
+<section id="exam-1" class="slide level2">
+<h2>Exam 1</h2>
+<ul>
+<li>Start studying now!</li>
+<li>Some questions: reading code (make memory diagrams).</li>
+<li>Some questions: write short code snippets</li>
+<li>Some questions: put a few things together into a larger project.</li>
+<li>Study by doing exercises (textbook, class exercises).</li>
+<li>Come to office hours</li>
+<li>Tutoring (Einstein Corner)</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4/dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
