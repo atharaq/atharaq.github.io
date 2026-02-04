@@ -15,7 +15,7 @@ layout: default
 * [Lesson 1: Substitution](lesson1.html)  
 * [Lesson 2: Exponential / Logarithmic Functions](lesson2.html)
 * [Lesson 3: Inverse Trig and Integration by parts](lesson3.html)
-<!-- * [Lesson 4: Integration by Parts and Trig Integrals](lesson4.html) -->
+* [Lesson 4: Trigonometric Integrals](lesson4.html)
 <!-- * [Lesson 5: Partial Fractions and Center of Mass Intro](lesson5.html) -->
 <!-- * [Lesson 6: Center of Mass](lesson6.html) -->
 <!-- * [Lesson 7: Improper integrals](lesson7.html) -->
