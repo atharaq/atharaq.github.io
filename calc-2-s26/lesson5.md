@@ -55,7 +55,7 @@ First, notice that: $$\frac{1/2}{x-1} - \frac{1/2}{x+1} = \frac{1}{x^2 - 1}$$
 
 (Algebra! Get commone denominators on the left side)
 
-Then: $$\int (\frac{1/2}{x-1} - \frac{1/2}{x+1})dx = \frac{1}{2}(\ln|x-1| - \ln|x+1|) + C$$
+Then: $\int (\frac{1/2}{x-1} - \frac{1/2}{x+1})dx = \frac{1}{2}(\ln\|x-1\| - \ln\|x+1\|) + C$
 
 So the question becomes: how do we go from $\frac{1}{x^2 - 1}$ to $\frac{1/2}{x-1} - \frac{1/2}{x+1}$?
 
