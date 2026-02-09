@@ -129,7 +129,7 @@ Final answer: $\frac{1}{2}\ln\|x+1\| - \ln\|x+2\| + \frac{1}{2}\ln\|x+3\| + C$
 
 # Center of Mass
 
-<img src="https://openstax.org/resources/42626723b995f5b5b5ef3657223f7d915b846120" style="background: currentColor" alt="Balancing point" />
+<img src="https://openstax.org/apps/image-cdn/v1/f=webp/apps/archive/20251118.192121/resources/42626723b995f5b5b5ef3657223f7d915b846120" style="background: currentColor" alt="Balancing point" />
 
 Suppose:
 
@@ -152,7 +152,7 @@ What is the balancing point?
 
 ## Moments, 2D
 
-<img src="https://openstax.org/resources/e883c540354e80eb11c32e769534a18b96206078" style="background: currentColor" alt="Point mass located at (x1, y1)" />
+<img src="https://openstax.org/apps/image-cdn/v1/f=webp/apps/archive/20251118.192121/resources/e883c540354e80eb11c32e769534a18b96206078" style="background: currentColor" alt="Point mass located at (x1, y1)" />
 
 * $M_x$ = moment with respect to $x$-axis? $m_1 \cdot y_1$ (mass times distance to x-axis)
 * $M_y$ = moment with respect to $y$-axis? $m_1 \cdot x_1$ (mass times distance to y-axis)
