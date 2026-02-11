@@ -6,9 +6,8 @@
 
 # Warm Up
 
-**Together**: Section 3.4, #204: $\int \dfrac{2}{x^2 - x - 6}dx$.
-
-**Hand in**: Section 3.4 #200: $\int \dfrac{dx}{x(x-1)(x-2)(x-3)}$.
+1. Section 3.4, #204: $\int \dfrac{2}{x^2 - x - 6}dx$.
+2. Section 3.4 #200: $\int \dfrac{dx}{x(x-1)(x-2)(x-3)}$.
 
 ## Quiz questions?
 
@@ -193,7 +192,7 @@ Check your answers:
 </ol>
 </details>
 
-**Hand in**: Section 2.6 #273: Find the center of mass of the region bounded by $y = \cos(2x)$, the $x$-axis, $x = -\frac{\pi}{4}$, and $x = \frac{\pi}{4}$.
+**Exercise**: Section 2.6 #273: Find the center of mass of the region bounded by $y = \cos(2x)$, the $x$-axis, $x = -\frac{\pi}{4}$, and $x = \frac{\pi}{4}$.
 
 # Upcoming
 
