@@ -114,10 +114,10 @@ We may modify this as needed.
 | 5 (2/18) | No class |  |
 | 6 (2/25) | Presentation: advanced topic | |
 | 7 (3/4) | No class | Forum 2: project update |
-| 8 (3/11) | Workshop: senior thesis feedback; | | 
+| 8 (3/11) | Pi Day Guest Speaker | | 
 | 9 (3/18) | No class | Senior thesis draft 3 or 1 | 
 | 10 (3/25) | No class: **spring break** | |
-| 11 (4/1) | Abstracts and thesis statements | |
+| 11 (4/1) | Workshop: senior thesis feedback; abstracts and thesis statements | |
 | 12 (4/8) | No class |  |
 | 13 (4/15) | No class | Forum 3: success stories | 
 | 14 (4/22) | Final presentations | |
