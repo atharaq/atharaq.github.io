@@ -100,12 +100,12 @@ We will likely modify this depending on the availability of faculty / guest pres
 | ---- | ------ | -------- |
 | 1 (1/21) | Intro to course / goal setting; broad overview of research areas in mathematics + CS | |
 | 2 (1/28) | No class | Forum 1 posts |
-| 3 (2/4) | TBA: Faculty presentations? | |
+| 3 (2/4) | Faculty presentations: Tusman, Abdul-Quader (Tunyan) | |
 | 4 (2/11) | No class | |
-| 5 (2/18) | TBA: Faculty presentations or discuss lit review expectations. | |
+| 5 (2/18) | Faculty presentations: Jameson, Shablinsky| |
 | 6 (2/25) | No class | Forum 2 posts |
 | 7 (3/4) | Lightning talks | |
-| 8 (3/11) | No class | | 
+| 8 (3/11) | Pi Day Guest Speaker | | 
 | 9 (3/18) | Deep-dive Presentations | | 
 | 10 (3/25) | No class: **spring break** | |
 | 11 (4/1) | No class | Literature Review |
