@@ -196,9 +196,7 @@ Check your answers:
 
 # Upcoming
 
-Be sure to submit your problem presentation on VoiceThread by **Monday, February 13**.
-
-There is also MyOpenMath homework due **Monday, February 20**. Try and do a little bit of each over the next few days, so that you don't have to worry about catching up on a lot of things by next week.
+There is MyOpenMath homework due **next Friday, February 20**. Try and do a little bit of each over the next few days, so that you don't have to worry about catching up on a lot of things by next week.
 
 ## Exam 1 Practice Problems
 
