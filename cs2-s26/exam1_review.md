@@ -4,6 +4,25 @@
 1. Table of Contents
 {:toc}
 
+# Project 1 Notes
+
+By now:
+
+* You should have code to handle input (4 times).
+* You should have code to figure out, on a given street/avenue, if you can go east/west/north/south.
+* You should have code to figure out whether you want to go east/west/north/south (based on your current street/avenue and your destination street/avenue).
+
+What would make sense to do next? Simple idea that works:
+
+* As long as you haven't reached your destination, figure out a direction that makes sense to move in and move.
+* What kind of loop is that?
+* What's the loop condition?
+* How do you figure out a direction? (Hard: but think about easy ideas first, try a few things at a time.)
+
+Remember: **coding is learning**. You're not learning to code if you aren't coding, and so even if you feel like you need time to study, you are preparing for the exam by doing a little work on the project. You also should do some exercises as well.
+
+**Note**: I added the "explanation.md" file for everyone. You might not have seen it right away depending on when you accepted the assignment. So you may need to sync your project for that file to show up.
+
 <!-- # Quiz 1 Discussion
 
 Biggest issues:
