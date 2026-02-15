@@ -23,7 +23,7 @@ Remember: **coding is learning**. You're not learning to code if you aren't codi
 
 **Note**: I added the "explanation.md" file for everyone. You might not have seen it right away depending on when you accepted the assignment. So you may need to sync your project for that file to show up.
 
-<!-- # Quiz 1 Discussion
+# Quiz 1 Discussion
 
 Biggest issues:
 
@@ -87,7 +87,6 @@ What is output?
 
 * (Minor): `print` vs `println`
 * (Major): inside loop has to finish before outside loop increments.
--->
 
 # Exam 1 Review questions
 
