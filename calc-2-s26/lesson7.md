@@ -185,14 +185,14 @@ $$\int_0^{\pi/2} \sqrt{4 - 4\sin^2(\theta)} \cdot 2 \cos(\theta) d\theta$$
 
 $\sqrt{4 - 4\sin^2(\theta)}$ can be simplified to $\sqrt{4}\sqrt{1 - \sin^2(\theta)}$, which is $2 \sqrt{1 - \sin^2(\theta)}$. And we know that $1 - \sin^2(\theta) = \cos^2(\theta)$. So the entire integral is:
 
-$$\int_0^{\pi/2} (2 \sqrt{\cos^2(\theta)}})(2 \cos(\theta)) d\theta$$
+$$\int_0^{\pi/2} (2 \sqrt{\cos^2(\theta)})(2 \cos(\theta)) d\theta$$
 
 From $\theta = 0$ to $\pi/2$, $\cos(\theta) \geq 0$, so $\sqrt{\cos^2(\theta)} = \cos(\theta)$. This simplifies now to:
 
 $$4 \int_0^{\pi/2} \cos^2(\theta) d\theta$$
 
-Now we can use our double angle formula: \cos^2(\theta) = \frac{1}{2} + \frac{1}{2} \cos(2\theta)$ and get:
+Now we can use our double angle formula: $\cos^2(\theta) = \frac{1}{2} + \frac{1}{2} \cos(2\theta)$ and get:
 
 * $4 \int_0^{\pi/2} (\frac{1}{2} + \frac{1}{2} \cos(2\theta)) d\theta$
 * $2\theta + \sin(2\theta)$, from $\theta = 0$ to $\theta = \pi/2$:
-* $(\pi + \sin(2\pi)) - (0 + \sin(0))) = \pi$.
+* $(\pi + \sin(\pi)) - (0 + \sin(0))) = \pi$.
