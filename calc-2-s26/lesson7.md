@@ -74,7 +74,7 @@ $\int_0^4 \frac{1}{\sqrt{4-x}} dx$? Ideas?
 
 $$\lim\limits_{b \rightarrow 4^-} \int\limits_0^b \frac{1}{\sqrt{4-x}}dx$$
 
-Re-write the function as $(4-x)^{-\frac{1}{2}}$, and use the power rule: $$\lim\limits_{b \rightarrow 4^-} \left. -2(4-x)^{\frac{1}{2}}\right|_0^b = \lim\limits_{b\rightarrow 4^-} -2(4-b)^{1/2} + 2(4)^{1/2}$$
+Re-write the function as $(4-x)^{-\frac{1}{2}}$, and use the power rule: $$\lim\limits_{b \rightarrow 4^-} \left. -2(4-x)^{\frac{1}{2}}\right\vert_0^b = \lim\limits_{b\rightarrow 4^-} -2(4-b)^{1/2} + 2(4)^{1/2}$$
 
 Continuing: $$\lim\limits_{b\rightarrow 4^-} -2(4-b)^{1/2} + 2(4)^{1/2} = \lim\limits_{b\rightarrow 4^-} -2(4-b)^{1/2} + 4$$
 
@@ -103,7 +103,7 @@ $\int_{-1}^0 \frac{1}{x^2} dx + \int_0^1 \frac{1}{x^2} dx$
 $$
 \begin{align}
 &\lim_{b\rightarrow 0^-} \int_{-1}^b \frac{1}{x^2} dx &+ \lim_{a \rightarrow 0^+} \int \frac{1}{x^2} dx \\
-&= \lim_{b\rightarrow 0^-} \left. (-\frac{1}{x}) \right|_{-1}^b &+ \lim_{a \rightarrow 0^+} \left.(-\frac{1}{x})\right|_a^1 \\
+&= \lim_{b\rightarrow 0^-} \left. (-\frac{1}{x}) \right\vert_{-1}^b &+ \lim_{a \rightarrow 0^+} \left.(-\frac{1}{x})\right\vert_a^1 \\
 &= \ldots &+ \lim_{a \rightarrow 0^+} -1 + \frac{1}{a}
 \end{align}
 $$
@@ -139,15 +139,15 @@ $$
 
 What's the area under just one of those curves?
 
-$$\int_0^1 x dx = \left.\frac{x^2}{2}\right|_0^1 = \frac{1}{2}$$
+$$\int_0^1 x dx = \left.\frac{x^2}{2}\right\vert_0^1 = \frac{1}{2}$$
 
-$$\int_0^1 x^2 dx = \left.\frac{x^3}{3}\right|_0^1 = \frac{1}{3}$$
+$$\int_0^1 x^2 dx = \left.\frac{x^3}{3}\right\vert_0^1 = \frac{1}{3}$$
 
 Then just subtract those areas! $A = \frac{1}{2} - \frac{1}{3} = \frac{1}{6}$.
 
 Or: take the integral of the difference!
 
-$$\int_0^1 (x - x^2) dx = \left.\frac{x^2}{2}-\frac{x^3}{3}\right|_0^1 - \frac{1}{6}$$
+$$\int_0^1 (x - x^2) dx = \left.\frac{x^2}{2}-\frac{x^3}{3}\right\vert_0^1 - \frac{1}{6}$$
 
 **Question**: Why $x - x^2$ and not $x^2 - x$?
 
