@@ -4,6 +4,15 @@
 1. Table of Contents
 {:toc}
 
+# Exam 1 Questions
+
+* Annual change in renewable energy generated graph.
+* Substitution vs other techniques.
+
+# Problem Presentations
+
+All presentations have been moved back by one class. So those who were scheduled to present on 2/23 will present on 2/26, and those who were scheduled for 2/26 will present on 3/2. We will need to schedule for 3/5 and 3/9.
+
 # Overview
 
 <div class="youtube-container">
