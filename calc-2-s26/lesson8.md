@@ -4,11 +4,6 @@
 1. Table of Contents
 {:toc}
 
-# Exam 1 Questions
-
-* Annual change in renewable energy generated graph.
-* Substitution vs other techniques.
-
 # Problem Presentations
 
 All presentations have been moved back by one class. So those who were scheduled to present on 2/23 will present on 2/26, and those who were scheduled for 2/26 will present on 3/2. We will need to schedule for 3/5 and 3/9.
@@ -121,21 +116,26 @@ Consider the region above $y = 4$ and below $y = \sqrt{25 - x^2}$. How might we 
 
 Finding the points of intersectino, we see that the curves intersect when $x = 3$ and $x = -3$. Therefore, we set up the integral $\int_{-3}^3 (\sqrt{25 - x^2} - 4) dx$.
 
-How do we integrate this? None of the techniques we've learned previously will help us. It turns out that there is yet another special technique to deal with integrals of this form: [Trigonometric Substitution](https://openstax.org/books/calculus-volume-2/pages/3-3-trigonometric-substitution). This is optional reading, but if you are interested, you can look into that section to learn how to work through problems of this type. *We will not be covering trig substitution in class, nor will I require it on exams.* At this point, it's worth knowing that this technique exists and you can look it up if you need to.
+How do we integrate this? None of the techniques we've learned previously will help us. It turns out that there is yet another special technique to deal with integrals of this form: [Trigonometric Substitution](https://openstax.org/books/calculus-volume-2/pages/3-3-trigonometric-substitution). This is optional reading, but if you are interested, you can look into that section to learn how to work through problems of this type. We went over this briefly last week but we will not be asking questions on trig substitution on exams this semester.
 
 # Compound Regions
 
 <div class="youtube-container">
-<iframe src="https://www.youtube.com/embed/p6-DF-dw_So" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/p6-DF-dw_So" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
 </div>
 
 Some problems require us to split the region up into smaller regions, and set up integrals for each. For example: find the area between $y = \sin(x)$ and $y = \cos(x)$ from $x = 0$ to $x = \pi$.
 
-<img alt="Region between sin(x) and cos(x) from 0 to pi requires two integrals" src="https://openstax.org/resources/feb05292d88f275efda8e310a47d8a1d6fecf73b" />
+<img alt="Region between sin(x) and cos(x) from 0 to pi requires two integrals" src="https://openstax.org/apps/image-cdn/v1/f=webp/apps/archive/20260105.231123/resources/feb05292d88f275efda8e310a47d8a1d6fecf73b" />
 
 We can see that from $x = 0$ to $x = \pi/4$, $\sin(x) \leq \cos(x)$, and from $x = \pi/4$ to $x = \pi$, $\sin(x) \geq \cos(x)$. So we set up two integrals:
 
-$$\int_0^{\pi/4} (\cos(x) - \sin(x)) dx + \int_{\pi/4}^{\pi} (\sin(x) - \cos(x)) dx$$
+$$
+\begin{align}
+\int_0^{\pi/4} (\cos(x) - \sin(x)) dx \\
++ \int_{\pi/4}^{\pi} (\sin(x) - \cos(x)) dx
+\end{align}
+$$
 
 Integrating:
 
@@ -151,7 +151,7 @@ $$
 
 As another example, consider the region bounded by the $x$-axis, $y = x^2$ and $y = 2 - x$.
 
-<img alt="Region that requires two integrals to set up" src="https://openstax.org/resources/b94400bc7585d1622348ba61f6d7ffebba07c4b4" />
+<img alt="Region that requires two integrals to set up" src="https://openstax.org/apps/image-cdn/v1/f=webp/apps/archive/20260105.231123/resources/b94400bc7585d1622348ba61f6d7ffebba07c4b4" />
 
 Notice that from $x = 0$ to $x = 1$, the region is bounded above by $y = x^2$, while from $x = 1$ to $x = 2$, it's bounded by $y = 2 - x$. So we set up the sum as $\int_0^1 x^2 dx + \int_1^2 (2 - x) dx$. This ends up being:
 
@@ -168,7 +168,7 @@ $$
 # Using the y-axis
 
 <div class="youtube-container">
-<iframe src="https://www.youtube.com/embed/Vr7usEwps8c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/Vr7usEwps8c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
 </div>
 
 We can compute the area of that region in another way: using the $y$-axis instead of the $x$-axis. That is, we solve for $x$ in terms of $y$ for each of these curves, and then look at the area between these curves on the $y$-axis.
@@ -194,7 +194,7 @@ $$V \approx \sum_{i=1}^{n} A(x_i) \Delta x$$
 As $n \rightarrow \infty$, this becomes an integral: $V = \int_a^b A(x) dx$, where $A(x)$ is the area of the "slice" at $x$. Take a look at [Example 2.6](https://openstax.org/books/calculus-volume-2/pages/2-2-determining-volumes-by-slicing#fs-id1167793579586) in the textbook which goes through the example of using this method to find the formula for the volume of a prism. I also cover this example in my video below:
 
 <div class="youtube-container">
-<iframe src="https://www.youtube.com/embed/-soU5Hn7YLk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/-soU5Hn7YLk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
 </div>
 
 # Volumes
