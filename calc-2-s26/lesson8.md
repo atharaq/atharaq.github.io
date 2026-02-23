@@ -50,7 +50,8 @@ Since $\sin(x) > \cos(x)$ here, we compute the integral $\int_{\pi/4}^{5\pi/4} (
 
 $$
 \begin{align}
-& (-\cos(5\pi/4) - \sin(5\pi/4)) - (-\cos(\pi/4) - \sin(\pi/4)) \\
+(&-\cos(5\pi/4) - \sin(5\pi/4))\\ 
+&- (-\cos(\pi/4) - \sin(\pi/4)) \\
 &=(\frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2}) - (-\frac{\sqrt{2}}{2} - \frac{\sqrt{2}}{2}) \\
 &= \sqrt{2} + \sqrt{2} \\
 &= 2\sqrt{2}
