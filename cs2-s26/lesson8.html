@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Professor Abdul-Quader">
+  <title>CS II Lesson 8</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">  
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">CS II Lesson 8</h1>
+  <p class="author">Professor Abdul-Quader</p>
+  <p class="date">Project 1 Discussion / Intro to Classes</p>
+</section>
+
+<section>
+<section id="project-discussion" class="title-slide slide level1">
+<h1>Project Discussion</h1>
+<!--
+10:30 - 10:45 Project 1 Questions
+11:30 - 11:50 Recap on classes
+11:50 - 12:10 Time exercise
+
+-->
+<p>Questions?</p>
+</section>
+<section id="simple-ideas" class="slide level2">
+<h2>Simple Ideas</h2>
+<ul>
+<li>Start with simple ideas</li>
+<li>If you can get there in one move, do it.</li>
+<li>If not?</li>
+<li>Simple idea that works: pick a random move.
+<ul>
+<li>Program loops around and tries again.</li>
+</ul></li>
+</ul>
+</section>
+<section id="complicated-ideas" class="slide level2">
+<h2>Complicated Ideas?</h2>
+<ul>
+<li>Get something that works first</li>
+<li>You only have 3.5 more days (Sunday night).</li>
+<li>If you have time, figure out how to optimize:
+<ul>
+<li>Test it out as much as possible</li>
+<li>Find all the edge cases that your code doesn’t handle</li>
+<li>Try to handle them</li>
+<li>More if statements?</li>
+<li>Elegant idea that solves all your problems? (Maybe not.)</li>
+</ul></li>
+</ul>
+</section>
+<section id="presentation-1" class="slide level2">
+<h2>Presentation 1</h2>
+<ul>
+<li>Next 2 weeks: demo your project.</li>
+<li>Give a “big picture” explanation of the algorithm for how you solved the problem.</li>
+<li>Show / explain how your code implements that algorithm.</li>
+<li>Sign-ups now.</li>
+</ul>
+</section></section>
+<section>
+<section id="classes" class="title-slide slide level1">
+<h1>Classes</h1>
+<p>Last time:</p>
+<ul>
+<li><p>ArrayList is a <strong>class</strong>.</p></li>
+<li><p>We can use the ArrayList class as the <strong>data type</strong> for our variables.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a> <span class="bu">ArrayList</span>&lt;<span class="bu">Integer</span>&gt; list = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a> <span class="bu">ArrayList</span>&lt;<span class="bu">Integer</span>&gt; list2 = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();</span></code></pre></div></li>
+</ul>
+</section>
+<section id="classes-1" class="slide level2">
+<h2>Classes</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="bu">ArrayList</span>&lt;<span class="bu">Integer</span>&gt; list = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="bu">ArrayList</span>&lt;<span class="bu">Integer</span>&gt; list2 = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();</span></code></pre></div>
+<ul>
+<li><code>list</code> and <code>list2</code> are different <strong>objects</strong> of type ArrayList</li>
+<li>What does <strong>new</strong> do?</li>
+</ul>
+</section>
+<section id="instantiation" class="slide level2">
+<h2>Instantiation</h2>
+<ul>
+<li>The <strong>new</strong> keyword <strong>instantiates</strong> the ArrayList object.</li>
+<li><strong>Instantiation</strong>: creating a new object of that type in memory.</li>
+<li>What does this involve?</li>
+</ul>
+</section>
+<section id="constructors" class="slide level2">
+<h2>Constructors</h2>
+<p>Another way to define ArrayLists:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="bu">ArrayList</span>&lt;<span class="bu">String</span>&gt; list = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;(<span class="dv">25</span>);</span></code></pre></div>
+<ul>
+<li>ArrayList has multiple <strong>constructors</strong></li>
+<li>Constructor: special method that is called when we the object is created
+<ul>
+<li>In particular, when the <strong>new</strong> keyword is used.</li>
+</ul></li>
+<li>Used to initialize the data type.</li>
+</ul>
+</section>
+<section id="instance-methods" class="slide level2">
+<h2>Instance Methods</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="bu">ArrayList</span>&lt;<span class="bu">Integer</span>&gt; list = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="bu">ArrayList</span>&lt;<span class="bu">Integer</span>&gt; list2 = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>list.<span class="fu">add</span>(<span class="dv">1</span>);</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;List 1 size: &quot;</span> + list.<span class="fu">size</span>());</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;list 2 size: &quot;</span> + list2.<span class="fu">size</span>());</span></code></pre></div>
+<p>What does this print out? Why?</p>
+</section>
+<section id="instance-methods-1" class="slide level2">
+<h2>Instance Methods</h2>
+<ul>
+<li><code>list</code> and <code>list2</code> are different <em>objects</em>
+<ul>
+<li>Keep track of different arrays in memory!</li>
+<li>The arrays have different elements!</li>
+<li>The arrays may have different sizes!</li>
+</ul></li>
+<li><code>size</code> is an <em>instance</em> method.
+<ul>
+<li>as opposed to a <em>static</em> method</li>
+</ul></li>
+<li><strong>instance methods</strong>: methods which act on specific objects
+<ul>
+<li>not on the class as a whole!</li>
+</ul></li>
+<li>syntax: <code>object.method(parameters)</code></li>
+</ul>
+</section>
+<section id="new-data-types" class="slide level2">
+<h2>New data types?</h2>
+<p>How do we define our own data types?</p>
+<ul>
+<li>Define a <strong>class</strong>: <code>public class MyClass</code></li>
+<li>A class is a <em>template</em> for a data type.</li>
+<li>In the class:
+<ul>
+<li>Define a <em>constructor</em> to initialize your data</li>
+<li>Define <em>instance methods</em> to act on that data</li>
+<li>How do we specify the data? <strong>instance variables</strong></li>
+</ul></li>
+<li>Outside of the class: use the class!</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a>MyClass m = <span class="kw">new</span> <span class="fu">MyClass</span>();</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>m.<span class="fu">someMethod</span>();</span></code></pre></div>
+</section>
+<section id="data-behavior" class="slide level2">
+<h2>Data / Behavior</h2>
+<ul>
+<li>Objects encapsulate <strong>data</strong> and <strong>behavior</strong>:</li>
+<li>integer variable:
+<ul>
+<li>data: actual number it represents</li>
+<li>behavior: add, subtract, etc.</li>
+</ul></li>
+<li>ArrayList variable?
+<ul>
+<li>data?</li>
+<li>behavior?</li>
+</ul></li>
+<li>User-defined types? often:
+<ul>
+<li>data: instance variables</li>
+<li>behavior: instance methods</li>
+</ul></li>
+</ul>
+</section>
+<section id="tostring-and-equals" class="slide level2">
+<h2>toString and equals</h2>
+<p>Special methods that every class defines.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="bu">ArrayList</span>&lt;<span class="bu">Integer</span>&gt; list1 = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="bu">ArrayList</span>&lt;<span class="bu">Integer</span>&gt; list2 = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>list1.<span class="fu">add</span>(<span class="dv">10</span>);</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>list2.<span class="fu">add</span>(<span class="dv">10</span>);</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a><span class="kw">if</span> (list1 == list2) {</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;The lists refer to the same object&quot;</span>);</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a>} <span class="kw">else</span> <span class="kw">if</span> (list1.<span class="fu">equals</span>(list2)) {</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;The two lists have the same contents:&quot;</span>);</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(list1.<span class="fu">toString</span>());</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a>    <span class="co">// technically, we could just do:</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true"></a>    <span class="co">// System.out.println(list1);</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true"></a>}</span></code></pre></div>
+</section></section>
+<section>
+<section id="designing-classes" class="title-slide slide level1">
+<h1>Designing classes</h1>
+<p>Create a new file, call it “Time.java”. Create the class:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="kw">public</span> <span class="kw">class</span> <span class="bu">Time</span> {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="instance-variables" class="slide level2">
+<h2>Instance Variables</h2>
+<p>Inside the class, we can declare our instance variables, constructors, and instance methods. Declare three new variables:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="kw">private</span> <span class="dt">int</span> hour;</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a><span class="kw">private</span> <span class="dt">int</span> minute;</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a><span class="kw">private</span> <span class="bu">String</span> amPm;</span></code></pre></div>
+<p>These are <strong>instance variables</strong>. Each instance of the Time class will have their own variables (independent of all the other instances).</p>
+</section>
+<section id="constructors-1" class="slide level2">
+<h2>Constructors</h2>
+<p>Now let’s give our class a constructor. We need an hour, minute, and whether it is AM or PM actually initialize our instance variables, so let’s pass them in as parameters.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="kw">public</span> <span class="bu">Time</span>(<span class="dt">int</span> currentHour, <span class="dt">int</span> currentMinute, <span class="bu">String</span> amOrPm) {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a>    hour = currentHour;</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a>    minute = currentMinute;</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a>    amPm = amOrPm;</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="using-the-class" class="slide level2">
+<h2>Using the class</h2>
+<p>In App.java:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="kw">public</span> <span class="kw">class</span> App {</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a>        <span class="bu">Time</span> time = <span class="kw">new</span> <span class="bu">Time</span>(<span class="dv">11</span>, <span class="dv">2</span>, <span class="st">&quot;AM&quot;</span>);</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true"></a>        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(time); <span class="co">// this is not so great</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true"></a>    }</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true"></a>}</span></code></pre></div>
+<p>What happened?</p>
+</section>
+<section id="tostring" class="slide level2">
+<h2>toString</h2>
+<ul>
+<li><code>println</code> calls the <code>toString</code> method on the object.</li>
+<li>Built-in toString method doesn’t output something very useful.</li>
+<li>So: we can implement it ourselves</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a><span class="kw">public</span> <span class="bu">String</span> <span class="fu">toString</span>() {</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true"></a>  <span class="co">// what should go here?</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Implement the <code>toString</code> method. (Remember the issue if <code>minute &lt; 10</code>?)</p>
+<p>This method should <strong>return</strong> a String. It should <strong>not</strong> output anything!</p>
+</section></section>
+<section>
+<section id="recap" class="title-slide slide level1">
+<h1>Recap</h1>
+<ul>
+<li>Classes are templates for data types.</li>
+<li>Declare a class: name <code>public class MyClass</code> in file MyClass.java</li>
+<li>Declare instance variables.</li>
+<li>Define your constructor(s)</li>
+<li>Define your instance methods, like toString</li>
+</ul>
+</section>
+<section id="video" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uLqbNaFNWys?si=UZDYOrQXv1mZySD3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+</iframe>
+</section>
+<section id="problem" class="slide level2">
+<h2>Problem?</h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a><span class="bu">Time</span> time = <span class="kw">new</span> <span class="bu">Time</span>(<span class="dv">13</span>, <span class="dv">75</span>, <span class="st">&quot;Go away!&quot;</span>);</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(time);</span></code></pre></div>
+<ul>
+<li>Is there a way we can get it to not work?</li>
+<li>What happens when you create an ArrayList with a negative size?
+<ul>
+<li>Throws an <code>IllegalArgumentException</code>!</li>
+<li>We can do that too!</li>
+</ul></li>
+</ul>
+</section>
+<section id="error-checking" class="slide level2">
+<h2>Error Checking</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a><span class="kw">public</span> <span class="bu">Time</span>(<span class="dt">int</span> currentHour, <span class="dt">int</span> currentMinute, <span class="bu">String</span> amOrPm) {</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true"></a>    <span class="kw">if</span> (currentHour &lt; <span class="dv">1</span> || currentHour &gt; <span class="dv">12</span>) {</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true"></a>        <span class="kw">throw</span> <span class="kw">new</span> <span class="bu">IllegalArgumentException</span>(<span class="st">&quot;hour must be between 1 and 12&quot;</span>);</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true"></a>    } <span class="kw">else</span> {</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true"></a>        hour = currentHour;</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true"></a>    }</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true"></a>    ...</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true"></a>}</span></code></pre></div>
+<ul>
+<li>Yes, this will crash the program.</li>
+<li>Not <code>Time</code>’s problem.</li>
+<li>It’s a main method problem: make sure you validate <strong>before</strong> creating a Time object.</li>
+<li>More on <em>handling</em> exceptions later this semester.</li>
+</ul>
+</section></section>
+<section>
+<section id="magic-numbers" class="title-slide slide level1">
+<h1>Magic Numbers</h1>
+<ul>
+<li>We know that the hour needs to be between 1 and 12 by common sense. But it’s bad practice to use <strong>literals</strong> or “magic numbers”.</li>
+<li>Instead, we should use <strong>constant class variables</strong>, which have <em>names</em> which are easier to understand as we read the code (see: Think Java, 3.4).</li>
+</ul>
+</section>
+<section id="constant-class-variables" class="slide level2">
+<h2>Constant Class Variables</h2>
+<ul>
+<li>A <strong>class variable</strong> is a static variable: created once for the class as a whole (not created when constructors are called).</li>
+<li>To make a variable <strong>constant</strong> (meaning it can’t be changed after it is created), we use the <strong>final</strong> keyword. Here is an example:</li>
+</ul>
+<div class="sourceCode" id="cb14"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true"></a><span class="co">// convention: constants are UPPER_CASE</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">final</span> <span class="dt">int</span> MIN_HOUR = <span class="dv">1</span>;</span></code></pre></div>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<p>Clean up your constructor so that it checks if the hour, minute, and “AM” or “PM” variables are valid. Use constant class variables so that there are no “magic values”.</p>
+</section></section>
+<section>
+<section id="visibility" class="title-slide slide level1">
+<h1>Visibility</h1>
+<p>Variable declarations in <code>Time</code> class:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">final</span> <span class="dt">int</span> MIN_HOUR = <span class="dv">1</span>;</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">final</span> <span class="dt">int</span> MAX_HOUR = <span class="dv">12</span>;</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">final</span> <span class="dt">int</span> MIN_MINUTE = <span class="dv">0</span>;</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">final</span> <span class="dt">int</span> MAX_MINUTE = <span class="dv">60</span>;</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">final</span> <span class="bu">String</span> AM = <span class="st">&quot;AM&quot;</span>;</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">final</span> <span class="bu">String</span> PM = <span class="st">&quot;PM&quot;</span>;</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true"></a>    <span class="kw">private</span> <span class="dt">int</span> hour;</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true"></a>    <span class="kw">private</span> <span class="dt">int</span> minute;</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true"></a>    <span class="kw">private</span> <span class="bu">String</span> amPm;</span></code></pre></div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<ul>
+<li>Our constants are public?</li>
+<li>Our instance variables are private?</li>
+<li>toString is public?</li>
+<li>Constructor: <code>public Time(...)</code>.</li>
+<li>Some public / some private?</li>
+</ul>
+</section>
+<section id="public-vs-private" class="slide level2">
+<h2>Public vs private</h2>
+<p>Java has several different <strong>visibility modifiers</strong>:</p>
+<ul>
+<li><strong>public</strong>: this item (variable, method, constructor) can be used in code anywhere</li>
+<li><strong>protected</strong>: …</li>
+<li>default visibility (ie, leave out the words public or private): …</li>
+<li><strong>private</strong>: this item can be used in code only in the same class</li>
+</ul>
+</section>
+<section id="rule-of-thumb" class="slide level2">
+<h2>Rule of thumb</h2>
+<ul>
+<li>Make everything as private as you can.</li>
+<li>Restrict how others use your class.</li>
+<li>That way, you control how they will use it, and can predict / plan for bad behavior.</li>
+</ul>
+</section>
+<section id="bad-example" class="slide level2">
+<h2>Bad Example</h2>
+<p>If the instance variables are public:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true"></a><span class="bu">Time</span> t = <span class="kw">new</span> <span class="bu">Time</span>(<span class="dv">11</span>, <span class="dv">59</span>, <span class="bu">Time</span>.<span class="fu">AM</span>); <span class="co">// &quot;11:59 AM&quot;</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true"></a>t.<span class="fu">hour</span> = <span class="dv">53</span>;</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true"></a>t.<span class="fu">minute</span> = -<span class="dv">7</span>;</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true"></a>t.<span class="fu">amPm</span> = <span class="st">&quot;Hah! I tricked you!&quot;</span>;</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(t);</span></code></pre></div>
+<ul>
+<li>Got around all of our error-checking!</li>
+<li>What should we do instead? How would we print out just the hour?</li>
+</ul>
+</section>
+<section id="video-1" class="slide level2">
+<h2>Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4Qyvqq7JA44?si=od45-obTUDzXXJbn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</section></section>
+<section id="upcoming" class="title-slide slide level1">
+<h1>Upcoming</h1>
+<ul>
+<li>Project 1: due Sunday night.</li>
+<li>Reading: chapters 9 - 11.</li>
+<li>Quiz 2: next <strong>Thursday</strong>.</li>
+<li>Project 1 presentations / demos: starting Monday in class.</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4/dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
