@@ -21,7 +21,7 @@ layout: default
 * [Exam 1 Review Questions](exam1_review.html)
 * [Lesson 7: Project 1 / Intro to classes](lesson7.html)
 * [Lesson 8: Designing classes](lesson8.html)
-<!-- * [Lesson 9: Designing classes 2](lesson9.html) -->
+* [Lesson 9: Designing classes 2](lesson9.html)
 <!-- * [Lesson 10: Designing classes 3](lesson10.html) -->
 <!-- * [Lesson 11: Mutability / Immutability / Debugging](lesson11.html) -->
 <!-- * [Lesson 12: Debugging / Exceptions](lesson12.html) -->
