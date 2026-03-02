@@ -105,7 +105,7 @@ We will likely modify this depending on the availability of faculty / guest pres
 | 5 (2/18) | Faculty presentations: Jameson, Shablinsky| |
 | 6 (2/25) | No class | Forum 2 posts |
 | 7 (3/4) | Lightning talks | |
-| 8 (3/11) | Pi Day Guest Speaker | | 
+| 8 (3/11) | **Pi Day**: Guest Speaker Dr. Posamentier **3001 Nat Sci** (note the room change) | | 
 | 9 (3/18) | Deep-dive Presentations | | 
 | 10 (3/25) | No class: **spring break** | |
 | 11 (4/1) | No class | Literature Review |

@@ -114,7 +114,7 @@ We may modify this as needed.
 | 5 (2/18) | No class |  |
 | 6 (2/25) | Presentation: advanced topic | |
 | 7 (3/4) | No class | Forum 2: project update |
-| 8 (3/11) | Pi Day Guest Speaker | | 
+| 8 (3/11) | **Pi Day**: Guest Speaker Dr. Posamentier **3001 Nat Sci** (note the room change) | | 
 | 9 (3/18) | No class | Senior thesis draft 3 or 1 | 
 | 10 (3/25) | No class: **spring break** | |
 | 11 (4/1) | Workshop: senior thesis feedback; abstracts and thesis statements | |
