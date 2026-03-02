@@ -43,7 +43,7 @@ public class Time {
     newMinute = newMinute % 60;
 
     String newAmPm = amPm;
-    if (newHour != hour && newHour >= 12) {
+    if (hour < 12 && newHour >= 12) {
       // This would not work in more generality
       // Think about how you might change this if numMins were unbounded?
       if (amPm.equals(AM)) {
@@ -51,9 +51,9 @@ public class Time {
       } else {
         newAmPm = AM;
       }
-      if (newHour > 12) {
+    }
+    if (newHour > 12) {
         newHour = newHour % 12;
-      }
     }
 
     return new Time(newHour, newMinute, newAmPm);
