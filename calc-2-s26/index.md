@@ -22,7 +22,7 @@ layout: default
 * [Lesson 8: Areas between curves](lesson8.html)
 * [Lesson 9: Volumes by slicing](lesson9.html)
 * [Lesson 10: Volumes (Disk, Washer, Shells)](lesson10.html)
-<!-- * [Lesson 11: Arc Length, Differential Equations Intro](lesson11.html) -->
+* [Lesson 11: Arc Length](lesson11.html)
 <!-- * [Lesson 12: Differential Equations](lesson12.html) -->
 <!-- * [Lesson 13: Linear First-order Differential Equations](lesson13.html) -->
 <!-- * [Lesson 14: Parametric Equations (Intro)](lesson14.html) -->
