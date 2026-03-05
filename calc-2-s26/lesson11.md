@@ -115,7 +115,7 @@ which is just $\frac{1}{1 - x^2}$.
 Now we can integrate:
 
 $$
-s = \int_0^1 \frac{1}{1 - x^2} dx
+s = \int_0^1 \frac{1}{\sqrt{1 - x^2}} dx
 $$
 
 If you don't recognize this (I don't blame you), it's an [Inverse Trig](https://openstax.org/books/calculus-volume-2/pages/1-7-integrals-resulting-in-inverse-trigonometric-functions) integral. This turns out to be $\left.\arcsin(x)\right\|_0^1$, or just $\arcsin(1) - \arcsin(0)$. Since $\sin(\pi/2) = 1$, $\arcsin(1) = \pi/2$. And since $\sin(0) = 0$, $\arcsin(0) = 0$. So our answer is $\frac{\pi}{2} - 0$, or just $\frac{\pi}{2}$.
@@ -153,37 +153,3 @@ Use a calculator (graphing or online) to estimate your answer as well as the ans
 <div class="desmos-container">
     <iframe src="https://www.desmos.com/calculator/pmmad6b1qj?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
 </div>
-
-**Classwork**: Hand in Section 2.4 #172.
-
-
-Formula:
-
-$$ s = \int_a^b \sqrt{1 + (f^\prime)^2 } dx $$
-
-* These integrals are tricky.
-* Know how to do the algebra to set it up
-* Then use a calculator (graphing or online)
-
-## Example
-
-The path of a rock thrown off a 100 meter cliff (approximately) follows the curve $f(t) = 100 - 5t^2$, from $t = 0$ to $t = \sqrt{20}$ seconds. Find the length of the path the rock travels from $t = 0$ to $t = \sqrt{20}$. Round your answer to the nearest hundredth of a meter.
-
-<div class="desmos-container">
-<iframe src="https://www.desmos.com/calculator/7dqbm9j7zs?embed" style="border: 1px solid #ccc" frameborder=0></iframe>
-</div>
-
-## Example
-
-Arc length of $f(t) = 100 - 5t^2$ from $t = 0$ to $t = \sqrt{20}$. Round your answer to the nearest hundredth of a meter.
-
-
-$$
-\begin{align}
-f^\prime(x) = -10x \\
-(f^\prime(x))^2 = 100x^2 \\
-\int_0^{\sqrt{20}} \sqrt{1 + 100x^2}dx
-\end{align}
-$$
-
-[WolframAlpha](https://www.wolframalpha.com/input/?i=integral+from+0+to+sqrt%2820%29+of+sqrt%281+%2B+100x%5E2%29+dx): $\approx 100.25$ meters.
