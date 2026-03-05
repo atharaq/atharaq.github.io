@@ -12,8 +12,8 @@
   * wrap up volumes, start arc length
 * Monday: HW (MyOpenMath)
 * Next week: quiz
-* Exam 2: 2 weeks (March 19)
-  * Bring a **graphing calculator**!
+* Exam 2: 1.5 or 2 weeks (March 16 or 19)
+* (Early) Pi Day Lecture: Wed March 11 at 10 AM (3001 Nat Sci). Refreshments (pies!).
 
 # Volumes
 
