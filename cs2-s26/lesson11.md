@@ -105,7 +105,7 @@ To be fully honest, though, the benefits of immutable objects almost always outw
 
 In the above video, I walk through the steps of using the debugger in IntelliJ. The debugger is a very powerful tool that can help you figure out what's going wrong with your code when it's not working.
 
-[This tutorial from JetBrains](https://www.jetbrains.com/help/idea/debugging-your-first-java-application.html) gives a nice walkthrough of using the debugger as well. I strongly encourage you to take advantage of this tool, particularly if you get stuck on some things while working on your projects. On VSCode, we have a similar tool, but it looks a little different. [Check here for information about using the VSCode debugger.](https://code.visualstudio.com/docs/java/java-debugging)
+[This tutorial from JetBrains](https://www.jetbrains.com/help/idea/debugging-your-first-java-application.html) gives a nice walkthrough of using the debugger as well. I strongly encourage you to take advantage of this tool, particularly if you get stuck on some things while working on your projects. On VSCode, we have a similar tool, but it looks a little different. [Check here for information about using the VSCode debugger.](https://code.visualstudio.com/docs/debugtest/debugging)
 
 # Errors
 
