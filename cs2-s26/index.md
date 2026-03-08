@@ -23,7 +23,7 @@ layout: default
 * [Lesson 8: Designing classes](lesson8.html)
 * [Lesson 9: Designing classes 2](lesson9.html)
 * [Lesson 10: Designing classes 3](lesson10.html)
-<!-- * [Lesson 11: Mutability / Immutability / Debugging](lesson11.html) -->
+* [Lesson 11: Mutability / Immutability / Debugging](lesson11.html)
 <!-- * [Lesson 12: Debugging / Exceptions](lesson12.html) -->
 <!-- * [Lesson 13: Polymorphism](lesson13.html) -->
 <!-- * [Lesson 14: Polymorphism II](lesson14.html) -->
