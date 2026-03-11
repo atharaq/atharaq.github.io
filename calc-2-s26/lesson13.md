@@ -4,7 +4,9 @@
 1. Table of Contents
 {:toc}
 
-# Quiz
+# Presentations
+
+Last few?
 
 # Basic Differential Equations
 
@@ -267,3 +269,5 @@ Since Exam 1:
   * Basic (4.1), position / velocity / acceleration
   * Separable (4.3), exponential growth
   * Linear (4.5)
+
+# Now: Quiz!
