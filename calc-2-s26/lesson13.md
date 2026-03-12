@@ -268,6 +268,5 @@ Since Exam 1:
 * Differential Equations:
   * Basic (4.1), position / velocity / acceleration
   * Separable (4.3), exponential growth
-  * Linear (4.5)
 
 # Now: Quiz!
