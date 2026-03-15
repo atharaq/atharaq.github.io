@@ -25,7 +25,7 @@ layout: default
 * [Lesson 10: Designing classes 3](lesson10.html)
 * [Lesson 11: Mutability / Immutability / Debugging](lesson11.html)
 * [Lesson 12: Polymorphism](lesson12.html)
-<!-- * [Lesson 13: Exceptions](lesson13.html) -->
+* [Lesson 13: Exceptions](lesson13.html)
 <!-- * [Lesson 14: Polymorphism II](lesson14.html) -->
 <!-- * [Lesson 15: Polymorphism III](lesson15.html) -->
 <!-- * [Coin Game Solution Code](solution/CoinGame.html) -->
