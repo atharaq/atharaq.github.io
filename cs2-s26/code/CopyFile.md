@@ -48,4 +48,4 @@ public class CopyFile {
 }
 ```
 
-You will also need the [java image](java.jpeg).
+You will also need the [java image](java.jpeg). Right-click on that link and click "Save Link as..." to download it. Save it into the same src folder as CopyFile.java.
