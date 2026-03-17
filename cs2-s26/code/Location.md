@@ -3,8 +3,7 @@
 Location.java:
 
 ```java
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Location implements Comparable<Location> {
 
