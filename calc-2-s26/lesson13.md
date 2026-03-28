@@ -1,4 +1,4 @@
-# Calculus II Lesson 13: Linear First-order Differential Equations
+# Calculus II Lesson 13: Basic Differential Equations / Separable Equations 
 {: .no_toc}
 
 1. Table of Contents
