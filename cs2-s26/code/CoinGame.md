@@ -43,7 +43,7 @@ public class CoinGame {
     guessOne = sc.nextInt();
     sc.nextLine(); // advance to the next line
 
-    // player two: a computer which guesses a random number from 0 to 9.
+    // player two: a computer which guesses the largest number remaining.
     int guessTwo = numFlips;
     if (guessOne == guessTwo) {
       guessTwo = numFlips - 1;
