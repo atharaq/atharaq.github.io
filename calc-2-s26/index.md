@@ -26,7 +26,7 @@ layout: default
 * [Lesson 12: Differential Equations](lesson12.html)
 * [Lesson 13: Basic Differential Equations / Separable Equations](lesson13.html)
 * [Lesson 14: Linear First-order Differential Equations / Parametric Equations (Intro)](lesson14.html)
-<!-- * [Lesson 15: Areas and Arc Lengths of Parametric Curves](lesson15.html) -->
+* [Lesson 15: Calculus of Parametric Curves](lesson15.html)
 <!-- * [Lesson 16: Intro to polar coordinates](lesson16.html) -->
 <!-- * [Lesson 17: Areas / arc lengths in polar; intro to sequences](lesson17.html) -->
 <!-- * [Lesson 18: Describing sequences](lesson18.html) -->
