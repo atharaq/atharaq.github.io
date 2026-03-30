@@ -27,7 +27,7 @@ layout: default
 * [Lesson 12: Polymorphism](lesson12.html)
 * [Lesson 13: Exceptions](lesson13.html)
 * [Lesson 14: Polymorphism II](lesson14.html)
-<!-- * [Lesson 15: Polymorphism III](lesson15.html) -->
+* [Lesson 15: Polymorphism III](lesson15.html)
 <!-- * [Coin Game Solution Code](solution/CoinGame.html) -->
 <!-- * [Lesson 16: Algorithms / Pseudocode](lesson16.html) -->
 <!-- * [Lesson 17: Recursion](lesson17.html) -->
