@@ -127,7 +127,7 @@ Consider the curve given by the parametric equations $x(t) = t^2$ and $y(t) = t 
 
 Next we study arc lengths of parametrically defined curves. To find arc lengths of curves, we first approximate the length by using line segments:
 
-<img alt="Figure 7.23 from the textbook: Approximating the length of a curve by line segments" src="https://openstax.org/resources/958630c1f34eee5dd96dea6574e4a1dceae5d7d2" />
+<img alt="Figure 7.23 from the textbook: Approximating the length of a curve by line segments" src="https://openstax.org/apps/image-cdn/v1/f=webp/apps/archive/20260209.222123/resources/958630c1f34eee5dd96dea6574e4a1dceae5d7d2" />
 
 The length of a line segment between $(x_0, y_0)$ and $(x_1, y_1)$ is $\sqrt{(\Delta x)^2 + (\Delta y)^2}$. So the approximation of the arc length of the curve is given by
 
