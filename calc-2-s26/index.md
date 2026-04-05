@@ -28,7 +28,7 @@ layout: default
 * [Lesson 14: Linear First-order Differential Equations / Parametric Equations (Intro)](lesson14.html)
 * [Lesson 15: Calculus of Parametric Curves](lesson15.html)
 * [Lesson 16: Intro to polar coordinates](lesson16.html)
-<!-- * [Lesson 17: Areas / arc lengths in polar; intro to sequences](lesson17.html) -->
+* [Lesson 17: Calculus of polar curves; intro to sequences](lesson17.html)
 <!-- * [Lesson 18: Describing sequences](lesson18.html) -->
 <!-- * [Lesson 19: Infinite series](lesson19.html) -->
 <!-- * [Lesson 20: Convergence tests](lesson20.html) -->
