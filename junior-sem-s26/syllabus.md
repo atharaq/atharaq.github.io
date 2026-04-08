@@ -109,8 +109,8 @@ We will likely modify this depending on the availability of faculty / guest pres
 | 9 (3/18) | Deep-dive Presentations | | 
 | 10 (3/25) | No class: **spring break** | |
 | 11 (4/1) | No class | Literature Review |
-| 12 (4/8) | Literature review peer feedback |  |
+| 12 (4/8) | Workshop: Agentic Software Development |  |
 | 13 (4/15) | Presentations: Senior Project Proposals | Senior Project Proposals | 
 | 14 (4/22) | *Optional*: attend seniors final presentations | |
-| 15 (4/29) | *Optional*: attend seniors final presentations |  | 
-| 16 (5/6) | Finals week: no class; optionally attend seniors final presentations | | 
+| 15 (4/29) | *Optional*: attend seniors final presentations | Lit Review Peer Feedback | 
+| 16 (5/6) | Finals week: no class; optionally attend seniors final presentations | Optional: survey on elective courses | 
