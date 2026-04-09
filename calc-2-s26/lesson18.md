@@ -46,7 +46,7 @@ Try to find closed form expressions for the following sequences:
 <ul>
 <li>1, 1, 2, 6, 24, 120, 720, $\ldots$</li>
 <li class="fragment">1, 1, $\frac{1}{2}$, $\frac{1}{6}$, $\frac{1}{24}$, $\frac{1}{120}$, $\frac{1}{720}$, $\ldots$</li>
-<li class="fragment">1, -1, $\frac{1}{2}$, $-\frac{1}{6}$, $\frac{1}{24}$, $-\frac{1}{120}$, $\frac{1}{720}$, $\ldots$
+<li class="fragment">1, -1, $\frac{1}{2}$, $-\frac{1}{6}$, $\frac{1}{24}$, $-\frac{1}{120}$, $\frac{1}{720}$, $\ldots$</li>
 </ul>
 
 ## Even and Odd
