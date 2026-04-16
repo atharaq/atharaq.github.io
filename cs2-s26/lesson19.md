@@ -52,3 +52,6 @@ For this, you will need to have gone through the sections on [Analysis of Algori
 * We will have a quiz, either online or in class next week.
 * Project 3 is due **Wednesday**! (Plus grace time. Unsure how much you have left? Email me.)
 * Project 3 demos starting Monday! Let's make the schedule together now.
+* Exam 3: likely Thursday 4/30.
+* Final Exam: May 7 (12 - 2:30).
+* Math/CS Career Panel April 22 5 PM.

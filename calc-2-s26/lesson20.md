@@ -259,3 +259,4 @@ Determine if the following series converge:
 * Power series, Taylor series
 * Exam 3: Monday, 4/27 or Thursday 4/30
 * Final exam: May 7 **9 AM - 11:30 AM**.
+* Math/CS Career Panel April 22 5 PM.
