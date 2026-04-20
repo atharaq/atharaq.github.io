@@ -6,6 +6,13 @@
 
 # Presentations
 
+# Questions / Reminders / Upcoming
+
+* Written Homework due today
+* MyOpenMath HW due tonight.
+* Math Education guest lecture tomorrow 12:30
+* Exam 3: Next Thursday.
+
 # Alternating Harmonic Series
 
 Recall the **Commutative law of addition**:
