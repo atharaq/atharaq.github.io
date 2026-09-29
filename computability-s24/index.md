@@ -36,14 +36,6 @@ layout: default
 * [Lesson 24: NP-completeness, Decision vs Search](lesson24.html)
 * [Lesson 25: Decision vs Search, Turing Jumps](lesson25.html)
 
-## Problem Sets
-
-* [Problem Set 1: Due Monday 2/12](assignments/problemset1.tex)
-* [Problem Set 2: Due Monday, 2/26](assignments/problemset2.tex)
-* [Problem Set 3: Due Monday, 3/18](assignments/problemset3.tex)
-* [Problem Set 4: Due Monday, 4/22](assignments/problemset4.tex)
-* [Problem Set 5: Due Thursday, 5/2](assignments/problemset5.tex)
-
 ## Final Project
 
 * [Final Project Description and rubric](final-project.html)
